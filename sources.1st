@@ -1,0 +1,66 @@
+ <?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- This file contains all specifications pertaining to the operational control of
+      the data files. This includes usage pools, sources, sortsets, and other related
+      mechanisms.
+-->
+
+<document signature="Hero Lab Structure">
+  <!-- TCA: YZE Sources -->
+  <source
+    id="srcYZE"
+    name="Year Zero Engine - Settings"
+    selectable="no"
+    parent=""
+    sortorder="0"
+    description="Material using the Year Zero Engine system from Fria Ligan (Free League)">
+    </source> 
+	
+  <source
+    id="srcTwilight2000"
+    name="Twilight 2000 Setting"
+    parent="srcYZE"
+    reportable="no"
+	selectable="no"
+	sortorder="3"
+    description="Data for the Twilight 2000 RPG.">
+    </source> 	
+	
+  <source
+    id="srcT2K"
+    name="Twilight 2000 Core"
+    parent="srcTwilight2000"
+    reportable="yes"
+	sortorder="1"
+    description="Data for Alien RPG.">
+    </source>	
+		
+  <source
+    id="srcT2KOptions"
+    name="Character Creation Options"
+    parent="srcTwilight2000"
+    reportable="no"
+	selectable="no"
+	maxchoices="1"
+	sortorder="2"
+    description="Character Creation Options for T2K.">
+    </source>
+	
+  <source
+    id="srcT2KLifepath"
+    name="Lifepath"
+    parent="srcT2KOptions"
+    reportable="yes"
+	sortorder="1"
+    description="Use Lifepath character creation.">
+    </source>
+	
+  <source
+    id="srcT2KArchetypes"
+    name="Archetypes"
+    parent="srcT2KOptions"
+    reportable="yes"
+	sortorder="2"
+    description="Use Archetypes character creation.">
+    </source>
+</document>

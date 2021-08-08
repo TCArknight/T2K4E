@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "talents" tab panel. This tab is where
+      the user selects the special talents for the character.
+
+      All public visual elements used with this tab panel start with the prefix "ab"
+      to associate them with the tab.
+-->
+
+<document signature="Hero Lab Data">
+
+  <portal 
+    id="hdrArchetype" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "Step 1: Archetype"
+        </labeltext>
+      </label>
+    </portal>
+	
+  <portal
+    id="lpHoriz1"
+    style="sepHorz">
+    <separator
+      isvertical="no">
+      </separator>
+    </portal>
+	
+  <layout
+    id="archetype">
+    <portalref portal="hdrArchetype" />
+    <portalref portal="lpHoriz1" />
+
+    <position><![CDATA[
+      ~freeze our table in advancement mode to disable adding new choices
+      ~Note: All freezing must be done *before* any positioning is performed.
+      if (state.iscreate = 0) then
+        portal[hdrArchetype].freeze = 1
+        endif
+
+      ~position and size the table to span the full layout; it will only use the
+      ~vertical space that it actually needs
+      portal[hdrArchetype].top = 0
+      portal[hdrArchetype].height = 20
+      portal[hdrArchetype].width = width
+      
+      ~portal[lpRole].top = portal[hdrArchetype].bottom + 5
+      ~portal[lpRole].height = 20
+      ~portal[lpRole].width = width
+
+	  
+      ]]></position>
+
+    </layout>
+
+  <panel
+    id="archetype"
+    name="Archetype"
+    marginhorz="5"
+    marginvert="5"
+    order="5">
+	<live>source.srcT2KArchetypes</live>
+    <layoutref layout="archetype"/>
+    <position><![CDATA[
+      ]]></position>
+    </panel>
+	
+  </document>

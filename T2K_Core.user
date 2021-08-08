@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="skT2KCloseCombat" name="Close Combat" description="Use CLOSE COMBAT when fighting an enemy up close and personal, with or without a melee weapon in hand. If the roll succeeds, you hit your adversary and inflict damage equal to your weapon’s base damage rating on them. Each extra Success rolled will increase the damage by one step." compset="Skill" summary="You know how to handle yourself in melee combat.">
+    <fieldval field="trtAbbrev" value="Close"/>
+    <usesource source="srcT2K"/>
+    <tag group="SkillUse" tag="Melee" name="Melee Combat" abbrev="Melee Combat"/>
+    <link linkage="attribute" thing="attrStr"/>
+    </thing>
+  <thing id="skT2KHeavyWpns" name="Heavy Weapons" description="Use the HEAVY WEAPONS skill to fire machineguns, rocket launchers, mortars, tank guns, howitzers, and other heavy weapons. Specialties apply to specific types of heavy weapons. If your roll succeeds, you hit your target and inflict damage equal to your weapon’s base damage rating on it. Each extra success rolled will increase the damage by one step.\n\nSPECIAL: When using HEAVY WEAPONS to fire mounted weapons, use AGL instead of STR, and when firing artillery, use INT." compset="Skill" summary="You can machineguns, rocket launchers, mortars, tank guns, howitzers, and other heavy weapons.">
+    <fieldval field="trtAbbrev" value="Hvy"/>
+    <usesource source="srcT2K"/>
+    <link linkage="attribute" thing="attrStr"/>
+    </thing>
+  <thing id="skT2KStamina" name="Stamina" description="When your physical toughness or endurance is tested, roll for STAMINA. For example, this skill is used to march hard, resist a disease or the effects of cold, or to cling to life after suffering a fatal critical injury." compset="Skill">
+    <fieldval field="trtAbbrev" value="Sta"/>
+    <usesource source="srcT2K"/>
+    <link linkage="attribute" thing="attrStr"/>
+    </thing>
+  <thing id="skT2KDriving" name="Driving" description="Use the DRIVING skill to maneuver motorcycles, cars, armored personnel carriers and even tanks. Specialties apply to specific types of vehicles." compset="Skill">
+    <fieldval field="trtAbbrev" value="Drv"/>
+    <usesource source="srcT2K"/>
+    <tag group="DashTacCon" tag="NonCombat" name="NonCombat" abbrev="NonCombat"/>
+    <link linkage="attribute" thing="attrAgi"/>
+    </thing>
+  <thing id="skT2KMobility" name="Mobility" description="When you jump, climb, run fast, or perform any other action that requires speed or motor control, you roll  MOBILITY." compset="Skill">
+    <fieldval field="trtAbbrev" value="Mob"/>
+    <usesource source="srcT2K"/>
+    <tag group="SkillUse" tag="Thrown"/>
+    <link linkage="attribute" thing="attrAgi"/>
+    </thing>
+  <thing id="skT2KRangedCbt" name="Ranged Combat" description="Use the RANGED COMBAT skill to fire hand-held ranged weapons, such as pistols, bows, submachineguns, and assault rifles. Specialties apply to specific types of weapons. If the roll succeeds, you hit your adversary and inflict damage equal to your weapon’s base damage rating on them. Each extra success rolled will increase the damage by one step." compset="Skill">
+    <fieldval field="trtAbbrev" value="Rng"/>
+    <usesource source="srcT2K"/>
+    <tag group="SkillUse" tag="Ranged" name="Ranged Combat" abbrev="Ranged Combat"/>
+    <link linkage="attribute" thing="attrAgi"/>
+    </thing>
+  <thing id="skT2KRecon" name="Recon" description="Use the RECON skill to spot concealed enemies, avoid ambushes, move silently and avoid being detected. Make an opposed roll against your adversary’s RECON. If you win, you manage to avoid being spotted.\n\nThe person or group trying to stay hidden is always the active party in the opposed roll, i.e. they must roll more than the opponent to remain undetected, and only they can push the roll.\n\nYou can also use RECON when traveling, to spot another party on the trail before they spot you." compset="Skill">
+    <fieldval field="trtAbbrev" value="Rec"/>
+    <usesource source="srcT2K"/>
+    <link linkage="attribute" thing="attrInt"/>
+    </thing>
+  <thing id="skT2KSurvival" name="Survival" description="In Twilight: 2000, civilization has collapsed. To survive, you need to know how to find food and shelter in the wild. You can roll SURVIVAL in a number of different situations when you are traveling." compset="Skill">
+    <fieldval field="trtAbbrev" value="Sur"/>
+    <usesource source="srcT2K"/>
+    <link linkage="attribute" thing="attrInt"/>
+    </thing>
+  <thing id="skT2KTech" name="Tech" description="Weapons and other gear are key to survival in Twilight: 2000. Use the TECH skill to repair gear and scavenge parts. You can even use the skill to craft new items if you have access to a workshop." compset="Skill" summary="You&apos;re skilled in repairing gear, scavenging parts and crafting items.">
+    <fieldval field="trtAbbrev" value="Tec"/>
+    <usesource source="srcT2K"/>
+    <link linkage="attribute" thing="attrInt"/>
+    </thing>
+  <thing id="skT2KCommand" name="Command" description="Any group of survivors in the world of Twilight : 2000, soldiers or not, needs a good leader to inspire them. You can use your COMMAND skill to help a person who is incapacitated by stress get back on their feet. Your COMMAND score can also affect your unit morale, and the skill can be used in base building and in large-scale battles." compset="Skill">
+    <fieldval field="trtAbbrev" value="Cmd"/>
+    <usesource source="srcT2K"/>
+    <tag group="DashTacCon" tag="NonCombat" name="NonCombat" abbrev="NonCombat"/>
+    <link linkage="attribute" thing="attrEmp"/>
+    </thing>
+  <thing id="skT2KMedicalAid" name="Medical Aid" description="The world of Twilight: 2000 is a dangerous place. There is a significant risk that you and your friends will be injured, sooner or later. This is when the MEDICAL AID skill comes in handy. It can be used to help a friend who is incapacitated by damage get back on their feet, and to save the life of a fallen comrade who has suffered a critical injury." compset="Skill">
+    <fieldval field="trtAbbrev" value="Med"/>
+    <usesource source="srcT2K"/>
+    <tag group="DashTacCon" tag="NonCombat" name="NonCombat" abbrev="NonCombat"/>
+    <link linkage="attribute" thing="attrEmp"/>
+    </thing>
+  <thing id="skT2KPersuasion" name="Persuasion" description="Life in the aftermath of World War III is dangerous, but you can often reach your goals without violence, using charm, threats, or reason. Use PERSUASION to make others see things your way. Your chances can be affected by your bargaining position and military rank." compset="Skill">
+    <fieldval field="trtAbbrev" value="Per"/>
+    <usesource source="srcT2K"/>
+    <link linkage="attribute" thing="attrStr"/>
+    </thing>
+  <thing id="spcT2KBrawler" name="Brawler" description="+1 modifier to CLOSE COMBAT rolls in unarmed close combat." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KScout" name="Scout" description="Gives you a +1 modifier to RECON rolls for spotting others and avoiding ambushes" compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KMelee" name="Melee" description="Gives you a +1 modifier to CLOSE COMBAT rolls for all hand-to-hand combat weapons, such as knives, bayonets, and clubs." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KKiller" name="Killer" description="You can kill an incapacitated person outright without suffering any negative effects" compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KMartialArt" name="Martial Artist" description="Your close combat attacks have a crit threshold of 2 instead of 3." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KMachinegun" name="Machinegunner" description="Gives a +1 modifier to HEAVY WEAPONS rolls for firing light, medium, and heavy machineguns." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KLaunchCrew" name="Launcher Crew" description="Gives a +1 modifier to HEAVY WEAPONS rolls for firing grenade launchers and missile launchers." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KRedleg" name="Redleg" description="Gives a +1 modifier to HEAVY WEAPONS rolls when firing artillery, including mortars, cannons and tank guns." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KConstruct" name="Construction" description="Gives you a +1 modifier to STAMINA rolls made for base building." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KLoadCarry" name="Load Carrier" description="You can carry two additional encumbrance units in your combat gear and four more in your backpack." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <eval phase="Effects" priority="1000">~ Combat Carry max +2
+herofield[acCarryCombatMax].value += 2
+
+~ Backpack Carry max +2
+herofield[acCarryBackMax].value += 4</eval>
+    </thing>
+  <thing id="spcT2KNBC" name="NBC" description="Gives a +1 modifier to STAMINA for all sickness rolls, even those triggered by radiation or chemical agents. Also lets you identify nuclear, biological, and chemical weapon effects to personnel and equipment." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KRanger" name="Ranger" description="Gives you a +1 modifier to STAMINA rolls made for marching, resisting hypothermia, and other hardships." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KSERETrain" name="SERE Training" description="Gives you a +1 modifier to STAMINA rolls made to resist interrogation, Psy Ops, bluffing, and torture effects." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KBiker" name="Biker" description="Gives a +1 modifier to DRIVING all motorcycles and bicycles, on or off-road." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KBoatman" name="Boatman" description="Gives a +1 modifier to DRIVING rolls for piloting boats, including sail and rowed boats." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KPilot" name="Pilot" description="Gives a +1 modifier to DRIVING rolls for flying fixed- and rotary-wing aircraft." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KRacer" name="Racer" description="Gives a +1 modifier to DRIVING all wheeled vehicles except motorcycles." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KTanker" name="Tanker" description="Gives a +1 modifier to DRIVING all tracked vehicles." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KDiver" name="Diver" description="Gives a +1 bonus to MOBILITY rolls when swimming, both across the surface and under it. Includes use of SCUBA gear." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KMountaineer" name="Mountaineer" description="Gives a +1 bonus to MOBILITY rolls for rappelling, ascender-climbing, and knot-tying." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KParatrooper" name="Paratrooper" description="Gives a +1 bonus to MOBILITY rolls for skydiving, for emergencies and landing on target." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KRider" name="Rider" description="Gives a +1 bonus to MOBILITY rolls for riding at high speeds and performing mounted maneuvers. Also negates the negative modifier for shooting from horseback." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KRunner" name="Runner" description="Gives a +1 bonus to MOBILITY rolls for running." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KArcher" name="Archer" description="Gives a +1 modifier to RANGED COMBAT rolls for bows and crossbows." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KPitcher" name="Pitcher" description="Gives a +1 modifier to RANGED COMBAT rolls for thrown weapons, including knives and grenades." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KReloader" name="Reloader" description="Gives a +1 modifier to RANGED COMBAT rolls made to reload your firearm" compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KRifleman" name="Rifleman" description="Gives a +1 modifier to RANGED COMBAT rolls for firing assault rifles, submachineguns, and shotguns." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KSidearms" name="Sidearms" description="Gives a +1 modifier to RANGED COMBAT rolls for firing pistols." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KSniper" name="Sniper" description="Gives a +1 modifier to RANGED COMBAT rolls for firing sniper rifles and hunting rifles." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KForwardObs" name="Forward Observer" description="Your RECON skill level counts as one step higher when directing indirect fire." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KHistorian" name="Historian" description="Roll RECON when you arrive at a new location. If you succeed, the Referee must tell you something significant that has happened here in the past (if anything ever did)." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KInfiltrator" name="Infiltrator" description="Gives you a +1 modifier to RECON rolls when trying to remain undetected." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KIntelligenc" name="Intelligence" description="Roll RECON when you spot enemy troops, vehicles, and weapons. If you succeed, the Referee must tell you their stats." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KInvestigate" name="Investigator" description="Roll RECON when you spend a stretch or more investigating the scene of a crime or a battle. If you succeed, the Referee must give you some useful information about what has happened and when." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KCook" name="Cook" description="Gives you one additional ration of food when you or someone else in your group successfully forage, hunt or fish." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KFarmer" name="Farmer" description="Gives a +1 modifier to SURVIVAL rolls for farming." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KFisher" name="Fisher" description="Gives a +1 modifier to SURVIVAL rolls for fishing." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KForager" name="Forager" description="Gives a +1 modifier to SURVIVAL rolls for foraging to find food." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KNavigator" name="Navigator" description="Gives a +1 modifier when using SURVIVAL rolls for navigation." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KHunter" name="Hunter" description="Gives a +1 modifier to SURVIVAL rolls for hunting to obtain food." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KQuartermast" name="Quartermaster" description="Gives a +1 modifier to SURVIVAL rolls for making camp." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KScrounger" name="Scrounger" description="Gives a +1 modifier to SURVIVAL rolls for scrounging or searching for empty shell casings." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KBlacksmith" name="Blacksmith" description="Gives a +1 modifier to TECH rolls for metalworking, forging, casting, molding, and smelting." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KChemist" name="Chemist" description="Gives a +1 modifier to TECH rolls for producing gunpowder and distilling grain alcohol for fuel. Also lets you identify chemical substances correctly." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KCombatEng" name="Combat Engineer" description="Gives a +1 modifier to TECH rolls for placing and disarming mines and explosive devices, and to RECON rolls to avoid mines." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KCommunicat" name="Communications" description="Gives a +1 modifier to TECH rolls for maintaining contact on radios, using Morse code, setting up and configuring antennae, and using encryption equipment." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KComputers" name="Computers" description="Gives a +1 modifier to TECH rolls for using or tampering\nwith computers and ancillary devices." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KElectrician" name="Electrician" description="Gives a +1 modifier to TECH rolls for wiring, soldering, disabling, and repairing electrical devices." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KGunsmith" name="Gunsmith" description="Gives a +1 modifier to TECH rolls for repairing firearms and reloading ammunition." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KImprovMun" name="Improvised Munitions" description="Gives a +1 modifier to TECH rolls for making zip-guns, IEDs, and reloading empty shell casings." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KLocksmith" name="Locksmith" description="Gives a +1 modifier to TECH rolls for picking locks, cracking safes, and disarming alarms." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KMechanic" name="Mechanic" description="Gives a +1 modifier to TECH rolls for repairing engines, vehicles, generators, and pumps." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KScientist" name="Scientist" description="Roll TECH when you come across a phenomenon of any sort that requires knowledge of physics, biology, geology, or any other natural science. If you succeed, the Referee must give you some useful information about it." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KFrontLeader" name="Frontline Leader" description="Gives a +1 bonus to COMMAND rolls for helping someone who is incapacitated by stress. Does not affect unit morale." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KLogistician" name="Logistician" description="Gives a +1 bonus to COMMAND rolls for base building." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KTactician" name="Tactician" description="Roll COMMAND when you spot an enemy force. If you succeed, the Referee must tell you something useful about their current organization and objectives." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KCombatMedic" name="Combat Medic" description="Gives a +1 modifier to MEDICAL AID rolls for helping an incapacitated character get back up. No effect on treating critical injuries." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KCounselor" name="Counselor" description="Gives a +1 modifier to MEDICAL AID rolls for counseling a person suffering from long-term mental trauma." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KFldSurgeon" name="Field Surgeon" description="Gives a +1 modifier to MEDICAL AID rolls for treating critical injuries." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KGeneralPrac" name="General Practitioner" description="Gives a +1 modifier to MEDICAL AID rolls for treating disease, poison, and NBC." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KVet" name="Veterinarian" description="Gives a +1 modifier to MEDICAL AID rolls for working on animals." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KLinguist" name="Linguist" description="You know another language of your choice, well enough to be taken as native on a successful PERSUASION roll." compset="Specialty">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="NeedDomain"/>
+    </thing>
+  <thing id="spcT2KMusician" name="Musician" description="Gives a +1 bonus to PERSUASION rolls in situations where singing or playing an instrument is helpful." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KInterrogat" name="Interrogator" description="Gives a +1 bonus to PERSUASION rolls for extracting information from a prisoner." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KPsyOps" name="Psy Ops" description="Gives a +1 bonus to PERSUASION rolls for changing someone’s mind about a particular issue." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KTeacher" name="Teacher" description="Gives a +1 bonus to PERSUASION rolls for teaching someone a specialty" compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="natT2KAmerican" name="U.S." compset="Nationality" uniqueness="useronce">
+    <fieldval field="natNameTerm" value="American"/>
+    <arrayval field="natEnlisted" index="0" column="1" value="PVT"/>
+    <arrayval field="natEnlisted" index="1" value="Private First Class"/>
+    <arrayval field="natEnlisted" index="1" column="1" value="PFC"/>
+    <arrayval field="natEnlisted" index="2" value="Corporal"/>
+    <arrayval field="natEnlisted" index="2" column="1" value="CPL"/>
+    <arrayval field="natEnlisted" index="3" value="Sergeant"/>
+    <arrayval field="natEnlisted" index="3" column="1" value="SGT"/>
+    <arrayval field="natEnlisted" index="4" value="Staff Sergeant"/>
+    <arrayval field="natEnlisted" index="4" column="1" value="SSG"/>
+    <arrayval field="natEnlisted" index="5" value="Sergeant First Class"/>
+    <arrayval field="natEnlisted" index="5" column="1" value="SFC"/>
+    <arrayval field="natEnlisted" index="6" value="Master Sergeant"/>
+    <arrayval field="natEnlisted" index="6" column="1" value="MSG"/>
+    <arrayval field="natEnlisted" index="7" value="First Sergeant"/>
+    <arrayval field="natEnlisted" index="7" column="1" value="1SG"/>
+    <arrayval field="natEnlisted" index="8" value="Sergeant Major"/>
+    <arrayval field="natEnlisted" index="8" column="1" value="SGM"/>
+    <arrayval field="natEnlisted" index="9" value="Command Sergeant Major"/>
+    <arrayval field="natEnlisted" index="9" column="1" value="CSM"/>
+    <arrayval field="natEnlisted" index="0" value="Private"/>
+    <arrayval field="natOfficer" index="0" value="Second Lieutenant"/>
+    <arrayval field="natOfficer" index="0" column="1" value="2LT"/>
+    <arrayval field="natOfficer" index="1" value="First Lieutenant"/>
+    <arrayval field="natOfficer" index="1" column="1" value="1LT"/>
+    <arrayval field="natOfficer" index="2" value="Captain"/>
+    <arrayval field="natOfficer" index="2" column="1" value="CPT"/>
+    <arrayval field="natOfficer" index="3" value="Major"/>
+    <arrayval field="natOfficer" index="3" column="1" value="MAJ"/>
+    <arrayval field="natOfficer" index="4" value="Lieutenant Colonel"/>
+    <arrayval field="natOfficer" index="4" column="1" value="LCL"/>
+    <arrayval field="natOfficer" index="5" value="Colonel"/>
+    <arrayval field="natOfficer" index="5" column="1" value="COL"/>
+    <arrayval field="natOfficer" index="6" value="Brigadier General"/>
+    <arrayval field="natOfficer" index="6" column="1" value="BRG"/>
+    <arrayval field="natOfficer" index="7" value="Major General"/>
+    <arrayval field="natOfficer" index="7" column="1" value="MJG"/>
+    <arrayval field="natOfficer" index="8" value="Lieutenant General"/>
+    <arrayval field="natOfficer" index="8" column="1" value="LTG"/>
+    <arrayval field="natOfficer" index="9" value="General"/>
+    <arrayval field="natOfficer" index="9" column="1" value="GEN"/>
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="natT2KRussian" name="Russian" compset="Nationality" uniqueness="useronce">
+    <fieldval field="natNameTerm" value="Soviet"/>
+    <arrayval field="natEnlisted" index="0" value="Ryadovoy"/>
+    <arrayval field="natEnlisted" index="0" column="1" value="RYA"/>
+    <arrayval field="natEnlisted" index="1" value="Ryadovoy"/>
+    <arrayval field="natEnlisted" index="2" value="Efreitor"/>
+    <arrayval field="natEnlisted" index="3" value="Mladshiy Serzhant"/>
+    <arrayval field="natEnlisted" index="4" value="Serzhant"/>
+    <arrayval field="natEnlisted" index="5" value="Starshiy Serzhant"/>
+    <arrayval field="natEnlisted" index="6" value="Starshiy Serzhant"/>
+    <arrayval field="natEnlisted" index="7" value="Starshina"/>
+    <arrayval field="natEnlisted" index="8" value="Starshina"/>
+    <arrayval field="natEnlisted" index="9" value="Starshina"/>
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="natT2KLocal" name="Local" compset="Nationality" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="Helper" tag="CustomItem"/>
+    </thing>
+  <thing id="lpT2KStreetKid" name="Street Kid" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Childhood"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KLocksmith"/>
+      <tag group="Specialty" tag="spcT2KMelee"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="lpT2KSmallTown" name="Small Town" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Childhood"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KDriving"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KBiker"/>
+      <tag group="Specialty" tag="spcT2KFarmer"/>
+      <tag group="Specialty" tag="spcT2KHunter"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KRacer"/>
+      <tag group="Specialty" tag="spcT2KSniper"/>
+      </child>
+    </thing>
+  <thing id="lpT2KWorkingClass" name="Working Class" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Childhood"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBlacksmith"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KBuilder"/>
+      <tag group="Specialty" tag="spcT2KLoadCarry"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="lpT2KIntellectual" name="Intellectual" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Childhood"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KCommunicat"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KMusician"/>
+      <tag group="Specialty" tag="spcT2KScientist"/>
+      </child>
+    </thing>
+  <thing id="lpT2KMilitaryFam" name="Military Family" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Childhood"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KMountaineer"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KRifleman"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      </child>
+    </thing>
+  <thing id="lpT2KAffluence" name="Affluence" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Childhood"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KBoatman"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KMusician"/>
+      <tag group="Specialty" tag="spcT2KRider"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      </child>
+    </thing>
+  <thing id="lpT2KCombatArms" name="Combat Arms" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="Lifepath" tag="CombatArms"/>
+    <tag group="MilitaryRank" tag="E1"/>
+    <tag group="Military" tag="Enlisted"/>
+    <prereq message="STR or AGL of B+ required.">
+      <validate><![CDATA[~if this is a pick, we're valid
+validif (#trait[attrStr] >= 5)
+validif (#trait[attrAgi] >= 5)]]></validate>
+      </prereq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Specialty" tag="spcT2KCombatEng"/>
+      <tag group="Specialty" tag="spcT2KLaunchCrew"/>
+      <tag group="Specialty" tag="spcT2KMachinegun"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KRifleman"/>
+      <tag group="Specialty" tag="spcT2KTanker"/>
+      </child>
+    </thing>
+  <thing id="lpT2KCombatSuprt" name="Combat Support" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="MilitaryRank" tag="E2"/>
+    <tag group="Military" tag="Enlisted"/>
+    <exprreq message="INT B+ required."><![CDATA[#trait[attrInt] >= 5]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KCommunicat"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KNBC"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      </child>
+    </thing>
+  <thing id="lpT2KCombatSerSup" name="Combat Service Support" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="MilitaryRank" tag="E2"/>
+    <tag group="Military" tag="Enlisted"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Skill" tag="skT2KDriving"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Specialty" tag="spcT2KCombatMedic"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KFldSurgeon"/>
+      <tag group="Specialty" tag="spcT2KGunsmith"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      </child>
+    </thing>
+  <thing id="lpT2KSpecOps" name="Special Operations Forces" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="MilitaryRank" tag="E4"/>
+    <tag group="Military" tag="Enlisted"/>
+    <exprreq message="AGI of B+ required."><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <exprreq message="One term in Combat Arms required."><![CDATA[hero.tagis[Lifepath.CombatArms] <> 0]]></exprreq>
+    <exprreq message="STR of B+ required."><![CDATA[#trait[attrStr] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KParatrooper"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KSERETrain"/>
+      <tag group="Specialty" tag="spcT2KSniper"/>
+      </child>
+    </thing>
+  <thing id="lpT2KhdrMilitary" name="-- Military Service --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Military"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KhdrPolice" name="-- Police --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Police"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KhdrCrime" name="-- Crime --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Crime"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KhdrIntel" name="-- Intelligence --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Intelligence"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KhdrBlueColl" name="-- Blue Collar --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KhdrEducation" name="-- Education --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Education"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KhdrWhiteColl" name="-- White Collar --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="WhiteCollar"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KMilitary" name="Military" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="AtWar"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KDriving"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KNBC"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KRifleman"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="lpT2KBlueCollar" name="Blue Collar" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="AtWar"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KDriving"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KGunsmith"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KRider"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      </child>
+    </thing>
+  <thing id="lpT2KWhiteCollar" name="White Collar" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="AtWar"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KDriving"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KFisher"/>
+      <tag group="Specialty" tag="spcT2KForager"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="lpT2KOther" name="Other" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="AtWar"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KDriving"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KForager"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      <tag group="Specialty" tag="spcT2KHunter"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KRacer"/>
+      </child>
+    </thing>
+  <thing id="lpT2KLiberalArts" name="Liberal Arts" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Education"/>
+    <exprreq message="EMP C+ required."><![CDATA[#trait[attrEmp] >= 4]]></exprreq>
+    <exprreq message="INT C+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KCook"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KMusician"/>
+      </child>
+    </thing>
+  <thing id="setT2K" name="Twilight 2000" compset="SettingAdjust">
+    <usesource source="srcT2K"/>
+    <tag group="Hero" tag="UseBigDream"/>
+    <tag group="Hero" tag="UseMoralCode"/>
+    <tag group="Hero" tag="UseHowMet"/>
+    <eval phase="Setup" priority="500">perform hero.assign[HideTab.talents]</eval>
+    </thing>
+  <thing id="mecT2K" name="T2K" compset="Mechanics">
+    <usesource source="srcT2K"/>
+    <bootstrap thing="setT2K"></bootstrap>
+    </thing>
+  <thing id="lpT2KOfficerSpecO" name="Officer (Special Operations Forces)" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="MilitaryRank" tag="O1"/>
+    <tag group="Military" tag="Officer"/>
+    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
+    <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
+    <exprreq message="AGI of B+ required."><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <exprreq message="STR of B+ required"><![CDATA[#trait[attrStr] >= 4]]></exprreq>
+    <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <exprreq message="One term in Combat Arms required."><![CDATA[hero.tagis[Lifepath.CombatArms] <> 0]]></exprreq>
+    <prereq message="requires no D attribute">
+      <validate><![CDATA[@valid = 1
+
+foreach pick in hero from Attribute
+  if (eachpick.field[trtFinal].value <= 3) then
+    @valid = 0
+    endif
+  nexteach]]></validate>
+      </prereq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KMobility"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KParatrooper"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KSERETrain"/>
+      <tag group="Specialty" tag="spcT2KSniper"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KLogistician"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      <tag group="Specialty" tag="spcT2KTactician"/>
+      </child>
+    </thing>
+  <thing id="lpT2KPoliceOffice" name="Police Officer" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Police"/>
+    <tag group="Lifepath" tag="PoliceOfficer"/>
+    <exprreq message="Requires no terms in prison.">hero.tagis[Lifepath.Prisoner] = 0</exprreq>
+    <prereq message="Requires no D attribute">
+      <validate><![CDATA[@valid = 1
+
+foreach pick in hero from Attribute
+  if (eachpick.field[trtFinal].value <= 3) then
+    @valid = 0
+    endif
+  nexteach]]></validate>
+      </prereq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Specialty" tag="spcT2KBiker"/>
+      <tag group="Specialty" tag="spcT2KMelee"/>
+      <tag group="Specialty" tag="spcT2KRacer"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      </child>
+    </thing>
+  <thing id="lpT2KPrisoner" name="Prisoner" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Crime"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KStamina"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KKiller"/>
+      <tag group="Specialty" tag="spcT2KMelee"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KSERETrain"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="natT2KPoland" name="Poland" compset="Nationality" uniqueness="useronce">
+    <fieldval field="natNameTerm" value="Polish"/>
+    <arrayval field="natEnlisted" index="0" value="Szeregowy"/>
+    <arrayval field="natEnlisted" index="0" column="1" value="PVT"/>
+    <arrayval field="natEnlisted" index="1" value="Starszy szeregowy"/>
+    <arrayval field="natEnlisted" index="1" column="1" value="PFC"/>
+    <arrayval field="natEnlisted" index="2" value="Kapral"/>
+    <arrayval field="natEnlisted" index="2" column="1" value="CPL"/>
+    <arrayval field="natEnlisted" index="3" value="Starszy kapral"/>
+    <arrayval field="natEnlisted" index="3" column="1" value="SGT"/>
+    <arrayval field="natEnlisted" index="4" value="Sierżant"/>
+    <arrayval field="natEnlisted" index="4" column="1" value="SSG"/>
+    <arrayval field="natEnlisted" index="5" value="Starszy sierżant"/>
+    <arrayval field="natEnlisted" index="5" column="1" value="SFC"/>
+    <arrayval field="natEnlisted" index="6" value="Młodszy chorąży"/>
+    <arrayval field="natEnlisted" index="6" column="1" value="MSG"/>
+    <arrayval field="natEnlisted" index="7" value="Chorąży"/>
+    <arrayval field="natEnlisted" index="7" column="1" value="1SG"/>
+    <arrayval field="natEnlisted" index="8" value="Starszy chorąży"/>
+    <arrayval field="natEnlisted" index="8" column="1" value="SGM"/>
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="natT2KSweden" name="Sweden" compset="Nationality" uniqueness="useronce">
+    <fieldval field="natNameTerm" value="Swedish"/>
+    <arrayval field="natEnlisted" index="0" value="Menig"/>
+    <arrayval field="natEnlisted" index="1" value="Menig"/>
+    <arrayval field="natEnlisted" index="2" value="Korpral"/>
+    <arrayval field="natEnlisted" index="3" value="Furir"/>
+    <arrayval field="natEnlisted" index="4" value="Sergeant"/>
+    <arrayval field="natEnlisted" index="5" value="Sergeant"/>
+    <arrayval field="natEnlisted" index="6" value="Sergeant"/>
+    <arrayval field="natEnlisted" index="7" value="Sergeant"/>
+    <arrayval field="natEnlisted" index="8" value="Sergeant"/>
+    <arrayval field="natEnlisted" index="9" value="Sergeant"/>
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KVehGunner" name="Vehicle Gunner" description="Gives a +1 modifier to HEAVY WEAPONS rolls when firing vehicle-mounted cannons." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="spcT2KBuilder" name="Builder" description="Gives you a +1 modifier to STAMINA rolls made for base building." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KCbtAware" name="Combat Awareness" description="When drawing initiative, you may draw two cards instead of one and choose which one to act on." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KTrader" name="Trader" description="Gives a +1 bonus to PERSUASION rolls when negotiating the price of an item." compset="Specialty" uniqueness="useronce">
+    <usesource source="srcT2K"/>
+    <tag group="User" tag="Activation"/>
+    </thing>
+  <thing id="lpT2KOfficerCSS" name="Officer (Combat Services Support)" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="MilitaryRank" tag="O1"/>
+    <tag group="Military" tag="Officer"/>
+    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
+    <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
+    <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <prereq message="requires no D attribute">
+      <validate><![CDATA[@valid = 1
+
+foreach pick in hero from Attribute
+  if (eachpick.field[trtFinal].value <= 3) then
+    @valid = 0
+    endif
+  nexteach]]></validate>
+      </prereq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KLogistician"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      <tag group="Specialty" tag="spcT2KTactician"/>
+      <tag group="Specialty" tag="spcT2KCombatMedic"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KFldSurgeon"/>
+      <tag group="Specialty" tag="spcT2KGunsmith"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      </child>
+    </thing>
+  <thing id="lpT2KOfficerCS" name="Officer (Combat Support)" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="MilitaryRank" tag="O1"/>
+    <tag group="Military" tag="Officer"/>
+    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
+    <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
+    <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <prereq message="requires no D attribute">
+      <validate><![CDATA[@valid = 1
+
+foreach pick in hero from Attribute
+  if (eachpick.field[trtFinal].value <= 3) then
+    @valid = 0
+    endif
+  nexteach]]></validate>
+      </prereq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KLogistician"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      <tag group="Specialty" tag="spcT2KTactician"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KCommunicat"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KNBC"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      </child>
+    </thing>
+  <thing id="lpT2KOfficerCA" name="Officer (Combat Arms)" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Military"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="MilitaryRank" tag="O1"/>
+    <tag group="Military" tag="Officer"/>
+    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
+    <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
+    <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <prereq message="requires no D attribute">
+      <validate><![CDATA[@valid = 1
+
+foreach pick in hero from Attribute
+  if (eachpick.field[trtFinal].value <= 3) then
+    @valid = 0
+    endif
+  nexteach]]></validate>
+      </prereq>
+    <prereq message="Strength or Agility B+ required. ">
+      <validate><![CDATA[~if this is a pick, we're valid
+validif (#trait[attrStr] >= 5)
+validif (#trait[attrAgi] >= 5)]]></validate>
+      </prereq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KLogistician"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      <tag group="Specialty" tag="spcT2KTactician"/>
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      </child>
+    </thing>
+  <thing id="lpT2KDetective" name="Detective" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Police"/>
+    <exprreq message="Requires at least one term as a Police Officer. "><![CDATA[hero.tagis[Lifepath.PoliceOfficer] <> 0]]></exprreq>
+    <exprreq message="EMP B+ required. "><![CDATA[#trait[attrEmp] >= 5]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KInvestigate"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KLocksmith"/>
+      </child>
+    </thing>
+  <thing id="lpT2KSWAT" name="SWAT" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Police"/>
+    <exprreq message="Requires at least one term as a Police Officer. "><![CDATA[hero.tagis[Lifepath.PoliceOfficer] <> 0]]></exprreq>
+    <exprreq message="STR B+ required. "><![CDATA[#trait[attrStr] >= 5]]></exprreq>
+    <exprreq message="AGI B+ required. "><![CDATA[#trait[attrAgi] >= 5]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Specialty" tag="spcT2KCbtAware"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KRifleman"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      <tag group="Specialty" tag="spcT2KSniper"/>
+      </child>
+    </thing>
+  <thing id="lpT2KGangMember" name="Gang Member" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Crime"/>
+    <exprreq message="STR C+ required. "><![CDATA[#trait[attrStr] >= 4]]></exprreq>
+    <exprreq message="AGI C+ required. "><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KRifleman"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KKiller"/>
+      <tag group="Specialty" tag="spcT2KMelee"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      </child>
+    </thing>
+  <thing id="lpT2KBurglar" name="Burglar" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Crime"/>
+    <exprreq message="INT C+ required. "><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <exprreq message="AGI C+ required. "><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KLocksmith"/>
+      <tag group="Specialty" tag="spcT2KMountaineer"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      </child>
+    </thing>
+  <thing id="lpT2KHustler" name="Hustler" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Crime"/>
+    <exprreq message="INT C+ required. "><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <exprreq message="EMP C+ required. "><![CDATA[#trait[attrEmp] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  <thing id="lpT2KAgnt" name="Agent" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Intelligence"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="Lifepath" tag="Agent"/>
+    <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
+    <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KIntelligenc"/>
+      <tag group="Specialty" tag="spcT2KSidearms"/>
+      <tag group="Specialty" tag="spcT2KInvestigate"/>
+      <tag group="Specialty" tag="spcT2KLocksmith"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      </child>
+    </thing>
+  <thing id="lpT2KAssassin" name="Assassin" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Intelligence"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <exprreq message="One or more terms as an Agent required."><![CDATA[hero.tagis[Lifepath.Agent] <> 0]]></exprreq>
+    <exprreq message="AGI of B+ required."><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <exprreq message="EMP of C or D required."><![CDATA[#trait[attrEmp] <= 3]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KKiller"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KSniper"/>
+      </child>
+    </thing>
+  <thing id="lpT2KParamilitary" name="Paramilitary" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="Intelligence"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <exprreq message="One or more terms in the Military required."><![CDATA[hero.tagis[CareerType.Military] <> 0]]></exprreq>
+    <exprreq message="AGI of B+ required."><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <exprreq message="STR of B+ required."><![CDATA[#trait[attrStr] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRangedCbt"/>
+      <tag group="Skill" tag="skT2KHeavyWpns"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KCombatEng"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KMachinegun"/>
+      <tag group="Specialty" tag="spcT2KRifleman"/>
+      <tag group="Specialty" tag="spcT2KTactician"/>
+      </child>
+    </thing>
+  <thing id="lpT2KDriver" name="Driver" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <exprreq message="AGI of B+ required."><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBiker"/>
+      <tag group="Specialty" tag="spcT2KBoatman"/>
+      <tag group="Specialty" tag="spcT2KNavigator"/>
+      <tag group="Specialty" tag="spcT2KPilot"/>
+      <tag group="Specialty" tag="spcT2KRacer"/>
+      <tag group="Specialty" tag="spcT2KTanker"/>
+      </child>
+    </thing>
+  <thing id="lpT2KFarmer" name="Farmer" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KCook"/>
+      <tag group="Specialty" tag="spcT2KFarmer"/>
+      <tag group="Specialty" tag="spcT2KFisher"/>
+      <tag group="Specialty" tag="spcT2KForager"/>
+      <tag group="Specialty" tag="spcT2KHunter"/>
+      <tag group="Specialty" tag="spcT2KRider"/>
+      </child>
+    </thing>
+  <thing id="lpT2KMechanic" name="Mechanic" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBlacksmith"/>
+      <tag group="Specialty" tag="spcT2KGunsmith"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KLocksmith"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="lpT2KConstruction" name="Construction Worker" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="Military" tag="Officer"/>
+    <exprreq message="STR of B+ required."><![CDATA[#trait[attrStr] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Specialty" tag="spcT2KBlacksmith"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KBuilder"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KLoadCarry"/>
+      </child>
+    </thing>
+  <thing id="lpT2KSciences" name="Sciences" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Education"/>
+    <tag group="Lifepath" tag="Sciences"/>
+    <exprreq message="INT B+ required."><![CDATA[#trait[attrInt] >= 5]]></exprreq>
+    <exprreq message="At least two tours in Education (Sciences) required."><![CDATA[hero.tagcount[Lifepath.Sciences] >= 2]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KChemist"/>
+      <tag group="Specialty" tag="spcT2KCommunicat"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KScientist"/>
+      </child>
+    </thing>
+  <thing id="lpT2KDoctor" name="Doctor" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="WhiteCollar"/>
+    <exprreq message="EMP B+ required."><![CDATA[#trait[attrEmp] >= 5]]></exprreq>
+    <exprreq message="Two terms in Education (Sciences) required. "><![CDATA[hero.tagcount[Lifepath.Sciences] >= 2]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KCombatMedic"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Specialty" tag="spcT2KFldSurgeon"/>
+      <tag group="Specialty" tag="spcT2KGeneralPrac"/>
+      <tag group="Specialty" tag="spcT2KVet"/>
+      </child>
+    </thing>
+  <thing id="lpT2KProfessor" name="Professor" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="WhiteCollar"/>
+    <exprreq message="INT B+ required."><![CDATA[#trait[attrInt] >= 5]]></exprreq>
+    <exprreq message="Two tours in Education (Liberal Arts) required."><![CDATA[hero.tagcount[Lifepath.LiberalArts] >= 2]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KChemist"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KScientist"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="lpT2KManager" name="Manager" compset="Lifepath">
+    <usesource source="srcT2K"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="WhiteCollar"/>
+    <exprreq message="EMP B+ required."><![CDATA[#trait[attrEmp] >= 5]]></exprreq>
+    <exprreq message="One term in Education (any) required. "><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KLogistician"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="eqT2KBinoculars" name="Binoculars" description="Used to spot animals, people, and vehicles at longer ranges. They typically range from 8x to 12x in power. Binoculars give a +2 modifier to RECON, but only when actively scouting or observing." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="gearWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Vision"/>
+    </thing>
+  <thing id="eqT2KFlashlight" name="Flashlight" description="A flashlight is simply a battery-powered light used to see in the dark, typically with a range of one hex (10 meters), eliminating the effects of darkness within that area. It is very visible to  others, especially if they are using night vision devices. Rarely, an infrared cover may be found that hides the visible light and is only visible to night vision devices. Requires a small battery." compset="Equipment">
+    <fieldval field="grCost" value="30"/>
+    <fieldval field="gearWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Vision"/>
+    </thing>
+  <thing id="wpT2KKnife" name="Knife" compset="Melee">
+    <fieldval field="grCost" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="gearWeight" value=".25"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="armT2KHelmSteel" name="Steel Helmet" compset="Armor">
+    <fieldval field="defDefense" value="1"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="gearWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArmorLoc" tag="Head"/>
+    </thing>
+  <thing id="armT2KHelmKevlar" name="Kevlar Helmet" compset="Armor">
+    <fieldval field="defDefense" value="1"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="gearWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArmorLoc" tag="Head"/>
+    </thing>
+  <thing id="armT2KFlakJacket" name="Flak Jacket" compset="Armor">
+    <fieldval field="defDefense" value="1"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="gearWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArmorLoc" tag="Torso"/>
+    </thing>
+  <thing id="armT2KPlateVest" name="Plate Vest" compset="Armor">
+    <fieldval field="defDefense" value="2"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="gearWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArmorLoc" tag="Torso"/>
+    </thing>
+  <thing id="wpT2KBottle" name="Bottle" compset="Melee">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="gearWeight" value=".25"/>
+    <fieldval field="wpArmorRating" value="3"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="wpT2KClub" name="Club" compset="Melee">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="gearWeight" value="1"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpSpecial" value="Can be Jury Rigged"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="wpT2KSpikedBat" name="Spiked Bat" compset="Melee">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="gearWeight" value="1"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grCost" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpSpecial" value="Can be Jury Rigged"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="wpT2KBayonet" name="Bayonet" compset="Melee">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="gearWeight" value=".25"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="wpT2KMachete" name="Machete" compset="Melee">
+    <fieldval field="grCost" value="20"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="gearWeight" value=".5"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="wpT2KAxe" name="Axe" compset="Melee">
+    <fieldval field="grCost" value="20"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="gearWeight" value=".5"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    </thing>
+  <thing id="wpT2KRifleButt" name="Rifle Butt" compset="Melee">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="CloseCbt"/>
+    <tag group="Equipment" tag="Hide"/>
+    </thing>
+  <thing id="wpT2KBowHunting" name="Hunting Bow" compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="wpShort" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="Helper" tag="Consumable"/>
+    <tag group="WeaponCat" tag="BowsThrown"/>
+    <tag group="WeaponType" tag="Bow"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    </thing>
+  <thing id="hdrT2KBowsThrown" name="-- Bows &amp; Thrown --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Bow"/>
+    <tag group="WeaponCat" tag="BowsThrown"/>
+    </thing>
+  <thing id="wpT2KCrossbow" name="Crossbow" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpShort" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="Helper" tag="Consumable"/>
+    <tag group="WeaponCat" tag="BowsThrown"/>
+    <tag group="WeaponType" tag="Bow"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    </thing>
+  <thing id="wpT2KBowImprov" name="Improvised Bow" compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="BowsThrown"/>
+    <tag group="WeaponType" tag="Bow"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="Helper" tag="Consumable"/>
+    </thing>
+  <thing id="wpT2KRockThrown" name="Rock" compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Thrown"/>
+    <tag group="WeaponCat" tag="BowsThrown"/>
+    </thing>
+  <thing id="hdrT2KCivFirearms" name="-- Civilian Firearms --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KServiceRev" name="Service Revolver" description="Service revolvers have been in production since before World War I, and were used by many Western nations in both World Wars and as a police weapon until revolvers started losing popularity in the 1980’s. Despite the civilian caliber, these remain in widespread use." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2KCal38Spec"/>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="amT2KCal38Spec" name=".38 SPL" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="eqT2KMagazine" name="Magazine" compset="Equipment" stacking="merge">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <holdlimit>AmmoCat.Firearm</holdlimit>
+    <gear>field[gearNet].value = field[gearWeight].value</gear>
+    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
+
+if (gearcount = 0) then
+  field[livename].text = field[name].text & " (Empty)"
+else
+  heldName = gearlist[",",component.Ammunition]
+  field[livename].text &= field[name].text & " (" & heldName & ")"
+  endif]]></eval>
+    </thing>
+  <thing id="hdrT2KWeaponGear" name="-- Weapon Gear --" compset="Equipment" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="hdrT2KCustomGear" name="-- Custom Gear --" compset="Equipment" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Custom"/>
+    </thing>
+  <thing id="eqT2KBackpack" name="Backpack" description="Description goes here." compset="Equipment">
+    <fieldval field="grCost" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Helper" tag="HasBackpack"/>
+    <tag group="Equipped" tag="Equippable"/>
+    <gear>herofield[acCarryBack].value = field[gearHeld].value</gear>
+    <eval phase="PreTraits" priority="5000" index="2"><![CDATA[if (field[grIsEquip].value <> 0) then
+  #traitbonus[skT2KMobility] += -2
+  endif]]></eval>
+    <eval phase="Setup" priority="1000">perform forward[Helper.HasBackpack]</eval>
+    </thing>
+  <thing id="eqT2KAmmoBelt" name="Ammo Belt" compset="Equipment" stacking="merge">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <holdlimit>AmmoCat.Firearm</holdlimit>
+    <gear>field[gearNet].value = field[gearWeight].value</gear>
+    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
+
+if (gearcount = 0) then
+  field[livename].text = field[name].text & " (Empty)"
+else
+  heldName = gearlist[",",component.Ammunition]
+  field[livename].text &= field[name].text & " (" & heldName & ")"
+  endif]]></eval>
+    </thing>
+  <thing id="amT2K919" name="9x19" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="wpT2KM9" name="M9" description="The M9 officially replaced the M1911A1 in US service in 1980, but production was delayed until 1988. By the time war broke out in the 1990s, only front-line troops and officers had the M9, while many reserve units and units that had been formed from freshly-recruited troops were issued the M1911A1. The 9mm ammo of the M9 was much easier to find than .45 ACP, and the larger magazine capacity made it more efficient, leading to it being more popular among most soldiers." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="hdrT2KUSMilitary" name="-- US Military Firearms --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="hdrT2KGrenade" name="-- Hand Grenades --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Grenade"/>
+    <tag group="WeaponType" tag="Thrown"/>
+    </thing>
+  <thing id="wpT2KGrenadeFrag" name="Grenade (Fragmentation)" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpBlast" value="C"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grCost" value="30"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Grenade"/>
+    <tag group="WeaponType" tag="Thrown"/>
+    <tag group="BlastRating" tag="C"/>
+    </thing>
+  <thing id="wpT2KGrenadeAT" name="Grenade (Anti-Tank)" compset="Ranged">
+    <fieldval field="wpDamage" value="6"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpBlast" value="C"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Thrown"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="WeaponCat" tag="Grenade"/>
+    </thing>
+  <thing id="wpT2KGrenadeImp" name="Grenade (Improvised)" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpBlast" value="C"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Thrown"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="Grenade"/>
+    </thing>
+  <thing id="amT2KCal3006" name=".30-06" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2KCal3030" name=".30-30" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2K12Gauge" name="12 GA" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Shotgun"/>
+    </thing>
+  <thing id="amT2KCal45" name=".45" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K55645" name="5.56x45" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2K76251" name="7.62x51" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2KCal50M2" name=".50 M2" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2K4046" name="40x46" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="GL"/>
+    </thing>
+  <thing id="wpT2KM79" name="M79" description="The M79 was the first US military grenade launcher issued during the war in Vietnam. It uses a single-shot break-action similar to hunting shotguns, but fires a 40mm grenade instead of a shotgun shell (although a shotgun-shell-like canister round is also available). The grenades are spin-armed and will not detonate under 15 meters (two hexes). Although replaced by the M203, this grenade launcher is still widely available among combat units. Some special operations units were even known to saw off the barrel and the stock to create a small and powerful, if inaccurate, break-contact weapon for emergency use." compset="Ranged" summary="Break-Action 40mm Grenade Launcher">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="wpSpecial" value="Minimum Range is 2 hexes (15m)."/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="AmmoType" tag="amT2K4046"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KM203" name="M203" description="The M203 grenade launcher supplemented and then replaced the M79 in the 1970s, its shorter barrel and heavy balance effect on the M16 and M4 made both rifles harder to shoot (-1 modifier) while giving the M203 less effective range than the M79. It is very common among combat arms units, but much less so among reserve and rear-echelon support units. Like the M79, the 40mm grenades are spin-armed and will not detonate under 15 meters (two hexes)." compset="Ranged" summary="Underbarrel 40mm Grenade Launcher">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpSpecial" value="Minimum Range is 2 hexes (15m)."/>
+    <usesource source="srcT2K"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="AmmoType" tag="amT2K4046"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="amT2K4053" name="40x53" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="GL"/>
+    </thing>
+  <thing id="wpT2KMk19" name="Mk 19" description="The Mk 19 is a belt-fed automatic grenade launcher developed during the war in Vietnam that fires longer 40mm grenades than the M79 and M203 out to much longer ranges. It must be mounted on a tripod or a pintle and is most often found on vehicles and is very useful for fire suppression, even against buildings, and engaging light vehicles.\n\nUnlike other heavy weapons, the Mk 19 does use ammo dice just like small arms. If you hit, each &lt;bullet&gt; on an ammo die lets you land an additional grenade in the target hex or a hex adjacent to it – or, if you attacked a specific target, score another hit on the target, or a secondary target in the same or an adjacent hex. If you miss, roll deviation one additional time for each &lt;bullet&gt; rolled on your ammo dice." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="20"/>
+    <fieldval field="wpCapacity" value="32"/>
+    <fieldval field="grCost" value="2500"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K4053"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KM249" name="M249" description="The M249 light machine gun (often called a SAW, for Squad Automatic Weapon, even though that designation has been dropped) is a US copy of the FN Minimi adopted into US service in the mid-’80s. It can be fired from the integral bipod, or from a tripod or vehicle pintle mount. It is capable of firing from belts of disintegrating links, which can be carried in a box attached to the receiver, and it can also use standard\nM16 (STANAG) magazines in an emergency." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="200"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KM72A3" name="M72A3 LAW" description="The M72A3 Light Antitank Weapon (LAW) fires a 66mm HEAT rocket from a disposable, extendable fiberglass tube. It was introduced in the early 1960s and slated to be replaced by the M136 AT-4 in the 1980s, but production of the M72A3 continued through the beginning of the war in the mid-’90s, since it was found to be particularly useful against light vehicles and buildings, and two M72A3 could be carried instead of one M136 AT-4." compset="Ranged">
+    <fieldval field="wpDamage" value="6"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATRL"/>
+    <tag group="AmmoType" tag="amT2K66mm"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    </thing>
+  <thing id="amT2K66mm" name="66mm" compset="Ammunition" stacking="merge">
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoCatType" tag="RL"/>
+    </thing>
+  <thing id="wpT2KM4" name="M4" description="The M4 assault rifle is a shorter carbine version of the M16A2 with a telescoping stock and shorter barrel to make it handier for troops operating from vehicles or in close environments, like the Vietnam-era XM177E2 (CAR-15) carbine it replaced. It was first issued in the mid-1990s and includes a Picatinny mounting rail on the top of the receiver. Its adjustable stock and lighter weight also make it better suited to soldiers with smaller stature.Like the M16A2, it is limited to 3-round bursts in lieu of automatic fire." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    </thing>
+  <thing id="wpT2KM4A1" name="M4A1" description="The M4 assault rifle is a shorter carbine version of the M16A2 with a telescoping stock and shorter barrel to make it handier for troops operating from vehicles or in close environments, like the Vietnam-era XM177E2 (CAR-15) carbine it replaced. It was first issued in the mid-1990s and includes a Picatinny mounting rail on the top of the receiver. Its adjustable stock and lighter weight also make it better suited to soldiers with smaller stature.Like the M16A2, it is limited to 3-round bursts in lieu of automatic fire.\n\nThe M4A1 is a fully-automatic version of the M4 carbine intended for specialized combat troops such as Rangers and Special Forces. Otherwise, it is identical to the regular M4." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="375"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    </thing>
+  </document>

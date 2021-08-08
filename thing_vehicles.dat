@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="vehTest" name="Test Vehicle" compset="Vehicle">
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled" coupledfield="minCoupled">
+      <bootstrap thing="typHero"></bootstrap>
+      </minion>
+    </thing>
+
+    </document>

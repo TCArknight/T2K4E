@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains an assortment of things used solely for validation reporting.
+      Each thing has one or more "evalrule" scripts that verify facets of each actor
+      and report appropriate error messages if not satisfied.
+
+     If you prefer, you could instead have a small number of things with numerous
+     "evalrule" scripts associated with each. The approach used below is to have lots
+     of things with scripts targeted at a narrow purpose, but there is no reason you
+     couldn't have a few things with lots of scripts targeted as a wide range of
+     purposes. By having lots of separate things, the name of each can be leveraged
+     for use within the validation error report, which can often improve the clarity
+     and usefulness of the validation messages.
+-->
+
+<document signature="Hero Lab Data">
+
+  <!-- Validate facets of the archetype -->
+  <thing
+    id="valArchetypePri"
+    name="Archetype (Primary)"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we have a faction selected if required -->
+    <evalrule index="1" phase="Validate" priority="8000" message="required"><![CDATA[
+      ~if archetypes are not required, we're good
+      validif (hero.tagis[Hero.ArchtypePriReq] = 0)
+
+      ~if we have a faction selected, we're good
+      validif (hero.tagis[ArchetypeCat.Primary] <> 0)
+	  
+	  @message = herofield[acArchTermPri].text & " is a required selection."
+      ]]></evalrule>
+
+    </thing>
+	
+  <!-- Validate facets of the archetype -->
+  <thing
+    id="valArchetypeSec"
+    name="Archetype (Secondary)"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we have a faction selected if required -->
+    <evalrule index="1" phase="Validate" priority="8000" message="required"><![CDATA[
+      ~if archetypes are not required, we're good
+      validif (hero.tagis[Hero.ArchtypeSecReq] = 0)
+
+      ~if we have a faction selected, we're good
+      validif (hero.tagis[ArchetypeCat.Secondary] <> 0)
+	  
+	  @message = herofield[acArchTermSec].text & " is a required selection."
+      ]]></evalrule>
+
+    </thing>
+
+  <!-- relationship thing for validation reporting -->
+  <thing
+    id="valRelationship"
+    name="Relationships"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have multiple shields equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="At least one relationship required."><![CDATA[
+      validif (hero.tagcount[Relationship.?] <> 0)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[relationships] = 0
+      ]]></evalrule>
+
+    </thing>
+
+  <!-- Buddy validation -->
+  <thing
+    id="valBuddy"
+    name="Buddy Relationship"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have multiple shields equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="At least one Buddy relationship required."><![CDATA[
+      validif (hero.tagcount[Relationship.Buddy] <> 0)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[relationships] = 0
+      ]]></evalrule>
+
+    </thing>
+
+  <!-- Buddy validation -->
+  <thing
+    id="valRival"
+    name="Rival Relationship"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have multiple shields equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="At least one Rival relationship required."><![CDATA[
+	  ~ rival isn't needed for T2K
+	  validif (hero.tagis[source.srcT2K] <> 0)
+	  
+      validif (hero.tagcount[Relationship.Rival] <> 0)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[relationships] = 0
+      ]]></evalrule>
+
+    </thing>
+
+  <!-- Abilities thing for validation reporting -->
+  <thing
+    id="valAbility"
+    name="Talents"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we have all special talents selected -->
+    <evalrule index="1" phase="Validate" priority="8000" severity="warning" message="Not enough selected"><![CDATA[
+      ~we have a negative or zero quantity left, we're good
+      validif (hero.child[resTalent].field[resLeft].value <= 0)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[talents] = 0
+      ]]></evalrule>
+
+    <!-- Make sure that we don't have too many special talents selected -->
+    <evalrule index="2" phase="Validate" priority="8000" message="Too many selected"><![CDATA[
+      ~we have a positive or zero quantity left, we're good
+      validif (hero.child[resTalent].field[resLeft].value >= 0)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[talents] = 0
+      ]]></evalrule>
+
+    </thing>
+
+
+  <!-- Hands thing for validation reporting -->
+  <thing
+    id="valHands"
+    name="Hands"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have too many hands worth of gear equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="Equipped gear requires too many hands" name="Check Hands"><![CDATA[
+      ~if we have no more than two hands of gear equipped, we're good
+      validif (hero.tagcount[Hero.Hand] <= herofield[acHands].value)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[armory] = 0
+      ]]></evalrule>
+
+    </thing>
+
+
+  <!-- Armor thing for validation reporting -->
+  <thing
+    id="valArmor"
+    name="Armor"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have multiple sets of armor equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="Multiple suits of armor equipped"><![CDATA[
+      ~if we have no more than one set of armor equipped, we're good
+      validif (hero.tagcount[Armor.?] <= 1)
+
+      ~mark associaated tabs as invalid
+      container.panelvalid[armory] = 0
+      ]]></evalrule>
+
+    </thing>
+
+
+  <!-- Shield thing for validation reporting -->
+  <thing
+    id="valShields"
+    name="Shields"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have multiple shields equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="Multiple shields equipped"><![CDATA[
+      ~if we have no more than one set of armor equipped, we're good
+      validif (hero.tagcount[Shield.?] <= 1)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[armory] = 0
+      ]]></evalrule>
+
+    </thing>
+
+
+    </document>

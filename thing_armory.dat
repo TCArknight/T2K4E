@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the assortment of weapons, armor, and shields for the game
+      system. The various effects of each piece of equipment are controlled entirely
+      through field values and a few tags. Scripts on the underlying components use
+      these characteristics to apply all the correct behaviors.
+-->
+
+<document signature="Hero Lab Data">
+
+
+<!-- ##################
+      Armor and Shields
+     ##################
+-->
+
+  <!-- Natural armor is automatically equipped -->
+  <thing
+    id="armNatural"
+    name="Natural Armor"
+    compset="Armor"
+    description="Description goes here"
+    isunique="yes"
+    holdable="no">
+    <fieldval field="defDefense" value="1"/>
+    <tag group="Equipment" tag="Natural"/>
+    <tag group="Equipment" tag="AutoEquip"/>
+    </thing>
+
+<!-- ##################
+      Melee Weapons
+     ##################
+-->
+
+
+  <!-- Unarmed Strike melee -->
+  <thing
+    id="wpUnarmed"
+    name="Unarmed Attack"
+    compset="Melee"
+    description="Description goes here"
+    isunique="yes"
+    holdable="no">
+    <fieldval field="shortname" value="Unarmed"/>
+    <fieldval field="wpBonus" value="0"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpArmorRating" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpStrReq" value="0"/>
+    <fieldval field="wpSpecial" value=""/>
+    <fieldval field="grCost" value="0"/>
+    <fieldval field="grWeight" value="0"/>
+    <tag group="Equipment" tag="Natural"/>
+    </thing>
+
+
+
+<!-- ##################
+      Ranged Weapons
+     ##################
+-->
+
+
+  </document>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definitions of components that don't really fit anywhere
+      else, such as resources, journal entries, etc.
+-->
+
+<document signature="Hero Lab Structure">
+
+  <!-- Nationality component
+        Used for T2K Nationality 
+  -->
+  <component
+    id="Nationality"
+    name="Nationality">
+
+    <field
+      id="natNameTerm"
+      name="Term Used For Member"
+      type="derived"
+	  maxlength="25">
+	  </field>
+	  
+	<!-- Matrix containing Enlisted Ranks with Name, Abbreviation -->
+    <field
+      id="natEnlisted"
+      name="Enlisted Military Ranks"
+      type="derived"
+	  style="matrix"
+	  maxlength="50"
+	  arrayrows="10"
+	  matrixcolumns="2">
+      </field>
+	  
+	<!-- Matrix containing Officer Ranks with Name, Abbreviation -->
+    <field
+      id="natOfficer"
+      name="Officer Military Ranks"
+      type="derived"
+	  style="matrix"
+	  maxlength="50"
+	  arrayrows="10"
+	  matrixcolumns="2">
+      </field>
+	  
+    <identity group="Nationality"/>
+    <identity group="HasNationality"/>
+	
+    <creation><![CDATA[
+      ~custom items need to pick a name
+      if (tagis[Helper.CustomItem] <> 0) then
+        field[username].text = "Enter Name"
+        endif
+      ]]></creation>
+	
+	<!-- Make sure the choose template has enough width for our names -->
+    <tag group="SimpleItem" tag="width300"/>
+	
+    <!-- Track the component on the actor -->
+    <eval index="1" phase="Setup" priority="5000"><![CDATA[
+      perform forward[Lifepath.?]
+	  
+      perform forward[Nationality.?]
+	  perform forward[HasNationality.?]
+	  
+	  hero.child[mscService].field[serLPNation].text = field[name].text
+      ]]></eval>	  
+    </component>	
+
+  <!-- Lifepath component
+        Used for various entries on the lifepath
+  -->
+  <component
+    id="Lifepath"
+    name="Lifepath"
+    orderfield="xIndex">
+
+    <field
+      id="lpTourIndex"
+      name="Index"
+      type="derived"
+	  defvalue="0">
+	  <calculate phase="Initialize" priority="1000"><![CDATA[
+	    var tourIdx as number
+		
+		~ reduce the idx by 1 to account for the Childhood tour
+		tourIdx = field[xIndex].value - 1
+		
+	    if (tagis[LifepathCat.Tour] <> 0) then
+		  herofield[acLPTours].value += 1
+		  @value = tourIdx
+		 endif
+        ]]></calculate>
+      </field>
+	  
+    <field
+      id="lpLength"
+      name="Length of Time"
+      maxlength="2"
+	  defvalue="0"
+      type="user">
+      </field>
+	  
+    <field
+      id="lpNumSkills"
+      name="Number of Skills"
+      type="derived"
+	  defvalue="0">
+      </field>
+	  
+    <field
+      id="lpDupSkills"
+      name="Duplicate Skills allowed?"
+      type="derived"
+      minvalue="0"
+      maxvalue="1"
+	  defvalue="0">
+      </field>
+	  
+    <field
+      id="lpNumSpec"
+      name="Number of Specialties"
+      type="derived"
+	  defvalue="0">
+      </field>
+	  
+    <!-- Activation state of ability - we're not activated by default -->
+    <field
+      id="lpFinalTour"
+      name="Final Tour Before War?"
+      type="user"
+      minvalue="0"
+      maxvalue="1"
+	  defvalue="0">
+      </field>
+	  
+    <field
+      id="lpAging"
+      name="Aging Effects?"
+      type="user"
+      minvalue="0"
+      maxvalue="1"
+	  defvalue="0">
+      </field>	  
+
+    <field
+      id="lpSpecGained"
+      name="Specialty Gained/Promotion?"
+      type="user"
+      minvalue="0"
+      maxvalue="1"
+	  defvalue="0">
+      </field>
+	  
+	<eval index="1" phase="Setup" priority="5000"><![CDATA[trustme
+	
+	  doneif (hero.tagis[source.srcT2KLifepath] = 0)
+	  
+	  var currRankVal as number
+	  var newRankVal as number
+	  var RankCat as string
+	  var newRank as string
+	  
+	  var expr as string
+	  var rng as number
+	  var testrank as number
+	  var testCUF as number
+	  
+	  ~ for all modules, may or may not gain a Promotion
+	  herofield[acLPPromotions].value += field[lpSpecGained].value
+	  
+	  ~set skill and spec counts
+	  if (tagis[LifepathCat.Childhood] <> 0) then
+		field[lpNumSkills].value = 1
+		field[lpDupSkills].value = 1
+		
+		~ childhood must choose a specialty
+		perform assign[Lifepath.SpecSelectReq]
+		field[lpSpecGained].value = 1
+		
+	  elseif (tagis[LifepathCat.Tour] <> 0) then
+		field[lpNumSkills].value = 2
+		field[lpDupSkills].value = 1
+		
+		~herofield[acLPTours].value += 1
+		~field[lpTourIndex].value = herofield[acLPTours].value
+		
+		if (tagis[CareerType.Military] <> 0) then
+		  perform hero.delete[Military.?]
+	      perform forward[Military.?]
+		  
+		  RankCat = tagabbrevs[Military.?,","]
+		  
+		  currRankVal = hero.tagmax[MilitaryRank.?]		  
+		  newRankVal = maximum(hero.tagmax[MilitaryRank.?],tagmax[MilitaryRank.?])+ field[lpSpecGained].value
+		  newRank = "MilitaryRank." & RankCat & newRankVal
+		  perform hero.delete[MilitaryRank.?]
+	      perform hero.assignstr[newRank]
+		  
+		  ~hero.childfound[mscService].field[serRank].text = tagnames[MilitaryRank.?]
+		  ~hero.childfound[mscService].field[serRankVal].value = tagvalue[MilitaryRank.?]
+		  
+		  if (hero.tagis[Lifepath.FirstMilTerm] = 0) then
+		    ~ this is the first military term taken
+			perform assign[Lifepath.FirstMilTerm]
+			
+			~if Ranged Combat isn't on the gizmo Skill list, add it. 
+			rng = pos(gizmo.tagids[Skill.?,"|"],"skT2KRangedCbt")
+			
+	        if (rng = -1) then
+	          perform gizmo.assign[Skill.skT2KRangedCbt]
+	          endif
+            endif
+			
+	      testrank = tagis[CareerType.Military] + hero.tagis[Military.Enlisted] + hero.tagvalue[MilitaryRank.E?]
+		  
+		  if (testrank >= 5) then
+		    rng = pos(gizmo.tagids[Skill.?,"|"],"skT2KCommand")
+	        if (rng = -1) then
+	          perform gizmo.assign[Skill.skT2KCommand]
+	          endif
+			endif
+			  
+		  endif
+	
+		testCUF = tagis[CareerType.Military] + tagis[CareerType.Intelligence]
+			
+		if (testCUF <> 0) then
+		  if (field[lpSpecGained].value <> 0) then
+		    #traitbonus[trCUF] += field[lpSpecGained].value
+		    endif
+		  endif
+			  
+		if (field[lpFinalTour].value <> 0) then
+		  perform assign[Lifepath.FinalTermTaken]
+		  endif		
+		  
+		if (field[lpAging].value <> 0) then
+		  #resmax[resAttrib] -= 1
+		  endif
+
+	  elseif (tagis[LifepathCat.AtWar] <> 0) then
+		field[lpNumSkills].value = 2
+		field[lpDupSkills].value = 0
+
+		endif
+	  
+	  ~ for all modules, may or may not gain a Specialty
+	  field[lpNumSpec].value = field[lpSpecGained].value
+	  
+      hero.childfound[mscPerson].field[perLPAge].value += int(field[lpLength].text)
+      perform forward[CareerType.?]
+	  perform forward[Lifepath.?]
+      ]]></eval>
+	  
+	<eval index="3" phase="Initialize" priority="2500">
+	   <before name="Assign SpecialTab"/><![CDATA[
+	   ~empty script, but earlier than scripts on the picks in this gizmo
+	   ]]></eval>
+	  
+    <evalrule index="1" phase="Validate" priority="10000" message="Duplicate Skill selected!" summary="May not select same skill multiple times."><![CDATA[
+	  ~if we're not using the lifepath creation, we're good
+	  validif (hero.tagis[source.srcT2KLifepath] = 0)
+ 
+	  ~if duplicate skills allowed, we're valid
+	  validif (field[lpDupSkills].value = 1)
+
+	  ~if only one skill allowed, we're valid
+	  validif (field[lpNumSkills].value = 1)
+	  
+      var numSelected as number
+	  var selected as string
+	  var more as number
+	  var dupfound as number
+
+      ~ build the selected string	  
+	  foreach pick in gizmo from Skill
+	    if (more = 1) then
+		  selected &= "|"
+		  endif
+		selected &= eachpick.idstring
+
+	    more = 1
+		numSelected += 1
+	    nexteach
+		
+	  ~if only one skill selected, we're valid
+	  validif (numSelected <= 1)
+	  
+	  var firstpos as number
+	  var finalpos as number
+
+      ~ build the selected string	  
+	  foreach pick in gizmo from Skill
+		firstpos = pos(selected,eachpick.idstring)
+		finalpos = lastpos(selected,eachpick.idstring)
+		
+		if (firstpos - finalpos = 0 ) then
+		  ~ no duplicate found
+		else
+		  ~ duplicate found
+		  dupfound = 1
+		  endif
+		  
+		firstpos = 0
+		finalpos = 0
+	    nexteach
+
+	  ~if no dup found, we're valid
+	  validif (dupfound = 0)
+	  
+      ~report an error
+      container.panelvalid[lifepath] = 0
+      ]]></evalrule>
+	
+    <!-- If a specialty is required, but not selected then report an error -->
+    <evalrule index="2" phase="Validate" priority="5000" severity="error" message="Specialty selection required"><![CDATA[
+	  ~if selecting a specialty is not mandatory, we're valid
+      validif (tagis[Lifepath.SpecSelectReq] = 0)
+	  
+	  ~if we have at leasst one specialty selected, we're valid
+      validif (tagcount[LifepathSpecialty.?] <> 0)
+	  
+      ~report an error
+      container.panelvalid[lifepath] = 0
+      ]]></evalrule>	 
+	
+    <!-- If this is the first military tour, must select Ranged Combat as one of the skills -->
+    <evalrule index="3" phase="Validate" priority="5000" severity="error" message="Ranged Combat selection required"><![CDATA[
+	  ~if we're not the first military term, we're valid
+      validif (tagis[Lifepath.FirstMilTerm] = 0)
+	  
+	  ~if we have Ranged Combat selected, we're valid
+      validif (tagis[LifepathSkill.skT2KRangedCbt] <> 0)
+	  
+      ~report an error
+      container.panelvalid[lifepath] = 0
+      ]]></evalrule>	  
+    </component>	
+
+  <component
+    id="LifepathHelper"
+    name="Lifepath Helper">
+
+    <field
+      id="lpName"
+      name="Lifepath Name"
+      type="derived"
+	  maxlength="200">
+	  </field>
+	  
+    <field
+      id="lpSkillExpr"
+      name="Skill Expression"
+      type="derived"
+	  maxlength="500"
+	  defvalue="TRUE">
+	  </field>
+	  
+    <field
+      id="lpDupAllowExpr"
+      name="Duplicate Allowed Expression"
+      type="derived"
+	  maxlength="500"
+	  defvalue="TRUE">
+	  </field>
+	  
+    <field
+      id="lpSpecExpr"
+      name="Specialty Expression"
+      type="derived"
+	  maxlength="500"
+	  defvalue="TRUE">
+	  </field>
+	  
+    <bootstrap thing="resLPSkill"/>	
+    <bootstrap thing="resLPSpecialty"/>	
+	
+	<!-- build the expression strings based on tags -->
+    <eval index="1" phase="Render" priority="5000"><![CDATA[
+	  var expr as string
+	  var rng as number
+	  
+	  field[lpName].text = parent.field[name].text
+	  
+	  foreach bootstrap in this where "thingid.resLPSpecialty"
+	    eachthing.field[resMax].value += parent.field[lpNumSpec].value
+		nexteach
+	  
+      ~ get the tags from the container for what Skills are available to improve	
+	  expr = container.tagids[Skill.?,"|"]
+	  expr = replace(expr, "Skill", "thingid", 0)
+		
+      field[lpSkillExpr].text = expr & "|thingid.skT2KStamina|thingid.skT2KMobility|thingid.skT2KDriving"
+	  
+      ~ get the tags from the container for what Specialties are available	  
+	  expr = container.tagids[Specialty.?,"|"]
+	  expr = replace(expr, "Specialty", "thingid", 0)
+	  
+      field[lpSpecExpr].text = expr
+	  
+      ]]></eval> 
+	<!-- build the expression strings based on tags -->
+    <eval index="2" phase="Setup" priority="5100"><![CDATA[
+	  container.childfound[resLPSkill].field[resMax].value += parent.field[lpNumSkills].value 
+	  container.childfound[resLPSpecialty].field[resMax].value += parent.field[lpNumSpec].value  
+      ]]></eval>  	  
+    </component>
+	
+  <!-- Define various component sets associated with the components defined above. -->
+
+  <!-- The "Nationality" compset is auto-defined for the component -->
+	
+ 
+  <!-- Define any entities associated with the components defined above. -->
+  <!-- Lifepath Module -->
+  <!-- form="lifepathgiz"> -->
+  <entity
+    id="lpCustom"
+    form="lifepathgiz">
+    <bootstrap thing="LifepathHelper"/>
+    </entity>
+  </document>

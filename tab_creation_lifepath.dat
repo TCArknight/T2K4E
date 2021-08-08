@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "talents" tab panel. This tab is where
+      the user selects the special talents for the character.
+
+      All public visual elements used with this tab panel start with the prefix "ab"
+      to associate them with the tab.
+-->
+
+<document signature="Hero Lab Data">
+
+  <portal 
+    id="hdrNation" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "Nationality"
+        </labeltext>
+      </label>
+    </portal>
+	
+  <portal
+    id="lpNation"
+    style="tblInvis">
+    <table_dynamic
+      component="Nationality"
+      showtemplate="lpNationPick"
+      choosetemplate="SimpleItem"
+	  scrollable="no"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <autotag group="Lifepath" tag="NationalitySelect"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a specialty already, then there's nothing to add
+        if (hero.tagis[Lifepath.NationalitySelect] <> 0) then
+          @text = "{text clrgrey}No more nationalities can be added"
+		else
+		  @text &= "Add Nationality"
+          endif
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
+  <portal 
+    id="hdrAttributePts" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "Attribute Points"
+        </labeltext>
+      </label>
+    </portal>
+	
+  <portal 
+    id="hdrChildhood" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "Childhood"
+        </labeltext>
+      </label>
+    </portal>
+	
+  <portal
+    id="lpChildhood"
+    style="tblInvis">
+    <table_dynamic
+      component="Lifepath"
+      showtemplate="lpLifepathPick"
+      choosetemplate="SimpleItem"
+	  scrollable="no"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <list>Lifepath.ChildhoodSelected</list>
+	  <candidate>LifepathCat.Childhood</candidate>
+      <autotag group="Lifepath" tag="ChildhoodSelected"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a childhood already, then there's nothing to add
+        if (hero.tagis[Lifepath.ChildhoodSelected] <> 0) then
+          @text = "{text clrgrey}No more childhoods can be added"
+		else
+		  @text &= "Add Childhood"
+          endif
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+
+  <portal 
+    id="hdrTours" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "Career Tours"
+        </labeltext>
+      </label>
+    </portal>
+	
+  <portal
+    id="lpTours"
+    style="tblInvis">
+    <table_dynamic
+      component="Lifepath"
+      showtemplate="lpLifepathPick"
+	  showsortset="TourIndex"
+      choosetemplate="SimpleItem"
+	  choosesortset="CareerType"
+	  scrollable="no"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <list>LifepathCat.Tour</list>
+	  <candidate>LifepathCat.Tour</candidate>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+  	    @text &= "Add Tour"
+        ]]></additem>
+      </table_dynamic>
+    </portal>	
+
+  <portal 
+    id="hdrAtWar" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "At War Tour"
+        </labeltext>
+      </label>
+    </portal>	
+
+  <portal
+    id="lpAtWar"
+    style="tblInvis">
+    <table_dynamic
+      component="Lifepath"
+      showtemplate="lpLifepathPick"
+      choosetemplate="SimpleItem"
+	  scrollable="no"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <list>Lifepath.AtWarTerm</list>
+	  <candidate>LifepathCat.AtWar</candidate>
+      <autotag group="Lifepath" tag="AtWarTerm"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+  	    @text &= "Add At War Tour"
+        ]]></additem>
+      </table_dynamic>
+    </portal>	
+	
+  <portal
+    id="lpHoriz2"
+    style="sepHorz">
+    <separator
+      isvertical="no">
+      </separator>
+    </portal>
+	  
+  <template
+    id="lpNationPick"
+    name="Nationality Pick"
+    compset="Nationality"
+    marginhorz="3"
+    marginvert="3">
+
+    <portal
+      id="lblinfo"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = field[name].text
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="name"
+      style="editNormal">
+      <edit
+        field="username">
+        </edit>
+      </portal>
+
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+
+    <position><![CDATA[
+      ~if this is a custom item, show our name edit control - otherwise just
+      ~show a label
+      portal[name].visible = tagis[Helper.CustomItem]
+      portal[lblinfo].visible = !portal[name].visible
+      portal[name].width = width / 3
+
+      perform portal[delete].alignedge[right,-2]
+      portal[delete].top = 2
+
+      height = portal[name].bottom + 2
+      ]]></position>
+
+    </template>	 
+	
+  <template
+    id="lpRollAttrib"
+    name="Roll Attribute Points"
+    compset="Actor"
+    marginhorz="16"
+    marginvert="3">
+	
+    <portal
+      id="rollattrib"
+      style="actBig"
+      tiptext="Click to roll your bonus attribute points.">
+      <action
+        action="trigger"
+        confirm="This will reroll your bonus points. Proceed?">
+        <trigger><![CDATA[
+	    ~declare variables that are used to communicate with our caller
+		var NumOfDice as number
+		var SizeOfDice as number
+		var Additional as number
+		var total as number
+	
+		NumOfDice = 2
+		SizeOfDice = 3
+		Additional = 12
+		
+		call DieRoll
+		
+		herofield[acStartAttrib].value = total		
+		
+		]]></trigger>
+        <buttontext><![CDATA[
+          @text = "Roll 2d3"
+          ]]></buttontext>
+        </action>
+      </portal>
+	
+    <portal
+      id="lblpts"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+		  var points as number
+		  points = herofield[acStartAttrib].text - 12
+		  
+          @text = "Additional Points: " & points
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[rollattrib].height
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+      
+	  perform portal[rollattrib].centervert
+	  perform portal[lblpts].centervert
+	  
+      ~position our tallest portal at the top
+      portal[rollattrib].top = 0
+
+      ~position the rollattrib portal on the far right
+      perform portal[rollattrib].alignedge[right,0]
+	  
+	  ~position the rollattrib portal on the far left
+      perform portal[lblpts].alignedge[left,0]
+      ]]></position>
+
+    </template>	
+	
+  <template
+    id="lpLifepathPick"
+    name="Lifepath Pick"
+    compset="Lifepath"
+    marginhorz="3"
+    marginvert="2">
+
+    <portal
+      id="name"
+      style="lblNormal"
+      showinvalid="yes">
+      <label>
+        <labeltext><![CDATA[
+		  if (tagis[LifepathCat.Tour] <> 0) then
+		    @text &= "(Tour " & field[lpTourIndex].value & ") "
+			endif
+          @text &= field[name].text
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="finaltour"
+      style="chkNormal"
+      tiptext="Click to indicate last tour before war breaks out.">
+      <checkbox
+        field="lpFinalTour">
+        </checkbox>
+      </portal>
+	  
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      <mouseinfo/>
+      </portal>
+
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+	  
+    <portal
+      id="edit"
+      style="actEdit"
+      tiptext="Click here to edit the entry.">
+      <action
+        action="edit">
+        </action>
+      </portal>
+
+    <portal
+      id="years"
+      style="editCenter">
+      <edit
+        field="lpLength">
+        </edit>
+      </portal>	  
+
+    <portal
+      id="aging"
+      style="chkNormal"
+      tiptext="Click to indicate hero suffers aging effects for this tour.">
+      <checkbox
+        field="lpAging">
+        </checkbox>
+      </portal>
+	  
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if we've been assigned a non-default width for use when showing things, adopt
+      ~that width now
+      if (ispick = 0) then
+        var size as number
+        size = tagvalue[SimpleItem.width?]
+        if (size > 0) then
+          width = size
+          endif
+        endif
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~center the other portals vertically
+      perform portal[name].centervert
+      perform portal[delete].centervert
+      perform portal[edit].centervert
+      perform portal[years].centervert
+      perform portal[finaltour].centervert
+      perform portal[aging].centervert
+
+      portal[years].width = 25
+	  
+      ~position the delete portal on the far right
+      perform portal[delete].alignedge[right,0]
+
+      ~position the info portal to the left of the delete button
+      perform portal[info].alignrel[rtol,delete,-8]
+
+      ~position the edit portal to the left of the info button
+      perform portal[edit].alignrel[rtol,info,-8]
+	  
+      ~position the finaltour portal to the left of the edit button
+      perform portal[finaltour].alignrel[rtol,edit,-8]
+	  
+      ~position the years portal to the left of the finaltour button
+      perform portal[years].alignrel[rtol,finaltour,-8]
+	  
+      ~position the aging portal to the left of the years button
+      perform portal[aging].alignrel[rtol,years,-8]
+	  
+      ~if we're showing a thing, the info and delete buttons are irrelevant, since
+      ~we should be showing within a chooser, in which case there's nothing to
+      ~delete and we have the description already visible
+      var edge as number
+      if (ispick = 0) then
+        portal[info].visible = 0
+        portal[delete].visible = 0
+        edge = width
+      else
+        edge = portal[edit].left - 5
+        endif
+	  
+	  ~we only need to show the final tour, years in the Tour selection
+	  portal[finaltour].visible = tagis[LifepathCat.Tour]
+	  portal[years].visible = tagis[LifepathCat.Tour]
+	  portal[aging].visible = 1 - tagis[LifepathCat.Childhood]
+
+      ~position the name on the left and let it use all available space
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,edge)
+
+      ~center the name if requested or this is a show-only thing
+      if (tagis[SimpleItem.CenterName] + tagis[thing.showonly] <> 0) then
+        perform portal[name].centerhorz
+        endif
+
+      ~if this is an auto-added pick, change its font to indicate that fact
+      if (ispick + !candelete >= 2) then
+        perform portal[name].setstyle[lblAuto]
+        endif
+      ]]></position>
+
+    </template>
+  <layout
+    id="lifepath">
+    <portalref portal="hdrNation" />
+    <portalref portal="hdrAttributePts" />
+    <portalref portal="hdrChildhood" />
+    <portalref portal="hdrTours" />
+    <portalref portal="hdrAtWar" />
+    <portalref portal="lpNation" />
+    <portalref portal="lpChildhood" />
+    <portalref portal="lpTours" />
+    <portalref portal="lpAtWar" />
+	<templateref template="lpRollAttrib" thing="actor" />
+
+    <position><![CDATA[
+      ~freeze our table in advancement mode to disable adding new choices
+      ~Note: All freezing must be done *before* any positioning is performed.
+      if (hero.tagis[Lifepath.NationalitySelect] <> 0) then
+        portal[lpNation].freeze = 1
+        endif
+      if (hero.tagis[Lifepath.ChildhoodSelected] <> 0) then
+        portal[lpChildhood].freeze = 1
+        endif
+      if (hero.tagis[Lifepath.FinalTermTaken] <> 0) then
+        portal[lpTours].freeze = 1
+        endif
+      if (hero.tagis[Lifepath.AtWarTerm] <> 0) then
+        portal[lpAtWar].freeze = 1
+        endif
+		
+      ~position and size the table to span the full layout; it will only use the
+      ~vertical space that it actually needs
+      portal[hdrNation].top = 0
+      portal[hdrNation].height = 20
+      portal[hdrNation].width = width
+      portal[lpNation].top = portal[hdrNation].bottom + 5
+      portal[lpNation].height = 50
+      portal[lpNation].width = width
+ 
+      portal[hdrAttributePts].top = portal[lpNation].bottom + 5
+      portal[hdrAttributePts].height = 20
+      portal[hdrAttributePts].width = width
+	  template[lpRollAttrib].top = portal[hdrAttributePts].bottom + 5
+	  template[lpRollAttrib].height = 30
+      template[lpRollAttrib].width = width
+	  
+      portal[hdrChildhood].top = template[lpRollAttrib].bottom + 5
+      portal[hdrChildhood].height = 20
+      portal[hdrChildhood].width = width
+      portal[lpChildhood].top = portal[hdrChildhood].bottom + 5
+      portal[lpChildhood].height = 50
+      portal[lpChildhood].width = width
+	  
+      portal[hdrTours].top = portal[lpChildhood].bottom + 5
+      portal[hdrTours].height = 20
+      portal[hdrTours].width = width
+      portal[lpTours].top = portal[hdrTours].bottom + 5
+      ~ portal[lpTours].height = 50
+      portal[lpTours].width = width
+	  
+      portal[hdrAtWar].top = portal[lpTours].bottom + 5
+      portal[hdrAtWar].height = 20
+      portal[hdrAtWar].width = width
+      portal[lpAtWar].top = portal[hdrAtWar].bottom + 5
+      ~ portal[lpAtWar].height = 50
+      portal[lpAtWar].width = width
+	  
+	  height = portal[lpAtWar].bottom
+      ]]></position>
+
+    </layout>
+
+  <panel
+    id="lifepath"
+    name="Lifepath"
+    marginhorz="5"
+    marginvert="5"
+    order="5">
+	<live>source.srcT2KLifepath</live>
+    <layoutref layout="lifepath"/>
+    <position><![CDATA[
+      ]]></position>
+    </panel>
+	
+  </document>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the assortment of derived traits for the game system. Derived
+      traits are calculated via scripts and based on the attributes from which they
+      are derived.
+
+      Since derived traits are based upon other traits, we have a "chicken-and-egg"
+      situation with respect to script evaluation timing. The "Trait" component
+      auto-calculates the final value for the traits derived FROM, while the "Derived"
+      component provides a second calculation after that to incorporate the results of
+      the special calculation for each derived trait. Each derived trait must then
+      calculate the new derived value between those two times, which is what we
+      accomplish below within the eval script for each derived trait. The script is
+      timed to occur at Traits/4000 to splice it between the two other scripts that
+      mentioned above and performed by the component.
+
+      We calculate the derived value as a "bonus" for the trait, allowing it to be
+      added in appropriately by the component script. Trait bonuses can arise from
+      multiple sources, so we need to ADD our calculated amount instead of setting the
+      amount.
+
+      All trait values are rounded down, so we apply the proper rounding as needed.
+      Rounding must be performed BEFORE we add the adjustment.
+
+      Appropriate tags are assigned to each derived trait to control where the trait
+      displayed to the user and the order in which the traits are displayed.
+-->
+
+<document signature="Hero Lab Data">
+
+  <!-- Coolness Under Fire Trait -->
+  <thing
+    id="trCUF"
+    name="Coolness Under Fire"
+    compset="Trait"
+    isunique="yes"
+    description="When bullets start to fly in your direction, you need to keep a cool head. Panicking can cost you your life or get someone else killed. The better your CUF, the better you are at keeping calm in combat.">
+    <fieldval field="trtAbbrev" value="CUF"/>
+    <tag group="explicit" tag="1"/>
+    <tag group="Stage" tag="Capsule"/>
+    <tag group="Helper" tag="DisplayAlpha"/>
+    <tag group="TraitValue" tag="MinimumValue3"/>
+    <!-- Calculate the Health trait as STR value -->
+    <eval index="1" phase="Traits" priority="4000">
+      <before name="Derived trtFinal"/>
+      <after name="Calc trtFinal"/><![CDATA[
+      var value as number
+      value = 0
+	  value = round(value, 0, 1)
+      
+	  ~ field[trtBonus].value += value
+
+      ]]></eval>
+    </thing>
+	
+  <!-- Health Trait -->
+  <thing
+    id="trHealth"
+    name="Hit Capacity"
+    compset="Trait"
+    isunique="yes"
+    description="Even if you keep your nerves in check, chances are that sooner or later you’re going to get hurt. This is tracked using your Health score. You start the game with a number of Health points equal to your STRENGTH score. Talents can modify your maximum Health score.">
+    <fieldval field="trtAbbrev" value="Hlth"/>
+    <tag group="explicit" tag="2"/>
+    <tag group="User" tag="Power"/>
+    <tag group="Stage" tag="Capsule"/>
+    <!-- Calculate the Health trait as STR value -->
+    <eval index="1" phase="Traits" priority="4000">
+      <before name="Derived trtFinal"/>
+      <after name="Calc trtFinal"/><![CDATA[
+      var value as number
+      value = (#trait[attrStr] + #trait[attrAgi]) / 2
+	  value = round(value, 0, 1)
+      ~ value = round(value,0,-1)
+      
+	  field[trtBonus].value += value
+
+      ]]></eval>
+    </thing>
+
+  <!-- Stress Trait -->
+  <thing
+    id="trStress"
+    name="Stress Capacity"
+    compset="Trait"
+    isunique="yes"
+    description="More often than you’d like, you’ll find yourself under extreme pressure. In the game, this mounting tension is represented by your STRESS LEVEL. It usually starts at zero, and can increase by pushing dice rolls and by experiencing frightening or stressful situations.">
+    <fieldval field="trtAbbrev" value="Ment"/>
+    <tag group="explicit" tag="3"/>
+    <tag group="User" tag="Resistance"/>
+    <tag group="DashTacCon" tag="Traits"/>
+    <!-- Stress begins at 0 -->
+    <eval index="1" phase="Traits" priority="4000">
+      <before name="Derived trtFinal"/>
+      <after name="Calc trtFinal"/><![CDATA[
+      var value as number
+      value = ( #trait[attrInt] + #trait[attrEmp] )/ 2
+	  value = round(value, 0, 1)
+      ~ value = round(value,0,-1)
+      
+	  field[trtBonus].value += value
+      ]]></eval>
+    </thing>
+
+  <!-- Defense Trait -->
+  <thing
+    id="trDefense"
+    name="Defense"
+    compset="Trait"
+    isunique="yes"
+    description="Description goes here">
+    <fieldval field="trtAbbrev" value="Def"/>
+    <tag group="explicit" tag="4"/>
+    <tag group="User" tag="Combat"/>
+    <tag group="DashTacCon" tag="Combat"/>
+    <!-- Calcualte the Defense trait as "(Agi * 2 + Wis) / 3" -->
+    <eval index="1" phase="Traits" priority="4000">
+      <before name="Derived trtFinal"/>
+      <after name="Calc trtFinal"/><![CDATA[
+      var value as number
+      value = (#trait[attrAgi] * 2 + #trait[attrInt]) / 3
+      value = round(value,0,-1)
+      field[trtBonus].value += value
+      ]]></eval>
+    </thing>
+	
+  <!-- Initiative Trait -->
+  <thing
+    id="trInit"
+    name="Initiative"
+    compset="Trait"
+    isunique="yes"
+    description="Description goes here">
+    <fieldval field="trtAbbrev" value="Init"/>
+    <tag group="explicit" tag="5"/>
+    <tag group="User" tag="Combat"/>
+    <tag group="DashTacCon" tag="Combat"/>
+    <tag group="DashTacCon" tag="Traits"/>
+    <!-- Calculate the Initiative trait as "(Agi + Wis) / 5" -->
+    <eval index="1" phase="Traits" priority="4000">
+      <before name="Derived trtFinal"/>
+      <after name="Calc trtFinal"/><![CDATA[
+      var value as number
+      value = (#trait[attrAgi] + #trait[attrInt]) / 5
+      value = round(value,0,-1)
+      field[trtBonus].value += value
+      ]]></eval>
+    </thing>
+
+  </document>

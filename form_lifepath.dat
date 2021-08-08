@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "static" form for the game system.
+      The "static" form represents the region at the top of the main window that
+      is always visible for every actor (hence the term "static"). It's an area of
+      limited vertical height that spans the entire width of the main window, less
+      the region needed for the validation button and the dashboard (if visible).
+
+      In general, the "static" form should contain the character's name and core
+      aspects of the character that the user will often want to refer to. However,
+      there are no hard requirements for what is placed in the "static" form.
+
+      NOTE! The unique id of the "static" form is specially recognized by Hero Lab
+      as the form to be used across the top of the main window. A form with the
+      id "static" is required within your data files.
+-->
+
+<document signature="Hero Lab Data">
+	
+  <!-- Skill portal
+        Any skill selected from this portal should be Shadowed to the Hero  
+  -->
+  <portal
+    id="lpSkill"
+    style="tblNormal">
+    <table_dynamic
+      component="Skill"
+      showtemplate="SimpleItem"
+      choosetemplate="SimpleItem"
+      alwaysupdate="yes"
+      scrollable="no"
+      addpick="LifepathHelper"
+      headerpick="LifepathHelper"
+      candidatepick="LifepathHelper"
+	  candidatefield="lpSkillExpr">
+      <autotag group="Lifepath" tag="SkillRankIncrease"/>
+      <headertitle><![CDATA[
+        @text = parent.tagnames[LifepathCat.?,","] & " (" & parent.field[name].text & ") Skill "
+		@text &= container.childfound[resLPSkill].field[resShortAlt].text
+        ]]></headertitle>
+      <additem><![CDATA[
+        @text = "Select Skill"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
+  <!-- Specialty portal
+        Any specialty selected from this portal should be Shadowed to the Hero  
+  -->
+  <portal
+    id="lpSpecialty"
+    style="tblNormal">
+    <table_dynamic
+      component="Specialty"
+      showtemplate="lpSpecialtyPick"
+      choosesortset="CareerType"
+      choosetemplate="SimpleItem"
+      alwaysupdate="yes"
+      scrollable="no"
+      addpick="LifepathHelper"
+      headerpick="LifepathHelper"
+      candidatepick="LifepathHelper"
+	  candidatefield="lpSpecExpr">
+      <autotag group="Helper" tag="Shadow"/>
+      <headertitle><![CDATA[
+        @text = parent.tagnames[LifepathCat.?,","] &" (" & parent.field[name].text & ") Specialty "
+		@text &= container.childfound[resLPSpecialty].field[resShortAlt].text
+        ]]></headertitle>
+      <additem><![CDATA[
+        @text = "Select Specialty " 
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+
+  <!-- edEdge template
+        Displays an edge within the table of edges. Edges can be deleted and have
+        a mouse-over info icon.
+  -->
+  <template
+    id="lpSpecialtyPick"
+    name="Specialty Pick"
+    compset="Specialty"
+    marginhorz="3"
+    marginvert="2">
+
+    <portal
+      id="name"
+      style="lblNormal"
+      showinvalid="yes">
+      <label
+        field="thingname">
+        </label>
+      </portal>
+
+    <portal
+      id="lbldomain"
+      style="lblSecond">
+      <label>
+        <labeltext><![CDATA[
+          if (tagis[DomainTerm.?] <> 0) then
+            @text = tagnames[DomainTerm.?] & ":"
+          else
+            @text = "Domain:"
+            endif
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="domain"
+      style="editNormal">
+      <edit
+        field="domDomain">
+        </edit>
+      </portal>
+
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      <mouseinfo/>
+      </portal>
+
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~position the other portals vertically
+      perform portal[name].centervert
+      perform portal[delete].centervert
+      perform portal[domain].centervert
+      perform portal[lbldomain].alignrel[btob,domain,0]
+
+      ~position the delete portal on the far right
+      perform portal[delete].alignedge[right,0]
+
+      ~position the info portal to the left of the delete button
+      perform portal[info].alignrel[rtol,delete,-8]
+
+      ~position the name on the left and use availble space, with a gap for menus
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,portal[info].left - portal[name].left - 150)
+
+      ~if we don't need a domain, hide the portals
+      if (tagis[User.NeedDomain] = 0) then
+        portal[lbldomain].visible = 0
+        portal[domain].visible = 0
+
+      ~otherwise, position the domain portals next to the name, making sure the
+      ~domain edit portal doesn't run beyond the available space
+      else
+        perform portal[lbldomain].alignrel[ltor,name,10]
+        perform portal[domain].alignrel[ltor,lbldomain,5]
+        portal[domain].width = minimum(150,portal[info].left - portal[domain].left - 10)
+        endif
+
+      ~if the ability is auto-added, change its font to indicate that fact
+      if (candelete = 0) then
+        perform portal[name].setstyle[lblAuto]
+        endif
+      ]]></position>
+
+    </template>	
+	
+  <template
+    id="lpSpecialtyGain"
+    name="Specialty Gained"
+    compset="Lifepath"
+    marginhorz="3"
+    marginvert="2">
+
+    <portal
+      id="lblGained"
+      style="lblRight">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Specialty Gained/Promotion ?"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="gained"
+      style="chkNormal"
+      tiptext="Click to indicate hero gains a Specialty / Promotion for this tour.">
+      <checkbox
+        field="lpSpecGained">
+        </checkbox>
+      </portal>
+
+    <position><![CDATA[
+	  height = portal[gained].height + 5
+	  
+      ~position our tallest portal at the top
+      portal[gained].top = 0
+	  
+      ~position the gained portal on the far right
+      perform portal[lblGained].alignedge[left,0]
+	  
+	  ~position the aging portal to the left of the years button
+	  portal[lblGained].left = 0
+	  portal[lblGained].width = 250
+	  
+      perform portal[gained].alignrel[ltor,lblGained,10]
+
+      ]]></position>
+
+    </template>	
+  <template
+    id="lpPromotion"
+    name="Promotion Gained"
+    compset="Lifepath"
+    marginhorz="3"
+    marginvert="2">
+
+    <portal
+      id="lblPromoted"
+      style="lblRight">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Promotion?"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="promoted"
+      style="chkNormal"
+      tiptext="Click to indicate hero gains a Promotion for this tour.">
+      <checkbox
+        field="lpSpecGained">
+        </checkbox>
+      </portal>
+
+    <position><![CDATA[
+	  height = portal[promoted].height + 5
+	  
+      ~position our tallest portal at the top
+      portal[promoted].top = 0
+	  
+      ~position the gained portal on the far right
+      perform portal[lblPromoted].alignedge[left,0]
+	  
+	  ~position the aging portal to the left of the years button
+	  portal[lblPromoted].left = 0
+	  portal[lblPromoted].width = 75
+	  
+      perform portal[promoted].alignrel[ltor,lblPromoted,10]
+	  
+	  portal[lblPromoted].visible = tagis[CareerType.Military]
+	  portal[promoted].visible = portal[lblPromoted].visible
+
+      ]]></position>
+
+    </template>
+  <!-- static layout
+        This layout consists of the character's name, race, and status info, which
+        are laid out in a ribbon across the top.
+  -->
+  <layout
+    id="lifepathmodule">
+    <portalref portal="lpSkill" taborder="10"/>
+    <portalref portal="lpSpecialty" taborder="20"/>
+	<templateref template="lpSpecialtyGain" dynamic="yes" taborder="15"/>
+	<templateref template="lpPromotion" dynamic="yes" taborder="30"/>  
+
+    <!-- This script sizes and positions the layout and its child visual elements. -->
+    <position><![CDATA[
+      ~width = 350
+		  
+      perform portal[lpSkill].autoplace
+	  perform template[lpSpecialtyGain].autoplace[20]
+	  perform portal[lpSpecialty].autoplace[10]
+	  perform template[lpPromotion].autoplace[10]
+	  	  
+	  height = portal[lpSpecialty].bottom
+	  
+      ]]></position>
+
+    </layout>
+
+
+  <!-- static form
+        This is the "static" form shown at the top of the main window within Hero
+        Lab.
+
+        NOTE! The unique id of this form is specially recognized by Hero Lab as
+        the form to be used across the top of the main window. A form with this
+        id is required within your data files.
+
+        NOTE! By default, this form is 40 pixels in height, and it must always be
+        set to be at least 40 pixels in height.
+  -->
+  <form
+    id="lifepathgiz"
+    name="Lifepath">
+    <layoutref layout="lifepathmodule"/>
+    <position><![CDATA[
+      layout[lifepathmodule].width = 350
+      perform layout[lifepathmodule].render
+      width = layout[lifepathmodule].width
+      height = layout[lifepathmodule].height
+      ]]></position>
+    </form>
+
+  </document>
