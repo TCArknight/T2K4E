@@ -550,7 +550,7 @@
     marginhorz="5"
     marginvert="5"
     order="310">
-    <live>!HideTab.personal</live>
+    <live>!HideTab.personal &amp; !CharType.typVehicle</live>
     <layoutref layout="personal"/>
     <position><![CDATA[
       ]]></position>

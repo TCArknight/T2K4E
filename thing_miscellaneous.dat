@@ -248,6 +248,12 @@
     compset="CharType">
     <tag group="HLOCharacterType" tag="NPC"/>
     </thing>
+  <thing
+    id="typVehicle"
+    name="Type: Vehicle"
+    compset="CharType">
+    <tag group="HLOCharacterType" tag="Vehicle"/>
+    </thing>
 
   <thing
     id="typCampaign"

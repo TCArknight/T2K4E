@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "Basics" tab panel. This tab is where
+      the user configures that attributes and skills of the character.
+
+      All public visual elements used with this tab panel start with the prefix "ba"
+      to associate them with the tab.
+-->
+
+<document signature="Hero Lab Data">
+
+  <template
+    id="vbaDetails"
+    name="Personal"
+    compset="Personal">
+
+    <portal
+      id="title"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Details">
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehCat"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Category: " & hero.tagnames[VehicleCat.?,"/"]
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehType"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Type: " & tagnames[VehicleType.?,"/"]
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <position><![CDATA[
+
+      ~freeze our value in advancement mode or if an advancement has modified us
+      ~Note: All freezing must be done *before* any positioning is performed.
+      ~if (state.iscreate = 0) then
+      ~  portal[value].freeze = 1
+      ~elseif (autonomous = 0) then
+      ~  portal[value].freeze = 1
+      ~  endif
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+	  portal[title].width = width
+
+      ~center the other portals vertically
+      portal[lblVehCat].left = 0
+	  portal[lblVehCat].width = width
+	  portal[lblVehCat].height = 30
+      portal[lblVehCat].top = portal[title].bottom + 5
+	  
+	  
+	  portal[lblVehType].top = portal[lblVehCat].bottom + 5
+	  portal[lblVehType].left = portal[lblVehCat].left
+	  portal[lblVehType].width = width
+
+      height = portal[lblVehType].bottom + 10
+	  
+      ]]></position>
+
+    </template>	  
+
+  <!-- basics layout
+        This layout orchestrates the display of all various visual elements that
+        comprise the Basics tab. We have titles above the attributes and skills,
+        the attributes and skills tables themselves, a horizontal separator, and
+        the table of derived traits.
+
+        Each of these portals and templates is identified as a "reference" by the
+        layout. Using references allows distinct instances of portals and templates
+        to be re-used within multiple layouts. You can even use the same template
+        multiple times within a single layout.
+
+        The visual elements used in the layout are all sized and positioned via
+        the "position" script. This script is invoked to setup the dimensions of
+        visual elements and trigger the positioning of the contents of those
+        elements via the "render" invocation.
+
+        The tab order between items is controlled via the optional "taborder" XML
+        attribute on the various portal and template references. Conhin a template,
+        the tab order is dictated by the order the portals are listed within the
+        XML. Conhin a table, the tab order is dictated by the item sequence. The
+        "taborder" attribute coordinates the relative sequence of portals and
+        templates within the layout. In this layout, the tab order will move down
+        the left column and then shift over to the right column.
+  -->
+  <layout
+    id="vehbasics">
+    <templateref template="vbaDetails" thing="actor"/>
+
+    <!-- This script sizes and positions the layout and its child visual elements. -->
+    <position><![CDATA[
+	  var pagebreak as number
+  
+      ~size and position the attributes table in the top left; we set the height to
+      ~the full layout height, but the table will only use the space it needs
+      template[vbaDetails].width = width / 2
+      template[vbaDetails].left = 0
+      template[vbaDetails].height = height
+
+      ~figure out the total height we need for the tab
+	  height = template[vbaDetails].bottom
+	  
+      ]]></position>
+
+    </layout>
+
+
+  <!-- basics panel
+        This is the "Basics" panel shown within Hero Lab.
+
+        The "order" attribute dictates the sequence in which the various tabs will
+        be displayed. To keep everything well organized, We break the tabs up into
+        four logical groupings: (1) traits and creation details, (2) equipment,
+        (3) details, and (4) in-play support. Each of these groupings will have a
+        three-digit value that starts with the grouping number. Since the Basics
+        panel should appear first within the traits group, it has an order of "110".
+
+        As we assign order values, We'll leave gaps in the sequence (e.g. 110, 120,
+        etc.). This will allow us to easily change our minds and slip a new panel
+        inbetween two existing ones as the data files evolve, without having to go
+        through and re-number everything.
+
+        We setup a suitable margin around the edges of the panel. This ensures that
+        there is a little bit of spacing from the edges and eliminates the need for
+        our positioning scripts to make the appropriate adjustments.
+
+        Like with layouts, panels have a "position" script to setup the dimensions
+        of child elements and orchestrate the rendering of their contents. In many
+        cases, as with this panel, the default handling of panels will ensure that
+        the layouts are properly rendered.
+
+        The panel is assigned a "live" tagexpr so that its visibility can be
+        controlled for different types of characters. While not really useful in the
+        sample data files, this approach can be quite useful when the data files
+        expand to govern creation of widely varying characters, such as vampires vs.
+        ghosts vs. mortals in the World of Darkness game system.
+  -->
+  <panel
+    id="vehbasics"
+    name="Vehicle Basics"
+    marginhorz="5"
+    marginvert="5"
+    order="110">
+    <live>CharType.typVehicle</live>
+    <layoutref layout="vehbasics"/>
+    <position><![CDATA[
+      ~get the height used by the layout and use it, as that means we scroll
+      ~if necessary
+      perform layout[vehbasics].render
+      height = layout[vehbasics].height
+      ]]></position>
+    </panel>
+
+
+  </document>

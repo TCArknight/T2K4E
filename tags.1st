@@ -263,6 +263,7 @@
     <value id="PC" name="PC"/>
     <value id="PCStandIn" name="Stand-In PC"/>
     <value id="NPC" name="NPC"/>
+    <value id="Vehicle" name="Vehicle"/>
     </group>
 
   <!-- DashTacCon group - behaviors associated with the Dashboard and/or Tactical Console
@@ -526,6 +527,44 @@
     <value id="FoodDrink" name="Food &amp; Drink" order="80"/>
     <value id="Misc" name="Miscellaneous" order="255"/>
     </group>
+
+  <!-- VehicleType group - tags identifying the specific Type of vehicle
+  -->
+  <group
+    id="VehicleType"
+    dynamic="yes"
+    sequence="explicit">
+    <value id="Custom" order="0"/>
+    <value id="Horse" order="5"/>
+    <value id="Wagon" order="10"/>
+    <value id="Bicycle" order="15"/>
+    <value id="Motorcycle" order="20"/>
+    <value id="DirtBike" name="Dirt Bike" order="25"/>
+    <value id="2WDCar" name="2WD Car" order="30"/>
+    <value id="4WDCar" name="4WD Car" order="35"/>
+    <value id="Pickup" name="Pickup Truck" order="40"/>
+    <value id="LgtTruck" name="Light Truck" order="45"/>
+    <value id="HvyTruck" name="Heavy Truck" order="50"/>
+    <value id="APC" name="Armored Personnel Carrier" order="51"/>
+    <value id="IFV" name="Infantry Fighting Vehicle" order="52"/>
+    <value id="MBT" name="Main Battle Tank" order="53"/>
+    <value id="Bus" order="55"/>
+    <value id="Rowboat" order="60"/>
+    <value id="SmSail" name="Small Sailing Boat" order="65"/>
+    <value id="SmMotor" name="Small Motorboat"order="70"/>
+    <value id="Tug" name="Tugboat"order="75"/>
+    </group>
+	
+  <!-- VehicleCategory group - tags identifying the category of vehicle
+  -->
+  <group
+    id="VehicleCat"
+    dynamic="yes"
+    sequence="explicit">
+    <value id="Civilian" order="0"/>
+    <value id="USMil" name="US Military" order="5"/>
+    <value id="SovMil" name="Soviet Military" order="10"/>
+    </group>	
 	
   <!-- Armory group - controls order in which armor and weapons are shown
         Each type of weapon/armor must be assigned one of these tags to dictate its

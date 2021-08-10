@@ -516,7 +516,7 @@
     marginhorz="5"
     marginvert="5"
     order="110">
-    <live>!HideTab.basics</live>
+    <live>!HideTab.basics &amp; !CharType.typVehicle</live>
     <layoutref layout="basics"/>
     <position><![CDATA[
       ~get the height used by the layout and use it, as that means we scroll

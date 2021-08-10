@@ -6,4 +6,11 @@
       </minion>
     </thing>
 
+  <thing id="vehM1114HMMWV" name="M1114 HMMWV" compset="Vehicle">
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled" coupledfield="minCoupled">
+    <tag group="VehicleCat" tag="USMil"/>
+    <tag group="VehicleType" tag="4WDCar"/>
+      <bootstrap thing="typVehicle"></bootstrap>
+      </minion>
+    </thing>
     </document>
