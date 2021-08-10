@@ -87,7 +87,7 @@
     description="More often than you’d like, you’ll find yourself under extreme pressure. In the game, this mounting tension is represented by your STRESS LEVEL. It usually starts at zero, and can increase by pushing dice rolls and by experiencing frightening or stressful situations.">
     <fieldval field="trtAbbrev" value="Ment"/>
     <tag group="explicit" tag="3"/>
-    <tag group="User" tag="Resistance"/>
+    <tag group="User" tag="Power"/>
     <tag group="DashTacCon" tag="Traits"/>
     <!-- Stress begins at 0 -->
     <eval index="1" phase="Traits" priority="4000">

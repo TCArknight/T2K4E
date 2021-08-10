@@ -159,7 +159,7 @@
         User.Power
         ]]></list>
       <headertitle><![CDATA[
-        @text = "Health and Power"
+        @text = "Health and Stress"
         ]]></headertitle>
       </output_table>
     </portal>

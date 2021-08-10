@@ -188,8 +188,11 @@
     <!-- Accrue the total value of this item, as appropriate -->
     <eval index="2" phase="Final" priority="10000" name="Accrue Total Cost"><![CDATA[
       ~accrue the net weight of this piece of gear into the character
-      field[grTotalCost].value += field[grCost].value * field[stackQty].value
-	  
+      if (stackable = 1) then
+        field[grTotalCost].value += field[grCost].value * field[stackQty].value
+      else
+        field[grTotalCost].value += field[grCost].value
+      endif
       ]]></eval>
 	  
     <!-- Accrue the total value of this item, as appropriate -->
@@ -1217,7 +1220,8 @@
 
   <!-- Vehicle -->
   <compset
-    id="Vehicle">
+    id="Vehicle"
+    stackable="no">
     <compref component="Vehicle"/>
     <compref component="Equipment"/>
     <compref component="Gear"/>
