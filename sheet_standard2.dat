@@ -30,6 +30,7 @@
     <portalref portal="oArmor"/>
     <portalref portal="oWeapon"/>
     <portalref portal="oGear"/>
+    <portalref portal="oVehicle"/>
     <portalref portal="oPersonal"/>
     <position><![CDATA[
       ~position the armor table first
@@ -41,6 +42,9 @@
       ~position gear next
       perform portal[oGear].autoplace
 
+      ~position gear next
+      perform portal[oVehicle].autoplace
+	  
       ~position personal details last
       perform portal[oPersonal].autoplace
 

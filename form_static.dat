@@ -150,7 +150,7 @@
       style="lblStatic">
       <label>
         <labeltext><![CDATA[
-          @text = herofield[acStressSumm].text
+          @text = "Stress: " & herofield[acStressSumm].text
           ]]></labeltext>
         </label>
       </portal>

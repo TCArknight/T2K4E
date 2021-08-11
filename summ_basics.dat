@@ -24,6 +24,7 @@
       showtemplate="smTrait"
       showsortset="explicit"
       scrollable="no">
+      <list>!Hide.Attribute</list>
       <headertitle><![CDATA[
       @text = #summtitle_decoration[] & " Attributes " & #summtitle_decoration[]
       ]]></headertitle>
@@ -41,6 +42,7 @@
       showtemplate="smTrait"
       showsortset="explicit"
       scrollable="no">
+      <list>!Hide.Trait</list>
       <headertitle><![CDATA[
       @text = #summtitle_decoration[] & " Derived Traits " & #summtitle_decoration[]
       ]]></headertitle>

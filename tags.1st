@@ -476,6 +476,7 @@
   <group
     id="Hide">
     <value id="Attribute"/>       <!-- Indicates an attribute that is not user selectable -->
+    <value id="Trait"/>       <!-- Indicates an attribute that is not user selectable -->
     <value id="Skill"/>           <!-- Indicates a skill that is not user selectable -->
     <value id="Relationship"/>    <!-- Indicates a skill that is not user selectable -->
     <value id="InPlay"/>          <!-- Indicates an in-play adjustment that is hidden from view -->

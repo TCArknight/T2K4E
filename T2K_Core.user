@@ -728,7 +728,9 @@ validif (#trait[attrAgi] >= 5)]]></validate>
     <tag group="Hero" tag="UseBigDream"/>
     <tag group="Hero" tag="UseMoralCode"/>
     <tag group="Hero" tag="UseHowMet"/>
-    <eval phase="Setup" priority="500">perform hero.assign[HideTab.talents]</eval>
+    <eval phase="Setup" priority="500">perform hero.assign[HideTab.talents]
+perform hero.childfound[trDefense].assign[Hide.Trait]
+perform hero.childfound[trInit].assign[Hide.Trait]</eval>
     </thing>
   <thing id="mecT2K" name="T2K" compset="Mechanics">
     <usesource source="srcT2K"/>

@@ -135,7 +135,7 @@
       showtemplate="oDerivPick"
       showsortset="explicit">
       <list><![CDATA[
-        User.Resistance | User.Combat
+        !Hide.Trait & (User.Resistance | User.Combat)
         ]]></list>
       <headertitle><![CDATA[
         @text = "Derived Traits"
@@ -213,7 +213,7 @@
       component="Gear"
       showtemplate="oGearPick">
       <list><![CDATA[
-        !component.WeaponBase & !component.Defense & !Print.NoPrint
+        !component.WeaponBase & !component.Defense &!component.Vehicle & !Print.NoPrint
         ]]></list>
       <headertitle><![CDATA[
         var moneyvalue as number
@@ -225,6 +225,25 @@
       </output_table>
     </portal>
 
+  <!-- oGear portal
+        This is a table of all Gear carried by the actor. The gear list needs to
+        exclude weapons and armor, since those are already listed in the separate
+        sections for those item types.
+  -->
+  <portal
+    id="oVehicle"
+    style="outNormal">
+    <output_table
+      component="Vehicle"
+      showtemplate="oGearPick">
+      <list><![CDATA[
+        !Print.NoPrint
+        ]]></list>
+      <headertitle><![CDATA[
+        @text = "Vehicles"
+        ]]></headertitle>
+      </output_table>
+    </portal>
 
   <!-- oArmor portal
         This is a table of all Armor and Shields carried by the actor.

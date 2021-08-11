@@ -219,7 +219,7 @@
         call sbtraits
 
         ~output derived traits
-        foreach pick in hero from Derived sortas explicit
+        foreach pick in hero from Derived where "!Hide.Trait" sortas explicit
           append @boldon & eachpick.field[name].text & ": " & @boldoff
 		  if (eachpick.tagis[Helper.DisplayAlpha] <> 0) then
 		    append eachpick.field[trtAlpha].text

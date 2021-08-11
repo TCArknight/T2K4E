@@ -28,7 +28,7 @@
       style="lblNormal">
       <label>
         <labeltext><![CDATA[
-          @text = "Category: " & hero.tagnames[VehicleCat.?,"/"]
+          @text = "Category: "
           ]]></labeltext>
         </label>
       </portal>
@@ -38,7 +38,7 @@
       style="lblNormal">
       <label>
         <labeltext><![CDATA[
-          @text = "Type: " & tagnames[VehicleType.?,"/"]
+          @text = "Type: " 
           ]]></labeltext>
         </label>
       </portal>
@@ -100,7 +100,7 @@
   -->
   <layout
     id="vehbasics">
-    <templateref template="vbaDetails" thing="actor"/>
+    <templateref template="vbaDetails" />
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[

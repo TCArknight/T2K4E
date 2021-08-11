@@ -73,6 +73,7 @@
       showtemplate="baTrtPick"
       showsortset="explicit"
       scrollable="no">
+      <list>!Hide.Trait</list>
       </table_fixed>
     </portal>
 

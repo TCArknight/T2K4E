@@ -27,7 +27,22 @@
       ]]></headertitle>
       </table_fixed>
     </portal>
-
+	
+  <!-- smAbility portal - table of special talents
+  -->
+  <portal
+    id="smSpecialty"
+    style="tblInvisSm">
+    <table_fixed
+      component="Specialty"
+      showtemplate="smSpecialty"
+      scrollable="no"
+	  alwaysupdate="yes">
+      <headertitle><![CDATA[
+      @text = #summtitle_decoration[] & " Specialties " & #summtitle_decoration[]
+      ]]></headertitle>
+      </table_fixed>
+    </portal>
 
   <!-- smSkill portal
         Table of skills, using the "smTrait" template defined in "summ_basics.dat".
@@ -85,6 +100,38 @@
       ]]></position>
     </template>
 
+  <template
+    id="smSpecialty"
+    name="Summary Specialty Pick"
+    compset="Specialty">
+
+    <portal
+      id="name"
+      style="lblSummary">
+      <label>
+	    <labeltext><![CDATA[
+		  if (field[spcName].isempty = 0) then
+            @text = field[spcName].text
+		  else
+		    @text = field[name].text
+			endif
+		  ]]></labeltext>
+        </label>
+      <mouseinfo/>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[name].height
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~the name is the only portal to position
+      portal[name].left = 0
+      portal[name].top = 0
+      ]]></position>
+    </template>
 
   <!-- smTalent layout
         This layout contains both the table of special talents and the table of
@@ -93,11 +140,13 @@
   <layout
     id="smTalent">
     <portalref portal="smTalent"/>
+    <portalref portal="smSpecialty"/>
     <portalref portal="smSkill"/>
 
     <position><![CDATA[
       ~position and size the tables to span the full layout
       perform portal[smTalent].autoplace
+      perform portal[smSpecialty].autoplace
       perform portal[smSkill].autoplace[20]
       ]]></position>
 
