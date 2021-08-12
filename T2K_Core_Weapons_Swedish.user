@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="hdrT2KSwedishMil" name="--Swedish Military Firearms --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponType" tag="Revolver" name="Revolver" abbrev="Revolver"/>
+    <tag group="WeaponCat" tag="SwedishMilitary" name="Swedish Military" abbrev="Swedish"/>
+    </thing>
+  <thing id="wpT2KPist88" name="Pist 88" description="The Pist 88 is the Austrian Glock 17 pistol used by the Swedish\nArmed Forces since the 1980s. It is a striker-fired polymer-framed\ndouble-column 9x19mm pistol, well known both for its reliability\nand its simplicity of use" compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="17"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="125"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KAK4" name="AK-4" compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="BattleRifle" name="Battle Rifle" abbrev="BR"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    </thing>
+  <thing id="wpT2KAK5" name="AK-5" description="The Ak 5 is the Belgian FNC assault rifle manufactured under license in\nSweden. This rifle was developed in the early 1980s as a replacement\nfor Belgium’s aging FN FALs, and was subsequently adopted by other\nnations including Sweden and Indonesia." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    </thing>
+  <thing id="wpT2KPSG90" name="PSG-90" compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    </thing>
+  <thing id="wpT2KAG90" name="AG-90" description="The Ag 90 is the US Barrett M82A1 sniper rifle manufactured under\nlicense in Sweden. See the US listing for the M82A1 for more information" compset="Ranged">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="20"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2KCal50M2"/>
+    </thing>
+  <thing id="wpT2KGRSP40" name="GRSP 40" description="The Grsp 40 is the US Mk 19 automatic grenade launcher manufactured\nunder license in Sweden. See the US listing for the Mk 19 for more\ninformation." compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="20"/>
+    <fieldval field="wpCapacity" value="32"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="2500"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2K4053"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="BlastRating" tag="D"/>
+    </thing>
+  <thing id="wpT2KKPSTM45" name="KPist M/45" description="Also known as the Carl Gustaf M/45, this Swedish submachine gun was\nadopted in 1945. The m/45 was the standard submachine gun of the\nSwedish Army for decades. It was gradually replaced in Swedish service\nby the Ak 4 battle rifle and Ak 5 assault rifle" compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="36"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KKSP90" name="KSP 90" description="The Kulspruta 90 is the FN Minimi light machine gun manufactured\nunder license in Sweden. See the US listing for the M249 for more\ninformation" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="200"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    </thing>
+  <thing id="wpT2KKSP58B" name="KSP 58B" compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    </thing>
+  <thing id="wpT2KKSP88" name="KSP 88" description="The Ksp 88 is the US Browning M2HB heavy machine gun manufactured under license in Sweden. See the US listing for the M2HB for more\ninformation." compset="Ranged">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="15"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="2000"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="HMG"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    <tag group="AmmoType" tag="amT2KCal50M2"/>
+    </thing>
+  <thing id="wpT2KGRGM48" name="GRG M/48" compset="Ranged">
+    <fieldval field="wpDamage" value="7"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATRL"/>
+    <tag group="AmmoType" tag="amT2K84mmRocket"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    </thing>
+  <thing id="wpT2KPSKOTTM88" name="PSKOTT M/86" compset="Ranged">
+    <fieldval field="wpDamage" value="8"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATRL"/>
+    <tag group="AmmoType" tag="amT2K84mmRocket"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="SwedishMilitary"/>
+    </thing>
+  </document>

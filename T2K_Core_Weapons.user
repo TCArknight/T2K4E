@@ -395,7 +395,7 @@
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
     </thing>
-  <thing id="amT2K66mm" name="66mm" compset="Ammunition" stacking="merge">
+  <thing id="amT2K66mmRocket" name="66mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
@@ -413,10 +413,10 @@
     <fieldval field="grCost" value="350"/>
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="WeaponType" tag="Carbine"/>
     </thing>
   <thing id="wpT2KM4A1" name="M4A1" description="The M4 assault rifle is a shorter carbine version of the M16A2 with a telescoping stock and shorter barrel to make it handier for troops operating from vehicles or in close environments, like the Vietnam-era XM177E2 (CAR-15) carbine it replaced. It was first issued in the mid-1990s and includes a Picatinny mounting rail on the top of the receiver. Its adjustable stock and lighter weight also make it better suited to soldiers with smaller stature.Like the M16A2, it is limited to 3-round bursts in lieu of automatic fire.\n\nThe M4A1 is a fully-automatic version of the M4 carbine intended for specialized combat troops such as Rangers and Special Forces. Otherwise, it is identical to the regular M4." compset="Ranged">
     <fieldval field="wpDamage" value="2"/>
@@ -428,9 +428,215 @@
     <fieldval field="grCost" value="375"/>
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="WeaponType" tag="Carbine"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="amT2K55645"/>
+    </thing>
+  <thing id="wpT2KM16A1" name="M16A1" description="The M16A1 assault rifle was developed in the 1960s for use in the jungles of\nVietnam. After some teething problems were resolved, it became the standard\nrifle of the US armed forces until it was replaced by the M16A2 in the mid-80s.\nLarge stockpiles of M16A1s were sold or given to allies or maintained by reserve\nand training units. These rifles were issued en masse when war broke out in the\n‘90s, mainly to units that had just been formed or to expand reserve units. Many\nsoldiers actually preferred the M16A1 over the M16A2 due to its higher rate of fire" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
+    <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
+    <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
+    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    </thing>
+  <thing id="wpT2KM16A2" name="M16A2" description="The M16A1 assault rifle was developed in the 1960s for use in the jungles of\nVietnam. After some teething problems were resolved, it became the standard\nrifle of the US armed forces until it was replaced by the M16A2 in the mid-80s.\nLarge stockpiles of M16A1s were sold or given to allies or maintained by reserve\nand training units. These rifles were issued en masse when war broke out in the\n‘90s, mainly to units that had just been formed or to expand reserve units. Many\nsoldiers actually preferred the M16A1 over the M16A2 due to its higher rate of fire" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
+    <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
+    <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
+    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    </thing>
+  <thing id="wpT2KM40A3" name="M40A3" description="The M40A3 is the most recent in a line of US Marine Corps sniper rifles\nbegun during the war in Vietnam. It is based on the civilian Remington\nM700 action but customized and accurized by USMC armorers. The earlier\nM40A1, which was replaced by the M40A3 in the 1990s, is very similar\nto the M40A3, as there were only very minor changes in the upgrade." compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    </thing>
+  <thing id="wpT2KM21" name="M21" description="The M21 is an accurized match-grade M14 battle rifle developed during\nthe war in Vietnam. It served until replaced by the M24 Sniper Weapon\nSystem in 1988, but was retained widely in reserve units and often used\nin an intermediate sniping role as a DMR due to its higher rate of fire.\nA newer version of the M21, called the M25, was also developed and\ntested in the 1990s by the 10th Special Forces Group." compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    </thing>
+  <thing id="wpT2KM82A1" name="M82A1" description="The M82A1 was issued in the early 1990s as the Special Applications\nScoped Rifle (SASR) to many special operations units and designated\nfor use against light vehicles, although it was primarily used for very\nlong-range sniping. More were purchased in the prelude to war in the\nmid-1990s, but the lack of the rare specialized sniping ammunition left\nsnipers using extra M2 machinegun ammunition, which was less accurate\nat extreme ranges (although still ideal for shooting at light vehicles)" compset="Ranged">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="20"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2KCal50M2"/>
+    </thing>
+  <thing id="wpT2KM60" name="M60" compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="grCost" value="1250"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    </thing>
+  <thing id="wpT2KM240B" name="M240B" compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    </thing>
+  <thing id="wpT2KM2HB" name="M2HB" compset="Ranged">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="15"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="2000"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="HMG"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2KCal50M2"/>
+    </thing>
+  <thing id="amT2K84mmRocket" name="84mm Rocket" compset="Ammunition">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="RL"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    </thing>
+  <thing id="wpT2KM136AT4" name="M136 AT4" compset="Ranged">
+    <fieldval field="wpDamage" value="8"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATRL"/>
+    <tag group="AmmoType" tag="amT2K84mmRocket"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="wpFGM148" name="FGM-148" description="The FGM-148 Javelin is a top-attack fire-and-forget antitank\nguided missile that only started being issued in the mid-’90s as a\nreplacement for the M47 Dragon, so it is still quite rare. It is also\ncapable of guiding itself against designated helicopters. As the\nJavelin missile hits from the top, the armor rating for the rear of\nthe target vehicle as always used." compset="Ranged">
+    <fieldval field="wpDamage" value="10"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpShort" value="40"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="7500"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATGM"/>
+    <tag group="AmmoType" tag="am127mmATGM"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="am127mmATGM" name="127mm ATGM" compset="Ammunition">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="ATGM"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    </thing>
+  <thing id="amT2K140mmATGM" name="140mm ATGM" compset="Ammunition">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="ATGM"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    </thing>
+  <thing id="wpM47Dragon" name="M47 Dragon" description="The M47 Dragon was developed in the mid-1970s as a wire-guided\nantitank missile capable of defeating the frontal armor of nearly any\nmain battle tank. The gunner is expected to keep the crosshairs on the\ntarget for as long as 5 seconds while the missile flew to the target, despite\nhaving given away their position by the firing signature." compset="Ranged">
+    <fieldval field="wpDamage" value="11"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpShort" value="25"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="5000"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATGM"/>
+    <tag group="AmmoType" tag="amT2K140mmATGM"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="am152mmATGM" name="152mm ATGM" compset="Ammunition">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="ATGM"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    </thing>
+  <thing id="wpT2KBGM71TOW" name="BGM-71 TOW" description="The Tube-launched, Optically-tracked, Wire-guided (TOW) missile system was developed\nin the 1960s and is normally mounted on a vehicle (such as the Bradley or M901 ITV or a\nHMMWV) but can be carried by a crew. The gunner is expected to keep the crosshairs on\nthe target for as long as 10 seconds while the missile flew to the target, despite having\ngiven away their position by the firing signature. Because the TOW has a much longer\nrange than the Dragon, this was generally not a problem." compset="Ranged">
+    <fieldval field="wpDamage" value="11"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="wpArmorRating" value="-2"/>
+    <fieldval field="wpShort" value="50"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="10000"/>
+    <fieldval field="grWeight" value="15"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="ATGM"/>
+    <tag group="AmmoType" tag="am152mmATGM"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="BlastRating" tag="B"/>
     </thing>
   </document>
