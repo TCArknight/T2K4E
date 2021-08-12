@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="hdrT2KPolishMil" name="--Polish Military Firearms --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponType" tag="Revolver" name="Revolver" abbrev="Revolver"/>
+    <tag group="WeaponCat" tag="PolishMilitary" name="Polish Military" abbrev="Polish"/>
+    </thing>
+  <thing id="wpP83" name="P-83" description="The P-83 is a copy of the Soviet Makarov PM pistol manufactured in\nPoland. See the Soviet listing for the PM for more information." compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpArmorRating" value="+2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="8"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="2"/>
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K9x18"/>
+    </thing>
+  <thing id="wpT2KPMK60" name="PMK-60" description="The PMK-60 is a special Polish version of the AK-47 that includes an\nadapter for firing rifle grenades (no other AK-series rifles are inherently\ncapable of firing rifle grenades). Other than that, this rifle is treated as\na standard AKM." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="amT2K762x39"/>
+    </thing>
+  <thing id="wpT2KAKMPol" name="AKM (Polish)" description="The final version of the legendary Avtomat Kalashnikova AK-47, the\n“modernized” AK took over production in the late 1950s. Although it was\nofficially replaced by the AK-74 in the mid-1970s, it never went out of style\nand large stockpiles were held in reserve and provided to Soviet allies" compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="AKM "/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
+    <tag group="AmmoType" tag="amT2K762x39" name="7.62x39" abbrev="7.62x39"/>
+    </thing>
+  <thing id="wpT2KPM84" name="PM-84" compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpArmorRating" value="+2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="25"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K9x18"/>
+    </thing>
+  <thing id="amT2K40x47" name="40x47 Grenade" compset="Ammunition">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="GL"/>
+    <tag group="AmmoCat" tag="Grenade"/>
+    </thing>
+  <thing id="wpT2KWz1974" name="Wz 1974" description="The wz. 1974 Pallad is an indigenous Polish underbarrel grenade launcher\nfor the AKM. It is more similar to the M203 than the Soviet GP-25, as it\nuses a conventionally-cased 40x47mm cartridge that is not interchangeable with the NATO 40x46mm grenade cartridge." compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="amT2K40x47"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="BlastRating" tag="D"/>
+    </thing>
+  <thing id="wpT2KSWD" name="SWD" description="The SWD is a copy of the Soviet SVD-63 sniper rifle manufactured in\nPoland. See the Soviet listing for the SVD-63 for more information." compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="amT2K762x54"/>
+    </thing>
+  <thing id="wpT2KRPKPol" name="RPK (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpCapacity" value="75"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoType" tag="amT2K762x39" name="7.62x39" abbrev="7.62x39"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="LightMachineGun" name="Light Machine Gun" abbrev="LMG"/>
+    </thing>
+  <thing id="wpT2KRPG74Pol" name="RPK-74 (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpCapacity" value="75"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoType" tag="amT2K545x39" name="5.45x39" abbrev="5.45x39"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="LightMachineGun" name="Light Machine Gun" abbrev="LMG"/>
+    </thing>
+  <thing id="wpT2KPKMPol" name="PKM (Polish)" description="The PKM is a copy of the Soviet PKM general-purpose machine gun manufactured in Poland. See the Soviet listing for the PKM for more information" compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="grCost" value="1250"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="shortname" value="PKM"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="GPMG" name="General Purpose Machine Gun" abbrev="GPMG"/>
+    <tag group="AmmoType" tag="amT2K762x54" name="7.62x54" abbrev="7.62x54"/>
+    </thing>
+  <thing id="wpT2KDSZKM" name="DSZKM" description="The DSzKM is a copy of the Soviet DShK-38 heavy machine gun manufactured in Poland. See the Soviet listing for the DShK-38 for more information." compset="Ranged">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpCapacity" value="50"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpShort" value="15"/>
+    <fieldval field="grCost" value="1750"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoType" tag="am127x108" name="12.7x108" abbrev="12.7x108"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="HMG" name="Heavy Machine Gun" abbrev="HMG"/>
+    </thing>
+  <thing id="wpT2KNSW" name="NSW" description="The NSW is a copy of the Soviet NSV heavy machine gun manufactured\nin Poland. See the Soviet listing for the NSV for more information." compset="Ranged">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpCapacity" value="50"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpShort" value="15"/>
+    <fieldval field="grCost" value="2000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoType" tag="am127x108" name="12.7x108" abbrev="12.7x108"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="WeaponType" tag="HMG" name="Heavy Machine Gun" abbrev="HMG"/>
+    </thing>
+  <thing id="wpT2KRPG7VPol" name="RPG-7V (Polish)" description="The RPG-7Vis a copy of the Soviet RPG-7V antitank rocket launcher\nmanufactured in Poland. See the Soviet listing for the RPG-7V for more\ninformation." compset="Ranged">
+    <fieldval field="wpDamage" value="7"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="shortname" value="RPG-7V"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponType" tag="ATRL" name="Rocket Launcher" abbrev="Rocket Launcher"/>
+    <tag group="AmmoType" tag="amRocket83" name="83mm Rocket" abbrev="83mm Rocket"/>
+    <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    </thing>
+  </document>
