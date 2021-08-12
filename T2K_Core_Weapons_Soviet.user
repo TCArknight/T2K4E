@@ -29,14 +29,14 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="amT2K9x18"/>
     </thing>
-  <thing id="amT2K9x18" name="9x18" compset="Ammunition">
+  <thing id="amT2K9x18" name="9x18" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="am545x18" name="5.45x18" compset="Ammunition">
+  <thing id="am545x18" name="5.45x18" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
@@ -74,14 +74,14 @@
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="AmmoType" tag="amT2K762x39"/>
     </thing>
-  <thing id="amT2K762x39" name="7.62x39" compset="Ammunition">
+  <thing id="amT2K762x39" name="7.62x39" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="amT2K545x39" name="5.45x39" compset="Ammunition">
+  <thing id="amT2K545x39" name="5.45x39" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
@@ -134,14 +134,14 @@
     <tag group="BlastRating" tag="D"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     </thing>
-  <thing id="amT2K40mm" name="40mm Grenade" compset="Ammunition">
+  <thing id="amT2K40mm" name="40mm Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grWeight" value=".25"/>
     <fieldval field="grCost" value="40"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="GL"/>
     <tag group="AmmoCat" tag="Grenade"/>
     </thing>
-  <thing id="amT2K30x29" name="30x29 Grenade" compset="Ammunition">
+  <thing id="amT2K30x29" name="30x29 Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="25"/>
     <fieldval field="grWeight" value=".25"/>
     <usesource source="srcT2K"/>
@@ -164,7 +164,7 @@
     <tag group="BlastRating" tag="D"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     </thing>
-  <thing id="amT2K762x54" name="7.62x54" compset="Ammunition">
+  <thing id="amT2K762x54" name="7.62x54" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
@@ -229,7 +229,7 @@
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="amT2K545x39"/>
     </thing>
-  <thing id="am127x108" name="12.7x108" compset="Ammunition">
+  <thing id="am127x108" name="12.7x108" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
@@ -264,7 +264,7 @@
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="WeaponType" tag="HMG" name="Heavy Machine Gun" abbrev="HMG"/>
     </thing>
-  <thing id="amRocket83" name="83mm Rocket" compset="Ammunition">
+  <thing id="amRocket83" name="83mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K"/>
@@ -305,14 +305,14 @@
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="am50mmRocket"/>
     </thing>
-  <thing id="am50mmRocket" name="58mm Rocket" compset="Ammunition">
+  <thing id="am50mmRocket" name="58mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
-  <thing id="amT2K145x114" name="14.5x114" compset="Ammunition">
+  <thing id="amT2K145x114" name="14.5x114" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K"/>
@@ -333,7 +333,7 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="amT2K145x114"/>
     </thing>
-  <thing id="am135mmATGM" name="135mm ATGM" compset="Ammunition">
+  <thing id="am135mmATGM" name="135mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
     <fieldval field="grWeight" value="4"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>

@@ -547,7 +547,7 @@
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="amT2KCal50M2"/>
     </thing>
-  <thing id="amT2K84mmRocket" name="84mm Rocket" compset="Ammunition">
+  <thing id="amT2K84mmRocket" name="84mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K"/>
@@ -586,14 +586,14 @@
     <tag group="BlastRating" tag="B"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     </thing>
-  <thing id="am127mmATGM" name="127mm ATGM" compset="Ammunition">
+  <thing id="am127mmATGM" name="127mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="ATGM"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
-  <thing id="amT2K140mmATGM" name="140mm ATGM" compset="Ammunition">
+  <thing id="amT2K140mmATGM" name="140mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K"/>
@@ -616,7 +616,7 @@
     <tag group="BlastRating" tag="B"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     </thing>
-  <thing id="am152mmATGM" name="152mm ATGM" compset="Ammunition">
+  <thing id="am152mmATGM" name="152mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K"/>
