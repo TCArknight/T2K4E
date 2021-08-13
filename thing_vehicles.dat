@@ -20,6 +20,7 @@
     <fieldval field="vebCombatSpeedOff" value="3"/>
     <tag group="VehicleCat" tag="USMil"/>
     <tag group="VehicleType" tag="4WDCar"/>
+	<bootstrap thing="wpT2KM2HB"></bootstrap>
     </thing>
 	
     </document>

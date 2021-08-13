@@ -57,9 +57,12 @@
   <!-- And one personal info pick -->
   <bootstrap index="15" thing="mscPerson"/>
 
-  <!-- Add the "unarmed attack" pick -->
-  <bootstrap index="20" thing="wpUnarmed"/>
-
+  <bootstrap thing="wpUnarmed">
+    <containerreq phase="Initialize" priority="4000">
+      !CharType.Vehicle
+      </containerreq>
+	</bootstrap>
+	
   <!-- The "autoadd" elements identify individual things that should be automatically
         added to every new character by Hero Lab. The key difference from "bootstrap"
         entries is that each "autoadd" is added through a specified portal, thereby
