@@ -154,8 +154,8 @@
 	  
 	<eval index="4" phase="Final" priority="6000" name="Calc trtDieValue">
 		<after name="Calc trtFinal"/><![CDATA[
-	  ~if this is a derived trait, our display text is the final value
-	  if (tagis[component.Derived] <> 0) then
+	  ~if this is a derived or vehicle trait, our display text is the final value
+	  if (tagis[component.Derived] + tagis[AttrCat.Vehicle]  <> 0) then
 	    if (tagis[Helper.DisplayAlpha] = 0) then
 	      field[trtDieValue].text = field[trtFinal].value
           done
@@ -188,7 +188,7 @@
 	<eval index="5" phase="Final" priority="6000" name="Calc trtAlpha">
 		<after name="Calc trtFinal"/><![CDATA[
 	  ~if this is a derived trait, our display text is the final value
-	  if (tagis[component.Derived] <> 0) then
+	  if (tagis[component.Derived] + tagis[AttrCat.Vehicle] <> 0) then
 	    if (tagis[Helper.DisplayAlpha] = 0) then
 	      field[trtAlpha].text = field[trtFinal].value
           done
@@ -255,15 +255,22 @@
     <!-- if using the lifepath, attributes begin at 4 but can be reduced to 3-->
     <creation><![CDATA[
 	  ~if (hero.tagis[source.srcT2KLifepath] <> 0) then
+	  if (hero.tagis[CharType.Vehicle] = 0) then
         field[trtUser].value = 4
-		~endif
+		endif
+		
       ]]></creation>
 	  
     <!-- Attributes have a minimum trait value of 3 (d6) and a maximum of 5 (d10) unless they are key (or using Lifepath)-->
     <eval index="1" phase="Initialize" priority="3000"><![CDATA[
-      field[trtMinimum].value = 3
-	  field[trtMaximum].value = 5 + field[atIsKey].value + hero.tagis[source.srcT2KLifepath]
-	  
+	  if (hero.tagis[AttrCat.Vehicle] = 0) then
+        field[trtMinimum].value = 3
+	    field[trtMaximum].value = 5 + field[atIsKey].value + hero.tagis[source.srcT2KLifepath]
+	  else
+	    field[trtMinimum].value = 0
+		field[trtMaximum].value = 9999
+		endif
+		
 	  doneif (field[atIsKey].value = 0)
 	  
       ]]></eval>
@@ -272,6 +279,9 @@
     <eval index="2" phase="Traits" priority="10000">
       <before name="Calc resLeft"/>
       <after name="Bound trtUser"/><![CDATA[
+	  ~ we don't need to accumulate for Vehicles
+	  doneif (tagis[AttrCat.Vehicle] <> 0)
+	  
       hero.child[resAttrib].field[resSpent].value += field[trtUser].value
 	  
 	  ~if we're lifepath, then we need to reduce the attribute cost by 1 because we started one higher

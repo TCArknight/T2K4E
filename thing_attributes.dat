@@ -15,6 +15,7 @@
     isunique="yes"
     description="Muscle power, tougness, and physical endurance.">
     <fieldval field="trtAbbrev" value="Str"/>
+    <tag group="AttrCat" tag="Hero"/>
     <tag group="explicit" tag="1"/>
 	<!-- Accrue the total value of this item, as appropriate -->
     <eval index="1" phase="Traits" priority="5000" name="Set Base Carry"><![CDATA[
@@ -35,6 +36,7 @@
     isunique="yes"
     description="Body control, speed, and fine motor skills.">
     <fieldval field="trtAbbrev" value="Agi"/>
+    <tag group="AttrCat" tag="Hero"/>
     <tag group="explicit" tag="2"/>
     </thing>
 
@@ -46,6 +48,7 @@
     isunique="yes"
     description="Sensory perception, intellect, and mental stability">
     <fieldval field="trtAbbrev" value="Int"/>
+    <tag group="AttrCat" tag="Hero"/>
     <tag group="explicit" tag="3"/>
     </thing>
 
@@ -58,6 +61,38 @@
     description="Charisma, amiability, and emotional stability">
     <fieldval field="trtAbbrev" value="Emp"/>
     <tag group="explicit" tag="4"/>
+    <tag group="AttrCat" tag="Hero"/>
     </thing>
 
+  <!-- Vehicle Attributes -->
+   <thing
+    id="attrVehRel"
+    name="Reliability"
+    compset="Attribute"
+    isunique="yes"
+    description="">
+    <fieldval field="trtAbbrev" value="Emp"/>
+    <tag group="explicit" tag="1"/>
+    <tag group="AttrCat" tag="Vehicle"/>
+    </thing> 
+   <thing
+    id="attrVehCbtSpdOn"
+    name="Combat Speed (On Road)"
+    compset="Attribute"
+    isunique="yes"
+    description="">
+    <fieldval field="trtAbbrev" value="Emp"/>
+    <tag group="explicit" tag="2"/>
+    <tag group="AttrCat" tag="Vehicle"/>
+    </thing>
+   <thing
+    id="attrVehCbtSpdOff"
+    name="Combat Speed (Off Road)"
+    compset="Attribute"
+    isunique="yes"
+    description="">
+    <fieldval field="trtAbbrev" value="Emp"/>
+    <tag group="explicit" tag="3"/>
+    <tag group="AttrCat" tag="Vehicle"/>
+    </thing>
   </document>

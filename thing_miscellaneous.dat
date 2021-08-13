@@ -242,17 +242,12 @@
     compset="CharType">
     <tag group="HLOCharacterType" tag="PC"/>
     </thing>
+	
   <thing
     id="typNPC"
     name="Type: Non-Player Character"
     compset="CharType">
     <tag group="HLOCharacterType" tag="NPC"/>
-    </thing>
-  <thing
-    id="typVehicle"
-    name="Type: Vehicle"
-    compset="CharType">
-    <tag group="HLOCharacterType" tag="Vehicle"/>
     </thing>
 
   <thing

@@ -127,7 +127,6 @@
       type="derived">
       </field>
 
-
     <field
       id="grWeight"
       name="Weight"
@@ -299,16 +298,338 @@
     </component>
 
   <!-- Vehicle component
-        All vehicles derive from this component
+        All vehicles use this to display for purchase/selection
   -->
   <component
     id="Vehicle"
-    name="Vehicle"
+    name="Vehicle Helper"
     autocompset="no">
 
     </component>
+	
+  <!-- VehicleBase component
+        All vehicles use this for the vehicle details/attributes
+  -->  
+  <component
+    id="VehicleBase"
+    name="Vehicle Base"
+	autocompset="no">	
 
+    <field
+      id="vebReliability"
+      name="Reliability"
+      minvalue="0"
+      maxvalue="6"
+      type="derived">
+      </field>
+	  
+    <field
+      id="vebCombatSpeedOn"
+      name="Combat Speed (On Road)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+	
+    <field
+      id="vebCombatSpeedOff"
+      name="Combat Speed (Off Road)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+	  
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+	  trustme
+      ~initialize Attributes
+	  #setvehicle[attrVehRel] = field[vebReliability].value
+	  #setvehicle[attrVehCbtSpdOn] = field[vebCombatSpeedOn].value
+	  #setvehicle[attrVehCbtSpdOff] = field[vebCombatSpeedOff].value
+      ]]></eval>
+	  
+    </component>
+	
+  <component
+    id="VehicleAlt"
+    name="Vehicle"
+    panellink="gear"
+    autocompset="no">
 
+    <!-- Acceleration -->
+    <field
+      id="vhAccel"
+      name="Acceleration"
+      type="derived"
+      maxlength="10">
+      </field>
+
+    <!-- Top Speed -->
+    <field
+      id="vhTopSpeed"
+      name="Top Speed"
+      type="derived"
+      maxlength="15">
+      </field>
+
+    <!-- Handling -->
+    <field
+      id="vhHandling"
+      name="Handling"
+      type="derived"
+      maxlength="10">
+      </field>
+
+    <!-- Climb (applies to aircraft only) -->
+    <field
+      id="vhClimb"
+      name="Climb"
+      type="derived"
+      maxlength="15">
+      </field>
+
+    <!-- Toughness -->
+    <field
+      id="vhTough"
+      name="Toughness"
+      type="derived"
+      maxlength="10">
+      </field>
+
+    <!-- Armor -->
+    <field
+      id="vhArmor"
+      name="Armor"
+      type="derived"
+      maxlength="10">
+      </field>
+
+    <!-- Crew -->
+    <field
+      id="vhCrew"
+      name="Crew"
+      type="derived"
+      maxlength="10">
+      </field>
+
+    <!-- Crew -->
+    <field
+      id="vhCrewOg"
+      name="Original Crew Value"
+      type="derived"
+      maxlength="10">
+      </field>
+
+    <!-- Cost Range -->
+    <field
+      id="vhCost"
+      name="Cost Range"
+      type="static"
+      maxlength="20">
+      </field>
+
+    <!-- Special details about the vehicle -->
+    <field
+      id="vhSpecial"
+      name="Special"
+      type="derived"
+      maxlength="200">
+      </field>
+
+    <!-- Synthesized notes about the vehicle -->
+    <field
+      id="vhNotes"
+      name="Notes"
+      type="derived"
+      maxlength="250">
+      </field>
+
+    <!-- Load-out details for the vehicle that are only displayed for things -->
+    <field
+      id="vhLoadout"
+      name="Load-Out"
+      type="derived"
+      maxlength="250">
+      </field>
+
+    <!-- RDS SFC Vehicle Size - this is used in the cost and size calculations for some Modifications -->
+    <field
+      id="vhSize"
+      name="Size"
+      type="static">
+      </field>
+
+    <!-- RDS SFC Energy for Starships -->
+    <field
+      id="vhEnergy"
+      name="Energy"
+      type="derived">
+      </field>
+
+    <!-- RDS SFC Energy for Starships - this contains the original value for calculations -->
+    <field
+      id="vhEnergyOg"
+      name="Energy, original value"
+      type="derived">
+      </field>
+
+    <!-- RDS SFC Firewall is for Interface Zero 2.0 -->
+    <field
+      id="vhFirewall"
+      name="Firewall"
+      type="derived">
+      </field>
+
+    <!-- RDS Heat Radiation is for Seven Worlds -->
+    <field
+      id="vhHeatRadiation"
+      name="Heat Radiation"
+      type="derived">
+      </field>
+
+    <!-- RDS Shield Effects is for Seven Worlds -->
+    <field
+      id="vhShieldEffects"
+      name="Shield Effects"
+      type="derived">
+      </field>
+
+    <!-- RDS Jumps is for Seven Worlds -->
+    <field
+      id="vhJumps"
+      name="Jumps"
+      type="derived">
+      </field>
+
+    <!-- RDS Weeks per Jump is for Seven Worlds -->
+    <field
+      id="vhWeeksJump"
+      name="Weeks per Jump"
+      type="derived">
+      </field>
+
+    <!-- Setup a condition test to force our live state to resolve before the live
+          state of any picks added to the child gizmo are resolved. This is needed
+          to avoid run-time errors that will be reported if the picks on the child
+          gizmo try to resolve their live state before the live state of the gizmo
+          itself is resolved.
+    -->
+    <containerreq phase="Initialize" priority="900">TRUE</containerreq>
+
+    <!-- RDS Set up a condition test to force our live state to resolve before the live
+          state of any picks added to the child gizmo are resolved. This is needed
+          to avoid run-time errors that will be reported if the picks on the child
+          gizmo try to resolve their live state before the live state of the gizmo
+          itself is resolved.
+    -->
+    <eval index="1" phase="Initialize" priority="2000"><![CDATA[
+      ~Vehicles are by defintion holders, most have it applied manually
+      if (tagis[thing.holder_top] = 0) then
+        perform assign[thing.holder_top]
+        endif
+      field[vhCrewOg].text = field[vhCrew].text
+      ]]></eval>
+
+    <!-- Assign any derived special notes to the appropriate field 
+    <eval index="2" phase="Render" priority="1000"><![CDATA[
+      var special as string
+
+      ~append any special attributes appropriately (if any)
+      var attribs as string
+      attribs = tagnames[Vehicle.?,", "]
+      if (empty(attribs) = 0) then
+        if (empty(special) = 0) then
+          special &= ", "
+          endif
+        special &= attribs
+        endif
+
+      ~append any special details for this vehicle
+      if (field[vhSpecial].isempty = 0) then
+        if (empty(special) = 0) then
+          special &= ", "
+          endif
+        special &= field[vhSpecial].text
+        endif
+
+      ~we've synthesized the notes for the vehicle
+      field[vhNotes].text = special
+      ]]></eval> 
+
+    <eval index="3" phase="Setup" priority="7000" name="Alter Mods Used by Fixed/Linked"><![CDATA[
+      var fixed     as number
+      var linked    as number
+      var fixlinked as number
+      var totalmod  as number
+      
+      ~ RDS SFC While we'e here, set the vhEnergyOg field to the original vhEnergy value
+      field[vhEnergyOg].value = field[vhEnergy].value
+      
+      ~ RDS SFC This routine alters the space taken up when weapons are either Fixed, Linked or both.
+      if (isgizmo = 1) then
+        ~Remove gearWeight for weapons on vehicles so they do not affect character encumbrance
+        foreach pick in gizmo where "component.WeaponBase"
+          eachpick.field[gearWeight].value = 0
+          nexteach
+
+        foreach pick in gizmo where "component.WeapSpec | User.WepMount"
+          eachpick.field[gearWeight].value = 0
+          if (eachpick.field[wsLinked].value + eachpick.field[wsFixed].value = 2) then
+            if (eachpick.field[stackQty].value > 1) then 
+              var modsused as number
+              modsused = eachpick.field[grModsUsed].text
+              fixlinked += modsused * eachpick.field[stackQty].value
+            else
+              fixlinked += eachpick.field[grModsUsed].text
+              endif
+          else
+            if (eachpick.field[wsFixed].value = 1) then
+              if (eachpick.field[stackQty].value > 1) then 
+                var modsused as number
+                modsused = eachpick.field[grModsUsed].text
+                fixed += modsused * eachpick.field[stackQty].value
+              else
+                fixed += eachpick.field[grModsUsed].text
+                endif
+              endif
+            if (eachpick.field[wsLinked].value = 1) then
+              if (eachpick.field[stackQty].value > 1) then 
+                var modsused as number
+                modsused = eachpick.field[grModsUsed].text
+                linked += modsused * eachpick.field[stackQty].value
+              else
+                linked += eachpick.field[grModsUsed].text
+                endif
+              endif
+            endif
+          nexteach
+
+        if (fixlinked > 0) then
+          fixlinked = fixlinked - (fixlinked/4)
+          fixlinked = round(fixlinked,0,-1)
+          endif
+
+        if (fixed > 0) then
+          fixed = fixed/2
+          fixed = round(fixed,0,-1)
+          endif
+      
+        if (linked > 0) then
+          linked = linked/2
+          linked = round(linked,0,-1)
+          endif
+      
+        totalmod = fixlinked + fixed + linked
+        field[grCurrMods].value -= totalmod
+        endif
+      ]]></eval> -->
+    <evalrule index="1" phase="Validate" priority="9000" message="Crew can't go below zero."><![CDATA[
+        var crew as number
+        crew = field[vhCrew].text
+        validif (crew >= 0)
+      ]]></evalrule>
+
+    </component>
+	
   <!-- Equippable component
         Any gear that can be equipped (e.g. weapons) must derive from this component.
         A field is managed that tracks whether the gear is actually equipped, and the
@@ -1125,7 +1446,7 @@
       </field>
 	
     </component>
-	
+
   <!-- Define various component sets associated with the components defined above.
   -->
 
@@ -1223,11 +1544,26 @@
     id="Vehicle"
     stackable="no">
     <compref component="Vehicle"/>
+    <compref component="VehicleBase"/>
     <compref component="Equipment"/>
     <compref component="Gear"/>
     <compref component="Minion"/>
+    </compset> 
+  <!-- VehicleBase -->
+  <compset
+    id="VehicleBase"
+    stackable="no">
+    <compref component="VehicleBase"/>
+    <compref component="Minion"/>
+    </compset>	
+  <!-- Vehicle -->
+  <compset
+    id="VehicleAlt"
+    stackable="no">
+    <compref component="Vehicle"/>
+    <compref component="Gear"/>
     </compset>
-
+	
   <!-- Define any entities associated with the components defined above. -->
   <!-- Ammunition Load -->
   <!-- form="ammogiz"> -->

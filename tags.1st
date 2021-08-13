@@ -89,6 +89,8 @@
   -->
   <group
     id="Hero">
+    <value id="FixedRace"/>        <!-- Indicates hero is a specific race -->
+    <value id="Minion"/>           <!-- Indicates hero is a minion -->
     <value id="Dead"/>        <!-- Indicates hero is dead or otherwise out of combat -->
     <value id="NoDamage"/>    <!-- Indicates no damage history exists for the hero -->
     <value id="Hand"/>        <!-- Each tag indicates one hand worth of weapons equipped -->
@@ -264,6 +266,7 @@
     <value id="PCStandIn" name="Stand-In PC"/>
     <value id="NPC" name="NPC"/>
     <value id="Vehicle" name="Vehicle"/>
+    <value id="NPCCritter" name="Critter"/>
     </group>
 
   <!-- DashTacCon group - behaviors associated with the Dashboard and/or Tactical Console
@@ -695,6 +698,25 @@
     <value id="Specialty" order="20"/>
     <value id="Unknown" order="80"/>
     </group>
+	
+  <group
+    id="CharType"
+    dynamic="yes">
+    <value id="Vehicle"/>       <!-- identifies a fixed value adjustment that the user can't modify -->
+    </group>
 
+  <group
+    id="MinionSet"
+    visible="no">
+    <value id="Critter" name="Creature"/>
+    <value id="Vehicle" name="Vehicles"/>
+    </group>
 
+  <group
+    id="AttrCat"
+    visible="yes">
+    <value id="Hero" name="Hero"/>
+    <value id="Vehicle" name="Vehicles"/>
+    </group>	
+	
   </document>

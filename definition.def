@@ -136,6 +136,10 @@ Text goes here
     param1="trait"
     result="hero.child[#trait].field[trtUser].value"/>
   <scriptmacro
+    name="setvehicle"
+    param1="attribute"
+    result="hero.child[#attribute].field[trtUser].value"/>
+  <scriptmacro
     name="childname"
     param1="child"
     result="hero.childfound[#child].field[name].text"/>

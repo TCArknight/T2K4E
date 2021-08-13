@@ -65,7 +65,7 @@
     <!-- Make sure that we don't have multiple shields equipped -->
     <evalrule index="1" phase="Validate" priority="8000" message="At least one relationship required."><![CDATA[
 	  ~ no need to validate relationships for Vehicles
-	  validif (hero.tagcount[CharType.typVehicle] <> 0)
+	  validif (hero.tagcount[CharType.Vehicle] <> 0)
 	  
 	  ~ if we have a relationship we're good
       validif (hero.tagcount[Relationship.?] <> 0)
@@ -86,7 +86,7 @@
     <!-- Make sure that we don't have multiple shields equipped -->
     <evalrule index="1" phase="Validate" priority="8000" message="At least one Buddy relationship required."><![CDATA[
 	  ~ no need to validate relationships for Vehicles
-	  validif (hero.tagcount[CharType.typVehicle] <> 0)
+	  validif (hero.tagcount[CharType.Vehicle] <> 0)
 	  
 	  ~ if we have a Buddy Relationship we're good
       validif (hero.tagcount[Relationship.Buddy] <> 0)

@@ -561,7 +561,7 @@
     marginhorz="5"
     marginvert="5"
     order="315">
-    <live>!HideTab.relationships &amp; !CharType.typVehicle</live>
+    <live>!HideTab.relationships &amp; !CharType.Vehicle</live>
     <layoutref layout="relationships"/>
     <position><![CDATA[
       ]]></position>

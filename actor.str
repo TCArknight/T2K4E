@@ -666,7 +666,23 @@
       ~our net cash is our configured starting cash plus our accrued cash
       field[acCashNet].value = field[acCashCfg].value + hero.usagepool[TotalCash].value
       ]]></eval>
-	  
+
+	<!-- Timing: before the existence expression on the baRace table in
+       tab_basics.dat, which is currently at Initialize/10. That existence
+       expression needs to come before the containerreq on rHuman, which is
+       at Initialize/500 -->
+	<eval index="1" phase="Initialize" priority="0" name="Process MinionSet.?"><![CDATA[
+	  if (hero.tagis[MinionSet.Vehicle] <> 0) then
+		perform hero.assign[Hero.FixedRace]
+		perform hero.assign[Hero.Minion]
+		perform hero.assign[HLOCharacterType.Vehicle]
+		perform hero.assign[CharType.Vehicle]
+	  elseif (hero.tagis[MinionSet.Critter] <> 0) then
+		perform hero.assign[Hero.FixedRace]
+		perform hero.assign[Hero.Minion]
+		perform hero.assign[HLOCharacterType.NPCCritter]
+		endif
+	  ]]></eval>	  
     </component>
 
   <!-- Personal component

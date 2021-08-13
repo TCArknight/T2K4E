@@ -9,10 +9,101 @@
 
 <document signature="Hero Lab Data">
 
+  <portal
+    id="vbaAttribVeh"
+    style="tblInvis">
+    <table_fixed
+      component="Attribute"
+      showtemplate="vbaAttrPick"
+      showsortset="explicit"
+      scrollable="no"
+	  alwaysupdate="yes">
+      <list>!(Hide.Attribute|AttrCat.Hero)</list>
+      <headertitle><![CDATA[
+        @text = "Vehicle  Attributes"
+        @text &= hero.child[resAttrib].field[resShortAlt].text
+        ]]></headertitle>
+      </table_fixed>
+    </portal>
+	
+  <template
+    id="vbaAttrPick"
+    name="Vehicle Attribute Pick"
+    compset="Attribute"
+    marginhorz="13"
+    marginvert="9">
+
+    <portal
+      id="name"
+      style="lblLarge"
+      showinvalid="yes">
+      <label>
+	    <labeltext><![CDATA[
+		  if (field[atIsKey].value <> 0) then
+            @text = "{text 008000}" & field[name].text & "{text 010101}"
+		  else
+		    @text = field[name].text
+			endif
+		  
+		  ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="value"
+      style="lblLarge">
+      <label
+          field="trtFinal">
+        </label>
+      </portal>
+
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~freeze our value in advancement mode or if an advancement has modified us
+      ~Note: All freezing must be done *before* any positioning is performed.
+      if (state.iscreate = 0) then
+        portal[value].freeze = 1
+      elseif (autonomous = 0) then
+        portal[value].freeze = 1
+        endif
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~center the other portals vertically
+      perform portal[name].centervert
+      perform portal[value].centervert
+
+      ~position the info portal on the far right
+      perform portal[info].alignedge[right,0]
+
+      ~position the incrementer to the left of the info portal (plus a gap)
+      perform portal[value].alignrel[rtol,info,-5]
+	  
+      ~position the name on the left and make sure its width does not exceed the available space
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,portal[value].left - portal[name].left - 10)
+      ]]></position>
+
+    </template>
+	
   <template
     id="vbaDetails"
-    name="Personal"
-    compset="Personal">
+    name="Details"
+    compset="Vehicle">
 
     <portal
       id="title"
@@ -25,33 +116,50 @@
 
     <portal
       id="lblVehCat"
-      style="lblNormal">
+      style="lblLeft">
       <label>
         <labeltext><![CDATA[
-          @text = "Category: "
-          ]]></labeltext>
+		    @text = "test:"
+		  ]]></labeltext>
         </label>
       </portal>
 
     <portal
       id="lblVehType"
-      style="lblNormal">
+      style="lblLeft">
       <label>
         <labeltext><![CDATA[
-          @text = "Type: " 
-          ]]></labeltext>
+			perform hero.findchild[VehicleBase].setfocus
+			doneif (state.isfocus = 0)
+			@text = focus.tagnames[VehicleType.?,","]
+            ]]></labeltext>
         </label>
       </portal>
 	  
-    <position><![CDATA[
+    <portal
+      id="lblVehRel"
+      style="lblLeft">
+      <label
+          text="Reliability: ">
+        </label>
+      </portal>
 
-      ~freeze our value in advancement mode or if an advancement has modified us
-      ~Note: All freezing must be done *before* any positioning is performed.
-      ~if (state.iscreate = 0) then
-      ~  portal[value].freeze = 1
-      ~elseif (autonomous = 0) then
-      ~  portal[value].freeze = 1
-      ~  endif
+    <portal
+      id="VehReli"
+      style="lblLeft">
+      <label>
+		<labeltext><![CDATA[
+		    @text = "Test VehReli"
+			
+			perform hero.findchild[Vehicle].setfocus
+			doneif (state.isfocus = 0)
+			
+			@text = focus.field[vebReliability].text
+			]]></labeltext>
+		</label>
+      </portal>
+		
+    <position><![CDATA[
 
       ~position our tallest portal at the top
       portal[title].top = 0
@@ -63,12 +171,19 @@
 	  portal[lblVehCat].height = 30
       portal[lblVehCat].top = portal[title].bottom + 5
 	  
-	  
 	  portal[lblVehType].top = portal[lblVehCat].bottom + 5
 	  portal[lblVehType].left = portal[lblVehCat].left
 	  portal[lblVehType].width = width
 
-      height = portal[lblVehType].bottom + 10
+	  portal[lblVehRel].top = portal[lblVehType].bottom + 5
+	  portal[lblVehRel].left = 0
+	  portal[lblVehRel].width = width
+	  
+	  portal[VehReli].top = portal[lblVehRel].bottom + 5
+	  portal[VehReli].left = 0
+	  portal[VehReli].width = width
+	  
+      height = portal[VehReli].bottom + 10
 	  
       ]]></position>
 
@@ -100,18 +215,16 @@
   -->
   <layout
     id="vehbasics">
+    <portalref portal="vbaAttribVeh" taborder="10"/>
     <templateref template="vbaDetails" />
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
-	  var pagebreak as number
-  
-      ~size and position the attributes table in the top left; we set the height to
-      ~the full layout height, but the table will only use the space it needs
-      template[vbaDetails].width = width / 2
-      template[vbaDetails].left = 0
-      template[vbaDetails].height = height
+	  perform portal[vbaAttribVeh].autoplace
+	  perform template[vbaDetails].autoplace[10]
 
+      ~perform template[vbaDetails].render
+	  
       ~figure out the total height we need for the tab
 	  height = template[vbaDetails].bottom
 	  
@@ -156,7 +269,7 @@
     marginhorz="5"
     marginvert="5"
     order="110">
-    <live>CharType.typVehicle</live>
+    <live>CharType.Vehicle</live>
     <layoutref layout="vehbasics"/>
     <position><![CDATA[
       ~get the height used by the layout and use it, as that means we scroll

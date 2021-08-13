@@ -928,5 +928,47 @@
       <it_groupref id="SourceInfo"/>
       </inputthing>
     </editthing>
+     
+  <editthing
+    group="Vehicles"
+    compset="VehicleBase"
+    name="Vehicle"
+    prefix="veb"
+    description="Weapons, armor, and vehicles all have their own tabs for creating objects of those types."
+    summary="To create a vehicle, first, create an entry on the Vehicle tab - that's the vehicle attributes. Then, create this to set up the vehicle's cost and availability.">
+  
+    <inputthing>
+      <it_groupref id="SourceInfo"/>
+      </inputthing>
+    </editthing>
+	
+  <editthing
+    group="Vehicles"
+    compset="Vehicle"
+    name="Vehicle Helper"
+    prefix="veh"
+    defminion="Vehicle"
+    defownmode="no"
+    deflivefield="minEnabled"
+    description="Weapons, armor, and vehicles all have their own tabs for creating objects of those types."
+    summary="To create a vehicle, first, create an entry on the Vehicle tab - that's the vehicle attributes. Then, create this to set up the vehicle's cost and availability.">
+    
+	<inputthing
+      name="Vehicle Statline"
+      helptext="Select the statline to use for this Vehicle">
+      <it_bootcustom compset="VehicleBase" target="minion">
+        </it_bootcustom>
+      </inputthing>
+    <inputthing
+      name="Leave Checked"
+      helptext="Leave this checked">
+      <it_tagcheck group="MinionSet" tag="Vehicle" default="yes" target="minion"/>
+      </inputthing>	
+  
+    <inputthing>
+      <it_groupref id="SourceInfo"/>
+      </inputthing>
+	  
+    </editthing>
 	
   </document>

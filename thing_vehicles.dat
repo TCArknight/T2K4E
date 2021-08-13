@@ -6,11 +6,20 @@
       </minion>
     </thing>
 
-  <thing id="vehM1114HMMWV" name="M1114 HMMWV" compset="Vehicle">
+  <thing id="vehM1114HMMWV" name="M1114 HMMWV" compset="Vehicle" stacking="never">
+    <fieldval field="grCost" value="12000"/>
     <minion id="Vehicle" ownmode="no" livefield="minEnabled" coupledfield="minCoupled">
-    <tag group="VehicleCat" tag="USMil"/>
-    <tag group="VehicleType" tag="4WDCar"/>
-      <bootstrap thing="typVehicle"></bootstrap>
+      <tag group="MinionSet" tag="Vehicle" name="Vehicle" abbrev="Vehicle"/>
+      <bootstrap thing="vebM1114HMMWV"></bootstrap>
       </minion>
     </thing>
+	
+  <thing id="vebM1114HMMWV" name="M1114 HMMWV" description="Testing" compset="VehicleBase" uniqueness="unique">
+    <fieldval field="vebReliability" value="5"/>
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <tag group="VehicleCat" tag="USMil"/>
+    <tag group="VehicleType" tag="4WDCar"/>
+    </thing>
+	
     </document>

@@ -26,7 +26,7 @@
       showsortset="explicit"
       scrollable="no"
 	  alwaysupdate="yes">
-      <list>!Hide.Attribute</list>
+      <list>!(Hide.Attribute|AttrCat.Vehicle)</list>
       <headertitle><![CDATA[
         @text = "Attributes"
         @text &= hero.child[resAttrib].field[resShortAlt].text
@@ -517,7 +517,7 @@
     marginhorz="5"
     marginvert="5"
     order="110">
-    <live>!HideTab.basics &amp; !CharType.typVehicle</live>
+    <live>!HideTab.basics &amp; !CharType.Vehicle</live>
     <layoutref layout="basics"/>
     <position><![CDATA[
       ~get the height used by the layout and use it, as that means we scroll
