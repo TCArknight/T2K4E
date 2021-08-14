@@ -505,7 +505,7 @@
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="amT2KCal50M2"/>
     </thing>
-  <thing id="wpT2KM60" name="M60" compset="Ranged">
+  <thing id="wpT2KM60" name="M60" description="The M60 general-purpose machine gun (GPMG) was developed in the\n1950s from the World War II German FG-42 and MG-42. Although\nofficially replaced in service by the M240B in the early 1990s, there\nwere still large numbers in the US inventory and by the outbreak of\nwar in the mid-’90s it was still the primary machine gun of American\ncombat arms units. It includes an attached bipod and can also be\nfired from a tripod." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
@@ -519,7 +519,7 @@
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="amT2K76251"/>
     </thing>
-  <thing id="wpT2KM240B" name="M240B" compset="Ranged">
+  <thing id="wpT2KM240B" name="M240B" description="The M240B was adopted by the US armed forces as a vehicle-mounted\nmachine gun in the late 1970s, and then as an infantry weapon in the\nearly 1990s. It comes standard with a bipod but may also be mounted on\na tripod or pintle. Unlike the M60, which was well known for jamming,\nthe M240B was very reliable." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
@@ -533,7 +533,7 @@
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="WeaponType" tag="GPMG"/>
     </thing>
-  <thing id="wpT2KM2HB" name="M2HB" compset="Ranged">
+  <thing id="wpT2KM2HB" name="M2HB" description="The venerable Browning M2HB .50 machine gun was developed during\nWorld War I but not adopted until the 1930s. It has served in every branch\nof the US armed forces since then, mainly on vehicles, but also on tripods\nfrom fixed fighting positions. The weapon is so heavy, however, that a team\nis required to carry the barrel, receiver, tripod, and ammunition separately" compset="Ranged">
     <fieldval field="wpDamage" value="4"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="15"/>
@@ -554,7 +554,7 @@
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
-  <thing id="wpT2KM136AT4" name="M136 AT4" compset="Ranged">
+  <thing id="wpT2KM136AT4" name="M136 AT4" description="The M136 AT4 is a modified version of the earlier Swedish 74 mm\nPansarskott m/68, developed in the late 1960s, adopted by the US\narmed forces in the mid-’80s. Like the M72A3 LAW, it is a disposable\nanti-tank weapon, but it has much better penetration and range\nthan the M72A3. Like the LAW, it is also effective against buildings\nand lighter vehicles." compset="Ranged">
     <fieldval field="wpDamage" value="8"/>
     <fieldval field="wpCrit" value="2"/>
     <fieldval field="wpArmorRating" value="-1"/>

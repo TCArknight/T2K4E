@@ -20,7 +20,7 @@
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="AmmoType" tag="amT2K919"/>
     </thing>
-  <thing id="wpT2KAK4" name="AK-4" compset="Ranged">
+  <thing id="wpT2KAK4" name="AK-4" description="The Ak 4 Automatkarbin is the German G3 battle rifle manufactured\nunder license in Sweden. It was developed in the late 1950s in cooperation\nwith Spain and its design was based on the World War II StG 44. Sweden\nadopted the rifle in the late 1960s, and in spite of its replacement by the\nAk 5, many Ak 4 rifles are still issued and held in stockpiles" compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
@@ -48,7 +48,7 @@
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     <tag group="AmmoType" tag="amT2K55645"/>
     </thing>
-  <thing id="wpT2KPSG90" name="PSG-90" compset="Ranged">
+  <thing id="wpT2KPSG90" name="PSG-90" description="The Psg 90 Prickskyttegevär is the Arctic Warfare bolt-action sniper rifle\ndesigned for cold climates and manufactured under license in Sweden.\nIt is identical to the British L118A1 and Australian SR98. A folding-stock\nmodel (Psg 90B) is also available." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="12"/>
@@ -120,7 +120,7 @@
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     <tag group="AmmoType" tag="amT2K55645"/>
     </thing>
-  <thing id="wpT2KKSP58B" name="KSP 58B" compset="Ranged">
+  <thing id="wpT2KKSP58B" name="KSP 58B" description="The Ksp 58B is the FN MAG 59 general-purpose machine gun\nmanufactured under license in Sweden. See the US listing for\nthe M240B for more information." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
@@ -148,7 +148,7 @@
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     <tag group="AmmoType" tag="amT2KCal50M2"/>
     </thing>
-  <thing id="wpT2KGRGM48" name="GRG M/48" compset="Ranged">
+  <thing id="wpT2KGRGM48" name="GRG M/48" description="The Grg m/48, also known as the Carl Gustaf, is a shoulder-fired\n84mm recoilless rifle designed in the late 1940s and adopted\nby the Swedish army. The M3 version, introduced in the early\n1990s, was also adopted for limited use by US SOCOM." compset="Ranged">
     <fieldval field="wpDamage" value="7"/>
     <fieldval field="wpCrit" value="2"/>
     <fieldval field="wpArmorRating" value="-1"/>
@@ -164,7 +164,7 @@
     <tag group="BlastRating" tag="C"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     </thing>
-  <thing id="wpT2KPSKOTTM88" name="PSKOTT M/86" compset="Ranged">
+  <thing id="wpT2KPSKOTTM88" name="PSKOTT M/86" description="The Pskott Pansarskott m/86 was developed in the mid-1980s to\nreplace the older 74mm Pskott m/68. It was adopted by the US\narmed forces as the M136 AT4. See the US listing for the M136\nAT4 for more information." compset="Ranged">
     <fieldval field="wpDamage" value="8"/>
     <fieldval field="wpCrit" value="2"/>
     <fieldval field="wpArmorRating" value="-1"/>

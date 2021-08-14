@@ -118,7 +118,7 @@
     <tag group="WeaponType" tag="SMG" name="Submachine Gun" abbrev="SMG"/>
     <tag group="AmmoType" tag="amT2K9x18"/>
     </thing>
-  <thing id="wpT2KGP25" name="GP-25" compset="Ranged">
+  <thing id="wpT2KGP25" name="GP-25" description="The GP-25 series consists of 40mm grenade launchers for any AK series\nrifle. The grenade has no cartridge case and is muzzle-loaded, making\nit more like a trigger-fired 40mm mortar than a grenade launcher. The\nspin-armed fuse sets between 10 and 40 meters from the muzzle, so\nthe grenade will not detonate any closer than that." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="4"/>
@@ -186,7 +186,7 @@
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="AmmoType" tag="amT2K762x54"/>
     </thing>
-  <thing id="wpT2KPKM" name="PKM" compset="Ranged">
+  <thing id="wpT2KPKM" name="PKM" description="The PKM, or modern version of the Pulemyot Kalashnikova, is a Soviet\nbelt-fed general-purpose machine gun introduced in the 1960s. It comes\nwith a detachable bipod, but it can also be mounted on a tripod or a\nvehicle pintle." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
