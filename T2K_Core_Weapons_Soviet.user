@@ -8,7 +8,7 @@
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
     <tag group="AmmoCatType" tag="GL"/>
     </thing>
-  <thing id="hdrT2KSovietMil" name="--Soviet Military Firearms --" compset="Ranged" isshowonly="yes">
+  <thing id="hdrT2KSUMilitary" name="--Soviet Military Firearms --" compset="Ranged" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="Revolver" name="Revolver" abbrev="Revolver"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>

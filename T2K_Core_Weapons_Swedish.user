@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="hdrT2KSwedishMil" name="--Swedish Military Firearms --" compset="Ranged" isshowonly="yes">
+  <thing id="hdrT2KSEMilitary" name="--Swedish Military Firearms --" compset="Ranged" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="Revolver" name="Revolver" abbrev="Revolver"/>
     <tag group="WeaponCat" tag="SwedishMilitary" name="Swedish Military" abbrev="Swedish"/>
