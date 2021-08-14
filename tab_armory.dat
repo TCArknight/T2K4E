@@ -284,7 +284,33 @@
           ]]></labeltext>
         </label>
       </portal>
-
+    <portal
+      id="blast"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amBlast].text
+          ]]></labeltext>
+        </label>
+      </portal>
+    <portal
+      id="crit"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amCrit].text
+          ]]></labeltext>
+        </label>
+      </portal>
+      <portal
+        id="armorrating"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amArmorRating].text
+          ]]></labeltext>
+        </label>
+      </portal>
     <portal
       id="cost"
       style="lblNormal">

@@ -4,7 +4,7 @@
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="OtherMilitary" name="Other Military Weapons" abbrev="Other"/>
     </thing>
-  <thing id="wpT2KFNFAL" name="FN-FAL" compset="Ranged">
+  <thing id="wpT2KFNFAL" name="FN-FAL" description="The FN FAL was one of the world’s first modern battle rifles and was adopted\nby many Western nations as their standard infantry weapon in the 1950s.\nIt was available with a fixed or folding stock and in semiautomatic and\nselective-fire models, as well as LMG and carbine versions." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpArmorRating" value="."/>
@@ -34,7 +34,7 @@
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
     <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
     </thing>
-  <thing id="wpT2KVZ61" name="VZ 61" compset="Ranged">
+  <thing id="wpT2KVZ61" name="VZ 61" description="The vz 61 Škorpion is a rare but interesting Czechoslovakian machine\npistol adopted in the early 1960s and generally used as a PDW to replace\nboth pistol and submachine gun. Although carried holstered, like a pistol,\nit has a folding stock and generally larger magazine capacity than most\npistols, although firing a somewhat underpowered cartridge." compset="Ranged">
     <fieldval field="wpDamage" value="1"/>
     <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpArmorRating" value="+1"/>
@@ -52,11 +52,14 @@
   <thing id="amT2K765x17" name="7.65x17" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="+2"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="wpT2KUzi" name="UZI" compset="Ranged">
+  <thing id="wpT2KUzi" name="UZI" description="The Israeli Uzi is one of the most famous submachine guns of all time and\nwas adopted in the early 1950s by the IDF before being exported around\nthe world. It is available with either a detachable fixed stock or a folding\nstock and is one of the few submachine guns ever made to accept a bayonet." compset="Ranged">
     <fieldval field="wpDamage" value="1"/>
     <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpArmorRating" value="+1"/>
@@ -71,7 +74,7 @@
     <tag group="WeaponType" tag="SMG"/>
     <tag group="AmmoType" tag="amT2K919"/>
     </thing>
-  <thing id="wpT2KPSG1" name="PSG-1" compset="Ranged">
+  <thing id="wpT2KPSG1" name="PSG-1" description="The PSG-1 Präzisionsschützengewehr is a German semi automatic sniper\nrifle derived from the G3 series of battle rifles and adopted in the 1970s,\nmainly for use by counterterrorism units. A military version with plastic\naccessories (weight 1), called the MSG90, was developed in the early\n1990s but is even more rare than the original rifle." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="12"/>
@@ -85,7 +88,7 @@
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="AmmoType" tag="amT2K76251"/>
     </thing>
-  <thing id="wpT2KArmbrust" name="Armbrust" compset="Ranged">
+  <thing id="wpT2KArmbrust" name="Armbrust" description="The German Armbrust is one of the few disposable antitank rocket\nlaunchers that can be fired safely from indoors due to its low firing\nsignature. It was developed in the 1970s and is similar to the M72A3\nLAW in lethality." compset="Ranged">
     <fieldval field="wpDamage" value="6"/>
     <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpArmorRating" value="-1"/>
@@ -105,9 +108,13 @@
   <thing id="am67mmRocket" name="67mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="amDamage" value="6"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
     </thing>
   <thing id="wpT2kPZF3" name="PZF 3" description="The German Panzerfaust 3 antitank rocket launcher was adopted\nin the early 1990s to replace the aging PzF 44 developed at the end\nof World War II. It is similar to the RPG-7V, itself derived from the\noriginal Panzerfaust, but has longer range and greater penetration\nthan the Soviet weapon." compset="Ranged">
     <fieldval field="wpDamage" value="8"/>
@@ -128,8 +135,12 @@
   <thing id="amT2K110mmRocket" name="110mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="amDamage" value="8"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
     </thing>
   </document>

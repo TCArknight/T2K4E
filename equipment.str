@@ -846,14 +846,16 @@
     <field
       id="wpCrit"
       name="Weapon Crit Rating"
-      type="derived">
+      type="derived"
+      maxlength="20">
       </field>
 
     <!-- armor rating for the weapon -->
     <field
       id="wpArmorRating"
       name="Armor Rating"
-      type="derived">
+      type="derived"
+      maxlength="20">
       </field>
 	  
     <!-- Minimum strength required to wield -->
@@ -1391,9 +1393,31 @@
       type="derived"
       maxlength="20">
       </field>
+    <field
+      id="amCrit"
+      name="Critical"
+      type="derived"
+      maxlength="20">
+    </field>
+        <field
+      id="amArmorRating"
+      name="Armor Rating"
+      type="derived"
+      maxlength="20">
+    </field>
+  
 
-    <identity group="AmmoType"/>
-	
+    <field
+      id="amBlast"
+      name="Blast Rating"
+      type="derived"
+	  maxlength="15"
+	  maxfinal="15">
+	  <finalize><![CDATA[
+        @text = tagnames[BlastRating.?,","]
+        ]]></finalize>
+      </field>
+	  <identity group="AmmoType"/>
     <!-- Initialize the user value to the new quantity -->
     <creation><![CDATA[
       ~if we don't have a transaction pick to initialize from, use what we know;
@@ -1440,9 +1464,18 @@
 	  
 	  if (isgizmo = 0) then
 	    if (field[grIsEquip].value <> 0) then
-		  if (empty(field[amDamage].text) = 0) then
-	        parent.field[wpDamage].text = field[amDamage].text
-			endif
+		    if (empty(field[amDamage].text) = 0) then
+	          parent.field[wpDamage].text = field[amDamage].text
+			  endif
+        if (empty(field[amCrit].text) = 0) then
+	        parent.field[wpCrit].text = field[amCrit].text
+			  endif
+        if (empty(field[amArmorRating].text) = 0) then
+	        parent.field[wpArmorRating].text = field[amArmorRating].text
+			  endif
+        if (empty(field[amBlast].text) = 0) then
+	        parent.field[wpBlast].text = field[amBlast].text
+			  endif
 		  endif
 		endif
 
