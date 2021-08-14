@@ -667,7 +667,11 @@
       <label>
         <labeltext><![CDATA[
           if (tagis[component.WeapRange] <> 0) then
-            @text = field[wpRange].text
+		    if (empty(field[wpRange].text) = 0) then
+              @text = field[wpRange].text
+			else
+              @text = "--"
+            endif  
           else
             @text = ""
             endif

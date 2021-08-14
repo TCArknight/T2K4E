@@ -95,4 +95,24 @@
     <tag group="explicit" tag="3"/>
     <tag group="AttrCat" tag="Vehicle"/>
     </thing>
+   <thing
+    id="attrVehTraSpdOn"
+    name="Travel Speed (On Road)"
+    compset="Attribute"
+    isunique="yes"
+    description="">
+    <fieldval field="trtAbbrev" value="Emp"/>
+    <tag group="explicit" tag="4"/>
+    <tag group="AttrCat" tag="Vehicle"/>
+    </thing>
+   <thing
+    id="attrVehTraSpdOff"
+    name="Travel Speed (Off Road)"
+    compset="Attribute"
+    isunique="yes"
+    description="">
+    <fieldval field="trtAbbrev" value="Emp"/>
+    <tag group="explicit" tag="5"/>
+    <tag group="AttrCat" tag="Vehicle"/>
+    </thing>
   </document>

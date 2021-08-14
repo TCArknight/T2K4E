@@ -132,6 +132,13 @@
     compset="Personal">
     </thing>
 	
+  <!-- Personal information details used on the Personal tab -->
+  <thing
+    id="mscVehDetails"
+    name="Vehicle Details"
+    compset="VehicleDetails">
+    </thing>
+	
   <!-- Military Service information details-->
   <thing
     id="mscService"

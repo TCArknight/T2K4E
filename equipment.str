@@ -332,20 +332,101 @@
 	  </field>
 	
     <field
+      id="vebTravelSpeedOff"
+      name="Travel Speed (Off Road)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+	
+    <field
+      id="vebTravelSpeedOn"
+      name="Travel Speed (On Road)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+	
+    <field
       id="vebCombatSpeedOff"
       name="Combat Speed (Off Road)"
       minvalue="0"
       defvalue="0"
       type="derived">
-	  </field>
-	  
-    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+	  </field>  
+    <eval index="1" phase="Initialize" priority="4500"><![CDATA[
 	  trustme
       ~initialize Attributes
 	  #setvehicle[attrVehRel] = field[vebReliability].value
 	  #setvehicle[attrVehCbtSpdOn] = field[vebCombatSpeedOn].value
 	  #setvehicle[attrVehCbtSpdOff] = field[vebCombatSpeedOff].value
+	  #setvehicle[attrVehTraSpdOn] = field[vebTravelSpeedOn].value
+	  #setvehicle[attrVehTraSpdOff] = field[vebTravelSpeedOff].value
+	  
+	  
+	  perform hero.findchild[VehicleDetails].setfocus
+	  doneif (state.isfocus = 0)
+	  
+	  focus.field[vdeCategory].text = tagnames[VehicleCat.?,"/"]
+	  focus.field[vdeType].text = tagnames[VehicleType.?,"/"]
+	  focus.field[vdeReliability].value = field[vebReliability].value
+	  focus.field[vdeCombatSpeedOn].value = field[vebCombatSpeedOn].value
+	  focus.field[vdeCombatSpeedOff].value = field[vebCombatSpeedOff].value
+	  focus.field[vdeTravelSpeedOn].value = field[vebTravelSpeedOn].value
+	  focus.field[vdeTravelSpeedOff].value = field[vebTravelSpeedOff].value
+	  
       ]]></eval>
+	  
+    </component>
+	
+  <component
+    id="VehicleDetails"
+    name="Vehicle Details"
+    ispublic="no">
+	
+	<field
+      id="vdeCategory"
+      name="Vehicle Category"
+      type="derived"
+	  maxlength="25">
+      </field>
+	  
+    <field
+      id="vdeType"
+      name="Vehicle Type"
+      type="derived"
+	  maxlength="25">
+	  </field>
+		
+	<field
+      id="vdeReliability"
+      name="Reliability"
+      type="derived">
+      </field>
+	  
+    <field
+      id="vdeCombatSpeedOn"
+      name="Combat Speed (On Road)"
+      type="derived">
+	  </field>
+	
+    <field
+      id="vdeCombatSpeedOff"
+      name="Combat Speed (Off Road)"
+      type="derived">
+	  </field>
+	
+    <field
+      id="vdeTravelSpeedOn"
+      name="Travel Speed (On Road)"
+      type="derived">
+	  </field>
+	  
+    <field
+      id="vdeTravelSpeedOff"
+      name="Travel Speed (Off Road)"
+      type="derived">
+	  </field>	
 	  
     </component>
 	
@@ -656,7 +737,7 @@
     <creation><![CDATA[
       ~if this is natural equipment, initialize the equipped state
       if (tagis[Equipment.Natural] <> 0) then
-        field[grIsEquip].value = 1
+        field[grIsEquip].value = tagis[Equipment.AutoEquip]
         endif
 
       ~if this equipment is supposed to start out as equipped, initialize the state

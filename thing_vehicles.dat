@@ -18,8 +18,11 @@
     <fieldval field="vebReliability" value="5"/>
     <fieldval field="vebCombatSpeedOn" value="4"/>
     <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="9"/>
+    <fieldval field="vebTravelSpeedOff" value="7"/>
     <tag group="VehicleCat" tag="USMil"/>
     <tag group="VehicleType" tag="4WDCar"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
 	<bootstrap thing="wpT2KM2HB"></bootstrap>
     </thing>
 	

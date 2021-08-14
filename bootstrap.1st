@@ -57,7 +57,14 @@
   <!-- And one personal info pick -->
   <bootstrap index="15" thing="mscPerson"/>
 
-  <bootstrap thing="wpUnarmed">
+  <!-- And one personal info pick -->
+  <bootstrap index="20" thing="mscVehDetails">
+    <containerreq phase="Initialize" priority="4000">
+      CharType.Vehicle
+      </containerreq>
+	</bootstrap>
+  
+  <bootstrap index="25" thing="wpUnarmed">
     <containerreq phase="Initialize" priority="4000">
       !CharType.Vehicle
       </containerreq>

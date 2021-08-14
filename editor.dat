@@ -642,7 +642,7 @@
 	<inputthing
       name="Weapon Type"
       helptext="Specify the type for this weapon.">
-      <it_tagpick group="WeaponType" tag="?" require="yes" deftag="Bow"/>
+      <it_tagpick group="WeaponType" tag="?" />
       </inputthing>
     <inputthing
       name="Weapon Bonus"
