@@ -518,6 +518,21 @@
       name="Damage"
       helptext="Specify the damage rating of the ammunition.">
       <it_field field="amDamage"/>
+      </inputthing> 
+     <inputthing
+      name="Critical"
+      helptext="Specify the cricial rating of the ammunition.">
+      <it_field field="amCrit"/>
+      </inputthing>
+      <inputthing
+      name="Armor Rating"
+      helptext="Specify the armor rating of the ammunition.">
+      <it_field field="amArmorRating"/>
+      </inputthing>
+      <inputthing
+      name="Blast"
+      helptext="Specify the blast rating of the ammunition.">
+      <it_taglist group="BlastRating" tag="?" />
       </inputthing>
     <inputthing
       name="Cost"
