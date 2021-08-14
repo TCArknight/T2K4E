@@ -53,6 +53,9 @@
   <thing id="amT2K765x17" name="7.65x17" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="+2"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -106,9 +109,13 @@
   <thing id="am67mmRocket" name="67mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="amDamage" value="6"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
     </thing>
   <thing id="wpT2kPZF3" name="PZF 3" description="The German Panzerfaust 3 antitank rocket launcher was adopted\nin the early 1990s to replace the aging PzF 44 developed at the end\nof World War II. It is similar to the RPG-7V, itself derived from the\noriginal Panzerfaust, but has longer range and greater penetration\nthan the Soviet weapon." compset="Ranged">
     <fieldval field="wpDamage" value="8"/>
@@ -129,8 +136,12 @@
   <thing id="amT2K110mmRocket" name="110mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="amDamage" value="8"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
     </thing>
   </document>

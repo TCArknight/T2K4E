@@ -67,9 +67,13 @@
   <thing id="amT2K40x47" name="40x47 Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="25"/>
     <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="GL"/>
     <tag group="AmmoCat" tag="Grenade"/>
+    <tag group="BlastRating" tag="D"/>
     </thing>
   <thing id="wpT2KWz1974" name="Wz 1974" description="The wz. 1974 Pallad is an indigenous Polish underbarrel grenade launcher\nfor the AKM. It is more similar to the M203 than the Soviet GP-25, as it\nuses a conventionally-cased 40x47mm cartridge that is not interchangeable with the NATO 40x46mm grenade cartridge." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>

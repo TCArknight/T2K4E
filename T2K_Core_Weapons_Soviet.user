@@ -3,10 +3,14 @@
   <thing id="amT2K4053" name="40x53" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="GL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
-    <tag group="AmmoCatType" tag="GL"/>
+    <tag group="BlastRating" tag="D"/>
     </thing>
   <thing id="hdrT2KSUMilitary" name="--Soviet Military Firearms --" compset="Ranged" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
@@ -32,6 +36,9 @@
   <thing id="amT2K9x18" name="9x18" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="+2"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -39,6 +46,9 @@
   <thing id="am545x18" name="5.45x18" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="+2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCatType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
     <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
@@ -77,6 +87,9 @@
   <thing id="amT2K762x39" name="7.62x39" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -84,6 +97,9 @@
   <thing id="amT2K545x39" name="5.45x39" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -137,16 +153,24 @@
   <thing id="amT2K40mm" name="40mm Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grWeight" value=".25"/>
     <fieldval field="grCost" value="40"/>
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="GL"/>
     <tag group="AmmoCat" tag="Grenade"/>
+    <tag group="BlastRating" tag="D"/>
     </thing>
   <thing id="amT2K30x29" name="30x29 Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="25"/>
     <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="GL"/>
     <tag group="AmmoCat" tag="Grenade"/>
+    <tag group="BlastRating" tag="D"/>
     </thing>
   <thing id="wpT2KAGS17" name="AGS-17" description="The AGS-17 Plamya is a belt-fed 30mm automatic grenade launcher that can be mounted on a tripod or a vehicle pintle. It was adopted in the early 1970s and has been used widely since that time. Unlike the GP-25\n40mm grenade launcher, the AGS-17 used conventional cased cartridges.\nUnlike other heavy weapons, the AGS-17 uses ammo dice just like small arms. If you hit, each on an ammo die lets you land an additional grenade in the target hex or a hex adjacent to it – or, if you attacked a\nspecific target, score another hit on the target, or a secondary target in the same or an adjacent hex. If you miss, roll deviation one additional time for each rolled on your ammo dice." compset="Ranged">
     <fieldval field="wpDamage" value="3"/>
@@ -167,6 +191,9 @@
   <thing id="amT2K762x54" name="7.62x54" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -232,6 +259,9 @@
   <thing id="am127x108" name="12.7x108" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="4"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="HMG" name="Heavy Machine Gun" abbrev="HMG"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -267,9 +297,13 @@
   <thing id="amRocket83" name="83mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="amDamage" value="7"/>
+    <fieldval field="amCrit" value="2"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
     </thing>
   <thing id="wpT2KRPG7V" name="RPG-7V" description="The RPG-7V, or Ruchnoy Protivotankoviy Granatomyot, is a portable,\nreloadable antitank rocket launcher based on the RPG-2, itself derived\nfrom the World War II German Panzerfaust. It was developed in the\nearly 1960s and has a very small backblast which enables it to be fired\nindoors safely" compset="Ranged">
     <fieldval field="wpDamage" value="7"/>
@@ -308,13 +342,20 @@
   <thing id="am50mmRocket" name="58mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="amDamage" value="5"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
     </thing>
   <thing id="amT2K145x114" name="14.5x114" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amDamage" value="4"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="HMG"/>
     <tag group="AmmoCat" tag="Firearm"/>
@@ -336,8 +377,12 @@
   <thing id="am135mmATGM" name="135mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
     <fieldval field="grWeight" value="4"/>
-    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <fieldval field="amDamage" value="10"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="-1"/>
     <tag group="AmmoCatType" tag="ATGM" name="Anti-Tank Guided Missile" abbrev="ATGM"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="B"/>
     </thing>
   <thing id="wpT2K9M113Konkurs" name="9M113 Konkurs" description="The 9M113 Konkurs (NATO codename AT-5 Spandrel) is a wire-guided\nantitank missile developed in the mid-1970s and often found mounted\non vehicles. It can also be carried by a crew for firing from a tripod." compset="Ranged">
     <fieldval field="wpDamage" value="10"/>
