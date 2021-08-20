@@ -63,4 +63,51 @@
 	sortorder="2"
     description="Use Archetypes character creation.">
     </source>
+
+  <source 
+    id="srcT2KConversions"
+    name="Prior Edition Conversions"
+    parent="srcTwilight2000"
+    reportable="no"
+    selectable="no"
+    sortorder="2"
+    description="Conversions of Prior Edition Material">
+    </source>
+
+    <source
+      id="srcT2KConversionBase"
+      name="Conversion Rules"
+      parent="srcT2KConversions"
+      reportable="yes"
+      sortorder="1"
+      description="Core Conversion Data">
+      </source>
+
+    <source
+      id="srcT2K1stConversions"
+      name="1st Edition"
+      parent="srcT2KConversions"
+      reportable="no"
+      selectable="no"
+      sortorder="2"
+      description="1st Edition Twilight 2000 Material">
+      </source>
+
+      <source
+        id="srcT2K1stConvCore"
+        name="Core Rules"
+        parent="srcT2K1stConversions"
+        reportable="yes"
+        sortorder="1"
+        description="Original 1st Edition Boxed Set">
+        </source>
+        
+        <source
+        id="srcT2K1stConvGDW516"
+        name="GDW516 Small Arms Guide"
+        parent="srcT2K1stConversions"
+        reportable="yes"
+        sortorder="2"
+        description="GDW516 Small Arms Guide">
+        </source>
 </document>

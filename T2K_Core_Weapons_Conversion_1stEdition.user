@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="wpT2KSMGSterling" name="Sterling SMG" compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  </document>

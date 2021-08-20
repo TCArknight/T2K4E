@@ -454,8 +454,6 @@
     <tag group="WeaponType" tag="Carbine"/>
     </thing>
   <thing id="wpT2KM4A1" name="M4A1" description="The M4 assault rifle is a shorter carbine version of the M16A2 with a telescoping stock and shorter barrel to make it handier for troops operating from vehicles or in close environments, like the Vietnam-era XM177E2 (CAR-15) carbine it replaced. It was first issued in the mid-1990s and includes a Picatinny mounting rail on the top of the receiver. Its adjustable stock and lighter weight also make it better suited to soldiers with smaller stature.Like the M16A2, it is limited to 3-round bursts in lieu of automatic fire.\n\nThe M4A1 is a fully-automatic version of the M4 carbine intended for specialized combat troops such as Rangers and Special Forces. Otherwise, it is identical to the regular M4." compset="Ranged">
-    <fieldval field="wpDamage" value="2"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="4"/>
     <fieldval field="wpCapacity" value="30"/>
     <fieldval field="wpRateOfFire" value="6"/>
@@ -468,7 +466,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="amT2K55645"/>
     <tag group="thing" tag="holder"/>
-    <holdlimit><![CDATA[AmmoCat.Firearm & AmmoCatType.Rifle & AmmoType.amT2K55645]]></holdlimit>
+    <holdlimit><![CDATA[AmmoCatType.Rifle & AmmoCat.Firearm & AmmoType.amT2K55645]]></holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM16A1" name="M16A1" description="The M16A1 assault rifle was developed in the 1960s for use in the jungles of\nVietnam. After some teething problems were resolved, it became the standard\nrifle of the US armed forces until it was replaced by the M16A2 in the mid-80s.\nLarge stockpiles of M16A1s were sold or given to allies or maintained by reserve\nand training units. These rifles were issued en masse when war broke out in the\n‘90s, mainly to units that had just been formed or to expand reserve units. Many\nsoldiers actually preferred the M16A1 over the M16A2 due to its higher rate of fire" compset="Ranged">

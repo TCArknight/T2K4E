@@ -876,7 +876,6 @@ foreach pick in hero from Attribute
     <tag group="LifepathCat" tag="Tour"/>
     <tag group="MilitaryRank" tag="O1"/>
     <tag group="Military" tag="Officer"/>
-    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
     <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <prereq message="requires no D attribute">
@@ -914,7 +913,6 @@ foreach pick in hero from Attribute
     <tag group="LifepathCat" tag="Tour"/>
     <tag group="MilitaryRank" tag="O1"/>
     <tag group="Military" tag="Officer"/>
-    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
     <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <prereq message="requires no D attribute">
@@ -952,7 +950,7 @@ foreach pick in hero from Attribute
     <tag group="LifepathCat" tag="Tour"/>
     <tag group="MilitaryRank" tag="O1"/>
     <tag group="Military" tag="Officer"/>
-    <eval phase="Final"><![CDATA[field[livename].text = "Officer (SpecOps)"]]></eval>
+    <tag group="Lifepath" tag="CombatArms"/>
     <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <prereq message="requires no D attribute">

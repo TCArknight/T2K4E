@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="wpT2KAMT380" name="AMT .380 Backup" description="A small, lightweight pistol designed to be carried concealed as a backup weapon.  Not much good for anything but short-ranged combat." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="230"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    </thing>
+  <thing id="wpT2KAstra" name="Astra Constable" description="A small automatic pistol designed to carried by urban police units." compset="Ranged">
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="grCost" value="230"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP" name=".380 ACP" abbrev=".380 ACP"/>
+    </thing>
+  <thing id="wpT2KHardBall" name="AMT Hardballer" description="A stainless steel version of the standard US Army .45 Automatic.  The Hardballer is an exceptionally well made weapon.  A special long-barreled version called the &quot;Longslide&quot; was the pistol that Arnold Schwarzeneggar carried in the movie The Terminator" compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    </thing>
+  </document>

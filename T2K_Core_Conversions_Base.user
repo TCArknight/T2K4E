@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="amT2K22LR" name=".22 LR" compset="Ammunition">
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    </thing>
+  <thing id="amT2K380ACP" name=".380 ACP" compset="Ammunition">
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="2"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grLotCost" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K44Magnum" name=".44 Magnum" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="2"/>
+    <fieldval field="amArmorRating" value="+1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K32ACP" name=".32 ACP" compset="Ammunition">
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K460WthrBy" name=".460 Weatherby" compset="Ammunition">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="am447x133Cls" name="4.47x33 Cls" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="am762x25T" name="7.62x25mm Tokarev" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K8mmM" name="7.62x57mm Mauser" compset="Ammunition">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  </document>
