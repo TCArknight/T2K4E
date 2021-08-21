@@ -110,7 +110,7 @@
 	  showsortset="TourIndex"
       choosetemplate="SimpleItem"
 	  choosesortset="CareerType"
-	  scrollable="no"
+	  scrollable="yes"
 	  showfrozenfixed="yes"
       showfixedlast="yes">
       <list>LifepathCat.Tour</list>
