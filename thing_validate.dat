@@ -174,7 +174,8 @@
     <!-- Make sure that we don't have multiple sets of armor equipped -->
     <evalrule index="1" phase="Validate" priority="8000" message="Multiple suits of armor equipped"><![CDATA[
       ~if we have no more than one set of armor equipped, we're good
-      validif (hero.tagcount[Armor.?] <= 1)
+      validif (hero.tagcount[ArmorLoc.Torso] <= 1)
+      validif (hero.tagcount[ArmorLoc.Head]<=1)
 
       ~mark associaated tabs as invalid
       container.panelvalid[armory] = 0
