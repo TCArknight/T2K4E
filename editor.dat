@@ -530,6 +530,11 @@
       <it_field field="amArmorRating"/>
       </inputthing>
       <inputthing
+      name="Range"
+      helptext="Specify the Range of the Ammunition.">
+      <it_field field="amRange"/>
+      </inputthing>
+      <inputthing
       name="Blast"
       helptext="Specify the blast rating of the ammunition.">
       <it_taglist group="BlastRating" tag="?" />

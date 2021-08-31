@@ -1405,7 +1405,34 @@
       type="derived"
       maxlength="20">
     </field>
-  
+    <!-- Synthesized text ranges for the weapon -->
+    <field
+      id="amRange"
+      name="Range"
+      type="derived"
+      maxfinal="25"> 
+	  
+      <!-- Calculate the value based on all three range elements so that any changes
+          to any value safely trigger an update of the finalized value -->
+      
+      <calculate phase="Render" priority="10000"><![CDATA[
+        @value = field[wpShort].value * 100000000 + field[wpMedium].value * 10000 + field[wpLong].value
+        ]]></calculate>
+		
+      <!-- Final value for display is a blending of the various range values -->
+      <finalize><![CDATA[
+        if (tagis[WeaponSpec.SpecRange] <> 0) then
+          @text = "Special"
+        else
+		  if (tagcount[MaxRange.?] <> 0) then
+		    @text = tagnames[MaxRange.?,"/"]
+		  else
+            @text = field[wpShort].value
+			~ field[wpShort].value & "/" & field[wpMedium].value & "/" & field[wpLong].value
+			endif
+          endif
+        ]]></finalize>
+      </field>
 
     <field
       id="amBlast"
@@ -1473,6 +1500,9 @@
         if (empty(field[amArmorRating].text) = 0) then
 	        parent.field[wpArmorRating].text = field[amArmorRating].text
 			  endif
+        if (empty(field[amRange].value) = 0) then 
+          parent.field[wpRange].value = field[amRange].value
+        endif
         if (empty(field[amBlast].text) = 0) then
 	        parent.field[wpBlast].text = field[amBlast].text
 			  endif

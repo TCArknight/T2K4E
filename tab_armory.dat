@@ -221,7 +221,7 @@
       ~between weapon types, since ranged weapons require extra space for the range
       height = portal[name].height
       if (tagis[component.WeapRange] <> 0) then
-        width = 350
+        width = 500
       else
         width = 250
         endif
@@ -311,6 +311,15 @@
           ]]></labeltext>
         </label>
       </portal>
+      <portal
+        id="armorrange"
+        style="lblNormal">
+        <label>
+          <labeltext><![CDATA[
+          @text=field[amRange].text          
+          ]]></labeltext>
+          </label>
+        </portal>
     <portal
       id="cost"
       style="lblNormal">
@@ -325,7 +334,7 @@
       ~set up our dimensions, with a width that we dictate; our width can vary
       ~between weapon types, since ranged weapons require extra space for the range
       height = portal[name].height
-      width = 250
+      width = 500
 
       ~if this is a "sizing" calculation, we're done
       doneif (issizing <> 0)
@@ -549,7 +558,6 @@
           ]]></labeltext>
         </label>
       </portal>
-	  
     <portal
       id="hdrSpecial"
       style="lblHeader"
@@ -571,6 +579,17 @@
           ]]></labeltext>
         </label>
       </portal>	  
+ 
+      <portal
+      id="hdrMag"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Mag"
+		  ]]></labeltext>
+        </label>
+      </portal>
 	  
     <header><![CDATA[
       ~our header height is the title plus a gap plus the header text
@@ -589,8 +608,9 @@
       perform portal[hdrCrit].centerpoint[horz,250]
       perform portal[hdrRange].centerpoint[horz,280]
       perform portal[hdrArmor].centerpoint[horz,310]
-	  perform portal[hdrAmmo].centerpoint[horz,350]
-      perform portal[hdrSpecial].centerpoint[horz,390]
+	    perform portal[hdrAmmo].centerpoint[horz,350]
+      perform portal[hdrMag].centerpoint[horz,400]
+      perform portal[hdrSpecial].centerpoint[horz,450]
 	  
       ~align all header labels at the bottom of the header region
       perform portal[hdrName].alignedge[bottom,0]
@@ -600,6 +620,7 @@
       perform portal[hdrRange].alignedge[bottom,0]
       perform portal[hdrArmor].alignedge[bottom,0]
       perform portal[hdrSpecial].alignedge[bottom,0]
+      perform portal[hdrMag].alignedge[bottom,0]
       perform portal[hdrAmmo].alignedge[bottom,0]
 
       height = portal[hdrName].bottom
@@ -706,6 +727,25 @@
       </portal>
 
     <portal
+      id="magazine"
+      style="lblNormal">
+      <label>
+      <labeltext><![CDATA[
+                if (tagis[component.WeapRange] <> 0) then
+		    if (empty(field[wpCapacity].text) = 0) then
+              @text = field[wpCapacity].text
+			else
+              @text = "--"
+            endif  
+          else
+            @text = ""
+            endif
+          ]]></labeltext>
+    </label>
+    </portal>
+
+
+    <portal
       id="special"
       style="imgNormal">
       <image_literal
@@ -767,12 +807,12 @@
           ]]></labeltext>
         </label>
       </portal>
-	  
+
     <position><![CDATA[
 	  ~set up our dimensions, with a width that we dictate; our width can vary
       ~between weapon types, since ranged weapons require extra space for the range
       height = portal[info].height
-
+      width = 500
       ~if this is a "sizing" calculation, we're done
       doneif (issizing <> 0)
 	  
@@ -790,6 +830,7 @@
       perform portal[strreq].centervert
       perform portal[heldby].centervert
       perform portal[ammo].centervert
+      perform portal[magazine].centervert
 	  
       ~position the delete portal on the far right
       perform portal[delete].alignedge[right,0]
@@ -802,11 +843,11 @@
 
       ~position the special portal to the left of the gear button; we want the
       ~note to be centered in its own column relative to a centerpoint position
-      perform portal[special].centerpoint[horz,390]
+      perform portal[special].centerpoint[horz,420]
 
       ~If the weapon is a ranged weapon, we want to display the ammo editor instead of the notes
 	  perform portal[ammo].centerpoint[horz,350]
-
+    perform portal[magazine].centerpoint[horz,400]
       ~position the range portal to the left of the delete button; we want the
       ~damage to be centered in its own column relative to a centerpoint position
 	  
@@ -1204,7 +1245,7 @@
       ~position the gear portal to the left of the info button
       perform portal[gearmanage].alignrel[rtol,info,-8]
 	  
-      perform portal[special].centerpoint[horz,380]
+      perform portal[special].centerpoint[horz,420]
 	  
       ~position the defense portal to the left of the delete button; we want the
       ~defense to be centered in its own column relative to a centerpoint position
