@@ -531,9 +531,10 @@
       </inputthing>
       <inputthing
       name="Range"
-      helptext="Specify the Range of the Ammunition.">
-      <it_field field="amRange"/>
+      helptext="Specify the short range for the ammo in (10m) hexes.">
+      <it_field field="amShort"/>
       </inputthing>
+
       <inputthing
       name="Blast"
       helptext="Specify the blast rating of the ammunition.">

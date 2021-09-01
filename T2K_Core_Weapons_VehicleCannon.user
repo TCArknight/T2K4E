@@ -5,6 +5,9 @@
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="20"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="20"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -14,9 +17,12 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC23mmAP" name="Cannon - 23mm AP" compset="Ammunition">
@@ -24,6 +30,9 @@
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="20"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="20"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCatType" tag="VehicleCannon" name="Vehicle Cannon" abbrev="Cannon"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
@@ -33,9 +42,12 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="D" name="D" abbrev="D"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="BlastRating" tag="D" name="D" abbrev="D"/>
     <tag group="AmmoCatType" tag="VehicleCannon" name="Vehicle Cannon" abbrev="Cannon"/>
     </thing>
   <thing id="amT2KC25mmAP" name="Cannon - 25mm AP" compset="Ammunition">
@@ -43,6 +55,9 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -52,9 +67,12 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="35"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="35"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC30mmAP" name="Cannon - 30mm AP" compset="Ammunition">
@@ -62,6 +80,9 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="20"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="20"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -71,9 +92,12 @@
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC40mmAP" name="Cannon - 40mm AP" compset="Ammunition">
@@ -81,6 +105,9 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="35"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="35"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -90,9 +117,12 @@
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="40"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="amShort" value="40"/>
     <usesource source="srcT2K"/>
-    <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="D"/>
     </thing>
   <thing id="amT2KC73mmAP" name="Cannon - 73mm AP" compset="Ammunition">
@@ -100,6 +130,9 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="10"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="amShort" value="10"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -109,9 +142,12 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="10"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="amShort" value="10"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC762mmAP" name="Cannon - 76.2mm AP" compset="Ammunition">
@@ -119,6 +155,9 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="10"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="amShort" value="10"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -128,9 +167,12 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="15"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="amShort" value="15"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC762mmHEAT" name="Cannon - 76.2mm HEAT" compset="Ammunition">
@@ -138,9 +180,12 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="-1"/>
     <fieldval field="amRange" value="15"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="amShort" value="15"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC100mmAPDS" name="Cannon - 100mm APDS" compset="Ammunition">
@@ -148,6 +193,9 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="6"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -157,9 +205,12 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="6"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC100mmHEAT" name="Cannon - 100mm HEAT" compset="Ammunition">
@@ -167,9 +218,12 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="-1"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="6"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC105mmAPDS" name="Cannon - 105mm APDS" compset="Ammunition">
@@ -177,6 +231,9 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="6"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -186,9 +243,12 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="40"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="6"/>
+    <fieldval field="amShort" value="40"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC105mmHEAT" name="Cannon - 105mm HEAT" compset="Ammunition">
@@ -196,9 +256,12 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="-1"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="6"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC115mmAPDS" name="Cannon - 115mm APDS" compset="Ammunition">
@@ -206,6 +269,9 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -215,9 +281,12 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC115mmHEAT" name="Cannon - 115mm HEAT" compset="Ammunition">
@@ -225,15 +294,21 @@
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="-1"/>
     <fieldval field="amRange" value="25"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="25"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC120mmAPFSDS" name="Cannon - 120mm APFSDS" compset="Ammunition">
     <fieldval field="amDamage" value="10"/>
     <fieldval field="amCrit" value="1"/>
     <fieldval field="amArmorRating" value="-1"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="40"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
@@ -242,9 +317,12 @@
     <fieldval field="amDamage" value="10"/>
     <fieldval field="amCrit" value="1"/>
     <fieldval field="amArmorRating" value="-1"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="40"/>
     <usesource source="srcT2K"/>
-    <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="B"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     </thing>
   <thing id="amT2KC125mmAPFSDS" name="Cannon - 125mm APFSDS" compset="Ammunition">
@@ -252,6 +330,9 @@
     <fieldval field="amCrit" value="1"/>
     <fieldval field="amArmorRating" value="-1"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
@@ -261,9 +342,12 @@
     <fieldval field="amCrit" value="1"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="amRange" value="40"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="40"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="amT2KC125mmHEAT" name="Cannon - 125mm HEAT" compset="Ammunition">
@@ -271,9 +355,12 @@
     <fieldval field="amCrit" value="1"/>
     <fieldval field="amArmorRating" value="-1"/>
     <fieldval field="amRange" value="30"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="amShort" value="30"/>
     <usesource source="srcT2K"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
+    <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     </thing>
   <thing id="hdrT2KVehCannon" name="-- Vehicle Cannon --" compset="Ranged" isshowonly="yes">

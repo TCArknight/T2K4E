@@ -343,7 +343,8 @@
     <value id="OtherMilitary" name="Other Military" order="50"/>
     <value id="Grenade" name="Hand Grenade" order="90"/>
     <value id="Mine" name="Mine" order="95"/>
-    <value id="VehicleWeapons" name="Vehicle Weapons" order="100"/>
+    <value id="Mortar" name="Mortar" order="100"/>
+    <value id="VehicleWeapons" name="Vehicle Weapons" order="110"/>
     </group>
 	
   <group
@@ -363,7 +364,8 @@
     <value id="GL" name="Grenade Launcher" order="28"/>
     <value id="ATRL" name="Rocket Launcher" order="30"/>
     <value id="ATGM" name="Missile Launcher" order="32"/>
-    <value id="VehicleCannon" name="Vehicle Cannon" order="33"/>
+    <value id="Mortar" name="Mortar" order="33"/>
+    <value id="VehicleCannon" name="Vehicle Cannon" order="34"/>
     </group>
 	
   <group
@@ -385,7 +387,7 @@
     <value id="GL" name="Grenade Launcher"/>
     <value id="RL" name="Rocket Launcher"/>
     <value id="LMG" name="Light Machinegun"/>
-	
+    <value id="Mortar" name="Mortar"/>
     </group>
 	
   <group

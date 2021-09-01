@@ -1405,6 +1405,26 @@
       type="derived"
       maxlength="20">
     </field>
+        <!-- Short range for the weapon -->
+    <field
+      id="amShort"
+      name="Short Range"
+      type="derived">
+      </field>
+
+    <!-- Medium range for the weapon -->
+    <field
+      id="amMedium"
+      name="Medium Range"
+      type="derived">
+      </field>
+
+    <!-- Long range for the weapon -->
+    <field
+      id="amLong"
+      name="Long Range"
+      type="derived">
+      </field>
     <!-- Synthesized text ranges for the weapon -->
     <field
       id="amRange"
@@ -1416,21 +1436,17 @@
           to any value safely trigger an update of the finalized value -->
       
       <calculate phase="Render" priority="10000"><![CDATA[
-        @value = field[wpShort].value * 100000000 + field[wpMedium].value * 10000 + field[wpLong].value
+        @value = field[amShort].value * 100000000 + field[amMedium].value * 10000 + field[amLong].value
         ]]></calculate>
 		
       <!-- Final value for display is a blending of the various range values -->
       <finalize><![CDATA[
-        if (tagis[WeaponSpec.SpecRange] <> 0) then
-          @text = "Special"
-        else
 		  if (tagcount[MaxRange.?] <> 0) then
 		    @text = tagnames[MaxRange.?,"/"]
 		  else
-            @text = field[wpShort].value
-			~ field[wpShort].value & "/" & field[wpMedium].value & "/" & field[wpLong].value
+            @text = field[amShort].value
+			~ field[amShort].value & "/" & field[amMedium].value & "/" & field[amLong].value
 			endif
-          endif
         ]]></finalize>
       </field>
 

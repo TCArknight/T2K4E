@@ -12,7 +12,6 @@
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
     <tag group="BlastRating" tag="D"/>
     </thing>
-
   <thing id="hdrT2KSUMilitary" name="-- Soviet Military Firearms --" compset="Ranged" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
