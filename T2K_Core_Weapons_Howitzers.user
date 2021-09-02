@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="amT2KH105mmHE" name="Howitzer - 105mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="8"/>
+    <fieldval field="amCrit" value="2"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="B"/>
+    </thing>
+  <thing id="amT2KH105mmCNA" name="Howitzer - 105mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    <tag group="BlastRating" tag="B"/>
+    </thing>
+  <thing id="amT2KH105mmCBA" name="Howitzer - 105mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    <tag group="BlastRating" tag="B"/>
+    </thing>
+  <thing id="amT2KH105mmILLUM" name="Howitzer - 105mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    <tag group="BlastRating" tag="B"/>
+    </thing>
+  <thing id="amT2KH105mmWP" name="Howitzer - 105mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="6"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="BlastRating" tag="B"/>
+    </thing>
+  <thing id="hdrT2KHowitzer" name="-- Howitzers --" compset="Ranged" isshowonly="yes">
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponType" tag="Howitzer"/>
+    <tag group="WeaponCat" tag="Howitzer"/>
+    </thing>
+  <thing id="wpT2KH105mm" name="105mm Howitzer" compset="Ranged">
+    <fieldval field="wpShort" value="150"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="10000"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoType" tag="amT2KH105mmILLUM"/>
+    <tag group="AmmoType" tag="amT2KH105mmWP"/>
+    <tag group="WeaponType" tag="Howitzer"/>
+    <tag group="WeaponCat" tag="Howitzer"/>
+    <tag group="AmmoType" tag="amT2KH105mmCBA"/>
+    <tag group="AmmoType" tag="amT2KH105mmCNA"/>
+    <tag group="AmmoType" tag="amT2KH105mmHE"/>
+    </thing>
+  <thing id="amT2KH122mmCBA" name="Howitzer - 122mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value="8"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH122mmCNA" name="Howitzer - 122mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value="8"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH122mmHE" name="Howitzer - 122mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="10"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="8"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH122mmILLUM" name="Howitzer - 122mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="8"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH122mmWP" name="Howitzer - 122mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="8"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    </thing>
+  <thing id="wpT2KH122mm" name="122mm Howitzer" compset="Ranged">
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="15000"/>
+    <fieldval field="wpShort" value="200"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoType" tag="amT2KH122mmILLUM"/>
+    <tag group="AmmoType" tag="amT2KH122mmWP"/>
+    <tag group="WeaponCat" tag="Howitzer"/>
+    <tag group="WeaponType" tag="Howitzer"/>
+    <tag group="AmmoType" tag="amT2KH122mmCBA"/>
+    <tag group="AmmoType" tag="amT2KH122mmCNA"/>
+    <tag group="AmmoType" tag="amT2KHCNA"/>
+    <tag group="AmmoType" tag="amT2KH122mmHE"/>
+    </thing>
+  <thing id="amT2KH152mmCBA" name="Howitzer - 152mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A"/>
+    </thing>
+  <thing id="amT2KH152mmCNA" name="Howitzer - 152mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A"/>
+    </thing>
+  <thing id="amT2KH152mmHE" name="Howitzer - 152mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="11"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A"/>
+    </thing>
+  <thing id="amT2K152mmILLUM" name="Howitzer - 152mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH152mmWP" name="Howitzer - 152mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="BlastRating" tag="A"/>
+    </thing>
+  <thing id="wpT2KH152mm" name="152mm Howitzer" compset="Ranged">
+    <fieldval field="wpShort" value="250"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="20000"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Howitzer"/>
+    <tag group="WeaponType" tag="Howitzer"/>
+    </thing>
+  <thing id="amT2KH155mmCBA" name="Howitzer - 155mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    </thing>
+  <thing id="amT2KH155mmCNA" name="Howitzer - 155mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    </thing>
+  <thing id="amT2KH155mmHE" name="Howitzer - 155mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="11"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    </thing>
+  <thing id="amT2KH155mmILLUM" name="Howitzer - 155mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH155mmWP" name="Howitzer - 155mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    </thing>
+  <thing id="wpT2KH155mm" name="155mm Howitzer" compset="Ranged">
+    <fieldval field="wpShort" value="250"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="25000"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Howitzer"/>
+    <tag group="WeaponType" tag="Howitzer"/>
+    </thing>
+  <thing id="amT2KH203mmCBA" name="Howitzer - 203mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    </thing>
+  <thing id="amT2KH203mmCNA" name="Howitzer - 203mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    </thing>
+  <thing id="amT2KH203mmHE" name="Howitzer - 203mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="12"/>
+    <fieldval field="amCrit" value="1"/>
+    <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    </thing>
+  <thing id="amT2KH203mmILLUM" name="Howitzer - 203mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
+    </thing>
+  <thing id="amT2KH203mmWP" name="Howitzer - 203mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+    <fieldval field="amDamage" value="0"/>
+    <fieldval field="amCrit" value="0"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="BlastRating" tag="A" name="A" abbrev="A"/>
+    <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    </thing>
+  <thing id="wpT2KH203mm" name="203mm Howitzer" compset="Ranged">
+    <fieldval field="wpShort" value="400"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="30000"/>
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Howitzer"/>
+    <tag group="WeaponType" tag="Howitzer"/>
+    <tag group="AmmoType" tag="amT2KH203mmHE"/>
+    <tag group="AmmoType" tag="amT2KH203mmILLUM"/>
+    <tag group="AmmoType" tag="amT2KH203mmNKE10k"/>
+    <tag group="AmmoType" tag="amT2KH203mmNUKE1k"/>
+    <tag group="AmmoType" tag="amT2KH203mmNUK40k"/>
+    <tag group="AmmoType" tag="amT2KH203mmHUKE5k"/>
+    <tag group="AmmoType" tag="amT2KH203mmWP"/>
+    </thing>
+  <thing id="amT2KH203mmNUKE1k" name="Howitzer - 203mm NUKE (1kt)" description="This is a 1Kt Nuclear Warhead for the 203mm Howitzer.\nThe Rules state that the 203mm Howitzer is capable of fireing Nukes\nThe Nukes for the 203mm Howitzer  correspond to the US W33 nuclear warhead.\nWhile the yeilds for this device in its four configurations are classified, it was tested in 1kt and 40kt yields\nThe T2K 4e rules really don&apos;t handle Nuclear blasts, but here&apos;s the expected results of a 1kt blast.\nUsing NukeMap here are approximations:\n\nDeath Radius: 8 hexes\n\nIf outside of the Death Radius, fine the radius for each damage type and apply it.\n\nBlast Damage:\n  A        9-22 hexes\n  B        10-46 hexes\n  D       46-118 hexes\n\nFire Damage:\n  A       8-50 hexes\n  B      51-54 hexes \n  C      55-66 hexes\n  D      67-94 hexes\n\nRadiation Attack\n   50       8-51 hexes\n   10       51-73 hexes\n    6         74-81 hexes\n    5         82-84 hexes\n    1        85-111 hexes\n\nSource: https://nuclearsecrecy.com/nukemap/" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    </thing>
+  <thing id="amT2KH203mmHUKE5k" name="Howitzer - 203mm NUKE (5kt)" description="This is a 1Kt Nuclear Warhead for the 203mm Howitzer.\nThe Rules state that the 203mm Howitzer is capable of fireing Nukes\nThe Nukes for the 203mm Howitzer  correspond to the US W33 nuclear warhead.\nWhile the yeilds for this device in its four configurations are classified, it was tested in 1kt and 40kt yields\nThe T2K 4e rules really don&apos;t handle Nuclear blasts, but here&apos;s the expected results of a 1kt blast.\nUsing NukeMap here are approximations:\n\nDeath Radius: 15 hexes\n\nIf outside of the Death Radius, fine the radius for each damage type and apply it.\n\nBlast Damage:\n  A       16-37 hexes\n  B        38-72 hexes\n  D       73-201 hexes\n\nFire Damage:\n  A       16-103 hexes\n  B      74-112 hexes \n  C      113-136 hexes\n  D      137-189 hexes\n\nRadiation Attack\n   50       15-72 hexes\n   10       73-98 hexes\n    6         99-108 hexes\n    5         109-111  hexes\n    1         112-142 hexes\n\nSource: https://nuclearsecrecy.com/nukemap/" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    </thing>
+  <thing id="amT2KH203mmNKE10k" name="Howitzer - 203mm NUKE (10kt)" description="This is a 1Kt Nuclear Warhead for the 203mm Howitzer.\nThe Rules state that the 203mm Howitzer is capable of fireing Nukes\nThe Nukes for the 203mm Howitzer  correspond to the US W33 nuclear warhead.\nWhile the yeilds for this device in its four configurations are classified, it was tested in 1kt and 40kt yields\nThe T2K 4e rules really don&apos;t handle Nuclear blasts, but here&apos;s the expected results of a 1kt blast.\nUsing NukeMap here are approximations:\n\nDeath Radius: 20 hexes\n\nIf outside of the Death Radius, fine the radius for each damage type and apply it.\n\nBlast Damage:\n  A       21-47 hexes\n  B       48-99 hexes\n  D       100-253 hexes\n\nFire Damage:\n  A       21-141 hexes\n  B      142-152 hexes \n  C      153-185 hexes\n  D      186-258 hexes\n\nRadiation Attack\n   50       21-84 hexes\n   10       85-112 hexes\n    6        113-122 hexes\n    5        123-125  hexes\n    1         126-157 hexes\n\nSource: https://nuclearsecrecy.com/nukemap/" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    </thing>
+  <thing id="amT2KH203mmNUK40k" name="Howitzer - 203mm NUKE (40kt)" description="This is a 1Kt Nuclear Warhead for the 203mm Howitzer.\nThe Rules state that the 203mm Howitzer is capable of fireing Nukes\nThe Nukes for the 203mm Howitzer  correspond to the US W33 nuclear warhead.\nWhile the yeilds for this device in its four configurations are classified, it was tested in 1kt and 40kt yields\nThe T2K 4e rules really don&apos;t handle Nuclear blasts, but here&apos;s the expected results of a 1kt blast.\nUsing NukeMap here are approximations:\n\nDeath Radius: 35 hexes\n\nIf outside of the Death Radius, fine the radius for each damage type and apply it.\n\nBlast Damage:\n  A       35-74 hexes\n  B       75-157 hexes\n  D       158-402 hexes\n\nFire Damage:\n  A       35-260 hexes\n  B      261-281 hexes \n  C      282-343 hexes\n  D      344-477 hexes\n\nRadiation Attack\n   50       35-111 hexes\n   10       112-143 hexes\n    6        144-154 hexes\n    5        155-158  hexes\n    1         159-192 hexes\n\nSource: https://nuclearsecrecy.com/nukemap/" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoCatType" tag="Howitzer" name="Howitzer" abbrev="Howitzer"/>
+    </thing>
+  </document>

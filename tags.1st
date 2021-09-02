@@ -345,6 +345,7 @@
     <value id="Mine" name="Mine" order="95"/>
     <value id="Mortar" name="Mortar" order="100"/>
     <value id="VehicleWeapons" name="Vehicle Weapons" order="110"/>
+    <value id="Howitzer" name="Howitzer" order="120"/>
     </group>
 	
   <group
@@ -366,6 +367,7 @@
     <value id="ATGM" name="Missile Launcher" order="32"/>
     <value id="Mortar" name="Mortar" order="33"/>
     <value id="VehicleCannon" name="Vehicle Cannon" order="34"/>
+    <value id="Howitzer" name="Howitzer" order="35"/>
     </group>
 	
   <group
@@ -388,6 +390,7 @@
     <value id="RL" name="Rocket Launcher"/>
     <value id="LMG" name="Light Machinegun"/>
     <value id="Mortar" name="Mortar"/>
+    <value id="Howitzer" name="Howitzer"/>
     </group>
 	
   <group
