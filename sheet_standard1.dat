@@ -818,7 +818,6 @@
           ]]></labeltext>
         </output_label>
       </portal>
-
     <portal
       id="name"
       style="outNameMed">
@@ -828,7 +827,15 @@
           ]]></labeltext>
         </output_label>
       </portal>
-
+      <portal
+      id="ArmorLoc"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+          @text = tagnames[ArmorLoc.?,", "]
+          ]]></labeltext>
+        </output_label>
+      </portal>
     <position><![CDATA[
       ~our height is the height of the tallest portal
       height = maximum(portal[name].height,portal[equipped].height)
@@ -847,16 +854,20 @@
       ~align everything horizontally
       perform portal[badstr].alignrel[ltor,equipped,5]
       perform portal[name].alignrel[ltor,badstr,5]
+      perform portal[ArmorLoc].alignrel[ltor,name,300]
 
       ~size the name to fit the available space
       portal[name].width = width - portal[name].left
       perform portal[name].sizetofit[36]
       perform portal[name].autoheight
+      perform portal[ArmorLoc].sizetofit[15]
+      perform portal[ArmorLoc].autoheight
 
       ~center all portals vertically
       perform portal[badstr].centervert
       perform portal[equipped].centervert
       perform portal[name].centervert
+      perform portal[ArmorLoc].centervert
 
       ~shift the "equipped" bitmap downward a little bit; this is because it is a
       ~lone bitmap drawn via encoded text, and bitmaps are never drawn within the
