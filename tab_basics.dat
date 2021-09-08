@@ -295,8 +295,8 @@
 	  ~position the alpha value to the left of the info portal (plus a gap)
       perform portal[alpha].alignrel[rtol,info,-10]
 	  
-	  ~ if not the Lifepath for T2K, show incrementer, otherwise the alpha
-	  if (hero.tagis[source.srcT2KLifepath] = 0) then
+	  ~ if for T2K, show alpha version, otherwise show the incrementer
+	  if (hero.tagis[source.srcT2K] = 0) then
 	    portal[alpha].visible = 0
 		portal[value].visible = 1
 	  else

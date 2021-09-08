@@ -79,4 +79,7 @@
         entry or character image for the user).
   -->
 
+  <!-- default to a PC character -->
+  <autoadd thing="typHero"  portal="cnfType"/> 
+  
   </document>

@@ -35,13 +35,14 @@
     var tagexpr as string
     var ismore as number
     ismore = 0
+	
     foreach pick in hero where tagexpr
       if (ismore <> 0) then
         append ", "
         endif
       append eachpick.field[name].text 
 	  if (eachpick.tagis[component.Specialty] = 0) then
-	    append " " & eachpick.field[trtAlpha].text & " (" & eachpick.field[trtDieValue].text & ")"
+        append " " & eachpick.field[trtAlpha].text & " (" & eachpick.field[trtDieValue].text & ")"
 		endif
       ismore = 1
       nexteach
@@ -198,7 +199,12 @@
 
         ~output attributes
         append @boldon & "Attributes: " & @boldoff
-        tagexpr = "component.Attribute"
+        tagexpr = "component.Attribute & AttrCat."
+		if (hero.tagis[CharType.typHero] <> 0) then
+		  tagexpr &= "Hero"
+		elseif (hero.tagis[CharType.Vehicle] <> 0) then
+		  tagexpr &= "Vehicle"
+		  endif
         call sbtraits
 
         ~output skills

@@ -424,6 +424,14 @@
         field="serBranch">
         </edit>
       </portal>
+
+    <portal
+      id="branchout"
+      style="lblNormal">
+      <label
+        field="serBranchOut">
+        </label>
+      </portal>
 	  
     <portal
       id="lblNation"
@@ -498,6 +506,12 @@
       portal[branch].top = portal[lblBranch].top
       portal[branch].left = portal[lblBranch].right + 5
 	  portal[branch].width = width - portal[branch].left -5
+      portal[branchout].top = portal[lblBranch].top
+      portal[branchout].left = portal[lblBranch].right + 5
+	  portal[branchout].width = width - portal[branch].left -5
+	  
+	  portal[branchout].visible = hero.tagis[source.srcT2KArchetypes]
+	  portal[branch].visible = 1 - portal[branchout].visible
 	  
 	  ~position the rank portals beneath the branch
       portal[lblRank].top = portal[lblBranch].bottom + 5

@@ -14,41 +14,238 @@
     style="lblTitle">
     <label>
       <labeltext>
-        @text = "Step 1: Archetype"
+        @text = "Archetype"
         </labeltext>
       </label>
     </portal>
+
+  <portal 
+    id="hdrBranch" 
+    style="lblTitle">
+    <label>
+      <labeltext>
+        @text = "Branch"
+        </labeltext>
+      </label>
+    </portal>	
 	
   <portal
-    id="lpHoriz1"
+    id="atArchetype"
+    style="tblInvis">
+    <table_dynamic
+      component="Archetype"
+      showtemplate="lpNationPick"
+      choosetemplate="SimpleItem"
+	  scrollable="no"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <list>Archetype.ArchetypeSelect</list>
+	  <candidate>ArchetypeCat.T2K</candidate>
+      <autotag group="Archetype" tag="ArchetypeSelect"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a specialty already, then there's nothing to add
+        if (hero.tagis[Archetype.ArchetypeSelect] <> 0) then
+          @text = "{text clrgrey}No more nationalities can be added"
+		else
+		  @text &= "Add Archetype"
+          endif
+        ]]></additem>
+      </table_dynamic>
+    </portal>	
+	
+  <portal
+    id="atNation"
+    style="tblInvis">
+    <table_dynamic
+      component="Nationality"
+      showtemplate="lpNationPick"
+      choosetemplate="SimpleItem"
+	  scrollable="no"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <autotag group="Archetype" tag="NationalitySelect"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a specialty already, then there's nothing to add
+        if (hero.tagis[Archetype.NationalitySelect] <> 0) then
+          @text = "{text clrgrey}No more nationalities can be added"
+		else
+		  @text &= "Add Nationality"
+          endif
+        ]]></additem>
+      </table_dynamic>
+    </portal>	
+	
+  <portal
+    id="atBranch"
+    style="tblInvis">
+    <table_dynamic
+      component="Branch"
+      showtemplate="SimpleItem"
+      choosetemplate="atBranchPick"
+	  scrollable="yes"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <needtag usehero="yes" container="ArchetypeBranches" thing="ArchetypeBranches"/>
+      <autotag group="Archetype" tag="BranchSelect"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a specialty already, then there's nothing to add
+        if (hero.tagis[Archetype.BranchSelect] <> 0) then
+          @text = "{text clrgrey}No more Branches can be added"
+		else
+		  @text &= "Add Branch"
+          endif
+        ]]></additem>
+      </table_dynamic>
+	  
+    </portal>	
+	
+  <portal
+    id="atHoriz1"
     style="sepHorz">
     <separator
       isvertical="no">
       </separator>
     </portal>
+	  
+  <template
+    id="atBranchPick"
+    name="Branch Bick"
+    compset="Branch"
+    marginhorz="3"
+    marginvert="5">
+
+    <portal
+      id="name"
+      style="lblLarge"
+      showinvalid="yes">
+      <label
+        field="name">
+        </label>
+      </portal>
+
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      <mouseinfo/>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if we've been assigned a non-default width for use when showing things, adopt
+      ~that width now
+      if (ispick = 0) then
+        var size as number
+        size = tagvalue[SimpleItem.width?]
+        if (size > 0) then
+          width = size
+          endif
+        endif
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~center the other portals vertically
+      perform portal[name].centervert
+
+      ~position the info portal on the far right
+      perform portal[info].alignedge[right,0]
+
+      ~if we're showing a thing, the info button is irrelevant, since we ought to
+      ~be showing within a chooser and have the description already visible
+      var edge as number
+      if (ispick = 0) then
+        portal[info].visible = 0
+        edge = width
+      else
+        edge = portal[info].left - 5
+        endif
+
+      ~position the name on the left and let it use all available space
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,edge)
+
+      ~center the name if requested
+      if (tagis[SimpleItem.CenterName] <> 0) then
+        perform portal[name].centerhorz
+        endif
+      ]]></position>
+
+    </template>	
 	
   <layout
     id="archetype">
     <portalref portal="hdrArchetype" />
-    <portalref portal="lpHoriz1" />
+    <portalref portal="hdrNation" />
+    <portalref portal="hdrBranch" />
+    <portalref portal="atArchetype" />
+    <portalref portal="atNation" />
+    <portalref portal="atBranch" />
+    <portalref portal="atHoriz1" />
 
     <position><![CDATA[
+	  var newBottom as number
+	  
       ~freeze our table in advancement mode to disable adding new choices
       ~Note: All freezing must be done *before* any positioning is performed.
       if (state.iscreate = 0) then
         portal[hdrArchetype].freeze = 1
         endif
-
+	  if (hero.tagis[Archetype.ArchetypeSelect] <> 0) then
+        portal[atArchetype].freeze = 1
+        endif
+	  if (hero.tagis[Archetype.NationalitySelect] <> 0) then
+        portal[atNation].freeze = 1
+        endif
+	  if (hero.tagis[Archetype.BranchSelect] <> 0) then
+        portal[atBranch].freeze = 1
+        endif
+		
       ~position and size the table to span the full layout; it will only use the
       ~vertical space that it actually needs
+      
       portal[hdrArchetype].top = 0
       portal[hdrArchetype].height = 20
       portal[hdrArchetype].width = width
-      
-      ~portal[lpRole].top = portal[hdrArchetype].bottom + 5
-      ~portal[lpRole].height = 20
-      ~portal[lpRole].width = width
+	  newBottom = portal[hdrArchetype].bottom + 5
+      portal[atArchetype].top = newBottom
+      portal[atArchetype].height = 50
+      portal[atArchetype].width = width
+	  newBottom = portal[atArchetype].bottom + 5
+	  
+      portal[hdrNation].top = newBottom
+      portal[hdrNation].height = 20
+      portal[hdrNation].width = width
+	  newBottom = portal[hdrNation].bottom + 5
+      portal[atNation].top = newBottom
+      portal[atNation].height = 50
+      portal[atNation].width = width
+	  newBottom = portal[atNation].bottom + 5
 
+      portal[hdrBranch].top = newBottom
+      portal[hdrBranch].height = 20
+      portal[hdrBranch].width = width
+	  newBottom = portal[hdrBranch].bottom + 5
+      portal[atBranch].top = newBottom
+      portal[atBranch].height = 50
+      portal[atBranch].width = width
+	  newBottom = portal[atBranch].bottom + 5
 	  
       ]]></position>
 

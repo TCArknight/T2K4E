@@ -59,6 +59,7 @@
     <eval index="1" phase="Setup" priority="5000"><![CDATA[
       perform forward[Lifepath.?]
 	  
+      perform forward[Archetype.?]
       perform forward[Nationality.?]
 	  perform forward[HasNationality.?]
 	  

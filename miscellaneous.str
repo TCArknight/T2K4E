@@ -519,7 +519,7 @@
     <!-- Max Attribute Points for Skills -->
     <field
       id="setSkillPts"
-      name="Skill-related Attribute Points"
+      name="Skill Points"
       defvalue="0"
       type="derived">
       </field>
@@ -576,13 +576,6 @@
        if (ispick > 0) then
          ~ Early adjustments go here
 		 
-         endif
-      ]]></eval>
-
-    <eval index="3" phase="Setup" priority="8000" name="Perform Setting Adjustments - Main"><![CDATA[
-       if (ispick > 0) then
-         ~ Standard Adjustments go here
-
          ~ Adjust Attribute/Skill points
          if (field[setAttrPts].value <> 0) then
            #resmax[resAttrib] += field[setAttrPts].value
@@ -602,8 +595,15 @@
            if (field[setArchTermSec].isempty = 0) then
              herofield[acArchTermSec].text = field[setArchTermSec].text
              endif
-           endif
+           endif	
 		   
+         endif
+      ]]></eval>
+
+    <eval index="3" phase="Setup" priority="8000" name="Perform Setting Adjustments - Main"><![CDATA[
+       if (ispick > 0) then
+         ~ Standard Adjustments go here
+
          endif
 
 		 

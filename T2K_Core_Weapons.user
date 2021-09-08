@@ -466,6 +466,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="amT2K55645"/>
     <tag group="thing" tag="holder"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <holdlimit><![CDATA[AmmoCatType.Rifle & AmmoCat.Firearm & AmmoType.amT2K55645]]></holdlimit>
     <child entity="Ammo"></child>
     </thing>

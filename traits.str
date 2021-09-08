@@ -284,10 +284,10 @@
 	  
       hero.child[resAttrib].field[resSpent].value += field[trtUser].value
 	  
-	  ~if we're lifepath, then we need to reduce the attribute cost by 1 because we started one higher
-	  if (hero.tagis[source.srcT2KLifepath] <> 0) then
-	    hero.child[resAttrib].field[resSpent].value -= 1
-		endif
+	  ~if we're using the T2K Core, then we need to reduce the attribute cost by 1 because we started one higher
+	  ~if (hero.tagis[source.srcT2K] <> 0) then
+	  ~  hero.child[resAttrib].field[resSpent].value -= 1
+	~	endif
 	  
       ]]></eval>
 
@@ -385,7 +385,7 @@
 	
     <!-- Skills have a minimum trait value of 0 and a maximum of 4 unless they are key -->
     <eval index="2" phase="Initialize" priority="3000"><![CDATA[
-	  if (hero.tagis[source.srcT2KLifepath] <> 0) then
+	  if (hero.tagis[source.srcT2K] <> 0) then
 	    field[trtMinimum].value = 2
 	    field[trtMaximum].value = 6
 	  else
@@ -408,6 +408,9 @@
 	      ~ we're on a lifepath module gizmo
 		  container.childfound[resLPSkill].field[resSpent].value += 1
 		  endif
+      elseif (hero.tagis[source.srcT2KArchetypes] <> 0) then
+	    ~ we don't need to accumulate
+		~ continue
 	  else
 	    hero.child[resSkill].field[resSpent].value += field[trtUser].value
 		endif
@@ -446,7 +449,7 @@
       field[trtBonus].value += incCount
 
       ]]></eval>	  
-    <!-- Each skill point that is allocated by the user costs 2 CP -->
+    <!-- -->
     <eval index="6" phase="Render" priority="10000"><![CDATA[
       ~adjust the sklSetName appropriately if it's empty
 	  if (field[sklSetName].isempty <> 0) then
@@ -824,6 +827,7 @@
     <!-- Track the race on the actor by assigning the appropriate tag -->
     <eval index="1" phase="Initialize" priority="1000"><![CDATA[
       perform forward[Archetype.?]
+      perform forward[ArchetypeBranches.?]
       perform forward[ArchetypeCat.?]
 	  perform forward[KeyAttribute.?]
 	  perform forward[KeySkill.?]
@@ -860,6 +864,26 @@
 	    
       ]]></eval>
 
+    </component>
+	
+  <component
+    id="Branch"
+    name="Service Branch">
+
+    <!-- Each race needs its own identity tag to configure the hero appropriately -->
+    <identity group="ServiceBranch"/>
+	
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+      perform forward[ServiceBranch.?]
+	  
+      perform forward[Archetype.?]
+      perform forward[ArchetypeBranches.?]
+      perform forward[ArchetypeCat.?]
+	  perform forward[KeyAttribute.?]
+	  perform forward[KeySkill.?]	
+	  	    
+      ]]></eval>
+	  
     </component>
 	
   <component

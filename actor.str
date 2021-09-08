@@ -299,7 +299,7 @@
       id="acStartAttrib"
       name="Starting Attribute Points"
       type="user"
-      defvalue="12">
+      defvalue="16">
       </field>
 
     <field
@@ -308,6 +308,22 @@
       type="derived"
       defvalue="0">
       </field>	  
+
+    <!-- Starting Attribute points for the character -->
+    <field
+      id="acStartSkillPts"
+      name="Starting Skill Points"
+      type="user"
+      defvalue="0">
+      </field>
+
+    <field
+      id="acBonusSkillPts"
+      name="Bonus Skill Points"
+      type="derived"
+      defvalue="0">
+      </field>
+	  
     <!-- Starting cash for the character -->
     <field
       id="acCashCfg"
@@ -641,32 +657,6 @@
       </field>	  
     <tag group="Stage" tag="Minimal"/>
 
-    <!-- Assign tags relating to important damage states -->
-    <eval index="1" phase="Final" priority="1000"><![CDATA[
-      ~if no damage has been incurred, assign a tag to indicate that state
-      if (field[acHPNow].value >= field[acHPMax].value) then
-        perform hero.assign[Hero.NoDamage]
-
-      ~if the hero is dead or otherwise out of combat, indicate that state
-      elseif (field[acHPNow].value = 0) then
-        perform hero.assign[Hero.Dead]
-        endif
-      ]]></eval>
-
-    <!-- Copy the first user image for use in the TacCon -->
-    <eval index="2" phase="Final" priority="1000"><![CDATA[
-      ~all heroes should be able to reroll initiative
-      perform hero.assign[Hero.RerollInit]
-
-      field[acTacImage].value = hero.findchild[UserImage,"TRUE",_CompSeq_].field[uImage].value
-      ]]></eval>
-
-    <!-- calculate the net cash possessed for the character -->
-    <eval index="3" phase="Effects" priority="5000"><![CDATA[
-      ~our net cash is our configured starting cash plus our accrued cash
-      field[acCashNet].value = field[acCashCfg].value + hero.usagepool[TotalCash].value
-      ]]></eval>
-
 	<!-- Timing: before the existence expression on the baRace table in
        tab_basics.dat, which is currently at Initialize/10. That existence
        expression needs to come before the containerreq on rHuman, which is
@@ -682,7 +672,34 @@
 		perform hero.assign[Hero.Minion]
 		perform hero.assign[HLOCharacterType.NPCCritter]
 		endif
-	  ]]></eval>	  
+	  ]]></eval>
+	  
+    <!-- Assign tags relating to important damage states -->
+    <eval index="2" phase="Final" priority="1000"><![CDATA[
+      ~if no damage has been incurred, assign a tag to indicate that state
+      if (field[acHPNow].value >= field[acHPMax].value) then
+        perform hero.assign[Hero.NoDamage]
+
+      ~if the hero is dead or otherwise out of combat, indicate that state
+      elseif (field[acHPNow].value = 0) then
+        perform hero.assign[Hero.Dead]
+        endif
+      ]]></eval>
+
+    <!-- Copy the first user image for use in the TacCon -->
+    <eval index="3" phase="Final" priority="1000"><![CDATA[
+      ~all heroes should be able to reroll initiative
+      perform hero.assign[Hero.RerollInit]
+
+      field[acTacImage].value = hero.findchild[UserImage,"TRUE",_CompSeq_].field[uImage].value
+      ]]></eval>
+
+    <!-- calculate the net cash possessed for the character -->
+    <eval index="4" phase="Effects" priority="5000"><![CDATA[
+      ~our net cash is our configured starting cash plus our accrued cash
+      field[acCashNet].value = field[acCashCfg].value + hero.usagepool[TotalCash].value
+      ]]></eval>
+	  
     </component>
 
   <!-- Personal component
@@ -1022,6 +1039,13 @@
       type="user">
       </field>
 	  
+    <field
+      id="serBranchOut"
+      name="Service Branch"
+      maxlength="50"
+      type="derived">
+      </field>
+	  
     <!-- Rank -->
     <field
       id="serRank"
@@ -1058,7 +1082,13 @@
 	  if (field[serLPNation].isempty = 0) then
 	    field[serNationOut].text = field[serLPNation].text
 		endif
-	  
+		
+	  if (hero.tagis[ServiceBranch.?] <> 0) then
+	    field[serBranchOut].text = hero.tagnames[ServiceBranch.?,","]
+	  else
+	    field[serBranchOut].text = field[serBranch].text
+		endif
+		
 	  doneif (hero.tagis[Military.?] = 0)
 	  var Rank as string
 	  var RankIdx as number

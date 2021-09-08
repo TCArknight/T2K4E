@@ -180,11 +180,34 @@
     <value id="Education" order="6"/>
     <value id="WhiteCollar"  name="White Collar" order="7"/>
     </group>
+
+  <group
+    id="Archetype"
+	dynamic="yes"
+    inherit="Lifepath">
+    <value id="ArchetypeSelect" name="Archetype Selected" />        <!-- Archetype has been selected -->
+    <value id="BranchSelect" name="Branch Selected" />        <!-- Archetype has been selected -->
+    <value id="IsMilitary" name="Military Archetype" />        <!-- Archetype has been selected -->
+    </group>
+	
+  <group
+    id="ArchetypeBranches"
+    inherit="CareerType">
+    <value id="Army"  name="Army" />
+    <value id="Marines"  name="Marines" />
+    </group>
+
+  <group
+    id="ServiceBranch"
+    inherit="CareerType"
+	dynamic="yes">
+    </group>
 	
   <group
     id="ArchetypeCat">
     <value id="Primary"/>     <!-- Indicates that an archetype is primary -->
     <value id="Secondary"/>   <!-- Indicates that an archetype is secondary -->
+    <value id="T2K"/>   <!-- Indicates that an archetype is secondary -->
     </group>
 
   <group

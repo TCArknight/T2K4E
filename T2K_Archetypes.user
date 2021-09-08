@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="arcT2KCivilian" name="Civilian" description="You were an accountant. You worked retail. You were a part-time musician and full-time bartender. That’s all gone now. None of it matters. Now, you are one thing: a survivor. You had no say in this war. Your government charged ahead without consent. Sometimes, you felt the whole world was in the grip of madness. You still feel that way. Your old life is over. What are you going to with this new one? Is there any hope to rebuild?" compset="Archetype" uniqueness="unique">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="KeyAttribute" tag="attrEmp"/>
+    <tag group="ArchetypeBranches" tag="BlueCollar"/>
+    <tag group="ArchetypeBranches" tag="WhiteCollar"/>
+    <tag group="KeySkill" tag="skT2KDriving"/>
+    <tag group="KeySkill" tag="skT2KPersuasion"/>
+    <tag group="KeySkill" tag="skT2KSurvival"/>
+    </thing>
+  <thing id="abrT2KBlueCollar" name="Blue Collar" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="BlueCollar"/>
+    </thing>
+  <thing id="abrT2KMilMarines" name="Marines" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="ArchetypeBranches" tag="Marines"/>
+    </thing>
+  <thing id="abrT2KWhiteCollar" name="White Collar" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="WhiteCollar"/>
+    </thing>
+  <thing id="abrT2KMilArmy" name="Army" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="ArchetypeBranches" tag="Army"/>
+    </thing>
+  <thing id="arcT2KGrunt" name="Grunt" compset="Archetype" uniqueness="unique">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="KeyAttribute" tag="attrStr"/>
+    <tag group="KeySkill" tag="skT2KCloseCombat"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    <tag group="KeySkill" tag="skT2KStamina"/>
+    <tag group="ArchetypeBranches" tag="Army"/>
+    <tag group="ArchetypeBranches" tag="Marines"/>
+    </thing>
+  </document>

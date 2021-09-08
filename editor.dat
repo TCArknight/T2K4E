@@ -69,6 +69,13 @@
       helptext="Specify whether this is a Primary or Secondary Archetype.">
 	  <it_tagpick group="ArchetypeCat" tag="?" />
       </inputthing>
+
+    <inputthing
+      name="Valid Branches"
+      helptext="Specify which branches are available to this archetype.">
+      <it_taglist group="ArchetypeBranches" tag="?" />
+      </inputthing>
+	  
     <inputthing
       name="Key Attribute"
       helptext="Specify any key attribute for the Archetype">
@@ -100,6 +107,30 @@
       helptext="Specify the number of talents to select (if any).">
       <it_field field="acArchNumTalents"/>
       </inputthing>	
+    <inputthing>
+      <it_groupref id="SourceInfo"/>
+      </inputthing>
+    </editthing>
+	
+  <!-- Attribute editthing -->
+  <editthing
+    compset="Branch"
+    name="Archetype Branch"
+    prefix="abr"
+    description="."
+    summary="Defines a Branch for an Archetype to select.">
+    <inputthing
+      name="Branch"
+      helptext="Specify the Archetype Branch this is.">
+      <it_tagpick group="ArchetypeBranches" tag="?" require="yes" deftag="BlueCollar"/>
+      </inputthing>
+
+    <inputthing
+      name="Military Branch?"
+      helptext="Is this a Military Branch?">
+      <it_tagcheck group="ArchetypeBranches" tag="Military"/>
+      </inputthing>
+	  
     <inputthing>
       <it_groupref id="SourceInfo"/>
       </inputthing>

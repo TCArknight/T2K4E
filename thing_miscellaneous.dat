@@ -50,16 +50,26 @@
     <tag group="explicit" tag="2"/>
 
     <!-- Adjust points based on Age category -->
-    <eval index="1" phase="Setup" priority="1000" name="Adjust Skill Points"><![CDATA[
-	  ~if we're using the lifepath creation, we dont need to adjust anything
+    <eval index="1" phase="Initialize" priority="1000" name="Initial Skill Points"><![CDATA[
 	  doneif (hero.tagis[source.srcT2KLifepath] <> 0)
 	  
-	  if (hero.child[mscPerson].field[perAge].value <= herofield[acAgeYoung].value ) then
-        #resmax[resSkill] += 8
-	  elseif (hero.child[mscPerson].field[perAge].value > herofield[acAgeAdult].value ) then
-	    #resmax[resSkill] += 12
-		endif
+	  field[resMax].value = herofield[acStartSkillPts].value
 		
+      ]]></eval>
+	  
+    <!-- Adjust points based on Age category -->
+    <eval index="2" phase="Setup" priority="1000" name="Adjust Skill Points"><![CDATA[
+	  field[resMax].value += herofield[acBonusSkillPts].value
+	  
+	  ~if we're using the lifepath creation, we dont need to adjust anything
+	  doneif (hero.tagis[source.srcT2K] <> 0)
+	  
+	  if (hero.child[mscPerson].field[perAge].value <= herofield[acAgeYoung].value ) then
+        field[resMax].value += 8
+	  elseif (hero.child[mscPerson].field[perAge].value > herofield[acAgeAdult].value ) then
+	    field[resMax].value += 12
+		endif
+	  
       ]]></eval>
 
     </thing>
