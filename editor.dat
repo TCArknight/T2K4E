@@ -457,6 +457,11 @@
       helptext="Specify the type for this equipment.">
       <it_tagpick group="GearType" tag="?" require="yes" deftag="Misc"/>
       </inputthing>
+          <inputthing
+      name="Equipment SubType"
+      helptext="Specify the subtype for this equipment.">
+      <it_tagpick group="GearSubType" tag="?" require="yes" deftag="NA"/>
+      </inputthing>
     <inputthing
       name="Cost"
       helptext="Specify the standard cost of the item, with a value of 0 meaning it is free.">

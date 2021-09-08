@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="hdrT2KWeapsGear" name="--- Weapons Gear ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KTeleSight" name="Telescopic Sight" description="Gives you a +1 modifier if you aim as a slow action (+2 if you fire from a stable platform, such as a rest, sandbag, or bipod).  It is most often used by snipers and hunters" compset="Equipment">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KMagazine" name="Magazine" compset="Equipment" stacking="merge">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <holdlimit>AmmoCat.Firearm</holdlimit>
+    <gear>field[gearNet].value = field[gearWeight].value</gear>
+    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
+
+if (gearcount = 0) then
+  field[livename].text = field[name].text & " (Empty)"
+else
+  heldName = gearlist[",",component.Ammunition]
+  field[livename].text &= field[name].text & " (" & heldName & ")"
+  endif]]></eval>
+    </thing>
+  <thing id="eqT2KBackpack" name="Backpack" description="Can be used to carry a number of encumbrance units equal to your STR die size, in addition to your combat gear. Carrying a backpack gives a –2 modifer to all MOBILITY rolls." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="Helper" tag="HasBackpack"/>
+    <tag group="Equipped" tag="Equippable"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="GearSubType" tag="NA"/>
+    <gear>herofield[acCarryBack].value = field[gearHeld].value</gear>
+    <eval phase="Setup" priority="1000">perform forward[Helper.HasBackpack]</eval>
+    <eval phase="PreTraits" priority="5000" index="2"><![CDATA[if (field[grIsEquip].value <> 0) then
+  #traitbonus[skT2KMobility] += -2
+  endif]]></eval>
+    </thing>
+  <thing id="eqT2KAmmoBelt" name="Ammo Belt" compset="Equipment" stacking="merge">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <holdlimit>AmmoCat.Firearm</holdlimit>
+    <gear>field[gearNet].value = field[gearWeight].value</gear>
+    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
+
+if (gearcount = 0) then
+  field[livename].text = field[name].text & " (Empty)"
+else
+  heldName = gearlist[",",component.Ammunition]
+  field[livename].text &= field[name].text & " (" & heldName & ")"
+  endif]]></eval>
+    </thing>
+  <thing id="hdrT2KFieldGear" name="--- Field Gear ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FieldGear"/>
+    </thing>
+  <thing id="eqT2KNightVis" name="Night Vision Sight" compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KBipod" name="Bipod" compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KTripod" name="Tripod" description="A tripod provides a stable firing platform for heavy weapons such as general-purpose and heavy machineguns and some ATGMs, such as the BGM-71 TOW. For general-purpose machineguns, its use is optional, but for heavier weapons, it is required unless fired from a vehicle mount." compset="Equipment">
+    <fieldval field="grCost" value="85"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="8"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KSuppressor" name="Suppressor" description="A suppressor reduces the sound of the report of a firearm being shot, but does not silence it, making it harder to pinpoint where it came from. Although relatively rare, suppressors can be found for many pistols, rifles, and submachine guns. A specially-modified barrel is generally required for mounting a suppressor, although many modern assault rifles can simply replace their existing muzzle brake with one." compset="Equipment">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grReliability" value="5"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="hdrT2KCommGear" name="--- Communications Gear ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    </thing>
+  <thing id="eqT2kCGANPRC148" name="AN/PRC-148 MBITR:" description="US MILITARY RADIOS\nDeveloped by SOCOM for the primary use of special operations forces in the early 1990s. It is a multiband handheld walkie-talkie type tactical radio and is interoperable with\nother US and NATO radios. Range: 10 km." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USMRadio"/>
+    </thing>
+  <thing id="eqT2KCGANPRC77" name="AN/PRC-77" description="US MILITARY RADIOS\nA portable backpack solid-state VHF FM radio transceiver that provides short-range two-way single-channel voice communication.  It operates on 920 channels in 50 MHz steps. It will accept a KY-57 encryption device, enabling it to  communicate with other encrypted single-channel VHF FM radio systems using the same encryption keys. Range: 8 km." compset="Equipment">
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USMRadio"/>
+    </thing>
+  <thing id="eqT2KCGANPRC119" name="AN/PRC-119 SINCGARS:" description="US MILITARY RADIOS\nHas replaced the PRC-77 in frontline service in active duty units but is not widely available among support units. The PRC-119 is the 5-watt manpack version of the SINCGARS radio system, which also includes vehicle-mounted systems up to 50 watts (and with twice the range). It provides options for VHF-FM frequency hopping at 100 times per second among 2,320 channels using an encrypted algorithm or using a single-channel VHF-FM transmission in the clear or with internal encryption. Range: 8 km." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="2"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USMRadio"/>
+    </thing>
+  <thing id="eqT2KCGKY57" name="KY-57 VINSON" description="US MILITARY RADIOS\nA portable tactical cryptographic device that provides voice encryption for military radios and telephones. It was designed by the National Security Agency (NSA) to attach by cable to insecure military communication systems such as the PRC-77 and give them an encryption capability through the use of encryption keys (Secret through Top Secret)." compset="Equipment">
+    <fieldval field="grCost" value="2500"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USMRadio"/>
+    </thing>
+  <thing id="eqT2KCGR105M" name="R-105M" description="An older single-channel FM manpack radio system that uses a mix of vacuum tubes and transistors. It operates in the lower middle range of most FM radios, from 36 to 46 MHz. It can be found in use only in thirdline units and among some former Warsaw Pact forces. Range: 8 km." compset="Equipment">
+    <fieldval field="grReliability" value="2"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USSRRadio"/>
+    </thing>
+  <thing id="eqT2KR107" name="R-107" description="Replaced the R-105M in the 1970s and is also a single-channel FM manpack radio system that uses a mix of micro-vacuum tubes and transistors. It also operates in the lower middle range of most FM radios, from 20 to 52 MHz. It can be found mainly in use in third-line units and among former Warsaw Pact forces and rear-echelon support units. Range: 6 km." compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USSRRadio"/>
+    </thing>
+  <thing id="eqT2KCGR126" name="R-126" description="SOVIET MILITARY RADIO\nA smaller radiotelephone for use at the platoon and company level introduced in the 1960s. It is a singlechannel FM radio with 31 fixed channels from 48.5 to 51.5 MHz. Although replaced by the R-392A, it can still be found in the inventories of former Warsaw Pact nations and third-line Soviet units. Range: 2 km." compset="Equipment">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USSRRadio"/>
+    </thing>
+  <thing id="eqT2KR311" name="R-311" description="SOVIET MILITARY RADIO\nA very old but very common shortwave AM radio produced since the 1950s. It is primarily used for transmitting and receiving Morse code. Although it is no longer issued by the military, its lack of transistors made it somewhat EMP resistant, and since over 60,000 were manufactured, they can be found in many reserve inventories." compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USSRRadio"/>
+    </thing>
+  <thing id="eqT2KCGR392A" name="R-392A" description="Supplemented and then replaced the R-126 in the 1970s. It is a short-range single-channel FM radio with six preset frequencies at 44.3, 44.6, 44.9, 45.2, 45.5, and 45.8 MHz for use at the lowest tactical level of communication. Aside from the usual batteries, this radio is also provided with a hand crank for continuous power generation. Range: 5 km." compset="Equipment">
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USSRRadio"/>
+    </thing>
+  <thing id="eqT2KCGR198" name="R-198" description="The latest generation of Soviet platoon-level solidstate radios, the R-198 operates from 30-80 MHz in the FM band. Range: 4 km. Rel: 1. Weight: 1. Price: 400." compset="Equipment">
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="USSRRadio"/>
+    </thing>
+  <thing id="eqT2KCGWKTK" name="Walkie-Talkie" description="CIVILIAN RADIO\nA cheap commercial communications device operating in the clear on a single FM channel and useful only at very short ranges. Advanced models may have multiple channels and police models sometimes have encryption. Range: 1 km. Rel: 1. Weight: ½. Price 50." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="CIVRadio"/>
+    </thing>
+  <thing id="eqT2KCGHAMR2" name="HAM Radio Rel 2" description="An AM HF radio used for distant Morse code (and sometimes voice) communication and relay.  Ham radios vary from fairly portable units with limited capabilities and range (weight 3) to barely-mobile sets that require generator power and antennae to be set up when used, which can reach much of the globe." compset="Equipment">
+    <fieldval field="grReliability" value="2"/>
+    <fieldval field="grWeight" value="5"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="CIVRadio"/>
+    </thing>
+  <thing id="eqT2KCGHAMR3" name="HAM Radio Rel 3" description="An AM HF radio used for distant Morse code (and sometimes voice) communication and relay.  Ham radios vary from fairly portable units with limited capabilities and range (weight 3) to barely-mobile sets that require generator power and antennae to be set up when used, which can reach much of the globe" compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="GearSubType" tag="CIVRadio" name="Civilian Radios" abbrev="Civilian Radios"/>
+    <tag group="GearType" tag="CommGear" name="Communications Gear" abbrev="Communications Gear"/>
+    </thing>
+  <thing id="eqT2KHAMR4" name="HAM Radio Rel 4" description="An AM HF radio used for distant Morse code (and sometimes voice) communication and relay.  Ham radios vary from fairly portable units with limited capabilities and range (weight 3) to barely-mobile sets that require generator power and antennae to be set up when used, which can reach much of the globe" compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="GearSubType" tag="CIVRadio" name="Civilian Radios" abbrev="Civilian Radios"/>
+    <tag group="GearType" tag="CommGear" name="Communications Gear" abbrev="Communications Gear"/>
+    </thing>
+  <thing id="hdrT2KSigGear" name="--- Signalling Gear ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="SIGGear"/>
+    <tag group="GearType" tag="CommGear"/>
+    </thing>
+  <thing id="eqT2KCGSigPanel" name="Signal Panels" description="SIGNAL PANELS: Reversible nylon sheets with a dark green or camouflage side and a brightly colored reverse (usually  orange or pink). These can be laid out on the ground in a pattern to signal aircrews or held up at long ranges to visually identify friendly units." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="SIGGear"/>
+    </thing>
+  <thing id="eqT2KCGStrobeLt" name="Strobe Light" description="Very bright blinking lights that may have a  special cap to convert the light to infrared only (visible only through night vision devices). It is most often used to signal aircrews for landing or pickup, but can also be used as a long-range visual signal in an emergency." compset="Equipment">
+    <fieldval field="grCost" value="20"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="CommGear"/>
+    <tag group="GearSubType" tag="SIGGear"/>
+    </thing>
+  <thing id="eqT2KCGSigFlare" name="Signal Flare" description="SIGNAL FLARE: Can be fired from a single-use disposable canister or a reusable launcher with flare ammunition, such as a flare gun. These flares are solely for signaling and do not provide additional light, like the flares fired by mortars and other artillery." compset="Equipment">
+    <fieldval field="grCost" value="5"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="SIGGear"/>
+    <tag group="GearType" tag="CommGear"/>
+    </thing>
+  <thing id="hdrT2KObsGear" name="--- Observation Gear ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Misc"/>
+    </thing>
+  <thing id="eqT2KOGBinocs" name="Binoculars" description="BINOCULARS: Used to spot animals, people, and vehicles at longer ranges. They typically range from 8x to 12x in power. Binoculars give a +2 modifier to RECON, but only when actively scouting or observing." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KOGNVG" name="Night Vision Goggles" description="An electronic visor that amplifies light, allowing the user to see in near-total darkness (and total darkness by using the attached infrared light). They allow night vision out to three hexes (30 meters), or up to five hexes when using the  attached light, eliminating all modifiers to RANGED COMBAT and RECON due to darkness. Requires a battery." compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KOGThermO" name="Thermal Optics" description="Thermal optics are extremely rare but can be found on many modern armored fighting vehicles and aircraft as well as the CLU module of the FGM-148 Javelin. Thermals see heat rather than amplifying light, so warm objects (such as people, animals, fires, engines, etc.) appear light while cold objects appear dark, even through fog, rain, and smoke (unless the smoke is hot or contains thermal chaff). This eliminates all visibility limits and skill modifiers due to darkness, weather, and smoke." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KOGFlashLight" name="Flashlight" description="A flashlight is simply a battery-powered light used to see in the dark, typically with a range of three hexes (30 meters), eliminating the effects of darkness within that area. It is very visible to others, especially if they are using night vision devices. Rarely, an infrared cover may be found that hides the visible light and is only visible to night vision devices. Requires a small battery." compset="Equipment">
+    <fieldval field="grCost" value="30"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KOGSearchL" name="Searchlight" description="A powerful spotlight with a range of 10 hexes (100 meters).  See page 59 for more information. Must be powered by a vehicle, a large battery or a large generator." compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KOGCompass" name="Compass" description="COMPASS: Used to determine direction and may include advanced features such as a mil scale, lock, aiming wire, and map ruler. Gives a +2 to SURVIVAL rolls for navigating in roadless terrain (page 140)." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KOGGPS" name="Global Positioning System" description="GPS was used by both NATO and Soviet aircraft and modern armored fighting vehicles, and even some handheld devices were available, until EMP pulses from nuclear detonations knocked out most of them. Now, functional GPS devices are very rare, and as many GPS satellites have also been destroyed, only work half of the time (roll 4+ on a D6). When functional, a GPS eliminates the need to roll SURVIVAL for navigating in roadless terrain." compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="hdrT2KProtectiveG" name="--- Protective Gear ----" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    </thing>
+  <thing id="eqT2KPGRadioMeter" name="Radiometer" description="RADIACMETER: A radiacmeter is used to detect the level of radiation in an\narea. Requires a slow action to use. Rel: 1. Weight: ¼. Price 200." compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPGChemAgtDet" name="Chemical Agent Detector" description="This small kit is used to assess whether a chemical agent is present in a hex and, if so, identify which agent. Requires one stretch of time to use." compset="Equipment">
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPGProtMask" name="Protective Mask" description="Used to reduce or counter the effects of chemical weapons. Removes the –3 modifier to STAMINA rolls for avoiding the effects (page 79), but also gives a –2 modifier to RECON and to STAMINA rolls made for marching." compset="Equipment">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPGMOPPSuit" name="Hazmat/MOPP Suite" description="A suit, generally made of charcoal-impregnated water-resistant cloth in Western Europe and the US and waterproof plastic in Eastern Europe. Includes rubber gloves and boots and, when worn properly with a protective mask (above), protects you fully from most chemical weapons, even those that are lethal on contact with skin. Also offers some protection against radioactive contamination (page 80)." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPGRainGear" name="Rain Gear" description="Gives a +1 modifier to STAMINA rolls for avoiding the effects of chemical weapons." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedicalSupp" name="--- Medical Supplies ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Medical"/>
+    </thing>
+  <thing id="eqT2KMSPerMedKit" name="Personal Medkit" description="Gives a +1 modifier to MEDICAL AID rolls. Disposable, can only be used once." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMSDrMedKit" name="Doctor&apos;s Medical Kit" description="Medical equipment and drugs that give a +2 modifier to MEDICAL AID rolls. Includes 10 doses of each drug type below, plus bandages and tools for minor surgery." compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMSSurgInstr" name="Surgical Instruments" description="Scalpels, forceps, hemostats, clamps, and other tools. The set gives a +1 modifier to MEDICAL AID rolls, but only when treating fatal critical injuries. Can be combined with medkits." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMSAntiBiotic" name="Antibiotics" description="Gives a +3 modifier to MEDICAL AID when treating infected wounds and other bacterial infections. The effect of a dose lasts for one day." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Medical"/>
+    </thing>
+  <thing id="eqT2KMSPainMeds" name="Pain Reliever" description="Heals 1 point of damage in one stretch.  Further doses during the same shift have no effect." compset="Equipment">
+    <fieldval field="grCost" value="15"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Medical"/>
+    </thing>
+  <thing id="eqT2KMSAtropiInj" name="Atropine Autoinjector" description=" A premeasured, automatic injector, which can be operated by nonmedical personnel to treat the effects of nerve agents. One dose,disposable." compset="Equipment">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Medical"/>
+    </thing>
+  <thing id="eqT2KTSPVehTool" name="Vehicle Tools" description="Specialized tools for repairing and servicing vehicles that give a +1 modifier when doing so. This tool set includes spark plug wrenches, torque wrenches, a grease gun, etc." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KTSPWeapTool" name="Weapon Tools" description="Specialized tools for repairing weapons that give you a +1 modifier for it." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KTSPWeapPart" name="Weapon Spare Part" description="WEAPON SPARE PART: Needed to repair an inoperable weapon. Can also be used to jury rig." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KTSPVehPart" name="Vehicle Spare Parts" description="Needed to repair an inoperable vehicle." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KTSPElecPart" name="Electronic Spare Part" description="Needed to repair an inoperable electronic item." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KTSPGenPart" name="General Spare Part" description="GENERAL SPARE PART: Needed to repair an inoperable mechanical item that is not a weapon or vehicle. Can also be used to jury rig items." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="hdrT2KFuelandStil" name="--- Fuel &amp; Stills ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Fuel"/>
+    </thing>
+  <thing id="eqT2KFSGasoline" name="Gasoline (L)" description="As the global oil and refinery supply system has collapsed, traditional fossil fuels are very rare in Europe in the year 2000." compset="Equipment" stacking="merge">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Fuel"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFSDieselFuel" name="Diesel Fuel (L)" compset="Equipment" stacking="merge">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Fuel"/>
+    </thing>
+  <thing id="eqT2KFSAlcoholFue" name="Alcohol Fuel (L)" description="To compensate for the gasoline and diesel shortfalls, most operational vehicles have been converted to run on alcohol fuel like methanol and ethanol, which can be produced from wood, grain and other organic materials." compset="Equipment">
+    <fieldval field="grCost" value="15"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Fuel"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFSSmStill" name="Small Still" description="Produces up to 5 liters of alcohol per shift of stationary use. Requires one encumbrance unit of organic material per liter of alcohol produced. Can be jury rigged (requires 20 general spare parts)." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="20"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Fuel"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFSMedStill" name="Medium Still" description="Produces up to 50 liters of alcohol per shift of stationary use.  Requires one encumbrance unit of organic material per liter of alcohol produced. Can be jury rigged (requires 400 general spare parts)." compset="Equipment">
+    <fieldval field="grCost" value="2500"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="400"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Fuel"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFSIndStill" name="Industrial Still" description="Produces up to 500 liters of alcohol per shift. Requires one encumbrance unit of organic material per liter of alcohol produced. Cannot be moved." compset="Equipment">
+    <fieldval field="grCost" value="10000"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Fuel"/>
+    </thing>
+  <thing id="hdrT2KElectricity" name="--- Electricity ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Electricty"/>
+    </thing>
+  <thing id="eqT2KESmGenerator" name="Small Generator" description="Generates enough electricity to power a single small electric device. Requires 2 liters of alcohol fuel per shift or a STAMINA roll if powered manually. Can be jury rigged (requires 3 general or vehicle spare parts and 4 electronic spare parts)." compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="5"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Electricty"/>
+    </thing>
+  <thing id="eqT2KELgGenerator" name="Large Generator" description="Generates enough electricity to power one large electric device or run up to a dozen small electric devices.  Requires 20 litres of alcohol fuel per shift.  Can be jury rigged (requires 30 general or vehicle spare parts and 40 electronic spare parts)" compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="50"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Electricty"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KESmBattery" name="Small Battery" description="Powers one small electric device for a day&apos;s use.  Can be recharged by plugging it into a running vehicle or a generator for one shift." compset="Equipment">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Electricty"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KECarBattery" name="Car Battery" description="Powers one large electric device or up to a dozen small electric devices for a day&apos;s use.  Can be recharged by plugging it into a running vehicle or a large generator for one shift." compset="Equipment">
+    <fieldval field="grWeight" value="5"/>
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grCost" value="1000"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Electricty"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="hdrT2KExplosives" name="--- Explosives ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Misc"/>
+    </thing>
+  <thing id="eqT2KExPlasticEx" name="Plastic Explosives" description="A quarter of an encumbrance unit of plastic explosive has a blast power of D.  Quadrupling the amount of plastic explosives will increase the blast power one step, up to a maximum of A." compset="Equipment">
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Explosives"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KEChemEx" name="Chemical Explosives" description="A range of commonly available substances that can be used to manufacture improvised explosives, such as fertilizers." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Explosives"/>
+    </thing>
+  <thing id="eqT2KExImpEx" name="Improvised Explosives" description="One full encumbrance unit of improvised explosives has a blast power of D. Quadrupling the amount of explosives will increase the blast power one step, up to a maximum of A. You can convert one encumbrance unit of chemicals into one encumbrance unit of improvised explosives with a successful TECH roll. If you fail immediately roll again – on a second failure, the explosives detonate." compset="Equipment">
+    <fieldval field="grReliability" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="25"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="Explosives"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="hdrT2KFoodDrink" name="--- Food &amp; Drink ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="FoodDrink"/>
+    </thing>
+  <thing id="eqT2KFDMRE" name="Field Rations, MRE (Daily Ration)" description="Meal, Ready-to-Eat – is a selfcontained, individual field ration in lightweight packaging produced by the US. Minimum shelf life is three years. Other nationalities have similar field rations. One field ration covers the minimum daily requirement\nof food." compset="Equipment" stacking="merge">
+    <fieldval field="grCost" value="20"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FoodDrink"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFDDomestic" name="Domestic Food (Daily Ration)" description="Cooked meat or vegetables. Needs to be consumed within a week, or it will spoil." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FoodDrink"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFDWildFood" name="Wild Food (Daily Ration)" description="Edible plants and roots that can be collected by foraging (page 143).  Spoils after one week.  Each daily ration of wild food weighs one full encumrance unit, as the energy content is low." compset="Equipment">
+    <fieldval field="grCost" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FoodDrink"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFGFatigues" name="Fatigues" description="These have a camouflage pattern and include boots, socks, undergarments, and gloves. The fatigues count as adequate clothes for protection against cold except in severe winter conditions. The camouflage pattern gives a +1 modifier to RECON rolls for setting ambushes and staying undetected." compset="Equipment">
+    <fieldval field="grCost" value="20"/>
+    <fieldval field="grReliability" value="1"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFGThermFatig" name="Thermal Fatigues" description="Heavily insulated fatigues, protecting even against extreme cold." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFGSleepBag" name="Sleeping Bag" description="Gives a +2 to SURVIVAL rolls when sleeping on bare ground and STAMINA rolls against cold." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFGBlanket" name="Blanket" description="Gives you a +1 to STAMINA rolls against cold." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="FieldGear"/>
+    </thing>
+  <thing id="eqT2KFGSmTent" name="Small Tent" description="Gives a +1 modifier to SURVIVAL rolls for making camp (page 147). Fits four people." compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFGLgTent" name="Large Tent" description="LARGE TENT: Gives a +1 modifier to SURVIVAL rolls for making camp. Fits ten people." compset="Equipment">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KFGFishGear" name="Fishing Gear" description="Used for fishing (page 147). Can be jury rigged using one general spare part." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="hdrT2KToolsandPar" name="--- Tools &amp; Spare Parts ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  </document>

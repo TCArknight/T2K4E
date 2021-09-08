@@ -532,17 +532,36 @@
     sequence="explicit">
     <value id="Custom" order="0"/>
     <value id="WeaponGear" name="Weapon Gear" order="5"/>
-    <value id="Computer" name="Computer Mainframes" order="10"/>
-    <value id="DataStore" name="Data Storage" order="20"/>
-    <value id="DiagDisplay" name="Diagnostics &amp; Display" order="30"/>
-    <value id="Vision" name="Vision Devices" order="40"/>
-    <value id="Tools" order="50"/>
+    <value id="CommGear" name="Communications Gear" order="10" />
+    <value id="ProtectiveGear" name="Protective Gear" order="15" />
+    <value id="Observation" name="Observation Gear" order="40" />
+    <value id="Tools" name="Tools &amp; Spare Parts" order="50"/>
     <value id="Medical" name="Medical Supplies" order="60"/>
-    <value id="Pharma" name="Pharmaceuticals" order="70"/>
     <value id="FoodDrink" name="Food &amp; Drink" order="80"/>
+    <value id="Fuel" name="Fuel &amp; Stills" order="90"/>
+    <value id="Electricty" name="Electricty" order="95" />
+    <value id="Explosives" name="Explosives" order="100" />
+    <value id="FieldGear" name="Field Gear" order="105" />
     <value id="Misc" name="Miscellaneous" order="255"/>
     </group>
 	
+  <!-- GearSubType group - tags identifying the specific category of a piece of equipment
+        All the different categories of equipment should be defined in this group.
+        RDS SWD Added some new categories
+  -->
+  <group
+    id="GearSubType"
+    dynamic="yes"
+    sequence="explicit">
+    <value id="Custom" order="0"/>
+    <value id="USMRadio" name="US Military Radios" order="5" />
+    <value id="USSRRadio" name="Soviet Military Radios" order="10" />
+    <value id="CIVRadio" name="Civilian Radios" order="15" />
+    <value id="SIGGear" name="Signaling Gear" order="20" />
+    <value id="NA" name="Not Applicable" order="255" />
+    </group>
+
+
   <!-- Armory group - controls order in which armor and weapons are shown
         Each type of weapon/armor must be assigned one of these tags to dictate its
         basic nature (this is done by via the components). Once assigned, this group

@@ -1258,18 +1258,6 @@ validif (#trait[attrAgi] >= 5)]]></validate>
       <tag group="Specialty" tag="spcT2KTeacher"/>
       </child>
     </thing>
-  <thing id="eqT2KBinoculars" name="Binoculars" description="Used to spot animals, people, and vehicles at longer ranges. They typically range from 8x to 12x in power. Binoculars give a +2 modifier to RECON, but only when actively scouting or observing." compset="Equipment">
-    <fieldval field="grCost" value="50"/>
-    <fieldval field="gearWeight" value=".5"/>
-    <usesource source="srcT2K"/>
-    <tag group="GearType" tag="Vision"/>
-    </thing>
-  <thing id="eqT2KFlashlight" name="Flashlight" description="A flashlight is simply a battery-powered light used to see in the dark, typically with a range of one hex (10 meters), eliminating the effects of darkness within that area. It is very visible to  others, especially if they are using night vision devices. Rarely, an infrared cover may be found that hides the visible light and is only visible to night vision devices. Requires a small battery." compset="Equipment">
-    <fieldval field="grCost" value="30"/>
-    <fieldval field="gearWeight" value=".25"/>
-    <usesource source="srcT2K"/>
-    <tag group="GearType" tag="Vision"/>
-    </thing>
   <thing id="armT2KHelmSteel" name="Steel Helmet" compset="Armor">
     <fieldval field="defDefense" value="1"/>
     <fieldval field="grCost" value="25"/>
@@ -1297,60 +1285,5 @@ validif (#trait[attrAgi] >= 5)]]></validate>
     <fieldval field="gearWeight" value="3"/>
     <usesource source="srcT2K"/>
     <tag group="ArmorLoc" tag="Torso"/>
-    </thing>
-  <thing id="eqT2KMagazine" name="Magazine" compset="Equipment" stacking="merge">
-    <fieldval field="grReliability" value="5"/>
-    <fieldval field="grWeight" value=".25"/>
-    <usesource source="srcT2K"/>
-    <tag group="thing" tag="holder"/>
-    <tag group="GearType" tag="WeaponGear"/>
-    <holdlimit>AmmoCat.Firearm</holdlimit>
-    <gear>field[gearNet].value = field[gearWeight].value</gear>
-    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
-
-if (gearcount = 0) then
-  field[livename].text = field[name].text & " (Empty)"
-else
-  heldName = gearlist[",",component.Ammunition]
-  field[livename].text &= field[name].text & " (" & heldName & ")"
-  endif]]></eval>
-    </thing>
-  <thing id="hdrT2KWeaponGear" name="-- Weapon Gear --" compset="Equipment" isshowonly="yes">
-    <usesource source="srcT2K"/>
-    <tag group="GearType" tag="WeaponGear"/>
-    </thing>
-  <thing id="hdrT2KCustomGear" name="-- Custom Gear --" compset="Equipment" isshowonly="yes">
-    <usesource source="srcT2K"/>
-    <tag group="GearType" tag="Custom"/>
-    </thing>
-  <thing id="eqT2KBackpack" name="Backpack" description="Description goes here." compset="Equipment">
-    <fieldval field="grCost" value="5"/>
-    <fieldval field="grWeight" value="2"/>
-    <usesource source="srcT2K"/>
-    <tag group="thing" tag="holder_top"/>
-    <tag group="Helper" tag="HasBackpack"/>
-    <tag group="Equipped" tag="Equippable"/>
-    <gear>herofield[acCarryBack].value = field[gearHeld].value</gear>
-    <eval phase="PreTraits" priority="5000" index="2"><![CDATA[if (field[grIsEquip].value <> 0) then
-  #traitbonus[skT2KMobility] += -2
-  endif]]></eval>
-    <eval phase="Setup" priority="1000">perform forward[Helper.HasBackpack]</eval>
-    </thing>
-  <thing id="eqT2KAmmoBelt" name="Ammo Belt" compset="Equipment" stacking="merge">
-    <fieldval field="grReliability" value="5"/>
-    <fieldval field="grWeight" value="1"/>
-    <usesource source="srcT2K"/>
-    <tag group="thing" tag="holder"/>
-    <tag group="GearType" tag="WeaponGear"/>
-    <holdlimit>AmmoCat.Firearm</holdlimit>
-    <gear>field[gearNet].value = field[gearWeight].value</gear>
-    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
-
-if (gearcount = 0) then
-  field[livename].text = field[name].text & " (Empty)"
-else
-  heldName = gearlist[",",component.Ammunition]
-  field[livename].text &= field[name].text & " (" & heldName & ")"
-  endif]]></eval>
     </thing>
   </document>
