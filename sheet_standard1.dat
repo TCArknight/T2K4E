@@ -119,6 +119,9 @@
       showtemplate="oAttrPick"
       headertemplate="oAttrPick"
       showsortset="explicit">
+      <list><![CDATA[
+        (hero#CharType.Vehicle & AttrCat.Vehicle)|(!hero#CharType.Vehicle & AttrCat.Hero)
+        ]]></list>
       </output_table>
     </portal>
 
