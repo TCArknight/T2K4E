@@ -299,7 +299,7 @@
       id="acStartAttrib"
       name="Starting Attribute Points"
       type="user"
-      defvalue="16">
+      defvalue="12">
       </field>
 
     <field

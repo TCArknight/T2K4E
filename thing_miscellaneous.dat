@@ -25,6 +25,14 @@
     <!-- Adjust points based on Age category -->
     <eval index="1" phase="Initialize" priority="1000" name="Initial Attribute Points"><![CDATA[
 	  field[resMax].value = herofield[acStartAttrib].value
+	  
+	  if (hero.tagis[source.srcT2K] = 1) then
+		field[resMax].value += 4
+		endif
+	  
+	  if (hero.tagis[source.srcT2KArchetypes] = 1) then
+		field[resMax].value += 3
+		endif
 		
       ]]></eval>
 	  
