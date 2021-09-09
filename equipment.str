@@ -919,8 +919,9 @@
       ]]></eval>
     <eval index="2" phase="Final" priority="1000"><![CDATA[
       if (tagis[Helper.DamageByAmmo] <> 0) then
-	    field[wpDamage].text = "By Ammo"
-		endif
+	    field[wpDamage].text = "*"
+	    field[wpCrit].text = "*"
+        endif
       ]]></eval>	
 	  
     <!-- Assign any derived special notes to the appropriate field -->
@@ -1501,7 +1502,18 @@
       field[trkMax].value = field[stackQty].value
       ]]></eval>
 
-    <eval index="2" phase="Final" priority="10000"><![CDATA[
+    <eval index="2" phase="Final" priority="5000"><![CDATA[
+	  ~make sure we're in a gearholder to travel to
+	  doneif (isgearheld = 0)
+	  
+      ~ holding weapon gets damage/crit value from ammo
+	  doneif (gearholder.tagis[Helper.DamageByAmmo] = 0)
+	  
+	  gearholder.field[wpDamage].text = field[amDamage].text
+	  gearholder.field[wpCrit].text = field[amCrit].text
+      ]]></eval>
+	  
+    <eval index="3" phase="Final" priority="10000"><![CDATA[
 	  ~make sure we're in a gizmo to travel to
 	  doneif (isgizmo = 0)
 	  
