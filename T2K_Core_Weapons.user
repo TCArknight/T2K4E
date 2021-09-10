@@ -186,11 +186,8 @@
   <thing id="wpT2KM9" name="M9" description="The M9 officially replaced the M1911A1 in US service in 1980, but production was delayed until 1988. By the time war broke out in the 1990s, only front-line troops and officers had the M9, while many reserve units and units that had been formed from freshly-recruited troops were issued the M1911A1. The 9mm ammo of the M9 was much easier to find than .45 ACP, and the larger magazine capacity made it more efficient, leading to it being more popular among most soldiers." compset="Ranged">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="2"/>
-    <fieldval field="wpDamage" value="1"/>
-    <fieldval field="wpCrit" value="2"/>
     <fieldval field="wpShort" value="2"/>
     <fieldval field="wpCapacity" value="15"/>
-    <fieldval field="wpArmorRating" value="1"/>
     <fieldval field="grCost" value="100"/>
     <fieldval field="grWeight" value=".5"/>
     <usesource source="srcT2K"/>
@@ -467,8 +464,8 @@
     <tag group="AmmoType" tag="amT2K55645"/>
     <tag group="thing" tag="holder"/>
     <tag group="Helper" tag="DamageByAmmo"/>
-    <holdlimit><![CDATA[AmmoCatType.Rifle & AmmoCat.Firearm & AmmoType.amT2K55645]]></holdlimit>
-    <child entity="Ammo"></child>
+    <holdlimit>AmmoType.amT2K55645</holdlimit>
+  <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM16A1" name="M16A1" description="The M16A1 assault rifle was developed in the 1960s for use in the jungles of\nVietnam. After some teething problems were resolved, it became the standard\nrifle of the US armed forces until it was replaced by the M16A2 in the mid-80s.\nLarge stockpiles of M16A1s were sold or given to allies or maintained by reserve\nand training units. These rifles were issued en masse when war broke out in the\n‘90s, mainly to units that had just been formed or to expand reserve units. Many\nsoldiers actually preferred the M16A1 over the M16A2 due to its higher rate of fire" compset="Ranged">
     <fieldval field="wpDamage" value="2"/>

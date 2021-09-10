@@ -1060,7 +1060,16 @@
 	  
     <!-- All ranged weapons get the same tag for sorting purposes -->
     <tag group="Armory" tag="Range"/>
-
+      <!-- Assign Ranged Weapon Tags-->
+     <eval index="1" phase="Initialize" priority="2000"><![CDATA[
+      ~Even bows hold the arrow they are going to fire
+      if (tagis[thing.holder] = 0) then
+        perform assign[thing.holder]
+        endif
+      if (tagis[Helper.DamageByAmmo] = 0) then
+        perform assign[Helper.DamageByAmmo]
+      endif
+      ]]></eval>
     <!-- Calculate the net attack roll for the weapon -->
     <eval index="1" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
 	  var AttPlusSki as string
