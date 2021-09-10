@@ -300,6 +300,12 @@
     <tag group="AmmoType" tag="amT2KM60mmCNA"/>
     <tag group="AmmoType" tag="amT2KM60mmHE"/>
     <tag group="AmmoType" tag="amT2KM60mmILLUM"/>
+    <holdlimit>AmmoType.amT2KM60mmCBA |
+AmmoType.amT2KM60mmWP |
+AmmoType.amT2KM60mmCNA |
+AmmoType.amT2KM60mmHE |
+AmmoType.amT2KM60mmILLUM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K81mmMortar" name="81mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
     <fieldval field="wpShort" value="65"/>
@@ -315,6 +321,14 @@
     <tag group="AmmoType" tag="amT2KM81mmCBA"/>
     <tag group="AmmoType" tag="amT2KM81mmCNA"/>
     <tag group="AmmoType" tag="amT2KM81mmHE"/>
+    <holdlimit>
+
+AmmoType.amT2KM81mmCBA |
+AmmoType.amT2KM81mmWP |
+AmmoType.amT2KM81mmCNA |
+AmmoType.amT2KM81mmHE |
+AmmoType.amT2KM81mmILLUM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K82mmVasilek" name="82mm Mortar - Vasilek" description="The Vasilek semi-automatic 82mm mortar system has a RoF of 2 and Mag of 4. It must be towed and can’t be broken\ndown. It uses ammo dice just like small arms. On a hit, each on an ammo die lands an additional grenade in the target\nhex or a hex adjacent to it. On a miss, deviation is rolled one additional time for each rolled on the ammo dice" compset="Ranged">
     <fieldval field="wpShort" value="40"/>
@@ -330,6 +344,12 @@
     <tag group="AmmoType" tag="amT2KM82mmCBA"/>
     <tag group="AmmoType" tag="amT2KM82mmCNA"/>
     <tag group="AmmoType" tag="amT2KM82mmHE"/>
+    <holdlimit>AmmoType.amT2KM82mmCBA |
+AmmoType.amT2KM82mmWP |
+AmmoType.amT2KM82mmCNA |
+AmmoType.amT2KM82mmHE |
+AmmoType.amT2KM82mmILLUM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K82mmMortar" name="82mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -345,6 +365,12 @@
     <tag group="AmmoType" tag="amT2KM82mmILLUM" name="Mortar - 82mm ILLUM" abbrev="Mortar - 82mm ILLUM"/>
     <tag group="AmmoType" tag="amT2KM82mmWP" name="Mortar - 82mm WP" abbrev="Mortar - 82mm WP"/>
     <tag group="WeaponCat" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <holdlimit>AmmoType.amT2KM82mmCBA |
+AmmoType.amT2KM82mmWP |
+AmmoType.amT2KM82mmCNA |
+AmmoType.amT2KM82mmHE |
+AmmoType.amT2KM82mmILLUM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K42inMortar" name="4.2in Mortar" compset="Ranged">
     <fieldval field="wpShort" value="75"/>
@@ -360,6 +386,13 @@
     <tag group="AmmoType" tag="amT2KM42inCBA"/>
     <tag group="AmmoType" tag="amT2KM42inCNA"/>
     <tag group="AmmoType" tag="amT2KM42inHE"/>
+    <holdlimit>
+AmmoType.amT2KM42inCBA |
+AmmoType.amT2KM42inWP |
+AmmoType.amT2KM42inCNA |
+AmmoType.amT2KM42inHE |
+AmmoType.amT2KM42inILLUM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K120mmMortar" name="120mm Mortar" compset="Ranged">
     <fieldval field="wpShort" value="75"/>
@@ -375,5 +408,12 @@
     <tag group="AmmoType" tag="amT2KM120mmCBA"/>
     <tag group="AmmoType" tag="amT2KM120mmCNA"/>
     <tag group="AmmoType" tag="amT2KM120mmHE"/>
+    <holdlimit>
+AmmoType.amT2KM120mmCBA |
+AmmoType.amT2KM120mmWP |
+AmmoType.amT2KM120mmCNA |
+AmmoType.amT2KM120mmHE |
+AmmoType.amT2KM120mmILLUM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   </document>

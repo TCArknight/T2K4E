@@ -11,6 +11,8 @@
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="AmmoType" tag="amT2K380ACP"/>
+    <holdlimit>AmmoType.amT2K380ACP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAstra" name="Astra Constable" description="A small automatic pistol designed to carried by urban police units." compset="Ranged">
     <fieldval field="wpCapacity" value="6"/>
@@ -23,6 +25,8 @@
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
     <tag group="AmmoType" tag="amT2K380ACP" name=".380 ACP" abbrev=".380 ACP"/>
+    <holdlimit>AmmoType.amT2K380ACP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KHardBall" name="AMT Hardballer" description="A stainless steel version of the standard US Army .45 Automatic.  The Hardballer is an exceptionally well made weapon.  A special long-barreled version called the &quot;Longslide&quot; was the pistol that Arnold Schwarzeneggar carried in the movie The Terminator" compset="Ranged">
     <fieldval field="wpShort" value="1"/>
@@ -34,5 +38,7 @@
     <tag group="AmmoType" tag="amT2KCal45"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="Pistol"/>
+    <holdlimit>AmmoType.amT2KCal45</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   </document>

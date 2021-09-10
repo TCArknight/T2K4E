@@ -75,6 +75,8 @@
     <tag group="AmmoType" tag="amT2KH105mmCBA"/>
     <tag group="AmmoType" tag="amT2KH105mmCNA"/>
     <tag group="AmmoType" tag="amT2KH105mmHE"/>
+    <holdlimit>AmmoType.amT2KH105mmILLUM | AmmoType.amT2KH105mmWP | AmmoType.amT2KH105mmCBA | AmmoType.amT2KH105mmCNA | AmmoType.amT2KH105mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KH122mmCBA" name="Howitzer - 122mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
     <fieldval field="amDamage" value="0"/>
@@ -147,6 +149,8 @@
     <tag group="AmmoType" tag="amT2KH122mmCNA"/>
     <tag group="AmmoType" tag="amT2KHCNA"/>
     <tag group="AmmoType" tag="amT2KH122mmHE"/>
+    <holdlimit>AmmoType.amT2KH122mmILLUM | AmmoType.amT2KH122mmWP | AmmoType.amT2KH122mmCBA | AmmoType.amT2KH122mmCNA | AmmoType.amT2KH122mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KH152mmCBA" name="Howitzer - 152mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
     <fieldval field="amDamage" value="0"/>
@@ -213,6 +217,17 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="Howitzer"/>
     <tag group="WeaponType" tag="Howitzer"/>
+    <tag group="AmmoType" tag="amT2KH152mmCBA"/>
+    <tag group="AmmoType" tag="amT2KH152mmCNA"/>
+    <tag group="AmmoType" tag="amT2KH152mmHE"/>
+    <tag group="AmmoType" tag="amT2K152mmILLUM"/>
+    <tag group="AmmoType" tag="amT2KH152mmWP"/>
+    <holdlimit>AmmoType.amT2K152mmILLUM | 
+AmmoType.amT2KH152mmWP  |
+AmmoType.amT2KH152mmCBA |
+AmmoType.amT2KH152mmCNA |
+AmmoType.amT2KH152mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KH155mmCBA" name="Howitzer - 155mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
     <fieldval field="amDamage" value="0"/>
@@ -279,6 +294,17 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="Howitzer"/>
     <tag group="WeaponType" tag="Howitzer"/>
+    <tag group="AmmoType" tag="amT2KH155mmCBA"/>
+    <tag group="AmmoType" tag="amT2KH155mmCNA"/>
+    <tag group="AmmoType" tag="amT2KH155mmHE"/>
+    <tag group="AmmoType" tag="amT2KH155mmILLUM"/>
+    <tag group="AmmoType" tag="amT2KH155mmWP"/>
+    <holdlimit>AmmoType.amT2KH155mmILLUM | 
+AmmoType.amT2KH155mmWP  |
+AmmoType.amT2KH155mmCBA |
+AmmoType.amT2KH155mmCNA |
+AmmoType.amT2KH155mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KH203mmCBA" name="Howitzer - 203mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
     <fieldval field="amDamage" value="0"/>
@@ -352,6 +378,14 @@
     <tag group="AmmoType" tag="amT2KH203mmNUK40k"/>
     <tag group="AmmoType" tag="amT2KH203mmHUKE5k"/>
     <tag group="AmmoType" tag="amT2KH203mmWP"/>
+    <holdlimit>AmmoType.amT2KH203mmHE | 
+AmmoType.amT2KH203mmILLUM |
+AmmoType.amT2KH203mmNKE10k |
+AmmoType.amT2KH203mmNUKE1k |
+AmmoType.amT2KH203mmNUK40k |
+AmmoType.amT2KH203mmHUKE5k |
+AmmoType.amT2KH203mmWP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KH203mmNUKE1k" name="Howitzer - 203mm NUKE (1kt)" description="This is a 1Kt Nuclear Warhead for the 203mm Howitzer.\nThe Rules state that the 203mm Howitzer is capable of fireing Nukes\nThe Nukes for the 203mm Howitzer  correspond to the US W33 nuclear warhead.\nWhile the yeilds for this device in its four configurations are classified, it was tested in 1kt and 40kt yields\nThe T2K 4e rules really don&apos;t handle Nuclear blasts, but here&apos;s the expected results of a 1kt blast.\nUsing NukeMap here are approximations:\n\nDeath Radius: 8 hexes\n\nIf outside of the Death Radius, fine the radius for each damage type and apply it.\n\nBlast Damage:\n  A        9-22 hexes\n  B        10-46 hexes\n  D       46-118 hexes\n\nFire Damage:\n  A       8-50 hexes\n  B      51-54 hexes \n  C      55-66 hexes\n  D      67-94 hexes\n\nRadiation Attack\n   50       8-51 hexes\n   10       51-73 hexes\n    6         74-81 hexes\n    5         82-84 hexes\n    1        85-111 hexes\n\nSource: https://nuclearsecrecy.com/nukemap/" compset="Ammunition">
     <tag group="AmmoCat" tag="HeavyWpn"/>

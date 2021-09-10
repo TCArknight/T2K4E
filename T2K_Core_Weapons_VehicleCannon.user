@@ -377,6 +377,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC20mmAP"/>
     <tag group="AmmoType" tag="amT2KC20mmHE"/>
+    <holdlimit>AmmoType.amT2KC20mmHE |
+AmmoType.amT2KC20mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC23mm" name="Cannon - 23mm" compset="Ranged">
     <fieldval field="wpCapacity" value="100"/>
@@ -387,6 +390,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC23mmAP"/>
     <tag group="AmmoType" tag="amT2KC23mmHE"/>
+    <holdlimit>AmmoType.amT2KC23mmHE |
+AmmoType.amT2KC23mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC25mm" name="Cannon - 25mm" compset="Ranged">
     <fieldval field="grReliability" value="5"/>
@@ -397,6 +403,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC25mmAP"/>
     <tag group="AmmoType" tag="amT2KC25mmHE"/>
+    <holdlimit>AmmoType.amT2KC25mmHE |
+AmmoType.amT2KC25mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC30mm" name="Cannon - 30mm" compset="Ranged">
     <fieldval field="wpCapacity" value="500"/>
@@ -407,6 +416,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC30mmAP"/>
     <tag group="AmmoType" tag="amT2KC30mmHE"/>
+    <holdlimit>AmmoType.amT2KC30mmHE |
+AmmoType.amT2KC30mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2kC40mm" name="Cannon - 40mm" compset="Ranged">
     <fieldval field="wpCapacity" value="500"/>
@@ -417,6 +429,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC40mmAP"/>
     <tag group="AmmoType" tag="amT2KC40mmHE"/>
+    <holdlimit>AmmoType.amT2KC40mmHE |
+AmmoType.amT2KC40mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC73mm" name="Cannon - 73mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -427,6 +442,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC73mmAP"/>
     <tag group="AmmoType" tag="amT2KC73mmHE"/>
+    <holdlimit>AmmoType.amT2KC73mmHE |
+AmmoType.amT2KC73mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC762mm" name="Cannon - 76.2mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -438,6 +456,10 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC762mmAP"/>
     <tag group="AmmoType" tag="amT2KC762mmHE"/>
+    <holdlimit>AmmoType.amT2KC762mmHEAT |
+AmmoType.amT2KC762mmHE |
+AmmoType.amT2KC762mmAP</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC100mm" name="Cannon - 100mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -449,6 +471,10 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC100mmAPDS"/>
     <tag group="AmmoType" tag="amT2KC100mmHE"/>
+    <holdlimit>AmmoType.amT2KC100mmHEAT |
+AmmoType.amT2KC100mmAPDS |
+AmmoType.amT2KC100mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC105mm" name="Cannon - 105mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -460,6 +486,10 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC105mmAPDS"/>
     <tag group="AmmoType" tag="amT2KC105mmHE"/>
+    <holdlimit>AmmoType.amT2KC105mmHEAT |
+AmmoType.amT2KC105mmAPDS |
+AmmoType.amT2KC105mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC115mm" name="Cannon - 115mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -471,6 +501,10 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC115mmAPDS"/>
     <tag group="AmmoType" tag="amT2KC115mmHE"/>
+    <holdlimit>AmmoType.amT2KC115mmHEAT |
+AmmoType.amT2KC115mmAPDS |
+AmmoType.amT2KC115mmHE</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC120mm" name="Cannon - 120mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -481,6 +515,9 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC120mmAPFSDS"/>
     <tag group="AmmoType" tag="amT2KC120mmHEAT"/>
+    <holdlimit>AmmoType.amT2KC120mmHEAT |
+AmmoType.amT2KC120mmAPFSDS</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC125mm" name="Cannon - 125mm" compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -492,5 +529,8 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC125mmAPFSDS"/>
     <tag group="AmmoType" tag="amT2KC125mmHE"/>
+    <holdlimit>AmmoType.amT2KC125mmHEAT |
+AmmoType.amT2KC125mmAPFSDS</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   </document>

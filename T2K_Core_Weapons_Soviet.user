@@ -17,9 +17,6 @@
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     </thing>
   <thing id="wpT2KPM" name="PM" description="The Pistolet Makarova, commonly known as the Makarov, was adopted\nby the Soviet Armed Forces in the early 1950s to replace older pre-World\nWar II designs. It was built around a new 9x18mm cartridge midway in\npower between the 9x17mm (.380 ACP) and 9x19mm (9mm Parabellum\nor NATO). It was later supplemented, but not replaced, by the PSM pistol" compset="Ranged">
-    <fieldval field="wpDamage" value="1"/>
-    <fieldval field="wpCrit" value="3"/>
-    <fieldval field="wpArmorRating" value="+2"/>
     <fieldval field="wpShort" value="2"/>
     <fieldval field="wpCapacity" value="8"/>
     <fieldval field="wpRateOfFire" value="2"/>
@@ -31,6 +28,8 @@
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="amT2K9x18"/>
+    <holdlimit>AmmoType.amT2K9x18</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K9x18" name="9x18" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -53,9 +52,6 @@
     <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
     </thing>
   <thing id="wpT2KPSM" name="PSM" description="The Pistolet Samozaryadny Malogabaritny supplemented the\nMakarov in the early 1970s. It fires a 5.45x18mm cartridge that is\nbasically the Makarov round necked down to fire an AK-74 bullet.\nBecause it is so small, it is popular among undercover agents and\nhigh-ranking officers." compset="Ranged">
-    <fieldval field="wpDamage" value="1"/>
-    <fieldval field="wpCrit" value="4"/>
-    <fieldval field="wpArmorRating" value="+2"/>
     <fieldval field="wpCapacity" value="8"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpShort" value="2"/>
@@ -67,10 +63,10 @@
     <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="am545x18"/>
+    <holdlimit>AmmoType.am545x18</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAKM" name="AKM" description="The final version of the legendary Avtomat Kalashnikova AK-47, the\n“modernized” AK took over production in the late 1950s. Although it was\nofficially replaced by the AK-74 in the mid-1970s, it never went out of style\nand large stockpiles were held in reserve and provided to Soviet allies" compset="Ranged">
-    <fieldval field="wpDamage" value="2"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="5"/>
     <fieldval field="wpCapacity" value="30"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -82,6 +78,8 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="AmmoType" tag="amT2K762x39"/>
+    <holdlimit>AmmoType.amT2K762x39</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K762x39" name="7.62x39" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -104,8 +102,6 @@
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="wpT2KAK74" name="AK-74" description="The AK-74 is the latest AK-derivative used by the Soviet armed forces and\nofficially supplanted the AKM in front-line service in the mid-1970s. Like most\nNATO assault rifles, it is built around a smaller caliber cartridge, in this case\nthe 5.45x39mm derived from the original 7.62x39mm cartridge of the AK-47." compset="Ranged">
-    <fieldval field="wpDamage" value="2"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="6"/>
     <fieldval field="wpCapacity" value="30"/>
     <fieldval field="wpRateOfFire" value="5"/>
@@ -117,11 +113,10 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="AmmoType" tag="amT2K545x39"/>
+    <holdlimit>AmmoType.amT2K545x39</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPP19" name="PP-19" description="The PP-19 Bizon is a submachine gun based on the AK receiver firing\n9x18mm Makarov pistol ammunition from a helical magazine below\nthe barrel. It was adopted in the early 1990s and issued primarily to\ncounter-terrorist units of the MVD and KGB" compset="Ranged">
-    <fieldval field="wpDamage" value="1"/>
-    <fieldval field="wpCrit" value="3"/>
-    <fieldval field="wpArmorRating" value="+2"/>
     <fieldval field="wpShort" value="3"/>
     <fieldval field="wpCapacity" value="64"/>
     <fieldval field="wpRateOfFire" value="5"/>
@@ -132,10 +127,10 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="WeaponType" tag="SMG" name="Submachine Gun" abbrev="SMG"/>
     <tag group="AmmoType" tag="amT2K9x18"/>
+    <holdlimit>AmmoType.amT2K9x18</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KGP25" name="GP-25" description="The GP-25 series consists of 40mm grenade launchers for any AK series\nrifle. The grenade has no cartridge case and is muzzle-loaded, making\nit more like a trigger-fired 40mm mortar than a grenade launcher. The\nspin-armed fuse sets between 10 and 40 meters from the muzzle, so\nthe grenade will not detonate any closer than that." compset="Ranged">
-    <fieldval field="wpDamage" value="3"/>
-    <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="4"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -146,8 +141,9 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoType" tag="amT2K40mm"/>
     <tag group="WeaponType" tag="GL"/>
-    <tag group="BlastRating" tag="D"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
+    <holdlimit>AmmoType.amT2K40mm</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K40mm" name="40mm Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grWeight" value=".25"/>
@@ -172,8 +168,6 @@
     <tag group="BlastRating" tag="D"/>
     </thing>
   <thing id="wpT2KAGS17" name="AGS-17" description="The AGS-17 Plamya is a belt-fed 30mm automatic grenade launcher that can be mounted on a tripod or a vehicle pintle. It was adopted in the early 1970s and has been used widely since that time. Unlike the GP-25\n40mm grenade launcher, the AGS-17 used conventional cased cartridges.\nUnlike other heavy weapons, the AGS-17 uses ammo dice just like small arms. If you hit, each on an ammo die lets you land an additional grenade in the target hex or a hex adjacent to it – or, if you attacked a\nspecific target, score another hit on the target, or a secondary target in the same or an adjacent hex. If you miss, roll deviation one additional time for each rolled on your ammo dice." compset="Ranged">
-    <fieldval field="wpDamage" value="3"/>
-    <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="15"/>
     <fieldval field="wpCapacity" value="29"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -184,8 +178,9 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoType" tag="amT2K30x29"/>
     <tag group="WeaponType" tag="GL"/>
-    <tag group="BlastRating" tag="D"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
+    <holdlimit>AmmoType.amT2K30x29</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K762x54" name="7.62x54" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -198,8 +193,6 @@
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="wpT2KSVD63" name="SVD-63" description="The SVD-63, more commonly known as the SVD or Dragunov, is a platoonissued semi automatic sniper rifle introduced in the Soviet Army during\nthe early 1960s. It is very common, although the folding-stock version\n(issued to paratroopers) is still quite rare." compset="Ranged">
-    <fieldval field="wpDamage" value="3"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="10"/>
     <fieldval field="wpCapacity" value="10"/>
     <fieldval field="wpRateOfFire" value="2"/>
@@ -211,10 +204,10 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="AmmoType" tag="amT2K762x54"/>
+    <holdlimit>AmmoType.amT2K762x54</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPKM" name="PKM" description="The PKM, or modern version of the Pulemyot Kalashnikova, is a Soviet\nbelt-fed general-purpose machine gun introduced in the 1960s. It comes\nwith a detachable bipod, but it can also be mounted on a tripod or a\nvehicle pintle." compset="Ranged">
-    <fieldval field="wpDamage" value="3"/>
-    <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="5"/>
@@ -226,10 +219,10 @@
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="amT2K762x54"/>
     <tag group="WeaponType" tag="GPMG" name="General Purpose Machine Gun" abbrev="GPMG"/>
+    <holdlimit>AmmoType.amT2K762x54</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2kRPK" name="RPK" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
-    <fieldval field="wpDamage" value="2"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="6"/>
     <fieldval field="wpCapacity" value="75"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -240,10 +233,10 @@
     <tag group="WeaponType" tag="LightMachineGun"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="amT2K762x39"/>
+    <holdlimit>AmmoType.amT2K762x39</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRPG74" name="RPK-74" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
-    <fieldval field="wpDamage" value="2"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpCapacity" value="75"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpShort" value="6"/>
@@ -254,6 +247,8 @@
     <tag group="WeaponType" tag="LightMachineGun" name="Light Machine Gun" abbrev="LMG"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="amT2K545x39"/>
+    <holdlimit>AmmoType.amT2K545x39</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="am127x108" name="12.7x108" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -266,8 +261,6 @@
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="wpT2KDHSK2B" name="DSHK-3B" description="The DShK-38, or Degtyaryova-Shpagina Krupnokaliberny model of 1938,\nis a Soviet heavy machine gun adopted in the late 1930s. It can be fired\nfrom a vehicle pintle or broken down and carried by a crew for tripod\nuse. Although mostly replaced by the NSV, tens of thousands of DShK-\n38 machineguns are still in service and stockpiles." compset="Ranged">
-    <fieldval field="wpDamage" value="4"/>
-    <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="15"/>
     <fieldval field="wpCapacity" value="50"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -278,10 +271,10 @@
     <tag group="WeaponType" tag="HMG" name="Heavy Machine Gun" abbrev="HMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="am127x108"/>
+    <holdlimit>AmmoType.am127x108</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KNSV" name="NSV" description="The DShK-38, or Degtyaryova-Shpagina Krupnokaliberny model of 1938,\nis a Soviet heavy machine gun adopted in the late 1930s. It can be fired\nfrom a vehicle pintle or broken down and carried by a crew for tripod\nuse. Although mostly replaced by the NSV, tens of thousands of DShK-\n38 machineguns are still in service and stockpiles." compset="Ranged">
-    <fieldval field="wpDamage" value="4"/>
-    <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpCapacity" value="50"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpShort" value="15"/>
@@ -292,6 +285,8 @@
     <tag group="AmmoType" tag="am127x108" name="12.7x108" abbrev="12.7x108"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="WeaponType" tag="HMG" name="Heavy Machine Gun" abbrev="HMG"/>
+    <holdlimit>AmmoType.am127x108</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="amRocket83" name="83mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
@@ -305,11 +300,8 @@
     <tag group="BlastRating" tag="C"/>
     </thing>
   <thing id="wpT2KRPG7V" name="RPG-7V" description="The RPG-7V, or Ruchnoy Protivotankoviy Granatomyot, is a portable,\nreloadable antitank rocket launcher based on the RPG-2, itself derived\nfrom the World War II German Panzerfaust. It was developed in the\nearly 1960s and has a very small backblast which enables it to be fired\nindoors safely" compset="Ranged">
-    <fieldval field="wpDamage" value="7"/>
-    <fieldval field="wpCrit" value="2"/>
     <fieldval field="wpShort" value="6"/>
     <fieldval field="wpCapacity" value="1"/>
-    <fieldval field="wpArmorRating" value="-1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grCost" value="750"/>
@@ -317,14 +309,12 @@
     <fieldval field="shortname" value="RPG-7V"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATRL"/>
-    <tag group="BlastRating" tag="C"/>
     <tag group="AmmoType" tag="amRocket83"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
+    <holdlimit>AmmoType.amRocket83</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRPG16" name="RPG-16" description="The RPG-16 is a smaller version of the RPG-7V intended for use by airborne and Spetsnaz troops. It is more accurate than the RPG-7V, but has\na smaller warhead with less armor penetration." compset="Ranged">
-    <fieldval field="wpDamage" value="5"/>
-    <fieldval field="wpCrit" value="3"/>
-    <fieldval field="wpArmorRating" value="-1"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="wpShort" value="6"/>
@@ -334,9 +324,10 @@
     <fieldval field="shortname" value="RPG-16"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="ATRL" name="Rocket Launcher" abbrev="Rocket Launcher"/>
-    <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="am50mmRocket"/>
+    <holdlimit>AmmoType.am50mmRocket</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="am50mmRocket" name="58mm Rocket" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="150"/>
@@ -360,8 +351,6 @@
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="wpT2KKPV" name="KPV" description="The KPV, or Krupnokaliberniy Pulemyot Vladimirova, is a Soviet heavy\nmachine gun introduced shortly after World War II. It can be found\nmounted on many armored fighting vehicles and on independent towed\nanti-aircraft trailers such as the ZPU-1, ZPU-2, and ZPU-4 (the numbers\nindicating how many KPV machineguns are mounted together)." compset="Ranged">
-    <fieldval field="wpDamage" value="4"/>
-    <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpShort" value="20"/>
     <fieldval field="wpCapacity" value="40"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -372,6 +361,8 @@
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="amT2K145x114"/>
+    <holdlimit>AmmoType.amT2K145x114</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   <thing id="am135mmATGM" name="135mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
@@ -384,9 +375,6 @@
     <tag group="BlastRating" tag="B"/>
     </thing>
   <thing id="wpT2K9M113Konkurs" name="9M113 Konkurs" description="The 9M113 Konkurs (NATO codename AT-5 Spandrel) is a wire-guided\nantitank missile developed in the mid-1970s and often found mounted\non vehicles. It can also be carried by a crew for firing from a tripod." compset="Ranged">
-    <fieldval field="wpDamage" value="10"/>
-    <fieldval field="wpCrit" value="1"/>
-    <fieldval field="wpArmorRating" value="-1"/>
     <fieldval field="wpShort" value="40"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -396,7 +384,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATGM"/>
     <tag group="AmmoType" tag="am135mmATGM"/>
-    <tag group="BlastRating" tag="B"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
+    <holdlimit>AmmoType.am135mmATGM</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   </document>
