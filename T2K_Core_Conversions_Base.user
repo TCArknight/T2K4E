@@ -15,10 +15,10 @@
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="2"/>
     <fieldval field="grCost" value="1"/>
-    <fieldval field="grLotCost" value=".01"/>
+    <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2KConversionBase"/>
-    <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="amT2K44Magnum" name=".44 Magnum" compset="Ammunition">
     <fieldval field="amDamage" value="2"/>
@@ -44,9 +44,11 @@
     <fieldval field="amDamage" value="3"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2KConversionBase"/>
-    <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="am447x133Cls" name="4.47x33 Cls" compset="Ammunition">
     <fieldval field="amDamage" value="2"/>
@@ -62,9 +64,11 @@
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
     <usesource source="srcT2K1stConvCore"/>
-    <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoCat" tag="Firearm"/>
     </thing>
   <thing id="amT2K8mmM" name="7.62x57mm Mauser" compset="Ammunition">
     <fieldval field="amDamage" value="3"/>

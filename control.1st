@@ -212,7 +212,13 @@
     <sortkey isfield="no" id="WeaponType"/>
     <sortkey isfield="no" id="_Name_"/>
     </sortset>
-	
+	<sortset
+    id="AmmoCatType"
+    name="Ammo Category">
+    <sortkey isfield="no" id="AmmoCatType"/>
+    <sortkey isfield="no" id="_Name_"/>
+    </sortset>
+    
   <!-- Define a sortset that lists weapons by category. -->
   <sortset
     id="GearType"

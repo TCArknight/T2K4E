@@ -405,15 +405,20 @@
 	
   <group
     id="AmmoCatType"
-    dynamic="yes">
-    <value id="Pistol" />
-    <value id="Rifle" />
-    <value id="Shotgun" />
-    <value id="GL" name="Grenade Launcher"/>
-    <value id="RL" name="Rocket Launcher"/>
-    <value id="LMG" name="Light Machinegun"/>
-    <value id="Mortar" name="Mortar"/>
-    <value id="Howitzer" name="Howitzer"/>
+    dynamic="yes"
+    sequence="explicit">
+    <value id="ArrowsBolts" name="Arrows &amp; Bolts" order="1"/>
+    <value id="Pistol" name="Pistol/SMG" order="5"/>
+    <value id="Rifle" name="Rifle" order="10"/>
+    <value id="Shotgun" name="Shotgun" order="15" />
+    <value id="GL" name="Grenade Launcher" order="20"/>
+    <value id="RL" name="Rocket Launcher" order="25"/>
+    <value id="LMG" name="Light Machinegun" order="30"/>
+    <value id="HMG" name="Heavy Machinegun" order="34" />
+    <value id="Mortar" name="Mortar" order="35"/>
+    <value id="Howitzer" name="Howitzer" order="40"/>
+    <value id="ATGM" name="Anti-Tank Guided Missile" order="45" />
+    <value id="VehicleCannon" name="Vehicle CAnnon" order="50" />
     </group>
 	
   <group

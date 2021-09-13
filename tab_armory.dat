@@ -15,7 +15,7 @@
       component="Gear"
       showtemplate="SimpleAmmo"
       choosetemplate="arAmmoThing"
-      choosesortset="WeaponCat"
+      choosesortset="AmmoCatType"
       buytemplate="BuyCash"
       selltemplate="SellCash"
 	  columns="2">

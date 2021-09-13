@@ -93,7 +93,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="amT2KHuntArrow"/>
     <tag group="AmmoType" tag="amT2KImpArrow"/>
-    <holdlimit>AmmoCat.Arrow</holdlimit>
+    <holdlimit>AmmoType.amT2KHuntArrow | AmmoType.amT2KImpArrow</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="hdrT2KBowsThrown" name="-- Bows &amp; Thrown --" compset="Ranged" isshowonly="yes">
@@ -129,7 +129,7 @@
     <tag group="Helper" tag="Consumable"/>
     <tag group="AmmoType" tag="amT2KHuntArrow"/>
     <tag group="AmmoType" tag="amT2KImpArrow"/>
-    <holdlimit>AmmoCat.Arrow</holdlimit>
+    <holdlimit>AmmoType.amT2KHuntArrow | AmmoType.amT2KImpArrow</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRockThrown" name="Rock" compset="Ranged">
@@ -841,7 +841,7 @@ AmmoType.amT2K762x54</holdlimit>
     <fieldval field="grWeight" value=".1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="Arrow"/>
-    <tag group="AmmoCatType" tag="HuntingArrow" name="Hunting Arrow"/>
+    <tag group="AmmoCatType" tag="ArrowsBolts"/>
     </thing>
   <thing id="amT2KImpArrow" name="Improvised Arrows" compset="Ammunition">
     <fieldval field="amDamage" value="1"/>
@@ -850,7 +850,7 @@ AmmoType.amT2K762x54</holdlimit>
     <fieldval field="grWeight" value=".1"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="Arrow"/>
-    <tag group="AmmoCatType" tag="ImprovisedArrow" name="Improvised Arrow"/>
+    <tag group="AmmoCatType" tag="ArrowsBolts"/>
     </thing>
   <thing id="amT2KCrossbowBolt" name="Crossbow Bolt" compset="Ammunition">
     <fieldval field="amDamage" value="2"/>
@@ -860,6 +860,54 @@ AmmoType.amT2K762x54</holdlimit>
     <fieldval field="grWeight" value=".05"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="Arrow"/>
-    <tag group="AmmoCatType" tag="CossbowBolt" name="Crossbow Bolt"/>
+    <tag group="AmmoCatType" tag="ArrowsBolts"/>
+    </thing>
+  <thing id="hdrT2KPistolSMGAm" name="--- Pistol/SMG Ammunition ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="hdrT2KBowXBowAmmo" name="--- Bow/Crossbow Ammunition ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Arrow"/>
+    <tag group="AmmoCatType" tag="ArrowsBolts"/>
+    </thing>
+  <thing id="hdrT2KRifleAmmo" name="--- Rifle Ammunition ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="hdrT2KShotgunAmmo" name="--- Shotgun Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Shotgun"/>
+    </thing>
+  <thing id="hdrT2KGLAmmo" name="--- Grenade Launcher Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="GL"/>
+    </thing>
+  <thing id="hdrT2KRLAmmo" name="--- Rocket Launcher ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="RL"/>
+    </thing>
+  <thing id="hdrT2KLMGAmmo" name="--- LMG Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="LMG"/>
+    </thing>
+  <thing id="hdrT2KHMGAmmo" name="--- HMG Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="hdrT2KMortarAmmo" name="--- Mortar Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Mortar"/>
+    </thing>
+  <thing id="hdrT2KHowitzerAmm" name="--- Howitzer Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Howitzer"/>
+    </thing>
+  <thing id="hdrT2KATGMAmmo" name="--- ATGM Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="ATGM"/>
+    </thing>
+  <thing id="hdrT2KVehCannonAm" name="--- Vehicle Cannon Ammo ---" compset="Ammunition" holdable="no" isshowonly="yes">
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="VehicleCannon"/>
     </thing>
   </document>
