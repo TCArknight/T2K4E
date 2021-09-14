@@ -570,6 +570,7 @@
     <value id="Electricty" name="Electricty" order="95" />
     <value id="Explosives" name="Explosives" order="100" />
     <value id="FieldGear" name="Field Gear" order="105" />
+    <value id="HeaterCooler" name="Heaters &amp; Coolers" order="110" />
     <value id="Misc" name="Miscellaneous" order="255"/>
     </group>
 	

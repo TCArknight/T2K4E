@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="hdrT2KHeatCooler" name="--- Heaters &amp; Coolers ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    </thing>
+  <thing id="eqT2KHCFreezersm" name="Freezer, small" description="A 1 cubic-foot freezer suitable for preserving food or medical supplies.  It can be powered by either a Car Battery or as a small device on a Generator" compset="Equipment">
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="20"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KHCFreezerLg" name="Freezer, large" description="A 14 cubic-foot freezer.  It can only be powered as a small device on a generator." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="175"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KHCPortHeater" name="Portable Heater" compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    </thing>
+  <thing id="eqT2KHCWaterHtr" name="150L Water Heater" compset="Equipment">
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="180"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="thing" tag="holder"/>
+    </thing>
+  <thing id="eqT2KHCRefrigSm" name="Refrigerator, small" description="Suitable for preserving small quantities of food or medical supplies.  It can be powered by a Vehicle Battery or as a small device on a generator." compset="Equipment">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="20"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    <tag group="thing" tag="holder"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KHCRefrigLg" name="Refrigerator, large" description="Suitable for preserving larger quantities of food or medical supplies.  It can be powered as a small device on a generator." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="150"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="thing" tag="holder"/>
+    </thing>
+  <thing id="eqT2KHCFieldCookM" name="Field Cooker, military" compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="250"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="HeaterCooler"/>
+    </thing>
+  </document>

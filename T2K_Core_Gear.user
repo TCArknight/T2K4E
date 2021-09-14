@@ -529,7 +529,7 @@ else
   <thing id="hdrT2KExplosives" name="--- Explosives ---" compset="Equipment" holdable="no" isshowonly="yes">
     <usesource source="srcT2K"/>
     <tag group="GearSubType" tag="NA"/>
-    <tag group="GearType" tag="Misc"/>
+    <tag group="GearType" tag="Explosives"/>
     </thing>
   <thing id="eqT2KExPlasticEx" name="Plastic Explosives" description="A quarter of an encumbrance unit of plastic explosive has a blast power of D.  Quadrupling the amount of plastic explosives will increase the blast power one step, up to a maximum of A." compset="Equipment">
     <fieldval field="grWeight" value=".25"/>
