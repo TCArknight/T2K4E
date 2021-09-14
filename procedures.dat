@@ -297,6 +297,8 @@
       call InfoDef
     elseif (tagis[component.Advance] <> 0) then
       call InfoAdv
+    elseif (tagis[component.Ammunition]<>0) then
+       call InfoAmmo
       endif
 	  
     ~if this is a piece of gear, append proper info to the item-specific details
@@ -613,6 +615,30 @@
     @text = "{align left}This item is a container.{br}{br}Contents: " & gear
     ]]></procedure>
 
+  <!-- Procedure InfoAmmo
+        Generate details specific to all Ammo. The text is placed into the
+        "iteminfo" variable for subsequent use by our caller.
+
+        Outbound parameter: iteminfo
+  -->
+  <procedure id="InfoAmmo" context="info"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var iteminfo as string
+    iteminfo = ""
+
+    ~report the damage rating of the ammo
+    iteminfo &= "Damage Rating: " & field[amDamage].text & "{br}"
+	
+    ~report the crit rating of the ammo
+    iteminfo &= "Crit Rating: " & field[amCrit].text & "{br}"
+
+    ~report the blast rating of the ammo
+    iteminfo &= "Blast Rating: " & field[amBlast].text & "{br}"
+
+    ~report the Armor rating of the ammo
+    iteminfo &= "Armor Rating: " & field[amArmorRating].text & "{br}"
+
+    ]]></procedure>
 
 <!-- ##################
       The folowing procedures are used with transactions for buying and selling items

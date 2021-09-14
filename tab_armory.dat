@@ -274,7 +274,7 @@
         field="name">
         </label>
       </portal>
-
+<!--
     <portal
       id="damage"
       style="lblNormal">
@@ -320,6 +320,7 @@
           ]]></labeltext>
           </label>
         </portal>
+-->
     <portal
       id="cost"
       style="lblNormal">
@@ -344,11 +345,11 @@
 
       ~position the damage portal to the left of the cost; we want the damage to
       ~be centered in its own column relative to a centerpoint position
-      perform portal[damage].centerpoint[horz,180]
+      ~perform portal[damage].centerpoint[horz,180]
 
       ~position the name on the left and let it use all available space
       portal[name].left = 0
-      portal[name].width = minimum(portal[name].width,portal[damage].left - 10)
+      ~portal[name].width = minimum(portal[name].width,portal[damage].left - 10)
       ]]></position>
 
     </template>
@@ -961,7 +962,7 @@
     id="SimpleAmmo"
     name="Simple Item"
     compset="Equipment"
-    marginhorz="3"
+    marginhorz="5"
     marginvert="2">
 
     <portal
