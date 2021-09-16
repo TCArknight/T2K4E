@@ -571,6 +571,7 @@
     <value id="Explosives" name="Explosives" order="100" />
     <value id="FieldGear" name="Field Gear" order="105" />
     <value id="HeaterCooler" name="Heaters &amp; Coolers" order="110" />
+    <value id="Radar" name="Radar" order="115"/>
     <value id="Misc" name="Miscellaneous" order="255"/>
     </group>
 	
