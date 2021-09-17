@@ -363,6 +363,10 @@
     <value id="SovietMilitary" name="Soviet Military" order="20"/>
     <value id="PolishMilitary" name="Polish Military" order="25"/>
     <value id="SwedishMilitary" name="Swedish Military" order="25"/>
+    <value id="BritishMilitary" name="British Military" order="30"/>
+    <value id="CanadaMilitary" name="Canadian Military" order="35"/>
+    <value id="GermanMilitary" name="German Military" order="40"/>
+    <value id="CzechMilitary" name="Czech Military" order="45" />
     <value id="OtherMilitary" name="Other Military" order="50"/>
     <value id="Grenade" name="Hand Grenade" order="90"/>
     <value id="Mine" name="Mine" order="95"/>

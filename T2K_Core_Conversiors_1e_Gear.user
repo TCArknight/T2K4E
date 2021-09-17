@@ -392,4 +392,51 @@
     <tag group="GearType" tag="FieldGear"/>
     <tag group="GearSubType" tag="NA"/>
     </thing>
+  <thing id="eqT2KNLT" name="NLT (NATO Light Tripod)" description="Accepts M60 and MG3" compset="Equipment">
+    <fieldval field="grWeight" value="2.25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KNMT" name="NMT (NATO Medium Tripod)" description="Accepts MAG" compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KNHT" name="NHT (NATO Heavy Tripod)" description="Accepts M214, M2HB, Mark-19" compset="Equipment">
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="7.25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPLT" name="PLT (Pact Light Tripod)" description="Accepts PK, Vz 59" compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPMT" name="PMT (Pact Medium Tripod)" description="Accepts AGS-17" compset="Equipment">
+    <fieldval field="grCost" value="399"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPHC" name="PHC (Pact Heavy Carriage)" description="Accepts DShK" compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="33.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
   </document>

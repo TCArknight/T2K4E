@@ -910,4 +910,16 @@ AmmoType.amT2K762x54</holdlimit>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="VehicleCannon"/>
     </thing>
+  <thing id="wpRT2KM1911A1" name="M1911A1" description="The M1911A1 served the US armed forces from World War I through Vietnam and when war broke out in the 1990s, there were still many tens of thousands in the inventory and in reserve stocks that were issued to mobilized reservists and newly-formed units. Although the ammunition can be a bit scarce in Europe, it is a simple, reliable, and powerful pistol" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    </thing>
   </document>
