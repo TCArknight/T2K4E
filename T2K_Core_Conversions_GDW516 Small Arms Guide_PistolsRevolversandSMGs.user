@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="wpT2KAMT380" name="AMT .380 Backup" description="A small, lightweight pistol designed to be carried concealed as a backup weapon.  Not much good for anything but short-ranged combat." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="230"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    <holdlimit>AmmoType.amT2K380ACP</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KAstra" name="Astra Constable" description="A small automatic pistol designed to carried by urban police units." compset="Ranged">
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="grCost" value="230"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP" name=".380 ACP" abbrev=".380 ACP"/>
+    <holdlimit>AmmoType.amT2K380ACP</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KHardBall" name="AMT Hardballer" description="A stainless steel version of the standard US Army .45 Automatic.  The Hardballer is an exceptionally well made weapon.  A special long-barreled version called the &quot;Longslide&quot; was the pistol that Arnold Schwarzeneggar carried in the movie The Terminator" compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <holdlimit>AmmoType.amT2KCal45</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KAutoMag44" name="Auto-Mag 44" description="A large caliber automatic pistol, made famous by Clint Eastwood in the Dirty Harry films.  It fires a specially designed .44 automatic magnum cartridge and has very powerful recoil.  It and its ammunition are extremely rare." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="4000"/>
+    <fieldval field="grWeight" value=".75"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K44AutoMag"/>
+    </thing>
+  <thing id="wpT2KBeretta70S" name="Beretta Model 70S" description="Originally designed as a &quot;plinking&quot; pistol, the Model 70S has found its niche as an assassin&apos;s weapon.  When used with a silencer/suppressor, the .22LR is virtually noiseless.  The only drawback is the weapon is effective only at close range." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="ItalianMilitary"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    </thing>
+  <thing id="wpT2KBeretta84" name="Beretta Model 84" description="A smaller version of the 92S.  The model 84 fires the .380 ACP cartridge and is designed primarily for police and private use." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="12"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="535"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KBaretta92S" name="Baretta Model 92S" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="545"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="ItalianMilitary"/>
+    </thing>
+  <thing id="wpT2KBaretta951" name="Baretta Model 951" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    </thing>
+  <thing id="hdrT2KItalian" name="--- Italian Military ---" compset="Ranged" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponCat" tag="ItalianMilitary"/>
+    </thing>
+  <thing id="hdrT2KIsraeli" name="--- Israeli Military ---" compset="Ranged" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    </thing>
+  <thing id="wpT2KBrowningHP35" name="Browning Hi-Power, HP-35" description="One of the first commercially successful, high magazine capacity automatic pistols, the HP-35 was the last automatic pistol designed by the legendary John M. Browning.  The pistol was put into production after his death, with the first ones coming off of the assembly lines in the mid-1930s.  The HP-35 can be found in various nations&apos; arsenals.  Its reliability and production quality set the standards by which most modern automatic pistols are judged, and the HP-35 can still hold its own among all but the most advanced designs." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="12"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="535"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="CanadaMilitary"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KBDA380" name="Browning BDA-380" description="Like the Beretta Model 84, the BDA-380 is a smaller version of a larger pistol -- in this case the HP-DA.  It was designed primarily for police and civilian use." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="12"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    </thing>
+  <thing id="hdrT2KBelgian" name="--- Belgian Military ---" compset="Ranged" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    </thing>
+  <thing id="wpT2KBrowningHPDA" name="Browning Hi-Power, HP-DA" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    </thing>
+  <thing id="wpT2KBrownBuck22" name="Browning Buck Mark 22" description="A high quality sporting pistol, the Mark 22 is sturdily built and designed for outdoor use." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KChArmsExpII" name="Charter Arms Explorer II" description="An American sporting pistol, the Explorer is unique in that the magazine feed is in front of the trigger guard.  An extra maagazine is carried in the grip and the barrels are interchangeable.  Designed primarily for the survival market." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="110"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    </thing>
+  <thing id="wpT2KColtLightCmd" name="Colt Lightweight Commander" description="Considered by many to be the definitive version of the M1911A1, the Combat Commander is a slightly shorter version of that classic handgun.  It is often carried by US Army officers in place of the 1911A1.  The Lightweight Commander is an Aluminium framed version of the same pistol." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    </thing>
+  <thing id="wpT2kColtCbtCmdr" name="Colt Combat Commander" description="Considered by many to be the definitive version of the M1911A1, the Combat Commander is a slightly shorter version of that classic handgun.  It is often carried by US Army officers in place of the 1911A1." compset="Ranged">
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="AmmoType" tag="amT2KCal45" name=".45" abbrev=".45"/>
+    </thing>
+  <thing id="wpT2KColtGvt380" name="Colt Government Model 380" description="Based on the M1911A1 design, the Model 380 fires the smaller .380 ACP round.  It is designed for the civilian and police market." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="375"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KDetonicsDA9m" name="Detonics D/A 9mm" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="465"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KCz75" name="Czech CZ-75" description="An upgrade of earlier Czechoslovakian pistols, the CZ-75 was designed with the Western market in mind.  It was muchs ought after, although it was difficult to obtain in the United States." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    </thing>
+  <thing id="wpT2KDetScoreM" name="Detonics Scoremaster" description="A heavy pistol designed primarily for target shooting." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    </thing>
+  <thing id="wpT2KHKP7M8" name="H&amp;K P7 M8" description="A West German handgun which has a squeeze-cocking mechanism and can be drawn, cocked, and fired with one motion.  It cannot fire if dropped or bumped." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KHKP7M13" name="H&amp;K P7 M13" description="A West German handgun which has a squeeze-cocking mechanism and can be drawn, cocked, and fired with one motion.  It cannot fire if dropped or bumped.  This weapon is identical to the P7 M8 except for increased magazine capacity." compset="Ranged">
+    <fieldval field="wpCapacity" value="13"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponCat" tag="GermanMilitary" name="German Military" abbrev="German Military"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919" name="9x19" abbrev="9x19"/>
+    </thing>
+  <thing id="wpT2KHKP9S" name="H&amp;K P9S" description="A double action automatic pistol made in West Germany, with the same roller-locking feature as the H&amp;K G3 assault rfle series.  A cocking lever makes it safe to carry." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="700"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="wpT2KHKVP70Z" name="H&amp;K VP70Z" description="This high-magazine-capacity, West German pistol replaced the Walther PPK as the service weapon of the British Secret Service (MI-6) and Security Service (MI-5).  It has been used by the West German Anti-Terrorist Group, GSG-9, favored for its light weight and large magazine capacity.  It was designed for automatic fire using a detachable stock." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="18"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="800"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    </thing>
+  <thing id="wpT2KIMIM91" name="IMI M91" description="Designed and built by Israeli Military Industries (IMI) the M91 is based on the popular Desert Eagle handgun series.  In 1991, the M91 became the standard issue sidearm for the Israeli military.  It has proven itself to be a rugged and reliable wepaon." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="18"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="850"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    </thing>
+  <thing id="wpT2KGlcok17A" name="Glock 17A" description="A modern, high magazine capacity pistol, the Austrian Glock became the standard issue sidearm of the Austrian Military.  Most of the component parts are made from high-tech carbon fiber plastics, making it difficult to detect.  This weapon sparked controversy when it was introduced, but the whole question has become moot." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="18"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="900"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="AustrianMilitry"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="hdrAustrian" name="--- Austrian Military ---" compset="Ranged" holdable="no" isshowonly="yes">
+    <tag group="WeaponCat" tag="AustrianMilitry"/>
+    </thing>
+  <thing id="wpT2KIMIDEagle44" name="IMI Desert Eagle .44" description="Designed and built in Israel." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="3000"/>
+    <fieldval field="grWeight" value=".50"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K44Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KDEagle357" name="IMI Desert Eagle .357" description="Designed and built in Israel." compset="Ranged">
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="3000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".50"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    </thing>
+  <thing id="wpT2KLlamaLFA9" name="Llama Large Frame Automtic 9mm" description="A heavy-duty, automatic pistol, the is nearly identical in appearance to the Colt M1911A1, the most striking differnce being the barrel rib.  It comes in two versions, this one chambered in 9mm." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="335"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KLlamaLFA45" name="Llama Large Frame Automtic .45" description="A heavy-duty, automatic pistol, the is nearly identical in appearance to the Colt M1911A1, the most striking differnce being the barrel rib.  It comes in two versions, this one chambered in .45ACP." compset="Ranged">
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="335"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="AmmoType" tag="amT2KCal45" name=".45" abbrev=".45"/>
+    </thing>
+  <thing id="wpT2KLugerP08" name="Luger P-08" description="Unique among handguns, teh Luger is one of the most famous and easily recognizable automatic pistols in the world.  Because of its deistinctive toggle action and close parts tolerance, it is easy to jam simply from dirt getting into the weapon.  Most Lugers are now owned by collectors, but because millions are in circulation, they must be included here." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grCost" value="1100"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="hdrT2KFrenchMil" name="--- French Military ---" compset="Ranged" holdable="no" isshowonly="yes">
+    <tag group="WeaponCat" tag="FrenchMilitary"/>
+    </thing>
+  <thing id="wpT2KLlamaSFA380" name="Llama Small Frame Automatic .380" description="As the name suggests, it is a smaller, lighter version of the Large Frame Automatic.  Because of its similarity to the Colt M1911A1 in both appearance and operation, the Llama Small Frame has become extremely popular with NATO vehicle and aircraft crews.  Chambered in .380" compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="260"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    </thing>
+  <thing id="wpT2KLLamaSFA22" name="Llama Small Frame Automatic .22LR" description="As the name suggests, it is a smaller, lighter version of the Large Frame Automatic.  Because of its similarity to the Colt M1911A1 in both appearance and operation, the Llama Small Frame has become extremely popular with NATO vehicle and aircraft crews.  Chambered in .22" compset="Ranged">
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="grCost" value="260"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="WeaponCat" tag="OtherMilitary" name="Other Military" abbrev="Other Military"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    </thing>
+  <thing id="wpT2KMABP15" name="MAB-P15" description="The standard issue sidearm of the French military, the P15 has a simple action, high maagazine capacity and is ruggedly built.  It is considered one of the best French handguns designed." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="FrenchMilitary"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KMauser1896" name="Mauser M1896" description="Known as the &quot;Broomhandle&quot; Mauser, the M1896 was the first successful automatic pistol design.  It was used by many countries and originally manufactured in Germany.  By the last 1980s it had become a collector&apos;s item.  The M1896 has an integral magazine which is fed by a 10-round stripper clip.  Reloading is a slow action." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K32ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KWalthrPPKS22" name="Manhurin &quot;Walther&quot; Model PPK/S .22LR" description="Although originally designed and manufactured in Germany, since 1952 the PPK/S has been manufactured in France.  It comes in three calibers: .22 LR, .32 ACP, and .380 APC.  It is one of the weapons favored by the DGSE (French Military Intelligence)." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="435"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    </thing>
+  <thing id="wpT2kWalthrPPKS32" name="Manhurin &quot;Walther&quot; Model PPK/S .32 ACP" description="Although originally designed and manufactured in Germany, since 1952 the PPK/S has been manufactured in France.  It comes in three calibers: .22 LR, .32 ACP, and .380 APC.  It is one of the weapons favored by the DGSE (French Military Intelligence)." compset="Ranged">
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="grCost" value="435"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="AmmoType" tag="amT2K32ACP"/>
+    </thing>
+  <thing id="wpT2KWalthPPKS380" name="Manhurin &quot;Walther&quot; Model PPK/S .380 ACP" description="Although originally designed and manufactured in Germany, since 1952 the PPK/S has been manufactured in France.  It comes in three calibers: .22 LR, .32 ACP, and .380 APC.  It is one of the weapons favored by the DGSE (French Military Intelligence)." compset="Ranged">
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="grCost" value="435"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    </thing>
+  <thing id="wpT2KMasuerHSc" name="Masuer HSc" description="A small pistolc arried byt he German Luftwaffe and Kriegsmarine during World War II.  Like the M1896, the HSc is a collector&apos;s item, but is somewhat more scarce." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1200"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KMetzSpec15" name="Metzger Arms Spectre 15" description="The American-made answer to the Glock 17, the Spectre 15 was designed for covert operations.  It is made from carbon fiber and high impact plastics.  The barrel protrudes slightly from the end of the pistol, making it easy to fit with a suppressor." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KRugerP85" name="Ruger P-85" description="In the late 1980&apos;s, politics and congressional pork barrelling had served to drastically slow down U.S. military procurement of the Baretta 92S.  Several thousand P-85&apos;s were purchased as a stopgap measure by the US Navy and Marine Corps.  They proved to be excellent service pistols and by the time America entered the war, the Navy and Marines had over 10,000 P-85 pistols in inventory." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="wpT2KRugerMK2" name="Ruger MK II" description="An American-made small caliber pistol, the Ruger Mk II has a reputation for reliability.  It is dstributed worldwide." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="225"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KSW459" name="S&amp;W Model 459" description="The Model 459 is a double-action pistol with an alloy frame.  It was deisgned as a possible replacement for the M1911A1 but lost out in the competition." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="485"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KWaltehrP38" name="Walter P-38" description="The standard issue sidearm of the German Army in WW II, the P-38 was designed as a simpler, more rugged replacement for the Luger.  It can still be found in many armies throughout the world." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    </thing>
+  <thing id="wpT2KWaltherPPK" name="Walther PPK" description="A small automatic pistol best known as the preferred sidearm of fictional spy James Bond.  In reality, it was used by the British Secret Service until it was replaced in the mid-1970s by the H&amp;K VP-70z" compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K32ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KSteyrGB80" name="Steyr GB-80" description="A double-action, high magazine capacity automatic pistol, the GB-80 was adopted as the standard sidearm of the Australian military.  It is a highly efficient combat weapon." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="18"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="AustralianMili"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="hdrT2KAustralianM" name="--- Australian Military ---" compset="Ranged" holdable="no" isshowonly="yes">
+    <tag group="WeaponCat" tag="AustralianMili"/>
+    </thing>
+  <thing id="wpT2KAstra357" name="Astra Model 357" description="A Spanish-made revolver that enjoys some popularity in the US, the weapon is reliable and was fairly inexpensive before the war." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="285"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    </thing>
+  <thing id="wpT2KChatter45" name="Chatter Arms Bulldog 45" description="A lightweight but powerful backup pistol favored by many police officers.  Originally, the weapon was made in .44 special.  However the version listed here was made for the US Air Force in .45 ACP as an emergency issue to AirForce Reserve Combat Security Squadrons." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="265"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="wpT2KAstra44" name="Astra Model 44" description="A larger version of the Model 357, it ahs the same features and advantages as the Model 357." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K44Magnum"/>
+    </thing>
+  <thing id="wpT2KColtPython" name="Colt Python" description="A top quality high-powered revolver in common use throughout the United States.  A rib running down the top of the barrel gives the Python its desitinctive look.  Although not an &quot;official&quot; service weapon, many have found their way into the hands of tUS military personnel around the world." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KLlamaCommanc" name="Llama Commanche" description="A Spanish-made revovler that is quite popular in the US.  The Commanche compares quite favorably with many US made revolvers." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="325"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KRugerSec6" name="Ruger Security Six" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpLlamaSComanche" name="Llama Super Commanche" description="A heavier version of the Commanche that fires the powerful .44 magnum cartridge.  The gun features an eccentric cam safety that makes it impossible for the hammer to contact the firing pin unless the trigger is fully depressed." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="535"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K44Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KRugerRedH357" name="Ruger Redhawk .357" description="A large, powerful handgun with a well deserved reputation for accuracy and ruggedness.  Some models of the Redhawk come with rings for mounting a telescopic sight." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KRugerRedH44" name="Ruger Redhawk .44" description="A large, powerful handgun with a well deserved reputation for accuracy and ruggedness.  Some models of the Redhawk come with rings for mounting a telescopic sight." compset="Ranged">
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponType" tag="Revolver" name="Revolver" abbrev="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="AmmoType" tag="amT2K44Magnum"/>
+    </thing>
+  <thing id="wpT2KSWModel19CM" name="S&amp;W Model 19 Combat Magnum" description="Originally designed and produced in the mid-1950s, the Model 19 was meant for law enfocement personnel.  It is built on the light S&amp;W K frame.  Many can be found in the hands of both military and civilian police officers." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KSWM27" name="S&amp;W Model 27" description="Designed and built in 1935, the Model 27 was the first pistol designed to use the .457 magnum cartridge.  General George S. Patton carried an ivory-handled model (not pearl-handled as is commonly held).  The pistol is very heavily and sturdily built, making for an accurate and comfrotable weapon." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KSWM25" name="S&amp;W Model 25" description="Chambered for the .45 LC cartridge, this revolver is less common than the other S&amp;W models and thus more expensive.  For decades, this weapon was a favorite among American &quot;Wild West&quot; aficionados (it fired the same cartridge as the Colt 1876 revolver... &quot;the gun that won the west&quot;), and it also acquired quite a reputation among Central and South American drug smugglers and other criminals." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    </thing>
+  <thing id="wpT2KSWM28" name="S&amp;W Model 28" description="Nicknamed &quot;HIghway Patrolman&quot;, this revolver is a staple in many police forces throughout the Unites States." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K357Magnum"/>
+    </thing>
+  <thing id="wpT2KSWM29" name="S&amp;W Model 29" description="What Sean Connery&apos;s portayal of James Bond did for the Walther PPK, Clint Eastwood&apos;s portrayal of Inspector Harry Callahan did for this powerful handgun.  Designed to fire the .44 manum cartridge, the Model 29 is built on the same frame as the Model 27 and looks like it could bring down a buffalo." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1250"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2K44Magnum"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KSWM38BodyG" name="S&amp;W Model 38 Bodyguard" description="An aluminium-frame revolver that features a fully shrouded hammer.  The Model 38 was speficially designed to be carried concealed (the covered hammer does not catch on clothing and makes for a faster, smoother draw).  The short barrel and light frame make accuracy difficult at any range over 5 meters. (double range penalties)" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="375"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2KCal38Spec"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KSWM38CS" name="S&amp;W Model 38 Chiefs&apos; Special" description="A short-barrelled .38 special revolver that is often carried by plainclothes law enforcement officers.  Because of its design, the weapon is easy to conceal and the .38 Special round gives it a good, solid punch." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="315"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="amT2KCal38Spec"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpSWM57" name="S&amp;W Model 57" description="This is a rare weapon in a rare caliber (.41 magnum)" compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K41mag"/>
+    </thing>
+  <thing id="wpT2KAKR" name="AKR" description="The AKR is the standard Eastern bloc submachinegun (except in the Czeck army).  The AKR (also known as the AKSU) is merely a cut-down version of the AK-74.  Although a bit heavy for a submachinegun, it has good accuracy and stopping power." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K545x39"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    </thing>
+  <thing id="wpT2KCAR15" name="Colt CAR-15" description="A submachinegun version of the M16 originally designed for aircrews.  It is more accurate than the M231.  The CAR-15 cannot be fitted with the M203 grendate launcher, but can fire rifle grenades." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    </thing>
+  <thing id="wpT2KBerettaPM12" name="Beretta PM-12" description="The standard issue SMG of the Italian police and military, the PM-12 is a well crafted, well balanced weapon.  It features a front and rear pistol grip, folding stock, and grip safety.  The PM-12 was one of the contestants in the US Army&apos;s Combat Vehicle Crewman Individual Weapon competition in 1991.  Although it wasn&apos;t chosen, the PM-12 found a number of buyers in various US police departments." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="40"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="550"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="ItalianMilitary"/>
+    </thing>
+  <thing id="wpT2KColtCAR15A1" name="Colt CAR-15A1" description="Indentical to the CAR-15 except that it used 9x19mm ammunition.  Although never adopted by the US military in any large quantities, the CAR-15A1 was used in Europe, mainly by local police forces.  A semiautomatic version was also manufactured." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="950"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KHKMP5SD" name="H&amp;K MP-5SD" description="A variant of the MP-5 fitted with an integral suppressor.  Any attempt to spot a character using this weapon gets an automatic -3 penalty to their RECON roll." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    </thing>
+  <thing id="wpT2KHM3" name="HM-3" description="A light SMG manufactured in Mexico by the Mendoza Arms Company.  The HM-3 has the magazine in the grip like the Uzi.  It has a folding metal stock.  When the Stock is folded forward, its rear section is used as a handgrip.  The weapon is found only in Mexico and in the continental US." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KMAC10" name="MAC-10 9mm" description="A very small submachinegun designed for clandestine operations and used (although never officially adopted) by various arms of the US military.  The MAC-10 (also known as the M-10 or the Ingram) is available with a suppressor which reduces the sound of firing.  Characters attempting to spot an M-10 fired using the suppressor get -2 to their RECON roll." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="11"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KMAC1045ACP" name="MAC-10 .45 ACP" description="A very small submachinegun designed for clandestine operations and used (although never officially adopted) by various arms of the US military.  The MAC-10 (also known as the M-10 or the Ingram) is available with a suppressor which reduces the sound of firing.  Characters attempting to spot an M-10 fired using the suppressor get -2 to their RECON roll." compset="Ranged">
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="11"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
+    <tag group="WeaponType" tag="SMG" name="Submachine Gun" abbrev="Submachine Gun"/>
+    <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    </thing>
+  <thing id="wpT2KM45SwedishK" name="M-45 Swedish K" description="A Swedish built SMG that was widely sold throughout the world.  it is highly favored by mercenaries and others desiring a weapon from a neutral, nonaggressive country (for political reasons)." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="36"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="eqT2KMAC10Supp" name="MAC-10 suppressor" description="The Suppressor for the MAC-10" compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="wpT2KM3A1" name="M3A1" description="Known as the &quot;Grease Gun&quot; because of its resemblance to an automotive servicing tool, the M3A1 was a cheap, easily manufactured and fairly reliable WWII vintage American SMG.  It was used primarily by vehicle crews (usually in tanks) until well into the 1990s." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    </thing>
+  <thing id="wpT2KMadsonM50" name="Madson M50" description="A Danish SMG that has sold well in Latin America.  The M50 has a magazine grip safety that prevents the weapon from being fired with one hand." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="450"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    </thing>
+  <thing id="wpT2KMP40" name="MP-40" description="Also called the Schmeisser, the MP-40 is one of the world&apos;s most famous submachineguns.  Develooped for the Wehrmacht during WWWII, the MP-40 was the prototype for the majority of modern SMG designs and remained in service with many armies well into the 1970s.  By 2000 it was obsolete, but could still be found in the arsenals of many police forces and Third World armies.  It is considered to be the first of the modern submachineguns." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1200"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KMPK" name="MPK" description="Manufactured by the Walther company, the MPK is a conventional SMG design with a folding stock.  It is used by a  number of police and internal security organizations worldwide, and is fairly common." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KPM63" name="PM-63" description="A relatively small (33.3 cm) SMG, the PM-63 is often carried by Polish AFV crews and airborne forces.  The weapon has a folding metal stock which can double as a handgrip and a progressive trigger.  The PM-63 is often carried in a hip holster." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="9"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K9x18"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    </thing>
+  <thing id="wpT2KPPSh41" name="PPSh-41" description="A WWII vintage Soviet SMG, the PPSh-41 has also seen action in Korea and Vietnam.  It uses a high capacity drum magazine that gives the weapon a very distinctive appearance, and caused it to be nicknamed &quot;Stalin&apos;s Banjo&quot;  This weapon is no longer in Soviet service but can be found in many Third World arsenals." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="81"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    <tag group="AmmoType" tag="am762x25T"/>
+    </thing>
+  <thing id="wpT2kSWM76" name="S&amp;W M76" description="The S&amp;W M76 follows the conventional SMG pattern, and at one time was considered for use by the US military.  The M76 was first manufactured in the middle and late 19660s, with production ceasing for a time and resuming in the late 1980s.  The weapon was very popular with police and security agencies." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="36"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="800"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    </thing>
+  <thing id="wpT2KPPS43" name="PPS-43" description="Another WWII vintage Soviet SMG, the PPS-43 has a folding stock and can use the same box magazine as teh PPSh-41 (but not the drum).  This weapon is no longer in Soviet service, but can be found in many Third World arsenals." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="36"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="700"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    <tag group="AmmoType" tag="am762x25T"/>
+    </thing>
+  <thing id="wpT2KStenMK2" name="Sten MKII" description="A WWI vintage British submachinegun made from metal stampings for ease of production.  It was the standard SMG for British and Canadian forces.  The British manufactured and distributed thousands of Sten guns to underground forces opposing the Axis during WWII, and the weapon was in service with some Third World armies well into the 1990s." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    </thing>
+  <thing id="wpT2KThompsonSMG" name="Thompson M1A1" description="The last version of the venerable &quot;Tommygun&quot;  Too late for action in WWi, it was used by American gangsters in the 1920s and &apos;30s.  It was obsolete by WWII but was still used." compset="Ranged">
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="48"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2KCal45"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    </thing>
+  <thing id="wpT2KMiniUzi" name="Mini Uzi" description="A smaller version of the Uzi, using the same magazines and many of the same components.  It is favored by vehicle crews because of its small size." compset="Ranged">
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvGDW516"/>
+    <tag group="WeaponCat" tag="OtherMilitary" name="Other Military" abbrev="Other Military"/>
+    <tag group="WeaponType" tag="SMG" name="Submachine Gun" abbrev="Submachine Gun"/>
+    <tag group="AmmoType" tag="amT2K919" name="9x19" abbrev="9x19"/>
+    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  </document>
