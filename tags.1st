@@ -373,6 +373,7 @@
     <value id="AustrianMilitry" name="Austrian Military" order="65" /> 
     <value id="FrenchMilitary" name="French Military" order="70" />
     <value id="AustralianMili" name="Australian Military" order="75" />
+    <value id="SpanishMilitary" name="Spanish Military" order="80" />
     <value id="Grenade" name="Hand Grenade" order="90"/>
     <value id="Mine" name="Mine" order="95"/>
     <value id="Mortar" name="Mortar" order="100"/>
