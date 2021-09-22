@@ -186,7 +186,7 @@
     <holdlimit>AmmoType.amT2K919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="hdrT2KCzeck" name="--- Czech Military ---" description="Standar weapons of the Czeck military\nvz24 submachinegun\nAK-74 assault rifle\nvz54 sniper rifle\nRPK-74 Light Machinegun\nvz59 General Purpose Machinegun\nMakarov Pistol" compset="Ranged">
+  <thing id="hdrT2KCzeck" name="--- Czech Military ---" description="Standar weapons of the Czeck military\nvz24 submachinegun\nAK-74 assault rifle\nvz54 sniper rifle\nRPK-74 Light Machinegun\nvz59 General Purpose Machinegun\nMakarov Pistol" compset="Ranged" isshowonly="yes">
     <tag group="WeaponCat" tag="CzechMilitary"/>
     </thing>
   <thing id="wpT2Kvz24" name="vz24" description="The standard Czech submahcinegun, mostly found with militia and internal security forces." compset="Ranged">

@@ -27,7 +27,7 @@
       type="derived"
 	  style="matrix"
 	  maxlength="50"
-	  arrayrows="10"
+	  arrayrows="20"
 	  matrixcolumns="2">
       </field>
 	  
@@ -38,7 +38,7 @@
       type="derived"
 	  style="matrix"
 	  maxlength="50"
-	  arrayrows="10"
+	  arrayrows="20"
 	  matrixcolumns="2">
       </field>
 	  
