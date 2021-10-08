@@ -171,6 +171,9 @@ Text goes here
     name="issecondary"
     param1="archetype"
     result="hero.child[#archetype].tagis[ArchetypeCat.Secondary]"/>
+  <scriptmacro
+    name="isvehicle"
+    result="hero.tagis[CharType.Vehicle]"/>
 
   <!-- Decoration characters used in summary panel headertitle scripts -->
   <scriptmacro

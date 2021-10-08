@@ -214,6 +214,16 @@
       </style_output>
     </style>
 
+  <!-- plain text for output -->
+  <style
+    id="outNameTitle">
+    <style_output
+      textcolor="000000"
+      font="ofnttitle"
+      alignment="center">
+      </style_output>
+    </style>
+	
   <!-- plain text left-aligned for output -->
   <style
     id="outPlainLt">

@@ -50,7 +50,7 @@
   <!-- oHeroName portal - name of the actor -->
   <portal
     id="oHeroName"
-    style="outHeroNam">
+    style="outNameTitle">
     <output_label>
       <labeltext><![CDATA[
         @text = hero.actorname
@@ -1287,7 +1287,120 @@
 
     </template>
 
+  <template
+    id="oVehDetails"
+    name="Vehicles Details (Output)"
+    compset="VehicleDetails">
 
+    <portal
+      id="title"
+      style="outTitle">
+      <output_label
+        text="Details">
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehCat"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Category: " & field[vdeCategory].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehType"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Vehicle Type: " & field[vdeType].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="lblVehRel"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Reliability: " & field[vdeReliability].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehCbtSpeed"
+      style="outNormLt">
+      <output_label>
+		<labeltext><![CDATA[
+			@text = "Combat Speed: " & field[vdeCombatSpeedOn].text & " / " & field[vdeCombatSpeedOff].text
+			]]></labeltext>
+		</output_label>
+      </portal>
+
+    <portal
+      id="lblVehTravSpeed"
+      style="outNormLt">
+      <output_label>
+		<labeltext><![CDATA[
+		  var speed as string
+		   
+		  speed = "Travel Speed: " & field[vdeTravelSpeedOn].text 
+		  if (empty(field[vdeTravelSpeedOff].text) = 0) then
+			speed &= " / " & field[vdeTravelSpeedOff].text 
+			endif
+		  
+		  @text = speed
+		  
+		  perform hero.findchild[VehicleBase].setfocus
+          doneif (state.isfocus = 0)
+          
+		  doneif (focus.tagis[VehicleMove.?] = 0)
+		  
+		  @text &= " " & focus.tagabbrevs[VehicleMove.?,","]
+			
+	      ]]></labeltext>
+		</output_label>
+      </portal>
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  myLeft = 2
+	  myWidth = width - 4
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+	  portal[title].width = myWidth
+
+      ~center the other portals vertically
+      portal[lblVehCat].left = myLeft
+	  portal[lblVehCat].width = myWidth
+      portal[lblVehCat].top = portal[title].bottom + 5
+	  
+	  portal[lblVehType].top = portal[lblVehCat].bottom + 5
+	  portal[lblVehType].left = myLeft
+	  portal[lblVehType].width = myWidth
+
+	  portal[lblVehRel].top = portal[lblVehType].bottom + 5
+	  portal[lblVehRel].left = myLeft
+	  portal[lblVehRel].width = myWidth
+	  
+	  portal[lblVehCbtSpeed].top = portal[lblVehRel].bottom + 5
+	  portal[lblVehCbtSpeed].left = myLeft
+	  portal[lblVehCbtSpeed].width = myWidth
+	  
+	  portal[lblVehTravSpeed].top = portal[lblVehCbtSpeed].bottom + 5
+	  portal[lblVehTravSpeed].left = myLeft
+	  portal[lblVehTravSpeed].width = myWidth
+	  
+      height = portal[lblVehTravSpeed].bottom + 5
+	  
+      ]]></position>
+
+    </template>	
   <!-- oLogos layout
         This layout sizes and positions the Hero Lab and game system logos. The logos
         can be either stacked or shown side-by-side, based on the global variable set
@@ -1368,13 +1481,21 @@
     <portalref portal="oAttribute"/>
     <portalref portal="oPower"/>
     <portalref portal="oDerived"/>
+	<templateref template="oVehDetails" thing="mscVehDetails"/>
     <position><![CDATA[
-      ~position the hero name at the top with the hero details beneath the name
-      perform portal[oHeroName].autoplace[0]
-      perform portal[oHeroInfo].autoplace[15]
-
+	  perform portal[oHeroName].autoplace[0]
+	  
       ~position the tables next
-      perform portal[oAttribute].autoplace
+	  if (#isvehicle[] = 0) then
+        ~position the hero name at the top with the hero details beneath the name
+        perform portal[oHeroInfo].autoplace[15]
+        perform portal[oAttribute].autoplace
+        template[oVehDetails].visible = 0
+	  else
+        portal[oHeroInfo].visible = 0
+        portal[oAttribute].visible = 0
+	    perform template[oVehDetails].autoplace
+		endif
       perform portal[oPower].autoplace
       perform portal[oDerived].autoplace
 

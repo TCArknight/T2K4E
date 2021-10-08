@@ -576,7 +576,7 @@
       isheader="yes">
       <label>
         <labeltext><![CDATA[
-          @text = "Ammo"
+          @text = "Ammo Type"
           ]]></labeltext>
         </label>
       </portal>	  
@@ -739,9 +739,13 @@
       style="lblNormal">
       <label>
       <labeltext><![CDATA[
-                if (tagis[component.WeapRange] <> 0) then
+          if (tagis[component.WeapRange] <> 0) then
 		    if (empty(field[wpCapacity].text) = 0) then
-              @text = field[wpCapacity].text
+			  if (compare(field[wpCapacity].text,"0") = 0) then
+			    @text = "--"
+			  else
+			    @text = field[wpCapacity].text
+				endif
 			else
               @text = "--"
             endif  

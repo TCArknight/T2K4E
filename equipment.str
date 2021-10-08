@@ -917,6 +917,7 @@
       ~apply any general penalty required (e.g. defense penalties or the like)
       ~.... add code here ....
       ]]></eval>
+	  
     <eval index="2" phase="Final" priority="1000"><![CDATA[
       if (tagis[Helper.DamageByAmmo] <> 0) then
 	    field[wpDamage].text = "*"
@@ -1066,9 +1067,11 @@
       if (tagis[thing.holder] = 0) then
         perform assign[thing.holder]
         endif
-      if (tagis[Helper.DamageByAmmo] = 0) then
-        perform assign[Helper.DamageByAmmo]
-      endif
+	  if (tagis[WeaponType.Thrown] = 0) then 
+        if (tagis[Helper.DamageByAmmo] = 0) then
+          perform assign[Helper.DamageByAmmo]
+		  endif
+        endif
       ]]></eval>
     <!-- Calculate the net attack roll for the weapon -->
     <eval index="1" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
