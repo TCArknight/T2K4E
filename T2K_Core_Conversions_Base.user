@@ -80,4 +80,75 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     </thing>
+  <thing id="amT2K44AutoMag" name=".44 Auto-Mag" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="2"/>
+    <fieldval field="amArmorRating" value="+1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase" parent="srcT2KConversions" name="Conversion Rules"/>
+    <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol" name="Pistol/SMG" abbrev="Pistol/SMG"/>
+    </thing>
+  <thing id="amT2K357Magnum" name=".357 Magnum" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="+1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K41mag" name=".41 magnum" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="+1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="amT2K30Cal" name=".30" compset="Ammunition">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2K50M2SLAP" name=".50 M2 SLAP" compset="Ammunition" stacking="merge">
+    <fieldval field="amDamage" value="4"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="-1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle" name="Rifle" abbrev="Rifle"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
+    </thing>
+  <thing id="amT2K375HHM" name=".375 H&amp;H Magnum" compset="Ammunition">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="0"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="amT2K458WBM" name=".458 Winchester Belted Magnum" compset="Ammunition">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2KConversionBase" parent="srcT2KConversions" name="Conversion Rules"/>
+    <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle" name="Rifle" abbrev="Rifle"/>
+    </thing>
   </document>

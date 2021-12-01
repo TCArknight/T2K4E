@@ -363,12 +363,23 @@
     <value id="SovietMilitary" name="Soviet Military" order="20"/>
     <value id="PolishMilitary" name="Polish Military" order="25"/>
     <value id="SwedishMilitary" name="Swedish Military" order="25"/>
-    <value id="OtherMilitary" name="Other Military" order="50"/>
+    <value id="BritishMilitary" name="British Military" order="30"/>
+    <value id="CanadaMilitary" name="Canadian Military" order="35"/>
+    <value id="GermanMilitary" name="German Military" order="40"/>
+    <value id="CzechMilitary" name="Czech Military" order="45" />
+    <value id="ItalianMilitary" name="Italian Military" order="50" />  
+    <value id="IsraelMilitary" name="Israeli Military" order="55" /> 
+    <value id="BelgianMilitary" name="Belgian Military" order="60" /> 
+    <value id="AustrianMilitry" name="Austrian Military" order="65" /> 
+    <value id="FrenchMilitary" name="French Military" order="70" />
+    <value id="AustralianMili" name="Australian Military" order="75" />
+    <value id="SpanishMilitary" name="Spanish Military" order="80" />
     <value id="Grenade" name="Hand Grenade" order="90"/>
     <value id="Mine" name="Mine" order="95"/>
     <value id="Mortar" name="Mortar" order="100"/>
     <value id="VehicleWeapons" name="Vehicle Weapons" order="110"/>
     <value id="Howitzer" name="Howitzer" order="120"/>
+    <value id="OtherMilitary" name="Other Military" order="255"/>
     </group>
 	
   <group
@@ -571,6 +582,7 @@
     <value id="Explosives" name="Explosives" order="100" />
     <value id="FieldGear" name="Field Gear" order="105" />
     <value id="HeaterCooler" name="Heaters &amp; Coolers" order="110" />
+    <value id="Radar" name="Radar" order="115"/>
     <value id="Misc" name="Miscellaneous" order="255"/>
     </group>
 	

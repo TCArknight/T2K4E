@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="wpT2KSMGSterling" name="Sterling SMG" compset="Ranged">
+  <thing id="wpT2KSMGSterling" name="Sterling SMG" description="The standard military submahcinegun fo the British Army, the Stermling has also found its way into general use." compset="Ranged">
     <fieldval field="wpShort" value="3"/>
     <fieldval field="wpCapacity" value="33"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -9,7 +9,357 @@
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="WeaponType" tag="SMG"/>
-    <tag group="WeaponCat" tag="OtherMilitary"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
     <tag group="AmmoType" tag="amT2K919"/>
+    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KARIW" name="IW Assault Rifle" description="The standard British combat rifle, replacing the FAL.  The IW is a &quot;Bullpup&quot; configuration rifle." compset="Ranged">
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="WeaponCat" tag="BowsThrown"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="hdrT2KBritish" name="--- British Military ---" description="The British Military uses the following weapons as standard\nSterling SMG\nIW assault rifle\nL42 Sniper Rifle\nLSW Light Machinegun\nMAG machinegun\n9mm Combat Pistol (US)" compset="Ranged" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    </thing>
+  <thing id="wpT2KSniperL42" name="L42" description="The standard sniper rilf eo fthe British Army is a progressive development of the bolt action Short Magazine Lee Enfield (the WWII British service rifle) rechambered to fire more modern ammunition and fitted with a telescopic sight." compset="Ranged">
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="9"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KLMGLSW" name="LSW" description="The heavy-barrel support version of the IW, the Light Support Weapon uses the same 30 round magazine as the IW and is equipped with a bipod." compset="Ranged">
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <fieldval field="grCost" value="1500"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KMGMAG" name="MAG" description="The Belgian MAG is the stadnard general purpose machinegun of the British Army.  It is equipped with a bipod and can also be fired from a tripod (NMT).  It accepts 100 round belts." compset="Ranged">
+    <fieldval field="wpShort" value="9"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grWeight" value="4"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KCanadaMil" name="--- Canadian Military ---" description="The Canadian Military uses the following weapons as standards\nSterling Submachinegun (British)\nM16 assault rifle (US)\nParker-Hale Sniper Rifle\nM249 Light Machinegun (US)\nMAG machinegun (British)\n9mm Combat Pistol (US)" compset="Ranged" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponCat" tag="CanadaMilitary"/>
+    </thing>
+  <thing id="wpT2KCAParkerHale" name="Parker-Hale" description="The standard Canadian sniper rifle is a well made civilian hunting rifle adapted to military use and fitted with a telescopic sight." compset="Ranged">
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="3"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="CanadaMilitary"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KUSM231" name="M231" description="The standard firing-port weapon on the M2 Bradley, this weapon is a satisfactory vehicle weapon for suppressive fire but a mediocre submachinegun.  Nevertheless, with large numbers of Bradleys no longer operational it was inevitable that the M231 would be dismounted and used in large numbers." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KHKCAW" name="HK-CAW" description="The standard combat shotgun of the German and U.S. Armies (the U.S. weapon being a slightly modified version produced under license by Olin), the Heckler &amp; Koch CAW is a &quot;Bullpup&quot; configuration weapon, like the G11." compset="Ranged">
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="800"/>
+    <fieldval field="grWeight" value="1.3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KG11" name="G11" description="A weapon of radical design and great effectiveness, the G11 replace dthe G3 as the standard assault rifle and the Uzi as the standard submahcinegun of the West German Army.  It is a &quot;Bullpup&quot; configuration weapon, which means that action is placed behind the firing hand, in the normally empty stock.  This means that &quot;Bullpup&quot; rifles can have a shorter overall length without the necessity for a shorter barrel.\nIt differs from other combat rifles in that it fires caseless 4.7mm bullets.  The compact nature of the weapon and low recoil of its round makes it as handy as a submachinegun (even though it is a rifle) and it is included with submachineguns for this reason.\nIts caseless ammunition is extremely compact, allowing a large magazine capacity.  Since there is no spent cartridge casing to eject, the rifle&apos;s action is completely enclosed and thus very reliable in a dirty environment.  Howerver, there is no way to reload the round, since it is completely consumed, and manufacture has largely ceased.  Currently, although the weapon is fairly common, ammunition for it is increasingly rare and most German soldiers have equipped themselves with obsolete weapons." compset="Ranged">
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="50"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="am447x133Cls"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <holdlimit>AmmoType.am447x133Cls</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="hdrT2KGerman" name="--- German Military ---" description="German Military Standard Weapons\nG11 submachinegun\nL42 sniper rifle (British)\nHK-CAW shotgun (US)\nMG3 machinegun\n9mm Combat Pistol (US)" compset="Ranged" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    </thing>
+  <thing id="wpT2KMG3" name="MG3" description="The standard German general purpose machinegun is a slightly improved copy of the wartime MG42.  It is equipped with a bipod and can also be fired from a tripod (NMT).  It accepts 100 round belts." compset="Ranged">
+    <fieldval field="wpShort" value="9"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grWeight" value="2.75"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KG3" name="G3" description="The standard German assault rifle until replaced by the G11, the G3 was still widely used by territorial and internal security troops, and is now back in service with German troops." compset="Ranged">
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="1.75"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KMP5" name="MP5" description="The standard submachinegun of the German territorial troops and police." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="hdrT2KCzeck" name="--- Czech Military ---" description="Standar weapons of the Czeck military\nvz24 submachinegun\nAK-74 assault rifle\nvz54 sniper rifle\nRPK-74 Light Machinegun\nvz59 General Purpose Machinegun\nMakarov Pistol" compset="Ranged" isshowonly="yes">
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    </thing>
+  <thing id="wpT2Kvz24" name="vz24" description="The standard Czech submahcinegun, mostly found with militia and internal security forces." compset="Ranged">
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="33"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    <tag group="AmmoType" tag="am762x25T"/>
+    <holdlimit>AmmoType.am762x25T</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpvz54" name="vz54" description="The standard Czech sniper rifle is a progressive development of the bolt-action Mauser (the German Army&apos;s WWII service rfile) fitted with a telescopic sight." compset="Ranged">
+    <fieldval field="wpShort" value="7"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="AmmoType" tag="amT2K8mmM"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K8mmM</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2Kvz59" name="vz59" description="The standard General Purpose Machinegun of the Czech army, a local design which is equippped with a bipod and can also be fired from a tripod (PLT).  It accepts 100 round belts." compset="Ranged">
+    <fieldval field="wpShort" value="9"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="AmmoType" tag="amT2K762x54"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K762x54</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KM214" name="M214" description="The M214 is a six-barrel gatling gun, fed by a 1000 round drum.  It may be fired only from a tripod (NHT) or vehicle mount." compset="Ranged">
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="1000"/>
+    <fieldval field="wpRateOfFire" value="20"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="10000"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="HMG"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KSkorpion" name="Skorpion" description="Commonly referred to as a machine pistol, the Skorpion is small enough to carry in a shoulder holster.  Its short range and underpowered ammunition make it of limited combat value, but its ease of concealment have made ivery popular with Warsaw Pact covert agents." compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="21"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value=".75"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="amT2K32ACP"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <holdlimit>AmmoType.amT2K32ACP</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2K22BA" name=".22 Bolt Action" description="A widely available light hunting rifle, the .22 is excellent for squirrels and other small game, but does not have sufficient stopping power to be reliable against larger targets.  It is a bolt action rifle." compset="Ranged">
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="3"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value=".75"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <holdlimit>AmmoType.amT2K22LR</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2K22LA" name=".22 Semi-Auto" description="A widely available light hunting rifle, the .22 is excellent for squirrels and other small game, but does not have sufficient stopping power to be reliable against larger targets.  It is a semi-auto rifle." compset="Ranged">
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="9"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value=".75"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="amT2K22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <holdlimit>AmmoType.amT2K22LR</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KMauserBA" name="Mauser Bolt Action" description="A bolt action civilian version fo the German WWII rifle, this weapon is in very widespread use due to the tremendous numbers manufactured." compset="Ranged">
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="7"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <usesource source="srcT2K1stConvCore" parent="srcT2K1stConversions" name="Core Rules"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="amT2K8mmM" name="7.62x57mm Mauser" abbrev="7.62x57mm Mauser"/>
+    <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <holdlimit>AmmoType.amT2K8mmM</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2K380auto" name=".380 (Automatic)" compset="Ranged">
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="amT2K380ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <holdlimit>AmmoType.amT2K380ACP</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KAKMR" name="AKMR" description="As the AK-74 supplatnted the AKM in service, large numbers of AKMs were rechambered to fire the AK-74&apos;s 5.45 cartriddge to enable standardization of supply without discarding mountains of AKMs.  Widely used in Soviet military units alongside the AK-74." compset="Ranged">
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1.25"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="amT2K545x39"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <holdlimit>AmmoType.amT2K545x39</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KPSG1a" name="PSG-1" description="The PSG-1 Präzisionsschützengewehr is a German semi automatic sniper\nrifle derived from the G3 series of battle rifles and adopted in the 1970s,\nmainly for use by counterterrorism units. A military version with plastic\naccessories (weight 1), called the MSG90, was developed in the early\n1990s but is even more rare than the original rifle." compset="Ranged" replaces="wpT2KPSG1">
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <tag group="WeaponType" tag="Sniper" name="Sniper Rifle" abbrev="Sniper Rifle"/>
+    <tag group="AmmoType" tag="amT2K76251" name="7.62x51" abbrev="7.62x51"/>
+    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <child entity="Ammo"></child>
+    </thing>
+  <thing id="wpT2KM82A11e" name="M82A1" description="The M82A1 was issued in the early 1990s as the Special Applications\nScoped Rifle (SASR) to many special operations units and designated\nfor use against light vehicles, although it was primarily used for very\nlong-range sniping. More were purchased in the prelude to war in the\nmid-1990s, but the lack of the rare specialized sniping ammunition left\nsnipers using extra M2 machinegun ammunition, which was less accurate\nat extreme ranges (although still ideal for shooting at light vehicles)" compset="Ranged" replaces="wpT2KM82A1">
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="20"/>
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
+    <tag group="WeaponType" tag="Sniper" name="Sniper Rifle" abbrev="Sniper Rifle"/>
+    <tag group="AmmoType" tag="amT2KCal50M2" name=".50 M2" abbrev=".50 M2"/>
+    <tag group="AmmoType" tag="amT2K50M2SLAP"/>
+    <holdlimit>AmmoType.amT2KCal50M2</holdlimit>
+    <child entity="Ammo"></child>
     </thing>
   </document>

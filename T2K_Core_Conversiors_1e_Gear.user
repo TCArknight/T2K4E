@@ -8,7 +8,7 @@
   <thing id="eqT2KHCFreezersm" name="Freezer, small" description="A 1 cubic-foot freezer suitable for preserving food or medical supplies.  It can be powered by either a Car Battery or as a small device on a Generator" compset="Equipment">
     <fieldval field="grReliability" value="3"/>
     <fieldval field="grCost" value="100"/>
-    <fieldval field="grWeight" value="20"/>
+    <fieldval field="grWeight" value="7"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearType" tag="HeaterCooler"/>
     <tag group="thing" tag="holder"/>
@@ -17,16 +17,16 @@
   <thing id="eqT2KHCFreezerLg" name="Freezer, large" description="A 14 cubic-foot freezer.  It can only be powered as a small device on a generator." compset="Equipment">
     <fieldval field="grCost" value="1000"/>
     <fieldval field="grReliability" value="5"/>
-    <fieldval field="grWeight" value="175"/>
+    <fieldval field="grWeight" value="58"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearType" tag="HeaterCooler"/>
     <tag group="thing" tag="holder"/>
     <tag group="GearSubType" tag="NA"/>
     </thing>
-  <thing id="eqT2KHCPortHeater" name="Portable Heater" compset="Equipment">
+  <thing id="eqT2KHCPortHeater" name="Portable Heater" description="Suitable for one average-sized room.  Counts as a small electric device." compset="Equipment">
     <fieldval field="grCost" value="200"/>
     <fieldval field="grReliability" value="3"/>
-    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearSubType" tag="NA"/>
     <tag group="GearType" tag="HeaterCooler"/>
@@ -34,25 +34,25 @@
   <thing id="eqT2KHCWaterHtr" name="150L Water Heater" compset="Equipment">
     <fieldval field="grCost" value="1500"/>
     <fieldval field="grReliability" value="5"/>
-    <fieldval field="grWeight" value="180"/>
+    <fieldval field="grWeight" value="60"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearType" tag="HeaterCooler"/>
     <tag group="GearSubType" tag="NA"/>
     <tag group="thing" tag="holder"/>
     </thing>
-  <thing id="eqT2KHCRefrigSm" name="Refrigerator, small" description="Suitable for preserving small quantities of food or medical supplies.  It can be powered by a Vehicle Battery or as a small device on a generator." compset="Equipment">
+  <thing id="eqT2KHCRefrigSm" name="Refrigerator, small" description="Suitable for preserving small quantities of food or medical supplies.  Counts as a small electric device." compset="Equipment">
     <fieldval field="grCost" value="100"/>
     <fieldval field="grReliability" value="3"/>
-    <fieldval field="grWeight" value="20"/>
+    <fieldval field="grWeight" value="7"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearType" tag="HeaterCooler"/>
     <tag group="thing" tag="holder"/>
     <tag group="GearSubType" tag="NA"/>
     </thing>
-  <thing id="eqT2KHCRefrigLg" name="Refrigerator, large" description="Suitable for preserving larger quantities of food or medical supplies.  It can be powered as a small device on a generator." compset="Equipment">
+  <thing id="eqT2KHCRefrigLg" name="Refrigerator, large" description="Suitable for preserving larger quantities of food or medical supplies. Counts as a small electric device." compset="Equipment">
     <fieldval field="grCost" value="1000"/>
     <fieldval field="grReliability" value="5"/>
-    <fieldval field="grWeight" value="150"/>
+    <fieldval field="grWeight" value="50"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearType" tag="HeaterCooler"/>
     <tag group="GearSubType" tag="NA"/>
@@ -60,9 +60,383 @@
     </thing>
   <thing id="eqT2KHCFieldCookM" name="Field Cooker, military" compset="Equipment">
     <fieldval field="grCost" value="1000"/>
-    <fieldval field="grWeight" value="250"/>
+    <fieldval field="grWeight" value="83"/>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="GearSubType" tag="NA"/>
     <tag group="GearType" tag="HeaterCooler"/>
+    </thing>
+  <thing id="eqT2KPwrHndTool" name="Power Hand Tools" description="A selection of pwoer tools including a chainsaw, 9&quot; rotary saw, drill and other electrical tools.  Uses a small battery.\nProvides a +1 bonus for construction related tasks." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="12"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KWhlVehTool" name="Wheeled Vehicle Tools" description="Specialized tools for repair and maintenance fo wheeled vehicles.  It includes spark plug wrenches, torque wrenches, a grease gun, and so on.\nActs as standard Vehicle tools, but provides a +2 bonus specificaly for repairing wheeled vehicles." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KTrkVehTools" name="Tracked Vehicle Tools" description="Specialized tools for repair and maintenance fo tracked vehicles.  It includes spark plug wrenches, torque wrenches, track pullers,  a grease gun, and so on.\nActs as standard Vehicle tools, but provides a +2 bonus specificaly for repairing tracked vehicles." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K1stConvCore" parent="srcT2K1stConversions" name="Core Rules"/>
+    <tag group="GearSubType" tag="NA" name="Not Applicable" abbrev="Not Applicable"/>
+    <tag group="GearType" tag="Tools" name="Tools &amp; Spare Parts" abbrev="Tools &amp; Spare Parts"/>
+    </thing>
+  <thing id="eqT2KAirCraftTool" name="Aircraft Tools" description="Specialized tools for repair and maintenance fo Aircraft.  It includes spark plug wrenches, torque wrenches, aircraft specific tools,  a grease gun, and so on.\nActs as standard Vehicle tools, but provides a +2 bonus specificaly for repairing aircraft." compset="Equipment">
+    <fieldval field="grCost" value="2000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K1stConvCore" parent="srcT2K1stConversions" name="Core Rules"/>
+    <tag group="GearSubType" tag="NA" name="Not Applicable" abbrev="Not Applicable"/>
+    <tag group="GearType" tag="Tools" name="Tools &amp; Spare Parts" abbrev="Tools &amp; Spare Parts"/>
+    </thing>
+  <thing id="eqT2KHvyOrdTool" name="Heavy Ordnance Tools" description="Specialized tools for the repair of Heavy Ordnance.  Acts as weapon tools, but provides a +2 bonus for repairing Heavy Weapons." compset="Equipment">
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grWeight" value="8"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Tools"/>
+    </thing>
+  <thing id="eqT2KSmArmsTool" name="Small Arms Tools" description="Specialized Tools for repair of small arms.  Acts as weapon tools, but provides a +2 bonus for repairing small arms." compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KElecRepairTl" name="Electrical Repair Tools" description="Specialized tools for work on electrical appliances, wiring, and non-solid state equipment.  Provides a +1 bonus for repairing such items." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KEletrnicRepT" name="Electronic Repair Tools" description="Electrical Repair tools designed for repairing soli-state electrical devices such as radios, radar sets, computers.  Provides a +1 bonus." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Misc"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2kArcWelder" name="Arc Welder" description="Operates of an integral generator, which cannot be modified for other use.  Consules 40 litres of fuel per shift." compset="Equipment">
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grWeight" value="25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPortMachShop" name="Portalbe Machine Shop" description="A Trailer containing powered machine tools, including a bench grinder, horizontal and vertical boring machines, a milling machine, metal and wood working lathes, and numerous other machine tools.  It can be towed by any truck over a 3/4 ton.  Counts as a Large Electric Device." compset="Equipment">
+    <fieldval field="grCost" value="75000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="583"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="thing" tag="holder_top"/>
+    </thing>
+  <thing id="eqT2KLockPicks" name="Lockpick Tools" description="Picks, torsion wrenches, shims, a stehoscope, and other equipment to open all types of locks.  Provides a +1 bonus on rolls to pick a lock." compset="Equipment">
+    <fieldval field="grCost" value="20"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPortLasRF" name="Portable Laser RF" description="Requires a small battery provides a +1 bonus to Recon rolls for correcting indirect fire, and allows a spotter to provide Help to a sniper for shooting at distances of Long or Extreme." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KVehRngFinder" name="Vehicle Laser RF" description="Allows a member of a vehicle crew to provide Help to the gunner of the vehicle when firing at targets at Long or Extreme Range." compset="Equipment">
+    <fieldval field="grCost" value="1500"/>
+    <fieldval field="grReliability" value="3"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvCore" parent="srcT2K1stConversions" name="Core Rules"/>
+    <tag group="GearSubType" tag="NA" name="Not Applicable" abbrev="Not Applicable"/>
+    <tag group="GearType" tag="Observation" name="Observation Gear" abbrev="Observation Gear"/>
+    </thing>
+  <thing id="eqT2KPortcoincRF" name="Portable Coincidence RF" description="provides a +1 bonus to Recon rolls for correcting indirect fire, and allows a spotter to provide Help to a sniper for shooting at distances of Long or Extreme." compset="Equipment">
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KVehCoincRF" name="Vehicular Coincindence Rangefinder" description="Allows a member of a vehicle crew to provide Help to the gunner of the vehicle when firing at targets at Long or Extreme Range." compset="Equipment">
+    <fieldval field="grCost" value="700"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KVehLasRFBC" name="Vehicular Laser RF with Ballistic Computer" description="Vehicular powered.  Feeds target correction data directly into on-board targeting computer.  Acts as an advanced Firecontrol system (eliminating both range and fire while moving penalties) and allows another crew member to help the gunner." compset="Equipment">
+    <fieldval field="grCost" value="10000"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grReliability" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2kRetGunsight" name="Reticle, Gunsight" description="And old-style, non-electrical range-finder.  Reduces the range penalty for Rifles by 1." compset="Equipment">
+    <fieldval field="grCost" value="10000"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="hdrT2KRadar" name="--- Radar Units ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="Radar"/>
+    </thing>
+  <thing id="eqT2KGSRadar" name="Ground Surveillance Radar" description="Vehicle powered through a 100m cable to permit limited tactical mobility.  Counts as two people providing help for Recon Rolls." compset="Equipment">
+    <fieldval field="grCost" value="40000"/>
+    <fieldval field="grWeight" value="7"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Radar"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KRMortarCtr" name="Mortar Counter-Battery Radar" description="Vehicle powere through a 100m cable to permit limited tactical mobility.  When used with mortars to return fire provides +2 points of correction." compset="Equipment">
+    <fieldval field="grCost" value="100000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Radar"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KRArtCtr" name="Artillery Coutner-Battery Radar" description="Vehicle powered, through a 100m cable to permit limited tactical mobility.  Provides +2 correction to Artillery when attempting to return fire." compset="Equipment">
+    <fieldval field="grCost" value="200000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="7"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Radar"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KManLaserDes" name="Man Portable Laser Designator" description="Powered from a small battery.  When used with equipment designed to use a laser designator provides +2 as help to the gunner." compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KVehLaserDes" name="Vehicle Mounted Laser Designator" description="Powered from a vehcile.  When used with equipment designed to use a laser designator provides +2 as help to the gunner." compset="Equipment">
+    <fieldval field="grCost" value="2000"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Observation"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KSteamDeconTr" name="Steam Decontamination Trailer" description="Operates from an integral 60kw generator (consumes 40L of fuel per stretch)" compset="Equipment">
+    <fieldval field="grCost" value="5000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="333"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="ProtectiveGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedGasAnas" name="Anesthetic, General Gas" description="Gaseous anesthetic for surgery" compset="Equipment" lotsize="100">
+    <fieldval field="grLotCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedAnasLiq" name="Anesthetic, General Liquid" description="Liquid Anesthetic for injection" compset="Equipment" lotsize="100">
+    <fieldval field="grLotCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="5"/>
+    <usesource source="srcT2K1stConvCore" parent="srcT2K1stConversions" name="Core Rules"/>
+    <tag group="GearSubType" tag="NA" name="Not Applicable" abbrev="Not Applicable"/>
+    <tag group="GearType" tag="Medical" name="Medical Supplies" abbrev="Medical Supplies"/>
+    </thing>
+  <thing id="eqT2KMedAnesLocal" name="Anesthetic, Local Injected" compset="Equipment" lotsize="100">
+    <fieldval field="grLotCost" value="1000"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedAtropineL" name="Atropine Liquid Form" compset="Equipment" lotsize="100">
+    <fieldval field="grLotCost" value="500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedSedMild" name="Sedative, Mild" description="Oral Form only   Increases stress recovery by 1 point,  Provides a +1 bonus when trying to heal trauma via counseling." compset="Equipment" lotsize="100">
+    <fieldval field="grLotCost" value="500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KSedativeStr" name="Sedative, strong" description="Liquid form only,  for injections.  Increases stress recovery by 2 points, Provides a +2 bonus when healing from Trauma via counseling." compset="Equipment" lotsize="100">
+    <fieldval field="grLotCost" value="500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedBloodW" name="Blood, Whole" description="Provies a +2 bonus to Medical Aid Rolls to stabilize a critically injurded person.  Does not stack with Plasma" compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KMedPlasma" name="Plasma" description="Provides a +1 bonus to stabilize a critically injured person.  Does not stack with Whole Blood." compset="Equipment">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="Medical"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KXCountrySkis" name="Skis, Cross-country" description="Inclusdes poles, skis, boots, and binders.  Provides 1 additional hex of marching movement when snow is present." compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2K20LJerryCan" name="20L Jerrycan" description="For fuel and other liquids  Weight is for empty Jerrycan" compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grWeight" value=".25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KHorseTack" name="Horse Tack" description="Saddle, bridle, straps, strrups, saddle-blanket, etc" compset="Equipment">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPackSaddle" name="Pack Saddle" description="A Saddle specially desinged for cargo" compset="Equipment">
+    <fieldval field="grCost" value="40"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="thing" tag="holder_top"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KAqualung" name="Aqualung" description="2 Tanks, fins, mask and regulator.  One tank contains enough air for 30 minutes underwater, up to two may be connected to a single regulator hose." compset="Equipment">
+    <fieldval field="grCost" value="300"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KAirTankAL" name="Air Tank, Aqualung" description="For use with Aqualung.  Canm be refilled when empty with a compressor in 5 minutes." compset="Equipment">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KRebreather" name="Rebreather" description="A device which absorbs carbon dioxide from exhaled air and bleeds pure oxygen into it.  One oxygen tank is used at a time, and contains enough for 30 minutes underwater.  Fins and mask are included." compset="Equipment">
+    <fieldval field="grCost" value="400"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KRebreathRech" name="Rebreather Recharge Kit" description="For use with the rebreather.  Includes a can of carbon dioxide absorbent and a small tank of pure oxygen.  Enough to recharge a rebreather for 30 minutes underwater." compset="Equipment">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KAirComp" name="Air Compressor" description="For filling aqualung tanks, tires, rafts, and other items needing compressed air.  Fuel consumption 2L per stretch." compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grWeight" value="15"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="FieldGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KNLT" name="NLT (NATO Light Tripod)" description="Accepts M60 and MG3" compset="Equipment">
+    <fieldval field="grWeight" value="2.25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    </thing>
+  <thing id="eqT2KNMT" name="NMT (NATO Medium Tripod)" description="Accepts MAG" compset="Equipment">
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KNHT" name="NHT (NATO Heavy Tripod)" description="Accepts M214, M2HB, Mark-19" compset="Equipment">
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="7.25"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPLT" name="PLT (Pact Light Tripod)" description="Accepts PK, Vz 59" compset="Equipment">
+    <fieldval field="grCost" value="250"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPMT" name="PMT (Pact Medium Tripod)" description="Accepts AGS-17" compset="Equipment">
+    <fieldval field="grCost" value="399"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="grReliability" value="5"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KPHC" name="PHC (Pact Heavy Carriage)" description="Accepts DShK" compset="Equipment">
+    <fieldval field="grCost" value="1000"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="33.25"/>
+    <usesource source="srcT2K1stConvCore"/>
+    <tag group="GearType" tag="WeaponGear"/>
+    <tag group="GearSubType" tag="NA"/>
     </thing>
   </document>
