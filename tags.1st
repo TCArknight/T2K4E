@@ -801,4 +801,43 @@
     <value id="Water" name="Water" abbrev="*" order="15"/>
     </group>
 	
+  <!-- VehicleFuel group - tags identifying the type of fuel used by the vehicle
+  -->
+  <group
+    id="VehicleFuel"
+    dynamic="no"
+    sequence="explicit">
+    <value id="Gas" name="Gasoline" abbrev="G" order="5"/>
+    <value id="Diesel" name="Diesel" abbrev="D" order="10"/>
+    <value id="Alcohol" name="Alcohol" abbrev="A" order="15"/>
+    </group>
+	
+  <group
+    id="VehicleFuelUsed"
+    inherit="VehicleFuel">
+    </group>	
+
+  <!-- VehicleWpnMain group - tags for the main weapon of the vehicle
+  -->
+  <group
+    id="VehicleWpnMain">
+    <value id="Pintle" name="Pintle Mount" abbrev="(P)" />
+    <value id="PintleGun" name="Pintle Mount w/Gun Shield" abbrev="(PG)" />
+    <value id="Turret" name="Turret Mount" abbrev="(T)" />
+    <value id="Coaxial" name="Coaxial" abbrev="(C)" />
+    <value id="Hull" name="Hull Mount" abbrev="(H)" />
+    <value id="Stable" name="Stabalized Gun" abbrev="S" />
+    <value id="FCS" name="Fire Control System" abbrev="FCS" />
+    <value id="Infra" name="Infrared" abbrev="IR" />
+    <value id="Thermal" name="Thermal" abbrev="Tm" />
+    </group>
+	
+  <group
+    id="VehicleWpnSec"
+    inherit="VehicleWpnMain">
+    <value id="Radio" name="Radio" abbrev="R" />
+    <value id="Smoke" name="Smoke Dischargers" abbrev="SD" />
+    </group>
+
+	
   </document>

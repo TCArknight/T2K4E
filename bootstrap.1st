@@ -63,7 +63,13 @@
       CharType.Vehicle
       </containerreq>
 	</bootstrap>
-  
+
+  <bootstrap index="21" thing="eqCargoSpace">
+    <containerreq phase="Initialize" priority="4000">
+      CharType.Vehicle
+      </containerreq>
+	</bootstrap>
+	
   <bootstrap index="25" thing="wpUnarmed">
     <containerreq phase="Initialize" priority="4000">
       !CharType.Vehicle

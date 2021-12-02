@@ -27,7 +27,6 @@
 
 <document signature="Hero Lab Data">
 
-
   <!-- Dropped to Ground location - automatically bootstrapped to every hero -->
   <thing
     id="eqGround"
@@ -41,4 +40,16 @@
     <tag group="Print" tag="NoPrint"/>
     </thing>
 
+  <!-- Cargo Space location - automatically bootstrapped to every vehicle -->
+  <thing
+    id="eqCargoSpace"
+    name="Cargo Space"
+    compset="Equipment"
+    isprivate="yes"
+    uniqueness="unique"
+    description="Any equipment carried by the vehicle is held in this container.{br}You can move an item from one container to another by clicking the &quot;Gear&quot; button beside its info button.">
+    <tag group="thing" tag="holder_top"/>
+    <tag group="Print" tag="NoPrint"/>
+    </thing>
+	
   </document>

@@ -1,3 +1,12 @@
+12/01/21
+Fixed - 
+* Hide archetype creation tab when vehicle is the Focus
+
+New - 
+* Vehicle Editor tab
+* Added Cargo Space gear item for Vehicles
+  - Should only apppear for Vehicles
+
 08/13/21 
 * Vehicle stuff
 

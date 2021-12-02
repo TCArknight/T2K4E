@@ -1,29 +1,41 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <thing id="vehTest" name="Test Vehicle" compset="Vehicle">
     <minion id="Vehicle" ownmode="no" livefield="minEnabled" coupledfield="minCoupled">
       <bootstrap thing="typHero"></bootstrap>
       </minion>
     </thing>
-
   <thing id="vehM1114HMMWV" name="M1114 HMMWV" compset="Vehicle" stacking="never">
-    <fieldval field="grCost" value="12000"/>
+    <fieldval field="grCost" value="20000"/>
     <minion id="Vehicle" ownmode="no" livefield="minEnabled" coupledfield="minCoupled">
       <tag group="MinionSet" tag="Vehicle" name="Vehicle" abbrev="Vehicle"/>
       <bootstrap thing="vebM1114HMMWV"></bootstrap>
       </minion>
     </thing>
-	
-  <thing id="vebM1114HMMWV" name="M1114 HMMWV" description="Testing" compset="VehicleBase" uniqueness="unique">
+  <thing id="vebM1114HMMWV" name="M1114 HMMWV" description="The M1114 HMMWV was similar to the earlier M998, but it had a heavier suspension and armor plate intended to stop small arms fire and shell fragments. It also had a pintle mount on top that could hold a machinegun, but was only just entering service when hostilities started in the late 1990s." compset="VehicleBase" uniqueness="unique">
     <fieldval field="vebReliability" value="5"/>
     <fieldval field="vebCombatSpeedOn" value="4"/>
     <fieldval field="vebCombatSpeedOff" value="3"/>
     <fieldval field="vebTravelSpeedOn" value="9"/>
     <fieldval field="vebTravelSpeedOff" value="7"/>
-    <tag group="VehicleCat" tag="USMil"/>
+    <fieldval field="vebFuelCapacity" value="95"/>
+    <fieldval field="vebFuelConsumption" value="3"/>
+    <fieldval field="vebArmorFront" value="3"/>
+    <fieldval field="vebArmorLeft" value="3"/>
+    <fieldval field="vebArmorRight" value="3"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebPassengers" value="4"/>
+    <usesource source="srcT2K"/>
     <tag group="VehicleType" tag="4WDCar"/>
     <tag group="VehicleMove" tag="Wheeled"/>
-	<bootstrap thing="wpT2KM2HB"></bootstrap>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleWpnMain" tag="PintleGun"/>
+    <tag group="VehicleWpnSec" tag="Radio"/>
+    <tag group="VehicleCat" tag="USMil"/>
+    <bootstrap thing="wpT2KM2HB">
+      <autotag group="VehicleWpnMain" tag="PintleGun"/>
+      </bootstrap>
     </thing>
-	
-    </document>
+  </document>

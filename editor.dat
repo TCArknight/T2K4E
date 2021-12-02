@@ -993,7 +993,113 @@
     prefix="veb"
     description="Weapons, armor, and vehicles all have their own tabs for creating objects of those types."
     summary="To create a vehicle, first, create an entry on the Vehicle tab - that's the vehicle attributes. Then, create this to set up the vehicle's cost and availability.">
-  
+
+	<inputthing
+      name="Vehicle Category"
+      helptext="Specify what Category this vehicle belongs to.">
+      <it_tagpick group="VehicleCat" tag="?" require="yes" deftag="USMil"/>
+      </inputthing>
+	<inputthing
+      name="Vehicle Type"
+      helptext="Specify what Type of vehicle this is.">
+      <it_tagpick group="VehicleType" tag="?" require="yes" deftag="Custom"/>
+      </inputthing>
+	<inputthing
+      name="Movement Type"
+      helptext="Specify what Type of vehicle this is.">
+      <it_tagpick group="VehicleMove" tag="?" require="yes" deftag="Wheeled"/>
+      </inputthing>
+	<inputthing
+      name="Fuel Type"
+      helptext="Specify what type of fuel this vehicle is designed for.">
+      <it_tagpick group="VehicleFuel" tag="?" require="yes" deftag="Gas"/>
+      </inputthing>
+	<inputthing
+      name="Fuel In Use"
+      helptext="Specify what type of fuel this vehicle is currently using.">
+      <it_tagpick group="VehicleFuelUsed" tag="?" require="yes" deftag="Gas"/>
+      </inputthing>
+	  
+    <inputthing
+      name="Reliability"
+      helptext="Reliability of the vehicle.">
+      <it_field field="vebReliability"/>
+      </inputthing>
+
+    <inputthing
+      name="Cargo Capacity"
+      helptext="How much Cargo the vehicle can carry.">
+      <it_field field="vebCargoCapacity"/>
+      </inputthing>
+	  
+    <inputthing
+      name="Speed Values"
+      helptext="Specific speed of the vehicle for various conditions.">
+      <it_separator/>
+      </inputthing>
+    <inputthing
+      name="Combat - On Road"
+      helptext="On road speed during combat turns.">
+      <it_field field="vebCombatSpeedOn"/>
+      </inputthing>
+    <inputthing
+      name="Combat - Off Road"
+      helptext="Off road speed during combat turns.">
+      <it_field field="vebCombatSpeedOff"/>
+      </inputthing>
+    <inputthing
+      name="Travel - On Road"
+      helptext="On road speed during travel turns.">
+      <it_field field="vebTravelSpeedOn"/>
+      </inputthing>
+    <inputthing
+      name="Travel - Off Road"
+      helptext="Off road speed during travel turns.">
+      <it_field field="vebTravelSpeedOff"/>
+      </inputthing>
+	  
+    <inputthing
+      name="Armor Locations"
+      helptext="Specific Armor values for the various sides of the vehicle.">
+      <it_separator/>
+      </inputthing>
+    <inputthing
+      name="Front"
+      helptext="Front armor.">
+      <it_field field="vebArmorFront"/>
+      </inputthing>
+    <inputthing
+      name="Left"
+      helptext="Left armor.">
+      <it_field field="vebArmorLeft"/>
+      </inputthing>
+    <inputthing
+      name="Right"
+      helptext="Right armor.">
+      <it_field field="vebArmorRight"/>
+      </inputthing>
+    <inputthing
+      name="Back"
+      helptext="Back armor.">
+      <it_field field="vebArmorBack"/>
+      </inputthing>
+
+    <inputthing
+      name="Weapon Details"
+      helptext="Specific tags for the various weapons of the vehicle.">
+      <it_separator/>
+      </inputthing>  
+    <inputthing
+      name="Main Weapon"
+      helptext="Specify any tags for the main weapon(s) of the vehicle.">
+      <it_taglist group="VehicleWpnMain" tag="?" />
+      </inputthing> 
+    <inputthing
+      name="Secondary Weapon"
+      helptext="Specify any tags for the secondary weapon(s) of the vehicle.">
+      <it_taglist group="VehicleWpnSec" tag="?" />
+      </inputthing>
+	  
     <inputthing>
       <it_groupref id="SourceInfo"/>
       </inputthing>
@@ -1021,6 +1127,12 @@
       helptext="Leave this checked">
       <it_tagcheck group="MinionSet" tag="Vehicle" default="yes" target="minion"/>
       </inputthing>	
+	  
+    <inputthing
+      name="Cost"
+      helptext="Vehicle Cost.">
+      <it_field field="grCost"/>
+      </inputthing>
   
     <inputthing>
       <it_groupref id="SourceInfo"/>

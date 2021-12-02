@@ -353,7 +353,80 @@
       minvalue="0"
       defvalue="0"
       type="derived">
-	  </field>  
+	  </field> 
+	
+    <field
+      id="vebFuelCapacity"
+      name="Fuel Capacity"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+	  
+    <field
+      id="vebFuelConsumption"
+      name="Fuel Consumption"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebCargoCapacity"
+      name="Cargo Capacity"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebCrew"
+      name="Crew"
+      minvalue="1"
+      defvalue="1"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebPassengers"
+      name="Passengers"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebArmorFront"
+      name="Armor (Front)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebArmorLeft"
+      name="Armor (Left)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebArmorRight"
+      name="Armor (Right)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebArmorBack"
+      name="Armor (Back)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+   	  
     <eval index="1" phase="Initialize" priority="4500"><![CDATA[
 	  trustme
       ~initialize Attributes
@@ -369,11 +442,25 @@
 	  
 	  focus.field[vdeCategory].text = tagnames[VehicleCat.?,"/"]
 	  focus.field[vdeType].text = tagnames[VehicleType.?,"/"]
+	  focus.field[vdeMovement].text = tagnames[VehicleMove.?,"/"]
 	  focus.field[vdeReliability].value = field[vebReliability].value
 	  focus.field[vdeCombatSpeedOn].value = field[vebCombatSpeedOn].value
 	  focus.field[vdeCombatSpeedOff].value = field[vebCombatSpeedOff].value
 	  focus.field[vdeTravelSpeedOn].value = field[vebTravelSpeedOn].value
 	  focus.field[vdeTravelSpeedOff].value = field[vebTravelSpeedOff].value
+	  focus.field[vdeFuelType].text = tagnames[VehicleFuel.?,"/"]
+	  focus.field[vdeFuelInUse].text = tagnames[VehicleFuelUsed.?,"/"]
+	  focus.field[vdeFuelCapacity].value = field[vebFuelCapacity].value
+	  focus.field[vdeFuelRate].value = field[vebFuelConsumption].value
+	  
+	  focus.field[vdeArmorFront].value = field[vebArmorFront].value
+	  focus.field[vdeArmorLeft].value = field[vebArmorLeft].value
+	  focus.field[vdeArmorRight].value = field[vebArmorRight].value
+	  focus.field[vdeArmorBack].value = field[vebArmorBack].value
+	  
+	  focus.field[vdeCrew].value = field[vebCrew].value
+	  focus.field[vdePassengers].value = field[vebPassengers].value
+	  focus.field[vdeCargoCapacity].value = field[vebCargoCapacity].value
 	  
       ]]></eval>
 	  
@@ -397,7 +484,40 @@
       type="derived"
 	  maxlength="25">
 	  </field>
-		
+	  
+    <field
+      id="vdeMovement"
+      name="Vehicle Movement"
+      type="derived"
+	  maxlength="25">
+	  </field>
+	  
+	<field
+      id="vdeFuelInUse"
+      name="Fuel Being Used"
+      type="derived"
+	  maxlength="25">
+      </field>
+	  
+	<field
+      id="vdeFuelType"
+      name="Fuel Type"
+      type="derived"
+	  maxlength="25">
+      </field>
+
+	<field
+      id="vdeFuelCapacity"
+      name="Fuel Capacity"
+      type="derived">
+      </field>
+	  
+	<field
+      id="vdeFuelRate"
+      name="Fuel Burn Rate"
+      type="derived">
+      </field>
+	  
 	<field
       id="vdeReliability"
       name="Reliability"
@@ -425,6 +545,47 @@
     <field
       id="vdeTravelSpeedOff"
       name="Travel Speed (Off Road)"
+      type="derived">
+	  </field>	
+	  
+    <field
+      id="vdeCargoCapacity"
+      name="Cargo Capacity"
+      type="derived">
+	  </field>	
+	  
+    <field
+      id="vdeCrew"
+      name="Crew"
+      type="derived">
+	  </field>
+    <field
+      id="vdePassengers"
+      name="Passengers"
+      type="derived">
+	  </field>
+	  
+    <field
+      id="vdeArmorFront"
+      name="Armor (Front)"
+      type="derived">
+	  </field>	
+	  
+    <field
+      id="vdeArmorLeft"
+      name="Armor (Left)"
+      type="derived">
+	  </field>	
+	  
+    <field
+      id="vdeArmorRight"
+      name="Armor (Right)"
+      type="derived">
+	  </field>	
+	  
+    <field
+      id="vdeArmorBack"
+      name="Armor (Back)"
       type="derived">
 	  </field>	
 	  
@@ -939,6 +1100,11 @@
       attribs = tagnames[WeaponSpec.?,", "]
       special = splice(special,attribs,", ")
 
+      ~append any vehicle weapon attributes appropriately (if any)
+      var mainwpn as string
+      mainwpn = tagnames[VehicleWpnMain.?,", "]
+      special = splice(special,mainwpn,", ")
+	  
       ~append any special details for this weapon
       special = splice(special,field[wpSpecial].text,", ")
 

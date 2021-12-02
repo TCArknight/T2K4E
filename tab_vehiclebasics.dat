@@ -136,6 +136,16 @@
       </portal>
 	  
     <portal
+      id="lblVehMove"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Movement: " & field[vdeMovement].text
+            ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
       id="lblVehRel"
       style="lblLeft">
       <label>
@@ -146,48 +156,112 @@
       </portal>
 
     <portal
-      id="lblVehCbtSpeed"
+      id="lblVehCargo"
       style="lblLeft">
       <label>
+        <labeltext><![CDATA[
+			@text = "Cargo Cap.: " & field[vdeCargoCapacity].text
+            ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="title1"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Speed">
+        </label>
+      </portal>
+
+    <portal
+      id="title2"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="On Road">
+        </label>
+      </portal>
+	  
+    <portal
+      id="title3"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Off Road">
+        </label>
+      </portal>
+	  
+    <portal
+      id="titleCbt"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Combat">
+        </label>
+      </portal>
+	  
+    <portal
+      id="titleTravel"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Travel">
+        </label>
+      </portal>
+	  
+    <portal
+      id="lblVehCbtSpeedOn"
+      style="lblNormal">
+      <label>
 		<labeltext><![CDATA[
-			@text = "Combat Speed: " & field[vdeCombatSpeedOn].text & " / " & field[vdeCombatSpeedOff].text
+			@text = field[vdeCombatSpeedOn].text
+			]]></labeltext>
+		</label>
+      </portal>
+	  
+    <portal
+      id="lblVehCbtSpeedOff"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeCombatSpeedOff].text
 			]]></labeltext>
 		</label>
       </portal>
 
     <portal
-      id="lblVehTravSpeed"
-      style="lblLeft">
+      id="lblVehTravSpdOn"
+      style="lblNormal">
       <label>
 		<labeltext><![CDATA[
-		  var speed as string
-		   
-		  speed = "Travel Speed: " & field[vdeTravelSpeedOn].text 
-		  if (empty(field[vdeTravelSpeedOff].text) = 0) then
-			speed &= " / " & field[vdeTravelSpeedOff].text 
-			endif
-		  
-		  @text = speed
-		  
-		  perform hero.findchild[VehicleBase].setfocus
-          doneif (state.isfocus = 0)
-          
-		  doneif (focus.tagis[VehicleMove.?] = 0)
-		  
-		  @text &= " " & focus.tagabbrevs[VehicleMove.?,","]
-			
-	      ]]></labeltext>
+			@text = field[vdeTravelSpeedOn].text
+			]]></labeltext>
+		</label>
+      </portal>
+	  
+    <portal
+      id="lblVehTravSpdOff"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeTravelSpeedOff].text
+			]]></labeltext>
 		</label>
       </portal>
 	  
     <position><![CDATA[
 	  var myWidth as number
 	  var myLeft as number
+	  var Col2 as number
+	  
 	  myLeft = 2
 	  myWidth = width/2 - 4
+	  Col2 = myWidth + 4
 
       ~position our tallest portal at the top
       portal[title].top = 0
+	  portal[title].left = myLeft
 	  portal[title].width = myWidth
 
       ~center the other portals vertically
@@ -199,24 +273,348 @@
 	  portal[lblVehType].left = myLeft
 	  portal[lblVehType].width = myWidth
 
-	  portal[lblVehRel].top = portal[lblVehType].bottom + 5
+	  portal[lblVehMove].top = portal[lblVehType].bottom + 5
+	  portal[lblVehMove].left = myLeft
+	  portal[lblVehMove].width = myWidth
+
+	  portal[lblVehRel].top = portal[lblVehMove].bottom + 5
 	  portal[lblVehRel].left = myLeft
-	  portal[lblVehRel].width = myWidth
+	  portal[lblVehRel].width = myWidth / 2 - 4
+
+	  portal[lblVehCargo].top = portal[lblVehRel].top
+	  portal[lblVehCargo].left = portal[lblVehRel].right + 2
+	  portal[lblVehCargo].width = myWidth / 2 - 4
 	  
-	  portal[lblVehCbtSpeed].top = portal[lblVehRel].bottom + 5
-	  portal[lblVehCbtSpeed].left = myLeft
-	  portal[lblVehCbtSpeed].width = myWidth
+	  ~position our tallest portal at the top
+      portal[title1].top = 0
+      portal[title1].left = Col2
+	  portal[title1].width = myWidth / 2 
+      portal[title2].top = 0
+      portal[title2].left = portal[title1].right + 2
+	  portal[title2].width = myWidth / 4
+      portal[title3].top = 0
+      portal[title3].left = portal[title2].right + 2
+	  portal[title3].width = myWidth / 4
+
+      portal[titleCbt].top = portal[title1].bottom + 9
+      portal[titleCbt].left = portal[title1].left
+	  portal[titleCbt].width = portal[title1].width
 	  
-	  portal[lblVehTravSpeed].top = portal[lblVehCbtSpeed].bottom + 5
-	  portal[lblVehTravSpeed].left = myLeft
-	  portal[lblVehTravSpeed].width = myWidth
+	  portal[lblVehCbtSpeedOn].top = portal[titleCbt].top
+	  portal[lblVehCbtSpeedOn].left = portal[title2].left
+	  portal[lblVehCbtSpeedOn].width = portal[title2].width
 	  
-      height = portal[lblVehTravSpeed].bottom + 5
+	  portal[lblVehCbtSpeedOff].top = portal[titleCbt].top
+	  portal[lblVehCbtSpeedOff].left = portal[title3].left
+	  portal[lblVehCbtSpeedOff].width = portal[title3].width
+	  
+      portal[titleTravel].top = portal[titleCbt].bottom + 9
+      portal[titleTravel].left = portal[titleCbt].left
+	  portal[titleTravel].width = portal[titleCbt].width
+	  
+	  portal[lblVehTravSpdOn].top = portal[titleTravel].top
+	  portal[lblVehTravSpdOn].left = portal[title2].left
+	  portal[lblVehTravSpdOn].width = portal[title2].width
+	  
+	  portal[lblVehTravSpdOff].top = portal[titleTravel].top
+	  portal[lblVehTravSpdOff].left = portal[title3].left
+	  portal[lblVehTravSpdOff].width = portal[title3].width
+	  
+      height = portal[lblVehRel].bottom + 5
 	  
       ]]></position>
 
     </template>	  
+	
+  <template
+    id="vbaVehSpeed"
+    name="Speed Details"
+    compset="VehicleDetails">
 
+    <portal
+      id="title1"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Speed">
+        </label>
+      </portal>
+
+    <portal
+      id="title2"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="On Road">
+        </label>
+      </portal>
+	  
+    <portal
+      id="title3"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Off Road">
+        </label>
+      </portal>
+	  
+    <portal
+      id="titleCbt"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Combat">
+        </label>
+      </portal>
+	  
+    <portal
+      id="titleTravel"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Travel">
+        </label>
+      </portal>
+	  
+    <portal
+      id="lblVehCbtSpeedOn"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeCombatSpeedOn].text
+			]]></labeltext>
+		</label>
+      </portal>
+	  
+    <portal
+      id="lblVehCbtSpeedOff"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeCombatSpeedOff].text
+			]]></labeltext>
+		</label>
+      </portal>
+
+    <portal
+      id="lblVehTravSpdOn"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeTravelSpeedOn].text
+			]]></labeltext>
+		</label>
+      </portal>
+	  
+    <portal
+      id="lblVehTravSpdOff"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeTravelSpeedOff].text
+			]]></labeltext>
+		</label>
+      </portal>
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  myLeft = 2
+	  myWidth = width/2 - 6
+
+      ~position our tallest portal at the top
+      portal[title1].top = 0
+      portal[title1].left = myLeft
+	  portal[title1].width = myWidth / 2 
+      portal[title2].top = 0
+      portal[title2].left = portal[title1].right + 2
+	  portal[title2].width = myWidth / 4
+      portal[title3].top = 0
+      portal[title3].left = portal[title2].right + 2
+	  portal[title3].width = myWidth / 4
+
+      portal[titleCbt].top = portal[title1].bottom + 5
+      portal[titleCbt].left = portal[title1].left
+	  portal[titleCbt].width = portal[title1].width
+	  
+	  portal[lblVehCbtSpeedOn].top = portal[titleCbt].top
+	  portal[lblVehCbtSpeedOn].left = portal[title2].left
+	  portal[lblVehCbtSpeedOn].width = portal[title2].width
+	  
+	  portal[lblVehCbtSpeedOff].top = portal[titleCbt].top
+	  portal[lblVehCbtSpeedOff].left = portal[title3].left
+	  portal[lblVehCbtSpeedOff].width = portal[title3].width
+	  
+      portal[titleTravel].top = portal[titleCbt].bottom + 5
+      portal[titleTravel].left = portal[titleCbt].left
+	  portal[titleTravel].width = portal[titleCbt].width
+	  
+	  portal[lblVehTravSpdOn].top = portal[titleTravel].top
+	  portal[lblVehTravSpdOn].left = portal[title2].left
+	  portal[lblVehTravSpdOn].width = portal[title2].width
+	  
+	  portal[lblVehTravSpdOff].top = portal[titleTravel].top
+	  portal[lblVehTravSpdOff].left = portal[title3].left
+	  portal[lblVehTravSpdOff].width = portal[title3].width
+	  
+      height = portal[titleTravel].bottom + 5
+	  
+      ]]></position>
+
+    </template>	 
+	
+  <template
+    id="vbaVehFuel"
+    name="Details"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Fuel Details">
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehFuelType"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Fuel Type: " & field[vdeFuelType].text
+            ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehFuelUsed"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Fuel Used: " & field[vdeFuelInUse].text
+            ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehFuelCap"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Fuel Capacity: " & field[vdeFuelCapacity].text
+            ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehFuelRate"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Fuel Use Rate: " & field[vdeFuelRate].text
+            ]]></labeltext>
+        </label>
+      </portal>	  
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  var Col2 as number
+	  myLeft = 2
+	  myWidth = width/2 - 4
+	  Col2 = myWidth + 4
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+      portal[title].left = myLeft
+	  portal[title].width = width
+
+      ~center the other portals vertically
+      portal[lblVehFuelType].left = myLeft
+	  portal[lblVehFuelType].width = myWidth
+      portal[lblVehFuelType].top = portal[title].bottom + 5
+	  
+	  portal[lblVehFuelUsed].left = myLeft
+	  portal[lblVehFuelUsed].width = myWidth
+      portal[lblVehFuelUsed].top = portal[lblVehFuelType].bottom + 5
+	  
+	  portal[lblVehFuelCap].left = Col2
+	  portal[lblVehFuelCap].width = myWidth
+      portal[lblVehFuelCap].top = portal[lblVehFuelType].top
+	  
+	  portal[lblVehFuelRate].left = Col2
+	  portal[lblVehFuelRate].width = myWidth
+      portal[lblVehFuelRate].top = portal[lblVehFuelCap].bottom + 5
+	  
+      height = portal[lblVehFuelRate].bottom + 5
+	  
+      ]]></position>
+
+    </template>
+
+	
+  <template
+    id="vbaVehCrew"
+    name="Crew and Passengers"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Crew">
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehCrew"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Crew: " & field[vdeCrew].text
+            ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehPassengers"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Passengers: " & field[vdePassengers].text
+            ]]></labeltext>
+        </label>
+      </portal>  
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  var Col2 as number
+	  myLeft = 2
+	  myWidth = width/2 - 4
+	  Col2 = myWidth + 4
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+      portal[title].left = myLeft
+	  portal[title].width = width
+
+      ~center the other portals vertically
+      portal[lblVehCrew].left = myLeft
+	  portal[lblVehCrew].width = myWidth
+      portal[lblVehCrew].top = portal[title].bottom + 5
+	  	  
+	  portal[lblVehPassengers].left = Col2
+	  portal[lblVehPassengers].width = myWidth
+      portal[lblVehPassengers].top = portal[lblVehCrew].top
+	  	  
+      height = portal[lblVehCrew].bottom + 5
+	  
+      ]]></position>
+
+    </template>	
   <!-- basics layout
         This layout orchestrates the display of all various visual elements that
         comprise the Basics tab. We have titles above the attributes and skills,
@@ -241,18 +639,24 @@
         templates within the layout. In this layout, the tab order will move down
         the left column and then shift over to the right column.
   -->
+  
   <layout
     id="vehbasics">
-    <!-- <portalref portal="vbaAttribVeh" taborder="10"/> -->
+    <!-- <portalref portal="vbaAttribVeh" taborder="10"/> 
+    <templateref template="vbaVehSpeed" thing="mscVehDetails" />
+	-->
     <templateref template="vbaDetails" thing="mscVehDetails" />
+    <templateref template="vbaVehFuel" thing="mscVehDetails" />
+    <templateref template="vbaVehCrew" thing="mscVehDetails" />
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
-	  ~ perform portal[vbaAttribVeh].autoplace
 	  perform template[vbaDetails].autoplace
+	  perform template[vbaVehFuel].autoplace
+	  perform template[vbaVehCrew].autoplace
 	  
       ~figure out the total height we need for the tab
-	  height = template[vbaDetails].bottom
+	  height = template[vbaVehCrew].bottom
 	  
       ]]></position>
 

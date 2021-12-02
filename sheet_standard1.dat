@@ -1319,6 +1319,16 @@
             ]]></labeltext>
         </output_label>
       </portal>
+
+    <portal
+      id="lblVehMove"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Movement Type: " & field[vdeMovement].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
 	  
     <portal
       id="lblVehRel"
@@ -1387,8 +1397,12 @@
 	  portal[lblVehRel].top = portal[lblVehType].bottom + 5
 	  portal[lblVehRel].left = myLeft
 	  portal[lblVehRel].width = myWidth
+
+	  portal[lblVehMove].top = portal[lblVehRel].bottom + 5
+	  portal[lblVehMove].left = myLeft
+	  portal[lblVehMove].width = myWidth
 	  
-	  portal[lblVehCbtSpeed].top = portal[lblVehRel].bottom + 5
+	  portal[lblVehCbtSpeed].top = portal[lblVehMove].bottom + 5
 	  portal[lblVehCbtSpeed].left = myLeft
 	  portal[lblVehCbtSpeed].width = myWidth
 	  
