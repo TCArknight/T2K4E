@@ -27,6 +27,7 @@
         The "chosen" script shows the selected archetype with a suitable prefix. If no
         archetype is yet selected, a prompt it shown with appropriate color highlighting.
   -->
+	
   <!-- Ammunition portal -->
   <portal
     id="amAmmunition"
@@ -40,9 +41,7 @@
       addpick="AmmoHelper"
       headerpick="AmmoHelper"
       candidatepick="AmmoHelper"
-	  candidatefield="AmmoExpr"
-      buytemplate="BuyCash"
-      selltemplate="SellCash">
+	  candidatefield="AmmoExpr">
       <titlebar><![CDATA[
         @text = "Load Ammunition"
         ]]></titlebar>
@@ -200,6 +199,7 @@
 	  
       portal[amAmmunition].top = 0
 	  portal[amAmmunition].width = width
+	  
 	  height = portal[amAmmunition].bottom
 	  
       ]]></position>

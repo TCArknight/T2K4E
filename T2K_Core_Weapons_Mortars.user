@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="amT2KM60mmHE" name="Mortar - 60mm HE" compset="Ammunition">
+  <thing id="amT2KM60mmHE" name="60mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="5"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -8,10 +8,10 @@
     <fieldval field="grWeight" value=".5"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
-    <tag group="AmmoCatType" tag="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar60"/>
     <tag group="BlastRating" tag="C"/>
     </thing>
-  <thing id="amT2KM60mmWP" name="Mortar - 60mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+  <thing id="amT2KM60mmWP" name="60mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="100"/>
     <fieldval field="grWeight" value="2"/>
     <fieldval field="amCrit" value="0"/>
@@ -19,100 +19,100 @@
     <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar60"/>
     <tag group="BlastRating" tag="C"/>
     <tag group="BlastRating" tag="Special"/>
     </thing>
-  <thing id="amT2KM60mmCNA" name="Mortar - 60mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+  <thing id="amT2KM60mmCNA" name="60mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar60"/>
     <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     </thing>
-  <thing id="amT2KM60mmCBA" name="Mortar - 60mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+  <thing id="amT2KM60mmCBA" name="60mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar60"/>
     <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     </thing>
-  <thing id="amT2KM60mmILLUM" name="Mortar - 60mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+  <thing id="amT2KM60mmILLUM" name="60mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="25"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar60"/>
     <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     </thing>
-  <thing id="amT2KM81mmHE" name="Mortar - 81mm HE" compset="Ammunition">
+  <thing id="amT2KM81mmHE" name="81mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="6"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar81"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     <tag group="BlastRating" tag="B"/>
     </thing>
-  <thing id="amT2KM81mmWP" name="Mortar - 81mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+  <thing id="amT2KM81mmWP" name="81mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="150"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar81"/>
     <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     <tag group="BlastRating" tag="B"/>
     </thing>
-  <thing id="amT2KM81mmCNA" name="Mortar - 81mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+  <thing id="amT2KM81mmCNA" name="81mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="250"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar81"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     <tag group="BlastRating" tag="B"/>
     </thing>
-  <thing id="amT2KM81mmCBA" name="Mortar - 81mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+  <thing id="amT2KM81mmCBA" name="81mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="250"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar81"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     <tag group="BlastRating" tag="B"/>
     </thing>
-  <thing id="amT2KM81mmILLUM" name="Mortar - 81mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+  <thing id="amT2KM81mmILLUM" name="81mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
     <fieldval field="grCost" value="50"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar81"/>
     <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     </thing>
-  <thing id="amT2KM82mmCBA" name="Mortar - 82mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+  <thing id="amT2KM82mmCBA" name="82mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -120,10 +120,10 @@
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar82"/>
     <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
     </thing>
-  <thing id="amT2KM82mmCNA" name="Mortar - 82mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+  <thing id="amT2KM82mmCNA" name="82mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -131,10 +131,10 @@
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar82"/>
     <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
     </thing>
-  <thing id="amT2KM82mmHE" name="Mortar - 82mm HE" compset="Ammunition">
+  <thing id="amT2KM82mmHE" name="82mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="6"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -142,10 +142,10 @@
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar82"/>
     <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
     </thing>
-  <thing id="amT2KM82mmILLUM" name="Mortar - 82mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+  <thing id="amT2KM82mmILLUM" name="82mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -153,10 +153,10 @@
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar82"/>
     <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
     </thing>
-  <thing id="amT2KM82mmWP" name="Mortar - 82mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+  <thing id="amT2KM82mmWP" name="82mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -166,9 +166,9 @@
     <tag group="BlastRating" tag="B" name="B" abbrev="B"/>
     <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar82"/>
     </thing>
-  <thing id="amT2KM42inCBA" name="Mortar - 4.2in CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+  <thing id="amT2KM42inCBA" name="4.2in CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -176,10 +176,10 @@
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar42"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM42inCNA" name="Mortar - 4.2in CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+  <thing id="amT2KM42inCNA" name="4.2in CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -187,10 +187,10 @@
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar42"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM42inHE" name="Mortar - 4.2in HE" compset="Ammunition">
+  <thing id="amT2KM42inHE" name="4.2in HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="8"/>
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -198,10 +198,10 @@
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar42"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM42inILLUM" name="Mortar - 4.2in ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+  <thing id="amT2KM42inILLUM" name="4.2in ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -209,10 +209,10 @@
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar42"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM42inWP" name="Mortar - 4.2in WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+  <thing id="amT2KM42inWP" name="4.2in WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -220,11 +220,11 @@
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar42"/>
     <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM120mmCBA" name="Mortar - 120mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition">
+  <thing id="amT2KM120mmCBA" name="120mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -232,10 +232,10 @@
     <fieldval field="grWeight" value="8"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar120"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM120mmCNA" name="Mortar - 120mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition">
+  <thing id="amT2KM120mmCNA" name="120mm CHEM (Nerve Agent)" description="See Page 79 for Details on Nerve Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -243,10 +243,10 @@
     <fieldval field="grWeight" value="8"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar120"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM120mmHE" name="Mortar - 120mm HE" compset="Ammunition">
+  <thing id="amT2KM120mmHE" name="120mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="9"/>
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -254,10 +254,10 @@
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar120"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM120mmILLUM" name="Mortar - 120mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition">
+  <thing id="amT2KM120mmILLUM" name="120mm ILLUM" description="Illumination rounds remove all effects of darkness (page 59) within a radius from the target hex equal to the die size of the blast power, e.g. 10 hexes for blast power B. Roll a D6 base die at the beginning of each round – on a , the flare goes out." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -265,10 +265,10 @@
     <fieldval field="grWeight" value="8"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar120"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
-  <thing id="amT2KM120mmWP" name="Mortar - 120mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition">
+  <thing id="amT2KM120mmWP" name="120mm WP" description="White phosphorus rounds burn with intense heat. WP rounds have no direct damage effect, and instead of explosion damage, WP rounds inflict fire damage (page 79) of an intensity equal to the blast power. Extinguishing a WP fire is very difficult (–3 to MOBILITY rolls)." compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
     <fieldval field="amCrit" value="0"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -276,7 +276,7 @@
     <fieldval field="grWeight" value="8"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
-    <tag group="AmmoCatType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
+    <tag group="AmmoCatType" tag="Mortar120"/>
     <tag group="BlastRating" tag="Special" name="Special" abbrev="Special"/>
     <tag group="BlastRating" tag="A"/>
     </thing>
@@ -293,18 +293,10 @@
     <fieldval field="grCost" value="1000"/>
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K"/>
-    <tag group="AmmoType" tag="amT2KM60mmWP"/>
     <tag group="WeaponType" tag="Mortar"/>
     <tag group="WeaponCat" tag="Mortar"/>
-    <tag group="AmmoType" tag="amT2KM60mmCBA"/>
-    <tag group="AmmoType" tag="amT2KM60mmCNA"/>
-    <tag group="AmmoType" tag="amT2KM60mmHE"/>
-    <tag group="AmmoType" tag="amT2KM60mmILLUM"/>
-    <holdlimit>AmmoType.amT2KM60mmCBA |
-AmmoType.amT2KM60mmWP |
-AmmoType.amT2KM60mmCNA |
-AmmoType.amT2KM60mmHE |
-AmmoType.amT2KM60mmILLUM</holdlimit>
+    <tag group="AmmoCatType" tag="Mortar60"/>
+    <holdlimit>AmmoCatType.Mortar60</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K81mmMortar" name="81mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
@@ -318,16 +310,8 @@ AmmoType.amT2KM60mmILLUM</holdlimit>
     <tag group="AmmoType" tag="amT2KM81mmWP"/>
     <tag group="WeaponType" tag="Mortar"/>
     <tag group="WeaponCat" tag="Mortar"/>
-    <tag group="AmmoType" tag="amT2KM81mmCBA"/>
-    <tag group="AmmoType" tag="amT2KM81mmCNA"/>
-    <tag group="AmmoType" tag="amT2KM81mmHE"/>
-    <holdlimit>
-
-AmmoType.amT2KM81mmCBA |
-AmmoType.amT2KM81mmWP |
-AmmoType.amT2KM81mmCNA |
-AmmoType.amT2KM81mmHE |
-AmmoType.amT2KM81mmILLUM</holdlimit>
+    <tag group="AmmoCatType" tag="Mortar81"/>
+    <holdlimit>AmmoCatType.Mortar81</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K82mmVasilek" name="82mm Mortar - Vasilek" description="The Vasilek semi-automatic 82mm mortar system has a RoF of 2 and Mag of 4. It must be towed and can’t be broken\ndown. It uses ammo dice just like small arms. On a hit, each on an ammo die lands an additional grenade in the target\nhex or a hex adjacent to it. On a miss, deviation is rolled one additional time for each rolled on the ammo dice" compset="Ranged">
@@ -341,14 +325,8 @@ AmmoType.amT2KM81mmILLUM</holdlimit>
     <tag group="AmmoType" tag="amT2KM82mmWP"/>
     <tag group="WeaponType" tag="Mortar"/>
     <tag group="WeaponCat" tag="Mortar"/>
-    <tag group="AmmoType" tag="amT2KM82mmCBA"/>
-    <tag group="AmmoType" tag="amT2KM82mmCNA"/>
-    <tag group="AmmoType" tag="amT2KM82mmHE"/>
-    <holdlimit>AmmoType.amT2KM82mmCBA |
-AmmoType.amT2KM82mmWP |
-AmmoType.amT2KM82mmCNA |
-AmmoType.amT2KM82mmHE |
-AmmoType.amT2KM82mmILLUM</holdlimit>
+    <tag group="AmmoCatType" tag="Mortar82"/>
+    <holdlimit>AmmoCatType.Mortar82</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K82mmMortar" name="82mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
@@ -359,17 +337,8 @@ AmmoType.amT2KM82mmILLUM</holdlimit>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="10"/>
     <tag group="WeaponType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
-    <tag group="AmmoType" tag="amT2KM82mmCBA" name="Mortar - 82mm CHEM (Blistering Agent)" abbrev="Mortar - 82mm CHEM (Blistering Agent)"/>
-    <tag group="AmmoType" tag="amT2KM82mmCNA" name="Mortar - 82mm CHEM (Nerve Agent)" abbrev="Mortar - 82mm CHEM (Nerve Agent)"/>
-    <tag group="AmmoType" tag="amT2KM82mmHE" name="Mortar - 82mm HE" abbrev="Mortar - 82mm HE"/>
-    <tag group="AmmoType" tag="amT2KM82mmILLUM" name="Mortar - 82mm ILLUM" abbrev="Mortar - 82mm ILLUM"/>
-    <tag group="AmmoType" tag="amT2KM82mmWP" name="Mortar - 82mm WP" abbrev="Mortar - 82mm WP"/>
-    <tag group="WeaponCat" tag="Mortar" name="Mortar" abbrev="Mortar"/>
-    <holdlimit>AmmoType.amT2KM82mmCBA |
-AmmoType.amT2KM82mmWP |
-AmmoType.amT2KM82mmCNA |
-AmmoType.amT2KM82mmHE |
-AmmoType.amT2KM82mmILLUM</holdlimit>
+    <tag group="AmmoCatType" tag="Mortar82"/>
+    <holdlimit>AmmoCatType.Mortar82</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K42inMortar" name="4.2in Mortar" compset="Ranged">
@@ -383,15 +352,8 @@ AmmoType.amT2KM82mmILLUM</holdlimit>
     <tag group="AmmoType" tag="amT2KM42inWP"/>
     <tag group="WeaponType" tag="Mortar"/>
     <tag group="WeaponCat" tag="Mortar"/>
-    <tag group="AmmoType" tag="amT2KM42inCBA"/>
-    <tag group="AmmoType" tag="amT2KM42inCNA"/>
-    <tag group="AmmoType" tag="amT2KM42inHE"/>
-    <holdlimit>
-AmmoType.amT2KM42inCBA |
-AmmoType.amT2KM42inWP |
-AmmoType.amT2KM42inCNA |
-AmmoType.amT2KM42inHE |
-AmmoType.amT2KM42inILLUM</holdlimit>
+    <tag group="AmmoCatType" tag="Mortar42"/>
+    <holdlimit>AmmoCatType.Mortar42</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2K120mmMortar" name="120mm Mortar" compset="Ranged">
@@ -405,15 +367,8 @@ AmmoType.amT2KM42inILLUM</holdlimit>
     <tag group="AmmoType" tag="amT2KM120mmWP"/>
     <tag group="WeaponType" tag="Mortar"/>
     <tag group="WeaponCat" tag="Mortar"/>
-    <tag group="AmmoType" tag="amT2KM120mmCBA"/>
-    <tag group="AmmoType" tag="amT2KM120mmCNA"/>
-    <tag group="AmmoType" tag="amT2KM120mmHE"/>
-    <holdlimit>
-AmmoType.amT2KM120mmCBA |
-AmmoType.amT2KM120mmWP |
-AmmoType.amT2KM120mmCNA |
-AmmoType.amT2KM120mmHE |
-AmmoType.amT2KM120mmILLUM</holdlimit>
+    <tag group="AmmoCatType" tag="Mortar120"/>
+    <holdlimit>AmmoCatType.Mortar120</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   </document>

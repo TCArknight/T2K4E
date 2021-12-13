@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the first page of the standard character
+      sheet for output. The character sheet has been carved into a simple two-column
+      presentation that is used by many game systems, with some information on the
+      left and other material on the right. You can use whatever overall layout you
+      prefer, using this sample as a guideline.
+
+      A variety of display techniques have been used on this one character sheet to
+      provide examples of how to present information in different ways. You will
+      likely choose one or two of these methods and use them exclusively within your
+      own data files, but this gives you various styles to choose from.
+
+      The second page of the character sheet will be found in "sheet_standard2.dat".
+-->
+
+<document signature="Hero Lab Data">
+
+  <!-- oHeroName portal - name of the actor -->
+  <portal
+    id="oVehicleName"
+    style="outNameTitle">
+    <output_label>
+      <labeltext><![CDATA[
+        @text = hero.actorname
+        if (empty(@text) <> 0) then
+          @text = "- Unnamed Hero -"
+          endif
+        ]]></labeltext>
+      </output_label>
+    </portal>
+		
+  <!-- oVehicleWeapon portal
+        This is a table of all Weapons carried by the actor. Weapons use the same
+        template for both the contents and the header across the top. See the
+        template for more details on this.
+  -->
+  <portal
+    id="oVehicleWeapon"
+    style="outNormal">
+    <output_table
+      component="WeaponBase"
+      showtemplate="oVehWeapPick"
+      headertemplate="oVehWeapPick"
+      showsortset="Armory">
+      <list><![CDATA[
+        ]]></list>
+      </output_table>
+    </portal>
+	
+  <template
+    id="oVehWeapPick"
+    name="Output VehicleWeapon Table"
+    compset="Weapon"
+    marginvert="2">
+
+    <portal
+      id="name"
+      style="outNameMed">
+      <output_label
+        field="grStkName">
+        </output_label>
+      </portal>
+
+    <portal
+      id="reliability"
+      style="outNameMed">
+      <output_label
+        field="grReliability">
+        </output_label>
+      </portal>
+
+    <portal
+      id="rof"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+          if (tagis[component.WeapRange] <> 0) then
+            @text = field[wpRateOfFire].text
+            endif
+          ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="damage"
+      style="outNameMed">
+      <output_label
+        field="wpDamage">
+        </output_label>
+      </portal>
+
+    <portal
+      id="crit"
+      style="outNameMed">
+      <output_label
+        field="wpCrit">
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="blast"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+          if (tagis[component.WeapRange] <> 0) then
+            @text = field[wpBlast].text
+            endif
+          ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="range"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+          if (tagis[component.WeapRange] <> 0) then
+            @text = field[wpRange].text
+            endif
+          ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="mag"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+          if (tagis[component.WeapRange] <> 0) then
+            @text = field[wpCapacity].text
+            endif
+          ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="armor"
+      style="outNameMed">
+      <output_label
+        field="wpArmorRating">
+        </output_label>
+      </portal>
+
+    <portal
+      id="spentammo"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+            @text = " "
+          ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="dots"
+      style="outDots">
+      <output_dots>
+        </output_dots>
+      </portal>
+
+    <!-- Portals used as the header -->
+    <portal
+      id="hdrtitle"
+      style="outTitle"
+      isheader="yes">
+      <output_label
+        text="Weapons">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrreliability"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="REL">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrdamage"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Dmg">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrrof"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="ROF">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrcrit"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Crit">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrblast"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Blast">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrrange"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Range">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrmag"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Mag">
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="hdrarmor"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Armor">
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="hdrspentammo"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Spent Ammo">
+        </output_label>
+      </portal>
+	  
+    <position><![CDATA[
+      ~our height is based on the tallest portal within
+      height = portal[name].height
+      doneif (issizing <> 0)
+
+      ~center all portals vertically
+      perform portal[name].centervert
+      perform portal[reliability].centervert
+      perform portal[damage].centervert
+      perform portal[rof].centervert
+      perform portal[crit].centervert
+      perform portal[blast].centervert
+      perform portal[mag].centervert
+      perform portal[armor].centervert
+      perform portal[spentammo].centervert
+      perform portal[dots].centervert
+
+      ~position the range with the same baseline as the rest of the text; since it
+      ~uses a smaller font, it will have a smaller height, so centering it will have
+      ~it appear to float up relative to the other text
+      perform portal[range].alignrel[btob,name,0]
+
+      ~establish suitable fixed widths for the various columns of data
+      portal[damage].width = 120
+      portal[reliability].width = 120
+      portal[rof].width = 120
+      portal[crit].width = 120
+      portal[range].width = 120
+      portal[blast].width = 120
+      portal[mag].width = 120
+      portal[armor].width = 120
+      portal[spentammo].width = 420
+
+      ~position everything horizontally, leaving a margin on both sides appropriately
+      portal[name].left = 5
+      perform portal[spentammo].alignedge[right,-5]
+      perform portal[armor].alignrel[rtol,spentammo,-10]
+      perform portal[mag].alignrel[rtol,armor,-10]
+      perform portal[range].alignrel[rtol,mag,-10]
+      perform portal[blast].alignrel[rtol,range,-10]
+      perform portal[crit].alignrel[rtol,blast,-10]
+      perform portal[damage].alignrel[rtol,crit,-10]
+      perform portal[rof].alignrel[rtol,damage,-10]
+      perform portal[reliability].alignrel[rtol,rof,-10]
+
+      ~if this is a ranged weapon, limit the name to the space up to the range details;
+      ~otherwise, let the name extend over to the reliability value
+      var limit as number
+      limit = portal[reliability].left
+
+      ~limit the name to the extent determined above
+      if (portal[name].right > limit - 5) then
+        portal[name].width = limit - portal[name].left - 5
+        endif
+
+      ~size the name to fit the available space
+      perform portal[name].sizetofit[36]
+      perform portal[name].autoheight
+      perform portal[name].centervert
+
+      ~extend the dots from the right of the name across to the value on the right
+      if (portal[name].right > limit - 10) then
+        portal[dots].visible = 0
+      else
+        perform portal[dots].alignrel[ltor,name,5]
+        portal[dots].width = limit - 5 - portal[dots].left
+        endif
+      ]]></position>
+
+    <header><![CDATA[
+      ~our header height is the title plus a gap plus the header text
+      height = portal[hdrtitle].height + 10 + portal[hdrreliability].height
+      doneif (issizing <> 0)
+
+      ~our title spans the entire width of the template
+      portal[hdrtitle].width = width
+
+      ~each of our header labels has the same width as the corresponding data beneath
+      portal[hdrreliability].width = portal[reliability].width
+      portal[hdrdamage].width = portal[damage].width
+      portal[hdrrange].width = portal[range].width
+      portal[hdrrof].width = portal[rof].width
+      portal[hdrcrit].width = portal[crit].width
+      portal[hdrblast].width = portal[blast].width
+      portal[hdrmag].width = portal[mag].width
+      portal[hdrarmor].width = portal[armor].width
+      portal[hdrspentammo].width = portal[spentammo].width
+
+      ~center each header label on the corresponding data beneath
+      perform portal[hdrreliability].centeron[horz,reliability]
+      perform portal[hdrdamage].centeron[horz,damage]
+      perform portal[hdrrange].centeron[horz,range]
+      perform portal[hdrrof].centeron[horz,rof]
+      perform portal[hdrcrit].centeron[horz,crit]
+      perform portal[hdrblast].centeron[horz,blast]
+      perform portal[hdrmag].centeron[horz,mag]
+      perform portal[hdrarmor].centeron[horz,armor]
+      perform portal[hdrspentammo].centeron[horz,spentammo]
+
+      ~align all header labels at the bottom of the header region
+      perform portal[hdrreliability].alignedge[bottom,0]
+      perform portal[hdrdamage].alignedge[bottom,0]
+      perform portal[hdrrange].alignedge[bottom,0]
+      perform portal[hdrrof].alignedge[bottom,0]
+      perform portal[hdrcrit].alignedge[bottom,0]
+      perform portal[hdrblast].alignedge[bottom,0]
+      perform portal[hdrmag].alignedge[bottom,0]
+      perform portal[hdrarmor].alignedge[bottom,0]
+      perform portal[hdrspentammo].alignedge[bottom,0]
+      ]]></header>
+
+    </template>
+
+  <template
+    id="oVehDetails"
+    name="Vehicles Details (Output)"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="outTitle">
+      <output_label
+        text="Details">
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehCat"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Category: " & field[vdeCategory].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehType"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Vehicle Type: " & field[vdeType].text 
+			@text &= " (" & field[vdeCategory].text & ")"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehMove"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Movement Type: " & field[vdeMovement].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="lblVehRel"
+      style="outNormLt">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Reliability: " & field[vdeReliability].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehFuelType"
+      style="outNormLt">
+      <output_label>
+		<labeltext><![CDATA[
+			@text = "Fuel Type: " & field[vdeFuelType].text
+			]]></labeltext>
+		</output_label>
+      </portal>
+
+    <portal
+      id="lblVehFuelUse"
+      style="outNormLt">
+      <output_label>
+		<labeltext><![CDATA[
+		  @text = "Fuel Used: " & field[vdeFuelInUse].text
+			
+	      ]]></labeltext>
+		</output_label>
+      </portal>
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  myLeft = 2
+	  myWidth = width - 4
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+	  portal[title].width = myWidth
+
+      ~center the other portals vertically
+      ~portal[lblVehCat].left = myLeft
+	  ~portal[lblVehCat].width = myWidth
+      ~portal[lblVehCat].top = portal[title].bottom + 5
+	  portal[lblVehCat].visible = 0
+	  
+	  portal[lblVehType].top = portal[title].bottom + 5
+	  portal[lblVehType].left = myLeft
+	  portal[lblVehType].width = myWidth
+
+	  ~portal[lblVehRel].top = portal[lblVehType].bottom + 5
+	  ~portal[lblVehRel].left = myLeft
+	  ~portal[lblVehRel].width = myWidth
+      portal[lblVehRel].visible = 0  
+	  
+	  portal[lblVehMove].top = portal[lblVehType].bottom + 5
+	  portal[lblVehMove].left = myLeft
+	  portal[lblVehMove].width = myWidth
+	  
+	  portal[lblVehFuelType].top = portal[lblVehMove].bottom + 5
+	  portal[lblVehFuelType].left = myLeft
+	  portal[lblVehFuelType].width = myWidth
+	  
+	  portal[lblVehFuelUse].top = portal[lblVehFuelType].bottom + 5
+	  portal[lblVehFuelUse].left = myLeft
+	  portal[lblVehFuelUse].width = myWidth
+	  
+      height = portal[lblVehFuelUse].bottom + 5
+	  
+      ]]></position>
+    </template>	
+
+  <template
+    id="oVehMovement"
+    name="Vehicles Movement (Output)"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="outTitle">
+      <output_label
+        text="Speed">
+        </output_label>
+      </portal>
+
+    <portal
+      id="titleOnRoad"
+      style="outTitle">
+      <output_label
+        text="On Road">
+        </output_label>
+      </portal>
+
+    <portal
+      id="titleOffRoad"
+      style="outTitle">
+      <output_label
+        text="Off Road">
+        </output_label>
+      </portal>
+
+
+    <portal
+      id="titleCombat"
+      style="outTitle">
+      <output_label
+        text="Combat">
+        </output_label>
+      </portal>
+
+    <portal
+      id="titleTravel"
+      style="outTitle">
+      <output_label
+        text="Travel">
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="lblCombatOn"
+      style="outValueLgCtr">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeCombatSpeedOn].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblCombatOff"
+      style="outValueLgCtr">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeCombatSpeedOff].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblTravelOn"
+      style="outValueLgCtr">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeTravelSpeedOn].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="lblTravelOff"
+      style="outValueLgCtr">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeTravelSpeedOff].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblVehFuelCap"
+      style="outNormLt">
+      <output_label>
+		<labeltext><![CDATA[
+			@text = "Fuel Capacity: " & field[vdeFuelCapacity].text
+			]]></labeltext>
+		</output_label>
+      </portal>
+
+    <portal
+      id="lblVehFuelRate"
+      style="outNormLt">
+      <output_label>
+		<labeltext><![CDATA[
+		  @text = "Fuel Rate: " & field[vdeFuelRate].text
+			
+	      ]]></labeltext>
+		</output_label>
+      </portal>
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  var colWidth as number
+	  
+	  myLeft = 2
+	  myWidth = width - 4
+	  colWidth = myWidth/3
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+	  portal[title].width = colWidth
+	  
+	  portal[titleOnRoad].top = 0
+	  portal[titleOnRoad].width = colWidth
+	  portal[titleOnRoad].left = portal[title].right
+	  portal[titleOffRoad].top = 0
+	  portal[titleOffRoad].width = colWidth
+	  portal[titleOffRoad].left = portal[titleOnRoad].right
+
+	  
+	  portal[titleCombat].top = portal[title].bottom + 20
+	  portal[titleCombat].width = colWidth
+	  portal[titleCombat].left = portal[title].left
+	  portal[lblCombatOn].top = portal[titleCombat].top
+	  portal[lblCombatOn].left = portal[titleOnRoad].left
+	  portal[lblCombatOn].width = colWidth
+	  portal[lblCombatOff].top = portal[titleCombat].top
+	  portal[lblCombatOff].left = portal[titleOffRoad].left
+	  portal[lblCombatOff].width = colWidth
+	  
+	  portal[titleTravel].top = portal[titleCombat].bottom + 20
+	  portal[titleTravel].width = colWidth
+	  portal[titleTravel].left = portal[title].left
+	  portal[lblTravelOn].top = portal[titleTravel].top
+	  portal[lblTravelOn].left = portal[titleOnRoad].left
+	  portal[lblTravelOn].width = colWidth
+	  portal[lblTravelOff].top = portal[titleTravel].top
+	  portal[lblTravelOff].left = portal[titleOffRoad].left
+	  portal[lblTravelOff].width = colWidth
+
+	  portal[lblVehFuelCap].top = portal[titleTravel].bottom + 20
+	  portal[lblVehFuelCap].left = myLeft
+	  portal[lblVehFuelCap].width = myWidth
+	  
+	  portal[lblVehFuelRate].top = portal[lblVehFuelCap].bottom + 5
+	  portal[lblVehFuelRate].left = myLeft
+	  portal[lblVehFuelRate].width = myWidth
+	  
+      height = portal[lblVehFuelRate].bottom + 5
+	  
+      ]]></position>
+    </template>		
+
+  <template
+    id="oVehCrew"
+    name="Vehicles Crew (Output)"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="outTitle">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Crew (" & field[vdeCrew].text & "+" & field[vdePassengers].text & ") / Cargo"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblDriver"
+      style="outNameSm">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Driver"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblDriver2"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	 
+
+    <portal
+      id="lblDriver3"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+
+    <portal
+      id="lblGunner"
+      style="outNameSm">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Gunners"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblGunner2"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	 
+
+    <portal
+      id="lblGunner3"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+
+    <portal
+      id="lblCmdr"
+      style="outNameSm">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Commander"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblCmdr2"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	 
+
+    <portal
+      id="lblCmdr3"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+	  
+    <portal
+      id="lblOther"
+      style="outNameSm">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Other Crew"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblOther2"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	 
+
+    <portal
+      id="lblOther3"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>		
+	  
+    <portal
+      id="lblPass"
+      style="outNameSm">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Passengers"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblPass2"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	 
+
+    <portal
+      id="lblPass3"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+
+    <portal
+      id="lblCargo1"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+		  
+    <portal
+      id="lblCargo2"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+	
+    <portal
+      id="lblCargo3"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+
+    <portal
+      id="lblCargo4"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = " "
+            ]]></labeltext>
+        </output_label>
+      </portal>	
+  
+    <portal
+      id="lblCargoCap"
+      style="outNameSm">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Cargo Capacity"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblCargoCapVal"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeCargoCapacity].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  var Col1 as number
+	  var Col2 as number
+	  var Col3 as Number
+	  var myHeight as Number
+	  
+	  myLeft = 2
+	  myWidth = width - 4
+	  myHeight = 62
+	  Col1 = 2
+	  Col2 = 255
+	  Col3 = 355
+
+      ~center all portals vertically
+      perform portal[lblDriver].centerhorz
+      perform portal[lblDriver2].centerhorz
+      perform portal[lblDriver3].centerhorz
+      perform portal[lblGunner].centerhorz
+      perform portal[lblGunner2].centerhorz
+      perform portal[lblGunner3].centerhorz
+      perform portal[lblCmdr].centerhorz
+      perform portal[lblCmdr2].centerhorz
+      perform portal[lblCmdr3].centerhorz
+      perform portal[lblOther].centerhorz
+      perform portal[lblOther2].centerhorz
+      perform portal[lblOther3].centerhorz
+      perform portal[lblPass].centerhorz
+      perform portal[lblPass2].centerhorz
+      perform portal[lblPass3].centerhorz
+      perform portal[lblCargo1].centerhorz
+      perform portal[lblCargo2].centerhorz
+      perform portal[lblCargo3].centerhorz
+      perform portal[lblCargo4].centerhorz
+	  
+      ~position our tallest portal at the top
+      portal[title].top = 0
+	  portal[title].left = Col1
+	  portal[title].width = myWidth
+
+	  portal[lblDriver].top = portal[title].bottom + 5
+	  portal[lblDriver].height = myHeight
+	  portal[lblDriver].left = Col1
+	  portal[lblDriver].width = Col2 - 5
+	  portal[lblDriver2].top = portal[lblDriver].top
+	  portal[lblDriver2].height = portal[lblDriver].height
+	  portal[lblDriver2].left = Col2
+	  portal[lblDriver2].width = 100
+	  portal[lblDriver3].top = portal[lblDriver].top
+	  portal[lblDriver3].height = portal[lblDriver].height
+	  portal[lblDriver3].left = Col3
+	  portal[lblDriver3].width = width - Col3 - 2
+	  
+	  perform portal[lblGunner].alignrel[ttob,lblDriver2,5]
+	  portal[lblGunner].height = myHeight
+	  portal[lblGunner].left = Col1
+	  portal[lblGunner].width = Col2 - 5
+	  portal[lblGunner2].top = portal[lblGunner].top
+	  portal[lblGunner2].height = portal[lblGunner].height
+	  portal[lblGunner2].left = Col2
+	  portal[lblGunner2].width = 100
+	  portal[lblGunner3].top = portal[lblGunner].top
+	  portal[lblGunner3].height = portal[lblGunner].height
+	  portal[lblGunner3].left = Col3
+	  portal[lblGunner3].width = width - Col3 - 2
+	  
+	  perform portal[lblCmdr].alignrel[ttob,lblGunner2,5]
+	  portal[lblCmdr].height = myHeight
+	  portal[lblCmdr].left = Col1
+	  portal[lblCmdr].width = Col2 - 5
+	  portal[lblCmdr2].top = portal[lblCmdr].top
+	  portal[lblCmdr2].height = portal[lblCmdr].height
+	  portal[lblCmdr2].left = Col2
+	  portal[lblCmdr2].width = 100
+	  portal[lblCmdr3].top = portal[lblCmdr].top
+	  portal[lblCmdr3].height = portal[lblCmdr].height
+	  portal[lblCmdr3].left = Col3
+	  portal[lblCmdr3].width = width - Col3 - 2
+	  
+	  perform portal[lblOther].alignrel[ttob,lblCmdr2,5]
+	  portal[lblOther].height = myHeight
+	  portal[lblOther].left = Col1
+	  portal[lblOther].width = Col2 - 5
+	  portal[lblOther2].top = portal[lblOther].top
+	  portal[lblOther2].height = portal[lblOther].height
+	  portal[lblOther2].left = Col2
+	  portal[lblOther2].width = 100
+	  portal[lblOther3].top = portal[lblOther].top
+	  portal[lblOther3].height = portal[lblOther].height
+	  portal[lblOther3].left = Col3
+	  portal[lblOther3].width = width - Col3 - 2
+	  
+	  perform portal[lblPass].alignrel[ttob,lblOther2,5]
+	  portal[lblPass].height = myHeight
+	  portal[lblPass].left = Col1
+	  portal[lblPass].width = Col2 - 5
+	  portal[lblPass2].top = portal[lblPass].top
+	  portal[lblPass2].height = portal[lblPass].height
+	  portal[lblPass2].left = Col2
+	  portal[lblPass2].width = 100
+	  portal[lblPass3].top = portal[lblPass].top
+	  portal[lblPass3].height = portal[lblPass].height
+	  portal[lblPass3].left = Col3
+	  portal[lblPass3].width = width - Col3 - 2
+
+	  perform portal[lblCargoCap].alignrel[ttob,lblPass2,5]
+	  portal[lblCargoCap].height = myHeight
+	  portal[lblCargoCap].left = Col1
+	  portal[lblCargoCap].width = Col3 - 5
+	  portal[lblCargoCapVal].top = portal[lblCargoCap].top
+	  portal[lblCargoCapVal].height = portal[lblCargoCap].height
+	  portal[lblCargoCapVal].left = Col3
+	  portal[lblCargoCapVal].width = 200
+	  
+	  perform portal[lblCargo1].alignrel[ttob,lblCargoCap,5]
+	  portal[lblCargo1].height = myHeight
+	  portal[lblCargo1].left = Col1
+	  portal[lblCargo1].width = myWidth - 1
+
+	  perform portal[lblCargo2].alignrel[ttob,lblCargo1,5]
+	  portal[lblCargo2].height = myHeight
+	  portal[lblCargo2].left = Col1
+	  portal[lblCargo2].width = myWidth - 1
+
+	  perform portal[lblCargo3].alignrel[ttob,lblCargo2,5]
+	  portal[lblCargo3].height = myHeight
+	  portal[lblCargo3].left = Col1
+	  portal[lblCargo3].width = myWidth - 1
+
+	  perform portal[lblCargo4].alignrel[ttob,lblCargo3,5]
+	  portal[lblCargo4].height = myHeight
+	  portal[lblCargo4].left = Col1
+	  portal[lblCargo4].width = myWidth - 1
+	  
+      height = portal[lblCargo4].bottom + 5
+	  
+      ]]></position>
+    </template>	
+
+  <template
+    id="oVehRelCap"
+    name="Vehicles Rel. / Cargo Cap. (Output)"
+    compset="VehicleDetails">
+
+    <portal
+      id="lblReliability"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Reliability"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblReliabilityVal"
+      style="outValBox">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeReliability].value
+            ]]></labeltext>
+        </output_label>
+      </portal>	 
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  var Col1 as number
+	  var Col2 as number
+	  var Col3 as Number
+	  var myHeight as Number
+	  
+	  myLeft = 2
+	  myWidth = width - 4
+	  myHeight = 62
+	  Col1 = 2
+	  Col2 = 250
+
+      ~center all portals vertically
+      perform portal[lblReliability].centerhorz
+      perform portal[lblReliabilityVal].centerhorz
+	  
+      ~position our tallest portal at the top
+
+
+	  portal[lblReliability].top = 0
+	  portal[lblReliability].height = myHeight
+	  portal[lblReliability].left = Col1
+	  portal[lblReliability].width = Col2 - 5
+	  portal[lblReliabilityVal].top = portal[lblReliability].top
+	  portal[lblReliabilityVal].height = portal[lblReliability].height
+	  portal[lblReliabilityVal].left = Col2
+	  portal[lblReliabilityVal].width = 100
+	  
+      height = portal[lblReliabilityVal].bottom + 5
+	  
+      ]]></position>
+    </template>	
+  <template
+    id="oVehArmor"
+    name="Vehicles Armor (Output)"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="outTitle">
+      <output_label
+        text="Armor Values">
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblFront"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Front"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblFrontGraph"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeArmorFrontG].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <portal
+      id="lblLeft"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Left"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblLeftGraph"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeArmorLeftG].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblRight"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Right"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblRightGraph"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeArmorRightG].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblBack"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = "Back"
+            ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="lblBackGraph"
+      style="outNameMed">
+      <output_label>
+        <labeltext><![CDATA[
+			@text = field[vdeArmorBackG].text
+            ]]></labeltext>
+        </output_label>
+      </portal>
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  var Col2 as number
+	  
+	  myLeft = 2
+	  myWidth = width - 4
+	  Col2 = 155
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+	  portal[title].left = 0
+	  portal[title].width = myWidth
+      portal[lblFront].top = portal[title].bottom + 5
+	  portal[lblFront].left = 0
+	  portal[lblFront].width = 150
+	  portal[lblFrontGraph].top = portal[lblFront].top
+	  portal[lblFrontGraph].left = Col2
+	  portal[lblFrontGraph].width = width - Col2
+	  
+      portal[lblLeft].top = portal[lblFront].bottom + 5
+	  portal[lblLeft].left = portal[lblFront].left
+	  portal[lblLeft].width = portal[lblFront].width
+	  portal[lblLeftGraph].top = portal[lblLeft].top
+	  portal[lblLeftGraph].left = Col2
+	  portal[lblLeftGraph].width = width - Col2
+	  
+      portal[lblRight].top = portal[lblLeft].bottom + 5
+	  portal[lblRight].left = portal[lblFront].left
+	  portal[lblRight].width = portal[lblFront].width
+	  portal[lblRightGraph].top = portal[lblRight].top
+	  portal[lblRightGraph].left = Col2
+	  portal[lblRightGraph].width = width - Col2
+	  
+      portal[lblBack].top = portal[lblRight].bottom + 5
+	  portal[lblBack].left = portal[lblFront].left
+	  portal[lblBack].width = portal[lblFront].width
+	  portal[lblBackGraph].top = portal[lblBack].top
+	  portal[lblBackGraph].left = Col2
+	  portal[lblBackGraph].width = width - Col2
+
+      height = portal[lblBack].bottom + 5
+	  
+      ]]></position>
+    </template>		
+  <layout
+    id="oTopLeft">
+    <portalref portal="oVehicleName"/>
+	<templateref template="oVehDetails" thing="mscVehDetails"/>
+    <position><![CDATA[
+	  perform portal[oVehicleName].autoplace[0]
+	  perform template[oVehDetails].autoplace[20]	  
+
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oTopMid">
+	<templateref template="oVehMovement" thing="mscVehDetails"/>
+    <position><![CDATA[
+	  perform template[oVehMovement].autoplace[0]  
+
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+
+  <layout
+    id="oTopRight">
+	<templateref template="oVehCrew" thing="mscVehDetails"/>
+    <position><![CDATA[
+	  perform template[oVehCrew].autoplace[0]  
+
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oMidLeft">
+	<templateref template="oVehArmor" thing="mscVehDetails"/>
+	<templateref template="oVehRelCap" thing="mscVehDetails"/>
+    <position><![CDATA[
+	  perform template[oVehArmor].autoplace[0]	 
+	  perform template[oVehRelCap].autoplace[10]	  
+
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>	
+  <!-- oVehArmory layout
+        This layout contains the tables of armor and weapons that appear in the
+        lefthand column of the character sheet. If the two tables are too large to
+        fit in the available space, they are truncated intelligently, with the
+        remaining gear appearing on a second spillover sheet.
+  -->
+  <layout
+    id="oVehArmory">
+    <portalref portal="oArmor"/>
+    <portalref portal="oVehicleWeapon"/>
+    <position><![CDATA[
+      ~position the armor table at the top and the weapon table beneath it
+      perform portal[oArmor].autoplace
+      perform portal[oVehicleWeapon].autoplace
+
+      ~if all equipment was shown, everything fits, so update height and we're done
+      if (portal[oVehicleWeapon].itemsleft + portal[oArmor].itemsleft = 0) then
+        height = autoextent
+        done
+        endif
+
+      ~if we got here, then there is more gear than will fit within the space, so
+      ~calculate the space that the two tables can use, including the gap between
+      var remain as number
+      remain = height - scenevalue[sectiongap]
+
+      ~if the height of both tables exceeds the available space, we need to divvy
+      ~up that space between the two tables
+      if (portal[oArmor].height + portal[oVehicleWeapon].height > remain) then
+
+        ~if the armor table is less than half the space, limit the weapon table
+        ~to whatever space is leftover
+        if (portal[oArmor].height < remain / 2) then
+          portal[oVehicleWeapon].height = remain - portal[oArmor].height
+
+        ~if the weapon table is less than half the space, limit the armor table
+        ~to whatever space is leftover
+        elseif (portal[oVehicleWeapon].height < remain / 2) then
+          portal[oArmor].height = remain - portal[oVehicleWeapon].height
+
+        ~otherwise, both tables are larger than half the space, so we need to limit
+        ~the height of both of them
+        ~NOTE! If we just divide the remaining amount by two and set both tables to
+        ~that height, we could end up with both tables being truncated by more than
+        ~a half item, with the combined height being a full item short of taking up
+        ~the full space. So we have to set the height of one table to half the
+        ~remaining space, then subtract that table's final height from our remaining
+        ~space, and finally set that as the height for the second table.
+        else
+          portal[oVehicleWeapon].height = remain / 2
+          portal[oArmor].height = remain - portal[oVehicleWeapon].height
+          endif
+        endif
+
+      ~position the weapon table beneath the armor; if no armor, omit it
+      if (portal[oArmor].itemsshown = 0) then
+        portal[oArmor].visible = 0
+      else
+        portal[oVehicleWeapon].top = portal[oArmor].bottom + scenevalue[sectiongap]
+        endif
+
+      ~our layout height is the extent of the bottommost portal
+      height = portal[oVehicleWeapon].bottom
+      ]]></position>
+    </layout>	
+	
+  <!-- vehicle1 sheet
+        This is the first page of the vehicle character sheet.
+  -->
+  <sheet
+    id="vehicle1"
+    name="Vehicle character sheet, page #1">
+    <layoutref layout="oTopLeft"/>
+    <layoutref layout="oTopMid"/>
+    <layoutref layout="oTopRight"/>
+    <layoutref layout="oMidLeft"/>
+    <layoutref layout="oAdjust"/>
+    <layoutref layout="oVehArmory"/>
+    <layoutref layout="oValidate"/>
+    <position><![CDATA[
+      ~set this global variable to 1 if you want the logos to be stacked; a value
+      ~of zero places them side-by-side
+      scenevalue[stacklogos] = 0
+
+      ~setup the gap to be used between the various sections of the character sheet
+      autogap = 40
+      scenevalue[sectiongap] = autogap
+
+      ~calculate the width of the two columns of the character sheet, leaving a
+      ~suitable center gap between them
+      var colwidth as number
+      colwidth = (width - 45) / 3
+
+      ~if the user wants to omit the validation report, the hide it and allow the
+      ~rest of the sheet to fill that space; otherwise, output the layout and the
+      ~top of the validation report establishes the bottom for all other output
+      var extent as number
+      if (hero.tagis[source.Validation] = 0) then
+        layout[oValidate].visible = 0
+        extent = height
+      else
+        layout[oValidate].width = width
+        perform layout[oValidate].render
+        layout[oValidate].top = height - layout[oValidate].height
+        extent = layout[oValidate].top - autogap
+        endif
+
+      ~position the topleft layout in the upper left corner
+      layout[oTopLeft].width = colwidth
+      layout[oTopLeft].height = extent - layout[oTopLeft].top
+      perform layout[oTopLeft].render
+
+      ~position the midleft layout next to the topleft
+      layout[oTopMid].width = colwidth
+	  layout[oTopMid].left = layout[oTopLeft].right + 15
+      layout[oTopMid].height = extent - layout[oTopMid].top
+      perform layout[oTopMid].render
+	  
+      ~position the topright layout next to the topmid
+      layout[oTopRight].width = colwidth
+	  layout[oTopRight].left = layout[oTopMid].right + 15
+      layout[oTopRight].height = extent - layout[oTopRight].top
+      perform layout[oTopRight].render
+ 
+      ~position the topright layout next to the topmid
+	  layout[oMidLeft].top = layout[oTopMid].bottom + 5
+      layout[oMidLeft].width = colwidth * 2
+	  layout[oMidLeft].left = layout[oTopLeft].left
+      layout[oMidLeft].height = extent - layout[oMidLeft].top
+      perform layout[oMidLeft].render
+	  
+      ~position the activated adjustments at the bottom on the left; this will
+      ~establish the remaining space available on the left for armor and weapons
+      layout[oAdjust].width = colwidth
+      perform layout[oAdjust].render
+      layout[oAdjust].top = extent - layout[oAdjust].height
+
+      ~position the armory layout within the remaining space on the left
+      layout[oVehArmory].width = width
+      layout[oVehArmory].top = layout[oMidLeft].bottom + autogap
+      layout[oVehArmory].height = layout[oAdjust].top - autogap - layout[oVehArmory].top
+      perform layout[oVehArmory].render
+
+      ]]></position>
+    </sheet>
+
+
+  </document>

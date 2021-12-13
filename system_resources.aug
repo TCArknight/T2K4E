@@ -1552,6 +1552,44 @@
         and warnings (typically in yellow) within the validation report
   -->
   <resource
+    id="resfull"
+    issystem="no"
+    isbuiltin="no">
+    <bitmap
+      bitmap="resource_full.bmp">
+      </bitmap>
+    </resource>
+
+  <resource
+    id="resempty"
+    issystem="no"
+    isbuiltin="no">
+    <bitmap
+      bitmap="resource_empty.bmp">
+      </bitmap>
+    </resource>
+	
+  <resource
+    id="outboxfull"
+    issystem="no"
+    isbuiltin="no">
+    <bitmap
+      bitmap="output_box_full.bmp">
+      </bitmap>
+    </resource>
+
+  <resource
+    id="outboxempty"
+    issystem="no"
+    isbuiltin="no">
+    <bitmap
+      bitmap="output_box.bmp">
+      </bitmap>
+    </resource>	
+  <!-- bitmaps used for bullets to identify validation errors (typically in red)
+        and warnings (typically in yellow) within the validation report
+  -->
+  <resource
     id="bullred"
     issystem="yes"
     isbuiltin="yes">

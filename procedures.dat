@@ -385,7 +385,11 @@
 
     ~report the Reliability rating of the weapon
     iteminfo &= "Reliability: " & field[grReliability].text & "{br}"
-
+	
+    if (tagis[component.WeapRange] <> 0) then
+      iteminfo &= "ROF: " & field[wpRateOfFire].text & "{br}"
+	  endif
+	
     ~report the damage rating of the weapon
     iteminfo &= "Damage Rating: " & field[wpDamage].text & "{br}"
 	
@@ -412,6 +416,12 @@
 
     ~report any special details about the weapon (omitting if there are none)
     var special as string
+	special = tagnames[BlastRating.?,", "]
+    special = splice(special,field[wpSpecial].text,", ")
+    if (empty(special) = 0) then
+      iteminfo &= "Blast Rating: " & special & "{br}"
+      endif
+	  
     special = tagnames[WeaponSpec.?,", "]
     special = splice(special,field[wpSpecial].text,", ")
     if (empty(special) = 0) then
@@ -419,6 +429,30 @@
       endif
     ]]></procedure>
 
+  <procedure id="InfoWeapAmmo" context="info"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var iteminfo as string
+
+    ~report any special details about the weapon (omitting if there are none)
+    var ammoexpr as string
+	var mystring as string
+	
+    if (tagcount[AmmoType.?] + tagcount[AmmoCatType.?] <> 0) then
+	  if (tagcount[AmmoType.?] <> 0) then
+        mystring = tagnames[AmmoType.?,", "]
+	  else
+		ammoexpr = tagids[AmmoCatType.?,"|"]
+			  
+		foreach thing in Ammunition where ammoexpr
+		  mystring = splice(mystring, eachthing.field[name].text, ", ")
+		  nexteach
+	    endif 
+	  iteminfo &= "Ammo: " & mystring & "{br}"
+    ~else
+    ~  iteminfo &= "Ammo: " & "--" & "{br}"
+      endif
+	  
+    ]]></procedure>
 
   <!-- Procedure InfoMelee
         Generate details specific to a melee weapon. The text is placed into the
@@ -447,6 +481,7 @@
   <procedure id="InfoRange" context="info"><![CDATA[
     ~declare variables that are used to communicate with our caller
     var iteminfo as string
+	
     ~start with generic details for all weapons
     call InfoWeapon
 
@@ -455,6 +490,7 @@
     iteminfo &= "Range: " & field[wpRange].text & "{br}"
 
     ~finish with generic special talents for all weapons
+	call InfoWeapAmmo
     call InfoWeapSp
 	
     ~if a pick, output any ammunition details
@@ -607,12 +643,18 @@
         assigned to the @text special symbol for the script.
   -->
   <procedure id="InfoHolder" scripttype="mouseinfo"><![CDATA[
-    var gear as string
-    gear = gearlist["; ", TRUE]
-    if (empty(gear) <> 0) then
-      gear = "Empty"
+    var myGear as string
+    myGear = gearlist["; ", TRUE]
+    if (empty(myGear) <> 0) then
+      myGear = "Empty"
+	else
+	  myGear = ""
+	  foreach gear in this
+        myGear = splice(myGear, eachpick.field[grStkName].text,", ")
+        nexteach 
       endif
-    @text = "{align left}This item is a container.{br}{br}Contents: " & gear
+    @text = "{align left}This item is a container.{br}{br}Contents: " & myGear
+	
     ]]></procedure>
 
   <!-- Procedure InfoAmmo
@@ -1045,13 +1087,34 @@
 	var myCost as number
 	var reloadCost as number
 
+    expr = "component.Ammunition & Equipment.AmmoCarried & " & myId
+	notify expr
+	
+    gizmo.childfound[AmmoHelper].field[AmmoExpr].text = expr
+	~gizmo.childfound[AmmoHelper].field[AmmoBaseCost].value = myCost
+	~gizmo.childfound[AmmoHelper].field[AmmoReloadCost].value = myCost * reloadCost
+	
+    ]]></procedure>
+
+  <!-- Script used to set up Ammo selection
+  -->
+  <procedure id="GetAmmoGear" context="pick"><![CDATA[
+    ~make sure there's a gizmo to travel to
+    doneif (isgizmo = 0)
+    
+    ~set up our tag expression for selecting appropriate Traits
+    var expr as string
+    var myId as string
+	var myCost as number
+	var reloadCost as number
+
     expr = "component.Ammunition & " & myId
 	
     gizmo.childfound[AmmoHelper].field[AmmoExpr].text = expr
-	gizmo.childfound[AmmoHelper].field[AmmoBaseCost].value = myCost
-	gizmo.childfound[AmmoHelper].field[AmmoReloadCost].value = myCost * reloadCost
-		
-    ]]></procedure>
+	~gizmo.childfound[AmmoHelper].field[AmmoBaseCost].value = myCost
+	~gizmo.childfound[AmmoHelper].field[AmmoReloadCost].value = myCost * reloadCost
+	
+    ]]></procedure>	
 	
   <procedure id="DieRoll" scripttype="none"><![CDATA[
     ~declare variables that are used to communicate with our caller

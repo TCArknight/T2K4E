@@ -615,6 +615,68 @@
       ]]></position>
 
     </template>	
+	
+  <template
+    id="vbaVehWeapons"
+    name="Vehicle Weapons"
+    compset="VehicleDetails">
+
+    <portal
+      id="title"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Weapons">
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehWpnMain"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Main Weapon: " & field[vdeMainWeapon].text
+            ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="lblVehWpnSec"
+      style="lblLeft">
+      <label>
+        <labeltext><![CDATA[
+			@text = "Secondary Weapon(s): " & field[vdeSecWeapon].text
+            ]]></labeltext>
+        </label>
+      </portal>  
+	  
+    <position><![CDATA[
+	  var myWidth as number
+	  var myLeft as number
+	  myLeft = 2
+	  myWidth = width/2 - 4
+
+
+      ~position our tallest portal at the top
+      portal[title].top = 0
+      portal[title].left = myLeft
+	  portal[title].width = width
+
+      ~center the other portals vertically
+      portal[lblVehWpnMain].left = myLeft
+	  portal[lblVehWpnMain].width = width
+      portal[lblVehWpnMain].top = portal[title].bottom + 5
+	  	  
+	  portal[lblVehWpnSec].left = myLeft
+	  portal[lblVehWpnSec].width = width
+      portal[lblVehWpnSec].top = portal[lblVehWpnMain].bottom + 5
+	  	  
+      height = portal[lblVehWpnSec].bottom + 5
+	  
+      ]]></position>
+
+    </template>	
+	
   <!-- basics layout
         This layout orchestrates the display of all various visual elements that
         comprise the Basics tab. We have titles above the attributes and skills,
@@ -648,15 +710,17 @@
     <templateref template="vbaDetails" thing="mscVehDetails" />
     <templateref template="vbaVehFuel" thing="mscVehDetails" />
     <templateref template="vbaVehCrew" thing="mscVehDetails" />
+    <templateref template="vbaVehWeapons" thing="mscVehDetails" />
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
 	  perform template[vbaDetails].autoplace
 	  perform template[vbaVehFuel].autoplace
 	  perform template[vbaVehCrew].autoplace
+	  perform template[vbaVehWeapons].autoplace
 	  
       ~figure out the total height we need for the tab
-	  height = template[vbaVehCrew].bottom
+	  height = template[vbaVehWeapons].bottom
 	  
       ]]></position>
 

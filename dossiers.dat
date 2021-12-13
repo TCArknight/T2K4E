@@ -54,4 +54,20 @@
       </dossier_sheet>
     </dossier>
 
+  <!-- Vehicle character sheet
+        This is the default character sheet for vehicles, consisting of two pages.
+        The first page includes all the core information for the character and will
+        usually be all that is needed. The second page provides a place for any info
+        that didn't fit on the first page to be output (e.g. too many weapons). The
+        sheet contents are defined in the files "sheet_vehicle1.dat" and
+        "sheet_vehicle2.dat".
+  -->
+  <dossier
+    id="vehicle"
+    name="Vehicle Character Sheet">
+    <dossier_sheet
+      grouping="AtTop">
+      <sheetref sheet="vehicle1"/>
+      </dossier_sheet>
+    </dossier>
   </document>

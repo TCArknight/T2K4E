@@ -1009,6 +1009,13 @@
       helptext="Specify what Type of vehicle this is.">
       <it_tagpick group="VehicleMove" tag="?" require="yes" deftag="Wheeled"/>
       </inputthing>
+
+
+    <inputthing
+      name="Fuel"
+      helptext="Fuel Details for the Vehicle.">
+      <it_separator/>
+      </inputthing>	  
 	<inputthing
       name="Fuel Type"
       helptext="Specify what type of fuel this vehicle is designed for.">
@@ -1018,6 +1025,16 @@
       name="Fuel In Use"
       helptext="Specify what type of fuel this vehicle is currently using.">
       <it_tagpick group="VehicleFuelUsed" tag="?" require="yes" deftag="Gas"/>
+      </inputthing>
+    <inputthing
+      name="Fuel Capacity"
+      helptext="Fuel Capacity of the vehicle.">
+      <it_field field="vebFuelCapacity"/>
+      </inputthing>
+    <inputthing
+      name="Fuel Consumption"
+      helptext="Fuel Capacity of the vehicle.">
+      <it_field field="vebFuelConsumption"/>
       </inputthing>
 	  
     <inputthing
@@ -1030,6 +1047,22 @@
       name="Cargo Capacity"
       helptext="How much Cargo the vehicle can carry.">
       <it_field field="vebCargoCapacity"/>
+      </inputthing>
+
+    <inputthing
+      name="Personnel"
+      helptext="Number of Crew and Passengers for the Vehicle.">
+      <it_separator/>
+      </inputthing>  
+    <inputthing
+      name="Crew"
+      helptext="Specify number of crew for the vehicle. Default is 1 if no value supplied.">
+      <it_field field="vebCrew"/>
+      </inputthing> 
+    <inputthing
+      name="Passengers"
+      helptext="Specify number of passengers for the vehicle.">
+      <it_field field="vebPassengers"/>
       </inputthing>
 	  
     <inputthing
@@ -1091,13 +1124,13 @@
       </inputthing>  
     <inputthing
       name="Main Weapon"
-      helptext="Specify any tags for the main weapon(s) of the vehicle.">
-      <it_taglist group="VehicleWpnMain" tag="?" />
+      helptext="Specify summary of the main weapon(s) of the vehicle.">
+      <it_field field="vebMainWeapon"/>
       </inputthing> 
     <inputthing
       name="Secondary Weapon"
-      helptext="Specify any tags for the secondary weapon(s) of the vehicle.">
-      <it_taglist group="VehicleWpnSec" tag="?" />
+      helptext="Specify summary the secondary weapon(s) of the vehicle.">
+      <it_field field="vebSecWeapon"/>
       </inputthing>
 	  
     <inputthing>

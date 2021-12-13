@@ -247,7 +247,15 @@
 		
 		~output Carrying Capacity
         append @boldon & "Carrying " & @boldoff & @newline
-        append @boldon & "-- Combat: " & @boldoff & herofield[acCarryCombat].text & " (Max: " & herofield[acCarryCombatMax].text & ")" & @newline
+        append @boldon & "-- Combat: " & @boldoff & herofield[acCarryCombat].text & " (Max: "
+		
+		if (hero.tagis[CharType.Vehicle] <> 0) then
+		  append hero.childfound[mscVehDetails].field[vdeCargoCapacity].text
+		else	  
+		  append herofield[acCarryCombatMax].text
+		  endif
+		append ")" & @newline
+		
 		if (hero.tagis[Helper.HasBackpack] <> 0) then
           append @boldon & "-- Backpack: " & @boldoff & herofield[acCarryBack].text & " (Max: " & herofield[acCarryBackMax].text & ")" & @newline
 		  endif

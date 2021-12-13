@@ -320,6 +320,7 @@
     <value id="Natural" name="Natural weapon/armor/etc."/>        <!-- Identifies equipment that is a natural form and exempt from various behaviors -->
     <value id="TinyItem" name="Tiny Item"/>                       <!-- Identifies equipment that is of negligable weight that don't affect encumbrance -->
     <value id="StackArmor" name="Stack Armor"/>                   <!-- Identifies armor that stacks with other armor -->
+    <value id="AmmoCarried" name="Ammo Carried"/>                 <!-- Identifies ammunition carried by the hero -->
     </group>
 
   <!-- MaxRange group - 
@@ -427,9 +428,31 @@
     <value id="LMG" name="Light Machinegun" order="30"/>
     <value id="HMG" name="Heavy Machinegun" order="34" />
     <value id="Mortar" name="Mortar" order="35"/>
+    <value id="Mortar60" name="60mm Mortar" order="35"/>
+    <value id="Mortar81" name="81mm Mortar" order="35"/>
+    <value id="Mortar82" name="82mm Mortar" order="35"/>
+    <value id="Mortar42" name="4.2in Mortar" order="35"/>
+    <value id="Mortar120" name="120mm Mortar" order="35"/>
     <value id="Howitzer" name="Howitzer" order="40"/>
+    <value id="Howitzer105" name="105mm Howitzer" order="40"/>
+    <value id="Howitzer122" name="122mm Howitzer" order="40"/>
+    <value id="Howitzer152" name="152mm Howitzer" order="40"/>
+    <value id="Howitzer155" name="155mm Howitzer" order="40"/>
+    <value id="Howitzer203" name="203mm Howitzer" order="40"/>
     <value id="ATGM" name="Anti-Tank Guided Missile" order="45" />
-    <value id="VehicleCannon" name="Vehicle CAnnon" order="50" />
+    <value id="VehicleCannon" name="Vehicle Cannon" order="50" />
+    <value id="VehicleCannon20" name="20mm Cannon" order="50" />
+    <value id="VehicleCannon23" name="23mm Cannon" order="50" />
+    <value id="VehicleCannon25" name="25mm Cannon" order="50" />
+    <value id="VehicleCannon30" name="30mm Cannon" order="50" />
+    <value id="VehicleCannon40" name="40mm Cannon" order="50" />
+    <value id="VehicleCannon73" name="73mm Cannon" order="50" />
+    <value id="VehicleCannon762" name="76.2mm Cannon" order="50" />
+    <value id="VehicleCannon100" name="100mm Cannon" order="50" />
+    <value id="VehicleCannon105" name="105mm Cannon" order="50" />
+    <value id="VehicleCannon115" name="115mm Cannon" order="50" />
+    <value id="VehicleCannon120" name="120mm Cannon" order="50" />
+    <value id="VehicleCannon125" name="125mm Cannon" order="50" />
     </group>
 	
   <group
@@ -769,9 +792,9 @@
     <value id="Pickup" name="Pickup Truck" order="40"/>
     <value id="LgtTruck" name="Light Truck" order="45"/>
     <value id="HvyTruck" name="Heavy Truck" order="50"/>
-    <value id="APC" name="Armored Personnel Carrier" order="51"/>
-    <value id="IFV" name="Infantry Fighting Vehicle" order="52"/>
-    <value id="MBT" name="Main Battle Tank" order="53"/>
+    <value id="APC" name="Armored Personnel Carrier" abbrev="APC" order="51"/>
+    <value id="IFV" name="Infantry Fighting Vehicle" abbrev="IFV" order="52"/>
+    <value id="MBT" name="Main Battle Tank" abbrev="MBT" order="53"/>
     <value id="Bus" order="55"/>
     <value id="Rowboat" order="60"/>
     <value id="SmSail" name="Small Sailing Boat" order="65"/>

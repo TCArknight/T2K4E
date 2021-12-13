@@ -26,16 +26,70 @@
     <fieldval field="vebArmorBack" value="3"/>
     <fieldval field="vebCargoCapacity" value="250"/>
     <fieldval field="vebPassengers" value="4"/>
+    <fieldval field="vebMainWeapon" value="M2HB (PG)"/>
+    <fieldval field="vebSecWeapon" value="R"/>
     <usesource source="srcT2K"/>
-    <tag group="VehicleType" tag="4WDCar"/>
-    <tag group="VehicleMove" tag="Wheeled"/>
     <tag group="VehicleFuel" tag="Gas"/>
     <tag group="VehicleFuelUsed" tag="Gas"/>
     <tag group="VehicleWpnMain" tag="PintleGun"/>
     <tag group="VehicleWpnSec" tag="Radio"/>
     <tag group="VehicleCat" tag="USMil"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleType" tag="4WDCar"/>
     <bootstrap thing="wpT2KM2HB">
       <autotag group="VehicleWpnMain" tag="PintleGun"/>
       </bootstrap>
+    </thing>
+  <thing id="vebM2M3Bradley" name="Bradley M2/M3" description="The Bradley was the first US Infantry Fighting Vehicle and was adopted in the early 1980s to fight alongside the M1 Abrams MBT and in response to the successful Soviet BMP IFV. In addition to its 25mm chain gun and two TOW missiles, the vehicle has six M231 firing port weapons built into the hull to allow those inside to provide defensive fire when traveling mounted." compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="9"/>
+    <fieldval field="vebTravelSpeedOff" value="8"/>
+    <fieldval field="vebArmorFront" value="5"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebReliability" value="5"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebPassengers" value="7"/>
+    <fieldval field="vebMainWeapon" value="25mm (T), FCS, Tm"/>
+    <fieldval field="vebSecWeapon" value="M240B, (C) TOW x2 (C), 6xM4A1, SD, R"/>
+    <fieldval field="vebFuelCapacity" value="360"/>
+    <fieldval field="vebFuelConsumption" value="12"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleWpnMain" tag="FCS"/>
+    <tag group="VehicleWpnMain" tag="Thermal"/>
+    <tag group="VehicleWpnSec" tag="Radio"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleCat" tag="USMil"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KC25mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      <autotag group="VehicleWpnMain" tag="FCS"/>
+      <autotag group="VehicleWpnMain" tag="Thermal"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KBGM71TOW">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      <assignval field="stackQty" value="2"/>
+      <assignval field="livename" value="TOW"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    </thing>
+  <thing id="vehM2M3Bradley" name="Bradley M2/M3" compset="Vehicle">
+    <fieldval field="grCost" value="250000"/>
+    <usesource source="srcT2K"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebM2M3Bradley"></bootstrap>
+      </minion>
     </thing>
   </document>

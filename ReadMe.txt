@@ -1,6 +1,8 @@
 12/01/21
 Fixed - 
 * Hide archetype creation tab when vehicle is the Focus
+* Simplified Ammo Type display for Mortar, Cannon, Howitzer ammo 
+  - All mortar, cannons, howitzers use AmmoCatType as basis for what can be loaded
 
 New - 
 * Vehicle Editor tab

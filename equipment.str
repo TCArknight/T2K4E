@@ -18,6 +18,7 @@
     ispublic="no"
     addbehavior="never">
 	  
+	
     <!-- Stack name field - name is prefixed with the quantity if not a value of one,
           which is important for stackable items that can have varying quantities
     -->
@@ -38,7 +39,13 @@
         else
           name = field[name].text
           endif
-
+        
+		if (length(name) > 15) then
+		  if (field[shortname].isempty = 0) then
+		    name = field[shortname].text 
+            endif
+          endif			
+		  
         ~if we're not stackable or if our quantity is one, just use the simple name
         if (stackable = 0) then
           @text = name
@@ -396,18 +403,48 @@
 	  </field>
  
     <field
+      id="vebMainWeapon"
+      name="Main Weapon"
+      maxlength="150"
+      defvalue="-"
+      type="derived">
+	  </field>
+ 
+    <field
+      id="vebSecWeapon"
+      name="Secondary Weapon"
+      maxlength="150"
+      defvalue="-"
+      type="derived">
+	  </field>
+ 
+    <field
       id="vebArmorFront"
       name="Armor (Front)"
       minvalue="0"
       defvalue="0"
       type="derived">
 	  </field>
- 
+  
+    <field
+      id="vebArmorFrontG"
+      name="Armor (Front)"
+	  maxlength="450"
+      type="derived">
+	  </field>
+	  
     <field
       id="vebArmorLeft"
       name="Armor (Left)"
       minvalue="0"
       defvalue="0"
+      type="derived">
+	  </field>
+  
+    <field
+      id="vebArmorLeftG"
+      name="Armor (Left)"
+	  maxlength="450"
       type="derived">
 	  </field>
  
@@ -418,6 +455,13 @@
       defvalue="0"
       type="derived">
 	  </field>
+  
+    <field
+      id="vebArmorRightG"
+      name="Armor (Right)"
+	  maxlength="450"
+      type="derived">
+	  </field>
  
     <field
       id="vebArmorBack"
@@ -426,8 +470,17 @@
       defvalue="0"
       type="derived">
 	  </field>
+  
+    <field
+      id="vebArmorBackG"
+      name="Armor (Back)"
+	  maxlength="450"
+      type="derived">
+	  </field>
    	  
     <eval index="1" phase="Initialize" priority="4500"><![CDATA[
+	  var tempStr as string
+	  
 	  trustme
       ~initialize Attributes
 	  #setvehicle[attrVehRel] = field[vebReliability].value
@@ -441,7 +494,14 @@
 	  doneif (state.isfocus = 0)
 	  
 	  focus.field[vdeCategory].text = tagnames[VehicleCat.?,"/"]
-	  focus.field[vdeType].text = tagnames[VehicleType.?,"/"]
+	  
+	  tempStr = tagnames[VehicleType.?,"/"]
+	  if (length(tempStr) > 15) then
+	    focus.field[vdeType].text = tagabbrevs[VehicleType.?,"/"]
+	  else
+	    focus.field[vdeType].text = tagnames[VehicleType.?,"/"]
+	    endif
+	  
 	  focus.field[vdeMovement].text = tagnames[VehicleMove.?,"/"]
 	  focus.field[vdeReliability].value = field[vebReliability].value
 	  focus.field[vdeCombatSpeedOn].value = field[vebCombatSpeedOn].value
@@ -453,7 +513,7 @@
 	  focus.field[vdeFuelCapacity].value = field[vebFuelCapacity].value
 	  focus.field[vdeFuelRate].value = field[vebFuelConsumption].value
 	  
-	  focus.field[vdeArmorFront].value = field[vebArmorFront].value
+	  focus.field[vdeArmorFront].value = field[vebArmorFront].value 
 	  focus.field[vdeArmorLeft].value = field[vebArmorLeft].value
 	  focus.field[vdeArmorRight].value = field[vebArmorRight].value
 	  focus.field[vdeArmorBack].value = field[vebArmorBack].value
@@ -461,6 +521,76 @@
 	  focus.field[vdeCrew].value = field[vebCrew].value
 	  focus.field[vdePassengers].value = field[vebPassengers].value
 	  focus.field[vdeCargoCapacity].value = field[vebCargoCapacity].value
+	  
+	  focus.field[vdeMainWeapon].text = field[vebMainWeapon].text
+	  focus.field[vdeSecWeapon].text = field[vebSecWeapon].text
+
+       ]]></eval>  	  
+    <eval index="2" phase="Final" priority="10000"><![CDATA[
+	  var tempStr as string
+	  var tempVal as number
+	  
+	  trustme
+	  perform hero.findchild[VehicleDetails].setfocus
+	  doneif (state.isfocus = 0)
+	  
+      ~ Armor Graphic
+      tempStr = ""
+      tempVal = field[vebArmorFront].value
+	  
+	  var i as number
+	  for i = 1 to 12
+	    if (i <= tempVal) then
+		  tempStr &= "{bmpscale 2 output_box}"
+	    else
+		  tempStr &= "{bmpscale 2 output_box_full}"
+		  endif
+	    next 
+		
+      field[vebArmorFrontG].text = tempStr
+	  focus.field[vdeArmorFrontG].text = tempStr
+	  
+      tempStr = ""
+      tempVal = field[vebArmorLeft].value
+
+	  for i = 1 to 12
+	    if (i <= tempVal) then
+		  tempStr &= "{bmpscale 2 output_box}"
+	    else
+		  tempStr &= "{bmpscale 2 output_box_full}"
+		  endif
+	    next 
+		
+      field[vebArmorLeftG].text = tempStr
+	  focus.field[vdeArmorLeftG].text = tempStr
+
+      tempStr = ""
+      tempVal = field[vebArmorRight].value
+
+	  for i = 1 to 12
+	    if (i <= tempVal) then
+		  tempStr &= "{bmpscale 2 output_box}"
+	    else
+		  tempStr &= "{bmpscale 2 output_box_full}"
+		  endif
+	    next 
+		
+      field[vebArmorRightG].text = tempStr
+	  focus.field[vdeArmorRightG].text = tempStr
+
+      tempStr = ""
+      tempVal = field[vebArmorBack].value
+	  
+	  for i = 1 to 12
+	    if (i <= tempVal) then
+		  tempStr &= "{bmpscale 2 output_box}"
+	    else
+		  tempStr &= "{bmpscale 2 output_box_full}"
+		  endif
+	    next 
+		
+      field[vebArmorBackG].text = tempStr
+	  focus.field[vdeArmorBackG].text = tempStr
 	  
       ]]></eval>
 	  
@@ -559,6 +689,7 @@
       name="Crew"
       type="derived">
 	  </field>
+	  
     <field
       id="vdePassengers"
       name="Passengers"
@@ -566,10 +697,31 @@
 	  </field>
 	  
     <field
+      id="vdeMainWeapon"
+      name="Crew"
+      type="derived"
+	  maxlength="150">
+	  </field>
+	  
+    <field
+      id="vdeSecWeapon"
+      name="Passengers"
+      type="derived"
+	  maxlength="150">
+	  </field>
+	  
+    <field
       id="vdeArmorFront"
       name="Armor (Front)"
       type="derived">
 	  </field>	
+  
+    <field
+      id="vdeArmorFrontG"
+      name="Armor (Front) Graphic"
+	  maxlength="450"
+      type="derived">
+	  </field>
 	  
     <field
       id="vdeArmorLeft"
@@ -578,16 +730,35 @@
 	  </field>	
 	  
     <field
+      id="vdeArmorLeftG"
+      name="Armor (Left) Graphic"
+	  maxlength="450"
+      type="derived">
+	  </field>
+	  
+    <field
       id="vdeArmorRight"
       name="Armor (Right)"
       type="derived">
 	  </field>	
+    <field
+      id="vdeArmorRightG"
+      name="Armor (Right) Graphic"
+	  maxlength="450"
+      type="derived">
+	  </field>
 	  
     <field
       id="vdeArmorBack"
       name="Armor (Back)"
       type="derived">
 	  </field>	
+    <field
+      id="vdeArmorBackG"
+      name="Armor (Back) Graphic"
+	  maxlength="450"
+      type="derived">
+	  </field>
 	  
     </component>
 	
@@ -1080,6 +1251,10 @@
       ]]></eval>
 	  
     <eval index="2" phase="Final" priority="1000"><![CDATA[
+	  if (empty(field[wpArmorRating].text) <> 0) then
+	    field[wpArmorRating].text = "0"
+		endif
+		
       if (tagis[Helper.DamageByAmmo] <> 0) then
 	    field[wpDamage].text = "*"
 	    field[wpCrit].text = "*"
@@ -1087,7 +1262,7 @@
       ]]></eval>	
 	  
     <!-- Assign any derived special notes to the appropriate field -->
-    <eval index="3" phase="Render" priority="1000"><![CDATA[
+    <eval index="3" phase="Render" priority="5500"><![CDATA[
       var special as string
 
       ~report the weapon as two-handed (if any)
@@ -1095,16 +1270,30 @@
         special = splice(special,"Requires two hands",", ")
         endif
 
-      ~append any special attributes appropriately (if any)
-      var attribs as string
-      attribs = tagnames[WeaponSpec.?,", "]
-      special = splice(special,attribs,", ")
-
       ~append any vehicle weapon attributes appropriately (if any)
       var mainwpn as string
       mainwpn = tagnames[VehicleWpnMain.?,", "]
       special = splice(special,mainwpn,", ")
 	  
+      ~append any vehicle weapon attributes appropriately (if any)
+      var secwpn as string
+      secwpn = tagnames[VehicleWpnSec.?,", "]
+      special = splice(special,secwpn,", ")	
+	  
+      ~append any special attributes appropriately (if any)
+      var attribs as string
+      attribs = tagnames[WeaponSpec.?,", "]
+      special = splice(special,attribs,", ")
+
+      ~assign any appropriate special notes to the "special" variable here
+	  if (tagis[component.WeapRange] <> 0) then
+	    var blast as string
+	    blast = "Blast: " & field[wpBlast].text
+        if (tagis[BlastRating.?] <> 0) then
+	      special = splice(special,blast,", ") 
+		  endif
+		endif
+		
       ~append any special details for this weapon
       special = splice(special,field[wpSpecial].text,", ")
 
@@ -1218,11 +1407,7 @@
       id="wpBlast"
       name="Blast Rating"
       type="derived"
-	  maxlength="15"
-	  maxfinal="15">
-	  <finalize><![CDATA[
-        @text = tagnames[BlastRating.?,","]
-        ]]></finalize>
+	  maxlength="1">
       </field>
 	  
     <!-- All ranged weapons get the same tag for sorting purposes -->
@@ -1263,32 +1448,29 @@
 	  field[wpNetAtk].text = AttPlusSki
 	  
       ]]></eval>
-
-    <!-- Prepend any derived special notes to the appropriate field -->
-    <eval index="2" phase="Render" priority="2000"><![CDATA[
-      var special as string
-
-      ~assign any appropriate special notes to the "special" variable here
-      if (tagis[BlastRating.?] <> 0) then
-	    special = "Blast: " & field[wpBlast].text
-		endif
-		
-      ~prepend any existing special details with the notes for this weapon
-      field[wpNotes].text = splice(special,field[wpNotes].text,", ")
-      ]]></eval>
 	  
     <!-- Ammo Type script, generate the tagexpr relevant for our modification gizmo -->
     <eval index="2" phase="Render" priority="5000" name="AmmoType Tag Expression generate"><![CDATA[
+	  ~ calculate Blast value here due to the possibility of Ammo affecting Blast value
+	  field[wpBlast].text = tagnames[BlastRating.?,","]
+	  if (empty(field[wpBlast].text) <> 0) then
+	    field[wpBlast].text = "-"
+		endif
+	
 	  var myId as string
 	  var myCost as number
 	  var reloadCost as number
 	  
       myId = tagids[AmmoType.?," & "]
+	  if (empty(myId) <> 0) then
+        myId = tagids[AmmoCatType.?," & "]
+	    endif
 	  myCost = field[grCost].value
 	  reloadCost = field[wpReloadCost].value
   
       call SetAmmoExpr
       ]]></eval>
+	  
     </component>
 
 
@@ -1727,7 +1909,14 @@
 	  field[grCost].value = myCost
 	  parent.field[grTotalCost].value += myCost * field[stackQty].value
       ]]></eval>
-
+	  
+    <eval index="4" phase="Initialize" priority="1000"><![CDATA[
+	  if (ispick <> 0) then
+	    ~ assign carried tag to the ammo pick
+	    perform assign[Equipment.AmmoCarried]
+		endif
+		
+      ]]></eval>
     <!-- Add the quantities from the other pick into this one -->
     <merge><![CDATA[
       field[trkMax].value += altpick.field[trkMax].value

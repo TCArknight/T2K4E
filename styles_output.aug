@@ -164,6 +164,15 @@
       </style_output>
     </style>
 
+  <!-- large value centered for output -->
+  <style
+    id="outValueLgCtr">
+    <style_output
+      textcolor="000000"
+      font="ofntlarge"
+      alignment="center">
+      </style_output>
+    </style>
   <!-- value-aligned for output -->
   <style
     id="outNormRt">

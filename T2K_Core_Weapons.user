@@ -219,10 +219,11 @@
     <fieldval field="grWeight" value=".25"/>
     <fieldval field="grCost" value="30"/>
     <fieldval field="grReliability" value="5"/>
+    <fieldval field="shortname" value="Grenade (Frag)"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponCat" tag="Grenade"/>
     <tag group="WeaponType" tag="Thrown"/>
     <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="Grenade"/>
     </thing>
   <thing id="wpT2KGrenadeAT" name="Grenade (Anti-Tank)" compset="Ranged">
     <fieldval field="wpDamage" value="6"/>
@@ -233,10 +234,11 @@
     <fieldval field="grCost" value="50"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="shortname" value="Grenade (AT)"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="Thrown"/>
     <tag group="BlastRating" tag="D"/>
     <tag group="WeaponCat" tag="Grenade"/>
+    <tag group="WeaponType" tag="Thrown"/>
     </thing>
   <thing id="wpT2KGrenadeImp" name="Grenade (Improvised)" compset="Ranged">
     <fieldval field="wpDamage" value="2"/>
@@ -247,10 +249,11 @@
     <fieldval field="grCost" value="25"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="shortname" value="Grenade (Imp.)"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="Thrown"/>
     <tag group="BlastRating" tag="C"/>
     <tag group="WeaponCat" tag="Grenade"/>
+    <tag group="WeaponType" tag="Thrown"/>
     </thing>
   <thing id="amT2KCal3006" name=".30-06" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -833,7 +836,7 @@ AmmoType.amT2K762x54</holdlimit>
     <holdlimit>AmmoType.amT2KCal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="amT2KHuntArrow" name="Hunting Arrows" compset="Ammunition">
+  <thing id="amT2KHuntArrow" name="Hunting Arrows" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+1"/>
@@ -843,7 +846,7 @@ AmmoType.amT2K762x54</holdlimit>
     <tag group="AmmoCat" tag="Arrow"/>
     <tag group="AmmoCatType" tag="ArrowsBolts"/>
     </thing>
-  <thing id="amT2KImpArrow" name="Improvised Arrows" compset="Ammunition">
+  <thing id="amT2KImpArrow" name="Improvised Arrows" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+1"/>
@@ -852,7 +855,7 @@ AmmoType.amT2K762x54</holdlimit>
     <tag group="AmmoCat" tag="Arrow"/>
     <tag group="AmmoCatType" tag="ArrowsBolts"/>
     </thing>
-  <thing id="amT2KCrossbowBolt" name="Crossbow Bolt" compset="Ammunition">
+  <thing id="amT2KCrossbowBolt" name="Crossbow Bolt" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>

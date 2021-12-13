@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="amT2K22LR" name=".22 LR" compset="Ammunition">
+  <thing id="amT2K22LR" name=".22 LR" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -10,7 +10,7 @@
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="amT2K380ACP" name=".380 ACP" compset="Ammunition">
+  <thing id="amT2K380ACP" name=".380 ACP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="2"/>
@@ -20,7 +20,7 @@
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="amT2K44Magnum" name=".44 Magnum" compset="Ammunition">
+  <thing id="amT2K44Magnum" name=".44 Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+1"/>
@@ -30,7 +30,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     </thing>
-  <thing id="amT2K32ACP" name=".32 ACP" compset="Ammunition">
+  <thing id="amT2K32ACP" name=".32 ACP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -40,7 +40,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     </thing>
-  <thing id="amT2K460WthrBy" name=".460 Weatherby" compset="Ammunition">
+  <thing id="amT2K460WthrBy" name=".460 Weatherby" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -50,7 +50,7 @@
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="am447x133Cls" name="4.47x33 Cls" compset="Ammunition">
+  <thing id="am447x133Cls" name="4.47x33 Cls" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="-1"/>
@@ -60,7 +60,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     </thing>
-  <thing id="am762x25T" name="7.62x25mm Tokarev" compset="Ammunition">
+  <thing id="am762x25T" name="7.62x25mm Tokarev" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+2"/>
@@ -70,7 +70,7 @@
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     </thing>
-  <thing id="amT2K8mmM" name="7.62x57mm Mauser" compset="Ammunition">
+  <thing id="amT2K8mmM" name="7.62x57mm Mauser" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -80,7 +80,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     </thing>
-  <thing id="amT2K44AutoMag" name=".44 Auto-Mag" compset="Ammunition">
+  <thing id="amT2K44AutoMag" name=".44 Auto-Mag" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="2"/>
     <fieldval field="amArmorRating" value="+1"/>
@@ -90,7 +90,7 @@
     <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol" name="Pistol/SMG" abbrev="Pistol/SMG"/>
     </thing>
-  <thing id="amT2K357Magnum" name=".357 Magnum" compset="Ammunition">
+  <thing id="amT2K357Magnum" name=".357 Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="+1"/>
@@ -100,7 +100,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     </thing>
-  <thing id="amT2K41mag" name=".41 magnum" compset="Ammunition">
+  <thing id="amT2K41mag" name=".41 magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="+1"/>
@@ -110,7 +110,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     </thing>
-  <thing id="amT2K30Cal" name=".30" compset="Ammunition">
+  <thing id="amT2K30Cal" name=".30" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
     <fieldval field="amCrit" value="4"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -131,7 +131,7 @@
     <tag group="AmmoCatType" tag="Rifle" name="Rifle" abbrev="Rifle"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
     </thing>
-  <thing id="amT2K375HHM" name=".375 H&amp;H Magnum" compset="Ammunition">
+  <thing id="amT2K375HHM" name=".375 H&amp;H Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
@@ -141,7 +141,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     </thing>
-  <thing id="amT2K458WBM" name=".458 Winchester Belted Magnum" compset="Ammunition">
+  <thing id="amT2K458WBM" name=".458 Winchester Belted Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="-1"/>

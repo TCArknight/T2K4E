@@ -51,5 +51,37 @@
     <tag group="thing" tag="holder_top"/>
     <tag group="Print" tag="NoPrint"/>
     </thing>
-	
+
+  <thing id="eqT2KFCS" name="Fire Control System" compset="Equipment">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+  <thing id="eqT2KInfrared" name="Infrared" compset="Equipment">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+  <thing id="eqT2KThermal" name="Thermal" compset="Equipment">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+
+  <thing id="eqT2KVehRadio" name="Radio (Vehicle)" compset="Equipment">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+
+  <thing id="eqT2KSmokeDis" name="Smoke Dispensers" compset="Equipment">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="Hide" tag="Equipment"/>
+    </thing>	
   </document>

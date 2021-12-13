@@ -591,6 +591,17 @@
 		  ]]></labeltext>
         </label>
       </portal>
+
+      <portal
+      id="hdrROF"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "ROF"
+		  ]]></labeltext>
+        </label>
+      </portal>	
 	  
     <header><![CDATA[
       ~our header height is the title plus a gap plus the header text
@@ -607,20 +618,23 @@
 	  var hdr2 as number
 	  
       perform portal[hdrName].centerpoint[horz,60]
-      perform portal[hdrReliability].centerpoint[horz,150]
-      perform portal[hdrMag].centerpoint[horz,150]
-      perform portal[hdrDamage].centerpoint[horz,180]
-      perform portal[hdrCrit].centerpoint[horz,210]
-      perform portal[hdrRange].centerpoint[horz,240]
-      perform portal[hdrArmor].centerpoint[horz,270]
-	  perform portal[hdrAmmo].centerpoint[horz,200]
+      perform portal[hdrReliability].centerpoint[horz,140]
+      perform portal[hdrROF].centerpoint[horz,180]
+      perform portal[hdrDamage].centerpoint[horz,220]
+      perform portal[hdrCrit].centerpoint[horz,260]
+      perform portal[hdrRange].centerpoint[horz,300]
+      perform portal[hdrArmor].centerpoint[horz,340]
       perform portal[hdrSpecial].centerpoint[horz,380]
+	  
+      perform portal[hdrMag].centerpoint[horz,140]
+	  perform portal[hdrAmmo].centerpoint[horz,285]	
 	  
       ~align all header labels at the bottom of the header region
 	  hdr1 = portal[hdrTitle].bottom + 2
 	  
       portal[hdrName].top = hdr1
       portal[hdrReliability].top = hdr1
+      portal[hdrROF].top = hdr1
       portal[hdrDamage].top = hdr1
       portal[hdrCrit].top = hdr1
       portal[hdrRange].top = hdr1
@@ -689,7 +703,25 @@
 		  ]]></labeltext>
         </label>
       </portal>
-
+	  
+    <portal
+      id="rof"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          if (tagis[component.WeapRange] <> 0) then
+		    if (empty(field[wpRateOfFire].text) = 0) then
+              @text = field[wpRateOfFire].text
+			else
+              @text = "--"
+            endif  
+          else
+            @text = ""
+            endif
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
     <portal
       id="damage"
       style="lblNormal">
@@ -809,10 +841,23 @@
     <portal
       id="ammo"
       style="lblNormal">
-      <label>
+      <label
+        ismultiline="yes">
         <labeltext><![CDATA[
-          if (tagcount[AmmoType.?] <> 0) then
-            @text = tagnames[AmmoType.?,","]
+		  var ammoexpr as string
+		  var mystring as string
+		  
+          if (tagcount[AmmoType.?] + tagcount[AmmoCatType.?] <> 0) then
+		    if (tagcount[AmmoType.?] <> 0) then
+              @text = tagnames[AmmoType.?,", "]
+			else
+			  ammoexpr = tagids[AmmoCatType.?,"|"]
+			  
+			  foreach thing in Ammunition where ammoexpr
+			    mystring = splice(mystring, eachthing.field[name].text, ", ")
+				nexteach
+              @text = mystring
+			  endif 
           else
             @text = "--"
             endif
@@ -825,14 +870,7 @@
       ~between weapon types, since ranged weapons require extra space for the range
       height = portal[info].height
 	  
-	  if (tagis[component.WeapMelee] = 0) then
-	    height += 4 + portal[ammoedit].height
-		endif
-	  
       width = width
-	  
-      ~if this is a "sizing" calculation, we're done
-      doneif (issizing <> 0)
 	  
 	  var topRow as number
 	  var botRow as number
@@ -848,6 +886,7 @@
       portal[reliability].top = topRow
       portal[damage].top = topRow
       portal[crit].top = topRow
+      portal[rof].top = topRow
       portal[range].top = topRow
       portal[armor].top = topRow
       portal[gearmanage].top = topRow
@@ -858,7 +897,6 @@
       portal[ammo].top = botRow
       portal[magazine].top = botRow
       portal[ammoedit].top = botRow
-	  
 	  
       ~position the delete portal on the far right
       perform portal[delete].alignedge[right,0]
@@ -873,38 +911,42 @@
       ~position the special portal to the left of the gear button; we want the
       ~note to be centered in its own column relative to a centerpoint position
       perform portal[special].centerpoint[horz,380]
-
-      ~If the weapon is a ranged weapon, we want to display the ammo
-	  perform portal[ammo].centerpoint[horz,200]
       
-	  
       ~position the range portal to the left of the delete button; we want the
       ~damage to be centered in its own column relative to a centerpoint position
 	  
       if (tagis[component.WeapMelee] <> 0) then
-	    perform portal[armor].centerpoint[horz,280]
+	    perform portal[armor].centerpoint[horz,340]
 	  else
-	    perform portal[range].centerpoint[horz,240]
-	    perform portal[armor].centerpoint[horz,280]
+	    perform portal[range].centerpoint[horz,300]
+	    perform portal[armor].centerpoint[horz,340]
 	    endif
 	  
       ~position the damage portal to the left of the range column; we want the
       ~damage to be centered in its own column relative to a centerpoint position
-      perform portal[damage].centerpoint[horz,180]
 	  
-      perform portal[crit].centerpoint[horz,210]
+      perform portal[rof].centerpoint[horz,180]
+	  
+      perform portal[damage].centerpoint[horz,220]
+	  
+      perform portal[crit].centerpoint[horz,260]
 	  
       ~position the reliability portal to the left of damage column; we want the
       ~reliability to be centered in its own column relative to a centerpoint position
-      perform portal[reliability].centerpoint[horz,150]
-	  perform portal[magazine].centerpoint[horz,150]
+      perform portal[reliability].centerpoint[horz,140]
+	  perform portal[magazine].centerpoint[horz,140]
+	  
+      ~If the weapon is a ranged weapon, we want to display the ammo
+	  portal[ammo].left = portal[magazine].right + 4
+	  portal[ammo].width = portal[ammoedit].left - portal[magazine].right - 4
+	  perform portal[ammo].autoheight
 
       ~position the name on the left and let it use all available space
       var limit as number
       limit = portal[reliability].left - 2 - portal[heldby].width - 2 - portal[strreq].width - 2
       portal[name].left = 0
       portal[name].width = minimum(portal[name].width,limit)
-	  perform portal[name].sizetofit[26]
+	  perform portal[name].sizetofit[25]
 
       ~show the 'strength requirement' icon to the right of the name
       perform portal[strreq].alignrel[ltor,name,2]
@@ -918,9 +960,20 @@
         endif
       portal[heldby].visible = isgearheld
 
+      ~portal[ammoedit].visible = 0
+	  
       ~only show the special portal if there are special talents/notes to view
       portal[special].visible = 1 - field[wpNotes].isempty
-	  
+	    
+	  if (tagis[component.WeapMelee] = 0) then
+	    perform portal[ammo].autoheight
+		if (portal[ammo].bottom > portal[ammoedit].bottom) then
+		  height = 4 + portal[ammo].bottom
+		else
+	      height = 4 + portal[ammoedit].bottom
+		  endif
+		endif
+		
       ]]></position>
 	  
     </template>
