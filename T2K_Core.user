@@ -64,7 +64,7 @@
   <thing id="skT2KPersuasion" name="Persuasion" description="Life in the aftermath of World War III is dangerous, but you can often reach your goals without violence, using charm, threats, or reason. Use PERSUASION to make others see things your way. Your chances can be affected by your bargaining position and military rank." compset="Skill">
     <fieldval field="trtAbbrev" value="Per"/>
     <usesource source="srcT2K"/>
-    <link linkage="attribute" thing="attrStr"/>
+    <link linkage="attribute" thing="attrEmp"/>
     </thing>
   <thing id="spcT2KBrawler" name="Brawler" description="+1 modifier to CLOSE COMBAT rolls in unarmed close combat." compset="Specialty" uniqueness="useronce">
     <usesource source="srcT2K"/>
@@ -333,6 +333,7 @@ herofield[acCarryBackMax].value += 4</eval>
     </thing>
   <thing id="natT2KAmerican" name="U.S." compset="Nationality" uniqueness="useronce">
     <fieldval field="natNameTerm" value="American"/>
+    <arrayval field="natEnlisted" index="0" value="Private"/>
     <arrayval field="natEnlisted" index="0" column="1" value="PVT"/>
     <arrayval field="natEnlisted" index="1" value="Private First Class"/>
     <arrayval field="natEnlisted" index="1" column="1" value="PFC"/>
@@ -352,7 +353,6 @@ herofield[acCarryBackMax].value += 4</eval>
     <arrayval field="natEnlisted" index="8" column="1" value="SGM"/>
     <arrayval field="natEnlisted" index="9" value="Command Sergeant Major"/>
     <arrayval field="natEnlisted" index="9" column="1" value="CSM"/>
-    <arrayval field="natEnlisted" index="0" value="Private"/>
     <arrayval field="natOfficer" index="0" value="Second Lieutenant"/>
     <arrayval field="natOfficer" index="0" column="1" value="2LT"/>
     <arrayval field="natOfficer" index="1" value="First Lieutenant"/>

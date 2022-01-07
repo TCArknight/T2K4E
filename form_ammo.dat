@@ -28,7 +28,10 @@
         archetype is yet selected, a prompt it shown with appropriate color highlighting.
   -->
 	
-  <!-- Ammunition portal -->
+  <!-- Ammunition portal 
+      candidatepick="AmmoHelper"
+	  candidatefield="AmmoExpr"
+	  -->
   <portal
     id="amAmmunition"
     style="tblNormal">

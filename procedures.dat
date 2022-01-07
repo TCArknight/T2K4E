@@ -324,7 +324,9 @@
         endif
 
       endif
-	  
+
+    call InfoContainer
+	
     ~append our item-specific info to the synthesized details text
     descript &= iteminfo
 
@@ -345,26 +347,42 @@
 	    endif
 	  endif
 	  
+    ]]></procedure>
+	
+  <!-- Procedure InfoContainer
+        Generate details specific to containers as to what is contained 
+		and carried. The text is placed into the "iteminfo" variable for 
+		subsequent use by our caller.
+
+        Outbound parameter: iteminfo
+  -->
+  <procedure id="InfoContainer" context="info"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var iteminfo as string
+	var templist as string
+
     ~if this is gear, output any container/containee details
     if (isgear <> 0) then
 
       ~if we're held somewhere, append our path
       if (isgearheld <> 0) then
-        descript &= "{br}{br}{b}Container{/b}: " & gearpath["->"]
+        iteminfo &= "{br}{b}Container{/b}: " & gearpath["->"]
         endif
 
       ~if we're a gear holder, append our contents
       if (isgearlist <> 0) then
-        iteminfo = gearlist[", ", TRUE]
-        if (empty(iteminfo) <> 0) then
-          iteminfo = "None"
+        foreach gear in this
+		  templist = splice(templist, eachpick.field[grStkName].text,", ")
+          nexteach
+        if (empty(templist) <> 0) then
+          templist = "None"
           endif
-        descript &= "{br}{br}{b}Carries{/b}: " & iteminfo
+        iteminfo &= "{br}{b}Carries:{/b} " & templist & "{br}"
         endif
-
+		
       endif
-    ]]></procedure>
 
+    ]]></procedure>
 
   <!-- Procedure InfoWeapon
         Generate details specific to all weapons. The text is placed into the
@@ -447,9 +465,7 @@
 		  mystring = splice(mystring, eachthing.field[name].text, ", ")
 		  nexteach
 	    endif 
-	  iteminfo &= "Ammo: " & mystring & "{br}"
-    ~else
-    ~  iteminfo &= "Ammo: " & "--" & "{br}"
+	  iteminfo &= "Valid Ammo: " & mystring & "{br}"
       endif
 	  
     ]]></procedure>
@@ -492,10 +508,36 @@
     ~finish with generic special talents for all weapons
 	call InfoWeapAmmo
     call InfoWeapSp
-	
+	call InfoWeapAmmoLoad
+
+    ]]></procedure>
+
+  <!-- Procedure InfoWeapAmmoLoad
+        Generate details specific to defensive gear, including armor and shields.
+        The text is placed into the "iteminfo" variable for subsequent use by our
+        caller.
+
+        Outbound parameter: iteminfo
+  -->
+  <procedure id="InfoWeapAmmoLoad" context="info"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var iteminfo as string
+	var myAmmo as string
+
     ~if a pick, output any ammunition details
 	if (ispick <> 0) then
-      if (isgizmo <> 0) then
+	  ~ if weapon is carrying ammo/magazine 
+	  ~ then use that for Loaded With/Reloads
+	  ~if we're a gear holder, append our contents
+      if (isgearlist <> 0) then
+        myAmmo = gearlist[", ", TRUE]
+        if (empty(myAmmo) <> 0) then
+          myAmmo = "- No Ammo -"
+          endif
+		  
+        iteminfo &= "{b}Loaded with{/b}: " & myAmmo & "{br}"
+		
+      elseif (isgizmo <> 0) then
         var load as string
 		var carried as string
 	  
@@ -526,11 +568,8 @@
 	    iteminfo &= carried & "{br}{br}"
 		  
 	    endif
-      endif
-	  
-
+      endif	
     ]]></procedure>
-
 
   <!-- Procedure InfoDef
         Generate details specific to defensive gear, including armor and shields.
@@ -1087,8 +1126,8 @@
 	var myCost as number
 	var reloadCost as number
 
-    expr = "component.Ammunition & Equipment.AmmoCarried & " & myId
-	notify expr
+    expr = "component.Ammunition & " & myId
+    ~ notify expr
 	
     gizmo.childfound[AmmoHelper].field[AmmoExpr].text = expr
 	~gizmo.childfound[AmmoHelper].field[AmmoBaseCost].value = myCost

@@ -182,6 +182,28 @@ Text goes here
     name="text_char_dot" result="chr(149)"/>
 
 
+  <scriptmacro
+    name="nationality"
+    result="hero.child[mscService].field[serNationOut].text"/>
+  <scriptmacro
+    name="branch"
+	result="hero.child[mscService].field[serBranch].text"/>
+  <scriptmacro
+    name="rank"
+	result="hero.child[mscService].field[serRank].text"/>
+  <scriptmacro
+    name="rankabbrev"
+	result="hero.child[mscService].field[serRankAbrev].text"/>
+  <scriptmacro
+    name="bigdream"
+	result="hero.child[mscOptFields].field[optBigDream].text"/>
+  <scriptmacro
+    name="howmet"
+	result="hero.child[mscOptFields].field[optHowMet].text"/>
+  <scriptmacro
+    name="moralcode"
+	result="hero.child[mscOptFields].field[optMoralCode].text"/>
+
   <!-- The "advancement" element controls whether serialized advancement logic is enabled
         and how the advancement mechanisms should behave for the game system.
   -->

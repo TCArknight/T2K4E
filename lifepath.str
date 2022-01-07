@@ -158,8 +158,11 @@
 	  
 	  var currRankVal as number
 	  var newRankVal as number
+	  var currRankCat as string
 	  var RankCat as string
 	  var newRank as string
+	  var isEnlisted as number
+	  var toOfficer as number
 	  
 	  var expr as string
 	  var rng as number
@@ -182,17 +185,26 @@
 		field[lpNumSkills].value = 2
 		field[lpDupSkills].value = 1
 		
-		~herofield[acLPTours].value += 1
-		~field[lpTourIndex].value = herofield[acLPTours].value
-		
 		if (tagis[CareerType.Military] <> 0) then
+		  if (hero.tagis[Military.Enlisted] <> 0) then
+		    isEnlisted = 1
+			endif
+
+		  currRankVal = hero.tagmax[MilitaryRank.?]	
+		  
+		  if ((isEnlisted - tagis[Military.Officer]) = 0) then
+		    ~reset promotions to 0
+			currRankVal = 0
+			endif
+			
 		  perform hero.delete[Military.?]
 	      perform forward[Military.?]
 		  
 		  RankCat = tagabbrevs[Military.?,","]
+		  currRankCat = hero.tagabbrevs[Military.?,","]
 		  
-		  currRankVal = hero.tagmax[MilitaryRank.?]		  
-		  newRankVal = maximum(hero.tagmax[MilitaryRank.?],tagmax[MilitaryRank.?])+ field[lpSpecGained].value
+		  	  
+		  newRankVal = maximum(currRankVal,tagmax[MilitaryRank.?])+ field[lpSpecGained].value
 		  newRank = "MilitaryRank." & RankCat & newRankVal
 		  perform hero.delete[MilitaryRank.?]
 	      perform hero.assignstr[newRank]

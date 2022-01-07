@@ -16,16 +16,25 @@
     <usesource source="srcT2K"/>
     <tag group="thing" tag="holder"/>
     <tag group="GearType" tag="WeaponGear"/>
+    <tag group="Equipment" tag="Magazine"/>
     <holdlimit>AmmoCat.Firearm</holdlimit>
     <gear>field[gearNet].value = field[gearWeight].value</gear>
-    <eval phase="Render" priority="10000"><![CDATA[var heldName as string
-
-if (gearcount = 0) then
-  field[livename].text = field[name].text & " (Empty)"
-else
-  heldName = gearlist[",",component.Ammunition]
-  field[livename].text &= field[name].text & " (" & heldName & ")"
-  endif]]></eval>
+    <eval phase="Final" priority="10000"><![CDATA[var heldName as string
+	var heldQty as number
+	
+  if (gearcount = 0) then
+    field[livename].text = field[name].text & " (Empty)"
+  else
+	foreach gear in this
+	  heldQty = eachpick.field[stackQty].value
+	  if (heldQty > 1) then
+        heldName = splice(heldName, "(" & heldQty & "x) " & eachpick.field[name].text,", ")
+	  else
+	    heldName = splice(heldName, eachpick.field[name].text,", ")
+		endif
+      nexteach
+    field[livename].text &= field[name].text & " (" & heldName & ")"
+    endif]]></eval>
     </thing>
   <thing id="eqT2KBackpack" name="Backpack" description="Can be used to carry a number of encumbrance units equal to your STR die size, in addition to your combat gear. Carrying a backpack gives a –2 modifer to all MOBILITY rolls." compset="Equipment">
     <fieldval field="grCost" value="50"/>
@@ -48,6 +57,7 @@ else
     <usesource source="srcT2K"/>
     <tag group="thing" tag="holder"/>
     <tag group="GearType" tag="WeaponGear"/>
+    <tag group="Equipment" tag="Magazine"/>
     <holdlimit>AmmoCat.Firearm</holdlimit>
     <gear>field[gearNet].value = field[gearWeight].value</gear>
     <eval phase="Render" priority="10000"><![CDATA[var heldName as string

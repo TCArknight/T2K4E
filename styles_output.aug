@@ -60,6 +60,16 @@
       </font>
     </resource>
 
+  <!-- font used on title text -->
+  <resource
+    id="ofnttitlemil">
+    <font
+      face="Arial"
+      size="55"
+      style="bold">
+      </font>
+    </resource>
+	
   <!-- font used on plain text -->
   <resource
     id="ofntplain">
@@ -123,6 +133,16 @@
       </style_output>
     </style>
 
+  <!-- title text for output -->
+  <style
+    id="outLeftTitle">
+    <style_output
+      textcolor="222222"
+      backcolor="dddddd"
+      font="ofnttitle"
+      alignment="left">
+      </style_output>
+    </style>
   <!-- hero name text for output -->
   <style
     id="outHeroNam">
@@ -232,10 +252,28 @@
       alignment="center">
       </style_output>
     </style>
+  <style
+    id="outNameTitleMil"
+    border="solid">
+    <style_output
+      textcolor="000000"
+      font="ofnttitlemil"
+      alignment="left">
+      </style_output>
+    </style>	
 	
   <!-- plain text left-aligned for output -->
   <style
     id="outPlainLt">
+    <style_output
+      textcolor="000000"
+      font="ofntplain"
+      alignment="left">
+      </style_output>
+    </style>
+  <style
+    id="outPlainLtBrd"
+    border="solid">
     <style_output
       textcolor="000000"
       font="ofntplain"

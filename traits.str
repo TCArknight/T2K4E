@@ -355,7 +355,12 @@
 
     <!-- Track the skill on the actor -->
     <eval index="1" phase="Setup" priority="5000"><![CDATA[
+	  var myKey as string
+	  myKey = linkage[attribute].tagids[KeyAttribute.?,"|"]
+	  ~notify myKey
+	  
       perform forward[Skill.?]
+	  perform assignstr[myKey]
 	  
 	  doneif (hero.tagis[source.srcT2KLifepath] = 0)
 	  

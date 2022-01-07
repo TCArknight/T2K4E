@@ -321,6 +321,7 @@
     <value id="TinyItem" name="Tiny Item"/>                       <!-- Identifies equipment that is of negligable weight that don't affect encumbrance -->
     <value id="StackArmor" name="Stack Armor"/>                   <!-- Identifies armor that stacks with other armor -->
     <value id="AmmoCarried" name="Ammo Carried"/>                 <!-- Identifies ammunition carried by the hero -->
+    <value id="Magazine" name="Magazine"/>                        <!-- Identifies ammunition holder carried by the hero -->
     </group>
 
   <!-- MaxRange group - 

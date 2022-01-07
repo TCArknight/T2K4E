@@ -173,8 +173,8 @@
         ~output our name
         append @boldon & "Name: " & @boldoff
 		if (hero.tagis[MilitaryRank.?] <> 0) then
-		  append hero.child[mscService].field[serRankAbrev].text & " " & name & ", " 
-		  append hero.child[mscService].field[serNationOut].text & " " & hero.child[mscService].field[serBranch].text & @newline
+		  append #rankabbrev[] & " " & name & ", " 
+		  append #nationality[] & " " & #branch[] & @newline
 		else
 		  append name & @newline
 		  endif

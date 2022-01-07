@@ -60,7 +60,7 @@
         ]]></labeltext>
       </output_label>
     </portal>
-
+	
   <!-- oHeroInfo portal - details about the actor -->
   <portal
     id="oHeroInfo"

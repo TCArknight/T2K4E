@@ -1204,7 +1204,7 @@
       ]]></position>
     </template>		
   <layout
-    id="oTopLeft">
+    id="oTopLeftVeh">
     <portalref portal="oVehicleName"/>
 	<templateref template="oVehDetails" thing="mscVehDetails"/>
     <position><![CDATA[
@@ -1228,7 +1228,7 @@
     </layout>
 
   <layout
-    id="oTopRight">
+    id="oTopRightVeh">
 	<templateref template="oVehCrew" thing="mscVehDetails"/>
     <position><![CDATA[
 	  perform template[oVehCrew].autoplace[0]  
@@ -1322,9 +1322,9 @@
   <sheet
     id="vehicle1"
     name="Vehicle character sheet, page #1">
-    <layoutref layout="oTopLeft"/>
+    <layoutref layout="oTopLeftVeh"/>
     <layoutref layout="oTopMid"/>
-    <layoutref layout="oTopRight"/>
+    <layoutref layout="oTopRightVeh"/>
     <layoutref layout="oMidLeft"/>
     <layoutref layout="oAdjust"/>
     <layoutref layout="oVehArmory"/>
@@ -1358,26 +1358,26 @@
         endif
 
       ~position the topleft layout in the upper left corner
-      layout[oTopLeft].width = colwidth
-      layout[oTopLeft].height = extent - layout[oTopLeft].top
-      perform layout[oTopLeft].render
+      layout[oTopLeftVeh].width = colwidth
+      layout[oTopLeftVeh].height = extent - layout[oTopLeftVeh].top
+      perform layout[oTopLeftVeh].render
 
       ~position the midleft layout next to the topleft
       layout[oTopMid].width = colwidth
-	  layout[oTopMid].left = layout[oTopLeft].right + 15
+	  layout[oTopMid].left = layout[oTopLeftVeh].right + 15
       layout[oTopMid].height = extent - layout[oTopMid].top
       perform layout[oTopMid].render
 	  
       ~position the topright layout next to the topmid
-      layout[oTopRight].width = colwidth
-	  layout[oTopRight].left = layout[oTopMid].right + 15
-      layout[oTopRight].height = extent - layout[oTopRight].top
-      perform layout[oTopRight].render
+      layout[oTopRightVeh].width = colwidth
+	  layout[oTopRightVeh].left = layout[oTopMid].right + 15
+      layout[oTopRightVeh].height = extent - layout[oTopRightVeh].top
+      perform layout[oTopRightVeh].render
  
       ~position the topright layout next to the topmid
 	  layout[oMidLeft].top = layout[oTopMid].bottom + 5
       layout[oMidLeft].width = colwidth * 2
-	  layout[oMidLeft].left = layout[oTopLeft].left
+	  layout[oMidLeft].left = layout[oTopLeftVeh].left
       layout[oMidLeft].height = extent - layout[oMidLeft].top
       perform layout[oMidLeft].render
 	  

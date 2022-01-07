@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the first page of the standard character
+      sheet for output. The character sheet has been carved into a simple two-column
+      presentation that is used by many game systems, with some information on the
+      left and other material on the right. You can use whatever overall layout you
+      prefer, using this sample as a guideline.
+
+      A variety of display techniques have been used on this one character sheet to
+      provide examples of how to present information in different ways. You will
+      likely choose one or two of these methods and use them exclusively within your
+      own data files, but this gives you various styles to choose from.
+
+      The second page of the character sheet will be found in "sheet_standard2.dat".
+-->
+
+<document signature="Hero Lab Data">
+
+  <!-- Hero Lab & Game System Logos
+        NOTE! These could be easily wrapped inside a template or used directly within
+              a layout, as we do here. Both methods are perfectly reasonable.
+  -->
+
+  <!-- oGameLogo portal - game system logo -->
+  <portal
+    id="oGameLogo2"
+    style="outNormal"
+    width="0"
+    height="0">
+    <output_image
+      image="sheet_gamelogo_bw.bmp">
+      </output_image>
+    </portal>
+
+  <!-- oHeroName portal - name of the actor -->
+  <portal
+    id="oHeroNameMil"
+    style="outNameTitleMil">
+    <output_label>
+      <labeltext><![CDATA[
+	    var name as string
+		
+        name = hero.actorname
+        if (empty(name) <> 0) then
+          name = "- Unnamed Hero -"
+          endif
+		
+		@text = "Name: {br}     " & name
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>
+
+  <!-- oHeroName portal - name of the actor -->
+  <portal
+    id="oHeroNationMil"
+    style="outNameTitleMil">
+    <output_label>
+      <labeltext><![CDATA[
+	    var nation as string
+		
+        nation = #nationality[]
+        if (empty(nation) <> 0) then
+          nation = "- Unknown -"
+          endif
+		
+		@text = "Nationality: {br}     " & nation
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>
+
+  <!-- oHeroName portal - name of the actor -->
+  <portal
+    id="oHeroBranchMil"
+    style="outNameTitleMil">
+    <output_label>
+      <labeltext><![CDATA[
+	    var branch as string
+		
+        branch = #branch[]
+        if (empty(branch) <> 0) then
+          branch = "- Unknown -"
+          endif
+		
+		@text = "Branch: {br}     " & branch
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>	
+	
+  <!-- oHeroName portal - name of the actor -->
+  <portal
+    id="oHeroRankMil"
+    style="outNameTitleMil">
+    <output_label>
+      <labeltext><![CDATA[
+	    var rank as string
+		
+        rank = #rank[]
+        if (empty(rank) <> 0) then
+          rank = "- Unknown -"
+          endif
+		
+		@text = "Military Rank: {br}     " & rank
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>	
+
+  <portal
+    id="oHeroBigDream"
+    style="outPlainLtBrd">
+    <output_label>
+      <labeltext><![CDATA[
+	    var dream as string
+		
+        dream = #bigdream[]
+        if (empty(dream) <> 0) then
+          dream = "- Unknown -"
+          endif
+		
+		@text = "{b}Big Dream:{/b} {br}     " & dream
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>	
+
+  <portal
+    id="oHeroMoralCode"
+    style="outPlainLtBrd">
+    <output_label>
+      <labeltext><![CDATA[
+	    var code as string
+		
+        code = #moralcode[]
+        if (empty(code) <> 0) then
+          code = "- Unknown -"
+          endif
+		
+		@text = "{b}Moral Code:{/b} {br}     " & code
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>	
+
+  <portal
+    id="oHeroHowMet"
+    style="outPlainLtBrd">
+    <output_label>
+      <labeltext><![CDATA[
+	    var met as string
+		
+        met = #howmet[]
+        if (empty(met) <> 0) then
+          met = "- Unknown -"
+          endif
+		
+		@text = "{b}How Met:{/b} {br}     " & met
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>
+	
+  <portal
+    id="oAttributeWide"
+    style="outNormal">
+    <output_table
+      component="Attribute"
+      showtemplate="oAttrWidePick"
+      headertemplate="oAttrWidePick"
+      showsortset="explicit"
+	  showgaphorz="2"
+	  columns="4">
+      <list><![CDATA[
+        (!hero#CharType.Vehicle & AttrCat.Hero)
+        ]]></list>
+      </output_table>
+    </portal>	
+	
+  <portal
+    id="oSkills1"
+    style="outNormal">
+    <output_table
+      component="Skill"
+      showtemplate="oSkillWidePick">
+      <list><![CDATA[
+	    KeyAttribute.attrStr
+        ]]></list>
+      </output_table>
+    </portal>
+	
+  <portal
+    id="oSkills2"
+    style="outNormal">
+    <output_table
+      component="Skill"
+      showtemplate="oSkillWidePick">
+      <list><![CDATA[
+	    KeyAttribute.attrAgi
+        ]]></list>
+      </output_table>
+    </portal>
+	
+  <portal
+    id="oSkills3"
+    style="outNormal">
+    <output_table
+      component="Skill"
+      showtemplate="oSkillWidePick">
+      <list><![CDATA[
+	    KeyAttribute.attrInt
+        ]]></list>
+      </output_table>
+    </portal>
+	
+  <portal
+    id="oSkills4"
+    style="outNormal">
+    <output_table
+      component="Skill"
+      showtemplate="oSkillWidePick">
+      <list><![CDATA[
+	    KeyAttribute.attrEmp
+        ]]></list>
+      </output_table>
+    </portal>
+
+  <portal
+    id="oSpecialties"
+    style="outNameTitleMil">
+    <output_label>
+      <labeltext><![CDATA[
+	    var spec as string
+	    var tagexpr as string
+        var ismore as number
+        ismore = 0
+	
+        tagexpr = "component.Specialty"
+		
+        foreach pick in hero where tagexpr
+          if (ismore <> 0) then
+            spec &= ", "
+            endif
+          spec &= eachpick.field[name].text 
+
+          ismore = 1
+          nexteach
+		
+		@text = "{b}Specialties:{/b} {br}     " & spec
+		
+        ]]></labeltext>
+      </output_label>
+    </portal>
+	
+  <template
+    id="oAttrWidePick"
+    name="Output Wide Attributes Table"
+    compset="Attribute"
+    marginvert="10"
+	marginhorz="10">
+
+    <portal
+      id="name"
+      style="outNameLg">
+      <output_label
+        field="name">
+        </output_label>
+      </portal>
+
+    <portal
+      id="rating"
+      style="outValBox">
+      <output_label
+        field="trtAlpha">
+        </output_label>
+      </portal>
+
+    <portal
+      id="basedie"
+      style="outValBox">
+      <output_label
+        field="trtDieValue">
+        </output_label>
+      </portal>
+
+    <!-- Portals used as the header -->
+    <portal
+      id="hdrtitle"
+      style="outLeftTitle"
+      isheader="yes">
+      <output_label>
+	    <labeltext><![CDATA[
+          @text = "Attributes & Skills"
+          ]]></labeltext>
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrrating"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Rating">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrbasedie"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Die">
+        </output_label>
+      </portal>
+
+    <position><![CDATA[
+      ~our height is driven by the tallest portal (they're all the same)
+      height = portal[name].height
+      doneif (issizing <> 0)
+
+      ~setup appropriate widths for the various value portals
+      portal[rating].width = 110
+      portal[basedie].width = 110
+
+      ~center everything vertically within the template
+      perform portal[name].centervert
+      perform portal[rating].centervert
+      perform portal[basedie].centervert
+
+      ~position everything horizontally, indenting 0 pixels on each side
+      portal[name].left = 0
+      perform portal[basedie].alignedge[right,0]
+      perform portal[rating].alignrel[rtol,basedie,-20]
+      ]]></position>
+
+    <header><![CDATA[
+      ~our header height is the title plus a gap plus the header text
+      height = portal[hdrtitle].height + 10 + portal[hdrrating].height
+      doneif (issizing <> 0)
+
+      ~our title spans the full width of the template
+      portal[hdrtitle].width = width
+
+      ~each of our header labels has the same width as the corresponding data beneath
+      portal[hdrbasedie].width = portal[basedie].width
+      portal[hdrrating].width = portal[rating].width
+
+      ~center each header label on the corresponding data beneath
+      perform portal[hdrbasedie].centeron[horz,basedie]
+      perform portal[hdrrating].centeron[horz,rating]
+
+      ~align all header labels at the bottom of the header region
+      perform portal[hdrbasedie].alignedge[bottom,0]
+      perform portal[hdrrating].alignedge[bottom,0]
+      ]]></header>
+
+    </template>	
+	
+  <template
+    id="oSkillWidePick"
+    name="Output Wide Skill Table"
+    compset="Skill"
+    marginvert="10"
+	marginhorz="10">
+
+    <portal
+      id="name"
+      style="outNormLt">
+      <output_label
+        field="name">
+        </output_label>
+      </portal>
+
+    <portal
+      id="rating"
+      style="outValBox">
+      <output_label
+        field="trtAlpha">
+        </output_label>
+      </portal>
+
+    <portal
+      id="basedie"
+      style="outValBox">
+      <output_label
+        field="trtDieValue">
+        </output_label>
+      </portal>
+
+    <position><![CDATA[
+      ~our height is driven by the tallest portal (they're all the same)
+      height = portal[name].height
+      doneif (issizing <> 0)
+
+      ~setup appropriate widths for the various value portals
+      portal[rating].width = 110
+      portal[basedie].width = 110
+
+      ~center everything vertically within the template
+      perform portal[name].centervert
+      perform portal[rating].centervert
+      perform portal[basedie].centervert
+
+      ~position everything horizontally, indenting 0 pixels on each side
+      portal[name].left = 0
+      perform portal[basedie].alignedge[right,0]
+      perform portal[rating].alignrel[rtol,basedie,-20]
+      ]]></position>
+
+    </template>
+  <layout
+    id="oMidAttributes">
+    <portalref portal="oAttributeWide"/>
+    <position><![CDATA[
+      perform portal[oAttributeWide].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+
+  <layout
+    id="oMidSpecs">
+    <portalref portal="oSpecialties"/>
+    <position><![CDATA[
+      perform portal[oSpecialties].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+  <layout
+    id="oMidSkill1">
+    <portalref portal="oSkills1"/>
+    <position><![CDATA[
+      perform portal[oSkills1].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oMidSkill2">
+    <portalref portal="oSkills2"/>
+    <position><![CDATA[
+      perform portal[oSkills2].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oMidSkill3">
+    <portalref portal="oSkills3"/>
+    <position><![CDATA[
+      perform portal[oSkills3].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oMidSkill4">
+    <portalref portal="oSkills4"/>
+    <position><![CDATA[
+      perform portal[oSkills4].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+	
+	
+  <layout
+    id="oTopLeft">
+    <portalref portal="oGameLogo2"/>
+    <templateref template="oPortrait" thing="actor"/>
+    <position><![CDATA[
+      perform portal[oGameLogo2].autoplace
+      perform template[oPortrait].autoplace
+	  
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oTopRight">
+    <portalref portal="oHeroNameMil"/>
+    <portalref portal="oHeroNationMil"/>
+    <portalref portal="oHeroBranchMil"/>
+    <portalref portal="oHeroRankMil"/>
+    <portalref portal="oHeroMoralCode"/>
+    <portalref portal="oHeroBigDream"/>
+    <portalref portal="oHeroHowMet"/>
+    <position><![CDATA[
+      portal[oHeroNameMil].top = 0
+      portal[oHeroNameMil].left = 0
+      portal[oHeroNameMil].width = width / 2
+	  portal[oHeroNameMil].height = 200
+	  
+      portal[oHeroNationMil].top = 0
+      portal[oHeroNationMil].left = portal[oHeroNameMil].right
+      portal[oHeroNationMil].width = width / 2
+	  portal[oHeroNationMil].height = portal[oHeroNameMil].height
+	  
+      portal[oHeroBranchMil].top = portal[oHeroNameMil].bottom + 5
+      portal[oHeroBranchMil].left = 0
+      portal[oHeroBranchMil].width = width / 2
+	  portal[oHeroBranchMil].height = portal[oHeroNameMil].height
+	  
+      portal[oHeroRankMil].top = portal[oHeroBranchMil].top
+      portal[oHeroRankMil].left = portal[oHeroNameMil].right
+      portal[oHeroRankMil].width = width / 2
+	  portal[oHeroRankMil].height = portal[oHeroNameMil].height
+	  
+      portal[oHeroMoralCode].top = portal[oHeroBranchMil].bottom + 5
+      portal[oHeroMoralCode].left = 0
+      portal[oHeroMoralCode].width = width
+	  portal[oHeroMoralCode].height = 155
+	  
+      portal[oHeroBigDream].top = portal[oHeroMoralCode].bottom + 5
+      portal[oHeroBigDream].left = 0
+      portal[oHeroBigDream].width = width
+	  portal[oHeroBigDream].height = 155
+	  
+      portal[oHeroHowMet].top = portal[oHeroBigDream].bottom + 5
+      portal[oHeroHowMet].left = 0
+      portal[oHeroHowMet].width = width / 2
+	  portal[oHeroHowMet].height = 155
+	  
+      ~our layout height is the extent of the elements within
+      height = portal[oHeroHowMet].bottom
+	  
+      ]]></position>
+    </layout>
+	
+  <!-- standard1 sheet
+        This is the first page of the stanard character sheet, which coordinates the
+        output of a whole bunch of layouts containing different pieces of information
+        for the character. Layouts are estimated to perform whatever calculations are
+        necessary within that layout, such as its overall dimensions. Once estimated,
+        the dimensions of the layout can be used to properly position and size any
+        subsequent layouts that depend on it. So the overall process is to process
+        layouts in an order that progressively fills the sheet with aligned material.
+  -->
+  <sheet
+    id="new1"
+    name="New character sheet, page #1">
+    <layoutref layout="oTopLeft"/>
+    <layoutref layout="oTopRight"/>
+    <layoutref layout="oMidAttributes"/>
+    <layoutref layout="oMidSkill1"/>
+    <layoutref layout="oMidSkill2"/>
+    <layoutref layout="oMidSkill3"/>
+    <layoutref layout="oMidSkill4"/>
+    <layoutref layout="oMidSpecs"/>
+    <layoutref layout="oValidate"/>
+    <position><![CDATA[
+	  ~calculate the width of the two columns of the character sheet, leaving a
+      ~suitable center gap between them
+      var colwidth as number
+      colwidth = (width) / 3
+	  
+	  ~if the user wants to omit the validation report, the hide it and allow the
+      ~rest of the sheet to fill that space; otherwise, output the layout and the
+      ~top of the validation report establishes the bottom for all other output
+      var extent as number
+      if (hero.tagis[source.Validation] = 0) then
+        layout[oValidate].visible = 0
+        extent = height
+      else
+        layout[oValidate].width = width
+        perform layout[oValidate].render
+        layout[oValidate].top = height - layout[oValidate].height
+        extent = layout[oValidate].top - autogap
+        endif
+
+      ~position the rightside layout in the remaining space on the right
+      layout[oTopLeft].width = colwidth
+      layout[oTopLeft].top = 0
+      layout[oTopLeft].left = 0
+      layout[oTopLeft].height = extent - layout[oTopLeft].top
+      perform layout[oTopLeft].render
+	  
+      ~position the rightside layout in the remaining space on the right
+      layout[oTopRight].width = colwidth*2
+      layout[oTopRight].top = layout[oTopLeft].top
+      layout[oTopRight].left = layout[oTopLeft].right + 5
+      ~layout[oTopRight].height = extent - layout[oTopRight].top
+      layout[oTopRight].height = layout[oTopLeft].height
+      perform layout[oTopRight].render
+ 
+      ~position the attribute layout under the Top modules
+      layout[oMidAttributes].width = width
+      layout[oMidAttributes].top = layout[oTopRight].bottom + 5
+      layout[oMidAttributes].left = 0
+      layout[oMidAttributes].height = extent - layout[oMidAttributes].top
+      perform layout[oMidAttributes].render
+	  
+      ~position the attribute layout under the Top modules
+      layout[oMidSkill1].width = width/4
+      layout[oMidSkill1].top = layout[oMidAttributes].bottom
+      layout[oMidSkill1].left = 0
+      layout[oMidSkill1].height = extent - layout[oMidSkill1].top
+      perform layout[oMidSkill1].render
+	  
+	  ~position the attribute layout next to previous skill layout
+      layout[oMidSkill2].width = layout[oMidSkill1].width
+      layout[oMidSkill2].top = layout[oMidSkill1].top
+      layout[oMidSkill2].left = layout[oMidSkill1].right
+      layout[oMidSkill2].height = extent - layout[oMidSkill2].top
+      perform layout[oMidSkill2].render
+	  
+	  ~position the attribute layout next to previous skill layout
+      layout[oMidSkill3].width = layout[oMidSkill1].width
+      layout[oMidSkill3].top = layout[oMidSkill2].top
+      layout[oMidSkill3].left = layout[oMidSkill2].right
+      layout[oMidSkill3].height = extent - layout[oMidSkill3].top
+      perform layout[oMidSkill3].render
+	  
+	  ~position the attribute layout next to previous skill layout
+      layout[oMidSkill4].width = layout[oMidSkill1].width
+      layout[oMidSkill4].top = layout[oMidSkill3].top
+      layout[oMidSkill4].left = layout[oMidSkill3].right
+      layout[oMidSkill4].height = extent - layout[oMidSkill4].top
+      perform layout[oMidSkill4].render
+
+      ~position the attribute layout under the Top modules
+      layout[oMidSpecs].width = width
+      layout[oMidSpecs].top = layout[oMidSkill1].bottom + 2
+      layout[oMidSpecs].left = 0
+      layout[oMidSpecs].height = extent - layout[oMidSpecs].top
+      perform layout[oMidSpecs].render
+	  
+      ]]></position>
+    </sheet>
+
+
+  </document>

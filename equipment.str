@@ -1288,7 +1288,7 @@
       ~assign any appropriate special notes to the "special" variable here
 	  if (tagis[component.WeapRange] <> 0) then
 	    var blast as string
-	    blast = "Blast: " & field[wpBlast].text
+	    blast = "Blast: " & tagnames[BlastRating.?,", "]
         if (tagis[BlastRating.?] <> 0) then
 	      special = splice(special,blast,", ") 
 		  endif
@@ -1893,7 +1893,7 @@
         endif
         if (empty(field[amBlast].text) = 0) then
 	        parent.field[wpBlast].text = field[amBlast].text
-			  endif
+			endif
 		  endif
 		endif
 
@@ -1916,6 +1916,71 @@
 	    perform assign[Equipment.AmmoCarried]
 		endif
 		
+      ]]></eval>
+	  
+    <eval index="5" phase="Final" priority="10000"><![CDATA[
+	  ~make sure we're in a container
+	  doneif (isgearheld = 0)
+	  
+	  perform gearholder.setfocus
+	  if (focus.isgearheld <> 0) then
+	    perform focus.gearholder.setfocus
+	    endif
+	  
+	  ~ if the gearholder is a weapon, then we need to provide our values
+	  if (focus.tagis[component.WeapRange] <> 0) then
+	    if (empty(field[amDamage].text) = 0) then
+	      focus.field[wpDamage].text = field[amDamage].text
+	      endif
+        if (empty(field[amCrit].text) = 0) then
+	      focus.field[wpCrit].text = field[amCrit].text
+		  endif
+        if (empty(field[amArmorRating].text) = 0) then
+	      focus.field[wpArmorRating].text = field[amArmorRating].text
+	      endif
+        if (empty(field[amRange].value) = 0) then 
+          focus.field[wpRange].value = field[amRange].value
+          endif
+
+		if (tagis[BlastRating.?] <> 0) then
+		  var myBlast as string
+		  var myCount as number
+	      myBlast = tagids[BlastRating.?,"|"]
+		  myCount = tagcountstr[myBlast]
+
+		  if (myCount <= 1) then
+		    perform focus.assignstr[myBlast]
+		  else
+		    var i as number
+			var tagstr as string
+			var remstr as string
+			var remstrlen as number
+			var tagstrlen as number
+			var loc as number
+			
+			remstr = myBlast
+			remstrlen = length(remstr) -1
+			loc = pos(remstr,"|")
+			
+			while (loc <> -1)
+  		      tagstr = left(remstr,loc)
+			  tagstrlen = length(tagstr)
+			  remstr = right(remstr,remstrlen-tagstrlen)
+			  remstrlen = length(remstr) -1
+			  perform focus.assignstr[tagstr]
+			  
+			  loc = pos(remstr,"|")
+			  loop
+ 
+			perform focus.assignstr[remstr]
+			endif
+			
+	      ~perform focus.pulltags[BlastRating.?]
+	      endif
+
+	  	endif
+
+
       ]]></eval>
     <!-- Add the quantities from the other pick into this one -->
     <merge><![CDATA[
