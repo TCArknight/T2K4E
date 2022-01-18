@@ -41,15 +41,29 @@
     <fieldval field="grReliability" value="5"/>
     <usesource source="srcT2K"/>
     <tag group="Helper" tag="HasBackpack"/>
+    <tag group="Helper" tag="IsBackpack"/>
     <tag group="Equipped" tag="Equippable"/>
     <tag group="GearType" tag="FieldGear"/>
     <tag group="thing" tag="holder_top"/>
     <tag group="GearSubType" tag="NA"/>
     <gear>herofield[acCarryBack].value = field[gearHeld].value</gear>
-    <eval phase="Setup" priority="1000">perform forward[Helper.HasBackpack]</eval>
+    <eval phase="Setup" priority="1000" index="1"><![CDATA[
+	perform forward[Helper.HasBackpack]
+	if (field[gearHeld].value <> 0) then
+	  notify "Backpack holding items"
+	  endif
+	]]></eval>
     <eval phase="PreTraits" priority="5000" index="2"><![CDATA[if (field[grIsEquip].value <> 0) then
   #traitbonus[skT2KMobility] += -2
   endif]]></eval>
+    <eval phase="Final" priority="1000" index="3"><![CDATA[
+	if (field[gearHeld].value <> 0) then
+	  ~ notify "Backpack holding items"
+	  foreach gear in this
+	    perform eachpick.assign[Helper.InBackpack]
+		nexteach
+	  endif
+	]]></eval>
     </thing>
   <thing id="eqT2KAmmoBelt" name="Ammo Belt" compset="Equipment" stacking="merge">
     <fieldval field="grReliability" value="5"/>

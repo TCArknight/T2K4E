@@ -14,7 +14,26 @@
       The following procedures are generic and used in various places
      ##################
 -->
+  <procedure id="CombatGear" scripttype="none"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var cbtgear as string
 
+	cbtgear = "  - testing CombatGear"
+	
+    ]]></procedure>
+  <procedure id="BackpackGear" scripttype="none"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var packgear as string
+	
+	var tempStr as string
+    
+	foreach pick in hero from Gear where "Helper.InBackpack"
+	  tempStr = splice(tempStr,eachpick.field[grStkName].text,"{br}  * ")
+	nexteach
+	~ notify "tempStr - " & tempStr
+	packgear = "  * " & tempStr
+	
+    ]]></procedure>	
   <procedure id="GetRank" scripttype="none"><![CDATA[
     ~declare variables that are used to communicate with our caller
     var RankIdx as number

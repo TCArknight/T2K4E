@@ -82,9 +82,17 @@
     <usesource source="srcT2K"/>
     <tag group="User" tag="Activation"/>
     </thing>
-  <thing id="spcT2KMartialArt" name="Martial Artist" description="Your close combat attacks have a crit threshold of 2 instead of 3." compset="Specialty" uniqueness="useronce">
+  <thing id="spcT2KMartialArt" name="Martial Artist" description="Your close combat attacks have a crit threshold of 3 instead of 4." compset="Specialty" uniqueness="useronce">
     <usesource source="srcT2K"/>
     <tag group="User" tag="Activation"/>
+    <eval phase="PreTraits" priority="5000">var myVal as string
+var newVal as number
+
+perform hero.childfound[wpUnarmed].setfocus
+myVal = focus.field[wpCrit].text
+newVal = myVal - 1
+
+focus.field[wpCrit].text = newVal</eval>
     </thing>
   <thing id="spcT2KMachinegun" name="Machinegunner" description="Gives a +1 modifier to HEAVY WEAPONS rolls for firing light, medium, and heavy machineguns." compset="Specialty" uniqueness="useronce">
     <usesource source="srcT2K"/>
@@ -1608,5 +1616,10 @@ validif (#trait[attrAgi] >= 5)]]></validate>
     <arrayval field="natEnlisted" index="9" value="Major"/>
     <arrayval field="natEnlisted" index="9" column="1" value="OR9"/>
     <usesource source="srcT2K"/>
+    </thing>
+  <thing id="spcT2KChooseAny" name="== Choose Any ==" description="Choose Any Specialty (due to Duplicate roll, GM Fiat, etc.)" compset="Specialty">
+    <usesource source="srcT2K"/>
+    <tag group="Hide" tag="Specialty"/>
+    <eval phase="Setup" priority="1000">#resmax[resSpecialties] += 1</eval>
     </thing>
   </document>

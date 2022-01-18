@@ -61,7 +61,11 @@
     <value id="GrenadeLauncher"/>   <!-- This item is a Grenade Launcher and can contian a Grenade item -->	
     <value id="DamageByAmmo"/>      <!-- This item is a weapon where the ammo determines damage (such as a Grenade Launcher -->	
     <value id="DisplayAlpha"/>      <!-- This item displays its value in Alphabetic rather than numeric -->	
-    <value id="HasBackpack"/>      <!-- This item displays its value in Alphabetic rather than numeric -->	
+    <value id="HasBackpack"/>       <!-- This item displays its value in Alphabetic rather than numeric -->	
+    <value id="IsBackpack"/>        <!-- Identifies a user-added adjustment -->
+    <value id="InBackpack"/>        <!-- Identifies a user-added adjustment -->
+    <value id="SpecChosen"/>        <!-- Identifies a user-added specialty -->
+    <value id="NoValue"/>           <!-- Identifies a user-added adjustment -->
     </group>
 
   <!-- User group - general helper tags that can be assigned by users via the Editor
@@ -227,6 +231,7 @@
   <group
     id="TraitValue"
     dynamic="no">
+    <value id="MinimumValue0"/>     <!-- Minimum value of this trait is 3 -->
     <value id="MinimumValue3"/>     <!-- Minimum value of this trait is 3 -->
     <value id="MaximumValue5"/>     <!-- Maximum value of this trait is 5 -->	
     </group>
@@ -558,6 +563,7 @@
     <value id="Relationship"/>    <!-- Indicates a skill that is not user selectable -->
     <value id="InPlay"/>          <!-- Indicates an in-play adjustment that is hidden from view -->
     <value id="Talent"/>          <!-- Indicates a talent that is not user selectable (i.e. conferred by race or similar mechanism) -->
+    <value id="Specialty"/>          <!-- Indicates a talent that is not user selectable (i.e. conferred by race or similar mechanism) -->
     <value id="Special"/>         <!-- Indicates a trait that is hidden from the Special tab -->
     <value id="Tracker"/>         <!-- Indicates a tracker that is hidden from the In-Play tab (and likely shown somewhere else) -->
     <value id="Equipment"/>       <!-- Indicates gear that is not user selectable (e.g. weapons/armor for creatures) -->
@@ -863,5 +869,13 @@
     <value id="Smoke" name="Smoke Dischargers" abbrev="SD" />
     </group>
 
-	
+  <group
+    id="Condition"
+    dynamic="no"
+    sequence="explicit">
+    <value id="Starving" name="Starving" order="5"/>
+    <value id="Dehydrated" name="Dehydrated" order="10"/>
+    <value id="SleepDep" name="Sleep Deprived" order="15"/>
+    <value id="Hypothermic" name="Hypothermic"order="20" />
+    </group>	
   </document>

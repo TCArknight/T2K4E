@@ -24,6 +24,13 @@
       maxlength="5">
       </field>
 
+    <field
+      id="trtBoxes"
+      name="Minimum Value"
+      type="derived"
+	  maxlength="150">
+      </field>
+	  
     <!-- Minimum user-assigned value for the trait -->
     <field
       id="trtMinimum"
@@ -220,7 +227,11 @@
         endif
 		
       ~put the final result into the proper field
-      field[trtAlpha].text = display
+	  if (tagis[Helper.NoValue] = 0) then
+        field[trtAlpha].text = display
+	  else
+        field[trtAlpha].text = "  "
+		endif
       ]]></eval>
 	  
     <!-- Add any creation trait bonuses into the overall bonus tally
@@ -228,6 +239,29 @@
         -->
     <eval index="6" phase="Traits" priority="1"><![CDATA[
       field[trtBonus].value += field[trtCreate].value
+      ]]></eval>
+	  
+    <eval index="7" phase="Final" priority="10000" name="Bld Graphic Fld"><![CDATA[
+	  var tempStr as string
+	  var tempVal as number
+	  
+	  trustme
+
+      ~ Graphic
+      tempStr = ""
+      tempVal = field[trtFinal].value
+	  
+	  var i as number
+	  for i = 1 to 6
+	    if (i <= tempVal) then
+		  tempStr &= "{bmpscale 2 output_box}"
+	    else
+		  tempStr &= "{bmpscale 2 output_box_full}"
+		  endif
+	    next 
+		
+      field[trtBoxes].text = tempStr
+	  
       ]]></eval>
     </component>
 
@@ -356,11 +390,15 @@
     <!-- Track the skill on the actor -->
     <eval index="1" phase="Setup" priority="5000"><![CDATA[
 	  var myKey as string
-	  myKey = linkage[attribute].tagids[KeyAttribute.?,"|"]
+	  if (container.ishero <> 0) then
+	    myKey = linkage[attribute].tagids[KeyAttribute.?,"|"]
+		perform assignstr[myKey]
+		endif
+		
 	  ~notify myKey
 	  
       perform forward[Skill.?]
-	  perform assignstr[myKey]
+	  
 	  
 	  doneif (hero.tagis[source.srcT2KLifepath] = 0)
 	  
@@ -735,7 +773,6 @@
     <!-- Each Specialty that is added by the user costs 1 slot from the appropriate pool (resTalent, resArchTalentPri, resArchTalentSec) -->
     <!-- Track the Specialty on the actor -->
     <eval index="2" phase="Setup" priority="5000"><![CDATA[
-      perform forward[Specialty.?]
 	  
 	  ~ forward any Lifepath tags that may be present
       perform forward[Lifepath.?]	
@@ -747,6 +784,8 @@
 	    
 		~ adjust the resource for the particular lifepath module
 		container.childfound[resLPSpecialty].field[resSpent].value += 1
+	  else
+        perform forward[Specialty.?]
 		endif
 	  
       ]]></eval>
@@ -765,6 +804,15 @@
         endif
       ]]></eval>
 	  
+    <eval index="4" phase="Setup" priority="5000"><![CDATA[
+      ~if we're not able to be activated, we don't qualify
+      doneif (ispick = 0)
+
+	  doneif (tagis[Helper.SpecChosen] = 0)
+	  
+	  hero.childfound[resSpecialties].field[resSpent].value += 1
+      ]]></eval>
+	    	  
     <!-- Verify Specialty that are only available at creation -->
     <prereq message="Only available during character creation.">
       <validate><![CDATA[

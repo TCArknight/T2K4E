@@ -91,12 +91,35 @@
       showtemplate="SimpleItem"
       showsortset="explicit"
       scrollable="no">
+	  <list>!Hide.Specialty</list>
       <headertitle><![CDATA[
         @text = "Specialties"
         ]]></headertitle>
       </table_fixed>
     </portal>
-
+	
+  <portal
+    id="baSpecialtyChs"
+    style="tblInvis">
+    <table_dynamic
+      component="Specialty"
+      showtemplate="SimpleItem"
+      choosetemplate="SimpleItem"
+      showsortset="explicit"
+      scrollable="no">
+	  <list>!Hide.Specialty &amp; Helper.SpecChosen</list>
+	  <candidate>!Hide.Specialty &amp; component.Specialty</candidate>
+      <autotag group="Helper" tag="SpecChosen"/>
+      <headertitle><![CDATA[
+        @text = "Specialty Selection"
+        @text &= hero.child[resSpecialties].field[resShortAlt].text
+        ]]></headertitle>
+      <additem><![CDATA[
+        @text = hero.child[resSpecialties].field[resAddItem].text
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
   <!-- baAttrPick template
         Displays one attribute within the table of attributes. We setup suitable
         margins around each template, which provides substantial spacing between
@@ -422,6 +445,7 @@
     <portalref portal="baTrait" taborder="20"/>
     <portalref portal="baSkill" taborder="30"/>
     <portalref portal="baSpecialty" taborder="40"/>
+    <portalref portal="baSpecialtyChs" taborder="50"/>
     <portalref portal="Horizontal"/>
     <portalref portal="Horizontal2"/>
 
@@ -468,13 +492,18 @@
       ~portal[Horizontal2].top = pagebreak
       ~portal[Horizontal2].left = 5
 	  
-	  ~position the 
-      ~template[baOptFields].left = portal[baSpecialty].left
-      ~template[baOptFields].top = portal[Horizontal2].bottom + 10
-	  ~template[baOptFields].width = portal[baSpecialty].width
+	  ~pagebreak = portal[Horizontal2].bottom + 5
+	  
+	  ~position the Specialty chooser
+      portal[baSpecialtyChs].left = 0
+      portal[baSpecialtyChs].top = pagebreak
+	  portal[baSpecialtyChs].width = width
+	  portal[baSpecialtyChs].visible = #resmax[resSpecialties]
+	  
+	  pagebreak = portal[baSpecialtyChs].bottom + 5
 	  
 	  ~figure out the total height we need for the tab
-	  height = portal[baSpecialty].bottom
+	  height = pagebreak
 	  
       ]]></position>
 

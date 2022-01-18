@@ -38,6 +38,7 @@
       showtemplate="smSpecialty"
       scrollable="no"
 	  alwaysupdate="yes">
+	  <list>!Hide.Specialty</list>
       <headertitle><![CDATA[
       @text = #summtitle_decoration[] & " Specialties " & #summtitle_decoration[]
       ]]></headertitle>

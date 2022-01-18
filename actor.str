@@ -279,14 +279,6 @@
         ]]></finalize>
       </field>
 
-    <!-- Starting ability slots to allocate -->
-    <field
-      id="acStartTalents"
-      name="Talent Slots"
-      type="user"
-      defvalue="0">
-      </field>
-
     <!-- Starting XP for the character -->
     <field
       id="acStartXP"
@@ -309,6 +301,14 @@
       defvalue="0">
       </field>	  
 
+    <!-- Starting ability slots to allocate -->
+    <field
+      id="acBonusTalents"
+      name="Talent Slots"
+      type="user"
+      defvalue="0">
+      </field>
+	  
     <!-- Starting Attribute points for the character -->
     <field
       id="acStartSkillPts"
@@ -627,34 +627,115 @@
 	  decimals="2"
       defvalue="0">
       </field>
-    <!-- Defense-related fields -->
-    <!-- Best armor worn on the torso -->
+
+    <!-- Whether character is starving -->
     <field
-      id="acDefTorso"
-      name="Armor on Torso"
-      type="derived">
+      id="acStarving"
+      name="Is Starving?"
+      type="user">
       </field>
 
-    <!-- Best armor worn on the head -->
+    <!-- Text for whether character is starving -->
     <field
-      id="acDefHead"
-      name="Armor on Head"
-      type="derived">
+      id="acStarvingTxt"
+      name="Starving Text"
+      type="derived"
+      maxfinal="50">
+      <!-- Calculate a value based on all fields referenced by the "finalize" script -->
+      <calculate phase="Render" priority="1000"><![CDATA[
+        @value = field[acStarving].value
+        ]]></calculate>
+      <!-- Highlight the text in red when the character is shaken -->
+      <finalize><![CDATA[
+        @text = ""
+        if (@value <> 0) then
+          @text = "{text clrwarning}"
+          endif
+        @text &= "Starving"
+        ]]></finalize>
       </field>
 
-    <!-- Best armor worn on the arms -->
+    <!-- Whether character is starving -->
     <field
-      id="acDefArms"
-      name="Armor on Arms"
-      type="derived">
+      id="acDehydrated"
+      name="Is Dehydrated?"
+      type="user">
       </field>
 
-    <!-- Best armor worn on the legs -->
+    <!-- Text for whether character is starving -->
     <field
-      id="acDefLegs"
-      name="Armor on Legs"
-      type="derived">
-      </field>	  
+      id="acDehydratedTxt"
+      name="Dehydrated Text"
+      type="derived"
+      maxfinal="50">
+      <!-- Calculate a value based on all fields referenced by the "finalize" script -->
+      <calculate phase="Render" priority="1000"><![CDATA[
+        @value = field[acDehydrated].value
+        ]]></calculate>
+      <!-- Highlight the text in red when the character is shaken -->
+      <finalize><![CDATA[
+        @text = ""
+        if (@value <> 0) then
+          @text = "{text clrwarning}"
+          endif
+        @text &= "Dehydrated"
+        ]]></finalize>
+      </field>	
+
+    <!-- Whether character is starving -->
+    <field
+      id="acSleepDep"
+      name="Is Sleep Deprived?"
+      type="user">
+      </field>
+
+    <!-- Text for whether character is starving -->
+    <field
+      id="acSleepDepTxt"
+      name="Dehydrated Text"
+      type="derived"
+      maxfinal="50">
+      <!-- Calculate a value based on all fields referenced by the "finalize" script -->
+      <calculate phase="Render" priority="1000"><![CDATA[
+        @value = field[acSleepDep].value
+        ]]></calculate>
+      <!-- Highlight the text in red when the character is shaken -->
+      <finalize><![CDATA[
+        @text = ""
+        if (@value <> 0) then
+          @text = "{text clrwarning}"
+          endif
+        @text &= "Sleep Deprived"
+        ]]></finalize>
+      </field>
+
+    <!-- Whether character is starving -->
+    <field
+      id="acHypothermic"
+      name="Is Hypothermic?"
+      type="user">
+      </field>
+
+    <!-- Text for whether character is starving -->
+    <field
+      id="acHypothermicTxt"
+      name="Hypothermic Text"
+      type="derived"
+      maxfinal="50">
+      <!-- Calculate a value based on all fields referenced by the "finalize" script -->
+      <calculate phase="Render" priority="1000"><![CDATA[
+        @value = field[acHypothermic].value
+        ]]></calculate>
+      <!-- Highlight the text in red when the character is shaken -->
+      <finalize><![CDATA[
+        @text = ""
+        if (@value <> 0) then
+          @text = "{text clrwarning}"
+          endif
+        @text &= "Hypothermic"
+        ]]></finalize>
+      </field>
+	  
     <tag group="Stage" tag="Minimal"/>
 
 	<!-- Timing: before the existence expression on the baRace table in
@@ -760,6 +841,28 @@
     </component>	
 
   <component
+    id="HealthRelated"
+    name="Health Related Items">
+	
+    <!-- Optional setting-related fields -->
+    <field
+      id="hlthCritical"
+      name="Critical Injuries"
+      type="derived"
+      maxlength="250"
+	  defvalue="-- None --">
+      </field>
+    <field
+      id="hlthDisease"
+      name="Diseases"
+      type="derived"
+      maxlength="250"
+	  defvalue="-- None --">
+      </field>
+
+    </component>
+	
+  <component
     id="Consumables"
     name="Consumable Resources">
 	
@@ -790,7 +893,41 @@
       </field>
 	  
     </component>	
+
+  <component
+    id="DefValues"
+    name="Defense Values">
 	
+    <!-- Defense-related fields -->
+    <!-- Best armor worn on the torso -->
+    <field
+      id="dvDefTorso"
+      name="Armor on Torso"
+      type="derived">
+      </field>
+
+    <!-- Best armor worn on the head -->
+    <field
+      id="dvDefHead"
+      name="Armor on Head"
+      type="derived">
+      </field>
+
+    <!-- Best armor worn on the arms -->
+    <field
+      id="dvDefArms"
+      name="Armor on Arms"
+      type="derived">
+      </field>
+
+    <!-- Best armor worn on the legs -->
+    <field
+      id="dvDefLegs"
+      name="Armor on Legs"
+      type="derived">
+      </field>
+
+    </component>	
   <!-- Personal component
         Encapsulates all of the personal details tracked on the Personal tab
   -->

@@ -1659,38 +1659,38 @@
       defense = field[defDefense].value
       if (tagis[ArmorLoc.Torso] <> 0) then
         if (tagis[Equipment.StackArmor] = 0) then
-          if (defense > herofield[acDefTorso].value) then
-            herofield[acDefTorso].value = defense
+          if (defense > #armortorso[] ) then
+            #armortorso[] = defense
             endif
 		else
-		  herofield[acDefTorso].value += defense
+		  #armortorso[] = defense
           endif
         endif
       if (tagis[ArmorLoc.Head] <> 0) then
         if (tagis[Equipment.StackArmor] = 0) then
-          if (defense > herofield[acDefHead].value) then
-            herofield[acDefHead].value = defense
+          if (defense > #armorhead[] ) then
+            #armorhead[] = defense
             endif
 		else
-		  herofield[acDefHead].value += defense
+		  #armorhead[] += defense
           endif
         endif
       if (tagis[ArmorLoc.Arms] <> 0) then
         if (tagis[Equipment.StackArmor] = 0) then
-          if (defense > herofield[acDefArms].value) then
-            herofield[acDefArms].value = defense
+          if (defense > #armorarms[]) then
+            #armorarms[] = defense
             endif
 		else
-		  herofield[acDefArms].value += defense
+		  herofield[dvDefArms].value += defense
           endif
         endif
       if (tagis[ArmorLoc.Legs] <> 0) then
         if (tagis[Equipment.StackArmor] = 0) then
-          if (defense > herofield[acDefLegs].value) then
-            herofield[acDefLegs].value = defense
+          if (defense > #armorlegs[]) then
+            #armorlegs[] = defense
             endif
 		else
-		  herofield[acDefLegs].value += defense
+		  #armorlegs[] += defense
           endif
         endif
       ]]></eval>

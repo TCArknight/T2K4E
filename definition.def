@@ -136,6 +136,10 @@ Text goes here
     param1="trait"
     result="hero.child[#trait].field[trtUser].value"/>
   <scriptmacro
+    name="traitboxes"
+    param1="trait"
+    result="hero.child[#trait].field[trtBoxes].text"/>
+  <scriptmacro
     name="setvehicle"
     param1="attribute"
     result="hero.child[#attribute].field[trtUser].value"/>
@@ -163,6 +167,10 @@ Text goes here
     name="trkmax"
     param1="tracker"
     result="hero.child[#tracker].field[trkMax].value"/>
+  <scriptmacro
+    name="trkuser"
+    param1="tracker"
+    result="hero.child[#tracker].field[trkUser].value"/>
   <scriptmacro
     name="isprimary"
     param1="archetype"
@@ -203,6 +211,24 @@ Text goes here
   <scriptmacro
     name="moralcode"
 	result="hero.child[mscOptFields].field[optMoralCode].text"/>
+  <scriptmacro
+    name="criticals"
+	result="hero.child[mscHealthRel].field[hlthCritical].text"/>
+  <scriptmacro
+    name="diseases"
+	result="hero.child[mscHealthRel].field[hlthDisease].text"/>
+  <scriptmacro
+    name="armorhead"
+	result="hero.child[mscDefValues].field[dvDefHead].value"/>
+  <scriptmacro
+    name="armortorso"
+	result="hero.child[mscDefValues].field[dvDefTorso].value"/>
+  <scriptmacro
+    name="armorarms"
+	result="hero.child[mscDefValues].field[dvDefArms].value"/>
+  <scriptmacro
+    name="armorlegs"
+	result="hero.child[mscDefValues].field[dvDefLegs].value"/>
 
   <!-- The "advancement" element controls whether serialized advancement logic is enabled
         and how the advancement mechanisms should behave for the game system.

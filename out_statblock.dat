@@ -215,7 +215,7 @@
         if (hero.tagis[source.srcT2K] <> 0) then
 		  ~output specialties
           append @boldon & "Specialty: " & @boldoff
-          tagexpr = "component.Specialty"
+          tagexpr = "component.Specialty & !Hide.Specialty"
 		else
           ~output special talents
           append @boldon & "Talents: " & @boldoff
@@ -246,6 +246,9 @@
 		~append herofield[acConsumeSumm].text & @newline
 		
 		~output Carrying Capacity
+		var cbtgear as string
+		var packgear as string
+		
         append @boldon & "Carrying " & @boldoff & @newline
         append @boldon & "-- Combat: " & @boldoff & herofield[acCarryCombat].text & " (Max: "
 		
@@ -256,8 +259,13 @@
 		  endif
 		append ")" & @newline
 		
+		call CombatGear 
+		append cbtgear & @newline
+		
 		if (hero.tagis[Helper.HasBackpack] <> 0) then
           append @boldon & "-- Backpack: " & @boldoff & herofield[acCarryBack].text & " (Max: " & herofield[acCarryBackMax].text & ")" & @newline
+		  call BackpackGear 
+		  append packgear & @newline
 		  endif
 		
         ~output tracked resources

@@ -409,7 +409,7 @@
 	  expr = container.tagids[Specialty.?,"|"]
 	  expr = replace(expr, "Specialty", "thingid", 0)
 	  
-      field[lpSpecExpr].text = expr
+      field[lpSpecExpr].text = "thingid.spcT2KChooseAny|" & expr
 	  
       ]]></eval> 
 	<!-- build the expression strings based on tags -->

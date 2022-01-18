@@ -50,6 +50,7 @@
 
   <!-- And one optional fields info pick -->
   <bootstrap index="5" thing="mscOptFields"/>
+  <bootstrap index="6" thing="mscHealthRel"/>
   
   <!-- And one service info pick -->
   <bootstrap index="10" thing="mscService"/>

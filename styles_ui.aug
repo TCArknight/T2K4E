@@ -2583,6 +2583,23 @@
       </style_checkbox>
     </style>
 
+  <!-- style used on checkboxes with large text -->
+  <style
+    id="chkLarge">
+    <style_checkbox
+      textcolorid="clrnormal"
+      font="fntchecklg">
+      </style_checkbox>
+    <resource
+      id="fntchecklg">
+      <font
+        face="Arial"
+        size="48"
+        style="bold">
+        </font>
+      </resource>
+    </style>
+	
   <!-- style used on checkboxes in a warning color, such as when the state is invalid -->
   <style
     id="chkWarning">

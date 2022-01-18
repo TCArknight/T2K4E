@@ -60,6 +60,15 @@
       </font>
     </resource>
 
+  <resource
+    id="ofnttitlehdr">
+    <font
+      face="Arial"
+      size="36"
+      style="bold">
+      </font>
+	  
+    </resource>
   <!-- font used on title text -->
   <resource
     id="ofnttitlemil">
@@ -122,6 +131,16 @@
       </style_output>
     </style>
 
+  <!-- simple text for output -->
+  <style
+    id="outLeftBrd"
+	border="solid">
+    <style_output
+      textcolor="000000"
+      font="ofntnormal"
+      alignment="left">
+      </style_output>
+    </style>
   <!-- title text for output -->
   <style
     id="outTitle">
@@ -143,6 +162,30 @@
       alignment="left">
       </style_output>
     </style>
+
+  <!-- title text for output -->
+  <style
+    id="outLeftTitleBrd"
+	border="solid">
+    <style_output
+      textcolor="000000"
+      backcolor="dddddd"
+      font="ofnttitle"
+      alignment="left">
+      </style_output>
+    </style>
+
+  <!-- title text for output -->
+  <style
+    id="outTitleHdr"
+	border="solid">
+    <style_output
+      textcolor="000000"
+      backcolor="dddddd"
+      font="ofnttitlehdr"
+      alignment="center">
+      </style_output>
+    </style>	
   <!-- hero name text for output -->
   <style
     id="outHeroNam">
@@ -253,6 +296,14 @@
       </style_output>
     </style>
   <style
+    id="outNameTitleLeft">
+    <style_output
+      textcolor="000000"
+      font="ofnttitle"
+      alignment="left">
+      </style_output>
+    </style>
+  <style
     id="outNameTitleMil"
     border="solid">
     <style_output
@@ -298,6 +349,14 @@
       textcolor="000000"
       font="ofntheader"
       alignment="center">
+      </style_output>
+    </style>
+  <style
+    id="outHeaderLeft">
+    <style_output
+      textcolor="000000"
+      font="ofntheader"
+      alignment="left">
       </style_output>
     </style>
 

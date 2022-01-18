@@ -13,6 +13,7 @@
       grouping="AtTop"
       default="yes">
       <sheetref sheet="new1"/>
+      <sheetref sheet="new2"/>
       </dossier_sheet>
     </dossier>
   <!-- Standard character sheet

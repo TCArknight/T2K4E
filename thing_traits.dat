@@ -36,7 +36,7 @@
     isunique="yes"
     description="When bullets start to fly in your direction, you need to keep a cool head. Panicking can cost you your life or get someone else killed. The better your CUF, the better you are at keeping calm in combat.">
     <fieldval field="trtAbbrev" value="CUF"/>
-    <tag group="explicit" tag="1"/>
+    <tag group="explicit" tag="3"/>
     <tag group="Stage" tag="Capsule"/>
     <tag group="Helper" tag="DisplayAlpha"/>
     <tag group="TraitValue" tag="MinimumValue3"/>
@@ -53,6 +53,31 @@
       ]]></eval>
     </thing>
 	
+  <!-- Unit Morale -->
+  <thing
+    id="trUnitMorale"
+    name="Unit Morale"
+    compset="Trait"
+    isunique="yes"
+    description="When bullets start to fly in your direction, you need to keep a cool head. Panicking can cost you your life or get someone else killed. The better your CUF, the better you are at keeping calm in combat.">
+    <fieldval field="trtAbbrev" value="CUF"/>
+    <tag group="explicit" tag="4"/>
+    <tag group="Stage" tag="Capsule"/>
+    <tag group="Helper" tag="DisplayAlpha"/>
+    <tag group="Helper" tag="NoValue"/>
+    <tag group="TraitValue" tag="MinimumValue0"/>
+    <!-- Calculate the Health trait as STR value -->
+    <eval index="1" phase="Traits" priority="4000">
+      <before name="Derived trtFinal"/>
+      <after name="Calc trtFinal"/><![CDATA[
+      var value as number
+      value = 0
+	  value = round(value, 0, 1)
+      
+	  ~ field[trtBonus].value += value
+
+      ]]></eval>
+    </thing>	
   <!-- Health Trait -->
   <thing
     id="trHealth"
@@ -61,7 +86,7 @@
     isunique="yes"
     description="Even if you keep your nerves in check, chances are that sooner or later you’re going to get hurt. This is tracked using your Health score. You start the game with a number of Health points equal to your STRENGTH score. Talents can modify your maximum Health score.">
     <fieldval field="trtAbbrev" value="Hlth"/>
-    <tag group="explicit" tag="2"/>
+    <tag group="explicit" tag="1"/>
     <tag group="User" tag="Power"/>
     <tag group="Stage" tag="Capsule"/>
     <!-- Calculate the Health trait as STR value -->
@@ -85,8 +110,8 @@
     compset="Trait"
     isunique="yes"
     description="More often than you’d like, you’ll find yourself under extreme pressure. In the game, this mounting tension is represented by your STRESS LEVEL. It usually starts at zero, and can increase by pushing dice rolls and by experiencing frightening or stressful situations.">
-    <fieldval field="trtAbbrev" value="Ment"/>
-    <tag group="explicit" tag="3"/>
+    <fieldval field="trtAbbrev" value="Strs"/>
+    <tag group="explicit" tag="2"/>
     <tag group="User" tag="Power"/>
     <tag group="DashTacCon" tag="Traits"/>
     <!-- Stress begins at 0 -->

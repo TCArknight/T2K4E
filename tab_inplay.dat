@@ -1059,6 +1059,98 @@
 
     </template>
 
+  <template
+    id="ipCondition"
+    name="Conditions"
+    compset="Actor">
+
+    <portal
+      id="title"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Conditions">
+        </label>
+      </portal>
+
+    <portal
+      id="starving"
+      style="chkLarge"
+      tiptext="Click to indicate the character is Starving (xxx modifier)">
+      <checkbox
+        field="acStarving"
+        dynamicfield="acStarvingTxt">
+        </checkbox>
+      </portal>
+
+    <portal
+      id="dehydrated"
+      style="chkLarge"
+      tiptext="Click to indicate the character is Dehydrated (xxx modifier)">
+      <checkbox
+        field="acDehydrated"
+        dynamicfield="acDehydratedTxt">
+        </checkbox>
+      </portal>
+
+    <portal
+      id="sleepdep"
+      style="chkLarge"
+      tiptext="Click to indicate the character is Sleep Deprived (xxx modifier)">
+      <checkbox
+        field="acSleepDep"
+        dynamicfield="acSleepDepTxt">
+        </checkbox>
+      </portal>
+
+    <portal
+      id="hypothermic"
+      style="chkLarge"
+      tiptext="Click to indicate the character is Hypothermic (xxx modifier)">
+      <checkbox
+        field="acHypothermic"
+        dynamicfield="acHypothermicTxt">
+        </checkbox>
+      </portal>
+
+    <position><![CDATA[
+
+      
+	  
+      ~the title should span the full width
+      portal[title].width = width
+
+      ~position the tallest portal beneath the title
+      perform portal[starving].alignrel[ttob,title,8]
+      perform portal[dehydrated].alignrel[ttob,title,8]
+      perform portal[sleepdep].alignrel[ttob,title,8]
+      perform portal[hypothermic].alignrel[ttob,title,8]
+
+      var colWidth as number
+	  colWidth = width / 2
+	  
+      ~position the current health portals on the left
+      portal[starving].left = 0
+      portal[starving].width = colWidth
+      portal[dehydrated].width = colWidth
+	  portal[sleepdep].left = 0
+      portal[sleepdep].width = colWidth
+      portal[hypothermic].width = colWidth
+	  
+	  portal[dehydrated].top = portal[starving].top
+	  portal[sleepdep].top = portal[starving].bottom + 4
+      portal[hypothermic].top = portal[starving].bottom + 4
+	  
+      ~position the undo portal to the left of the reset portal
+      perform portal[dehydrated].alignrel[ltor,starving,5]
+      perform portal[sleepdep].alignrel[ttob,starving,5]
+      perform portal[hypothermic].alignrel[ltor,sleepdep,5]
+
+      height = portal[hypothermic].bottom + 8
+      ]]></position>
+
+    </template>
+	
   <!-- inplay layout
         This layout orchestrates the display of the visual elements that comprise
         the InPlay tab. At the top is the Health section, with trackers beneath for
@@ -1072,6 +1164,7 @@
     <portalref portal="ipAdjust" taborder="40"/>
     <templateref template="ipHealth" thing="mscHealthDmg" taborder="10"/>
     <templateref template="ipStress" thing="mscStressDmg" taborder="10"/>
+    <templateref template="ipCondition" thing="actor" taborder="15"/>
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
@@ -1079,6 +1172,7 @@
       portal[ipTracker].width = width
       portal[ipActivate].width = width
       portal[ipAdjust].width = width
+      template[ipCondition].width = width
 
       ~set the width of our health template to the width of the layout, then
       ~render the health template to setup its height
@@ -1086,6 +1180,8 @@
       perform template[ipHealth].render
       template[ipStress].width = width
       perform template[ipStress].render
+      template[ipCondition].width = width
+      perform template[ipCondition].render
 	  
       ~center all tables and templates horizontally
       template[ipHealth].left = (width - template[ipHealth].width) / 2
@@ -1101,9 +1197,12 @@
       ~position the stress template beneath the health template
       template[ipStress].top = template[ipHealth].bottom + 9
 	  
+      ~position the condition template beneath the stress template
+      template[ipCondition].top = template[ipStress].bottom + 9
+	  
       ~position the tracker table beneath the health template
-      portal[ipTracker].top = template[ipStress].bottom + 9
-
+      portal[ipTracker].top = template[ipCondition].bottom + 9
+	  
       ~position the adjustments table at the bottom, allowing for at least three rows
       portal[ipAdjust].maxrows = 3
       portal[ipAdjust].top = height - portal[ipAdjust].height

@@ -170,11 +170,11 @@
       id="menuabil"
       style="menuNormal">
       <menu_literal
-        field="acStartTalents">
-        <choice value="0" display="Talents: 0"/>
-        <choice value="1" display="Talents: 1"/>
-        <choice value="2" display="Talents: 2"/>
-        <choice value="3" display="Talents: 3"/>
+        field="acBonusTalents">
+        <choice value="0" display="Free Specialties: 0"/>
+        <choice value="1" display="Free Specialties: 1"/>
+        <choice value="2" display="Free Specialties: 2"/>
+        <choice value="3" display="Free Specialties: 3"/>
         </menu_literal>
       </portal>
 

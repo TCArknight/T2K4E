@@ -108,6 +108,24 @@
 	
     </thing>
 	
+  <thing
+    id="resSpecialties"
+    name="Free Specialties Points"
+    compset="Resource"
+    panellink="basics">
+    <fieldval field="resObject" value="Skill"/>
+    <fieldval field="resMax" value="0"/>
+
+    <!-- Automatically add the resource to every actor -->
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Adjust points based on Age category -->
+    <eval index="1" phase="Setup" priority="1000" name="Adjust Specialty Count"><![CDATA[
+	  field[resMax].value += herofield[acBonusTalents].value
+ 
+      ]]></eval>
+
+    </thing>	
   <!-- Damage transaction handler for use when applying damage on the In-Play tab -->
   <thing
     id="mscHealthDmg"
@@ -127,7 +145,16 @@
     <!-- Automatically add the damage transaction to every actor -->
     <tag group="Helper" tag="Bootstrap"/>
     </thing>
-	
+
+  <!-- Damage transaction handler for use when applying damage on the In-Play tab -->
+  <thing
+    id="mscDefValues"
+    name="Defense Values"
+    compset="DefValues">
+
+    <!-- Automatically add the damage transaction to every actor -->
+    <tag group="Helper" tag="Bootstrap"/>
+    </thing>	
   <!-- Relationships -->
   <thing
     id="relRelationship"
@@ -149,6 +176,13 @@
     name="Personal"
     compset="Personal">
     </thing>
+	
+  <!-- Personal information details used on the Personal tab -->
+  <thing
+    id="mscHealthRel"
+    name="Health-Related Fields"
+    compset="HealthRelated">
+    </thing>	
 	
   <!-- Personal information details used on the Personal tab -->
   <thing
@@ -184,7 +218,7 @@
 
     <!-- Use the starting ability slots as our initial maximum -->
     <eval index="1" phase="Setup" priority="1000"><![CDATA[
-      field[resMax].value = herofield[acStartTalents].value
+      field[resMax].value = herofield[acBonusTalents].value
       ]]></eval>
     </thing>
 
@@ -246,7 +280,8 @@
   <thing
     id="trkRads"
     name="Rads"
-    compset="Tracker">
+    compset="Tracker"
+	description="This is the number of temporary {i}rad points{/i} that the character has accumulated.">
 
     <!-- Automatically add the tracker to every actor -->
     <tag group="Helper" tag="Bootstrap"/> 
@@ -260,6 +295,25 @@
       ]]></eval>
     </thing>
 
+  <!-- Stress tracker so the user can manage the expenditure of power points -->
+  <thing
+    id="trkRadsPerm"
+    name="Rads (Perm.)"
+    compset="Tracker"
+	description="This is the number of permanent {i}rad points{/i} that the character has accumulated.">
+
+    <!-- Automatically add the tracker to every actor -->
+    <tag group="Helper" tag="Bootstrap"/> 
+	
+    <!-- No upper limit for tracker -->
+    <tag group="Helper" tag="NoMaxBound"/>
+
+    <!-- Rads begin at 0 -->
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+      field[trkMin].value = 0
+      ]]></eval>
+    </thing>
+	
   <!-- Types of characters you might want to build -->
   <thing
     id="typHero"
