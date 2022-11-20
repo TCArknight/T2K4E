@@ -84,7 +84,7 @@
 	    var tourIdx as number
 		
 		~ reduce the idx by 1 to account for the Childhood tour
-		tourIdx = field[xIndex].value - 1
+		tourIdx = field[xIndex].value - #lpathchildhood[]
 		
 	    if (tagis[LifepathCat.Tour] <> 0) then
 		  herofield[acLPTours].value += 1

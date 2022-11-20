@@ -38,7 +38,7 @@
         if (hero.tagis[Lifepath.NationalitySelect] <> 0) then
           @text = "{text clrgrey}No more nationalities can be added"
 		else
-		  @text &= "Add Nationality"
+		  @text &= "{text clrwarning}Add Nationality"
           endif
         ]]></additem>
       </table_dynamic>
@@ -85,7 +85,7 @@
         if (hero.tagis[Lifepath.ChildhoodSelected] <> 0) then
           @text = "{text clrgrey}No more childhoods can be added"
 		else
-		  @text &= "Add Childhood"
+		  @text &= "{text clrwarning}Add Childhood"
           endif
         ]]></additem>
       </table_dynamic>
@@ -106,6 +106,7 @@
     style="tblInvis">
     <table_dynamic
       component="Lifepath"
+      headertemplate="lpTourHdr"
       showtemplate="lpLifepathPick"
 	  showsortset="TourIndex"
       choosetemplate="SimpleItem"
@@ -119,6 +120,9 @@
       <description/>
       <headertitle><![CDATA[]]></headertitle>
       <additem><![CDATA[
+	    if (hero.tagis[Lifepath.ChildhoodSelected] <> 0) then
+		  @text ="{text clrwarning}"
+		  endif
   	    @text &= "Add Tour"
         ]]></additem>
       </table_dynamic>
@@ -236,11 +240,11 @@
 	
 		NumOfDice = 2
 		SizeOfDice = 3
-		Additional = 12
+		Additional = 0
 		
 		call DieRoll
 		
-		herofield[acStartAttrib].value = total		
+		herofield[acBonusAttrib].value = total		
 		
 		]]></trigger>
         <buttontext><![CDATA[
@@ -254,13 +258,19 @@
       style="lblNormal">
       <label>
         <labeltext><![CDATA[
-		  var points as number
-		  points = herofield[acStartAttrib].text - 12
-		  
-          @text = "Additional Points: " & points
+          @text = "Additional Points:"
           ]]></labeltext>
         </label>
       </portal>
+	  
+    <portal
+      id="editpts"
+      style="editCenter">
+      <edit 
+        field="acBonusAttrib">
+        </edit>
+      </portal>
+
 
     <position><![CDATA[
       ~set up our height based on our tallest portal
@@ -271,12 +281,17 @@
       
 	  perform portal[rollattrib].centervert
 	  perform portal[lblpts].centervert
+	  perform portal[editpts].centervert
 	  
       ~position our tallest portal at the top
       portal[rollattrib].top = 0
 
+	  portal[editpts].top =  portal[lblpts].top
+	  portal[editpts].height =  portal[lblpts].height
+	  
       ~position the rollattrib portal on the far right
       perform portal[rollattrib].alignedge[right,0]
+      perform portal[editpts].alignrel[ltor,lblpts,10]
 	  
 	  ~position the rollattrib portal on the far left
       perform portal[lblpts].alignedge[left,0]
@@ -285,11 +300,100 @@
     </template>	
 	
   <template
+    id="lpTourHdr"
+    name="Tour Header"
+    compset="Lifepath"
+    marginhorz="3"
+    marginvert="3">
+	
+    <portal
+      id="hdrTitle"
+      style="lblTitle"
+      isheader="yes">
+      <label
+        istitle="yes"
+        text="Career Tours">
+        </label>
+      </portal>
+	  
+    <portal
+      id="hdrTour"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Tour"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrAging"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Age?"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrYears"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Yrs"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrWar"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+		  @text = "War?"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <header><![CDATA[
+      ~our header height is the title plus a gap plus the header text
+      height = portal[hdrTitle].height + portal[hdrTour].height + 2
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~our title spans the full width of the template
+      portal[hdrTitle].width = width
+
+      ~each of our header labels has the same width as the corresponding data beneath
+      perform portal[hdrTour].centerpoint[horz,150]
+      perform portal[hdrAging].centerpoint[horz,320]
+      perform portal[hdrYears].centerpoint[horz,350]
+      perform portal[hdrWar].centerpoint[horz,380]
+	  
+      ~align all header labels at the bottom of the header region
+      perform portal[hdrTour].alignedge[bottom,0]
+      perform portal[hdrAging].alignedge[bottom,0]
+      perform portal[hdrYears].alignedge[bottom,0]
+      perform portal[hdrWar].alignedge[bottom,0]
+
+      height = portal[hdrTour].bottom
+      ]]></header>
+	  
+    </template>	
+	
+  <template
     id="lpLifepathPick"
     name="Lifepath Pick"
     compset="Lifepath"
     marginhorz="3"
     marginvert="2">
+	
 
     <portal
       id="name"
@@ -398,13 +502,17 @@
       perform portal[edit].alignrel[rtol,info,-8]
 	  
       ~position the finaltour portal to the left of the edit button
-      perform portal[finaltour].alignrel[rtol,edit,-8]
+      ~ perform portal[finaltour].alignrel[rtol,edit,-8]
+	  
+      perform portal[finaltour].centerpoint[horz,380]
 	  
       ~position the years portal to the left of the finaltour button
-      perform portal[years].alignrel[rtol,finaltour,-8]
+      ~ perform portal[years].alignrel[rtol,finaltour,-8]
+      perform portal[years].centerpoint[horz,350]
 	  
       ~position the aging portal to the left of the years button
-      perform portal[aging].alignrel[rtol,years,-8]
+      ~ perform portal[aging].alignrel[rtol,years,-8]
+      perform portal[aging].centerpoint[horz,320]
 	  
       ~if we're showing a thing, the info and delete buttons are irrelevant, since
       ~we should be showing within a chooser, in which case there's nothing to
@@ -439,12 +547,13 @@
       ]]></position>
 
     </template>
+
   <layout
     id="lifepath">
     <portalref portal="hdrNation" />
     <portalref portal="hdrAttributePts" />
     <portalref portal="hdrChildhood" />
-    <portalref portal="hdrTours" />
+    <!-- <portalref portal="hdrTours" /> -->
     <portalref portal="hdrAtWar" />
     <portalref portal="lpNation" />
     <portalref portal="lpChildhood" />
@@ -491,10 +600,10 @@
       portal[lpChildhood].height = 50
       portal[lpChildhood].width = width
 	  
-      portal[hdrTours].top = portal[lpChildhood].bottom + 5
-      portal[hdrTours].height = 20
-      portal[hdrTours].width = width
-      portal[lpTours].top = portal[hdrTours].bottom + 5
+      ~portal[hdrTours].top = portal[lpChildhood].bottom + 5
+      ~portal[hdrTours].height = 20
+      ~portal[hdrTours].width = width
+      portal[lpTours].top = portal[lpChildhood].bottom + 5
       ~ portal[lpTours].height = 50
       portal[lpTours].width = width
 	  

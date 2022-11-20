@@ -23,24 +23,11 @@
     <tag group="explicit" tag="1"/>
 
     <!-- Adjust points based on Age category -->
-    <eval index="1" phase="Initialize" priority="1000" name="Initial Attribute Points"><![CDATA[
-	  field[resMax].value = herofield[acStartAttrib].value
-	  
-	  if (hero.tagis[source.srcT2K] = 1) then
-		field[resMax].value += 4
-		endif
-	  
-	  if (hero.tagis[source.srcT2KArchetypes] = 1) then
-		field[resMax].value += 3
-		endif
+    <eval index="1" phase="Setup" priority="100" name="Initial Attribute Points"><![CDATA[
+	  field[resMax].value = herofield[acTotalAttrib].value
 		
       ]]></eval>
 	  
-    <!-- Adjust points based on Age category -->
-    <eval index="2" phase="Initialize" priority="10000" name="Adjust Attr Pts."><![CDATA[
-	  field[resMax].value += herofield[acBonusAttrib].value
-		
-      ]]></eval>
     </thing>
 	
   <!-- Skill resource to track the number of attribute points that can be assigned -->
@@ -384,7 +371,7 @@
   <thing 
     id="AmmoHelper"
 	name="Ammunition Helper"
-	compset="AmmoHelp">
+	compset="AmmoHelper">
     </thing>
 
 	

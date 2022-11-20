@@ -279,7 +279,7 @@
     <portalref portal="lpSkill" taborder="10"/>
     <portalref portal="lpSpecialty" taborder="20"/>
 	<templateref template="lpSpecialtyGain" dynamic="yes" taborder="15"/>
-	<templateref template="lpPromotion" dynamic="yes" taborder="30"/>  
+	<!-- <templateref template="lpPromotion" dynamic="yes" taborder="30"/>  -->
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
@@ -288,7 +288,7 @@
       perform portal[lpSkill].autoplace
 	  perform template[lpSpecialtyGain].autoplace[20]
 	  perform portal[lpSpecialty].autoplace[10]
-	  perform template[lpPromotion].autoplace[10]
+	  ~perform template[lpPromotion].autoplace[10]
 	  	  
 	  height = portal[lpSpecialty].bottom
 	  

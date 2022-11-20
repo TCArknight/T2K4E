@@ -72,7 +72,7 @@
 	</bootstrap>
 	
   <bootstrap index="25" thing="wpUnarmed">
-    <containerreq phase="Initialize" priority="4000">
+    <containerreq phase="Initialize" priority="500">
       !CharType.Vehicle
       </containerreq>
 	</bootstrap>

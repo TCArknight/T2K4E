@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="wpSAFHKMP5" name="H&amp;K MP5" description="As one of the most widely used submachine guns in the world, the MP5 (Maschinenpistole 5) has been issued to military and law enforcement organizations in dozens of countries. The MP5 is a select-fire 9x19mm weapon fitted with iron sights and uses a 30-round magazine." compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grCost" value="350"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcSAFE" parent="srcTwilight2000" name="Small Arms - Firearms Expansion"/>
+    <tag group="WeaponCat" tag="OtherMilitary"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
+    </thing>
+  <thing id="wpSAFColtPython" name="Colt Python" description="Introduced in 1955, the Colt Python is available in a variety of barrel lengths, from 2.5″ to 8″, with the 6″ being the most common. This premium handgun is heavy, accurate, and reliable. Though chambered in .357 Magnum, it can also fire .38 Special." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal357"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Cal38Spl"/>
+    <holdlimit>AmmoType.Cal357 | AmmoType.Cal38Spl</holdlimit>
+    </thing>
+  <thing id="wpSAFCZ52" name="CZ 52" description="Developed in the early 1950s, the CZ 52 was the standard sidearm of the Czechoslovak military from 1952 to 1982, when it was replaced by the CZ 82. Originally designed for the 9x19mm cartridge, it was redesigned for the Soviet 7.62x25mm round." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="8"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal76225"/>
+    <holdlimit>AmmoType.Cal76225</holdlimit>
+    </thing>
+  <preclude id="wpT2KColtPython" source="srcSAFE"/>
+  </document>

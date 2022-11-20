@@ -891,6 +891,23 @@
         </output_label>
       </portal>
 
+    <portal
+      id="hdrrating2"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Rating">
+        </output_label>
+      </portal>
+
+    <portal
+      id="hdrbasedie2"
+      style="outHeader"
+      isheader="yes">
+      <output_label
+        text="Die">
+        </output_label>
+      </portal>
     <position><![CDATA[
       ~our height is driven by the tallest portal (they're all the same)
       height = portal[name].height
@@ -1331,7 +1348,7 @@
       isheader="yes">
       <output_label>
 	    <labeltext><![CDATA[
-          @text = "Backpack"
+          @text = "Backpack (Carrying: " & herofield[acCarryBack].text & " (Max: " & herofield[acCarryBackMax].text & ")){/i}"
           ]]></labeltext>
         </output_label>
       </portal>
@@ -1377,11 +1394,11 @@
     <!-- Portals used as the header -->
     <portal
       id="hdrtitle"
-      style="outHeaderLeft"
+      style="outHeaderLeftBold"
       isheader="yes">
       <output_label>
 	    <labeltext><![CDATA[
-          @text = "Combat Gear"
+          @text = "{i}Combat Gear (Carrying: " & herofield[acCarryCombat].text & " (Max: " & herofield[acCarryCombatMax].text & ")){/i}"
           ]]></labeltext>
         </output_label>
       </portal>
@@ -1751,6 +1768,44 @@
 	  
       ]]></position>
     </layout>
+
+  <layout
+    id="oGearTitle">
+    <portalref portal="oGearTitleHdr"/>
+    <position><![CDATA[
+      ~position the Combat layout under the Specialties modules
+      perform portal[oGearTitleHdr].autoplace[0]
+	  
+	  ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
+    id="oCombinedGear">
+    <portalref portal="oGearTitleHdr"/>
+    <portalref portal="oGearCombat"/>
+    <portalref portal="oGearBackpack"/>
+    <position><![CDATA[
+      ~position the Combat layout under the Specialties modules
+      perform portal[oGearTitleHdr].autoplace[0]
+      	  
+	  
+      ~position the Combat layout under the Specialties modules
+      portal[oGearCombat].width = width / 2
+      portal[oGearCombat].top = portal[oGearTitleHdr].bottom + 4
+      portal[oGearCombat].left = 0
+	  perform portal[oGearBackpack].autoheight
+	  
+      ~position the Combat layout under the Specialties modules
+      portal[oGearBackpack].width = width / 2
+      portal[oGearBackpack].top = portal[oGearTitleHdr].bottom + 4
+      portal[oGearBackpack].left = portal[oGearCombat].right
+	  perform portal[oGearBackpack].autoheight
+	  
+	  
+      ]]></position>
+    </layout>
 	
   <!-- new1 sheet
         This is the first page of the stanard character sheet, which coordinates the
@@ -1785,6 +1840,9 @@
     <layoutref layout="oMidRadTemp"/>
     <layoutref layout="oMidRadPerm"/>
     <layoutref layout="oMidWeapon"/>
+    <layoutref layout="oGearTitle"/>
+    <layoutref layout="oCombatGear"/>
+    <layoutref layout="oBackpackGear"/>
     <layoutref layout="oValidate"/>
     <position><![CDATA[
 	  ~calculate the width of the two columns of the character sheet, leaving a
@@ -1820,7 +1878,10 @@
       ~layout[oTopRight].height = extent - layout[oTopRight].top
       layout[oTopRight].height = layout[oTopLeft].height
       perform layout[oTopRight].render
- 
+      
+	  ~ resize top left
+	  layout[oTopLeft].height = layout[oTopRight].height
+	  
       ~position the attribute layout under the Top modules
       layout[oMidAttributes].width = width
       layout[oMidAttributes].top = layout[oTopRight].bottom + 5
@@ -1947,12 +2008,19 @@
       layout[oMidRadPerm].height = extent - layout[oMidRadPerm].top
       perform layout[oMidRadPerm].render	
 	  
-      ~position the Combat layout under the Specialties modules
-      layout[oMidWeapon].width = width
-      layout[oMidWeapon].top = maximum(layout[oMidCombatDerived].bottom,layout[oMidCombatStatus].bottom) + 4
-      layout[oMidWeapon].left = 0
-      layout[oMidWeapon].height = extent - layout[oMidWeapon].top
-      perform layout[oMidWeapon].render
+	  autotop = maximum(layout[oMidCombatDerived].bottom,layout[oMidCombatStatus].bottom) + 5
+	  perform layout[oGearTitle].autoplace[0]
+	  
+	  autowidth = width/2
+	  perform layout[oCombatGear].autoplace
+	  perform layout[oBackpackGear].autoplace
+	  layout[oBackpackGear].left = layout[oCombatGear].right
+	  layout[oBackpackGear].top = layout[oCombatGear].top
+
+      ~ reset autoplacement width and top, then place weapons
+	  autowidth = width
+	  autotop = maximum(layout[oBackpackGear].bottom,layout[oCombatGear].bottom) + 5
+	  perform layout[oMidWeapon].autoplace[0]
 
       ]]></position>
     </sheet>

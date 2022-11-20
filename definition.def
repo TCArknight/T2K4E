@@ -179,6 +179,10 @@ Text goes here
     name="issecondary"
     param1="archetype"
     result="hero.child[#archetype].tagis[ArchetypeCat.Secondary]"/>
+	
+  <scriptmacro
+    name="ishero"
+    result="hero.tagis[CharType.typHero]"/>	
   <scriptmacro
     name="isvehicle"
     result="hero.tagis[CharType.Vehicle]"/>
@@ -193,6 +197,16 @@ Text goes here
   <scriptmacro
     name="nationality"
     result="hero.child[mscService].field[serNationOut].text"/>
+  <scriptmacro
+    name="hasnationality"
+    result="hero.tagis[HasNationality.?]"/>
+  <scriptmacro
+    name="lpathnationality"
+    result="hero.tagis[Lifepath.NationalitySelect]"/>
+  <scriptmacro
+    name="lpathchildhood"
+    result="hero.tagis[Lifepath.ChildhoodSelected]"/>	
+	
   <scriptmacro
     name="branch"
 	result="hero.child[mscService].field[serBranch].text"/>
@@ -230,6 +244,56 @@ Text goes here
     name="armorlegs"
 	result="hero.child[mscDefValues].field[dvDefLegs].value"/>
 
+
+  <scriptmacro
+    name="vehicletype"
+    result="hero.findchild[VehicleBase].tagnames[VehicleType.?,&quot;, &quot;]" />
+  <scriptmacro
+    name="vehicletypeabbrev"
+    result="hero.findchild[VehicleBase].tagabbrevs[VehicleType.?,&quot;, &quot;]" />
+  <scriptmacro
+    name="vehiclereliability"
+    result="hero.findchild[VehicleBase].field[vebReliability].value" />
+  <scriptmacro
+    name="vehiclemoveabbrev"
+    result="hero.findchild[VehicleBase].tagabbrevs[VehicleMove.?,&quot;, &quot;]" />
+  <scriptmacro
+    name="vehiclearmorfront"
+    result="hero.findchild[VehicleBase].field[vebArmorFront].value" />
+  <scriptmacro
+    name="vehiclearmorright"
+    result="hero.findchild[VehicleBase].field[vebArmorRight].value" />
+  <scriptmacro
+    name="vehiclearmorleft"
+    result="hero.findchild[VehicleBase].field[vebArmorLeft].value" />
+  <scriptmacro
+    name="vehiclearmorrear"
+    result="hero.findchild[VehicleBase].field[vebArmorBack].value" />
+  <scriptmacro
+    name="vehiclefueltype"
+    result="hero.findchild[VehicleBase].tagnames[VehicleFuel.?,&quot;, &quot;]" />
+  <scriptmacro
+    name="vehiclefuelinuse"
+    result="hero.findchild[VehicleBase].tagnames[VehicleFuelUsed.?,&quot;, &quot;]" />
+  <scriptmacro
+    name="vehiclefuelcap"
+    result="hero.findchild[VehicleBase].field[vebFuelCapacity].value" />
+  <scriptmacro
+    name="vehiclefuelcon"
+    result="hero.findchild[VehicleBase].field[vebFuelConsumption].value" />
+  <scriptmacro
+    name="vehiclecrew"
+    result="hero.findchild[VehicleBase].field[vebCrew].value" />
+  <scriptmacro
+    name="vehiclepass"
+    result="hero.findchild[VehicleBase].field[vebPassengers].value" />
+  <scriptmacro
+    name="vehiclecargocap"
+    result="hero.findchild[VehicleBase].field[vebCargoCapacity].value" />
+  <scriptmacro
+    name="vehiclecargocarried"
+    result="hero.findchild[VehicleBase].field[vebCargoCarried].value" />
+	
   <!-- The "advancement" element controls whether serialized advancement logic is enabled
         and how the advancement mechanisms should behave for the game system.
   -->

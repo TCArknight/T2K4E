@@ -297,9 +297,16 @@
     <field
       id="acBonusAttrib"
       name="Bonus Attribute Points"
-      type="derived"
+      type="user"
       defvalue="0">
       </field>	  
+	  
+    <field
+      id="acTotalAttrib"
+      name="Total Attribute Points"
+      type="derived"
+      defvalue="0">
+      </field>
 
     <!-- Starting ability slots to allocate -->
     <field
@@ -627,7 +634,23 @@
 	  decimals="2"
       defvalue="0">
       </field>
+	  
+    <field
+      id="acCarryCargo"
+      name="Current Cargo Carried"
+      type="derived"
+	  decimals="2"
+      defvalue="0">
+      </field>
 
+    <field
+      id="acCarryCargoMax"
+      name="Maximum Cargo Carry"
+      type="derived"
+	  decimals="2"
+      defvalue="0">
+      </field>
+	  
     <!-- Whether character is starving -->
     <field
       id="acStarving"
@@ -742,7 +765,7 @@
        tab_basics.dat, which is currently at Initialize/10. That existence
        expression needs to come before the containerreq on rHuman, which is
        at Initialize/500 -->
-	<eval index="1" phase="Initialize" priority="0" name="Process MinionSet.?"><![CDATA[
+	<eval index="1" phase="Initialize" priority="10" name="Process MinionSet.?"><![CDATA[
 	  if (hero.tagis[MinionSet.Vehicle] <> 0) then
 		perform hero.assign[Hero.FixedRace]
 		perform hero.assign[Hero.Minion]
@@ -780,7 +803,24 @@
       ~our net cash is our configured starting cash plus our accrued cash
       field[acCashNet].value = field[acCashCfg].value + hero.usagepool[TotalCash].value
       ]]></eval>
+
+    <!-- calculate the starting attribute points for the character -->
+    <eval index="4" phase="Initialize" priority="10000" name="Calc Start Att Pts"><![CDATA[
+	  var total as number
+	  total = field[acStartAttrib].value
+	  total += field[acBonusAttrib].value
+      	  
+	  if (hero.tagis[source.srcT2K] = 1) then
+		total += 4
+		endif
 	  
+	  if (hero.tagis[source.srcT2KArchetypes] = 1) then
+		total += 3
+		endif
+		
+      field[acTotalAttrib].value = total 
+	  
+      ]]></eval>	  
     </component>
 
   <!-- Personal component

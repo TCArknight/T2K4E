@@ -59,11 +59,15 @@
     <value id="ArchTalSelSec"/>     <!-- This talent pick is selected for the secondary archetype of the hero -->	
     <value id="Consumable"/>        <!-- This item has one or more consumable values associated with it -->	
     <value id="GrenadeLauncher"/>   <!-- This item is a Grenade Launcher and can contian a Grenade item -->	
+    <value id="Unloaded" />         <!-- Identifies weapon that is unloaded -->
     <value id="DamageByAmmo"/>      <!-- This item is a weapon where the ammo determines damage (such as a Grenade Launcher -->	
     <value id="DisplayAlpha"/>      <!-- This item displays its value in Alphabetic rather than numeric -->	
     <value id="HasBackpack"/>       <!-- This item displays its value in Alphabetic rather than numeric -->	
     <value id="IsBackpack"/>        <!-- Identifies a user-added adjustment -->
-    <value id="InBackpack"/>        <!-- Identifies a user-added adjustment -->
+    <value id="InBackpack"/>        <!-- Identifies an item carried in a backpack -->
+    <value id="HasCargoSpace"/>     <!-- Itentifies that the hero has a Cargo Space item -->	
+    <value id="IsCargoSpace"/>      <!-- Identifies a Cargo Space for a Vehicle -->
+    <value id="InCargoSpace"/>      <!-- Identifies an item carried in vehicle cargo space -->
     <value id="SpecChosen"/>        <!-- Identifies a user-added specialty -->
     <value id="NoValue"/>           <!-- Identifies a user-added adjustment -->
     </group>
@@ -327,6 +331,7 @@
     <value id="StackArmor" name="Stack Armor"/>                   <!-- Identifies armor that stacks with other armor -->
     <value id="AmmoCarried" name="Ammo Carried"/>                 <!-- Identifies ammunition carried by the hero -->
     <value id="Magazine" name="Magazine"/>                        <!-- Identifies ammunition holder carried by the hero -->
+    <value id="SelfContained" name="Self-Contained"/>                        <!-- Identifies ammunition holder carried by the hero -->
     </group>
 
   <!-- MaxRange group - 
@@ -348,6 +353,7 @@
     <value id="C" />
     <value id="D" />
     <value id="Special" />
+    <value id="SpecialFire" name="Fire Damage"/>
     </group>
 	
   <!-- Weapon group - helper tags for weapon special talents
@@ -396,16 +402,20 @@
     <value id="Melee" name="Melee Weapon" order="2"/>
     <value id="Bow" name="Bows" order="12"/>
     <value id="Thrown" name="Thrown" order="13"/>
-    <value id="Revolver" name="Revolver" order="14"/>
+    <value id="Revolver" name="Revolver" abbrev="" order="14"/>
     <value id="Pistol" name="Pistol" order="16"/>
-    <value id="Hunting" name="Hunting Rifle" order="18"/>
+    <value id="Hunting" name="Hunting Rifle" abbrev="Rifle" order="18"/>
     <value id="Shotgun" name="Shotgun" order="20"/>
-    <value id="AssaultRifle" name="Assault Rifle" order="22"/>
-    <value id="Carbine" name="Carbine" order="24"/>
-    <value id="Sniper" name="Sniper Rifle" order="26"/>
-    <value id="GL" name="Grenade Launcher" order="28"/>
-    <value id="ATRL" name="Rocket Launcher" order="30"/>
-    <value id="ATGM" name="Missile Launcher" order="32"/>
+    <value id="AssaultRifle" name="Assault Rifle" abbrev="A. Rifle" order="22"/>
+    <value id="BattleRifle" name="Battle Rifle" abbrev="B. Rifle" order="22"/>
+    <value id="Carbine" name="Carbine" abbrev="B. Rifle" order="24"/>
+    <value id="Sniper" name="Sniper Rifle" abbrev="S. Rifle" order="26"/>
+    <value id="GL" name="Grenade Launcher" abbrev="GL" order="28"/>
+    <value id="ATRL" name="Rocket Launcher" abbrev="RL" order="30"/>
+    <value id="ATGM" name="Missile Launcher" abbrev="ML" order="32"/>
+    <value id="LMG" name="Light Machine Gun" abbrev="LMG" order="32"/>
+    <value id="HMG" name="Heavy Machine Gun" abbrev="HMG" order="32"/>
+    <value id="GPMG" name="General Purpose Machine Gun" abbrev="GPMG" order="32"/>
     <value id="Mortar" name="Mortar" order="33"/>
     <value id="VehicleCannon" name="Vehicle Cannon" order="34"/>
     <value id="Howitzer" name="Howitzer" order="35"/>
@@ -465,6 +475,80 @@
     id="AmmoType"
     dynamic="yes">
     <value id="Dummy" name="Dummy" />
+    <value id="Arrow" name="Arrow" />
+    <value id="Crossbow" name="Crossbow Bolt" />
+    <value id="Cal22" name=".22" />
+    <value id="Cal22LR" name=".22 LR" />
+    <value id="Cal30" name=".30" />
+    <value id="Cal50Ball" name=".50 Ball" />
+    <value id="Cal50M2" name=".50 (M2)" />
+    <value id="Cal3006" name=".30-06" />
+    <value id="Cal3030" name=".30-30" />
+    <value id="Cal54518" name="5.45 x 18" />
+    <value id="Cal54539" name="5.45 x 39" />
+    <value id="Cal55645" name="5.56 x 45" />
+    <value id="Cal76225" name="7.62 x 25 Tokarev" />
+    <value id="Cal76239" name="7.62 x 39" />
+    <value id="Cal76251" name="7.62 x 51" />
+    <value id="Cal76254" name="7.62 x 54" />
+    <value id="Cal76257M" name="7.62 x 57 Mauser" />
+    <value id="Cal76517" name="7.65 x 17" />
+    <value id="Cal127108" name="12.7 x 108" />
+    <value id="Cal145114" name="14.5 x 114" />
+    <value id="Cal918" name="9mm x 18" />
+    <value id="Cal919" name="9mm" />
+    <value id="Cal447Cls" name="4.47mm Caseless" />
+    <value id="Cal47Cls" name="4.7mm Caseless" />
+    <value id="Cal38Spl" name=".38 Special" />
+    <value id="Cal380ACP" name=".380 ACP" />
+    <value id="Cal32ACP" name=".32 ACP" />
+    <value id="Cal357" name=".357 Magnum" />
+    <value id="Cal41" name=".41 Magnum" />
+    <value id="Cal44AM" name=".44 Auto-Mag" />
+    <value id="Cal44M" name=".44 Magnum" />
+    <value id="Cal375" name=".375 H&amp;H Magnum" />
+    <value id="Cal45" name=".45" />
+    <value id="Cal4518" name=".45 x 18" />
+    <value id="Cal458WBM" name=".458 WBM" />
+    <value id="Cal480W" name=".480 Weatherby" />
+    <value id="Ga12" name="12 Gauge" />
+    <value id="ATGM127" name="ATGM (127mm)" />
+    <value id="ATGM140" name="ATGM (140mm)" />
+    <value id="ATGM135" name="ATGM (135mm)" />
+    <value id="ATGM152" name="ATGM (152mm)" />
+    <value id="Cannon100" name="Cannon (100mm)" />
+    <value id="Cannon105" name="Cannon (105mm)" />
+    <value id="Cannon115" name="Cannon (115mm)" />
+    <value id="Cannon120" name="Cannon (120mm)" />
+    <value id="Cannon125" name="Cannon (125mm)" />
+    <value id="Cannon20" name="Cannon (20mm)" />
+    <value id="Cannon23" name="Cannon (23mm)" />
+    <value id="Cannon25" name="Cannon (25mm)" />
+    <value id="Cannon30" name="Cannon (30mm)" />
+    <value id="Cannon40" name="Cannon (40mm)" />
+    <value id="Cannon73" name="Cannon (73mm)" />
+    <value id="Cannon762" name="Cannon (76.2mm)" />
+    <value id="Gren3029" name="Grenade (30mm x 29)" />
+    <value id="Gren4046" name="Grenade (40mm)" />
+    <value id="Gren4047" name="Grenade (40mm x 47)" />
+    <value id="Gren4053" name="Grenade (40mm x 53)" />
+    <value id="Mortar42" name="Mortar (4.2 in.)" />
+    <value id="Mortar60" name="Mortar (60mm)" />
+    <value id="Mortar81" name="Mortar (81mm)" />
+    <value id="Mortar82" name="Mortar (82mm)" />
+    <value id="Mortar120" name="Mortar (120mm)" />
+    <value id="Rocket50" name="Rocket (50mm)" />
+    <value id="Rocket58" name="Rocket (58mm)" />
+    <value id="Rocket66" name="Rocket (66mm)" />
+    <value id="Rocket67" name="Rocket (67mm)" />
+    <value id="Rocket83" name="Rocket (83mm)" />
+    <value id="Rocket84" name="Rocket (84mm)" />
+    <value id="Rocket110" name="Rocket (110mm)" />
+    <value id="Shell105" name="Shell (105mm)" />
+    <value id="Shell122" name="Shell (122mm)" />
+    <value id="Shell152" name="Shell (152mm)" />
+    <value id="Shell155" name="Shell (155mm)" />
+    <value id="Shell203" name="Shell (203mm)" />
     </group>
 	
   <!-- Weapon group - helper tags for weapon special talents
@@ -799,10 +883,13 @@
     <value id="Pickup" name="Pickup Truck" order="40"/>
     <value id="LgtTruck" name="Light Truck" order="45"/>
     <value id="HvyTruck" name="Heavy Truck" order="50"/>
+    <value id="ArmorCar" name="Armored Car" abbrev="AC" order="50"/>
     <value id="APC" name="Armored Personnel Carrier" abbrev="APC" order="51"/>
     <value id="IFV" name="Infantry Fighting Vehicle" abbrev="IFV" order="52"/>
-    <value id="MBT" name="Main Battle Tank" abbrev="MBT" order="53"/>
-    <value id="Bus" order="55"/>
+    <value id="LgtT" name="Light Tank" abbrev="LT" order="53"/>
+    <value id="MedT" name="Medium Tank" abbrev="MT" order="54"/>
+    <value id="MBT" name="Main Battle Tank" abbrev="MBT" order="55"/>
+    <value id="Bus" order="56"/>
     <value id="Rowboat" order="60"/>
     <value id="SmSail" name="Small Sailing Boat" order="65"/>
     <value id="SmMotor" name="Small Motorboat"order="70"/>
@@ -818,6 +905,9 @@
     <value id="Civilian" order="0"/>
     <value id="USMil" name="US Military" order="5"/>
     <value id="SovMil" name="Soviet Military" order="10"/>
+    <value id="SweMil" name="Swedish Military" order="15"/>
+    <value id="PolMil" name="Polish Military" order="20"/>
+    <value id="OtherMil" name="Other Military" order="25"/>
     </group>
 
   <!-- VehicleMovement group - tags identifying the category of vehicle
@@ -837,6 +927,7 @@
     id="VehicleFuel"
     dynamic="no"
     sequence="explicit">
+    <value id="None" name="- None -" abbrev="-" order="1"/>
     <value id="Gas" name="Gasoline" abbrev="G" order="5"/>
     <value id="Diesel" name="Diesel" abbrev="D" order="10"/>
     <value id="Alcohol" name="Alcohol" abbrev="A" order="15"/>
@@ -869,6 +960,16 @@
     <value id="Smoke" name="Smoke Dischargers" abbrev="SD" />
     </group>
 
+  <group
+    id="VehicleGearMain"
+    inherit="VehicleWpnMain">
+    </group>
+	
+  <group
+    id="VehicleGearSec"
+    inherit="VehicleWpnSec">
+    </group>
+	
   <group
     id="Condition"
     dynamic="no"

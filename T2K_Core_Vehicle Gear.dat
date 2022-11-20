@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+
+  <thing id="eqT2KStable" name="Stabilized Gun" compset="VehicleGear">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="VehicleGearMain" tag="Stable" />
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+  <thing id="eqT2KFCS" name="Fire Control System" compset="VehicleGear">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="VehicleGearMain" tag="FCS" />
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+  <thing id="eqT2KInfrared" name="Infrared" compset="VehicleGear">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="VehicleGearMain" tag="Infra" />
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+  <thing id="eqT2KThermal" name="Thermal" compset="VehicleGear">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="VehicleGearMain" tag="Thermal" />
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+
+  <thing id="eqT2KVehRadio" name="Radio (Vehicle)" compset="VehicleGear">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="VehicleGearSec" tag="Radio" />
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+
+  <thing id="eqT2KSmokeDis" name="Smoke Dispensers" compset="VehicleGear">
+    <usesource source="srcT2K"/>
+    <tag group="GearSubType" tag="NA"/>
+    <tag group="GearType" tag="VehGear" name="Vehicle Gear"/>
+    <tag group="VehicleGearSec" tag="Smoke" />
+    <tag group="Hide" tag="Equipment"/>
+    </thing>
+  </document>

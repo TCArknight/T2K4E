@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "Gear" tab panel. This tab is where
+      the user selects general gear (non-weapons) for the character.
+
+      All public visual elements used with this tab panel start with the prefix "gr"
+      to associate them with the tab.
+-->
+
+<document signature="Hero Lab Data">
+
+
+  <!-- grGear portal
+        Presents a dynamic table where the user can add gear for the character.
+
+        We use separate templates for selecting gear and showing the gear that has
+        been chosen. Each of these appears further below.
+
+        We use an "additem" script to simply prompt the user to add gear.
+
+        The "buytemplate" and "selltemplate" attributes hook in the logic for
+        properly buying and selling gear for cash.
+
+        We use a "headertitle" script to place a suitable title above the table.
+
+        The "list" tag expression restricts everything to only equipment (e.g. no
+        weapons). The "candidate" tag expression is omitted, resulting in the same
+        contents as the "list" tag expression.
+  -->
+  <portal
+    id="grVehicleGear"
+    style="tblNormal">
+    <table_dynamic
+      component="Gear"
+      showtemplate="grGrPick"
+      choosetemplate="grGrThing"
+      choosesortset="GearType"
+      buytemplate="BuyCash"
+      selltemplate="SellCash">
+      <list>component.Equipment &amp; !(component.Ammunition|component.Vehicle)</list>
+	  <candidate inheritlist="yes">!Hide.Equipment</candidate>
+      <titlebar><![CDATA[
+        @text = "Select Gear to Purchase from the List Below"
+        ]]></titlebar>
+      <headertitle><![CDATA[
+        @text = "Miscellaneous Gear"
+        ]]></headertitle>
+      <additem><![CDATA[
+        @text = "Add New Gear"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+
+  <!-- gear layout
+        This layout orchestrates the display of the visual elements that comprise
+        the Gear tab. This amounts to a title and a table that allow the user to
+        add gear to the character.
+
+        The logic for this layout is similar to preceeding tabs, so please refer
+        to those tabs for more details.
+  -->
+  <layout
+    id="vehiclegear">
+    <portalref portal="grVehicleGear" taborder="10"/>
+
+    <!-- This script sizes and positions the layout and its child visual elements. -->
+    <position><![CDATA[
+      ~position and size the table to span the full layout
+      perform portal[grVehicleGear].autoplace
+      ]]></position>
+
+    </layout>
+
+
+  <!-- gear panel
+        This is the "Gear" panel shown within Hero Lab. Since we want this panel to
+        appear second within the second grouping (equipment), we assign it an
+        "order" of 220.
+
+        The logic for this panel is similar to the logic for the preceeding panels,
+        so please refer to those panels for more details.
+  -->
+  <panel
+    id="vehiclegear"
+    name="Gear"
+    marginhorz="5"
+    marginvert="5"
+    order="220">
+    <live>CharType.Vehicle</live>
+    <layoutref layout="vehiclegear"/>
+    <position><![CDATA[
+      ]]></position>
+    </panel>
+
+
+  </document>

@@ -201,6 +201,50 @@
       ]]></evalrule>
 
     </thing>
+	
+  <!-- validation reporting for lifepath -->
+  <thing
+    id="valNationality"
+    name="Nationality"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
 
+    <!-- Make sure that we don't have multiple shields equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="Nationality required."><![CDATA[
+	  ~ no need to validate relationships for Vehicles
+	  validif (hero.tagcount[CharType.Vehicle] <> 0)
+	  
+	  ~ no need to validate if we're not on a lifepath
+	  validif (hero.tagcount[source.srcT2KLifepath] = 0)
+	  
+	  ~ if we have a nationality we're good
+      validif (#lpathnationality[] <> 0)
 
+      ~mark associated tabs as invalid
+      container.panelvalid[lifepath] = 0
+      ]]></evalrule>
+
+    </thing>
+  <thing
+    id="valChildhood"
+    name="Childhood"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Make sure that we don't have multiple shields equipped -->
+    <evalrule index="1" phase="Validate" priority="8000" message="Childhood required."><![CDATA[
+	  ~ no need to validate relationships for Vehicles
+	  validif (hero.tagcount[CharType.Vehicle] <> 0)
+	  
+	  ~ no need to validate if we're not on a lifepath
+	  validif (hero.tagcount[source.srcT2KLifepath] = 0)
+	  
+	  ~ if we have a nationality we're good
+      validif (#lpathchildhood[] <> 0)
+
+      ~mark associated tabs as invalid
+      container.panelvalid[lifepath] = 0
+      ]]></evalrule>
+
+    </thing>
     </document>

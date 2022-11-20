@@ -14,8 +14,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     <tag group="WeaponType" tag="Pistol"/>
-    <tag group="AmmoType" tag="amT2K919"/>
-    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAK4" name="AK-4" description="The Ak 4 Automatkarbin is the German G3 battle rifle manufactured\nunder license in Sweden. It was developed in the late 1950s in cooperation\nwith Spain and its design was based on the World War II StG 44. Sweden\nadopted the rifle in the late 1960s, and in spite of its replacement by the\nAk 5, many Ak 4 rifles are still issued and held in stockpiles" compset="Ranged">
@@ -26,10 +26,10 @@
     <fieldval field="grCost" value="500"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="BattleRifle" name="Battle Rifle" abbrev="BR"/>
+    <tag group="WeaponType" tag="BattleRifle" />
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAK5" name="AK-5" description="The Ak 5 is the Belgian FNC assault rifle manufactured under license in\nSweden. This rifle was developed in the early 1980s as a replacement\nfor Belgium’s aging FN FALs, and was subsequently adopted by other\nnations including Sweden and Indonesia." compset="Ranged">
@@ -42,8 +42,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPSG90" name="PSG-90" description="The Psg 90 Prickskyttegevär is the Arctic Warfare bolt-action sniper rifle\ndesigned for cold climates and manufactured under license in Sweden.\nIt is identical to the British L118A1 and Australian SR98. A folding-stock\nmodel (Psg 90B) is also available." compset="Ranged">
@@ -56,8 +56,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAG90" name="AG-90" description="The Ag 90 is the US Barrett M82A1 sniper rifle manufactured under\nlicense in Sweden. See the US listing for the M82A1 for more information" compset="Ranged">
@@ -70,8 +70,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2KCal50M2"/>
-    <holdlimit>AmmoType.amT2KCal50M2</holdlimit>
+    <tag group="AmmoType" tag="Cal50M2"/>
+    <holdlimit>AmmoType.Cal50M2</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KGRSP40" name="GRSP 40" description="The Grsp 40 is the US Mk 19 automatic grenade launcher manufactured\nunder license in Sweden. See the US listing for the Mk 19 for more\ninformation." compset="Ranged">
@@ -83,9 +83,9 @@
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2K4053"/>
+    <tag group="AmmoType" tag="Gren4053"/>
     <tag group="WeaponType" tag="GL"/>
-    <holdlimit>AmmoType.amT2K4053</holdlimit>
+    <holdlimit>AmmoType.Gren4053</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KKPSTM45" name="KPist M/45" description="Also known as the Carl Gustaf M/45, this Swedish submachine gun was\nadopted in 1945. The m/45 was the standard submachine gun of the\nSwedish Army for decades. It was gradually replaced in Swedish service\nby the Ak 4 battle rifle and Ak 5 assault rifle" compset="Ranged">
@@ -98,8 +98,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
     <tag group="WeaponType" tag="SMG"/>
-    <tag group="AmmoType" tag="amT2K919"/>
-    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KKSP90" name="KSP 90" description="The Kulspruta 90 is the FN Minimi light machine gun manufactured\nunder license in Sweden. See the US listing for the M249 for more\ninformation" compset="Ranged">
@@ -110,10 +110,10 @@
     <fieldval field="grCost" value="1000"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KKSP58B" name="KSP 58B" description="The Ksp 58B is the FN MAG 59 general-purpose machine gun\nmanufactured under license in Sweden. See the US listing for\nthe M240B for more information." compset="Ranged">
@@ -126,8 +126,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KKSP88" name="KSP 88" description="The Ksp 88 is the US Browning M2HB heavy machine gun manufactured under license in Sweden. See the US listing for the M2HB for more\ninformation." compset="Ranged">
@@ -140,11 +140,11 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <tag group="AmmoType" tag="amT2KCal50M2"/>
-    <holdlimit>AmmoType.amT2KCal50M2</holdlimit>
+    <tag group="AmmoType" tag="Cal50M2"/>
+    <holdlimit>AmmoType.Cal50M2</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KGRGM48" name="GRG M/48" description="The Grg m/48, also known as the Carl Gustaf, is a shoulder-fired\n84mm recoilless rifle designed in the late 1940s and adopted\nby the Swedish army. The M3 version, introduced in the early\n1990s, was also adopted for limited use by US SOCOM." compset="Ranged">
+  <thing id="wpT2KGRGM48" name="GRG M/48" description="The Grg m/48, also known as the Carl Gustaf, is a shoulder-fired 84mm recoilless rifle designed in the late 1940s and adopted by the Swedish army. The M3 version, introduced in the early 1990s, was also adopted for limited use by US SOCOM." compset="Ranged">
     <fieldval field="wpShort" value="5"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -153,9 +153,9 @@
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATRL"/>
-    <tag group="AmmoType" tag="amT2K84mmRocket"/>
+    <tag group="AmmoType" tag="Rocket84"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <holdlimit>AmmoType.amT2K84mmRocket</holdlimit>
+    <holdlimit>AmmoType.Rocket84</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPSKOTTM88" name="PSKOTT M/86" description="The Pskott Pansarskott m/86 was developed in the mid-1980s to\nreplace the older 74mm Pskott m/68. It was adopted by the US\narmed forces as the M136 AT4. See the US listing for the M136\nAT4 for more information." compset="Ranged">
@@ -167,9 +167,9 @@
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATRL"/>
-    <tag group="AmmoType" tag="amT2K84mmRocket"/>
+    <tag group="AmmoType" tag="Rocket84"/>
     <tag group="WeaponCat" tag="SwedishMilitary"/>
-    <holdlimit>AmmoType.amT2K84mmRocket</holdlimit>
+    <holdlimit>AmmoType.Rocket84</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   </document>

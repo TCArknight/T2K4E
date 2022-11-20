@@ -125,7 +125,35 @@
       endif
     ]]></procedure>
 
+  <!-- Procedure sbvehspeed -->
+  <procedure id="sbvehspeed" scripttype="synthesize"><![CDATA[
+    var tempSpd as string
+    
+	perform hero.findchild[VehicleBase].setfocus
+	
+	tempSpd = @newline & @boldon & "Combat Speed: " & @boldoff
+	tempSpd &= focus.field[vebCombatSpeedOn].value & "/" & focus.field[vebCombatSpeedOff].value & " " & #vehiclemoveabbrev[]
+	tempSpd &= @newline & @boldon & "Travel Speed: " & @boldoff
+	tempSpd &= focus.field[vebTravelSpeedOn].value & "/" & focus.field[vebTravelSpeedOff].value 
+	tempSpd &= @newline
+	
+	append tempSpd
+    ]]></procedure>
 
+  <!-- Procedure sbvehspeed -->
+  <procedure id="sbveharmor" scripttype="synthesize"><![CDATA[
+    var tempArm as string
+    
+	perform hero.findchild[VehicleBase].setfocus
+	
+	tempArm &= @newline & @boldon & "Front Armor: " & @boldoff & #vehiclearmorfront[]
+	tempArm &= @newline & @boldon & "Side Armor: " & @boldoff & #vehiclearmorleft[]
+	tempArm &= @newline & @boldon & "Rear Armor: " & @boldoff & #vehiclearmorrear[]
+	tempArm &= @newline
+	
+	append tempArm
+    ]]></procedure>
+	
   <!-- Procedure sbnpcinfo
         Checks all npc info picks with a certain tag expression and appends
         their info to the text.
@@ -166,136 +194,177 @@
         var txt as string
         var tagexpr as string
 
-        ~start by getting our name
-        var name as string
-        call sbname
+        if (#isvehicle[] = 0) then
+			~start by getting our name
+			var name as string
+			call sbname
 
-        ~output our name
-        append @boldon & "Name: " & @boldoff
-		if (hero.tagis[MilitaryRank.?] <> 0) then
-		  append #rankabbrev[] & " " & name & ", " 
-		  append #nationality[] & " " & #branch[] & @newline
-		else
-		  append name & @newline
-		  endif
-		  
-		~output any Archetype
-		if (tagis[source.srcT2KLifepath] = 0) then 
-          txt = hero.findchild[Archetype].field[name].text
-          if (empty(txt) <> 0) then
-            txt = "-none-"
-            endif
-          append @boldon & "Archetype: " & @boldoff & txt & @newline
-          endif
-		
-        ~output age
-        append @boldon & "Age: " & @boldoff 
-		if (hero.tagis[source.srcT2KLifepath] <> 0) then
-		  append hero.child[mscPerson].field[perLPAge].text
-		else
-		  append hero.child[mscPerson].field[perAge].text
-		  endif
-		append @newline
+			~output our name
+			append @boldon & "Name: " & @boldoff
+			if (hero.tagis[MilitaryRank.?] <> 0) then
+			  append #rankabbrev[] & " " & name & ", " 
+			  append #nationality[] & " " & #branch[] & @newline
+			else
+			  append name & @newline
+			  endif
+			  
+			~output any Archetype
+			if (tagis[source.srcT2KLifepath] = 0) then 
+			  txt = hero.findchild[Archetype].field[name].text
+			  if (empty(txt) <> 0) then
+				txt = "-none-"
+				endif
+			  append @boldon & "Archetype: " & @boldoff & txt & @newline
+			  endif
+			
+			~output age
+			append @boldon & "Age: " & @boldoff 
+			if (hero.tagis[source.srcT2KLifepath] <> 0) then
+			  append hero.child[mscPerson].field[perLPAge].text
+			else
+			  append hero.child[mscPerson].field[perAge].text
+			  endif
+			append @newline
 
-        ~output attributes
-        append @boldon & "Attributes: " & @boldoff
-        tagexpr = "component.Attribute & AttrCat."
-		if (hero.tagis[CharType.typHero] <> 0) then
-		  tagexpr &= "Hero"
-		elseif (hero.tagis[CharType.Vehicle] <> 0) then
-		  tagexpr &= "Vehicle"
-		  endif
-        call sbtraits
+			~output attributes
+			append @boldon & "Attributes: " & @boldoff
+			tagexpr = "component.Attribute & AttrCat."
+			if (hero.tagis[CharType.typHero] <> 0) then
+			  tagexpr &= "Hero"
+			elseif (hero.tagis[CharType.Vehicle] <> 0) then
+			  tagexpr &= "Vehicle"
+			  endif
+			call sbtraits
 
-        ~output skills
-        append @boldon & "Skills: " & @boldoff
-        tagexpr = "component.Skill & (fieldval:trtFinal >= 3)"
-        call sbtraits
+			~output skills
+			append @boldon & "Skills: " & @boldoff
+			tagexpr = "component.Skill & (fieldval:trtFinal >= 3)"
+			call sbtraits
 
-        if (hero.tagis[source.srcT2K] <> 0) then
-		  ~output specialties
-          append @boldon & "Specialty: " & @boldoff
-          tagexpr = "component.Specialty & !Hide.Specialty"
-		else
-          ~output special talents
-          append @boldon & "Talents: " & @boldoff
-          tagexpr = "component.Talent"
-		endif
-		
-        call sbtraits
-
-        ~output derived traits
-        foreach pick in hero from Derived where "!Hide.Trait" sortas explicit
-          append @boldon & eachpick.field[name].text & ": " & @boldoff
-		  if (eachpick.tagis[Helper.DisplayAlpha] <> 0) then
-		    append eachpick.field[trtAlpha].text
-		  else
-		    append eachpick.field[trtFinal].text
+			if (hero.tagis[source.srcT2K] <> 0) then
+			  ~output specialties
+			  append @boldon & "Specialty: " & @boldoff
+			  tagexpr = "component.Specialty & !Hide.Specialty"
+			else
+			  ~output special talents
+			  append @boldon & "Talents: " & @boldoff
+			  tagexpr = "component.Talent"
 			endif
-	      append @newline
-          nexteach
+			
+			call sbtraits
 
-        ~output weapons/attacks
-        call sbweapons
+			~output derived traits
+			foreach pick in hero from Derived where "!Hide.Trait" sortas explicit
+			  append @boldon & eachpick.field[name].text & ": " & @boldoff
+			  if (eachpick.tagis[Helper.DisplayAlpha] <> 0) then
+				append eachpick.field[trtAlpha].text
+			  else
+				append eachpick.field[trtFinal].text
+				endif
+			  append @newline
+			  nexteach
 
-        ~output armor
-        call sbarmor
+			~output weapons/attacks
+			call sbweapons
 
-        ~output consumable summary
-        ~append @boldon & "Consumables: " & @boldoff & @newline
-		~append herofield[acConsumeSumm].text & @newline
-		
-		~output Carrying Capacity
-		var cbtgear as string
-		var packgear as string
-		
-        append @boldon & "Carrying " & @boldoff & @newline
-        append @boldon & "-- Combat: " & @boldoff & herofield[acCarryCombat].text & " (Max: "
-		
-		if (hero.tagis[CharType.Vehicle] <> 0) then
-		  append hero.childfound[mscVehDetails].field[vdeCargoCapacity].text
-		else	  
-		  append herofield[acCarryCombatMax].text
+			~output armor
+			call sbarmor
+
+			~output consumable summary
+			~append @boldon & "Consumables: " & @boldoff & @newline
+			~append herofield[acConsumeSumm].text & @newline
+			
+			~output Carrying Capacity
+			var cbtgear as string
+			var packgear as string
+			
+			append @boldon & "Carrying " & @boldoff & @newline
+			append @boldon & "-- Combat: " & @boldoff & herofield[acCarryCombat].text
+			append " (Max: " & herofield[acCarryCombatMax].text & ")" & @newline
+			
+			call CombatGear 
+			append cbtgear & @newline
+			
+			if (hero.tagis[Helper.HasBackpack] <> 0) then
+			  append @boldon & "-- Backpack: " & @boldoff & herofield[acCarryBack].text & " (Max: " & herofield[acCarryBackMax].text & ")" & @newline
+			  call BackpackGear 
+			  append packgear & @newline
+			  endif
+			
+			~output tracked resources
+			call sbtrackres
+
+			~output NPC details if this character is a NPC - if any field for any
+			~of the three blocks of text is set, output that block
+			doneif (hero.tagis[CharType.typNPC] = 0)
+			var tagexpr as string
+			var title as string
+
+			~values of up to 15 are basic details only
+			tagexpr = "val:explicit.? <= 15"
+			title = "Basic Details"
+			call sbnpcinfo
+
+			~values of up to 30 are tactics
+			tagexpr = "val:explicit.? > 15 & val:explicit.? <= 30"
+			title = "Tactics"
+			call sbnpcinfo
+
+			~values of up to 45 are ecology
+			tagexpr = "val:explicit.? > 30 & val:explicit.? <= 45"
+			title = "Ecology"
+			call sbnpcinfo
+
+			~anything else is extra
+			tagexpr = "val:explicit.? > 45"
+			title = "Additional Details"
+			call sbnpcinfo
+		else
+			~start by getting our name
+			var name as string
+			call sbname
+			
+			~ Vehicle type
+			txt = #vehicletypeabbrev[]
+			append @boldon & "Type: " & @boldoff & txt & @newline
+			
+			~ Vehicle reliability
+			txt = #vehiclereliability[]
+			append @boldon & "Reliability: " & @boldoff & txt & @newline
+			
+			~ Vehicle Speed
+			call sbvehspeed
+			
+			~ Vehicle Armor
+			call sbveharmor
+			
+			~ Vehicle Fuel info
+			append  @newline
+			txt = #vehiclefueltype[] & " (" & #vehiclefuelinuse[] & ")"
+			append @boldon & "Fuel Type (in use): " & @boldoff & txt & @newline
+			txt = #vehiclefuelcap[]
+			append @boldon & "Fuel Capacity: " & @boldoff & txt & @newline
+			txt = #vehiclefuelcon[]
+			append @boldon & "Fuel Consumption: " & @boldoff & txt & @newline
+			
+			~ Vehicle Crew/Cargo
+			append  @newline
+			txt = #vehiclecrew[] & "+" & #vehiclepass[]
+			append @boldon & "Crew: " & @boldoff & txt & @newline
+			
+			var cargotext as string
+			cargotext = @boldon & "Cargo: " & @boldoff & #vehiclecargocap[]
+			call VehicleCargo
+			append cargotext & @newline
+			  
+			~ Vehicle Weapons/Gear
+			append  @newline
+			txt = ""
+			append @boldon & "Main Weapon: " & @boldoff & txt & @newline
+			txt = ""
+			append @boldon & "Secondary Weapon: " & @boldoff & txt & @newline
+			
 		  endif
-		append ")" & @newline
-		
-		call CombatGear 
-		append cbtgear & @newline
-		
-		if (hero.tagis[Helper.HasBackpack] <> 0) then
-          append @boldon & "-- Backpack: " & @boldoff & herofield[acCarryBack].text & " (Max: " & herofield[acCarryBackMax].text & ")" & @newline
-		  call BackpackGear 
-		  append packgear & @newline
-		  endif
-		
-        ~output tracked resources
-        call sbtrackres
-
-        ~output NPC details if this character is a NPC - if any field for any
-        ~of the three blocks of text is set, output that block
-        doneif (hero.tagis[CharType.typNPC] = 0)
-        var tagexpr as string
-        var title as string
-
-        ~values of up to 15 are basic details only
-        tagexpr = "val:explicit.? <= 15"
-        title = "Basic Details"
-        call sbnpcinfo
-
-        ~values of up to 30 are tactics
-        tagexpr = "val:explicit.? > 15 & val:explicit.? <= 30"
-        title = "Tactics"
-        call sbnpcinfo
-
-        ~values of up to 45 are ecology
-        tagexpr = "val:explicit.? > 30 & val:explicit.? <= 45"
-        title = "Ecology"
-        call sbnpcinfo
-
-        ~anything else is extra
-        tagexpr = "val:explicit.? > 45"
-        title = "Additional Details"
-        call sbnpcinfo
         ]]></synthesize>
       </dossier_text>
     </dossier>

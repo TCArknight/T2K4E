@@ -52,9 +52,9 @@
         elseif (field[stackQty].value = 1) then
           @text = name
 
-        ~prefix the name with the quantity
+        ~suffix the name with the quantity
         else
-          @text = "(" & field[stackQty].value & "x) " & name
+          @text = name & " (x" & field[stackQty].value & ")"
           endif
         ]]></finalize>
       </field>
@@ -303,7 +303,15 @@
 	  
       ]]></eval>
     </component>
+	
+  <component
+    id="VehicleGear"
+    name="Vehicle Gear"
+    autocompset="no"
+    panellink="gear">
 
+    </component>
+	
   <!-- Vehicle component
         All vehicles use this to display for purchase/selection
   -->
@@ -311,7 +319,7 @@
     id="Vehicle"
     name="Vehicle Helper"
     autocompset="no">
-
+	  
     </component>
 	
   <!-- VehicleBase component
@@ -385,7 +393,15 @@
       defvalue="0"
       type="derived">
 	  </field>
- 
+  
+    <field
+      id="vebCargoCarried"
+      name="Cargo Encumbrance Carried"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
+	  
     <field
       id="vebCrew"
       name="Crew"
@@ -482,18 +498,19 @@
 	  var tempStr as string
 	  
 	  trustme
-      ~initialize Attributes
+	  
+	  ~initialize Attributes
 	  #setvehicle[attrVehRel] = field[vebReliability].value
 	  #setvehicle[attrVehCbtSpdOn] = field[vebCombatSpeedOn].value
 	  #setvehicle[attrVehCbtSpdOff] = field[vebCombatSpeedOff].value
 	  #setvehicle[attrVehTraSpdOn] = field[vebTravelSpeedOn].value
 	  #setvehicle[attrVehTraSpdOff] = field[vebTravelSpeedOff].value
 	  
-	  
 	  perform hero.findchild[VehicleDetails].setfocus
 	  doneif (state.isfocus = 0)
 	  
 	  focus.field[vdeCategory].text = tagnames[VehicleCat.?,"/"]
+	  perform focus.forward[VehicleCat.?]
 	  
 	  tempStr = tagnames[VehicleType.?,"/"]
 	  if (length(tempStr) > 15) then
@@ -501,7 +518,7 @@
 	  else
 	    focus.field[vdeType].text = tagnames[VehicleType.?,"/"]
 	    endif
-	  
+		
 	  focus.field[vdeMovement].text = tagnames[VehicleMove.?,"/"]
 	  focus.field[vdeReliability].value = field[vebReliability].value
 	  focus.field[vdeCombatSpeedOn].value = field[vebCombatSpeedOn].value
@@ -521,6 +538,7 @@
 	  focus.field[vdeCrew].value = field[vebCrew].value
 	  focus.field[vdePassengers].value = field[vebPassengers].value
 	  focus.field[vdeCargoCapacity].value = field[vebCargoCapacity].value
+	  focus.field[vdeCargoCarried].value = field[vebCargoCarried].value
 	  
 	  focus.field[vdeMainWeapon].text = field[vebMainWeapon].text
 	  focus.field[vdeSecWeapon].text = field[vebSecWeapon].text
@@ -543,7 +561,7 @@
 	    if (i <= tempVal) then
 		  tempStr &= "{bmpscale 2 output_box}"
 	    else
-		  tempStr &= "{bmpscale 2 output_box_full}"
+		  tempStr &= "{bmpscale 2 output_box_full_g}"
 		  endif
 	    next 
 		
@@ -557,7 +575,7 @@
 	    if (i <= tempVal) then
 		  tempStr &= "{bmpscale 2 output_box}"
 	    else
-		  tempStr &= "{bmpscale 2 output_box_full}"
+		  tempStr &= "{bmpscale 2 output_box_full_g}"
 		  endif
 	    next 
 		
@@ -571,7 +589,7 @@
 	    if (i <= tempVal) then
 		  tempStr &= "{bmpscale 2 output_box}"
 	    else
-		  tempStr &= "{bmpscale 2 output_box_full}"
+		  tempStr &= "{bmpscale 2 output_box_full_g}"
 		  endif
 	    next 
 		
@@ -585,7 +603,7 @@
 	    if (i <= tempVal) then
 		  tempStr &= "{bmpscale 2 output_box}"
 	    else
-		  tempStr &= "{bmpscale 2 output_box_full}"
+		  tempStr &= "{bmpscale 2 output_box_full_g}"
 		  endif
 	    next 
 		
@@ -683,6 +701,12 @@
       name="Cargo Capacity"
       type="derived">
 	  </field>	
+	  
+    <field
+      id="vdeCargoCarried"
+      name="Cargo Carried"
+      type="derived">
+	  </field>
 	  
     <field
       id="vdeCrew"
@@ -1231,9 +1255,14 @@
     <!-- Weapons require one hand by default (unless natural) -->
     <tag group="Equipment" tag="Hand"/>
 
+    <eval index="1" phase="Initialize" priority="500"><![CDATA[
+      ~ Dummy script to set live state earlier
+      ~ .... add code here ....
+      ]]></eval>
+	  
     <!-- If equipped and the minimum strength isn't satisfied, apply any penalty and
         mark ourselves as not satisfying the requirement -->
-    <eval index="1" phase="Final" priority="5000"><![CDATA[
+    <eval index="2" phase="Final" priority="5000"><![CDATA[
       ~if the minimum strength is satisfied, there's nothing to do
       doneif (field[wpStrReq].value <= #trait[attrStr])
 
@@ -1250,26 +1279,31 @@
       ~.... add code here ....
       ]]></eval>
 	  
-    <eval index="2" phase="Final" priority="1000"><![CDATA[
+    <eval index="3" phase="Traits" priority="1000" name="Initialize D/C display"><![CDATA[
 	  if (empty(field[wpArmorRating].text) <> 0) then
 	    field[wpArmorRating].text = "0"
 		endif
 		
+      if (tagis[Equipment.SelfContained] <> 0) then
+	    perform delete[Helper.DamageByAmmo]
+	    endif
+		
       if (tagis[Helper.DamageByAmmo] <> 0) then
 	    field[wpDamage].text = "*"
 	    field[wpCrit].text = "*"
+		perform assign[Helper.Unloaded]
         endif
       ]]></eval>	
 	  
     <!-- Assign any derived special notes to the appropriate field -->
-    <eval index="3" phase="Render" priority="5500"><![CDATA[
+    <eval index="4" phase="Render" priority="5500"><![CDATA[
       var special as string
-
-      ~report the weapon as two-handed (if any)
-      if (tagis[Equipment.TwoHand] <> 0) then
-        special = splice(special,"Requires two hands",", ")
+		
+      ~report the weapon as unloaded (if any)
+      if (tagis[Helper.Unloaded] <> 0) then
+        special = splice(special,"Unloaded",", ")
         endif
-
+		
       ~append any vehicle weapon attributes appropriately (if any)
       var mainwpn as string
       mainwpn = tagnames[VehicleWpnMain.?,", "]
@@ -1279,23 +1313,27 @@
       var secwpn as string
       secwpn = tagnames[VehicleWpnSec.?,", "]
       special = splice(special,secwpn,", ")	
-	  
+
+      ~assign any appropriate special notes to the "special" variable here
+	  if (tagis[BlastRating.?] <> 0) then
+	    var blast as string
+	    blast = "Blast: " & tagnames[BlastRating.?,", "]
+		
+	    special = splice(special,blast,"; ") 
+		endif
+		
+	      ~report the weapon as two-handed (if any)
+      if (tagis[Equipment.TwoHand] <> 0) then
+        special = splice(special,"Requires two hands","; ")
+        endif	
+		
       ~append any special attributes appropriately (if any)
       var attribs as string
       attribs = tagnames[WeaponSpec.?,", "]
       special = splice(special,attribs,", ")
-
-      ~assign any appropriate special notes to the "special" variable here
-	  if (tagis[component.WeapRange] <> 0) then
-	    var blast as string
-	    blast = "Blast: " & tagnames[BlastRating.?,", "]
-        if (tagis[BlastRating.?] <> 0) then
-	      special = splice(special,blast,", ") 
-		  endif
-		endif
 		
       ~append any special details for this weapon
-      special = splice(special,field[wpSpecial].text,", ")
+      special = splice(special,field[wpSpecial].text,"; ")
 
       ~we've synthesized the notes for the weapon
       field[wpNotes].text = special
@@ -1821,8 +1859,9 @@
         @text = tagnames[BlastRating.?,","]
         ]]></finalize>
       </field>
-	  <identity group="AmmoType"/>
-    <!-- Initialize the user value to the new quantity -->
+	  
+	<!--   <identity group="AmmoType"/>
+    Initialize the user value to the new quantity -->
     <creation><![CDATA[
       ~if we don't have a transaction pick to initialize from, use what we know;
       ~this can occur if the gear is bootstrapped or auto-added for the actor
@@ -1855,62 +1894,9 @@
 	
     <!-- The tracker quantity should reset to the maximum value -->
     <tag group="Helper" tag="ResetMax"/>
-	
-    <!-- Setup our tracker bounds based on the quantity purchased -->
-    <eval index="1" phase="Final" priority="1000"><![CDATA[
-      field[trkMin].value = 0
-      field[trkMax].value = field[stackQty].value
-      ]]></eval>
 
-    <eval index="2" phase="Final" priority="5000"><![CDATA[
-	  ~make sure we're in a gearholder to travel to
-	  doneif (isgearheld = 0)
-	  
-      ~ holding weapon gets damage/crit value from ammo
-	  doneif (gearholder.tagis[Helper.DamageByAmmo] = 0)
-	  
-	  gearholder.field[wpDamage].text = field[amDamage].text
-	  gearholder.field[wpCrit].text = field[amCrit].text
-      ]]></eval>
-	  
-    <eval index="3" phase="Final" priority="10000"><![CDATA[
-	  ~make sure we're in a gizmo to travel to
-	  doneif (isgizmo = 0)
-	  
-	  if (isgizmo = 0) then
-	    if (field[grIsEquip].value <> 0) then
-		    if (empty(field[amDamage].text) = 0) then
-	          parent.field[wpDamage].text = field[amDamage].text
-			  endif
-        if (empty(field[amCrit].text) = 0) then
-	        parent.field[wpCrit].text = field[amCrit].text
-			  endif
-        if (empty(field[amArmorRating].text) = 0) then
-	        parent.field[wpArmorRating].text = field[amArmorRating].text
-			  endif
-        if (empty(field[amRange].value) = 0) then 
-          parent.field[wpRange].value = field[amRange].value
-        endif
-        if (empty(field[amBlast].text) = 0) then
-	        parent.field[wpBlast].text = field[amBlast].text
-			endif
-		  endif
-		endif
-
-	  ~make sure we're in a gizmo to travel to
-	  doneif (parent.isgizmo = 0)
-	  
-	  var parCost as number
-	  var myCost as number
-		  
-	  parCost = parent.field[grCost].value
-	  myCost = parCost * parent.field[wpReloadCost].value
-
-	  field[grCost].value = myCost
-	  parent.field[grTotalCost].value += myCost * field[stackQty].value
-      ]]></eval>
-	  
-    <eval index="4" phase="Initialize" priority="1000"><![CDATA[
+    <!-- Tag ammo as carried when added to hero -->
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
 	  if (ispick <> 0) then
 	    ~ assign carried tag to the ammo pick
 	    perform assign[Equipment.AmmoCarried]
@@ -1918,70 +1904,12 @@
 		
       ]]></eval>
 	  
-    <eval index="5" phase="Final" priority="10000"><![CDATA[
-	  ~make sure we're in a container
-	  doneif (isgearheld = 0)
-	  
-	  perform gearholder.setfocus
-	  if (focus.isgearheld <> 0) then
-	    perform focus.gearholder.setfocus
-	    endif
-	  
-	  ~ if the gearholder is a weapon, then we need to provide our values
-	  if (focus.tagis[component.WeapRange] <> 0) then
-	    if (empty(field[amDamage].text) = 0) then
-	      focus.field[wpDamage].text = field[amDamage].text
-	      endif
-        if (empty(field[amCrit].text) = 0) then
-	      focus.field[wpCrit].text = field[amCrit].text
-		  endif
-        if (empty(field[amArmorRating].text) = 0) then
-	      focus.field[wpArmorRating].text = field[amArmorRating].text
-	      endif
-        if (empty(field[amRange].value) = 0) then 
-          focus.field[wpRange].value = field[amRange].value
-          endif
-
-		if (tagis[BlastRating.?] <> 0) then
-		  var myBlast as string
-		  var myCount as number
-	      myBlast = tagids[BlastRating.?,"|"]
-		  myCount = tagcountstr[myBlast]
-
-		  if (myCount <= 1) then
-		    perform focus.assignstr[myBlast]
-		  else
-		    var i as number
-			var tagstr as string
-			var remstr as string
-			var remstrlen as number
-			var tagstrlen as number
-			var loc as number
-			
-			remstr = myBlast
-			remstrlen = length(remstr) -1
-			loc = pos(remstr,"|")
-			
-			while (loc <> -1)
-  		      tagstr = left(remstr,loc)
-			  tagstrlen = length(tagstr)
-			  remstr = right(remstr,remstrlen-tagstrlen)
-			  remstrlen = length(remstr) -1
-			  perform focus.assignstr[tagstr]
-			  
-			  loc = pos(remstr,"|")
-			  loop
- 
-			perform focus.assignstr[remstr]
-			endif
-			
-	      ~perform focus.pulltags[BlastRating.?]
-	      endif
-
-	  	endif
-
-
+    <!-- Setup our tracker bounds based on the quantity purchased -->
+    <eval index="2" phase="Final" priority="1000"><![CDATA[
+      field[trkMin].value = 0
+      field[trkMax].value = field[stackQty].value
       ]]></eval>
+	  
     <!-- Add the quantities from the other pick into this one -->
     <merge><![CDATA[
       field[trkMax].value += altpick.field[trkMax].value
@@ -2015,17 +1943,17 @@
 
     </component>
 
-  <!-- AmmoHelp component
-        Each AmmoHelp Gizmo derives from this component
+  <!-- AmmoHelper component
+        Each AmmoHelper Gizmo derives from this component
   -->
   
   <component
-    id="AmmoHelp"
+    id="AmmoHelper"
     name="Ammo Helper">
 	
     <!-- Gear cost -->
     <field
-      id="AmmoBaseCost"
+      id="ahAmmoBaseCost"
       name="Base Cost"
       minvalue="0"
       defvalue="0"
@@ -2034,21 +1962,76 @@
 	
     <!-- Gear cost -->
     <field
-      id="AmmoReloadCost"
+      id="ahAmmoReloadCost"
       name="Reload Cost"
       minvalue="0"
       defvalue="0"
       type="derived">
 	  </field>
 	  
+    <field
+      id="ahAmmoLabel"
+      name="Ammo Menu Label"
+      type="static"
+      maxlength="50">
+      </field>	  
+	  
     <!-- Selection Tag Expressions -->
     <field
-      id="AmmoExpr"
-      name="Equipment Tag Expression"
+      id="ahAmmoExpr"
+      name="Ammo Tag Expression"
       type="derived"
       maxlength="500">
       </field>
-	
+	  
+    <!-- Source to pull choices from for ammo selection -->
+    <field
+      id="ahAmmoPick"
+      name="Source for Menu #1 Choices"
+      type="derived">
+      <!-- Determine the source to choose from based on the tag, defaulting to "Hero" -->
+      <calculate phase="Render" priority="10000"><![CDATA[
+        if (tagis[ChooseSrc1.Thing] <> 0) then
+          @value = 0
+        elseif (tagis[ChooseSrc1.Container] <> 0) then
+          @value = 1
+        elseif (tagis[ChooseSrc1.Hero] <> 0) then
+          @value = 2
+        else
+          @value = 2
+          endif
+        ]]></calculate>
+      </field>	
+	  
+    <field
+      id="ahAmmoChosen"
+      name="Chosen Ammo"
+      type="user"
+      style="menu">
+      </field>
+
+    <eval index="3" phase="Traits" priority="5000" name="Set D/C by Loaded Ammo"><![CDATA[
+	  ~make sure we're in a gizmo
+	  doneif (isgizmo <> 0)
+	  
+      ~ make sure we have an ammo chosen
+	  doneif (field[ahAmmoChosen].ischosen = 0)
+	  
+      ~ if weapon doesn't depend on ammo, we're done
+	  doneif (parent.tagis[Helper.DamageByAmmo] = 0)
+	  
+	  ~ set focus on chosen ammo
+	  perform field[ahAmmoChosen].chosen.setfocus
+	  doneif (state.isfocus = 0)
+	  
+	  parent.field[wpDamage].text = focus.field[amDamage].text
+	  parent.field[wpCrit].text = focus.field[amCrit].text
+	  perform parent.delete[Helper.Unloaded]
+	  perform focus.pulltags[BlastRating.?]
+	  perform parent.pushtags[BlastRating.?]
+	  
+      ]]></eval>
+	  
     </component>
 
   <!-- Define various component sets associated with the components defined above.
@@ -2153,6 +2136,7 @@
     <compref component="Gear"/>
     <compref component="Minion"/>
     </compset> 
+	
   <!-- VehicleBase -->
   <compset
     id="VehicleBase"
@@ -2160,6 +2144,7 @@
     <compref component="VehicleBase"/>
     <compref component="Minion"/>
     </compset>	
+	
   <!-- Vehicle -->
   <compset
     id="VehicleAlt"
@@ -2167,6 +2152,18 @@
     <compref component="Vehicle"/>
     <compref component="Gear"/>
     </compset>
+
+  <!-- Equipment -->
+  <compset
+    id="VehicleGear"
+    stackable="yes">
+    <compref component="VehicleGear"/>
+    <compref component="Equipment"/>
+    <compref component="Equippable"/>
+    <compref component="Consumable"/>
+    <compref component="Gear"/>
+    <compref component="Custom"/>
+    </compset>	
 	
   <!-- Define any entities associated with the components defined above. -->
   <!-- Ammunition Load -->

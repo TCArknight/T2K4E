@@ -97,6 +97,15 @@
       </font>
     </resource>
 
+  <resource
+    id="ofntheaderbold">
+    <font
+      face="Arial"
+      size="36"
+      style="bold">
+      </font>
+    </resource>
+	
   <!-- font used within validation report -->
   <resource
     id="ofntvalid">
@@ -255,6 +264,16 @@
       alignment="left">
       </style_output>
     </style>
+  <!-- left-aligned for output -->
+  <style
+    id="outNormLtBrd"
+	border="solid">
+    <style_output
+      textcolor="000000"
+      font="ofntnormal"
+      alignment="left">
+      </style_output>
+    </style>
 
   <!-- medium name for output -->
   <style
@@ -266,6 +285,15 @@
       </style_output>
     </style>
 
+  <!-- medium name for output -->
+  <style
+    id="outNameMedLeft">
+    <style_output
+      textcolor="000000"
+      font="ofntmedium"
+      alignment="left">
+      </style_output>
+    </style>
   <!-- small name for output -->
   <style
     id="outNameSm">
@@ -352,10 +380,26 @@
       </style_output>
     </style>
   <style
+    id="outHeaderBold">
+    <style_output
+      textcolor="000000"
+      font="ofntheaderbold"
+      alignment="center">
+      </style_output>
+    </style>
+  <style
     id="outHeaderLeft">
     <style_output
       textcolor="000000"
       font="ofntheader"
+      alignment="left">
+      </style_output>
+    </style>
+  <style
+    id="outHeaderLeftBold">
+    <style_output
+      textcolor="000000"
+      font="ofntheaderbold"
       alignment="left">
       </style_output>
     </style>
@@ -370,7 +414,26 @@
       alignment="center">
       </style_output>
     </style>
-
+	
+  <style
+    id="outValBoxLeft"
+    border="solid">
+    <style_output
+      textcolor="000000"
+      font="ofntlarge"
+      alignment="left">
+      </style_output>
+    </style>
+	
+  <style
+    id="outValBoxSmLeft"
+    border="solid">
+    <style_output
+      textcolor="000000"
+      font="ofntnormal"
+      alignment="left">
+      </style_output>
+    </style>
   <!-- grey box outlining centered value for output -->
   <style
     id="outGreyBox"

@@ -205,8 +205,8 @@
 
       ~position the ability menu beneath the character points
       portal[menuabil].width = width
-      ~perform portal[menuabil].alignrel[ttob,menucp,15]
-      portal[menuabil].top = 0
+      perform portal[menuabil].alignrel[ttob,label,5]
+      ~portal[menuabil].top = 0
 	  
       ~position the starting cash beneath the ability slots
       perform portal[cash].alignrel[ttob,menuabil,15]

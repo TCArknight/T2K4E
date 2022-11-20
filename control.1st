@@ -212,6 +212,16 @@
     <sortkey isfield="no" id="WeaponType"/>
     <sortkey isfield="no" id="_Name_"/>
     </sortset>
+	
+  <!-- Define a sortset that lists weapons by category. -->
+  <sortset
+    id="WeaponTypeByCat"
+    name="Weapon Type by Category">
+    <sortkey isfield="no" id="WeaponCat"/>
+    <sortkey isfield="no" id="WeaponType"/>
+    <sortkey isfield="no" id="_Name_"/>
+    </sortset>
+	
 	<sortset
     id="AmmoCatType"
     name="Ammo Category">
@@ -255,6 +265,15 @@
     id="Domain"
     name="Domain Order">
     <sortkey isfield="yes" id="domDomain"/>
+    <sortkey isfield="no" id="_Name_"/>
+    </sortset>
+    
+  <!-- Define a sortset that lists weapons by category. -->
+  <sortset
+    id="VehicleByCat"
+    name="Vehicle Category">
+    <sortkey isfield="no" id="VehicleCat"/>
+    <sortkey isfield="no" id="VehicleType"/>
     <sortkey isfield="no" id="_Name_"/>
     </sortset>
   </document>

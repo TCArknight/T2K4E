@@ -27,17 +27,34 @@
 
 <document signature="Hero Lab Data">
 
-  <!-- Dropped to Ground location - automatically bootstrapped to every hero -->
+  <!-- Cargo Space location - automatically bootstrapped to every vehicle -->
   <thing
-    id="eqGround"
-    name="Dropped to Ground"
-    compset="Equipment"
+    id="eqCargoSpace"
+    name="Cargo Space"
+    compset="VehicleGear"
     isprivate="yes"
     uniqueness="unique"
-    description="Any equipment dropped to the ground is held in this container.{br}You can move an item from one container to another by clicking the &quot;Gear&quot; button beside its info button.">
-    <tag group="Helper" tag="Bootstrap"/>
+    description="Any equipment carried by the vehicle is held in this container.{br}You can move an item from one container to another by clicking the &quot;Gear&quot; button beside its info button.">
+    <tag group="Helper" tag="HasCargoSpace"/>
+    <tag group="Helper" tag="IsCargoSpace"/>
     <tag group="thing" tag="holder_top"/>
     <tag group="Print" tag="NoPrint"/>
+    <gear>#vehiclecargocarried[] = field[gearHeld].value</gear>
+    <eval phase="Setup" priority="1000" index="1"><![CDATA[
+	perform forward[Helper.HasCargoSpace]
+	~if (field[gearHeld].value <> 0) then
+	~  notify "Cargo Space holding items"
+	~  endif
+	]]></eval>
+    <eval phase="Final" priority="1000" index="2"><![CDATA[
+	if (field[gearHeld].value <> 0) then
+	  ~ notify "Cargo Space holding items"
+	  foreach gear in this
+	    perform eachpick.assign[Helper.InCargoSpace]
+		nexteach
+	  endif
+	]]></eval>
     </thing>
 
+	
   </document>

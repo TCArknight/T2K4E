@@ -18,22 +18,105 @@
     ~declare variables that are used to communicate with our caller
     var cbtgear as string
 
-	cbtgear = "  - testing CombatGear"
+	var tempStr as string
+	var ismore as number
+	ismore = 0
+	~ tempStr = "  * "
+	foreach pick in hero from Gear where "!Helper.InBackpack & !Print.NoPrint & !Equipment.Natural"
+	  if (ismore <> 0) then
+        tempStr &= "{br}"
+        endif
+	  tempStr &= "  * " & eachpick.field[grStkName].text
+	  ismore = 1
+	nexteach
+	
+    if (ismore = 0) then
+      tempStr &= "  " & "-none- {br}"
+      endif	
+	cbtgear = tempStr
 	
     ]]></procedure>
+	
   <procedure id="BackpackGear" scripttype="none"><![CDATA[
     ~declare variables that are used to communicate with our caller
     var packgear as string
 	
-	var tempStr as string
+	var tempBack as string
+	var ismore as number
+	
+	ismore = 0
     
 	foreach pick in hero from Gear where "Helper.InBackpack"
-	  tempStr = splice(tempStr,eachpick.field[grStkName].text,"{br}  * ")
+	  tempBack = splice(tempBack,eachpick.field[grStkName].text,"{br}  * ")
+	  ismore = 1
 	nexteach
-	~ notify "tempStr - " & tempStr
-	packgear = "  * " & tempStr
+
+    if (ismore = 0) then
+      tempBack &= "-none- {br}"
+      endif	
+	  
+	packgear = "  * " & tempBack
 	
     ]]></procedure>	
+	
+  <procedure id="VehicleCargo" scripttype="none"><![CDATA[
+    ~declare variables that are used to communicate with our caller
+    var cargotext as string
+	~ if outputType is 1, it's the output sheet, otherwise statblock
+	var outputType as number
+	
+	var tempStr as string
+	var ismore as number
+	var prevNum as number
+	var curName as string
+	var prevCnt as number
+	var nameWithCnt as string
+	
+	var prevName as string
+	
+	ismore = 0
+    prevName = ""
+	prevCnt = 1
+	if (hero.tagis[Helper.HasCargoSpace] <> 0) then
+	  cargotext &= "{b} (Carried: {/b}" & #vehiclecargocarried[] & ") "
+	  if (outputType = 0) then
+	    cargotext &= "{br}"
+        endif
+		
+	  foreach pick in hero from Gear where "Helper.InCargoSpace"
+	    curName = eachpick.field[grStkName].text
+				
+		if (compare(prevName,curName) = 0) then
+		  ~ curName is same as prevName - increment count 
+		  prevCnt += 1
+		  ~nameWithCnt = prevName & "(x" & prevCnt &")"
+		  ~notify nameWithCnt
+		else
+		  ~ tempStr = splice(tempStr,eachpick.field[grStkName].text,"{br}  * ")
+		  if (prevCnt > 1) then
+		    tempStr &= " (x" & prevCnt &")"
+			endif
+	      tempStr = splice(tempStr,eachpick.field[grStkName].text,", ")
+		  prevName = curName
+		  prevCnt = 1
+		  ~nameWithCnt = ""
+		  endif
+		  
+	    nexteach
+	  
+	  endif  
+	
+	~ notify "tempStr - " & tempStr
+	
+	if (outputType = 0) then
+	  cargotext &= "  * " & tempStr
+    else
+	  cargotext &= tempStr
+      endif
+
+	
+    ]]></procedure>	
+	
   <procedure id="GetRank" scripttype="none"><![CDATA[
     ~declare variables that are used to communicate with our caller
     var RankIdx as number
@@ -326,21 +409,28 @@
       ~call InfoConsumable
 
       ~append the item's weight
-      iteminfo &= "Weight: "
-      if (field[grWeight].value > 0) then
-        ~ iteminfo &= field[grWeight].text & " each"
-        iteminfo &= field[grWeight].text
-      else
-        iteminfo &= chr(150)
-        endif
-      iteminfo &= "{br}"
-	  
-      ~if this is a thing, append the cost
-      if (ispick = 0) then
-        iteminfo &= "Cost: " & splicetext[both, grcost, field[grCost].text] & "{br}"
+	  if (tagis[Helper.IsCargoSpace] <> 0) then
+	    iteminfo &= "Capacity: " & #vehiclecargocap[] & "{br}"
+	    iteminfo &= "Carried: " & #vehiclecargocarried[]
 	  else
-        iteminfo &= "Value: " & splicetext[both, grcost, field[grTotalCost].text] & "{br}"
-        endif
+        iteminfo &= "Weight: "
+        if (field[grWeight].value > 0) then
+          ~ iteminfo &= field[grWeight].text & " each"
+          iteminfo &= field[grWeight].text & "{br}"
+        else
+          iteminfo &= chr(150) & "{br}"
+          endif
+		  
+		~if this is a thing, append the cost
+        if (ispick = 0) then
+          iteminfo &= "Cost: " & splicetext[both, grcost, field[grCost].text] & "{br}"
+	    else
+          iteminfo &= "Value: " & splicetext[both, grcost, field[grTotalCost].text] & "{br}"
+          endif
+		  
+		iteminfo &= "{br}"
+		
+		endif
 
       endif
 
@@ -396,7 +486,7 @@
         if (empty(templist) <> 0) then
           templist = "None"
           endif
-        iteminfo &= "{br}{b}Carries:{/b} " & templist & "{br}"
+        iteminfo &= "{br}{b}Items Carried:{/b} " & templist & "{br}"
         endif
 		
       endif
@@ -764,7 +854,7 @@
       endif
 	  
 	~if (tagis[component.Ammunition] <> 0) then
-	~  cost = container.child[AmmoHelper].field[AmmoReloadCost].value
+	~  cost = container.child[AmmoHelper].field[ahAmmoReloadCost].value
 	~  endif
 
     ~setup the unit cost for the item
@@ -1145,12 +1235,13 @@
 	var myCost as number
 	var reloadCost as number
 
-    expr = "component.Ammunition & " & myId
+    ~ expr = "component.Ammunition & " & myId
+    expr = "component.Ammunition & Equipment.AmmoCarried & " & myId
     ~ notify expr
 	
-    gizmo.childfound[AmmoHelper].field[AmmoExpr].text = expr
-	~gizmo.childfound[AmmoHelper].field[AmmoBaseCost].value = myCost
-	~gizmo.childfound[AmmoHelper].field[AmmoReloadCost].value = myCost * reloadCost
+    gizmo.childfound[AmmoHelper].field[ahAmmoExpr].text = expr
+	~gizmo.childfound[AmmoHelper].field[ahAmmoBaseCost].value = myCost
+	~gizmo.childfound[AmmoHelper].field[ahAmmoReloadCost].value = myCost * reloadCost
 	
     ]]></procedure>
 
@@ -1168,9 +1259,9 @@
 
     expr = "component.Ammunition & " & myId
 	
-    gizmo.childfound[AmmoHelper].field[AmmoExpr].text = expr
-	~gizmo.childfound[AmmoHelper].field[AmmoBaseCost].value = myCost
-	~gizmo.childfound[AmmoHelper].field[AmmoReloadCost].value = myCost * reloadCost
+    gizmo.childfound[AmmoHelper].field[ahAmmoExpr].text = expr
+	~gizmo.childfound[AmmoHelper].field[ahAmmoBaseCost].value = myCost
+	~gizmo.childfound[AmmoHelper].field[ahAmmoReloadCost].value = myCost * reloadCost
 	
     ]]></procedure>	
 	

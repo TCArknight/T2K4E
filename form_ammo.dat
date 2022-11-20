@@ -30,7 +30,7 @@
 	
   <!-- Ammunition portal 
       candidatepick="AmmoHelper"
-	  candidatefield="AmmoExpr"
+	  candidatefield="ahAmmoExpr"
 	  -->
   <portal
     id="amAmmunition"
@@ -44,7 +44,7 @@
       addpick="AmmoHelper"
       headerpick="AmmoHelper"
       candidatepick="AmmoHelper"
-	  candidatefield="AmmoExpr">
+	  candidatefield="ahAmmoExpr">
       <titlebar><![CDATA[
         @text = "Load Ammunition"
         ]]></titlebar>
@@ -56,7 +56,67 @@
         ]]></additem>
       </table_dynamic>
     </portal>
+	
+  <template
+    id="amAmmoChooser"
+    name="Ammo Chooser"
+    compset="AmmoHelper"
+    marginhorz="3"
+    marginvert="2">	
 
+    <portal
+      id="lblmenu"
+      style="lblSecond">
+      <label>
+		<labeltext><![CDATA[
+		  ~ field="ahAmmoLabel"
+		  @text = "Ammo Load:"
+		  ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal 
+      id="menu" 
+	  style="menuNormal">
+      <menu_things 
+	    field="ahAmmoChosen" 
+	    component="none" 
+	    maxvisible="20"
+        usepicksfield="ahAmmoPick" 
+	    candidatefield="ahAmmoExpr">
+        <candidate>
+	      </candidate>
+        </menu_things>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[lblmenu].height
+	  
+	  ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[lblmenu].top = 0
+
+      ~center the other portals vertically
+      perform portal[menu].centervert
+	  
+	  if (field[ahAmmoExpr].isempty <> 0) then
+        portal[lblmenu].visible = 0
+        portal[menu].visible = 0
+        endif
+		
+	  portal[menu].width = 200
+	  portal[lblmenu].width = 100
+      perform portal[menu].alignedge[right,0]
+	  
+      perform portal[lblmenu].alignedge[left,0]
+	  
+      ]]></position>
+
+    </template>
+	
   <template
     id="amAmmoThing"
     name="AmmoThing"
@@ -94,7 +154,7 @@
 	    <labeltext><![CDATA[
 		  @text = "$"
 		  if (@ispick = 0) then
-		    @text &= container.child[AmmoHelper].field[AmmoReloadCost].text
+		    @text &= container.child[AmmoHelper].field[ahAmmoReloadCost].text
 		  else
 		    @text &= field[grTotalCost].value
 		    endif
@@ -188,22 +248,21 @@
       ]]></position>
 
     </template>
-  <!-- static layout
-        This layout consists of the character's name, race, and status info, which
-        are laid out in a ribbon across the top.
-  -->
+
+  <!--   -->
   <layout
     id="ammo">
-    <portalref portal="amAmmunition" taborder="10"/>
+    <!-- <portalref portal="amAmmunition" taborder="10"/> -->
+    <templateref template="amAmmoChooser" thing="AmmoHelper"/>
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
       width = 350
 	  
-      portal[amAmmunition].top = 0
-	  portal[amAmmunition].width = width
+	  template[amAmmoChooser].top = 0
+	  template[amAmmoChooser].width = width
 	  
-	  height = portal[amAmmunition].bottom
+	  height = template[amAmmoChooser].bottom + 5
 	  
       ]]></position>
 

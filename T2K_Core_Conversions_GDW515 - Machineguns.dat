@@ -8,11 +8,11 @@
     <fieldval field="grCost" value="950"/>
     <fieldval field="grWeight" value="2.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
-    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAAT52" name="AAT-52" description="The standard machiengun of the french armed forces, the AAT-52 is equipped with a bipod and can be fired from a tripod (NLT).  It accepts 100 round belts of 7.62x51mm ammunition.  The blowback extraction tends to rip cartridges in ahlf, leaving a ring of brass in the chamber.  French troops grease their cartridge cases, but troops unfamiliar with the weapon, especially once the weapon&apos;s ready supply of ammunition has been fired will JAM on a" compset="Ranged">
@@ -23,11 +23,11 @@
     <fieldval field="grCost" value="400"/>
     <fieldval field="grWeight" value="3.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
-    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="FrenchMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KHK21" name="H&amp;K HK21" description="A West German machinegun considered by some to be the best of its kind.  It is equipped with a bipod, but can also be fired from a tripod (NLT).  It can accept a 100 round belt, and 50 round drum, or the same 30 round magazine as the G3." compset="Ranged">
@@ -39,10 +39,10 @@
     <fieldval field="grWeight" value="2.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="GPMG"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBrenMk2" name="Bren Mk II" description="Developed from a Czech design, the Bren was the standard issue British Army LMG.  The weapon uses either a box (30 rnds) or drum (100 rnd) magazine and has an integral bipod and carrying handle." compset="Ranged">
@@ -54,10 +54,10 @@
     <fieldval field="grWeight" value="3.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="GPMG"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="BritishMilitary"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM134" name="M134" description="A six-barreled gatling-type minigun chambered for the 7.62x51mm cartridge.  Originally designed  for use on helicopters, the M134 can also be mounted on a tripod (NHT).  It accepts special 1500 round belts." compset="Ranged">
@@ -71,8 +71,8 @@
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KStonerMk23Co" name="Stoner Mk23 Commando" compset="Ranged">
@@ -83,11 +83,11 @@
     <fieldval field="grCost" value="2500"/>
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
-    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KJPNType62" name="Japanese Type 62" description="The Type 62 is a Japanese general purpose bipod mount machinegun, chambered for the 7.62x51mm cartridge.  IT accepts 100 round belts and can also be fired from a tripod mount (NLT)" compset="Ranged">
@@ -101,8 +101,8 @@
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPKMG" name="PK" description="The standard Warsaw pact medium machinegun, usually found mounted on a vehicle.  It is equipped with a bipod, and can also be fired from a tripod (PLT).  It accepts 100 round belts." compset="Ranged">
@@ -114,9 +114,10 @@
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="GPMG"/>
-    <tag group="AmmoType" tag="amT2K762x54"/>
+    <tag group="AmmoType" tag="Cal76254"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
+    <holdlimit>AmmoType.Cal76254</holdlimit>
     </thing>
   <thing id="wpT2KRPDMG" name="RPD" description="The standard Soviet LMG until the adoption of the RPK.  The RPD uses the same ammo as the AKM.  The weapon is fed from a drum container.  The RPD is often found in Category III and Mobilizaiton Divisions as well as various guerilla and terrorist groups.  It has an integral bipod and some models have a carrying handle." compset="Ranged">
     <fieldval field="wpShort" value="9"/>
@@ -126,9 +127,10 @@
     <fieldval field="grCost" value="575"/>
     <fieldval field="grWeight" value="2.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
-    <tag group="WeaponType" tag="LightMachineGun"/>
+    <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K762x39"/>
+    <tag group="AmmoType" tag="Cal76239"/>
+    <holdlimit>AmmoType.Cal76239</holdlimit>
     </thing>
   </document>

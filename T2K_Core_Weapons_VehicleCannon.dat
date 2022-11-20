@@ -11,6 +11,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon20"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon20"/>
     </thing>
   <thing id="amT2KC20mmHE" name="20mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="4"/>
@@ -24,6 +25,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon20"/>
     <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon20"/>
     </thing>
   <thing id="amT2KC23mmAP" name="23mm AP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="5"/>
@@ -36,6 +38,7 @@
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCatType" tag="VehicleCannon23" />
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
+    <tag group="AmmoType" tag="Cannon23"/>
     </thing>
   <thing id="amT2KC23mmHE" name="23mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="4"/>
@@ -49,6 +52,7 @@
     <tag group="AmmoCat" tag="HeavyWpn" name="Heavy Weapon" abbrev="Heavy Weapon"/>
     <tag group="BlastRating" tag="D" name="D" abbrev="D"/>
     <tag group="AmmoCatType" tag="VehicleCannon23" />
+    <tag group="AmmoType" tag="Cannon23"/>
     </thing>
   <thing id="amT2KC25mmAP" name="25mm AP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="5"/>
@@ -61,6 +65,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon25"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon25"/>
     </thing>
   <thing id="amT2KC25mmHE" name="25mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="4"/>
@@ -74,6 +79,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon25"/>
     <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon25"/>
     </thing>
   <thing id="amT2KC30mmAP" name="30mm AP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="6"/>
@@ -86,6 +92,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon30"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon30"/>
     </thing>
   <thing id="amT2KC30mmHE" name="30mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="5"/>
@@ -99,6 +106,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon30"/>
     <tag group="BlastRating" tag="D"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon30"/>
     </thing>
   <thing id="amT2KC40mmAP" name="40mm AP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="6"/>
@@ -111,6 +119,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon40"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon40"/>
     </thing>
   <thing id="amT2KC40mmHE" name="40mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="5"/>
@@ -124,6 +133,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon40"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="D"/>
+    <tag group="AmmoType" tag="Cannon40"/>
     </thing>
   <thing id="amT2KC73mmAP" name="73mm AP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="6"/>
@@ -136,6 +146,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon73"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon73"/>
     </thing>
   <thing id="amT2KC73mmHE" name="73mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="5"/>
@@ -149,6 +160,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon73"/>
     <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon73"/>
     </thing>
   <thing id="amT2KC762mmAP" name="76.2mm AP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="7"/>
@@ -161,6 +173,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon762"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon762"/>
     </thing>
   <thing id="amT2KC762mmHE" name="76.2mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="6"/>
@@ -174,6 +187,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon762"/>
     <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon762"/>
     </thing>
   <thing id="amT2KC762mmHEAT" name="76.2mm HEAT" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="7"/>
@@ -187,6 +201,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon762"/>
     <tag group="BlastRating" tag="C"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon762"/>
     </thing>
   <thing id="amT2KC100mmAPDS" name="100mm APDS" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="8"/>
@@ -199,6 +214,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon100"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon100"/>
     </thing>
   <thing id="amT2KC100mmHE" name="100mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="7"/>
@@ -212,6 +228,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon100"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon100"/>
     </thing>
   <thing id="amT2KC100mmHEAT" name="100mm HEAT" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="7"/>
@@ -225,6 +242,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon100"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon100"/>
     </thing>
   <thing id="amT2KC105mmAPDS" name="105mm APDS" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="8"/>
@@ -237,6 +255,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon105"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon105"/>
     </thing>
   <thing id="amT2KC105mmHE" name="105mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="7"/>
@@ -250,6 +269,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon105"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon105"/>
     </thing>
   <thing id="amT2KC105mmHEAT" name="105mm HEAT" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="8"/>
@@ -263,6 +283,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon105"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon105"/>
     </thing>
   <thing id="amT2KC115mmAPDS" name="115mm APDS" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="9"/>
@@ -275,6 +296,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon115"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon115"/>
     </thing>
   <thing id="amT2KC115mmHE" name="115mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="8"/>
@@ -288,6 +310,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon115"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon115"/>
     </thing>
   <thing id="amT2KC115mmHEAT" name="115mm HEAT" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="9"/>
@@ -301,6 +324,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon115"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon115"/>
     </thing>
   <thing id="amT2KC120mmAPFSDS" name="120mm APFSDS" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="10"/>
@@ -312,6 +336,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="AmmoCatType" tag="VehicleCannon120"/>
+    <tag group="AmmoType" tag="Cannon120"/>
     </thing>
   <thing id="amT2KC120mmHEAT" name="120mm HEAT" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="10"/>
@@ -324,6 +349,7 @@
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="AmmoCatType" tag="VehicleCannon120"/>
+    <tag group="AmmoType" tag="Cannon120"/>
     </thing>
   <thing id="amT2KC125mmAPFSDS" name="125mm APFSDS" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="11"/>
@@ -336,6 +362,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="VehicleCannon125"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon120"/>
     </thing>
   <thing id="amT2KC125mmHE" name="125mm HE" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="10"/>
@@ -349,6 +376,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon125"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon125"/>
     </thing>
   <thing id="amT2KC125mmHEAT" name="125mm HEAT" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="11"/>
@@ -362,6 +390,7 @@
     <tag group="AmmoCatType" tag="VehicleCannon125"/>
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoType" tag="Cannon125"/>
     </thing>
   <thing id="hdrT2KVehCannon" name="-- Vehicle Cannon --" compset="Ranged" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
@@ -377,8 +406,7 @@
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC20mmAP"/>
     <tag group="AmmoType" tag="amT2KC20mmHE"/>
-    <holdlimit>AmmoType.amT2KC20mmHE |
-AmmoType.amT2KC20mmAP</holdlimit>
+    <holdlimit>AmmoType.Cannon20</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC23mm" name="Cannon - 23mm" compset="Ranged">
@@ -390,8 +418,7 @@ AmmoType.amT2KC20mmAP</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC23mmAP"/>
     <tag group="AmmoType" tag="amT2KC23mmHE"/>
-    <holdlimit>AmmoType.amT2KC23mmHE |
-AmmoType.amT2KC23mmAP</holdlimit>
+    <holdlimit>AmmoType.Cannon23</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC25mm" name="Cannon - 25mm" compset="Ranged">
@@ -402,7 +429,7 @@ AmmoType.amT2KC23mmAP</holdlimit>
     <tag group="WeaponCat" tag="VehicleWeapons"/>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoCatType" tag="VehicleCannon25"/>
-    <holdlimit>AmmoCatType.VehicleCannon25</holdlimit>
+    <holdlimit>AmmoType.Cannon25</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC30mm" name="Cannon - 30mm" compset="Ranged">
@@ -414,8 +441,7 @@ AmmoType.amT2KC23mmAP</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC30mmAP"/>
     <tag group="AmmoType" tag="amT2KC30mmHE"/>
-    <holdlimit>AmmoType.amT2KC30mmHE |
-AmmoType.amT2KC30mmAP</holdlimit>
+    <holdlimit>AmmoType.Cannon30</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2kC40mm" name="Cannon - 40mm" compset="Ranged">
@@ -427,8 +453,7 @@ AmmoType.amT2KC30mmAP</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC40mmAP"/>
     <tag group="AmmoType" tag="amT2KC40mmHE"/>
-    <holdlimit>AmmoType.amT2KC40mmHE |
-AmmoType.amT2KC40mmAP</holdlimit>
+    <holdlimit>AmmoType.Cannon40</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC73mm" name="Cannon - 73mm" compset="Ranged">
@@ -440,8 +465,7 @@ AmmoType.amT2KC40mmAP</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC73mmAP"/>
     <tag group="AmmoType" tag="amT2KC73mmHE"/>
-    <holdlimit>AmmoType.amT2KC73mmHE |
-AmmoType.amT2KC73mmAP</holdlimit>
+    <holdlimit>AmmoType.Cannon73</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC762mm" name="Cannon - 76.2mm" compset="Ranged">
@@ -454,9 +478,7 @@ AmmoType.amT2KC73mmAP</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC762mmAP"/>
     <tag group="AmmoType" tag="amT2KC762mmHE"/>
-    <holdlimit>AmmoType.amT2KC762mmHEAT |
-AmmoType.amT2KC762mmHE |
-AmmoType.amT2KC762mmAP</holdlimit>
+    <holdlimit>AmmoType.Cannon762</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC100mm" name="Cannon - 100mm" compset="Ranged">
@@ -469,9 +491,7 @@ AmmoType.amT2KC762mmAP</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC100mmAPDS"/>
     <tag group="AmmoType" tag="amT2KC100mmHE"/>
-    <holdlimit>AmmoType.amT2KC100mmHEAT |
-AmmoType.amT2KC100mmAPDS |
-AmmoType.amT2KC100mmHE</holdlimit>
+    <holdlimit>AmmoType.Cannon100</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC105mm" name="Cannon - 105mm" compset="Ranged">
@@ -484,9 +504,7 @@ AmmoType.amT2KC100mmHE</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC105mmAPDS"/>
     <tag group="AmmoType" tag="amT2KC105mmHE"/>
-    <holdlimit>AmmoType.amT2KC105mmHEAT |
-AmmoType.amT2KC105mmAPDS |
-AmmoType.amT2KC105mmHE</holdlimit>
+    <holdlimit>AmmoType.Cannon105</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC115mm" name="Cannon - 115mm" compset="Ranged">
@@ -499,9 +517,7 @@ AmmoType.amT2KC105mmHE</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC115mmAPDS"/>
     <tag group="AmmoType" tag="amT2KC115mmHE"/>
-    <holdlimit>AmmoType.amT2KC115mmHEAT |
-AmmoType.amT2KC115mmAPDS |
-AmmoType.amT2KC115mmHE</holdlimit>
+    <holdlimit>AmmoType.Cannon115</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC120mm" name="Cannon - 120mm" compset="Ranged">
@@ -513,8 +529,7 @@ AmmoType.amT2KC115mmHE</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC120mmAPFSDS"/>
     <tag group="AmmoType" tag="amT2KC120mmHEAT"/>
-    <holdlimit>AmmoType.amT2KC120mmHEAT |
-AmmoType.amT2KC120mmAPFSDS</holdlimit>
+    <holdlimit>AmmoType.Cannon120</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KC125mm" name="Cannon - 125mm" compset="Ranged">
@@ -527,8 +542,7 @@ AmmoType.amT2KC120mmAPFSDS</holdlimit>
     <tag group="WeaponType" tag="VehicleCannon"/>
     <tag group="AmmoType" tag="amT2KC125mmAPFSDS"/>
     <tag group="AmmoType" tag="amT2KC125mmHE"/>
-    <holdlimit>AmmoType.amT2KC125mmHEAT |
-AmmoType.amT2KC125mmAPFSDS</holdlimit>
+    <holdlimit>AmmoType.Cannon125</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   </document>

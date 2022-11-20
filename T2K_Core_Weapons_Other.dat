@@ -14,11 +14,11 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="BattleRifle"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KFamas" name="FAMAS" description="The FAMAS was the French contribution to the development of bullpup\nassault rifles, and this model was adopted in the late 1970s to replace\nthe older battle rifles and submachine guns of the French army" compset="Ranged">
+  <thing id="wpT2KFamas" name="FAMAS" description="The FAMAS was the French contribution to the development of bullpup assault rifles, and this model was adopted in the late 1970s to replace the older battle rifles and submachine guns of the French army" compset="Ranged">
     <fieldval field="wpCapacity" value="25"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpShort" value="5"/>
@@ -29,11 +29,11 @@
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KVZ61" name="VZ 61" description="The vz 61 Škorpion is a rare but interesting Czechoslovakian machine\npistol adopted in the early 1960s and generally used as a PDW to replace\nboth pistol and submachine gun. Although carried holstered, like a pistol,\nit has a folding stock and generally larger magazine capacity than most\npistols, although firing a somewhat underpowered cartridge." compset="Ranged">
+  <thing id="wpT2KVZ61" name="VZ 61" description="The vz 61 Škorpion is a rare but interesting Czechoslovakian machine pistol adopted in the early 1960s and generally used as a PDW to replace both pistol and submachine gun. Although carried holstered, like a pistol, it has a folding stock and generally larger magazine capacity than most pistols, although firing a somewhat underpowered cartridge." compset="Ranged">
     <fieldval field="wpDamage" value="1"/>
     <fieldval field="wpCrit" value="3"/>
     <fieldval field="wpArmorRating" value="+1"/>
@@ -46,8 +46,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="SMG"/>
-    <tag group="AmmoType" tag="amT2K765x17"/>
-    <holdlimit>AmmoType.amT2K765x17</holdlimit>
+    <tag group="AmmoType" tag="Cal76517"/>
+    <holdlimit>AmmoType.Cal76517</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K765x17" name="7.65x17" compset="Ammunition" stacking="merge">
@@ -59,8 +59,9 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal76517"/>
     </thing>
-  <thing id="wpT2KUzi" name="UZI" description="The Israeli Uzi is one of the most famous submachine guns of all time and\nwas adopted in the early 1950s by the IDF before being exported around\nthe world. It is available with either a detachable fixed stock or a folding\nstock and is one of the few submachine guns ever made to accept a bayonet." compset="Ranged">
+  <thing id="wpT2KUzi" name="UZI" description="The Israeli Uzi is one of the most famous submachine guns of all time and was adopted in the early 1950s by the IDF before being exported around the world. It is available with either a detachable fixed stock or a folding stock and is one of the few submachine guns ever made to accept a bayonet." compset="Ranged">
     <fieldval field="wpShort" value="3"/>
     <fieldval field="wpCapacity" value="32"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -70,8 +71,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="SMG"/>
-    <tag group="AmmoType" tag="amT2K919"/>
-    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPSG1" name="PSG-1" description="The PSG-1 Präzisionsschützengewehr is a German semi automatic sniper\nrifle derived from the G3 series of battle rifles and adopted in the 1970s,\nmainly for use by counterterrorism units. A military version with plastic\naccessories (weight 1), called the MSG90, was developed in the early\n1990s but is even more rare than the original rifle." compset="Ranged">
@@ -84,11 +85,11 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KArmbrust" name="Armbrust" description="The German Armbrust is one of the few disposable antitank rocket\nlaunchers that can be fired safely from indoors due to its low firing\nsignature. It was developed in the 1970s and is similar to the M72A3\nLAW in lethality." compset="Ranged">
+  <thing id="wpT2KArmbrust" name="Armbrust" description="The German Armbrust is one of the few disposable antitank rocket launchers that can be fired safely from indoors due to its low firing signature. It was developed in the 1970s and is similar to the M72A3 LAW in lethality." compset="Ranged">
     <fieldval field="wpShort" value="4"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -99,8 +100,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="ATRL"/>
-    <tag group="AmmoType" tag="am67mmRocket"/>
-    <holdlimit>AmmoType.am67mmRocket</holdlimit>
+    <tag group="AmmoType" tag="Rocket67"/>
+    <tag group="Equipment" tag="SelfContained"/>
     <child entity="Ammo"></child>
     </thing>
   <thing id="am67mmRocket" name="67mm Rocket" compset="Ammunition" stacking="merge">
@@ -113,8 +114,9 @@
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoType" tag="Rocket67"/>
     </thing>
-  <thing id="wpT2kPZF3" name="PZF 3" description="The German Panzerfaust 3 antitank rocket launcher was adopted\nin the early 1990s to replace the aging PzF 44 developed at the end\nof World War II. It is similar to the RPG-7V, itself derived from the\noriginal Panzerfaust, but has longer range and greater penetration\nthan the Soviet weapon." compset="Ranged">
+  <thing id="wpT2kPZF3" name="PZF 3" description="The German Panzerfaust 3 antitank rocket launcher was adopted in the early 1990s to replace the aging PzF 44 developed at the end of World War II. It is similar to the RPG-7V, itself derived from the original Panzerfaust, but has longer range and greater penetration than the Soviet weapon." compset="Ranged">
     <fieldval field="wpShort" value="7"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -124,8 +126,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="ATRL"/>
-    <tag group="AmmoType" tag="amT2K110mmRocket"/>
-    <holdlimit>AmmoType.amT2K110mmRocket</holdlimit>
+    <tag group="AmmoType" tag="Rocket110"/>
+    <holdlimit>AmmoType.Rocket110</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K110mmRocket" name="110mm Rocket" compset="Ammunition" stacking="merge">
@@ -138,5 +140,6 @@
     <tag group="AmmoCatType" tag="RL"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoType" tag="Rocket110"/>
     </thing>
   </document>

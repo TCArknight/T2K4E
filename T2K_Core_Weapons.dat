@@ -91,9 +91,8 @@
     <tag group="WeaponCat" tag="BowsThrown"/>
     <tag group="WeaponType" tag="Bow"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2KHuntArrow"/>
-    <tag group="AmmoType" tag="amT2KImpArrow"/>
-    <holdlimit>AmmoType.amT2KHuntArrow | AmmoType.amT2KImpArrow</holdlimit>
+    <tag group="AmmoType" tag="Arrow"/>
+    <holdlimit>AmmoType.Arrow</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="hdrT2KBowsThrown" name="-- Bows &amp; Thrown --" compset="Ranged" isshowonly="yes">
@@ -112,8 +111,8 @@
     <tag group="WeaponCat" tag="BowsThrown"/>
     <tag group="WeaponType" tag="Bow"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2KCrossbowBolt"/>
-    <holdlimit>AmmoType.amT2KCrossbowBolt</holdlimit>
+    <tag group="AmmoType" tag="Crossbow"/>
+    <holdlimit>AmmoType.Crossbow</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBowImprov" name="Improvised Bow" compset="Ranged">
@@ -127,9 +126,8 @@
     <tag group="WeaponType" tag="Bow"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="Helper" tag="Consumable"/>
-    <tag group="AmmoType" tag="amT2KHuntArrow"/>
-    <tag group="AmmoType" tag="amT2KImpArrow"/>
-    <holdlimit>AmmoType.amT2KHuntArrow | AmmoType.amT2KImpArrow</holdlimit>
+    <tag group="AmmoType" tag="Arrow"/>
+    <holdlimit>AmmoType.Arrow</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRockThrown" name="Rock" compset="Ranged">
@@ -161,8 +159,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="Revolver"/>
-    <tag group="AmmoType" tag="amT2KCal38Spec"/>
-    <holdlimit>AmmoType.amT2KCal38Spec</holdlimit>
+    <tag group="AmmoType" tag="Cal38Spl"/>
+    <holdlimit>AmmoType.Cal38Spl</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KCal38Spec" name=".38 SPL" compset="Ammunition" stacking="merge">
@@ -175,6 +173,7 @@
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal38Spl"/>
     </thing>
   <thing id="amT2K919" name="9x19" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -186,6 +185,7 @@
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal919"/>
     </thing>
   <thing id="wpT2KM9" name="M9" description="The M9 officially replaced the M1911A1 in US service in 1980, but production was delayed until 1988. By the time war broke out in the 1990s, only front-line troops and officers had the M9, while many reserve units and units that had been formed from freshly-recruited troops were issued the M1911A1. The 9mm ammo of the M9 was much easier to find than .45 ACP, and the larger magazine capacity made it more efficient, leading to it being more popular among most soldiers." compset="Ranged">
     <fieldval field="grReliability" value="5"/>
@@ -197,7 +197,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="WeaponType" tag="Pistol"/>
-    <tag group="AmmoType" tag="amT2K919"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="hdrT2KUSMilitary" name="-- US Military Firearms --" compset="Ranged" isshowonly="yes">
@@ -265,6 +266,7 @@
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal3006"/>
     </thing>
   <thing id="amT2KCal3030" name=".30-30" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -276,6 +278,7 @@
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal3030"/>
     </thing>
   <thing id="amT2K12Gauge" name="12 GA" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -287,6 +290,7 @@
     <tag group="AmmoCatType" tag="Shotgun"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Ga12"/>
     </thing>
   <thing id="amT2KCal45" name=".45" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -298,6 +302,7 @@
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal45"/>
     </thing>
   <thing id="amT2K55645" name="5.56x45" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -309,6 +314,7 @@
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     </thing>
   <thing id="amT2K76251" name="7.62x51" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -320,6 +326,7 @@
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     </thing>
   <thing id="amT2KCal50M2" name=".50 M2" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="1"/>
@@ -330,6 +337,7 @@
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal50M2"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
     </thing>
   <thing id="amT2K4046" name="40x46 Grenade" compset="Ammunition" stacking="merge">
@@ -343,6 +351,7 @@
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
     <tag group="BlastRating" tag="D"/>
+    <tag group="AmmoType" tag="amT2K40mm"/>
     </thing>
   <thing id="wpT2KM79" name="M79" description="The M79 was the first US military grenade launcher issued during the war in Vietnam. It uses a single-shot break-action similar to hunting shotguns, but fires a 40mm grenade instead of a shotgun shell (although a shotgun-shell-like canister round is also available). The grenades are spin-armed and will not detonate under 15 meters (two hexes). Although replaced by the M203, this grenade launcher is still widely available among combat units. Some special operations units were even known to saw off the barrel and the stock to create a small and powerful, if inaccurate, break-contact weapon for emergency use." compset="Ranged" summary="Break-Action 40mm Grenade Launcher">
     <fieldval field="grReliability" value="5"/>
@@ -354,10 +363,10 @@
     <fieldval field="wpSpecial" value="Minimum Range is 2 hexes (15m)."/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="GL"/>
-    <tag group="AmmoType" tag="amT2K4046"/>
+    <tag group="AmmoType" tag="Gren4046"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K4046</holdlimit>
+    <holdlimit>AmmoType.Gren4046</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM203" name="M203" description="The M203 grenade launcher supplemented and then replaced the M79 in the 1970s, its shorter barrel and heavy balance effect on the M16 and M4 made both rifles harder to shoot (-1 modifier) while giving the M203 less effective range than the M79. It is very common among combat arms units, but much less so among reserve and rear-echelon support units. Like the M79, the 40mm grenades are spin-armed and will not detonate under 15 meters (two hexes)." compset="Ranged" summary="Underbarrel 40mm Grenade Launcher">
@@ -370,11 +379,11 @@
     <fieldval field="wpSpecial" value="Minimum Range is 2 hexes (15m)."/>
     <usesource source="srcT2K"/>
     <tag group="BlastRating" tag="D"/>
-    <tag group="AmmoType" tag="amT2K4046"/>
+    <tag group="AmmoType" tag="Gren4046"/>
     <tag group="WeaponType" tag="GL"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K4046</holdlimit>
+    <holdlimit>AmmoType.Gren4046</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KMk19" name="Mk 19" description="The Mk 19 is a belt-fed automatic grenade launcher developed during the war in Vietnam that fires longer 40mm grenades than the M79 and M203 out to much longer ranges. It must be mounted on a tripod or a pintle and is most often found on vehicles and is very useful for fire suppression, even against buildings, and engaging light vehicles.\n\nUnlike other heavy weapons, the Mk 19 does use ammo dice just like small arms. If you hit, each &lt;bullet&gt; on an ammo die lets you land an additional grenade in the target hex or a hex adjacent to it – or, if you attacked a specific target, score another hit on the target, or a secondary target in the same or an adjacent hex. If you miss, roll deviation one additional time for each &lt;bullet&gt; rolled on your ammo dice." compset="Ranged">
@@ -387,9 +396,9 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="GL"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2K4053"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K4053</holdlimit>
+    <tag group="AmmoType" tag="Gren4053"/>
+    <holdlimit>AmmoType.Gren4053</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM249" name="M249" description="The M249 light machine gun (often called a SAW, for Squad Automatic Weapon, even though that designation has been dropped) is a US copy of the FN Minimi adopted into US service in the mid-’80s. It can be fired from the integral bipod, or from a tripod or vehicle pintle mount. It is capable of firing from belts of disintegrating links, which can be carried in a box attached to the receiver, and it can also use standard\nM16 (STANAG) magazines in an emergency." compset="Ranged">
@@ -402,24 +411,28 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="GL"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KM72A3" name="M72A3 LAW" description="The M72A3 Light Antitank Weapon (LAW) fires a 66mm HEAT rocket from a disposable, extendable fiberglass tube. It was introduced in the early 1960s and slated to be replaced by the M136 AT-4 in the 1980s, but production of the M72A3 continued through the beginning of the war in the mid-’90s, since it was found to be particularly useful against light vehicles and buildings, and two M72A3 could be carried instead of one M136 AT-4." compset="Ranged">
+  <thing id="wpT2KM72A3" name="M72A3 LAW" description="The M72A3 Light Antitank Weapon (LAW) fires a 66mm HEAT rocket from a disposable, extendable fiberglass tube. It was introduced in the early 1960s and slated to be replaced by the M136 AT-4 in the 1980s, but production of the M72A3 continued through the beginning of the war in the mid-’90s, since it was found to be particularly useful against light vehicles and buildings, and two M72A3 could be carried instead of one M136 AT-4." compset="Ranged" stacking="merge">
     <fieldval field="wpShort" value="3"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grCost" value="100"/>
     <fieldval field="grWeight" value="1"/>
+    <fieldval field="wpDamage" value="6"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpArmorRating" value="-1"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="ATRL"/>
-    <tag group="AmmoType" tag="amT2K66mm"/>
-    <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K66mm</holdlimit>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="AmmoType" tag="Rocket66"/>
+    <tag group="WeaponType" tag="ATRL"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
     <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K66mmRocket" name="66mm Rocket" compset="Ammunition" stacking="merge">
@@ -433,6 +446,7 @@
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition"/>
     <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoType" tag="Rocket66"/>
     </thing>
   <thing id="wpT2KM4" name="M4" description="The M4 assault rifle is a shorter carbine version of the M16A2 with a telescoping stock and shorter barrel to make it handier for troops operating from vehicles or in close environments, like the Vietnam-era XM177E2 (CAR-15) carbine it replaced. It was first issued in the mid-1990s and includes a Picatinny mounting rail on the top of the receiver. Its adjustable stock and lighter weight also make it better suited to soldiers with smaller stature.Like the M16A2, it is limited to 3-round bursts in lieu of automatic fire." compset="Ranged">
     <fieldval field="wpShort" value="4"/>
@@ -444,9 +458,9 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
     <tag group="WeaponType" tag="Carbine"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM4A1" name="M4A1" description="The M4 assault rifle is a shorter carbine version of the M16A2 with a telescoping stock and shorter barrel to make it handier for troops operating from vehicles or in close environments, like the Vietnam-era XM177E2 (CAR-15) carbine it replaced. It was first issued in the mid-1990s and includes a Picatinny mounting rail on the top of the receiver. Its adjustable stock and lighter weight also make it better suited to soldiers with smaller stature.Like the M16A2, it is limited to 3-round bursts in lieu of automatic fire.\n\nThe M4A1 is a fully-automatic version of the M4 carbine intended for specialized combat troops such as Rangers and Special Forces. Otherwise, it is identical to the regular M4." compset="Ranged">
@@ -460,10 +474,10 @@
     <tag group="WeaponType" tag="Carbine"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
     <tag group="thing" tag="holder"/>
     <tag group="Helper" tag="DamageByAmmo"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM16A1" name="M16A1" description="The M16A1 assault rifle was developed in the 1960s for use in the jungles of\nVietnam. After some teething problems were resolved, it became the standard\nrifle of the US armed forces until it was replaced by the M16A2 in the mid-80s.\nLarge stockpiles of M16A1s were sold or given to allies or maintained by reserve\nand training units. These rifles were issued en masse when war broke out in the\n‘90s, mainly to units that had just been formed or to expand reserve units. Many\nsoldiers actually preferred the M16A1 over the M16A2 due to its higher rate of fire" compset="Ranged">
@@ -478,7 +492,7 @@
     <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
     <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM16A2" name="M16A2" description="The M16A1 assault rifle was developed in the 1960s for use in the jungles of\nVietnam. After some teething problems were resolved, it became the standard\nrifle of the US armed forces until it was replaced by the M16A2 in the mid-80s.\nLarge stockpiles of M16A1s were sold or given to allies or maintained by reserve\nand training units. These rifles were issued en masse when war broke out in the\n‘90s, mainly to units that had just been formed or to expand reserve units. Many\nsoldiers actually preferred the M16A1 over the M16A2 due to its higher rate of fire" compset="Ranged">
@@ -492,8 +506,8 @@
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM40A3" name="M40A3" description="The M40A3 is the most recent in a line of US Marine Corps sniper rifles\nbegun during the war in Vietnam. It is based on the civilian Remington\nM700 action but customized and accurized by USMC armorers. The earlier\nM40A1, which was replaced by the M40A3 in the 1990s, is very similar\nto the M40A3, as there were only very minor changes in the upgrade." compset="Ranged">
@@ -506,8 +520,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM21" name="M21" description="The M21 is an accurized match-grade M14 battle rifle developed during\nthe war in Vietnam. It served until replaced by the M24 Sniper Weapon\nSystem in 1988, but was retained widely in reserve units and often used\nin an intermediate sniping role as a DMR due to its higher rate of fire.\nA newer version of the M21, called the M25, was also developed and\ntested in the 1990s by the 10th Special Forces Group." compset="Ranged">
@@ -522,11 +536,11 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KM82A1" name="M82A1" description="The M82A1 was issued in the early 1990s as the Special Applications\nScoped Rifle (SASR) to many special operations units and designated\nfor use against light vehicles, although it was primarily used for very\nlong-range sniping. More were purchased in the prelude to war in the\nmid-1990s, but the lack of the rare specialized sniping ammunition left\nsnipers using extra M2 machinegun ammunition, which was less accurate\nat extreme ranges (although still ideal for shooting at light vehicles)" compset="Ranged">
+  <thing id="wpT2KM82A1" name="M82A1" description="The M82A1 was issued in the early 1990s as the Special Applications Scoped Rifle (SASR) to many special operations units and designated for use against light vehicles, although it was primarily used for very long-range sniping. More were purchased in the prelude to war in the mid-1990s, but the lack of the rare specialized sniping ammunition left snipers using extra M2 machinegun ammunition, which was less accurate at extreme ranges (although still ideal for shooting at light vehicles)." compset="Ranged">
     <fieldval field="wpShort" value="20"/>
     <fieldval field="wpCapacity" value="10"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -536,8 +550,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2KCal50M2"/>
-    <holdlimit>AmmoType.amT2KCal50M2</holdlimit>
+    <tag group="AmmoType" tag="Cal50M2"/>
+    <holdlimit>AmmoType.Cal50M2</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM60" name="M60" description="The M60 general-purpose machine gun (GPMG) was developed in the\n1950s from the World War II German FG-42 and MG-42. Although\nofficially replaced in service by the M240B in the early 1990s, there\nwere still large numbers in the US inventory and by the outbreak of\nwar in the mid-’90s it was still the primary machine gun of American\ncombat arms units. It includes an attached bipod and can also be\nfired from a tripod." compset="Ranged">
@@ -550,8 +564,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM240B" name="M240B" description="The M240B was adopted by the US armed forces as a vehicle-mounted\nmachine gun in the late 1970s, and then as an infantry weapon in the\nearly 1990s. It comes standard with a bipod but may also be mounted on\na tripod or pintle. Unlike the M60, which was well known for jamming,\nthe M240B was very reliable." compset="Ranged">
@@ -564,10 +578,10 @@
     <fieldval field="grCost" value="1500"/>
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="WeaponType" tag="GPMG"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM2HB" name="M2HB" description="The venerable Browning M2HB .50 machine gun was developed during\nWorld War I but not adopted until the 1930s. It has served in every branch\nof the US armed forces since then, mainly on vehicles, but also on tripods\nfrom fixed fighting positions. The weapon is so heavy, however, that a team\nis required to carry the barrel, receiver, tripod, and ammunition separately" compset="Ranged">
@@ -580,8 +594,8 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2KCal50M2"/>
-    <holdlimit>AmmoType.amT2KCal50M2</holdlimit>
+    <tag group="AmmoType" tag="Cal50M2"/>
+    <holdlimit>AmmoType.Cal50M2</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="amT2K84mmRocket" name="84mm Rocket" compset="Ammunition" stacking="merge">
@@ -595,21 +609,25 @@
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="C"/>
     </thing>
-  <thing id="wpT2KM136AT4" name="M136 AT4" description="The M136 AT4 is a modified version of the earlier Swedish 74 mm\nPansarskott m/68, developed in the late 1960s, adopted by the US\narmed forces in the mid-’80s. Like the M72A3 LAW, it is a disposable\nanti-tank weapon, but it has much better penetration and range\nthan the M72A3. Like the LAW, it is also effective against buildings\nand lighter vehicles." compset="Ranged">
+  <thing id="wpT2KM136AT4" name="M136 AT4" description="The M136 AT4 is a modified version of the earlier Swedish 74 mm\nPansarskott m/68, developed in the late 1960s, adopted by the US\narmed forces in the mid-’80s. Like the M72A3 LAW, it is a disposable\nanti-tank weapon, but it has much better penetration and range\nthan the M72A3. Like the LAW, it is also effective against buildings\nand lighter vehicles." compset="Ranged" stacking="merge">
     <fieldval field="wpShort" value="5"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grCost" value="200"/>
     <fieldval field="grWeight" value="2"/>
+    <fieldval field="wpDamage" value="8"/>
+    <fieldval field="wpCrit" value="2"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="ATRL"/>
-    <tag group="AmmoType" tag="amT2K84mmRocket"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <holdlimit>AmmoType.amT2K84mmRocket</holdlimit>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="AmmoType" tag="amT2K84mmRocket"/>
+    <tag group="WeaponType" tag="ATRL"/>
+    <tag group="BlastRating" tag="C"/>
+    <holdlimit>AmmoType.Rocket84</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpFGM148" name="FGM-148" description="The FGM-148 Javelin is a top-attack fire-and-forget antitank\nguided missile that only started being issued in the mid-’90s as a\nreplacement for the M47 Dragon, so it is still quite rare. It is also\ncapable of guiding itself against designated helicopters. As the\nJavelin missile hits from the top, the armor rating for the rear of\nthe target vehicle as always used." compset="Ranged">
+  <thing id="wpFGM148" name="FGM-148" description="The FGM-148 Javelin is a top-attack fire-and-forget antitank\nguided missile that only started being issued in the mid-’90s as a replacement for the M47 Dragon, so it is still quite rare. It is also capable of guiding itself against designated helicopters. As the Javelin missile hits from the top, the armor rating for the rear of the target vehicle as always used." compset="Ranged">
     <fieldval field="wpShort" value="40"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -618,9 +636,9 @@
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATGM"/>
-    <tag group="AmmoType" tag="am127mmATGM"/>
+    <tag group="AmmoType" tag="ATGM127"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <holdlimit>AmmoType.am127mmATGM</holdlimit>
+    <holdlimit>AmmoType.ATGM127</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="am127mmATGM" name="127mm ATGM" compset="Ammunition" stacking="merge">
@@ -633,6 +651,7 @@
     <tag group="AmmoCatType" tag="ATGM"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="B"/>
+    <tag group="AmmoType" tag="ATGM127"/>
     </thing>
   <thing id="amT2K140mmATGM" name="140mm ATGM" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="500"/>
@@ -644,8 +663,9 @@
     <tag group="AmmoCatType" tag="ATGM"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="B"/>
+    <tag group="AmmoType" tag="ATGM140"/>
     </thing>
-  <thing id="wpM47Dragon" name="M47 Dragon" description="The M47 Dragon was developed in the mid-1970s as a wire-guided\nantitank missile capable of defeating the frontal armor of nearly any\nmain battle tank. The gunner is expected to keep the crosshairs on the\ntarget for as long as 5 seconds while the missile flew to the target, despite\nhaving given away their position by the firing signature." compset="Ranged">
+  <thing id="wpM47Dragon" name="M47 Dragon" description="The M47 Dragon was developed in the mid-1970s as a wire-guided antitank missile capable of defeating the frontal armor of nearly any main battle tank. The gunner is expected to keep the crosshairs on the target for as long as 5 seconds while the missile flew to the target, despite having given away their position by the firing signature." compset="Ranged">
     <fieldval field="wpShort" value="25"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -654,9 +674,9 @@
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATGM"/>
-    <tag group="AmmoType" tag="amT2K140mmATGM"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <holdlimit>AmmoType.amT2K140mmATGM</holdlimit>
+    <tag group="AmmoType" tag="ATGM140"/>
+    <holdlimit>AmmoType.ATGM140</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="am152mmATGM" name="152mm ATGM" compset="Ammunition" stacking="merge">
@@ -669,8 +689,9 @@
     <tag group="AmmoCatType" tag="ATGM"/>
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="B"/>
+    <tag group="AmmoType" tag="ATGM152"/>
     </thing>
-  <thing id="wpT2KBGM71TOW" name="BGM-71 TOW" description="The Tube-launched, Optically-tracked, Wire-guided (TOW) missile system was developed\nin the 1960s and is normally mounted on a vehicle (such as the Bradley or M901 ITV or a\nHMMWV) but can be carried by a crew. The gunner is expected to keep the crosshairs on\nthe target for as long as 10 seconds while the missile flew to the target, despite having\ngiven away their position by the firing signature. Because the TOW has a much longer\nrange than the Dragon, this was generally not a problem." compset="Ranged">
+  <thing id="wpT2KBGM71TOW" name="BGM-71 TOW" description="The Tube-launched, Optically-tracked, Wire-guided (TOW) missile system was developed in the 1960s and is normally mounted on a vehicle (such as the Bradley or M901 ITV or a\nHMMWV) but can be carried by a crew. The gunner is expected to keep the crosshairs on the target for as long as 10 seconds while the missile flew to the target, despite having given away their position by the firing signature. Because the TOW has a much longer range than the Dragon, this was generally not a problem." compset="Ranged">
     <fieldval field="wpDamage" value="11"/>
     <fieldval field="wpCrit" value="1"/>
     <fieldval field="wpArmorRating" value="-2"/>
@@ -682,13 +703,13 @@
     <fieldval field="grWeight" value="15"/>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="ATGM"/>
-    <tag group="AmmoType" tag="am152mmATGM"/>
+    <tag group="AmmoType" tag="ATGM152"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="BlastRating" tag="B"/>
-    <holdlimit>AmmoType.am152mmATGM</holdlimit>
+    <holdlimit>AmmoType.ATGM152</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2kDblShotgun" name="Double-Barrelled Shotgun" description="The typical side-by-side (or over-and-under) double-barreled hunting\nshotgun is a pattern that has been around since the 1800s. This shotgun\nis sometimes found with a sawed-off barrel and stock to make\nit handier (encumbrance ½, range 1). It can fire a variety of 12-gauge\nshotgun shells." compset="Ranged">
+  <thing id="wpT2kDblShotgun" name="Double-Barrelled Shotgun" description="The typical side-by-side (or over-and-under) double-barreled hunting shotgun is a pattern that has been around since the 1800s. This shotgun is sometimes found with a sawed-off barrel and stock to make it handier (encumbrance ½, range 1). It can fire a variety of 12-gauge shotgun shells." compset="Ranged">
     <fieldval field="wpShort" value="2"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpCapacity" value="2"/>
@@ -698,11 +719,11 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <tag group="AmmoType" tag="Ga12"/>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KSAShotgun" name="Semi-Automatic Shotgun" description="Semi-automatic hunting shotguns were first developed\nbefore World War I and have been produced ever since. They\nare widely used among hunters and have also been pressed\ninto military service, primarily in military police and special\noperations units." compset="Ranged">
+  <thing id="wpT2KSAShotgun" name="Semi-Automatic Shotgun" description="Semi-automatic hunting shotguns were first developed\nbefore World War I and have been produced ever since. They are widely used among hunters and have also been pressed into military service, primarily in military police and special operations units." compset="Ranged">
     <fieldval field="wpCapacity" value="5"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpShort" value="2"/>
@@ -712,8 +733,8 @@
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Shotgun" name="Shotgun" abbrev="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge" name="12 GA" abbrev="12 GA"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <tag group="AmmoType" tag="Ga12"/>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpLARifle" name="Lever-Action Rifle" compset="Ranged">
@@ -726,10 +747,10 @@
     <tag group="AmmoType" tag="amT2KCal3030"/>
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <holdlimit>AmmoType.amT2KCal3030</holdlimit>
+    <holdlimit>AmmoType.Cal3030</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KPipeRifle" name="Pipe-Gun Rifle" description="The pipe gun is an improvised firearm made from pipes, nails, and\nscraps to fire rifle shells. They are unreliable and inaccurate, but\ngenerally used only once to gain a better weapon from their victim\n(if they succeed). This weapon can be jury rigged, using two weapon\nor general spare parts" compset="Ranged">
+  <thing id="wpT2KPipeRifle" name="Pipe-Gun Rifle" description="The pipe gun is an improvised firearm made from pipes, nails, and scraps to fire rifle shells. They are unreliable and inaccurate, but generally used only once to gain a better weapon from their victim (if they succeed). This weapon can be jury rigged, using two weapon or general spare parts." compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="wpShort" value="3"/>
@@ -739,13 +760,13 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
-    <tag group="AmmoType" tag="amT2KCal3030"/>
-    <tag group="AmmoType" tag="amT2K545x39"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <tag group="AmmoType" tag="amT2K762x54"/>
-    <holdlimit>AmmoType.amT2KCal3006 | AmmoType.amT2KCal3030 | AmmoType.amT2K545x39 | AmmoType.amT2K76251 | 
-AmmoType.amT2K762x54</holdlimit>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <tag group="AmmoType" tag="Cal3030"/>
+    <tag group="AmmoType" tag="Cal54539"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="AmmoType" tag="Cal76254"/>
+    <holdlimit>AmmoType.Cal3006 | AmmoType.Cal3030 | AmmoType.Cal54539 | AmmoType.Cal76251 | 
+AmmoType.Cal76254</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPAShotgun" name="Pump-Action Shotgun" compset="Ranged">
@@ -758,8 +779,8 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Shotgun" name="Shotgun" abbrev="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge" name="12 GA" abbrev="12 GA"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <tag group="AmmoType" tag="Ga12"/>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KPipeShotgun" name="Pipe-Gun Shotgun" compset="Ranged">
@@ -772,8 +793,8 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Shotgun" name="Shotgun" abbrev="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge" name="12 GA" abbrev="12 GA"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <tag group="AmmoType" tag="Ga12"/>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KZipGun" name="Zip Gun" description="Similar to the pipe gun, but fires pistol rounds. This weapon can be jury\nrigged, using one weapon or general spare part." compset="Ranged">
@@ -784,17 +805,15 @@ AmmoType.amT2K762x54</holdlimit>
     <fieldval field="grCost" value="25"/>
     <fieldval field="grWeight" value=".5"/>
     <usesource source="srcT2K"/>
-    <tag group="AmmoType" tag="amT2K919"/>
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2KCal38Spec"/>
-    <tag group="AmmoType" tag="amT2KCal45"/>
-    <tag group="AmmoType" tag="am545x18"/>
-    <tag group="AmmoType" tag="amT2K9x18"/>
-    <holdlimit>AmmoType.amT2KCal38Spec | AmmoType.amT2KCal45 |  AmmoType.am545x18 |  AmmoType.amT2K9x18</holdlimit>
+    <tag group="AmmoType" tag="Cal38Spl"/>
+    <tag group="AmmoType" tag="Cal45"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal38Spl | AmmoType.Cal45 |  AmmoType.Cal4518 | AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KPolPistol" name="Police Pistol" description="Polymer-framed pistols became wildly popular among police and civilians\nafter their introduction in the early 1980s. They typically incorporate\na polymer frame, trigger safety, and a striker-fired action and have a\nlarge-capacity magazine, usually in 9x19mm." compset="Ranged">
+  <thing id="wpT2KPolPistol" name="Police Pistol" description="Polymer-framed pistols became wildly popular among police and civilians after their introduction in the early 1980s. They typically incorporate a polymer frame, trigger safety, and a striker-fired action and have a large-capacity magazine, usually in 9x19mm." compset="Ranged">
     <fieldval field="wpCapacity" value="17"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpShort" value="2"/>
@@ -804,11 +823,11 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
-    <tag group="AmmoType" tag="amT2K919" name="9x19" abbrev="9x19"/>
-    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KCbtPistol" name="Combat Pistol" description="Double-action combat pistols have been produced since before World\nWar II. Their wide availability and ease of operation have made them a\nfavorite of many law enforcement organizations" compset="Ranged">
+  <thing id="wpT2KCbtPistol" name="Combat Pistol" description="Double-action combat pistols have been produced since before World War II. Their wide availability and ease of operation have made them a favorite of many law enforcement organizations" compset="Ranged">
     <fieldval field="wpCapacity" value="15"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpShort" value="2"/>
@@ -818,11 +837,11 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
-    <tag group="AmmoType" tag="amT2K919" name="9x19" abbrev="9x19"/>
-    <holdlimit>AmmoType.amT2K919</holdlimit>
+    <tag group="AmmoType" tag="Cal919" name="9x19" abbrev="9x19"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="wpT2KBARifle" name="Bolt-Action Rifle" description="Bolt-action hunting rifles have been popular since the early 1900s and\nare most commonly available in sporting rifle calibers. Multiple barrel,\nmagazine, stock, and sighting options are available." compset="Ranged">
+  <thing id="wpT2KBARifle" name="Bolt-Action Rifle" description="Bolt-action hunting rifles have been popular since the early 1900s and are most commonly available in sporting rifle calibers. Multiple barrel, magazine, stock, and sighting options are available." compset="Ranged">
     <fieldval field="wpShort" value="10"/>
     <fieldval field="wpCapacity" value="5"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -832,8 +851,8 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K"/>
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="amT2KHuntArrow" name="Hunting Arrows" compset="Ammunition" stacking="merge">
@@ -845,6 +864,7 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="Arrow"/>
     <tag group="AmmoCatType" tag="ArrowsBolts"/>
+    <tag group="AmmoType" tag="Arrow"/>
     </thing>
   <thing id="amT2KImpArrow" name="Improvised Arrows" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
@@ -854,6 +874,7 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="Arrow"/>
     <tag group="AmmoCatType" tag="ArrowsBolts"/>
+    <tag group="AmmoType" tag="Arrow"/>
     </thing>
   <thing id="amT2KCrossbowBolt" name="Crossbow Bolt" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
@@ -864,6 +885,7 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K"/>
     <tag group="AmmoCat" tag="Arrow"/>
     <tag group="AmmoCatType" tag="ArrowsBolts"/>
+    <tag group="AmmoType" tag="Crossbow"/>
     </thing>
   <thing id="hdrT2KPistolSMGAm" name="--- Pistol/SMG Ammunition ---" compset="Ammunition" holdable="no" isshowonly="yes">
     <tag group="AmmoCat" tag="Firearm"/>
@@ -923,6 +945,7 @@ AmmoType.amT2K762x54</holdlimit>
     <usesource source="srcT2K1stConvCore"/>
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <tag group="AmmoType" tag="amT2KCal45"/>
+    <tag group="AmmoType" tag="amCal45"/>
+    <holdlimit>AmmoType.Cal45</holdlimit>
     </thing>
   </document>

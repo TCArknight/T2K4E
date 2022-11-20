@@ -546,9 +546,14 @@
       <it_tagpick group="AmmoCat" tag="?" require="yes" deftag="Firearm"/>
       </inputthing>
     <inputthing
-      name="Type"
-      helptext="Specify the type of ammunition this belongs to.">
+      name="Category Type"
+      helptext="Specify the category type of ammunition this belongs to.">
       <it_tagpick group="AmmoCatType" tag="?" require="yes" deftag="Pistol"/>
+      </inputthing>
+    <inputthing
+      name="Ammo Type"
+      helptext="Specify the category type of ammunition this belongs to.">
+      <it_tagpick group="AmmoType" tag="?" require="yes" deftag="Dummy"/>
       </inputthing>
     <inputthing
       name="Damage"
@@ -702,9 +707,29 @@
       <it_tagpick group="WeaponType" tag="?" />
       </inputthing>
     <inputthing
+      name="Ammo Type"
+      helptext="Specify type of ammo used by the weapon.">
+      <it_taglist group="AmmoType" tag="?" />
+      </inputthing>
+    <inputthing
       name="Weapon Bonus"
       helptext="Specify the attack bonus of the weapon.">
       <it_field field="wpBonus"/>
+      </inputthing>
+    <inputthing
+      name="Reliability"
+      helptext="Specify the reliability of the item.">
+      <it_field field="grReliability"/>
+      </inputthing>
+    <inputthing
+      name="Rate of Fire"
+      helptext="Specify the maximum rate of fire for the weapon.">
+      <it_field field="wpRateOfFire"/>
+      </inputthing>
+    <inputthing
+      name="Self-Contained?"
+      helptext="Check here if the weapon is disposable/not able to be reloaded.">
+      <it_tagcheck group="Equipment" tag="SelfContained"/>
       </inputthing>
     <inputthing
       name="Damage"
@@ -716,61 +741,44 @@
       helptext="Specify the crit rating of the weapon.">
       <it_field field="wpCrit"/>
       </inputthing>
-
     <inputthing
       name="Blast"
       helptext="Specify the blast rating of the weapon.">
       <it_taglist group="BlastRating" tag="?" />
       </inputthing>
     <inputthing
-      name="Weapon Armor Rating"
-      helptext="Specify the armor rating of the weapon.">
-      <it_field field="wpArmorRating"/>
-      </inputthing>
-    <inputthing
       name="Range"
       helptext="Specify the short range for the weapon in (10m) hexes.">
       <it_field field="wpShort"/>
       </inputthing>
-
     <inputthing
-      name="Ammo Type"
-      helptext="Specify type of ammo used by the weapon.">
-      <it_taglist group="AmmoType" tag="?" />
-      </inputthing>
-	  
-    <inputthing
-      name="Shot Capacity"
+      name="Mag"
       helptext="Specify the number of shots before reloading.">
       <it_field field="wpCapacity"/>
-      </inputthing>  
+      </inputthing> 
     <inputthing
-      name="Rate of Fire"
-      helptext="Specify the maximum rate of fire for the weapon.">
-      <it_field field="wpRateOfFire"/>
-      </inputthing>
-	  
-    <inputthing
-      name="Minimum Strength"
-      helptext="Specify the minimum Strength required to use the weapon without penalty.">
-      <it_field field="wpStrReq"/>
-      </inputthing>
-
-    <inputthing
-      name="Reliability"
-      helptext="Specify the reliability of the item.">
-      <it_field field="grReliability"/>
-      </inputthing>
-    <inputthing
-      name="Cost"
-      helptext="Specify the standard cost of the item, with a value of 0 meaning it is free.">
-      <it_field field="grCost"/>
+      name="Weapon Armor Rating"
+      helptext="Specify the armor rating of the weapon.">
+      <it_field field="wpArmorRating"/>
       </inputthing>
     <inputthing
       name="Weight"
       helptext="Specify the weight of the item.">
       <it_field field="grWeight"/>
       </inputthing>
+    <inputthing
+      name="Cost"
+      helptext="Specify the standard cost of the item, with a value of 0 meaning it is free.">
+      <it_field field="grCost"/>
+      </inputthing>
+
+	   
+    <inputthing
+      name="Minimum Strength"
+      helptext="Specify the minimum Strength required to use the weapon without penalty.">
+      <it_field field="wpStrReq"/>
+      </inputthing>
+
     <inputthing
       name="Special Behaviors"
       helptext="Specify any special behaviors for the weapon of which the user should be reminded.">
@@ -1004,71 +1012,22 @@
       helptext="Specify what Type of vehicle this is.">
       <it_tagpick group="VehicleType" tag="?" require="yes" deftag="Custom"/>
       </inputthing>
-	<inputthing
-      name="Movement Type"
-      helptext="Specify what Type of vehicle this is.">
-      <it_tagpick group="VehicleMove" tag="?" require="yes" deftag="Wheeled"/>
-      </inputthing>
-
-
-    <inputthing
-      name="Fuel"
-      helptext="Fuel Details for the Vehicle.">
-      <it_separator/>
-      </inputthing>	  
-	<inputthing
-      name="Fuel Type"
-      helptext="Specify what type of fuel this vehicle is designed for.">
-      <it_tagpick group="VehicleFuel" tag="?" require="yes" deftag="Gas"/>
-      </inputthing>
-	<inputthing
-      name="Fuel In Use"
-      helptext="Specify what type of fuel this vehicle is currently using.">
-      <it_tagpick group="VehicleFuelUsed" tag="?" require="yes" deftag="Gas"/>
-      </inputthing>
-    <inputthing
-      name="Fuel Capacity"
-      helptext="Fuel Capacity of the vehicle.">
-      <it_field field="vebFuelCapacity"/>
-      </inputthing>
-    <inputthing
-      name="Fuel Consumption"
-      helptext="Fuel Capacity of the vehicle.">
-      <it_field field="vebFuelConsumption"/>
-      </inputthing>
 	  
     <inputthing
       name="Reliability"
       helptext="Reliability of the vehicle.">
       <it_field field="vebReliability"/>
       </inputthing>
-
-    <inputthing
-      name="Cargo Capacity"
-      helptext="How much Cargo the vehicle can carry.">
-      <it_field field="vebCargoCapacity"/>
-      </inputthing>
-
-    <inputthing
-      name="Personnel"
-      helptext="Number of Crew and Passengers for the Vehicle.">
-      <it_separator/>
-      </inputthing>  
-    <inputthing
-      name="Crew"
-      helptext="Specify number of crew for the vehicle. Default is 1 if no value supplied.">
-      <it_field field="vebCrew"/>
-      </inputthing> 
-    <inputthing
-      name="Passengers"
-      helptext="Specify number of passengers for the vehicle.">
-      <it_field field="vebPassengers"/>
-      </inputthing>
 	  
     <inputthing
-      name="Speed Values"
+      name="Movement &amp; Speed Values"
       helptext="Specific speed of the vehicle for various conditions.">
       <it_separator/>
+      </inputthing>
+	<inputthing
+      name="Movement Type"
+      helptext="Specify what Type of vehicle this is.">
+      <it_tagpick group="VehicleMove" tag="?" require="yes" deftag="Wheeled"/>
       </inputthing>
     <inputthing
       name="Combat - On Road"
@@ -1115,6 +1074,54 @@
       name="Back"
       helptext="Back armor.">
       <it_field field="vebArmorBack"/>
+      </inputthing>	  
+	  
+    <inputthing
+      name="Fuel"
+      helptext="Fuel Details for the Vehicle.">
+      <it_separator/>
+      </inputthing>	  
+	<inputthing
+      name="Fuel Type"
+      helptext="Specify what type of fuel this vehicle is designed for.">
+      <it_taglist group="VehicleFuel" tag="?" require="yes" deftag="Gas"/>
+      </inputthing>
+	<inputthing
+      name="Fuel In Use"
+      helptext="Specify what type of fuel this vehicle is currently using.">
+      <it_tagpick group="VehicleFuelUsed" tag="?" require="yes" deftag="Gas"/>
+      </inputthing>
+    <inputthing
+      name="Fuel Capacity"
+      helptext="Fuel Capacity of the vehicle.">
+      <it_field field="vebFuelCapacity"/>
+      </inputthing>
+    <inputthing
+      name="Fuel Consumption"
+      helptext="Fuel Capacity of the vehicle.">
+      <it_field field="vebFuelConsumption"/>
+      </inputthing>
+
+    <inputthing
+      name="Personnel"
+      helptext="Number of Crew and Passengers for the Vehicle.">
+      <it_separator/>
+      </inputthing>  
+    <inputthing
+      name="Crew"
+      helptext="Specify number of crew for the vehicle. Default is 1 if no value supplied.">
+      <it_field field="vebCrew"/>
+      </inputthing> 
+    <inputthing
+      name="Passengers"
+      helptext="Specify number of passengers for the vehicle.">
+      <it_field field="vebPassengers"/>
+      </inputthing>
+
+    <inputthing
+      name="Cargo Capacity"
+      helptext="How much Cargo the vehicle can carry.">
+      <it_field field="vebCargoCapacity"/>
       </inputthing>
 
     <inputthing
@@ -1132,6 +1139,13 @@
       helptext="Specify summary the secondary weapon(s) of the vehicle.">
       <it_field field="vebSecWeapon"/>
       </inputthing>
+
+   <inputthing
+        name="Vehicle Gear"
+        helptext="Select any gear for the vehicle (outside the weapon entries).">
+        <it_bootcustom compset="VehicleGear">
+          </it_bootcustom>
+        </inputthing>	  
 	  
     <inputthing>
       <it_groupref id="SourceInfo"/>
@@ -1148,10 +1162,22 @@
     deflivefield="minEnabled"
     description="Weapons, armor, and vehicles all have their own tabs for creating objects of those types."
     summary="To create a vehicle, first, create an entry on the Vehicle tab - that's the vehicle attributes. Then, create this to set up the vehicle's cost and availability.">
-    
+
+
 	<inputthing
-      name="Vehicle Statline"
-      helptext="Select the statline to use for this Vehicle">
+      name="Vehicle Category"
+      helptext="Specify what Category this vehicle belongs to.">
+      <it_tagpick group="VehicleCat" tag="?" require="yes" deftag="USMil"/>
+      </inputthing>
+	<inputthing
+      name="Vehicle Type"
+      helptext="Specify what Type of vehicle this is.">
+      <it_tagpick group="VehicleType" tag="?" require="yes" deftag="Custom"/>
+      </inputthing>
+	  
+	<inputthing
+      name="Vehicle Base"
+      helptext="Select the vehicle base to use for this Vehicle">
       <it_bootcustom compset="VehicleBase" target="minion">
         </it_bootcustom>
       </inputthing>
@@ -1172,5 +1198,61 @@
       </inputthing>
 	  
     </editthing>
-	
+
+  <!-- Equipment editthing - for basic gear -->
+  <editthing
+    group="Vehicles"
+    compset="VehicleGear"
+    name="Vehicle Gear"
+    prefix="eq"
+    description="Weapons, armor, and vehicles all have their own tabs for creating objects of those types."
+    summary="Defines a simple piece of equipment that can be selected on the Gear tab.">
+    <inputthing
+      name="Equipment Type"
+      helptext="Specify the type for this equipment.">
+      <it_tagpick group="GearType" tag="?" require="yes" deftag="Misc"/>
+      </inputthing>
+          <inputthing
+      name="Equipment SubType"
+      helptext="Specify the subtype for this equipment.">
+      <it_tagpick group="GearSubType" tag="?" require="yes" deftag="NA"/>
+      </inputthing>
+    <inputthing
+      name="Cost"
+      helptext="Specify the standard cost of the item, with a value of 0 meaning it is free.">
+      <it_field field="grCost"/>
+      </inputthing>
+    <inputthing
+      name="Lot Cost"
+      helptext="Specify the cost of a full 'lot' of the item, where the lot size is given on the right. The 'lot cost' overrides any individual cost given above.">
+      <it_field field="grLotCost"/>
+      </inputthing>
+    <!-- <inputthing>
+      <it_groupref id="Consumables"/>
+      </inputthing> -->
+    <inputthing
+      name="Reliability"
+      helptext="Specify the reliability of the item.">
+      <it_field field="grReliability"/>
+      </inputthing>
+
+    <inputthing
+      name="Tiny Item?"
+      helptext="Is the item of negligible weight? Leave the weight below blank and check this box.">
+      <it_tagcheck group="Equipment" tag="TinyItem" />
+      </inputthing>
+    <inputthing
+      name="Weight"
+      helptext="Specify the weight of the item.">
+      <it_field field="grWeight"/>
+      </inputthing>
+    <inputthing
+      name="Container Behavior"
+      helptext="Specify whether this piece of equipment can contain other equipment. If this equipment can contain other equipment AND be contained within other equipment, select 'Holder'. If the equipment can only contain other equipment, select 'Top Holder'. If the equipment can only be contained by other equipment, do not select anything.">
+      <it_tagpick group="thing" tag="holder?" />
+      </inputthing>
+    <inputthing>
+      <it_groupref id="SourceInfo"/>
+      </inputthing>
+    </editthing>	
   </document>

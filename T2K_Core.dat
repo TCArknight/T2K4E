@@ -767,13 +767,15 @@ perform hero.childfound[trInit].assign[Hide.Trait]</eval>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <exprreq message="One term in Combat Arms required."><![CDATA[hero.tagis[Lifepath.CombatArms] <> 0]]></exprreq>
     <prereq message="requires no D attribute">
-      <validate><![CDATA[@valid = 1
+      <validate><![CDATA[var myVal as number
 
 foreach pick in hero from Attribute
-  if (eachpick.field[trtFinal].value <= 3) then
-    @valid = 0
+  if (eachpick.field[trtFinal].value >= 3) then
+    myVal += 1
     endif
-  nexteach]]></validate>
+  nexteach
+
+validif (myVal >= 4)]]></validate>
       </prereq>
     <child entity="lpCustom">
       <tag group="Skill" tag="skT2KCloseCombat"/>
@@ -804,13 +806,15 @@ foreach pick in hero from Attribute
     <tag group="Lifepath" tag="PoliceOfficer"/>
     <exprreq message="Requires no terms in prison.">hero.tagis[Lifepath.Prisoner] = 0</exprreq>
     <prereq message="Requires no D attribute">
-      <validate><![CDATA[@valid = 1
+      <validate><![CDATA[var myVal as number
 
 foreach pick in hero from Attribute
-  if (eachpick.field[trtFinal].value <= 3) then
-    @valid = 0
+  if (eachpick.field[trtFinal].value >= 3) then
+    myVal += 1
     endif
-  nexteach]]></validate>
+  nexteach
+
+validif (myVal >= 4)]]></validate>
       </prereq>
     <child entity="lpCustom">
       <tag group="Skill" tag="skT2KCloseCombat"/>
@@ -991,13 +995,15 @@ foreach pick in hero from Attribute
     <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <prereq message="requires no D attribute">
-      <validate><![CDATA[@valid = 1
+      <validate><![CDATA[var myVal as number
 
 foreach pick in hero from Attribute
-  if (eachpick.field[trtFinal].value <= 3) then
-    @valid = 0
+  if (eachpick.field[trtFinal].value >= 3) then
+    myVal += 1
     endif
-  nexteach]]></validate>
+  nexteach
+
+validif (myVal >= 4)]]></validate>
       </prereq>
     <child entity="lpCustom">
       <tag group="Skill" tag="skT2KRangedCbt"/>
@@ -1028,13 +1034,15 @@ foreach pick in hero from Attribute
     <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <prereq message="requires no D attribute">
-      <validate><![CDATA[@valid = 1
+      <validate><![CDATA[var myVal as number
 
 foreach pick in hero from Attribute
-  if (eachpick.field[trtFinal].value <= 3) then
-    @valid = 0
+  if (eachpick.field[trtFinal].value >= 3) then
+    myVal += 1
     endif
-  nexteach]]></validate>
+  nexteach
+
+validif (myVal >= 4)]]></validate>
       </prereq>
     <child entity="lpCustom">
       <tag group="Skill" tag="skT2KRangedCbt"/>
@@ -1066,13 +1074,15 @@ foreach pick in hero from Attribute
     <exprreq message="One term in Education required."><![CDATA[hero.tagis[CareerType.Education] <> 0]]></exprreq>
     <exprreq message="INT of B+ required."><![CDATA[#trait[attrInt] >= 4]]></exprreq>
     <prereq message="requires no D attribute">
-      <validate><![CDATA[@valid = 1
+      <validate><![CDATA[var myVal as number
 
 foreach pick in hero from Attribute
-  if (eachpick.field[trtFinal].value <= 3) then
-    @valid = 0
+  if (eachpick.field[trtFinal].value >= 3) then
+    myVal += 1
     endif
-  nexteach]]></validate>
+  nexteach
+
+validif (myVal >= 4)]]></validate>
       </prereq>
     <prereq message="Strength or Agility B+ required. ">
       <validate><![CDATA[~if this is a pick, we're valid

@@ -46,7 +46,6 @@
       ]]></position>
     </layout>
 
-
   <!-- new2 sheet
         This is the second and subsequent page of the character sheet. It is a
         spillover sheet, so it is only printed when necessary and will continue to
@@ -63,33 +62,10 @@
     id="new2"
     name="New character sheet, page #2"
     spillover="yes">
-    <layoutref layout="oCombatGear"/>
-    <layoutref layout="oBackpackGear"/>
-    <layoutref layout="oGearTitleHdr"/>
     <layoutref layout="oNew2" />
     <position><![CDATA[
-      ~position the Combat layout under the Specialties modules
-      layout[oGearTitleHdr].width = width
-      layout[oGearTitleHdr].top = 0
-      layout[oGearTitleHdr].left = 0
-      ~layout[oGearTitleHdr].height = 
-      perform layout[oGearTitleHdr].render	  
 	  
-      ~position the Combat layout under the Specialties modules
-      layout[oCombatGear].width = width / 2
-      layout[oCombatGear].top = layout[oGearTitleHdr].bottom + 4
-      layout[oCombatGear].left = 0
-      ~layout[oCombatGear].height = extent - layout[oCombatGear].top
-      perform layout[oCombatGear].render  
-	  
-      ~position the Combat layout under the Specialties modules
-      layout[oBackpackGear].width = width / 2
-      layout[oBackpackGear].top = layout[oGearTitleHdr].bottom + 4
-      layout[oBackpackGear].left = layout[oCombatGear].right
-      ~layout[oBackpackGear].height = extent - layout[oBackpackGear].top
-      perform layout[oBackpackGear].render	
-      
-	  layout[oNew2].top = maximum(layout[oCombatGear].bottom,layout[oBackpackGear].bottom) + 4
+	  layout[oNew2].top = 0
       layout[oNew2].left = 0
       layout[oNew2].width = width
       perform layout[oNew2].render

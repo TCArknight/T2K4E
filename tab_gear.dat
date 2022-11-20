@@ -37,7 +37,7 @@
       choosesortset="GearType"
       buytemplate="BuyCash"
       selltemplate="SellCash">
-      <list>component.Equipment &amp; !(component.Ammunition|component.Vehicle)</list>
+      <list>component.Equipment &amp; !(component.Ammunition|component.Vehicle|component.VehicleGear)</list>
 	  <candidate inheritlist="yes">!Hide.Equipment</candidate>
       <titlebar><![CDATA[
         @text = "Select Gear to Purchase from the List Below"
@@ -58,6 +58,7 @@
       component="Vehicle"
       showtemplate="grVehPick"
       choosetemplate="grGrThing"
+	  choosesortset="VehicleByCat"
       buytemplate="BuyCash"
       selltemplate="SellCash">
       <list><![CDATA[
@@ -499,7 +500,7 @@
     marginhorz="5"
     marginvert="5"
     order="220">
-    <live>!HideTab.gear</live>
+    <live>!(HideTab.gear|CharType.Vehicle)</live>
     <layoutref layout="gear"/>
     <position><![CDATA[
       ]]></position>

@@ -1577,7 +1577,15 @@
       bitmap="output_box_full.bmp">
       </bitmap>
     </resource>
-
+	
+  <resource
+    id="outboxfullgrey"
+    issystem="no"
+    isbuiltin="no">
+    <bitmap
+      bitmap="output_box_full_g.bmp">
+      </bitmap>
+    </resource>
   <resource
     id="outboxempty"
     issystem="no"
@@ -1586,6 +1594,7 @@
       bitmap="output_box.bmp">
       </bitmap>
     </resource>	
+	
   <!-- bitmaps used for bullets to identify validation errors (typically in red)
         and warnings (typically in yellow) within the validation report
   -->

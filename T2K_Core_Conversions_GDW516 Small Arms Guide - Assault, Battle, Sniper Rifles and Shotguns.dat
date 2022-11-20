@@ -10,9 +10,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAR7" name="AR-7" description="The AR-7 is more a survival rifle than a true assault rifle.  Its component parts can be stored in teh hollow stock.  The AR-7 is lightweight, compact, and bouyant.  Designed by the USAF and issues to aircrews as survival weapons (for hunting small game rather than for personal defense), the AR-7 is popular with campers, hikers, hunters, and other outdoor types." compset="Ranged">
@@ -25,9 +25,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K22LR"/>
+    <tag group="AmmoType" tag="Cal22LR"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K22LR</holdlimit>
+    <holdlimit>AmmoType.Cal22LR</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBarettaAR70" name="Barettaa AR-70" description="The standard issue rifle of the Italian military, the AR-70 replaced the BM-59.  Like many other Italian-made weapons, it was widely sold on the world arms market and is commonly available." compset="Ranged">
@@ -39,10 +39,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="ItalianMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAR18" name="AR-18" description="Designed as a replacmeent for the M16, the AR-18 was rejected by the US Army and was sold on the international arms market.  By the outbreak of the Sino-Soviet war, the Chinese military had purchased thouasnds of them, labeling them Type 96." compset="Ranged">
@@ -54,10 +54,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAR18SA" name="AR-180" description="Designed as a replacmeent for the M16, the AR-18 was rejected by the US Army and was sold on the international arms market.  By the outbreak of the Sino-Soviet war, the Chinese military had purchased thouasnds of them, labeling them Type 96.  A semiautomatic version known as the AR-180 was sold on the civilian market." compset="Ranged">
@@ -70,9 +70,9 @@
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" />
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KCETMEMdlL" name="CETME Model L" description="The standard issue weapon of the Spanish military, the CETME is an evolutionary design based on the earlier Model 58.  It is a sturdy, lightweight weapon for fighting in rugged areas.  It had some foreign sales, especially in Latin America." compset="Ranged">
@@ -84,13 +84,13 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="SpanishMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
-  <thing id="hdrT2KSpanishMil" name="--- Spanish Military ---" compset="Ranged">
+  <thing id="hdrT2KSpanishMil" name="--- Spanish Military ---" compset="Ranged" isshowonly="yes">
     <tag group="WeaponCat" tag="SpanishMilitary"/>
     </thing>
   <thing id="wpT2KGalilArm" name="Galil ARM" description="The standard rifle of the Israeli military, exported in largge numbers since the 1970s.  It fires rifle grenades, can be fitted with the M203 grenade launcher, and has an integral bipod." compset="Ranged">
@@ -103,9 +103,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="WeaponCat" tag="IsraelMilitary"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KGaliilSAR" name="Galil SAR" description="The standard rifle of the Israeli military, exported in largge numbers since the 1970s.  It fires rifle grenades, can be fitted with the M203 grenade launcher, and has an integral bipod.  This is  a short barrelled version of the Galil ARM." compset="Ranged">
@@ -118,9 +118,9 @@
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="IsraelMilitary" name="Israeli Military" abbrev="Israeli Military"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KFNCAL" name="FN-CAL" description="The &quot;little brother&quot; to the FN-FAL, the CAL was meant as a replacement for it.  The weapon enjoyed some sales on the internaltional arms market, specifically in the Middle East and Africa.  Many found their way into various NATO units during the war." compset="Ranged">
@@ -132,10 +132,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KHK33A2" name="H&amp;K HK33A2" description="A German-made assault rifle, the HK 33A2 is a smaller version of the famous G3.  The HK 33A2 was issued to many of the Bundeswehr Territorial units and the German Grenzschutztrupped (Border Guards).  Severla thousand were sold to teh Iranians in 1993." compset="Ranged">
@@ -147,10 +147,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KHK93" name="H&amp;K HK 93" description="A German-made assault rifle, the HK 33A2 is a smaller version of the famous G3.  The HK 33A2 was issued to many of the Bundeswehr Territorial units and the German Grenzschutztrupped (Border Guards).  Severla thousand were sold to teh Iranians in 1993.  This is a semiautomatic version" compset="Ranged">
@@ -163,9 +163,9 @@
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" />
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM1Carbine" name="M1 Carbine" description="A .30 caliber weapon developed in the middle 1940s to give officers and vehicle crewmen a more portable weapon than the M1 Garand.  Many entered the surplus market, with the semiautomatic version becoming a popular hunting weapon (thousands were distributed by the department of defense)." compset="Ranged">
@@ -178,9 +178,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K30Cal"/>
+    <tag group="AmmoType" tag="Cal30"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K30Cal</holdlimit>
+    <holdlimit>AmmoType.Cal30</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM2FACarbine" name="M2 Automatic-Carbine" description="A .30 caliber weapon developed in the middle 1940s to give officers and vehicle crewmen a more portable weapon than the M1 Garand.  Many entered the surplus market, with the semiautomatic version becoming a popular hunting weapon (thousands were distributed by the department of defense).  The M2 is a fully automatic version of the M1." compset="Ranged">
@@ -193,9 +193,9 @@
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K30Cal" name=".30" abbrev=".30"/>
+    <tag group="AmmoType" tag="Cal30" name=".30" abbrev=".30"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K30Cal</holdlimit>
+    <holdlimit>AmmoType.Cal30</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRugerMini14" name="Ruger Mini-14" description="A weapon made popular in the 1980s by television, the Mini-14 and its full auto variant, the AC-556 enjoyed sales at home and abroad.  It has the configuration of the M14 and has many accessories, including a folding steel stock.  It is preferreed by many survivalist groups." compset="Ranged">
@@ -207,10 +207,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRugerAc556" name="Ruger AC-556" description="A weapon made popular in the 1980s by television, the Mini-14 and its full auto variant, the AC-556 enjoyed sales at home and abroad.  It has the configuration of the M14 and has many accessories, including a folding steel stock.  It is preferreed by many survivalist groups." compset="Ranged">
@@ -222,10 +222,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSIGSG540" name="SIG SG 540" description="A Swiss-designed assault rifle that is manufactured in Switzerland and in France by Manhurin.  The SG 540 is a modern weapon that is in the inventories of various armies throughout the world including the French.  Accessories include a folding stock and an integral grenade launcher." compset="Ranged">
@@ -237,10 +237,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="FrenchMilitary"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSteyrAug" name="Steyr Aug" description="The standard issue assault rifle of the Austrian and Australian military, the AUG has sometimes been referred to as the &quot;Star Wars Rifle&quot; because of its futuristic look.  The weapon uses a &quot;bullpup&quot; configuration and aluminium and plastic materials to hold down weight.  The magazine is made of transparent plastic which allows the shooter to visually keep track of the rounds expended.  The AUG was also adopted by the Australian Army." compset="Ranged">
@@ -252,10 +252,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="AustralianMili"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSAR80" name="SAR 80" description="Designed and built by Chartered Industries of Singapore, the SAR-80 was an easily produced assault rifle.  It is the standard issue weapon of the Singapore military.  The weapon did well on the international arms market in the early 1990s.  It is a rugged, reliable, simple to use, and most importantly, it came from a &quot;nonaggressive&quot; Third World country." compset="Ranged">
@@ -267,10 +267,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645" name="5.56x45" abbrev="5.56x45"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM1Garand3006" name="M1 Garand .30-.06" description="The standard-issue US military rifle from WWII until 1956, the M1 was the first semiautomatic rifle adopted by any country as its standard weapon.  It is fed from a 10 round block clip insered in the top.  The action remains open to aid in reloading.  The M1 cannot fire semiautomatically if the ammo is not loaded with the clip, and only a full clip can be inserted." compset="Ranged">
@@ -282,10 +282,10 @@
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="BattleRifle"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
+    <tag group="AmmoType" tag="Cal3006"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM1Garand762" name="M1 Garand .7.62x51mm" description="The standard-issue US military rifle from WWII until 1956, the M1 was the first semiautomatic rifle adopted by any country as its standard weapon.  It is fed from a 10 round block clip insered in the top.  The action remains open to aid in reloading.  The M1 cannot fire semiautomatically if the ammo is not loaded with the clip, and only a full clip can be inserted.  This is a converted version of the rifle to use 7.62x51mm." compset="Ranged">
@@ -296,11 +296,11 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
-    <tag group="WeaponType" tag="BattleRifle" name="Battle Rifle" abbrev="Battle Rifle"/>
+    <tag group="WeaponType" tag="BattleRifle" />
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KM14" name="M14" description="The M14 was the last US Army rifle to use a large caliber round.  The M14 is fed from a 21 round box magazine.  Many sold on the civilian market wound up in the hands of paramilitary survivalist groups." compset="Ranged">
@@ -312,10 +312,10 @@
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
-    <tag group="WeaponType" tag="BattleRifle" name="Battle Rifle" abbrev="Battle Rifle"/>
-    <tag group="AmmoType" tag="amT2K76251" name="7.62x51" abbrev="7.62x51"/>
+    <tag group="WeaponType" tag="BattleRifle" />
+    <tag group="AmmoType" tag="Cal76251" name="7.62x51" abbrev="7.62x51"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBerettaBM59" name="Beretta BM-59" description="Teh standard issue Italian Army rifle until it was replaced by the AR-70, the BM-59 was essentially an M1 Garand rechambered for 7.62x51mm ammo.  Its features include selective fire capability and a 21 round magazine.  Interestingly enough, a number of them were manufactured in the US from spare parts in a semiautomatic version designed for the civilian market." compset="Ranged">
@@ -327,10 +327,10 @@
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
-    <tag group="WeaponType" tag="BattleRifle" name="Battle Rifle" abbrev="Battle Rifle"/>
-    <tag group="AmmoType" tag="amT2K76251" name="7.62x51" abbrev="7.62x51"/>
+    <tag group="WeaponType" tag="BattleRifle" />
+    <tag group="AmmoType" tag="Cal76251" name="7.62x51" abbrev="7.62x51"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSKS" name="SKS" description="A Soviet made semiautomatic rifle adoped in 1945, teh SKS was the first weapon to use the 7.62x39mm round.  The weapon uses an integral clip which is fed from a 10 round stripper clip.  The weapon comes with an integral spike bayonet.  The SKS is now generally found in the hands of local milita." compset="Ranged">
@@ -342,10 +342,10 @@
     <fieldval field="grCost" value="350"/>
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K545x39" name="5.45x39" abbrev="5.45x39"/>
-    <tag group="WeaponType" tag="SMG" name="Submachine Gun" abbrev="Submachine Gun"/>
+    <tag group="AmmoType" tag="Cal54539" name="5.45x39" abbrev="5.45x39"/>
+    <tag group="WeaponType" tag="SMG" name="Submachine Gun" abbrev="SMG"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K545x39</holdlimit>
+    <holdlimit>AmmoType.Cal54539</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSIG5104" name="SIG 510-4" description="One of the finest made military rifles in the world, the Swiss SIG 510-4 enjoys a reputation as a highly accurate weapon.  it was the standard battle rifle of the Swiss Army until it was replaced by more modern types.  The 510-4 is also used by several South American countries." compset="Ranged">
@@ -358,9 +358,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="WeaponType" tag="BattleRifle"/>
-    <tag group="AmmoType" tag="amT2K76251" name="7.62x51" abbrev="7.62x51"/>
+    <tag group="AmmoType" tag="Cal76251" name="7.62x51" abbrev="7.62x51"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KFNLAR" name="FN-LAR" description="The British Commonwealth version of the FN-FAL battle rifle, replaced in British service byt he IW, but still found in service with armed forces worldwide.  The magazines are not interchangeable with the FN-FAL.  Many LARs are in service with the Indian armed forces (Indian Army LARs are slightly different, and their parts are not interchangeable with other versions)." compset="Ranged">
@@ -372,10 +372,10 @@
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponCat" tag="OtherMilitary" name="Other Military" abbrev="Other Military"/>
-    <tag group="WeaponType" tag="BattleRifle" name="Battle Rifle" abbrev="Battle Rifle"/>
-    <tag group="AmmoType" tag="amT2K76251" name="7.62x51" abbrev="7.62x51"/>
+    <tag group="WeaponType" tag="BattleRifle" />
+    <tag group="AmmoType" tag="Cal76251" name="7.62x51" abbrev="7.62x51"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSteyrSSG69" name="Steyr SSG-69" description="An Austrian made bolt action sniper rifle, the SSG-69 is made especially for sniping duties.  It uses a 5 shot rotary magazine.  It is issuesd to Austrian coutner-terrorist units." compset="Ranged">
@@ -388,9 +388,9 @@
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="AustrianMilitry"/>
     <tag group="WeaponType" tag="Sniper" name="Sniper Rifle" abbrev="Sniper Rifle"/>
-    <tag group="AmmoType" tag="amT2K76251" name="7.62x51" abbrev="7.62x51"/>
+    <tag group="AmmoType" tag="Cal76251" name="7.62x51" abbrev="7.62x51"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KWaltherWA2k" name="Walther Wa-2000N" description="An upgraded version of the famous WA-2000 sniper rifle, the WA-2000N is a &quot;bullpup&quot; configuration semi-automatic weapon.  It has a built-in combination frame/case that protects the barrel and provides a mount for various sighting systems.  The WA-2000N is the standard sniper rifle of the GSG-9, teh German anti-terrorist organization." compset="Ranged">
@@ -403,9 +403,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Sniper"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBrownBBR" name="Browning BBR" description="A high quality, bolt action hunting rifle made in the United States.  The BBR features a floating barrel and is drilled and tapped for a scope sight." compset="Ranged">
@@ -417,10 +417,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
+    <tag group="AmmoType" tag="Cal3006"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KCSSportRifle" name="Colt Sauer Sporting Rifle / Sauer 90" description="A collaborative venture between Colt Firearms of America and SIG-Sauer of Switzerland.  The result is a smooth shooting bolt action rifle of high quality.  The weapon is tapped for sights." compset="Ranged">
@@ -434,8 +434,8 @@
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K30Cal"/>
-    <holdlimit>AmmoType.amT2K30Cal</holdlimit>
+    <tag group="AmmoType" tag="Cal30"/>
+    <holdlimit>AmmoType.Cal30</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBSACF2762" name="BSA CF-2 7.62x51mm" description="A British made, bolt action hunting rifle.  The CF-2 is a representative of the Britsh small arms industry.  It features an extended forestock." compset="Ranged">
@@ -448,9 +448,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBSACF23006" name="BSA CF-2  .30-06" description="A British made, bolt action hunting rifle.  The CF-2 is a representative of the Britsh small arms industry.  It features an extended forestock." compset="Ranged">
@@ -463,9 +463,9 @@
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponType" tag="Hunting" name="Hunting Rifle" abbrev="Hunting Rifle"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
+    <tag group="AmmoType" tag="Cal3006"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KCSGrandAK" name="Colt Sauer Grant Alaskan" description="A heavy, bolt action rifle designed for the powerful .375 H&amp;H Magnum cartridge.  Designed for large game, this rifle was mostly used in Alaska and the western United States." compset="Ranged">
@@ -477,10 +477,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2K375HHM"/>
+    <tag group="AmmoType" tag="Cal375"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K375HHM</holdlimit>
+    <holdlimit>AmmoType.Cal375</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KCSGranAfrica" name="Colt Sauer Grand African" compset="Ranged">
@@ -492,10 +492,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2K458WBM"/>
+    <tag group="AmmoType" tag="Cal458WBM"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K458WBM</holdlimit>
+    <holdlimit>AmmoType.Cal458WBM</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KMauserMkXC" name="Mauser Mark X Carbine" compset="Ranged">
@@ -507,10 +507,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2kMausMkx3006" name="Mauser Mark X  .30-06" description="A German bolt action hunting rifle with an excellent reputation." compset="Ranged">
@@ -522,10 +522,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
+    <tag group="AmmoType" tag="Cal3006"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KMausMkX762" name="Mauser Mark X  7.62x51mm" description="A German bolt action hunting rifle with an excellent reputation." compset="Ranged">
@@ -538,9 +538,9 @@
     <usesource source="srcT2K1stConvGDW516" parent="srcT2K1stConversions" name="GDW516 Small Arms Guide"/>
     <tag group="WeaponType" tag="Hunting" name="Hunting Rifle" abbrev="Hunting Rifle"/>
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRemMdl700762" name="Remington Model 700" description="The civilian version of the M40 sniper rifle, the Model 700 was sold worldwide.  It is considered a &quot;workhorse&quot; hunting rifle and has seen use from Alaska to South Africa." compset="Ranged">
@@ -552,12 +552,12 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
-    <tag group="AmmoType" tag="amT2K375HHM"/>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <tag group="AmmoType" tag="Cal375"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K76251 | AmmoType.amT2KCal3006 | AmmoType.amT2K375HHM</holdlimit>
+    <holdlimit>AmmoType.Cal76251 | AmmoType.Cal3006 | AmmoType.Cal375</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRuger77556" name="Ruger Model 77  5.56x45mm" description="A heavy bolt action American-made hunting rifle.  The Model 77 is not as well known as many other rifles but nevertheless is still a solid piece of work." compset="Ranged">
@@ -570,9 +570,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRugerM77762" name="Ruger Model 77  7.62x51mm" description="A heavy bolt action American-made hunting rifle.  The Model 77 is not as well known as many other rifles but nevertheless is still a solid piece of work." compset="Ranged">
@@ -586,8 +586,8 @@
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Hunting" name="Hunting Rifle" abbrev="Hunting Rifle"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSavM110C3006" name="Savage Model 110-C .30-06" description="An American-made bolt action rifle.  It features a floating barrel with Monte Carlo cheekpiece.  There is also a left-handed version available." compset="Ranged">
@@ -599,10 +599,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
+    <tag group="AmmoType" tag="Cal3006"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSavM110C300W" name="Savage Model 110-C .300 WM" description="An American-made bolt action rifle.  It features a floating barrel with Monte Carlo cheekpiece.  There is also a left-handed version available." compset="Ranged">
@@ -616,8 +616,8 @@
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Hunting" name="Hunting Rifle" abbrev="Hunting Rifle"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
-    <tag group="AmmoType" tag="amT2K30Cal"/>
-    <holdlimit>AmmoType.amT2K30Cal</holdlimit>
+    <tag group="AmmoType" tag="Cal30"/>
+    <holdlimit>AmmoType.Cal30</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSakoS556" name="Sako Standard 5.56x45mm" description="A Finnish-made bolt action hunting rifle with an international reputation for quality and accuracy.  A Sako rifle was a much sought after &quot;war trophy&quot; by the Nato forces fighting in the Sweden/Finland area.  It features an adjustable trigger and sight mountings." compset="Ranged">
@@ -629,10 +629,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2K55645"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <holdlimit>AmmoType.amT2K55645</holdlimit>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSakoS762" name="Sako Standard 7.62x51mm" description="A Finnish-made bolt action hunting rifle with an international reputation for quality and accuracy.  A Sako rifle was a much sought after &quot;war trophy&quot; by the Nato forces fighting in the Sweden/Finland area.  It features an adjustable trigger and sight mountings." compset="Ranged">
@@ -646,8 +646,8 @@
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Hunting" name="Hunting Rifle" abbrev="Hunting Rifle"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
-    <holdlimit>AmmoType.amT2K76251</holdlimit>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSekoS3006" name="Sako Standard .30-06" description="A Finnish-made bolt action hunting rifle with an international reputation for quality and accuracy.  A Sako rifle was a much sought after &quot;war trophy&quot; by the Nato forces fighting in the Sweden/Finland area.  It features an adjustable trigger and sight mountings." compset="Ranged">
@@ -661,8 +661,8 @@
     <tag group="WeaponCat" tag="Civilian" name="Civilian Firearms" abbrev="Civilian Firearms"/>
     <tag group="WeaponType" tag="Hunting" name="Hunting Rifle" abbrev="Hunting Rifle"/>
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
-    <holdlimit>AmmoType.amT2KCal3006</holdlimit>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <holdlimit>AmmoType.Cal3006</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KWeathMagDlx" name="Weatherby .460 Magnum Deluxe" description="The most powerful big game rifle in the world, the .460 is a heavy bolt action rifle designed to bring down the largest game animals (rhinoceros, cape buffalo, light helicopters, etc).  The rifle itself is very hard to find, and its ammunition even harder." compset="Ranged">
@@ -675,9 +675,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K460WthrBy"/>
+    <tag group="AmmoType" tag="Cal480W"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K460WthrBy</holdlimit>
+    <holdlimit>AmmoType.Cal480W</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KWinM703006" name="Winchester Model 70" description="Another internationally popular American-made bolt action rifle.  The model 70 is considered a classic among sportsmen and be found the world over." compset="Ranged">
@@ -690,10 +690,10 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="WeaponType" tag="Hunting"/>
-    <tag group="AmmoType" tag="amT2KCal3006"/>
-    <tag group="AmmoType" tag="amT2K76251"/>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2KCal3006  | AmmoType.amT2K76251</holdlimit>
+    <holdlimit>AmmoType.Cal3006  | AmmoType.Cal76251</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KWin70XTRSEM" name="Winchester 70 XTR Super Express Magnum" description="The top-of-the-line heavy bolt action hunting rifle." compset="Ranged">
@@ -707,8 +707,8 @@
     <tag group="WeaponType" tag="Hunting"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <tag group="AmmoType" tag="amT2K458WBM"/>
-    <holdlimit>AmmoType.amT2K458WBM</holdlimit>
+    <tag group="AmmoType" tag="Cal458WBM"/>
+    <holdlimit>AmmoType.Cal458WBM</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KAtchDaeAs12" name="Atchisson/Dae Woo Assault 12" description="A devastating close-in weapon, the Assault 12 was designed in the US and manufactured in South Korea.  It is surprisingly light, using a 20 round drum or a seven-round box magazine." compset="Ranged">
@@ -720,10 +720,10 @@
     <fieldval field="grWeight" value="1.5"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KFranchSPAS12" name="Franchi SPAS-12" description="The initials stand for Sporting Purpose Automatic Shotgun, but SPAS-12 is a military weapon.  With a folding stock and buttplate, it can be fired one-handed.  It can easily be switched to manual pump.  Built in Italy and America, it wa sissued to US Army MPs in Europe and the Persian Gulf." compset="Ranged">
@@ -735,9 +735,9 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponCat" tag="USMilitary"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KBorwning5M" name="Browning Auto-5M" description="A well-made European autoloading shotgun, the 5M is a recoil operating weapon, and because of this, it needs to be well braced when firing.  Otherwise the mechanism may not get enough recoil energy to function." compset="Ranged">
@@ -749,10 +749,10 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KHSM10BC" name="High Standard M-10B/C" description="A bullpup configuration, gas operated, semiautomatic shotgun manufactured in the United States.  Features include a folding handle with removable flashlight, folding sights, a cocking lever on both sides, a pistol grip, and a yoke for firing one-handed.  Intended for military and law-enforcement use, it was never mnaufactured in large numbers and was a collectors&apos; item by the 1970s." compset="Ranged">
@@ -764,9 +764,9 @@
     <fieldval field="grWeight" value="1.25"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KIthcaModel37" name="Ithaca Model 37" description="An American-made pump shotugn that can be customized using a number of different accessories.  The Model 37 has good magazine capacity and is widely distributed in both police and civilian markets." compset="Ranged">
@@ -779,9 +779,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KMossbergM590" name="Mossberg M590 / 500" description="An American-made semiautomatic shotgun intended for military and police enforcement service." compset="Ranged">
@@ -791,11 +791,11 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KManuFrRPS" name="Manufrance RPS" description="The only European country that has shown any continued interest in combat shotguns has been France (the example of the HK CAW is a singular exception).  The RPS can be considered typical of the qualiy of French combat shotguns.  It is a straightforward design that follows a standard layout.  The RPS is issued to select French military and police units." compset="Ranged">
@@ -808,9 +808,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="FrenchMilitary"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KReming870P" name="Remington Model 870P" description="Originallyd eveloped in the early 1950, the 870P (P for police... there are number of civilian variations) has been a standard of police work since then.  The 870P can have a top folding metal stock, extended tubular magazine, and sling swivels.  It is a very popular weapon with civilians (there are a number of hunting and skeet versions) as well as with local enforcment personnel." compset="Ranged">
@@ -822,10 +822,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KSavage69RKL" name="Savage Model 69-RKL" description="An inexpensive American-made pump action shotgun.  The Model 69 is a standard design and can be considered representative of its kind.  While not a particularly outstanding weapon, it is a serviceable one." compset="Ranged">
@@ -838,9 +838,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KRemingM1100" name="Remington Model 1100" description="An auto-loading shotgun, the 1100 was originally designed for hunting and trap shooting.  The recoil spring is located in the stock of the weapon." compset="Ranged">
@@ -853,9 +853,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KWinStnlsPol" name="Winchester Stainless Police" description="A pump action shotgun, this model is finished in brushed stainless steel.  A similar weapon is the standard issue shotgun of the US Navy, Marines, and Coast Guard.  It has a full stock and has seen extensive police and military use." compset="Ranged">
@@ -867,10 +867,10 @@
     <fieldval field="grWeight" value="1"/>
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   <thing id="wpT2KWinchDefendr" name="Winchester Defender" description="A pump action shotgun designed specifically for police work." compset="Ranged">
@@ -883,9 +883,9 @@
     <usesource source="srcT2K1stConvGDW516"/>
     <tag group="WeaponType" tag="Shotgun"/>
     <tag group="WeaponCat" tag="Civilian"/>
-    <tag group="AmmoType" tag="amT2K12Gauge"/>
+    <tag group="AmmoType" tag="Ga12"/>
     <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.amT2K12Gauge</holdlimit>
+    <holdlimit>AmmoType.Ga12</holdlimit>
     <child entity="Ammo"></child>
     </thing>
   </document>

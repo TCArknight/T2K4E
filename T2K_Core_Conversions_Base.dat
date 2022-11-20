@@ -9,6 +9,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCatType" tag="Rifle"/>
     <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal22LR"/>
     </thing>
   <thing id="amT2K380ACP" name=".380 ACP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
@@ -19,6 +20,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal380ACP"/>
     </thing>
   <thing id="amT2K44Magnum" name=".44 Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
@@ -29,6 +31,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal44M"/>
     </thing>
   <thing id="amT2K32ACP" name=".32 ACP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="1"/>
@@ -39,6 +42,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal32ACP"/>
     </thing>
   <thing id="amT2K460WthrBy" name=".460 Weatherby" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
@@ -49,8 +53,9 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal480W"/>
     </thing>
-  <thing id="am447x133Cls" name="4.47x33 Cls" compset="Ammunition" stacking="merge">
+  <thing id="am447x133Cls" name="4.47x33 Caseless" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
     <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="-1"/>
@@ -59,6 +64,7 @@
     <usesource source="srcT2K1stConvCore"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
+    <tag group="AmmoType" tag="Cal447Cls"/>
     </thing>
   <thing id="am762x25T" name="7.62x25mm Tokarev" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
@@ -69,6 +75,7 @@
     <usesource source="srcT2K1stConvCore"/>
     <tag group="AmmoCatType" tag="Pistol"/>
     <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal76225"/>
     </thing>
   <thing id="amT2K8mmM" name="7.62x57mm Mauser" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
@@ -79,6 +86,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
+    <tag group="AmmoType" tag="Cal76257M"/>
     </thing>
   <thing id="amT2K44AutoMag" name=".44 Auto-Mag" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
@@ -89,6 +97,7 @@
     <usesource source="srcT2KConversionBase" parent="srcT2KConversions" name="Conversion Rules"/>
     <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol" name="Pistol/SMG" abbrev="Pistol/SMG"/>
+    <tag group="AmmoType" tag="Cal44AM"/>
     </thing>
   <thing id="amT2K357Magnum" name=".357 Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
@@ -99,6 +108,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal357"/>
     </thing>
   <thing id="amT2K41mag" name=".41 magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="2"/>
@@ -109,6 +119,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal41"/>
     </thing>
   <thing id="amT2K30Cal" name=".30" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
@@ -119,6 +130,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
+    <tag group="AmmoType" tag="Cal30"/>
     </thing>
   <thing id="amT2K50M2SLAP" name=".50 M2 SLAP" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="4"/>
@@ -129,6 +141,7 @@
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle" name="Rifle" abbrev="Rifle"/>
+    <tag group="AmmoType" tag="Cal50M2"/>
     <tag group="GearType" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
     </thing>
   <thing id="amT2K375HHM" name=".375 H&amp;H Magnum" compset="Ammunition" stacking="merge">
@@ -140,6 +153,7 @@
     <usesource source="srcT2KConversionBase"/>
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle"/>
+    <tag group="AmmoType" tag="Cal375"/>
     </thing>
   <thing id="amT2K458WBM" name=".458 Winchester Belted Magnum" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="3"/>
@@ -150,5 +164,6 @@
     <usesource source="srcT2KConversionBase" parent="srcT2KConversions" name="Conversion Rules"/>
     <tag group="AmmoCat" tag="Firearm" name="Firearm" abbrev="Firearm"/>
     <tag group="AmmoCatType" tag="Rifle" name="Rifle" abbrev="Rifle"/>
+    <tag group="AmmoType" tag="Cal458WBM"/>
     </thing>
   </document>
