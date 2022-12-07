@@ -17,7 +17,7 @@
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="AmmoType" tag="Cal918"/>
     <holdlimit>AmmoType.Cal918</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KPMK60" name="PMK-60" description="The PMK-60 is a special Polish version of the AK-47 that includes an\nadapter for firing rifle grenades (no other AK-series rifles are inherently\ncapable of firing rifle grenades). Other than that, this rifle is treated as\na standard AKM." compset="Ranged">
     <fieldval field="wpShort" value="5"/>
@@ -31,7 +31,7 @@
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="AmmoType" tag="Cal76239"/>
     <holdlimit>AmmoType.Cal76239</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KAKMPol" name="AKM (Polish)" description="The final version of the legendary Avtomat Kalashnikova AK-47, the “modernized” AK took over production in the late 1950s. Although it was officially replaced by the AK-74 in the mid-1970s, it never went out of style and large stockpiles were held in reserve and provided to Soviet allies" compset="Ranged">
     <fieldval field="wpCapacity" value="30"/>
@@ -46,7 +46,7 @@
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
     <tag group="AmmoType" tag="Cal76239"/>
     <holdlimit>AmmoType.Cal76239</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KPM84" name="PM-84" description="The PM-84 Glauberyt is a Polish submachine gun that entered service in the mid-1980s to provide a lighter personal defense weapon for vehicle crews and police. It is not widely used (or even well known) outside of Poland." compset="Ranged">
     <fieldval field="wpShort" value="3"/>
@@ -60,7 +60,7 @@
     <tag group="WeaponType" tag="SMG"/>
     <tag group="AmmoType" tag="Cal918"/>
     <holdlimit>AmmoType.Cal918</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="amT2K40x47" name="40x47 Grenade" compset="Ammunition" stacking="merge">
     <fieldval field="grCost" value="25"/>
@@ -86,7 +86,7 @@
     <tag group="AmmoType" tag="Gren4047"/>
     <tag group="WeaponType" tag="GL"/>
     <holdlimit>AmmoType.Gren4047</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KSWD" name="SWD" description="The SWD is a copy of the Soviet SVD-63 sniper rifle manufactured in Poland. See the Soviet listing for the SVD-63 for more information." compset="Ranged">
     <fieldval field="wpShort" value="10"/>
@@ -100,7 +100,7 @@
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="AmmoType" tag="Cal76254"/>
     <holdlimit>AmmoType.Cal76254</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KRPKPol" name="RPK (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
     <fieldval field="wpCapacity" value="75"/>
@@ -114,7 +114,7 @@
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="WeaponType" tag="LMG"/>
     <holdlimit>AmmoType.Cal76239</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KRPG74Pol" name="RPK-74 (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
     <fieldval field="wpCapacity" value="75"/>
@@ -128,7 +128,7 @@
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="WeaponType" tag="LMG"/>
     <holdlimit>AmmoType.Cal54539</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KPKMPol" name="PKM (Polish)" description="The PKM is a copy of the Soviet PKM general-purpose machine gun manufactured in Poland. See the Soviet listing for the PKM for more information" compset="Ranged">
     <fieldval field="wpCapacity" value="100"/>
@@ -143,7 +143,7 @@
     <tag group="WeaponType" tag="GPMG" />
     <tag group="AmmoType" tag="Cal76254"/>
     <holdlimit>AmmoType.Cal76254</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KDSZKM" name="DSZKM" description="The DSzKM is a copy of the Soviet DShK-38 heavy machine gun manufactured in Poland. See the Soviet listing for the DShK-38 for more information." compset="Ranged">
     <fieldval field="wpCapacity" value="50"/>
@@ -157,7 +157,7 @@
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="WeaponType" tag="HMG" />
     <holdlimit>AmmoType.Cal127108</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KNSW" name="NSW" description="The NSW is a copy of the Soviet NSV heavy machine gun manufactured in Poland. See the Soviet listing for the NSV for more information." compset="Ranged">
     <fieldval field="wpCapacity" value="50"/>
@@ -171,7 +171,7 @@
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="WeaponType" tag="HMG" />
     <holdlimit>AmmoType.Cal127108</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KRPG7VPol" name="RPG-7V (Polish)" description="The RPG-7Vis a copy of the Soviet RPG-7V antitank rocket launcher manufactured in Poland. See the Soviet listing for the RPG-7V for more information." compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -186,6 +186,6 @@
     <tag group="AmmoType" tag="Rocket83"/>
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <holdlimit>AmmoType.Rocket83</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   </document>

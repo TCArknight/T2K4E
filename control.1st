@@ -268,12 +268,21 @@
     <sortkey isfield="no" id="_Name_"/>
     </sortset>
     
-  <!-- Define a sortset that lists weapons by category. -->
+  <!-- Define a sortset that lists weapons by category. 
+  -->
   <sortset
     id="VehicleByCat"
     name="Vehicle Category">
     <sortkey isfield="no" id="VehicleCat"/>
-    <sortkey isfield="no" id="VehicleType"/>
+    <sortkey isfield="no" id="VehicleType"/> 
     <sortkey isfield="no" id="_Name_"/>
     </sortset>
+	
+  <sortset
+    id="SpecialtyType"
+    name="Specialty Type">
+    <sortkey isfield="no" id="Specialty" isascend="no"/>
+    <sortkey isfield="no" id="_Name_"/>
+    </sortset>
+	
   </document>

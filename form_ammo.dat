@@ -29,8 +29,8 @@
   -->
 	
   <!-- Ammunition portal 
-      candidatepick="AmmoHelper"
-	  candidatefield="ahAmmoExpr"
+      candidatepick="GearHelper"
+	  candidatefield="ghAmmoExpr"
 	  -->
   <portal
     id="amAmmunition"
@@ -41,10 +41,10 @@
       choosetemplate="amAmmoThing"
       alwaysupdate="yes"
       scrollable="yes"
-      addpick="AmmoHelper"
-      headerpick="AmmoHelper"
-      candidatepick="AmmoHelper"
-	  candidatefield="ahAmmoExpr">
+      addpick="GearHelper"
+      headerpick="GearHelper"
+      candidatepick="GearHelper"
+	  candidatefield="ghAmmoExpr">
       <titlebar><![CDATA[
         @text = "Load Ammunition"
         ]]></titlebar>
@@ -60,7 +60,7 @@
   <template
     id="amAmmoChooser"
     name="Ammo Chooser"
-    compset="AmmoHelper"
+    compset="GearHelper"
     marginhorz="3"
     marginvert="2">	
 
@@ -69,7 +69,7 @@
       style="lblSecond">
       <label>
 		<labeltext><![CDATA[
-		  ~ field="ahAmmoLabel"
+		  ~ field="ghAmmoLabel"
 		  @text = "Ammo Load:"
 		  ]]></labeltext>
         </label>
@@ -79,11 +79,11 @@
       id="menu" 
 	  style="menuNormal">
       <menu_things 
-	    field="ahAmmoChosen" 
+	    field="ghAmmoChosen" 
 	    component="none" 
 	    maxvisible="20"
-        usepicksfield="ahAmmoPick" 
-	    candidatefield="ahAmmoExpr">
+        usepicksfield="ghAmmoPick" 
+	    candidatefield="ghAmmoExpr">
         <candidate>
 	      </candidate>
         </menu_things>
@@ -102,16 +102,17 @@
       ~center the other portals vertically
       perform portal[menu].centervert
 	  
-	  if (field[ahAmmoExpr].isempty <> 0) then
+	  if (field[ghAmmoExpr].isempty <> 0) then
         portal[lblmenu].visible = 0
         portal[menu].visible = 0
         endif
-		
-	  portal[menu].width = 200
-	  portal[lblmenu].width = 100
-      perform portal[menu].alignedge[right,0]
+
 	  
       perform portal[lblmenu].alignedge[left,0]
+	  portal[menu].width = 250
+	  ~portal[lblmenu].width = 100
+      perform portal[menu].alignrel[ltor,lblmenu,5]
+	  
 	  
       ]]></position>
 
@@ -154,7 +155,7 @@
 	    <labeltext><![CDATA[
 		  @text = "$"
 		  if (@ispick = 0) then
-		    @text &= container.child[AmmoHelper].field[ahAmmoReloadCost].text
+		    @text &= container.child[GearHelper].field[ghAmmoReloadCost].text
 		  else
 		    @text &= field[grTotalCost].value
 		    endif
@@ -249,20 +250,131 @@
 
     </template>
 
+	
+  <template
+    id="amDamages"
+    name="Damages"
+    compset="GearHelper"
+    marginhorz="3"
+    marginvert="2">	
+
+    <portal
+      id="lbldamage"
+      style="lblSecond">
+      <label>
+		<labeltext><![CDATA[
+		  ~ field="ghAmmoLabel"
+		  @text = "Damages:"
+		  ]]></labeltext>
+        </label>
+      </portal>
+	  	  
+    <portal
+      id="damage1"
+      style="chkNormal"
+      showinvalid="yes"
+      tiptext="Click to add point of damage to item">
+      <checkbox
+        field="ghDamage1">
+        </checkbox>
+      </portal>
+	  	  
+    <portal
+      id="damage2"
+      style="chkNormal"
+      showinvalid="yes"
+      tiptext="Click to add point of damage to item">
+      <checkbox
+        field="ghDamage2">
+        </checkbox>
+      </portal>
+	  	  
+    <portal
+      id="damage3"
+      style="chkNormal"
+      showinvalid="yes"
+      tiptext="Click to add point of damage to item">
+      <checkbox
+        field="ghDamage3">
+        </checkbox>
+      </portal>
+	  	  
+    <portal
+      id="damage4"
+      style="chkNormal"
+      showinvalid="yes"
+      tiptext="Click to add point of damage to item">
+      <checkbox
+        field="ghDamage4">
+        </checkbox>
+      </portal>
+
+    <portal
+      id="damage5"
+      style="chkNormal"
+      showinvalid="yes"
+      tiptext="Click to add point of damage to item">
+      <checkbox
+        field="ghDamage5">
+        </checkbox>
+      </portal>
+	  	  
+    <portal
+      id="damage6"
+      style="chkNormal"
+      showinvalid="yes"
+      tiptext="Click to add point of damage to item">
+      <checkbox
+        field="ghDamage6">
+        </checkbox>
+      </portal>
+	  
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[lbldamage].height + portal[damage1].height + 5
+	  
+	  ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[lbldamage].top = 0
+      portal[damage1].top = portal[lbldamage].bottom + 5
+      portal[damage2].top = portal[damage1].top
+      portal[damage3].top = portal[damage1].top
+      portal[damage4].top = portal[damage1].top
+      portal[damage5].top = portal[damage1].top
+      portal[damage6].top = portal[damage1].top
+	
+	  portal[lbldamage].width = 100
+	  
+      perform portal[lbldamage].alignedge[left,0]
+      perform portal[damage1].alignedge[left,0]
+      perform portal[damage2].alignrel[ltor,damage1,5]
+      perform portal[damage3].alignrel[ltor,damage2,5]
+      perform portal[damage4].alignrel[ltor,damage3,5]
+      perform portal[damage5].alignrel[ltor,damage4,5]
+      perform portal[damage6].alignrel[ltor,damage5,5]
+	  
+      ]]></position>
+
+    </template>
+	
+
   <!--   -->
   <layout
     id="ammo">
     <!-- <portalref portal="amAmmunition" taborder="10"/> -->
-    <templateref template="amAmmoChooser" thing="AmmoHelper"/>
+    <templateref template="amAmmoChooser" thing="GearHelper"/>
+    <templateref template="amDamages" thing="GearHelper"/>
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
       width = 350
 	  
-	  template[amAmmoChooser].top = 0
-	  template[amAmmoChooser].width = width
+	  perform template[amAmmoChooser].autoplace[0]
+	  perform template[amDamages].autoplace[10]
 	  
-	  height = template[amAmmoChooser].bottom + 5
+	  height = autoextent
 	  
       ]]></position>
 
@@ -281,7 +393,7 @@
         set to be at least 40 pixels in height.
   -->
   <form
-    id="ammogiz"
+    id="equipgiz"
     name="Ammunition">
     <layoutref layout="ammo"/>
     <position><![CDATA[

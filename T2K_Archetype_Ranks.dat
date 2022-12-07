@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="rnkT2KPrivate" name="Private" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E1"/>
+    </thing>
+  <thing id="rnkT2KPFC" name="Private First Class" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E2"/>
+    </thing>
+  <thing id="rnkT2KCorporal" name="Corporal" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E3"/>
+    </thing>
+  <thing id="rnkT2KSergeant" name="Sergeant" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E4"/>
+    </thing>
+  <thing id="rnkT2KStaffS" name="Staff Sergeant" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E5"/>
+    </thing>
+  <thing id="rnkT2KSFC" name="Sergeant First Class" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E6"/>
+    </thing>
+  <thing id="rnkT2KMasterS" name="Master Sergeant" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E7"/>
+    </thing>
+  <thing id="rnkT2KFirstS" name="First Sergeant" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E8"/>
+    </thing>
+  <thing id="rnkT2KSergeantMaj" name="Sergeant Major" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E9"/>
+    </thing>
+  <thing id="rnkT2KCSergeantM" name="Command Sergeant Major" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Enlisted"/>
+    <tag group="MilitaryRank" tag="E10"/>
+    </thing>
+
+  <thing id="rnkT2KSecLt" name="Second Lieutenant" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O1"/>
+    </thing>
+  <thing id="rnkT2KFirstLt" name="First Lieutenant" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O2"/>
+    </thing>
+  <thing id="rnkT2KCaptain" name="Captain" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O3"/>
+    </thing>
+  <thing id="rnkT2KMajor" name="Major" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O4"/>
+    </thing>
+  <thing id="rnkT2KLtColonel" name="Lieutenant Colonel" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O5"/>
+    </thing>
+  <thing id="rnkT2KColonel" name="Colonel" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O6"/>
+    </thing>
+  <thing id="rnkT2KBrigGeneral" name="Brigadier General" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O7"/>
+    </thing>
+  <thing id="rnkT2KMajGeneral" name="Major General" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O8"/>
+    </thing>
+  <thing id="rnkT2KLtGeneral" name="Lieutenant General" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O9"/>
+    </thing>
+  <thing id="rnkT2KGeneral" name="General" compset="ArchetypeRank" uniqueness="useronce">
+    <usesource source="srcT2KArchetypes"/>
+    <tag group="Military" tag="Officer"/>
+    <tag group="MilitaryRank" tag="O10"/>
+    </thing>
+	
+  </document>

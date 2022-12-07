@@ -372,23 +372,32 @@
       if (empty(tagnames[KeyAttribute.?,", "]) = 0) then
         iteminfo &= "{b}Key Arrtibute{/b}: " & tagnames[KeyAttribute.?,", "] & "{br}"
         endif
-	  talstring = ""
-	  
-      foreach bootstrap in this where "component.Talent"
-        talstring = splice(talstring, eachthing.field[name].text,", ")
-        nexteach
-		
-	  ~append any talents
-      if (empty(talstring) = 0) then
-        iteminfo &= "{b}Talents{/b}: " & talstring & "{br}"
-        endif
+
       ~append the key Skill
       if (empty(tagnames[KeySkill.?,", "]) = 0) then
-        iteminfo &= "Skills: " & tagnames[KeySkill.?,", "] & "{br}"
+        iteminfo &= "{b}Key Skills{/b}:" & tagnames[KeySkill.?,", "] & "{br}"
         endif
 		
-       ~append any talents
-	   
+       ~append any recommended specialties/talents
+	  talstring = ""
+	  
+	  if (hero.tagis[source.srcT2K] <> 0) then
+	    talstring = tagnames[RecommendedSpec.?,", "]
+	  else
+        foreach bootstrap in this where "component.Talent"
+          talstring = splice(talstring, eachthing.field[name].text,", ")
+          nexteach
+		endif
+		
+      if (empty(talstring) = 0) then
+	    if (hero.tagis[source.srcT2K] <> 0) then
+		  iteminfo &= "{b}Recommended Specialties{/b}: "
+		else
+          iteminfo &= "{b}Talents{/b}: " 
+		  endif
+        endif
+		
+        iteminfo &=	talstring & "{br}"
       endif
 	  
     if (tagis[component.WeapRange] <> 0) then
@@ -854,7 +863,7 @@
       endif
 	  
 	~if (tagis[component.Ammunition] <> 0) then
-	~  cost = container.child[AmmoHelper].field[ahAmmoReloadCost].value
+	~  cost = container.child[GearHelper].field[ghAmmoReloadCost].value
 	~  endif
 
     ~setup the unit cost for the item
@@ -1239,9 +1248,9 @@
     expr = "component.Ammunition & Equipment.AmmoCarried & " & myId
     ~ notify expr
 	
-    gizmo.childfound[AmmoHelper].field[ahAmmoExpr].text = expr
-	~gizmo.childfound[AmmoHelper].field[ahAmmoBaseCost].value = myCost
-	~gizmo.childfound[AmmoHelper].field[ahAmmoReloadCost].value = myCost * reloadCost
+    gizmo.childfound[GearHelper].field[ghAmmoExpr].text = expr
+	~gizmo.childfound[GearHelper].field[ghAmmoBaseCost].value = myCost
+	~gizmo.childfound[GearHelper].field[ghAmmoReloadCost].value = myCost * reloadCost
 	
     ]]></procedure>
 
@@ -1259,9 +1268,9 @@
 
     expr = "component.Ammunition & " & myId
 	
-    gizmo.childfound[AmmoHelper].field[ahAmmoExpr].text = expr
-	~gizmo.childfound[AmmoHelper].field[ahAmmoBaseCost].value = myCost
-	~gizmo.childfound[AmmoHelper].field[ahAmmoReloadCost].value = myCost * reloadCost
+    gizmo.childfound[GearHelper].field[ghAmmoExpr].text = expr
+	~gizmo.childfound[GearHelper].field[ghAmmoBaseCost].value = myCost
+	~gizmo.childfound[GearHelper].field[ghAmmoReloadCost].value = myCost * reloadCost
 	
     ]]></procedure>	
 	

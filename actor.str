@@ -465,10 +465,23 @@
       maxlength="500">
       </field>
 	  
-    <!-- Starting ability slots to allocate -->
     <field
       id="acArchTalNumSec"
       name="Sec. Arch. Talent Slots"
+      type="derived"
+      defvalue="0">
+      </field>	
+	  
+    <field
+      id="acArchTalT2K"
+      name="T2K Arch. Talent exp."
+      type="derived"
+      maxlength="500">
+      </field>
+	  
+    <field
+      id="acArchTalNumT2K"
+      name="T2K Arch. Talent Slots"
       type="derived"
       defvalue="0">
       </field>	
@@ -585,7 +598,15 @@
       type="derived"
       defvalue="1">
       </field>
-
+	  
+    <!-- Archetype-related fields (TBD) -->
+    <field
+      id="acArRank"
+      name="Archetype Rank"
+      type="derived"
+      maxlength="50">
+      </field>
+	  
     <!-- Lifepath-related fields (TBD) -->
     <field
       id="acLPTours"
@@ -769,12 +790,12 @@
 	  if (hero.tagis[MinionSet.Vehicle] <> 0) then
 		perform hero.assign[Hero.FixedRace]
 		perform hero.assign[Hero.Minion]
-		perform hero.assign[HLOCharacterType.Vehicle]
+		perform hero.assign[CharacterType.Vehicle]
 		perform hero.assign[CharType.Vehicle]
 	  elseif (hero.tagis[MinionSet.Critter] <> 0) then
 		perform hero.assign[Hero.FixedRace]
 		perform hero.assign[Hero.Minion]
-		perform hero.assign[HLOCharacterType.NPCCritter]
+		perform hero.assign[CharacterType.NPCCritter]
 		endif
 	  ]]></eval>
 	  
@@ -1266,14 +1287,19 @@
 	    field[serBranchOut].text = field[serBranch].text
 		endif
 		
+	  if (hero.tagis[BranchType.?] <> 0) then
+	    field[serBranchOut].text &= " (" & hero.tagnames[BranchType.?,","] & ")"
+		endif
+	  
 	  doneif (hero.tagis[Military.?] = 0)
 	  var Rank as string
+	  var RankText as string
 	  var RankIdx as number
 	  var RankAbrev as string
 	  
 	  field[serRankVal].value = hero.tagvalue[MilitaryRank.?]
 	  RankIdx = field[serRankVal].value - 1
-	  
+	    
 	  call GetRank
 	  
 	  field[serRank].text = Rank

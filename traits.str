@@ -67,8 +67,8 @@
         if (hero.tagis[mode.creation] + !autonomous >= 2) then
           @text = "{bmp forbidden_up}"
         else
-		  ~ if we're an attribute, we want to display the Alpha, otherwise the value
-		  if (tagis[component.Attribute] + tagis[Helper.DisplayAlpha] <> 0) then
+		  ~ if we need alpha, we want to display the Alpha, otherwise the value
+		  if (tagis[Helper.DisplayAlpha] <> 0) then
 		    @text = field[trtAlpha].text
           else
 		    @text = field[trtFinal].value
@@ -294,7 +294,9 @@
 		endif
 		
       ]]></creation>
-	  
+
+    <tag group="Helper" tag="DisplayAlpha"/>
+	
     <!-- Attributes have a minimum trait value of 3 (d6) and a maximum of 5 (d10) unless they are key (or using Lifepath)-->
     <eval index="1" phase="Initialize" priority="3000"><![CDATA[
 	  if (hero.tagis[AttrCat.Vehicle] = 0) then
@@ -385,6 +387,7 @@
     <identity group="LifepathSkill"/>
 	
     <!-- Every skill is shown on the "Rolls" mouse-over on the Dashboard/TacCon -->
+    <tag group="Helper" tag="DisplayAlpha"/>
     <tag group="DashTacCon" tag="Rolls"/>
 
     <!-- Track the skill on the actor -->
@@ -452,8 +455,7 @@
 		  container.childfound[resLPSkill].field[resSpent].value += 1
 		  endif
       elseif (hero.tagis[source.srcT2KArchetypes] <> 0) then
-	    ~ we don't need to accumulate
-		~ continue
+	    hero.child[resSkill].field[resSpent].value += field[trtUser].value - 2
 	  else
 	    hero.child[resSkill].field[resSpent].value += field[trtUser].value
 		endif
@@ -761,6 +763,8 @@
     <!-- Each Specialty needs its own identity tag to detect cascading dependencies via prereqs -->
     <identity group="Specialty"/>
     <identity group="LifepathSpecialty"/>
+    <identity group="RecommendedSpec"/>
+	
 
     <!-- Setup an identity tag group to track all activated Specialty and adjustments -->
     <identity group="Activated"/>
@@ -770,6 +774,7 @@
     <!-- All Specialty get the same tag for sorting purposes -->
     <tag group="SpecialTab" tag="Specialty"/>
 
+	  
     <!-- Each Specialty that is added by the user costs 1 slot from the appropriate pool (resTalent, resArchTalentPri, resArchTalentSec) -->
     <!-- Track the Specialty on the actor -->
     <eval index="2" phase="Setup" priority="5000"><![CDATA[
@@ -777,8 +782,8 @@
 	  ~ forward any Lifepath tags that may be present
       perform forward[Lifepath.?]	
 	  
+	  ~ check if we're on a lifepath module gizmo
 	  if (isgizmo = 0) then
-	    ~ we're on a lifepath module gizmo
 	    perform hero.pushtags[Specialty.?]
 	    perform forward[LifepathSpecialty.?]
 	    
@@ -851,94 +856,6 @@
 
     </component>
 
-
-  <!-- Archetype component
-        Each race derives from this component
-  -->
-  <component
-    id="Archetype"
-    name="Archetype"
-    autocompset="no">
-
-    <field
-      id="arTalentSelect"
-      name="Talent Selection Exp."
-      type="derived"
-      maxlength="500">
-      </field>
-	  
-    <!-- Starting ability slots to allocate -->
-    <field
-      id="acArchNumTalents"
-      name="Number of Talents to select"
-      type="derived"
-      defvalue="0">
-      </field>	  
-    <!-- Each race needs its own identity tag to configure the hero appropriately -->
-    <identity group="Archetype"/>
-
-    <!-- Track the race on the actor by assigning the appropriate tag -->
-    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
-      perform forward[Archetype.?]
-      perform forward[ArchetypeBranches.?]
-      perform forward[ArchetypeCat.?]
-	  perform forward[KeyAttribute.?]
-	  perform forward[KeySkill.?]
-
-
-	  if (tagis[ArchetypeCat.Primary] <> 0) then
-        if (field[arTalentSelect].isempty = 0) then
-		  herofield[acArchTalPri].text = field[arTalentSelect].text
-		  herofield[acArchTalNumPri].value = field[acArchNumTalents].value
-		  endif
-	    herofield[acArchNamePri].text = field[name].text
-	  elseif (tagis[ArchetypeCat.Secondary] <> 0) then
-        if (field[arTalentSelect].isempty = 0) then
-		  herofield[acArchTalSec].text = field[arTalentSelect].text
-		  herofield[acArchTalNumSec].value = field[acArchNumTalents].value
-		  endif
-	    herofield[acArchNameSec].text = field[name].text
-		endif
-		
-	  ~ set value of atIsKey field on specified Key Attribute
-	  var keystring as string
-	  keystring = tagids[KeyAttribute.?,"|"]
-	  
-	  foreach pick in hero from Attribute where keystring
-	    eachpick.field[atIsKey].value = 1
-		nexteach
-	  
-	  ~ set value of sklIsKey field on specified Key Skill
-	  keystring = tagids[KeySkill.?,"|"]
-	  
-	  foreach pick in hero from Skill where keystring
-	    eachpick.field[sklIsKey].value = 1
-		nexteach
-	    
-      ]]></eval>
-
-    </component>
-	
-  <component
-    id="Branch"
-    name="Service Branch">
-
-    <!-- Each race needs its own identity tag to configure the hero appropriately -->
-    <identity group="ServiceBranch"/>
-	
-    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
-      perform forward[ServiceBranch.?]
-	  
-      perform forward[Archetype.?]
-      perform forward[ArchetypeBranches.?]
-      perform forward[ArchetypeCat.?]
-	  perform forward[KeyAttribute.?]
-	  perform forward[KeySkill.?]	
-	  	    
-      ]]></eval>
-	  
-    </component>
-	
   <component
     id="ChooserHelper"
     name="Chooser Helper">
@@ -967,60 +884,6 @@
     <!-- add this to every actor -->
     <tag group="Helper" tag="Bootstrap"/>
 	
-    </component>
-
-  <component
-    id="ArchetypeHelper"
-    name="Archetype Helper">
-	
-    <!-- Dynamic tagexpr for limiting primary archetypes -->
-    <field
-      id="ahLimitExprPri"
-      name="Pri. Archetype Limit TagExp"
-      type="derived"
-      maxlength="500"
-      defvalue="TRUE">
-      </field>
-
-    <!-- Dynamic tagexpr for limiting secondary archetypes -->
-    <field
-      id="ahLimitExprSec"
-      name="Sec. Archetype Limit TagExp"
-      type="derived"
-      maxlength="500"
-      defvalue="TRUE">
-      </field>	  
-	  
-    <!-- Dynamic tagexpr for selecting talents associated with primary archetypes -->
-    <field
-      id="ahTalentSelPri"
-      name="Pri. Talent Selection Exp."
-      type="derived"
-      maxlength="500"
-      defvalue="TRUE">
-      </field>	 
-	  
-    <!-- Dynamic tagexpr for selecting talents associated with primary archetypes -->
-    <field
-      id="ahTalentSelSec"
-      name="Sec. Talent Selection Exp."
-      type="derived"
-      maxlength="500"
-      defvalue="TRUE">
-      </field>
-
-    <!-- add this to every actor -->
-    <tag group="Helper" tag="Bootstrap"/>
-	
-    <eval index="1" phase="Setup" priority="4000" name="Archetype Selection Limits"><![CDATA[
-      field[ahLimitExprPri].text = "component.Archetype & (" & herofield[acArchLimPri].text & ")"
-      field[ahLimitExprSec].text = "component.Archetype & (" & herofield[acArchLimSec].text & ")"
-      ]]></eval>
-	
-    <eval index="2" phase="Setup" priority="4000" name="Archetype Talent Selection"><![CDATA[
-      field[ahTalentSelPri].text = "component.Talent & (" & herofield[acArchTalPri].text & ")"
-      field[ahTalentSelSec].text = "component.Talent & (" & herofield[acArchTalSec].text & ")"
-      ]]></eval>
     </component>
 	
   <!-- Define various component sets associated with the components defined above.
@@ -1069,13 +932,6 @@
     id="Trait">
     <compref component="Derived"/>
     <compref component="Trait"/>
-    </compset>
-
-  <!-- Archetype - all races derive from this compset -->
-  <compset
-    id="Archetype"
-    forceunique="yes">
-    <compref component="Archetype"/>
     </compset>
 
 

@@ -715,7 +715,7 @@
       style="lblNormal">
       <label>
 	    <labeltext><![CDATA[
-          @text = field[grReliability].value
+          @text = field[grReliabilityCur].value
 		  ]]></labeltext>
         </label>
       </portal>

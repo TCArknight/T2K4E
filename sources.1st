@@ -18,11 +18,11 @@
 	
   <source
     id="srcTwilight2000"
-    name="Twilight 2000 Setting"
+    name="Twilight 2000 Core"
     parent="srcYZE"
     reportable="no"
 	selectable="no"
-	sortorder="3"
+	sortorder="0"
     description="Data for the Twilight 2000 RPG.">
     </source> 	
 	
@@ -32,9 +32,28 @@
     parent="srcTwilight2000"
     reportable="yes"
 	sortorder="1"
-    description="Data for Alien RPG.">
+    description="Data for Twilight 2000 4th Ed. RPG.">
     </source>	
-		
+
+  <source
+    id="srcT2KUrbanOps"
+    name="Twilight 2000 Urban Operations"
+    parent="srcTwilight2000"
+    reportable="yes"
+	sortorder="2"
+    description="Data for Urban Operations Expansion.">
+    </source>	
+	
+  <source
+    id="srcT2KFan"
+    name="Fan Supplements"
+    parent="srcTwilight2000"
+    reportable="no"
+	selectable="no"
+	sortorder="2"
+    description="Fan options for T2K 4e.">
+    </source>
+	
   <source
     id="srcT2KOptions"
     name="Character Creation Options"

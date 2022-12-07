@@ -104,7 +104,7 @@
     <table_dynamic
       component="Specialty"
       showtemplate="SimpleItem"
-      choosetemplate="SimpleItem"
+      choosetemplate="baSpecThing"
       showsortset="explicit"
       scrollable="no">
 	  <list>!Hide.Specialty &amp; Helper.SpecChosen</list>
@@ -140,12 +140,18 @@
       showinvalid="yes">
       <label>
 	    <labeltext><![CDATA[
-		  if (field[atIsKey].value <> 0) then
-            @text = "{text 008000}" & field[name].text & "{text 010101}"
-		  else
-		    @text = field[name].text
-			endif
+		  @text = ""
 		  
+		  if (field[atIsKey].value <> 0) then
+            @text &= "{text 00FFFF}"
+			endif
+ 
+		  @text &= field[name].text
+
+			
+		  ~if (field[atIsKey].value <> 0) then
+          ~  @text &= "{text 010101}"
+		  ~  endif
 		  ]]></labeltext>
         </label>
       </portal>
@@ -233,7 +239,7 @@
 		  @text = ""
 		  
 		  if (field[sklIsKey].value <> 0) then
-            @text &= "{text 008000}"
+            @text &= "{text 00FFFF}"
 			endif
 			
 		  if (field[sklSetName].isempty = 0) then
@@ -242,9 +248,9 @@
 		    @text &= field[name].text
 			endif
 			
-		  if (field[sklIsKey].value <> 0) then
-            @text &= "{text 010101}"
-			endif
+		  ~if (field[sklIsKey].value <> 0) then
+          ~  @text &= "{text 010101}"
+		  ~  endif
 			
 		  ]]></labeltext>
         </label>
@@ -325,6 +331,11 @@
 	  else
 	    portal[alpha].visible = 1
 		portal[value].visible = 0  
+	    endif
+	  
+	  if (hero.tagis[source.srcT2KArchetypes] <> 0) then
+	    portal[alpha].visible = 0
+		portal[value].visible = 1
 	    endif
 		
       ~position the name on the left and make sure its width does not exceed the available space
@@ -414,6 +425,106 @@
 
     </template>
 
+  <!-- SimpleItem template
+  -->
+  <template
+    id="baSpecThing"
+    name="Specialty Things"
+    compset="Simple"
+    marginhorz="3"
+    marginvert="2">
+
+    <portal
+      id="name"
+      style="lblNormal"
+      showinvalid="yes">
+      <label>
+        <labeltext><![CDATA[
+		  if (pos(hero.tagids[RecommendedSpec.?,"|"],tagids[RecommendedSpec.?,"|"]) <> -1) then
+		    @text &= "{text 00FFFF}"
+		    endif
+			
+		  @text &= field[name].text
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      <mouseinfo/>
+      </portal>
+
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if we've been assigned a non-default width for use when showing things, adopt
+      ~that width now
+      if (ispick = 0) then
+        var size as number
+        size = tagvalue[SimpleItem.width?]
+        if (size > 0) then
+          width = size
+          endif
+        endif
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~center the other portals vertically
+      perform portal[name].centervert
+      perform portal[delete].centervert
+
+      ~position the delete portal on the far right
+      perform portal[delete].alignedge[right,0]
+
+      ~position the info portal to the left of the delete button
+      perform portal[info].alignrel[rtol,delete,-8]
+
+      ~if we're showing a thing, the info and delete buttons are irrelevant, since
+      ~we should be showing within a chooser, in which case there's nothing to
+      ~delete and we have the description already visible
+      var edge as number
+      if (ispick = 0) then
+        portal[info].visible = 0
+        portal[delete].visible = 0
+        edge = width
+      else
+        edge = portal[info].left - 5
+        endif
+
+      ~position the name on the left and let it use all available space
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,edge)
+
+      ~center the name if requested or this is a show-only thing
+      if (tagis[SimpleItem.CenterName] + tagis[thing.showonly] <> 0) then
+        perform portal[name].centerhorz
+        endif
+
+      ~if this is an auto-added pick, change its font to indicate that fact
+      if (ispick + !candelete >= 2) then
+        perform portal[name].setstyle[lblAuto]
+        endif
+      ]]></position>
+
+    </template>
 
   <!-- basics layout
         This layout orchestrates the display of all various visual elements that

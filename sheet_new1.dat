@@ -519,7 +519,7 @@
       id="reliability"
       style="outNameMed">
       <output_label
-        field="grReliability">
+        field="grReliabilityCur">
         </output_label>
       </portal>
 

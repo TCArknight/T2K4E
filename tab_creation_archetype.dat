@@ -27,27 +27,27 @@
         @text = "Branch"
         </labeltext>
       </label>
-    </portal>	
+    </portal>		
 	
   <portal
     id="atArchetype"
     style="tblInvis">
     <table_dynamic
       component="Archetype"
-      showtemplate="lpNationPick"
+      showtemplate="atArchetypePick"
       choosetemplate="SimpleItem"
 	  scrollable="no"
 	  showfrozenfixed="yes"
       showfixedlast="yes">
-      <list>Archetype.ArchetypeSelect</list>
+      <list>Archetype.ArchetypeSelected</list>
 	  <candidate>ArchetypeCat.T2K</candidate>
-      <autotag group="Archetype" tag="ArchetypeSelect"/>
+      <autotag group="Archetype" tag="ArchetypeSelected"/>
       <titlebar><![CDATA[]]></titlebar>
       <description/>
       <headertitle><![CDATA[]]></headertitle>
       <additem><![CDATA[
         ~if we've added a specialty already, then there's nothing to add
-        if (hero.tagis[Archetype.ArchetypeSelect] <> 0) then
+        if (hero.tagis[Archetype.ArchetypeSelected] <> 0) then
           @text = "{text clrgrey}No more nationalities can be added"
 		else
 		  @text &= "Add Archetype"
@@ -61,7 +61,7 @@
     style="tblInvis">
     <table_dynamic
       component="Nationality"
-      showtemplate="lpNationPick"
+      showtemplate="atNationPick"
       choosetemplate="SimpleItem"
 	  scrollable="no"
 	  showfrozenfixed="yes"
@@ -86,19 +86,19 @@
     style="tblInvis">
     <table_dynamic
       component="Branch"
-      showtemplate="SimpleItem"
-      choosetemplate="atBranchPick"
+      showtemplate="atBranchPick"
+      choosetemplate="SimpleItem"
 	  scrollable="yes"
 	  showfrozenfixed="yes"
       showfixedlast="yes">
       <needtag usehero="yes" container="ArchetypeBranches" thing="ArchetypeBranches"/>
-      <autotag group="Archetype" tag="BranchSelect"/>
+      <autotag group="Archetype" tag="BranchSelected"/>
       <titlebar><![CDATA[]]></titlebar>
       <description/>
       <headertitle><![CDATA[]]></headertitle>
       <additem><![CDATA[
         ~if we've added a specialty already, then there's nothing to add
-        if (hero.tagis[Archetype.BranchSelect] <> 0) then
+        if (hero.tagis[Archetype.BranchSelected] <> 0) then
           @text = "{text clrgrey}No more Branches can be added"
 		else
 		  @text &= "Add Branch"
@@ -109,13 +109,336 @@
     </portal>	
 	
   <portal
+    id="atBranchType"
+    style="tblInvis">
+    <table_dynamic
+      component="BranchType"
+      showtemplate="SimpleItem"
+      choosetemplate="SimpleItem"
+	  scrollable="yes"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <needtag usehero="yes" container="BranchTypeAllow" thing="BranchType"/>
+      <autotag group="Hero" tag="BrTypeSelected"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[
+	    @text="Branch Type"
+		]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a specialty already, then there's nothing to add
+        if (hero.tagis[Hero.BrTypeSelected] <> 0) then
+          @text = "{text clrgrey}No more Branch Types can be added"
+		else
+		  @text &= "Add Branch Type"
+          endif
+        ]]></additem>
+      </table_dynamic>
+	  
+    </portal>	
+	
+  <portal
+    id="atBranchRank"
+    style="tblInvis">
+    <table_dynamic
+      component="ArchetypeRank"
+      showtemplate="SimpleItem"
+      choosetemplate="SimpleItem"
+	  scrollable="yes"
+	  showfrozenfixed="yes"
+      showfixedlast="yes">
+      <needtag usehero="yes" container="ArchetypeRank" thing="ArchetypeRank"/>
+      <autotag group="Hero" tag="BrRankSelected"/>
+      <titlebar><![CDATA[]]></titlebar>
+      <description/>
+      <headertitle><![CDATA[
+	    @text="Branch Rank"
+		]]></headertitle>
+      <additem><![CDATA[
+        ~if we've added a specialty already, then there's nothing to add
+        if (hero.tagis[Hero.BrRankSelected] <> 0) then
+          @text = "{text clrgrey}No more Ranks can be added"
+		else
+		  @text &= "Add Rank"
+          endif
+        ]]></additem>
+      </table_dynamic>
+	  
+    </portal>
+	
+  <portal
     id="atHoriz1"
     style="sepHorz">
     <separator
       isvertical="no">
       </separator>
     </portal>
+	
+	<!-- 
+	      <edit
+        field="ardHowMet"
+        ismultiline="yes">
+        </edit> -->
+		
+  <template
+    id="atArchDetails"
+    name="Detail Fields"
+    compset="ArchetypeDetails">
+
+    <portal 
+      id="hdrMoralCode" 
+      style="lblTitle">
+      <label>
+        <labeltext>
+          @text = "Your Moral Code"
+          </labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="moralcode"
+      style="lblLeft">
+      <label
+	    field="ardMoralCode"
+        ismultiline="yes">
+        </label>
+      </portal>
 	  
+    <portal 
+      id="hdrBigDream" 
+      style="lblTitle">
+      <label>
+        <labeltext>
+          @text = "Your Big Dream"
+          </labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="bigdream"
+      style="lblLeft">
+      <label
+	    field="ardBigDream"
+        ismultiline="yes">
+        </label>
+
+      </portal>	
+	  
+    <portal 
+      id="hdrHowMet" 
+      style="lblTitle">
+      <label>
+        <labeltext>
+          @text = "How You Met The Group"
+          </labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="met"
+      style="lblLeft">
+      <label
+	    field="ardHowMet"
+        ismultiline="yes">
+        </label>
+
+      </portal>	
+	  
+    <portal 
+      id="hdrStartGear" 
+      style="lblTitle">
+      <label>
+        <labeltext>
+          @text = "Gear"
+          </labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="startgear"
+      style="lblLeft">
+      <label
+	    field="ardStartGear"
+        ismultiline="yes">
+        </label>
+
+      </portal>	
+	  
+    <position><![CDATA[
+      ~set all label width to the longest
+	  var hdrwidth as number
+	  var editleft as number
+	  var nexttop as number
+	  
+      ~portal[hdrHowMet].visible = hero.tagis[Hero.UseHowMet]
+      ~portal[met].visible = portal[lblmet].visible
+	  
+	  hdrwidth = width /2 - 5
+	  
+	  nexttop = 0
+      ~position how moral code
+	  if (portal[moralcode].visible <> 0) then 
+        portal[hdrMoralCode].left = 0
+        portal[hdrMoralCode].top = nexttop
+        portal[hdrMoralCode].height = 20
+        portal[hdrMoralCode].width = hdrwidth
+        portal[moralcode].left = editleft
+        portal[moralcode].top = portal[hdrMoralCode].bottom + 5
+        portal[moralcode].width = portal[hdrMoralCode].width
+        portal[moralcode].height = 125
+		perform portal[moralcode].sizetofit[36]
+        perform portal[moralcode].autoheight
+	  
+	    nexttop = portal[bigdream].bottom + 5
+	    endif
+		
+      ~position how met
+	  if (portal[met].visible <> 0) then 
+        portal[hdrBigDream].left = portal[hdrMoralCode].right + 10
+        portal[hdrBigDream].top = portal[hdrMoralCode].top
+        portal[hdrBigDream].height = 20
+        portal[hdrBigDream].width = hdrwidth
+        portal[bigdream].left = portal[hdrBigDream].left
+        portal[bigdream].top = portal[hdrBigDream].bottom + 5
+        portal[bigdream].width = portal[hdrBigDream].width
+        portal[bigdream].height = 125
+		perform portal[bigdream].sizetofit[36]
+        perform portal[bigdream].autoheight
+	  
+	    nexttop = portal[bigdream].bottom + 5
+	    endif
+		
+      ~position how met
+	  if (portal[met].visible <> 0) then 
+        portal[hdrHowMet].left = portal[hdrMoralCode].left
+        portal[hdrHowMet].top = nexttop
+        portal[hdrHowMet].height = 20
+        portal[hdrHowMet].width = hdrwidth
+        portal[met].left = portal[hdrHowMet].left
+        portal[met].top = portal[hdrHowMet].bottom + 5
+        portal[met].width = portal[hdrHowMet].width
+        portal[met].height = 125
+		perform portal[met].sizetofit[36]
+        perform portal[met].autoheight
+	  
+	    nexttop = portal[met].bottom + 5
+	    endif
+		
+      ~position how met
+	  if (portal[met].visible <> 0) then 
+        portal[hdrStartGear].left = portal[hdrHowMet].right + 10
+        portal[hdrStartGear].top = portal[hdrHowMet].top
+        portal[hdrStartGear].height = 20
+        portal[hdrStartGear].width = hdrwidth
+        portal[startgear].left = portal[hdrStartGear].left
+        portal[startgear].top = portal[hdrStartGear].bottom + 5
+        portal[startgear].width = portal[hdrStartGear].width
+        portal[startgear].height = 125
+		perform portal[startgear].sizetofit[36]
+        perform portal[startgear].autoheight
+	  
+	    nexttop = portal[startgear].bottom + 5
+	    endif
+		
+	  height = nexttop
+		
+      ]]></position>
+
+    </template>
+	
+  <template
+    id="atArchetypePick"
+    name="Archetype Pick"
+    compset="Archetype"
+    marginhorz="3"
+    marginvert="5">
+
+    <portal
+      id="name"
+      style="lblLarge"
+      showinvalid="yes">
+      <label
+        field="name">
+        </label>
+      </portal>
+
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      <mouseinfo/>
+      </portal>
+
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+	  
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if we've been assigned a non-default width for use when showing things, adopt
+      ~that width now
+      if (ispick = 0) then
+        var size as number
+        size = tagvalue[SimpleItem.width?]
+        if (size > 0) then
+          width = size
+          endif
+        endif
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~center the other portals vertically
+      perform portal[name].centervert
+      perform portal[delete].centervert
+
+      ~position the delete portal on the far right
+      perform portal[delete].alignedge[right,0]
+
+      ~position the info portal to the left of the delete button
+      perform portal[info].alignrel[rtol,delete,-8]
+
+      ~if we're showing a thing, the info and delete buttons are irrelevant, since
+      ~we should be showing within a chooser, in which case there's nothing to
+      ~delete and we have the description already visible
+      var edge as number
+      if (ispick = 0) then
+        portal[info].visible = 0
+        portal[delete].visible = 0
+        edge = width
+      else
+        edge = portal[info].left - 5
+        endif
+
+      ~position the name on the left and let it use all available space
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,edge)
+
+      ~center the name if requested or this is a show-only thing
+      if (tagis[SimpleItem.CenterName] + tagis[thing.showonly] <> 0) then
+        perform portal[name].centerhorz
+        endif
+
+      ~if this is an auto-added pick, change its font to indicate that fact
+      if (ispick + !candelete >= 2) then
+        perform portal[name].setstyle[lblAuto]
+        endif
+      ]]></position>
+
+    </template>	
+	
   <template
     id="atBranchPick"
     name="Branch Bick"
@@ -141,6 +464,15 @@
       <mouseinfo/>
       </portal>
 
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+	  
     <position><![CDATA[
       ~set up our height based on our tallest portal
       height = portal[info].height
@@ -163,15 +495,21 @@
 
       ~center the other portals vertically
       perform portal[name].centervert
+      perform portal[delete].centervert
 
-      ~position the info portal on the far right
-      perform portal[info].alignedge[right,0]
+      ~position the delete portal on the far right
+      perform portal[delete].alignedge[right,0]
 
-      ~if we're showing a thing, the info button is irrelevant, since we ought to
-      ~be showing within a chooser and have the description already visible
+      ~position the info portal to the left of the delete button
+      perform portal[info].alignrel[rtol,delete,-8]
+
+      ~if we're showing a thing, the info and delete buttons are irrelevant, since
+      ~we should be showing within a chooser, in which case there's nothing to
+      ~delete and we have the description already visible
       var edge as number
       if (ispick = 0) then
         portal[info].visible = 0
+        portal[delete].visible = 0
         edge = width
       else
         edge = portal[info].left - 5
@@ -181,14 +519,113 @@
       portal[name].left = 0
       portal[name].width = minimum(portal[name].width,edge)
 
-      ~center the name if requested
-      if (tagis[SimpleItem.CenterName] <> 0) then
+      ~center the name if requested or this is a show-only thing
+      if (tagis[SimpleItem.CenterName] + tagis[thing.showonly] <> 0) then
         perform portal[name].centerhorz
+        endif
+
+      ~if this is an auto-added pick, change its font to indicate that fact
+      if (ispick + !candelete >= 2) then
+        perform portal[name].setstyle[lblAuto]
         endif
       ]]></position>
 
     </template>	
 	
+
+  <template
+    id="atNationPick"
+    name="Nationality Pick"
+    compset="Nationality"
+    marginhorz="3"
+    marginvert="5">
+
+    <portal
+      id="name"
+      style="lblLarge"
+      showinvalid="yes">
+      <label
+        field="name">
+        </label>
+      </portal>
+
+    <portal
+      id="info"
+      style="actInfo">
+      <action
+        action="info">
+        </action>
+      <mouseinfo/>
+      </portal>
+
+    <portal
+      id="delete"
+      style="actDelete"
+      tiptext="Click to delete this item">
+      <action
+        action="delete">
+        </action>
+      </portal>
+	  
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[info].height
+
+      ~if we've been assigned a non-default width for use when showing things, adopt
+      ~that width now
+      if (ispick = 0) then
+        var size as number
+        size = tagvalue[SimpleItem.width?]
+        if (size > 0) then
+          width = size
+          endif
+        endif
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position our tallest portal at the top
+      portal[info].top = 0
+
+      ~center the other portals vertically
+      perform portal[name].centervert
+      perform portal[delete].centervert
+
+      ~position the delete portal on the far right
+      perform portal[delete].alignedge[right,0]
+
+      ~position the info portal to the left of the delete button
+      perform portal[info].alignrel[rtol,delete,-8]
+
+      ~if we're showing a thing, the info and delete buttons are irrelevant, since
+      ~we should be showing within a chooser, in which case there's nothing to
+      ~delete and we have the description already visible
+      var edge as number
+      if (ispick = 0) then
+        portal[info].visible = 0
+        portal[delete].visible = 0
+        edge = width
+      else
+        edge = portal[info].left - 5
+        endif
+
+      ~position the name on the left and let it use all available space
+      portal[name].left = 0
+      portal[name].width = minimum(portal[name].width,edge)
+
+      ~center the name if requested or this is a show-only thing
+      if (tagis[SimpleItem.CenterName] + tagis[thing.showonly] <> 0) then
+        perform portal[name].centerhorz
+        endif
+
+      ~if this is an auto-added pick, change its font to indicate that fact
+      if (ispick + !candelete >= 2) then
+        perform portal[name].setstyle[lblAuto]
+        endif
+      ]]></position>
+
+    </template>		  
+
   <layout
     id="archetype">
     <portalref portal="hdrArchetype" />
@@ -197,7 +634,10 @@
     <portalref portal="atArchetype" />
     <portalref portal="atNation" />
     <portalref portal="atBranch" />
+    <portalref portal="atBranchType" />
+    <portalref portal="atBranchRank" />
     <portalref portal="atHoriz1" />
+    <templateref template="atArchDetails" thing="mscArchDetails"/>
 
     <position><![CDATA[
 	  var newBottom as number
@@ -207,45 +647,106 @@
       if (state.iscreate = 0) then
         portal[hdrArchetype].freeze = 1
         endif
-	  if (hero.tagis[Archetype.ArchetypeSelect] <> 0) then
+	  if (hero.tagis[Archetype.ArchetypeSelected] <> 0) then
         portal[atArchetype].freeze = 1
         endif
 	  if (hero.tagis[Archetype.NationalitySelect] <> 0) then
         portal[atNation].freeze = 1
         endif
-	  if (hero.tagis[Archetype.BranchSelect] <> 0) then
+	  if (hero.tagis[Archetype.BranchSelected] <> 0) then
         portal[atBranch].freeze = 1
+        endif
+	  if (hero.tagis[Hero.BrTypeSelected] <> 0) then
+        portal[atBranchType].freeze = 1
+        endif
+	  if (hero.tagis[Hero.BrRankSelected] <> 0) then
+        portal[atBranchRank].freeze = 1
         endif
 		
       ~position and size the table to span the full layout; it will only use the
       ~vertical space that it actually needs
       
-      portal[hdrArchetype].top = 0
-      portal[hdrArchetype].height = 20
-      portal[hdrArchetype].width = width
-	  newBottom = portal[hdrArchetype].bottom + 5
-      portal[atArchetype].top = newBottom
-      portal[atArchetype].height = 50
-      portal[atArchetype].width = width
-	  newBottom = portal[atArchetype].bottom + 5
+	  perform portal[hdrArchetype].autoplace
+	  perform portal[atArchetype].autoplace[5]
+	  perform portal[hdrNation].autoplace[5]
+	  perform portal[atNation].autoplace[5]
+	  perform portal[hdrBranch].autoplace[5]
+	  perform portal[atBranch].autoplace[5]
 	  
-      portal[hdrNation].top = newBottom
-      portal[hdrNation].height = 20
-      portal[hdrNation].width = width
-	  newBottom = portal[hdrNation].bottom + 5
-      portal[atNation].top = newBottom
-      portal[atNation].height = 50
-      portal[atNation].width = width
-	  newBottom = portal[atNation].bottom + 5
+	  autowidth = width/2 - 2
+	  perform portal[atBranchType].autoplace[5]
+	  
+	  autotop = portal[atBranch].bottom
+	  perform portal[atBranchRank].autoplace[5]
+	  portal[atBranchRank].left = portal[atBranchType].right + 4
+	  portal[atBranchRank].top = portal[atBranchType].top
+	  autowidth = width
+	  perform template[atArchDetails].autoplace[5]
+	  
+	  if (hero.tagis[Hero.NoBranchNeeded] <> 0) then
+	    portal[hdrBranch].visible = 0
+	    portal[atBranch].visible = 0
+		template[atArchDetails].top = portal[atNation].bottom + 5
+	    endif
+	  portal[atBranchType].visible = hero.tagis[Hero.NeedBranchType]
+	  portal[atBranchRank].visible = portal[atBranchType].visible
+	  
+	  height = autoextent
+	  
+      ~portal[hdrArchetype].top = 0
+      ~portal[hdrArchetype].height = 20
+      ~portal[hdrArchetype].width = width
+	  ~newBottom = portal[hdrArchetype].bottom + 5
+      ~portal[atArchetype].top = newBottom
+      ~portal[atArchetype].height = 50
+      ~portal[atArchetype].width = width
+	  ~newBottom = portal[atArchetype].bottom + 5
+	  
+      ~portal[hdrNation].top = newBottom
+      ~portal[hdrNation].height = 20
+      ~portal[hdrNation].width = width
+	  ~newBottom = portal[hdrNation].bottom + 5
+      ~portal[atNation].top = newBottom
+      ~portal[atNation].height = 50
+      ~portal[atNation].width = portal[hdrNation].width
+	  ~newBottom = portal[atNation].bottom + 5
 
-      portal[hdrBranch].top = newBottom
-      portal[hdrBranch].height = 20
-      portal[hdrBranch].width = width
-	  newBottom = portal[hdrBranch].bottom + 5
-      portal[atBranch].top = newBottom
-      portal[atBranch].height = 50
-      portal[atBranch].width = width
-	  newBottom = portal[atBranch].bottom + 5
+      ~portal[hdrBranch].top = newBottom
+      ~portal[hdrBranch].left = portal[hdrNation].left
+      ~portal[hdrBranch].height = 20
+      ~portal[hdrBranch].width = width
+	  ~newBottom = portal[hdrBranch].bottom + 5
+      ~portal[atBranch].top = newBottom
+	  ~portal[atBranch].left = portal[hdrBranch].left
+      ~portal[atBranch].height = 50
+      ~portal[atBranch].width = portal[hdrBranch].width
+	  
+	  ~newBottom = portal[atBranch].bottom + 5
+
+	  ~autotop = newBottom
+	  ~autowidth = width/2
+	  ~perform portal[atBranchType].autoplace[5]
+	  
+	  ~autotop = newBottom
+	  ~autoleft = portal[atBranchType].right
+	  ~perform portal[atBranchRank].autoplace[5]
+	  
+	  ~portal[atBranchType].visible = hero.tagis[Hero.NeedBranchType]
+	  ~autotop = newBottom
+	  
+	  ~autotop = portal[atBranchType].bottom
+	  ~autowidth = width
+	  ~autoleft = 0
+	  ~perform template[atArchDetails].autoplace[5]
+	  
+      ~portal[atHoriz1].top = newBottom
+	  ~newBottom = portal[atHoriz1].bottom + 5
+
+      ~template[atArchDetails].top = newBottom + 50
+      ~template[atArchDetails].left = portal[hdrNation].left
+      ~template[atArchDetails].height = 200
+      ~template[atArchDetails].width = width
+	  ~newBottom = template[atArchDetails].bottom + 5
 	  
       ]]></position>
 

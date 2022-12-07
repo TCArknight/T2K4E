@@ -49,7 +49,8 @@
   -->
 
   <!-- And one optional fields info pick -->
-  <bootstrap index="5" thing="mscOptFields"/>
+  <bootstrap index="4" thing="mscOptFields"/>
+  <bootstrap index="5" thing="mscArchDetails"/>
   <bootstrap index="6" thing="mscHealthRel"/>
   
   <!-- And one service info pick -->

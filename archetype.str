@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definitions of components that don't really fit anywhere
+      else, such as resources, journal entries, etc.
+-->
+
+<document signature="Hero Lab Structure">
+
+  <!-- Archetype component
+        Each race derives from this component
+  -->
+  <component
+    id="Archetype"
+    name="Archetype"
+    autocompset="no">
+
+    <field
+      id="arAppearance"
+      name="Appearance"
+      type="derived"
+      maxlength="500">
+      </field>
+	  
+    <field
+      id="arTalentSelect"
+      name="Talent Selection Exp."
+      type="derived"
+      maxlength="500">
+      </field>
+	  
+    <!-- Starting ability slots to allocate -->
+    <field
+      id="arArchNumTalents"
+      name="Number of Talents to select"
+      type="derived"
+      defvalue="0">
+      </field>	
+
+    <field
+      id="arMoralCode"
+      name="Moral Code"
+      type="derived"
+      maxlength="1000">
+      </field>
+
+    <field
+      id="arBigDream"
+      name="Big Dream"
+      type="derived"
+      maxlength="1000">
+      </field>
+
+    <field
+      id="arHowMet"
+      name="How Met Group"
+      type="derived"
+      maxlength="1000">
+      </field>
+	  
+    <field
+      id="arStartGear"
+      name="How Met Group"
+      type="derived"
+      maxlength="1000">
+      </field>
+
+    <field
+      id="arCUF"
+      name="Coolness Under Fire"
+      type="derived"
+	  minvalue="3"
+	  maxvalue="6"
+	  defvalue="3">
+      </field>
+	  
+    <!-- Each race needs its own identity tag to configure the hero appropriately -->
+    <identity group="Archetype"/>
+	
+    <eval index="1" phase="Setup" priority="4000" name="Archetype Details"><![CDATA[
+	  trustme
+	  
+      hero.childfound[mscArchDetails].field[ardMoralCode].text = field[arMoralCode].text
+      hero.childfound[mscArchDetails].field[ardBigDream].text = field[arBigDream].text
+      hero.childfound[mscArchDetails].field[ardHowMet].text = field[arHowMet].text
+      hero.childfound[mscArchDetails].field[ardStartGear].text = field[arStartGear].text
+	  
+	  #traitbonus[trCUF] += (field[arCUF].value - 3)
+      ]]></eval>
+	  
+    <!-- Track the race on the actor by assigning the appropriate tag -->
+    <eval index="2" phase="Initialize" priority="1000"><![CDATA[
+      perform forward[Archetype.?]
+      perform forward[ArchetypeBranches.?]
+      perform forward[ArchetypeCat.?]
+      perform forward[BranchTypeAllow.?]
+	  perform forward[KeyAttribute.?]
+	  perform forward[KeySkill.?]
+	  perform forward[RecommendedSpec.?]
+	  perform forward[Hero.?]	
+
+	  if (tagis[ArchetypeCat.Primary] <> 0) then
+        if (field[arTalentSelect].isempty = 0) then
+		  herofield[acArchTalPri].text = field[arTalentSelect].text
+		  herofield[acArchTalNumPri].value = field[arArchNumTalents].value
+		  endif
+	    herofield[acArchNamePri].text = field[name].text
+	  elseif (tagis[ArchetypeCat.Secondary] <> 0) then
+        if (field[arTalentSelect].isempty = 0) then
+		  herofield[acArchTalSec].text = field[arTalentSelect].text
+		  herofield[acArchTalNumSec].value = field[arArchNumTalents].value
+		  endif
+	    herofield[acArchNameSec].text = field[name].text
+	  elseif (tagis[ArchetypeCat.T2K] <> 0) then
+	    
+		herofield[acArchTalNumT2K].value = field[arArchNumTalents].value
+        ~if (field[arTalentSelect].isempty = 0) then
+		~  herofield[acArchTalT2K].text = field[arTalentSelect].text
+		~  herofield[acArchTalNumT2K].value = field[arArchNumTalents].value
+		~  endif
+	    ~ herofield[acArchNameSec].text = field[name].text
+		endif
+	  
+	  ~ set value of atIsKey field on specified Key Attribute
+	  var keystring as string
+	  keystring = tagids[KeyAttribute.?,"|"]
+	  
+	  foreach pick in hero from Attribute where keystring
+	    eachpick.field[atIsKey].value = 1
+		nexteach
+	  
+	  ~ set value of sklIsKey field on specified Key Skill
+	  keystring = tagids[KeySkill.?,"|"]
+	  
+	  foreach pick in hero from Skill where keystring
+	    eachpick.field[sklIsKey].value = 1
+		nexteach
+	    
+      #resmax[resSkill] += 10
+      ]]></eval>
+	
+    </component>
+	
+  <component
+    id="ArchetypeDetails"
+    name="Archetype Details">
+
+    <field
+      id="ardMoralCode"
+      name="Moral Code"
+      type="derived"
+      maxlength="1000">
+      </field>	
+    <field
+      id="ardBigDream"
+      name="Big Dream"
+      type="derived"
+      maxlength="1000">
+      </field>
+    <field
+      id="ardHowMet"
+      name="How Met Group"
+      type="derived"
+      maxlength="1000">
+      </field>
+    <field
+      id="ardStartGear"
+      name="Starting Gear"
+      type="derived"
+      maxlength="1000">
+      </field>
+	  
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+	  
+	  perform forward[Hero.?]	
+      ]]></eval>
+	
+    <eval index="2" phase="Setup" priority="4100" name="Load Opt Fields"><![CDATA[
+	  trustme
+	  
+      hero.childfound[mscOptFields].field[optMoralCode].text = field[ardMoralCode].text
+      hero.childfound[mscOptFields].field[optBigDream].text = field[ardBigDream].text
+      hero.childfound[mscOptFields].field[optHowMet].text = field[ardHowMet].text
+      ]]></eval>	  
+    </component>
+	
+  <component
+    id="ArchetypeHelper"
+    name="Archetype Helper">
+	  
+    <!-- Dynamic tagexpr for limiting primary archetypes -->
+    <field
+      id="ahLimitExprPri"
+      name="Pri. Archetype Limit TagExp"
+      type="derived"
+      maxlength="500"
+      defvalue="TRUE">
+      </field>
+
+    <!-- Dynamic tagexpr for limiting secondary archetypes -->
+    <field
+      id="ahLimitExprSec"
+      name="Sec. Archetype Limit TagExp"
+      type="derived"
+      maxlength="500"
+      defvalue="TRUE">
+      </field>	  
+	  
+    <!-- Dynamic tagexpr for selecting talents associated with primary archetypes -->
+    <field
+      id="ahTalentSelPri"
+      name="Pri. Talent Selection Exp."
+      type="derived"
+      maxlength="500"
+      defvalue="TRUE">
+      </field>	 
+	  
+    <!-- Dynamic tagexpr for selecting talents associated with primary archetypes -->
+    <field
+      id="ahTalentSelSec"
+      name="Sec. Talent Selection Exp."
+      type="derived"
+      maxlength="500"
+      defvalue="TRUE">
+      </field>
+
+    <!-- add this to every actor -->
+    <tag group="Helper" tag="Bootstrap"/>
+	
+    <eval index="2" phase="Setup" priority="4000" name="Archetype Selection Limits"><![CDATA[
+      field[ahLimitExprPri].text = "component.Archetype & (" & herofield[acArchLimPri].text & ")"
+      field[ahLimitExprSec].text = "component.Archetype & (" & herofield[acArchLimSec].text & ")"
+      ]]></eval>
+	
+    <eval index="3" phase="Setup" priority="4000" name="Archetype Talent Selection"><![CDATA[
+      field[ahTalentSelPri].text = "component.Talent & (" & herofield[acArchTalPri].text & ")"
+      field[ahTalentSelSec].text = "component.Talent & (" & herofield[acArchTalSec].text & ")"
+      ]]></eval>
+    </component>
+	
+  <component
+    id="Branch"
+    name="Service Branch">
+
+    <!-- Each race needs its own identity tag to configure the hero appropriately -->
+    <identity group="ServiceBranch"/>
+	
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+      perform forward[ServiceBranch.?]
+	  
+      perform forward[Archetype.?]
+      perform forward[ArchetypeBranches.?]
+      perform forward[ArchetypeCat.?]
+	  perform forward[KeyAttribute.?]
+	  perform forward[KeySkill.?]	
+	  
+	  perform forward[Hero.?]	
+	  	    
+      ]]></eval>
+	  
+    </component>
+	
+  <component
+    id="BranchType"
+    name="Branch Type">
+
+    <!-- Each race needs its own identity tag to configure the hero appropriately -->
+    <identity group="BranchType"/>
+	
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+      perform forward[BranchType.?]
+	  
+	  perform forward[Hero.?]	
+      ]]></eval>
+	  
+    </component>	
+	
+  <component
+    id="ArchetypeRank"
+    name="Rank for Archetype">
+
+    <!-- Each race needs its own identity tag to configure the hero appropriately -->
+    <identity group="ArchetypeRank"/>
+	
+    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
+      perform forward[Military.?]
+      perform forward[MilitaryRank.?]
+	  
+	  perform forward[Hero.?]	
+      ]]></eval>
+	  
+    </component>
+  <!-- Define various component sets associated with the components defined above. -->
+
+  <!-- The "Nationality" compset is auto-defined for the component -->
+	
+  <!-- Define any entities associated with the components defined above. -->
+
+  <!-- Archetype - all races derive from this compset -->
+  <compset
+    id="Archetype"
+    forceunique="yes">
+    <compref component="Archetype"/>
+    </compset>
+
+  </document>

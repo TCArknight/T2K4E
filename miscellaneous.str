@@ -467,7 +467,7 @@
     <eval phase="Setup" priority="5000"><![CDATA[
       perform hero.pushtags[CharType.?]
       perform hero.pushtags[HideTab.?]
-      perform hero.pushtags[HLOCharacterType.?]
+      perform hero.pushtags[CharacterType.?]
       ]]></eval>
 
     </component>

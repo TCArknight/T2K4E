@@ -135,6 +135,58 @@
       </field>
 
     <field
+      id="grReliabilityCur"
+      name="Current Reliability"
+      minvalue="0"
+      maxvalue="6"
+      type="derived">
+      </field>
+
+    <!-- Is the gear damaged? -->
+    <field
+      id="grDamage1"
+      name="Damage (1)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="grDamage2"
+      name="Damage (2)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="grDamage3"
+      name="Damage (3)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="grDamage4"
+      name="Damage (4)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="grDamage5"
+      name="Damage (5)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="grDamage6"
+      name="Damage (6)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+	  
+    <field
       id="grWeight"
       name="Weight"
       minvalue="0"
@@ -202,11 +254,31 @@
       ]]></eval>
 	  
     <!-- Accrue the total value of this item, as appropriate -->
-    <eval index="2" phase="Initialize" priority="10000" name="Set gearWeight"><![CDATA[
+    <eval index="3" phase="Initialize" priority="10000" name="Set gearWeight"><![CDATA[
       field[gearWeight].value += field[grWeight].value
   
       ]]></eval>
-
+	  
+    <!-- Accrue the total value of this item, as appropriate -->
+    <eval index="4" phase="Final" priority="15000" name="Set Current Rel."><![CDATA[
+      field[grReliabilityCur].value = field[grReliability].value
+      field[grReliabilityCur].value -= field[grDamage1].value
+      field[grReliabilityCur].value -= field[grDamage2].value
+      field[grReliabilityCur].value -= field[grDamage3].value
+      field[grReliabilityCur].value -= field[grDamage4].value
+      field[grReliabilityCur].value -= field[grDamage5].value
+      field[grReliabilityCur].value -= field[grDamage6].value
+	  
+	  if (field[grReliabilityCur].value < field[grReliability].value) then
+	    perform assign[Equipment.IsDamaged]
+	    endif
+	  if (field[grReliabilityCur].value <= 0) then
+	    field[grReliabilityCur].value = 0
+	    perform delete[Equipment.IsDamaged]
+	    perform assign[Equipment.IsBroken]
+	    endif
+	    
+      ]]></eval>
     </component>
 
 
@@ -1299,6 +1371,18 @@
     <eval index="4" phase="Render" priority="5500"><![CDATA[
       var special as string
 		
+      ~report the weapon as damaged (if any)
+      if (tagis[Equipment.IsDamaged] <> 0) then
+        special = splice(special,"DAMAGED",", ")
+		field[livename].text &= " (Damaged)"
+        endif
+		
+      ~report the weapon as broken (if any)
+      if (tagis[Equipment.IsBroken] <> 0) then
+        special = splice(special,"BROKEN!",", ")
+		field[livename].text &= field[name].text & " (Broken)"
+        endif
+		
       ~report the weapon as unloaded (if any)
       if (tagis[Helper.Unloaded] <> 0) then
         special = splice(special,"Unloaded",", ")
@@ -1943,17 +2027,17 @@
 
     </component>
 
-  <!-- AmmoHelper component
-        Each AmmoHelper Gizmo derives from this component
+  <!-- GearHelper component
+        Each GearHelper Gizmo derives from this component
   -->
   
   <component
-    id="AmmoHelper"
-    name="Ammo Helper">
+    id="GearHelper"
+    name="Gear Helper">
 	
     <!-- Gear cost -->
     <field
-      id="ahAmmoBaseCost"
+      id="ghAmmoBaseCost"
       name="Base Cost"
       minvalue="0"
       defvalue="0"
@@ -1962,7 +2046,7 @@
 	
     <!-- Gear cost -->
     <field
-      id="ahAmmoReloadCost"
+      id="ghAmmoReloadCost"
       name="Reload Cost"
       minvalue="0"
       defvalue="0"
@@ -1970,7 +2054,7 @@
 	  </field>
 	  
     <field
-      id="ahAmmoLabel"
+      id="ghAmmoLabel"
       name="Ammo Menu Label"
       type="static"
       maxlength="50">
@@ -1978,7 +2062,7 @@
 	  
     <!-- Selection Tag Expressions -->
     <field
-      id="ahAmmoExpr"
+      id="ghAmmoExpr"
       name="Ammo Tag Expression"
       type="derived"
       maxlength="500">
@@ -1986,7 +2070,7 @@
 	  
     <!-- Source to pull choices from for ammo selection -->
     <field
-      id="ahAmmoPick"
+      id="ghAmmoPick"
       name="Source for Menu #1 Choices"
       type="derived">
       <!-- Determine the source to choose from based on the tag, defaulting to "Hero" -->
@@ -2004,24 +2088,69 @@
       </field>	
 	  
     <field
-      id="ahAmmoChosen"
+      id="ghAmmoChosen"
       name="Chosen Ammo"
       type="user"
       style="menu">
       </field>
 
-    <eval index="3" phase="Traits" priority="5000" name="Set D/C by Loaded Ammo"><![CDATA[
+
+    <!-- Is the gear damaged? -->
+    <field
+      id="ghDamage1"
+      name="Damage (1)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="ghDamage2"
+      name="Damage (2)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="ghDamage3"
+      name="Damage (3)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="ghDamage4"
+      name="Damage (4)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="ghDamage5"
+      name="Damage (5)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+    <field
+      id="ghDamage6"
+      name="Damage (6)"
+      type="user"
+      minvalue="0"
+      maxvalue="1">
+      </field>
+	  
+    <eval index="1" phase="Traits" priority="5000" name="Set Dmg/Crit by Loaded Ammo"><![CDATA[
 	  ~make sure we're in a gizmo
 	  doneif (isgizmo <> 0)
 	  
       ~ make sure we have an ammo chosen
-	  doneif (field[ahAmmoChosen].ischosen = 0)
+	  doneif (field[ghAmmoChosen].ischosen = 0)
 	  
       ~ if weapon doesn't depend on ammo, we're done
 	  doneif (parent.tagis[Helper.DamageByAmmo] = 0)
 	  
 	  ~ set focus on chosen ammo
-	  perform field[ahAmmoChosen].chosen.setfocus
+	  perform field[ghAmmoChosen].chosen.setfocus
 	  doneif (state.isfocus = 0)
 	  
 	  parent.field[wpDamage].text = focus.field[amDamage].text
@@ -2032,6 +2161,20 @@
 	  
       ]]></eval>
 	  
+    <eval index="2" phase="Final" priority="5000" name="Set Gear Damage"><![CDATA[
+	  trustme
+	  
+	  ~make sure we're in a gizmo
+	  doneif (isgizmo <> 0)
+	  	  
+	  parent.field[grDamage1].value = field[ghDamage1].value
+	  parent.field[grDamage2].value = field[ghDamage2].value
+	  parent.field[grDamage3].value = field[ghDamage3].value
+	  parent.field[grDamage4].value = field[ghDamage4].value
+	  parent.field[grDamage5].value = field[ghDamage5].value
+	  parent.field[grDamage6].value = field[ghDamage6].value
+	  
+      ]]></eval>	  
     </component>
 
   <!-- Define various component sets associated with the components defined above.
@@ -2167,11 +2310,11 @@
 	
   <!-- Define any entities associated with the components defined above. -->
   <!-- Ammunition Load -->
-  <!-- form="ammogiz"> -->
+  <!-- form="equipgiz"> -->
   <entity
-    id="Ammo"
-    form="ammogiz">
-    <bootstrap thing="AmmoHelper"/>
+    id="EquipmentDetails"
+    form="equipgiz">
+    <bootstrap thing="GearHelper"/>
     </entity>
 	
   </document>

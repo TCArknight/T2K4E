@@ -10,7 +10,7 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grCost" value="350"/>
     <fieldval field="grWeight" value="1"/>
-    <usesource source="srcSAFE" parent="srcTwilight2000" name="Small Arms - Firearms Expansion"/>
+    <usesource source="srcSAFE" parent="srcT2KFan" name="Small Arms - Firearms Expansion"/>
     <tag group="WeaponCat" tag="OtherMilitary"/>
     <tag group="AmmoType" tag="Cal919"/>
     <tag group="WeaponType" tag="SMG"/>

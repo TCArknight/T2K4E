@@ -323,7 +323,7 @@
     <tag group="AmmoCatType" tag="Mortar60"/>
     <tag group="AmmoType" tag="Mortar60"/>
     <holdlimit>AmmoType.Mortar60</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2K81mmMortar" name="81mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
     <fieldval field="wpShort" value="65"/>
@@ -337,7 +337,7 @@
     <tag group="WeaponCat" tag="Mortar"/>
     <tag group="AmmoCatType" tag="Mortar81"/>
     <holdlimit>AmmoType.Mortar81</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2K82mmVasilek" name="82mm Mortar - Vasilek" description="The Vasilek semi-automatic 82mm mortar system has a RoF of 2 and Mag of 4. It must be towed and can’t be broken\ndown. It uses ammo dice just like small arms. On a hit, each on an ammo die lands an additional grenade in the target\nhex or a hex adjacent to it. On a miss, deviation is rolled one additional time for each rolled on the ammo dice" compset="Ranged">
     <fieldval field="wpShort" value="40"/>
@@ -351,7 +351,7 @@
     <tag group="WeaponCat" tag="Mortar"/>
     <tag group="AmmoCatType" tag="Mortar82"/>
     <holdlimit>AmmoType.Mortar82</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2K82mmMortar" name="82mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
     <fieldval field="wpCapacity" value="1"/>
@@ -364,7 +364,7 @@
     <tag group="AmmoCatType" tag="Mortar82"/>
     <tag group="AmmoType" tag="Mortar82"/>
     <holdlimit>AmmoType.Mortar82</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2K42inMortar" name="4.2in Mortar" compset="Ranged">
     <fieldval field="wpShort" value="75"/>
@@ -378,7 +378,7 @@
     <tag group="WeaponCat" tag="Mortar"/>
     <tag group="AmmoCatType" tag="Mortar42"/>
     <holdlimit>AmmoType.Mortar42</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2K120mmMortar" name="120mm Mortar" compset="Ranged">
     <fieldval field="wpShort" value="75"/>
@@ -393,6 +393,6 @@
     <tag group="WeaponCat" tag="Mortar"/>
     <tag group="AmmoCatType" tag="Mortar120"/>
     <holdlimit>AmmoType.Mortar120</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   </document>

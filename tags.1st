@@ -97,24 +97,28 @@
   -->
   <group
     id="Hero">
-    <value id="FixedRace"/>        <!-- Indicates hero is a specific race -->
-    <value id="Minion"/>           <!-- Indicates hero is a minion -->
-    <value id="Dead"/>        <!-- Indicates hero is dead or otherwise out of combat -->
-    <value id="NoDamage"/>    <!-- Indicates no damage history exists for the hero -->
-    <value id="Hand"/>        <!-- Each tag indicates one hand worth of weapons equipped -->
-    <value id="RerollInit"/>  <!-- Indicates that the hero can re-roll initiative values -->
-    <value id="ArchtypePriReq"/>  <!-- Indicates that a primary archetype is required for the hero -->
-    <value id="ArchtypeSecReq"/>  <!-- Indicates that a primary archetype is required for the hero -->
-    <value id="UseArchetypePri"/>  <!-- Indicates that a primary archetype should be shown for the hero -->
-    <value id="UseArchetypeSec"/>  <!-- Indicates that a primary archetype should be shown for the hero -->
-    <value id="UsePride"/>        <!-- Indicates that Pride is used -->
-    <value id="UseDarkSecret"/>   <!-- Indicates that Dark Secret is used -->
-    <value id="UseBigDream"/>     <!-- Indicates that Big Dream is used -->
-    <value id="UseAgenda"/>       <!-- Indicates that Agenda is used -->
-    <value id="UseMoralCode"/>    <!-- Indicates that Moral Code is used -->
-    <value id="UseHowMet"/>       <!-- Indicates that Meeting Method is used -->
-    <value id="UseSigItems"/>     <!-- Indicates that Signature Items is used -->
-    <value id="RankedTalents"/>   <!-- Indicates that hero can have ranked talents -->
+    <value id="FixedRace"/>        									<!-- Indicates hero is a specific race -->
+    <value id="Minion"/>           									<!-- Indicates hero is a minion -->
+    <value id="Dead"/>        										<!-- Indicates hero is dead or otherwise out of combat -->
+    <value id="NoDamage"/>    										<!-- Indicates no damage history exists for the hero -->
+    <value id="Hand"/>        										<!-- Each tag indicates one hand worth of weapons equipped -->
+    <value id="RerollInit"/>  										<!-- Indicates that the hero can re-roll initiative values -->
+    <value id="ArchtypePriReq"/>  									<!-- Indicates that a primary archetype is required for the hero -->
+    <value id="ArchtypeSecReq"/>  									<!-- Indicates that a primary archetype is required for the hero -->
+    <value id="UseArchetypePri"/>  									<!-- Indicates that a primary archetype should be shown for the hero -->
+    <value id="UseArchetypeSec"/>  									<!-- Indicates that a primary archetype should be shown for the hero -->
+    <value id="UsePride"/>        									<!-- Indicates that Pride is used -->
+    <value id="UseDarkSecret"/>   									<!-- Indicates that Dark Secret is used -->
+    <value id="UseBigDream"/>     									<!-- Indicates that Big Dream is used -->
+    <value id="UseAgenda"/>       									<!-- Indicates that Agenda is used -->
+    <value id="UseMoralCode"/>    									<!-- Indicates that Moral Code is used -->
+    <value id="UseHowMet"/>      		 							<!-- Indicates that Meeting Method is used -->
+    <value id="UseSigItems"/>     									<!-- Indicates that Signature Items is used -->
+    <value id="RankedTalents"/>   									<!-- Indicates that hero can have ranked talents -->
+    <value id="BrTypeSelected" name="Branch Type Selected" />       <!-- Archetype has been selected -->
+    <value id="NeedBranchType" name="Need Branch Type" />        	<!-- Need to Select a Branch Type -->
+    <value id="BrRankSelected" name="Branch Rank Selected" />    	<!-- Archetype has been selected -->
+    <value id="NoBranchNeeded" name="No Branch Needed" />    		<!-- Archetype has been selected -->
     </group>
 
   <group
@@ -180,34 +184,47 @@
   <group
     id="CareerType"
     sequence="explicit">
-    <value id="Military" order="1"/>
-    <value id="Police" order="2"/>
-    <value id="Crime" order="3"/>
-    <value id="Intelligence" order="4"/>
-    <value id="BlueCollar" name="Blue Collar" order="5"/>
-    <value id="Education" order="6"/>
-    <value id="WhiteCollar"  name="White Collar" order="7"/>
+    <value id="Military" order="10"/>
+    <value id="Police" order="20"/>
+    <value id="Crime" order="30"/>
+    <value id="Intelligence" order="40"/>
+    <value id="BlueCollar" name="Blue Collar" order="50"/>
+    <value id="Education" order="60"/>
+    <value id="WhiteCollar"  name="White Collar" order="70"/>
     </group>
 
   <group
     id="Archetype"
 	dynamic="yes"
     inherit="Lifepath">
-    <value id="ArchetypeSelect" name="Archetype Selected" />        <!-- Archetype has been selected -->
-    <value id="BranchSelect" name="Branch Selected" />        <!-- Archetype has been selected -->
-    <value id="IsMilitary" name="Military Archetype" />        <!-- Archetype has been selected -->
+    <value id="ArchetypeSelected" name="Archetype Selected" />        	<!-- Archetype has been selected -->
+    <value id="BranchSelected" name="Branch Selected" />        		<!-- Archetype has been selected -->
+    <value id="IsMilitary" name="Military Archetype" />        		<!-- Archetype has been selected -->
     </group>
 	
   <group
     id="ArchetypeBranches"
     inherit="CareerType">
-    <value id="Army"  name="Army" />
-    <value id="Marines"  name="Marines" />
+    <value id="Army" order="11"/>
+    <value id="Navy" order="12"/>
+    <value id="AirForce"  name="Air Force" order="13"/>
+    <value id="Marines" order="14"/>
     </group>
 
   <group
     id="ServiceBranch"
     inherit="CareerType"
+	dynamic="yes">
+    </group>
+	
+  <group
+    id="BranchType"
+    dynamic="yes">
+    </group>
+
+  <group
+    id="BranchTypeAllow"
+    inherit="BranchType"
 	dynamic="yes">
     </group>
 	
@@ -220,10 +237,11 @@
 
   <group
     id="TalentCat"
-    dynamic="yes">
-    <value id="Archetype"/>   <!-- Talent is associated with an archetype -->
-    <value id="General"/>     <!-- Talent is available for anyone -->
-    <value id="Career"/>      <!-- Talent is associated with a career -->
+    dynamic="yes"
+    sequence="explicit">
+    <value id="Archetype" order="10"/>   <!-- Talent is associated with an archetype -->
+    <value id="General" order="20"/>     <!-- Talent is available for anyone -->
+    <value id="Career" order="10"/>      <!-- Talent is associated with a career -->
     </group>
 	
   <group
@@ -293,7 +311,7 @@
     </group>
 
   <group
-    id="HLOCharacterType">
+    id="CharacterType">
     <value id="PC" name="PC"/>
     <value id="PCStandIn" name="Stand-In PC"/>
     <value id="NPC" name="NPC"/>
@@ -331,7 +349,9 @@
     <value id="StackArmor" name="Stack Armor"/>                   <!-- Identifies armor that stacks with other armor -->
     <value id="AmmoCarried" name="Ammo Carried"/>                 <!-- Identifies ammunition carried by the hero -->
     <value id="Magazine" name="Magazine"/>                        <!-- Identifies ammunition holder carried by the hero -->
-    <value id="SelfContained" name="Self-Contained"/>                        <!-- Identifies ammunition holder carried by the hero -->
+    <value id="SelfContained" name="Self-Contained"/>             <!-- Identifies ammunition holder carried by the hero -->
+    <value id="IsDamaged" name="Damaged"/>                          <!-- Identifies an item has taken damage and is iat less than full reliability -->
+    <value id="IsBroken" name="Broken"/>                          <!-- Identifies an item has taken damage and is iat less than full reliability -->
     </group>
 
   <!-- MaxRange group - 

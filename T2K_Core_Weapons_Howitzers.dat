@@ -78,7 +78,7 @@
     <tag group="AmmoCatType" tag="Howitzer105"/>
     <tag group="AmmoType" tag="Shell105"/>
     <holdlimit>AmmoType.Shell105</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="amT2KH122mmCBA" name="122mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
@@ -153,7 +153,7 @@
     <tag group="AmmoCatType" tag="Howitzer122"/>
     <tag group="AmmoType" tag="Shell122"/>
     <holdlimit>AmmoType.Shell122</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="amT2KH152mmCBA" name="152mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
@@ -228,7 +228,7 @@
     <tag group="AmmoCatType" tag="Howitzer152"/>
     <tag group="AmmoType" tag="Shell152"/>
     <holdlimit>AmmoType.Shell152</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="amT2KH155mmCBA" name="155mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
@@ -303,7 +303,7 @@
     <tag group="AmmoCatType" tag="Howitzer155"/>
     <tag group="AmmoType" tag="Shell155"/>
     <holdlimit>AmmoType.Shell155</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="amT2KH203mmCBA" name="203mm CHEM (Blistering Agent)" description="See Pages 79-80 for details on Blistering Agents" compset="Ammunition" stacking="merge">
     <fieldval field="amDamage" value="0"/>
@@ -378,7 +378,7 @@
     <tag group="AmmoCatType" tag="Howitzer203"/>
     <tag group="AmmoType" tag="Shell203"/>
     <holdlimit>AmmoType.Shell203</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="amT2KH203mmNUKE1k" name="203mm NUKE (1kt)" description="This is a 1Kt Nuclear Warhead for the 203mm Howitzer.\nThe Rules state that the 203mm Howitzer is capable of fireing Nukes\nThe Nukes for the 203mm Howitzer  correspond to the US W33 nuclear warhead.\nWhile the yeilds for this device in its four configurations are classified, it was tested in 1kt and 40kt yields\nThe T2K 4e rules really don&apos;t handle Nuclear blasts, but here&apos;s the expected results of a 1kt blast.\nUsing NukeMap here are approximations:\n\nDeath Radius: 8 hexes\n\nIf outside of the Death Radius, fine the radius for each damage type and apply it.\n\nBlast Damage:\n  A        9-22 hexes\n  B        10-46 hexes\n  D       46-118 hexes\n\nFire Damage:\n  A       8-50 hexes\n  B      51-54 hexes \n  C      55-66 hexes\n  D      67-94 hexes\n\nRadiation Attack\n   50       8-51 hexes\n   10       51-73 hexes\n    6         74-81 hexes\n    5         82-84 hexes\n    1        85-111 hexes\n\nSource: https://nuclearsecrecy.com/nukemap/" compset="Ammunition" stacking="merge">
     <usesource source="srcT2K"/>

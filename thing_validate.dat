@@ -54,7 +54,52 @@
       ]]></evalrule>
 
     </thing>
+  <!-- Validate archetype skill selection -->
+  <thing
+    id="valArchetypeSkl"
+    name="Archetype Skills"
+    compset="Simple">
+    <tag group="Helper" tag="Bootstrap"/>
 
+    <!-- Make sure that we have a faction selected if required -->
+    <evalrule index="1" phase="Validate" priority="8000" message="One Key Skill must be a B rating."><![CDATA[
+      ~if archetypes are not required, we're good
+      validif (hero.tagis[source.srcT2KArchetypes] = 0)
+	  
+	  foreach pick in hero from Skill where "fieldval:sklIsKey <> 0"
+	    ~ at least a B in one Key Skill
+        validif (eachpick.field[trtUser].value = 5)
+	    nexteach
+		
+      ]]></evalrule>
+    <evalrule index="2" phase="Validate" priority="8000" message="Two Skills must be a C rating."><![CDATA[
+      ~if archetypes are not required, we're good
+      validif (hero.tagis[source.srcT2KArchetypes] = 0)
+	  
+	  var cnt as number
+	  
+	  foreach pick in hero from Skill where "fieldval:trtUser = 4"
+	    cnt += 1
+	    nexteach
+		
+	  validif (cnt = 2)
+	  
+      ]]></evalrule>
+    <evalrule index="3" phase="Validate" priority="8000" message="Three Skills must be a D rating."><![CDATA[
+      ~if archetypes are not required, we're good
+      validif (hero.tagis[source.srcT2KArchetypes] = 0)
+	  
+	  var cnt as number
+	  
+	  foreach pick in hero from Skill where "fieldval:trtUser = 3"
+	    cnt += 1
+	    nexteach
+		
+	  validif (cnt = 3)
+	  
+      ]]></evalrule>	  
+    </thing>
+	
   <!-- relationship thing for validation reporting -->
   <thing
     id="valRelationship"

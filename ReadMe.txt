@@ -1,3 +1,8 @@
+12/7/22
+New -
+* Archetypes (complete)
+* Urban Operations (2 Archetypes, 5 Specialties)
+
 11/17/22
 Fixed -
 * Vehicle Sheets not only display vehicle-related information.

@@ -100,7 +100,7 @@
     name="Free Specialties Points"
     compset="Resource"
     panellink="basics">
-    <fieldval field="resObject" value="Skill"/>
+    <fieldval field="resObject" value="Specialty"/>
     <fieldval field="resMax" value="0"/>
 
     <!-- Automatically add the resource to every actor -->
@@ -108,11 +108,12 @@
 
     <!-- Adjust points based on Age category -->
     <eval index="1" phase="Setup" priority="1000" name="Adjust Specialty Count"><![CDATA[
-	  field[resMax].value += herofield[acBonusTalents].value
+	  field[resMax].value += herofield[acBonusTalents].value + herofield[acArchTalNumT2K].value
  
       ]]></eval>
 
     </thing>	
+	
   <!-- Damage transaction handler for use when applying damage on the In-Play tab -->
   <thing
     id="mscHealthDmg"
@@ -183,6 +184,13 @@
     id="mscService"
     name="Service Info"
     compset="Service">
+    </thing>
+
+  <!-- Personal information details used on the Personal tab -->
+  <thing
+    id="mscArchDetails"
+    name="Archetype Details"
+    compset="ArchetypeDetails">
     </thing>
 	
   <!-- Basic user-added image that is managed through the gallery on Personal tab -->
@@ -306,14 +314,14 @@
     id="typHero"
     name="Type: Hero (PC)"
     compset="CharType">
-    <tag group="HLOCharacterType" tag="PC"/>
+    <tag group="CharacterType" tag="PC"/>
     </thing>
 	
   <thing
     id="typNPC"
     name="Type: Non-Player Character"
     compset="CharType">
-    <tag group="HLOCharacterType" tag="NPC"/>
+    <tag group="CharacterType" tag="NPC"/>
     </thing>
 
   <thing
@@ -333,7 +341,7 @@
     id="typStandin"
     name="Type: Standin"
     compset="CharType">
-    <tag group="HLOCharacterType" tag="PCStandIn"/>
+    <tag group="CharacterType" tag="PCStandIn"/>
     <tag group="HideTab" tag="basics"/>
     <tag group="HideTab" tag="talents"/>
     <tag group="HideTab" tag="advances"/>
@@ -369,9 +377,9 @@
     </thing>
 	
   <thing 
-    id="AmmoHelper"
+    id="GearHelper"
 	name="Ammunition Helper"
-	compset="AmmoHelper">
+	compset="GearHelper">
     </thing>
 
 	

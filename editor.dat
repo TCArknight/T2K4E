@@ -65,9 +65,9 @@
     description="Archetypes have no special fields - only a name. If a race confers an ability,{br}create it as a special ability and bootstrap it from the race."
     summary="Defines a Archetype that can be selected by a character.">
     <inputthing
-      name="Primary/Secondary Archetype?"
-      helptext="Specify whether this is a Primary or Secondary Archetype.">
-	  <it_tagpick group="ArchetypeCat" tag="?" />
+      name="Type of Archetype?"
+      helptext="Specify what type of Archetype this is (defaults to T2K) but could be primary or secondary for other systems.">
+	  <it_tagpick group="ArchetypeCat" tag="?" require="yes" deftag="T2K"/>
       </inputthing>
 
     <inputthing
@@ -75,7 +75,21 @@
       helptext="Specify which branches are available to this archetype.">
       <it_taglist group="ArchetypeBranches" tag="?" />
       </inputthing>
-	  
+    <inputthing
+      name="Valid Branch Types"
+      helptext="Specify which branches are available to this archetype.">
+      <it_taglist group="BranchTypeAllow" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Valid Ranks"
+      helptext="Specify which military ranks are available to this archetype.">
+      <it_taglist group="ArchetypeRank" tag="?" />
+      </inputthing>
+    <inputthing
+      name="CUF"
+      helptext="Specify the starting CUF (3=D (default),4=C, 5=B, 6=A).">
+      <it_field field="arCUF"/>
+      </inputthing>	  
     <inputthing
       name="Key Attribute"
       helptext="Specify any key attribute for the Archetype">
@@ -87,26 +101,48 @@
       <it_taglist group="KeySkill" tag="?" />
       </inputthing>
     <inputthing
-      name="Talents"
+      name="Talents/Specialties"
       helptext="Details about Primary and Secondary archetypes">
       <it_separator/>
       </inputthing>
     <inputthing
-      name="Granted Talents"
-      helptext="Select any Talents provided by the Archetype">
-      <it_bootcustom compset="Talent">
-        </it_bootcustom>
-      </inputthing>
-    <inputthing
-      name="Select Talents"
-      helptext="Specify the tagexpr for selecting talents related to the Archetype.">
-      <it_field field="arTalentSelect"/>
-      </inputthing>	  
-    <inputthing
       name="Number of Talents"
       helptext="Specify the number of talents to select (if any).">
-      <it_field field="acArchNumTalents"/>
+      <it_field field="arArchNumTalents"/>
       </inputthing>	
+    <inputthing
+      name="Talents/Specialties"
+      helptext="Select any Talents/Specialties provided by the Archetype">
+      <it_taglist group="RecommendedSpec" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Your Moral Code"
+      helptext="Specify your moral code.">
+      <it_field field="arMoralCode"/>
+      </inputthing>	
+    <inputthing
+      name="Your Big Dream"
+      helptext="Specify your big dream.">
+      <it_field field="arBigDream"/>
+      </inputthing>	
+	  
+    <inputthing
+      name="How Met Group"
+      helptext="Specify how you met the group.">
+      <it_field field="arHowMet"/>
+      </inputthing>	
+	  
+    <!-- <inputthing
+      name="Select Talents/Specialties"
+      helptext="Specify the tagexpr for selecting talents related to the Archetype.">
+      <it_field field="arTalentSelect"/>
+      </inputthing>	  -->
+
+    <inputthing
+      name="Starting Gear"
+      helptext="Specify the starting gear.">
+      <it_field field="arStartGear"/>
+      </inputthing>
     <inputthing>
       <it_groupref id="SourceInfo"/>
       </inputthing>
@@ -125,6 +161,11 @@
       <it_tagpick group="ArchetypeBranches" tag="?" require="yes" deftag="BlueCollar"/>
       </inputthing>
 
+    <inputthing
+      name="Select Branch Type?"
+      helptext="Does this Branch have a type to select?">
+      <it_tagcheck group="Hero" tag="NeedBranchType"/>
+      </inputthing>
     <inputthing
       name="Military Branch?"
       helptext="Is this a Military Branch?">
@@ -847,7 +888,7 @@
       </inputthing>
     <inputthing
       name="--"
-      helptext="Specific areas that the Armor protects">
+      helptext="--">
       <it_separator/>
       </inputthing>
 	  
@@ -908,7 +949,18 @@
       </inputthing>
     </editthing>
 
-
+  <!-- Mechanics editthing -->
+  <editthing
+    compset="BranchType"
+    name="Branch Type"
+    prefix="mil"
+    description="A simple item to allow for selecting what branch of the career the character serves in."
+    summary="Defines a set of custom behaviors that are defined by the user and applied to each character.">
+    <inputthing>
+      <it_groupref id="SourceInfo"/>
+      </inputthing>
+    </editthing>
+	
   <!-- Mechanics editthing -->
   <editthing
     compset="Mechanics"

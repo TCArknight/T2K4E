@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="spcT2KAuthority" name="Authority" description="You can roll {b}COMMAND{/b} to calm down a rowdy crowd. This specialty cannot be used on hostile enemies." compset="Specialty">
+    <usesource source="srcT2KUrbanOps"/>
+    </thing>
+  <thing id="spcT2KCQSpec" name="Close Quarters Specialist" description="The penalty for shooting in close combat (page 63 in the Player’s Manual) is reduced one step, i.e. no penalty for pistols, carbines and SMGs, and −1 for other ranged weapons." compset="Specialty">
+    <usesource source="srcT2KUrbanOps"/>
+    </thing>
+  <thing id="spcT2KCryptograph" name="Cryptographer" description="Gives a +1 bonus to any {b}TECH{/b} roll involving breaking or creating encrypted messages and codes." compset="Specialty">
+    <usesource source="srcT2KUrbanOps"/>
+    </thing>
+  <thing id="spcT2KLiar" name="Liar" description="Gives a +1 bonus to any {b}PERSUASION{/b} roll when lying to someone." compset="Specialty">
+    <usesource source="srcT2KUrbanOps"/>
+    </thing>
+  <thing id="spcT2KThief" name="Thief" description="Gives a +1 bonus to {b}RECON{/b} rolls when picking pockets and {b}TECH{/b} rolls when picking locks." compset="Specialty">
+    <usesource source="srcT2KUrbanOps"/>
+    </thing>
+  <thing id="arcCop" name="Cop" description="They may have kept the peace before the war or abused their power. They may have served and protected or merely served themselves or the state. Cops aren’t monolithic any more than another career, but they tend to live for the Job. The Job matters. Justice matters or, if you were ex secret police, the state matters. Maybe you became disillusioned and decided crime and justice were two sides of the same coin and you’d rather just collect the coins. It doesn’t matter. You were a cop. Maybe, you still are. Maybe, just maybe, that still matters in this world." compset="Archetype" uniqueness="unique">
+    <fieldval field="arTalentSelect" value="thingid.spcAuthority|thingid.spcCQSpecialist|tingid.spcT2KInterrogat"/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arStartGear" value="You start the game with:{br}* Any pistol appropriate for your nationality{br}* D6 reloads for your weapon{br}* D6 rations of domestic food{br}* D6 rations of clean water"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself.{br}* You helped them out of serious trouble when they came to town. You’ve been together ever since.{br}* You were military police or secret police and reassigned to this unit prior to the collapse of your command structure.{br}* You were shot and beaten by looters while trying to protect much-needed supplies. The looters got the supplies, but these people saved you."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself.{br}* Rebuild your city’s police force into what it once was.{br}* Find the perp that got away just before the bombs fell. You haven’t forgotten what he did.{br}* Use your skill and authority to run this town."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself.{br}* Without order, we are no better than animals.{br}* Protecting people is the only nobility left in the world.{br}* Authority is just another way to gain personal wealth and influence."/>
+    <fieldval field="arCUF" value="4"/>
+    <usesource source="srcT2KUrbanOps"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="ArchetypeBranches" tag="Police"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="KeyAttribute" tag="attrStr"/>
+    <tag group="KeySkill" tag="skT2KCloseCombat"/>
+    <tag group="KeySkill" tag="skT2KPersuasion"/>
+    <tag group="RecommendedSpec" tag="spcT2KAuthority"/>
+    <tag group="RecommendedSpec" tag="spcT2KCQSpec"/>
+    <tag group="RecommendedSpec" tag="spcT2KInterrogat"/>
+    <tag group="BranchTypeAllow" tag="milT2KArmy"/>
+    <tag group="BranchTypeAllow" tag="milT2KMarines"/>
+    <tag group="BranchTypeAllow" tag="milT2KNavy"/>
+    <tag group="ArchetypeRank" tag="rnkT2KCorporal"/>
+    <tag group="ArchetypeRank" tag="rnkT2KFirstLt"/>
+    <tag group="ArchetypeRank" tag="rnkT2KSergeant"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    </thing>
+  <thing id="arcCriminal" name="Criminal" description="Society was never stable. That was an illusion. You saw through it and decided to make the gears grinding down the world work for you. After it all fell apart, you weren’t  surprised. You figure there are two forces in the world: order and entropy. Entropy always wins in the end, and you weren’t dumb enough to back a losing horse. You might have been a thief, a drug dealer, and gangster, or a hedge fund manager. It doesn’t matter. The world was always two steps away from Armageddon in your eyes. On the other side of it, you’re getting along better than most." compset="Archetype" uniqueness="unique">
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arStartGear" value="You start the game with:{br}* Any civilian firearm{br}* D3 reloads for your weapon{br}* D6 rations of domestic food{br}* D6 rations of clean water{br}* D6 rounds of ammo to use as currency"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself.{br}* Get by on your wits and your moral flexibility.{br}* Find the cop that put you away. You almost died in that prison.{br}* Rise to the top of the black market."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself.{br}* Law and order are for the sheep.{br}* The world forces you to take what you need and what you want.{br}* It’s only crime if you’re poor. Otherwise, they call it business."/>
+    <usesource source="srcT2KUrbanOps"/>
+    <tag group="ArchetypeBranches" tag="Army"/>
+    <tag group="ArchetypeBranches" tag="BlueCollar"/>
+    <tag group="ArchetypeBranches" tag="Crime"/>
+    <tag group="ArchetypeBranches" tag="Education"/>
+    <tag group="ArchetypeBranches" tag="Intelligence"/>
+    <tag group="ArchetypeBranches" tag="Marines"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="ArchetypeBranches" tag="WhiteCollar"/>
+    <tag group="KeySkill" tag="skT2KRecon"/>
+    <tag group="ArchetypeBranches" tag="Police"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="KeyAttribute" tag="attrStr"/>
+    <tag group="KeySkill" tag="skT2KCloseCombat"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    <tag group="RecommendedSpec" tag="spcT2KKiller"/>
+    <tag group="RecommendedSpec" tag="spcT2KLiar"/>
+    <tag group="RecommendedSpec" tag="spcT2KThief"/>
+    </thing>
+  </document>

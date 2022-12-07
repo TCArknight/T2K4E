@@ -1042,7 +1042,7 @@
       <bootstrap thing="vebT2KM60A3"></bootstrap>
       </minion>
     </thing>
-  <thing id="vehT2KSovMil" name="-- Soviet Military --" compset="Vehicle" isshowonly="yes">
+  <thing id="hdrSovietMil" name="-- Soviet Military --" compset="Vehicle" isshowonly="yes">
     <tag group="VehicleCat" tag="SovMil"/>
     <tag group="VehicleType" tag="Horse"/>
     <minion id="Vehicle" ownmode="no" livefield="minEnabled">
@@ -1723,6 +1723,1066 @@
       </bootstrap>
     <bootstrap thing="wpT2KPKM">
       <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KTGB11" name="TGB-11" description="The 4x4 Volvo C303 went into production as the Terrängbil 11 in the mid-1970s as the Swedish standard light utility vehicle." compset="Vehicle">
+    <fieldval field="grCost" value="15000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KTGB11"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KTGB11" name="TGB-11" description="The 4x4 Volvo C303 went into production as the Terrängbil 11 in the mid-1970s as the Swedish standard light utility vehicle." compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="9"/>
+    <fieldval field="vebTravelSpeedOff" value="6"/>
+    <fieldval field="vebArmorFront" value="1"/>
+    <fieldval field="vebArmorLeft" value="1"/>
+    <fieldval field="vebArmorRight" value="1"/>
+    <fieldval field="vebArmorBack" value="1"/>
+    <fieldval field="vebFuelCapacity" value="80"/>
+    <fieldval field="vebFuelConsumption" value="2"/>
+    <fieldval field="vebPassengers" value="6"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    </thing>
+  <thing id="hdrSwedishMil" name="-- Swedish Military --" compset="Vehicle" isshowonly="yes">
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="Horse"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="USMilHeader"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="hdrPolishMil" name="-- Polish Military --" compset="Vehicle" isshowonly="yes">
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="Horse"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="USMilHeader"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="hdrOtherMil" name="-- Other Military --" compset="Vehicle" isshowonly="yes">
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="Horse"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="USMilHeader"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vehT2KUAZ469BPol" name="UAZ-469B" description="The Polish UAZ-469B is identical to the Soviet UAZ-469B.\n\nThe UAZ-469B is a light off-road utility vehicle, similar in concept to the Jeep, which was introduced in the mid-1960s. Its capacity, low cost, and widespread availability made it popular among the former Warsaw Pact nations as well as the militaries of other nations aligned with the Soviet Union." compset="Vehicle">
+    <fieldval field="grCost" value="7500"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="4WDCar"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KUAZ469B"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vehT2KHonk4012" name="Honker 4012" description="The Honker is a lightduty 4x4 pickup truck with an enclosed cab adopted in the mid-1980s. It can carry up to ten passengers, although fewer if they are loaded for combat." compset="Vehicle">
+    <fieldval field="grCost" value="20000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KHonk4012"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KHonk4012" name="Honker 4012" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="2"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="3"/>
+    <fieldval field="vebArmorFront" value="1"/>
+    <fieldval field="vebArmorLeft" value="1"/>
+    <fieldval field="vebArmorRight" value="1"/>
+    <fieldval field="vebArmorBack" value="1"/>
+    <fieldval field="vebFuelCapacity" value="110"/>
+    <fieldval field="vebFuelConsumption" value="2"/>
+    <fieldval field="vebPassengers" value="10"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    </thing>
+  <thing id="vehT2KTGB13" name="TGB-13" description="The Tgb 13 is a six-wheeled version of the Tgb 11, that can carry a heavier load." compset="Vehicle">
+    <fieldval field="grCost" value="15000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KTGB13"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KTGB13" name="TGB-13" description="The Tgb 13 is a six-wheeled version of the Tgb 11, that can carry a heavier load." compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="6"/>
+    <fieldval field="vebArmorFront" value="1"/>
+    <fieldval field="vebArmorLeft" value="1"/>
+    <fieldval field="vebArmorRight" value="1"/>
+    <fieldval field="vebArmorBack" value="1"/>
+    <fieldval field="vebFuelCapacity" value="80"/>
+    <fieldval field="vebFuelConsumption" value="3"/>
+    <fieldval field="vebPassengers" value="6"/>
+    <fieldval field="vebCargoCapacity" value="350"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    </thing>
+  <thing id="vehT2KLandRover" name="Land Rover" compset="Vehicle">
+    <fieldval field="grCost" value="10000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="4WDCar"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KLandRover"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KLandRover" name="Land Rover" description="A 4x4 light utility vehicle in British service since the late 1940s." compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="6"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="10"/>
+    <fieldval field="vebTravelSpeedOff" value="6"/>
+    <fieldval field="vebArmorFront" value="1"/>
+    <fieldval field="vebArmorLeft" value="1"/>
+    <fieldval field="vebArmorRight" value="1"/>
+    <fieldval field="vebArmorBack" value="1"/>
+    <fieldval field="vebFuelCapacity" value="75"/>
+    <fieldval field="vebFuelConsumption" value="2"/>
+    <fieldval field="vebPassengers" value="3"/>
+    <fieldval field="vebCargoCapacity" value="75"/>
+    <fieldval field="vebMainWeapon" value="M240B"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="4WDCar"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <bootstrap thing="wpT2KM240B"></bootstrap>
+    </thing>
+  <thing id="vehT2KBV206S" name="BV 206 S" description="The Bandvagn 206 is a tracked, articulated all-terrain transport that can carry up to 17 soldiers or 2.5 tons of cargo. It was developed during the 1970s and is particularly useful in winter environments due to its low ground pressure.\n\nThe Bv 206 S is the armored personnel carrier version of the Bv 206. It can carry up to twelve combat-ready soldiers." compset="Vehicle">
+    <fieldval field="grCost" value="50000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KBV206S"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KBV206S" name="BV 206 S" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="3"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="4"/>
+    <fieldval field="vebTravelSpeedOff" value="4"/>
+    <fieldval field="vebArmorFront" value="3"/>
+    <fieldval field="vebArmorLeft" value="3"/>
+    <fieldval field="vebArmorRight" value="3"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebFuelCapacity" value="160"/>
+    <fieldval field="vebFuelConsumption" value="4"/>
+    <fieldval field="vebPassengers" value="12"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="Ksp-88 (P)"/>
+    <fieldval field="vebSecWeapon" value="R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <bootstrap thing="wpT2KKSP88">
+      <autotag group="VehicleWpnMain" tag="Pintle"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    </thing>
+  <thing id="vehT2KSTRF90" name="STRF 90" description="The Stridsfordon 90 IFV was developed during the 1980s and entered Swedish service shortly before the war started. It can carry eight soldiers in addition to the three crew and has excellent mobility in snow and mud." compset="Vehicle">
+    <fieldval field="grCost" value="200000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KSTRF90"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KSTRF90" name="STRF 90" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="7"/>
+    <fieldval field="vebArmorFront" value="5"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebReliability" value="5"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebPassengers" value="8"/>
+    <fieldval field="vebMainWeapon" value="40mm (T), Tm"/>
+    <fieldval field="vebSecWeapon" value="Ksp 58 (C), SD, R"/>
+    <fieldval field="vebFuelCapacity" value="520"/>
+    <fieldval field="vebFuelConsumption" value="10"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleWpnMain" tag="FCS"/>
+    <tag group="VehicleWpnMain" tag="Thermal"/>
+    <tag group="VehicleWpnSec" tag="Radio"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2kC40mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KPATGB180" name="PATGB 180" description="The Pansarterrängbil 180 is a Finnish-produced, amphibious 6x6 armored personnel carrier adopted by Sweden in the mid-1980s. It can carry up to eight soldiers, who can make use of the firing ports to defend the vehicle from attack." compset="Vehicle">
+    <fieldval field="grCost" value="100000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KPATGB180"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KPATGB180" name="PATGB 180" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="4"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="140"/>
+    <fieldval field="vebFuelConsumption" value="6"/>
+    <fieldval field="vebCrew" value="2"/>
+    <fieldval field="vebPassengers" value="16"/>
+    <fieldval field="vebCargoCapacity" value="400"/>
+    <fieldval field="vebMainWeapon" value="Ksp 88 (T)"/>
+    <fieldval field="vebSecWeapon" value="R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KKSP88">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KPBV302" name="PBV 302" description="The Pansarbandvagn 302 is a conventional APC developed in the 1960s and produced through the mid-1970s. Although officially replaced by the Strf 90, there are still many in service. The PBV 302 can carry eight soldiers in addition to the three crew." compset="Vehicle">
+    <fieldval field="grCost" value="125000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KPBV302"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KPBV302" name="PBV 302" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="6"/>
+    <fieldval field="vebTravelSpeedOff" value="5"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelConsumption" value="8"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebPassengers" value="8"/>
+    <fieldval field="vebCargoCapacity" value="200"/>
+    <fieldval field="vebMainWeapon" value="23mm (T)"/>
+    <fieldval field="vebFuelCapacity" value="285"/>
+    <fieldval field="vebSecWeapon" value="Ksp 58 (P) , R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KC23mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KKSP58B">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KSTRV103C" name="STRV 103C" description="The Stridsvagn 103C main battle tank was developed in the 1950s and was ahead of its time, using a turbine engine, an autoloader, and a low turretless superstructure. Due to the hull-mounted configuration, the fire control system on the Strv 103C does not allow firing and moving in the same round." compset="Vehicle">
+    <fieldval field="grCost" value="600000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KSTRV103C"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KSTRV103C" name="STRV 103C" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="9"/>
+    <fieldval field="vebTravelSpeedOff" value="7"/>
+    <fieldval field="vebArmorFront" value="8"/>
+    <fieldval field="vebArmorLeft" value="6"/>
+    <fieldval field="vebArmorRight" value="6"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="960"/>
+    <fieldval field="vebFuelConsumption" value="12"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="105mm (H), FCS, IR"/>
+    <fieldval field="vebSecWeapon" value="Ksp 58 x2 (C), Ksp 58 (P) , R"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleCat" tag="USMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KC105mm">
+      <autotag group="VehicleWpnMain" tag="Hull"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    <bootstrap thing="eqT2KInfrared"></bootstrap>
+    <bootstrap thing="wpT2KKSP58B">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      <assignval field="stackQty" value="2"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KKSP58B">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KSTRV121" name="STRV 121" description="The Strv 121 main battle tank is the German Leopard 2A4 developed in the 1970s and entering Swedish service in the mid-1990s. It was due to be replaced by the Strv 122 (Leopard 2A5) just as the war broke out." compset="Vehicle">
+    <fieldval field="grCost" value="600000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KSTRV103C"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KSTRV121" name="STRV 121" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="10"/>
+    <fieldval field="vebTravelSpeedOff" value="9"/>
+    <fieldval field="vebArmorFront" value="12"/>
+    <fieldval field="vebArmorLeft" value="10"/>
+    <fieldval field="vebArmorRight" value="10"/>
+    <fieldval field="vebArmorBack" value="6"/>
+    <fieldval field="vebFuelCapacity" value="1200"/>
+    <fieldval field="vebFuelConsumption" value="30"/>
+    <fieldval field="vebCrew" value="4"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="120mm (T), FCS, Tm"/>
+    <fieldval field="vebSecWeapon" value="MG3 (C), MG3 (P), SD, R"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KC120mm">
+      <autotag group="VehicleWpnMain" tag="Hull"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    </thing>
+  <thing id="vehT2KSTAR266" name="Star 266" description="The Star 266 is a 6x6 truck capable of carrying up to 3.5 tons of cargo. It was adopted in the mid-1970s and widely used in its primary role as well as that of a mobile command post, liquid transport, decontamination vehicle, and crane truck." compset="Vehicle">
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="HvyTruck"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KSTAR266"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KSTAR266" name="Star 266" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="2"/>
+    <fieldval field="vebCombatSpeedOff" value="1"/>
+    <fieldval field="vebTravelSpeedOn" value="5"/>
+    <fieldval field="vebTravelSpeedOff" value="2"/>
+    <fieldval field="vebArmorFront" value="1"/>
+    <fieldval field="vebArmorLeft" value="1"/>
+    <fieldval field="vebArmorRight" value="1"/>
+    <fieldval field="vebArmorBack" value="1"/>
+    <fieldval field="vebFuelCapacity" value="300"/>
+    <fieldval field="vebFuelConsumption" value="4"/>
+    <fieldval field="vebPassengers" value="12"/>
+    <fieldval field="vebCargoCapacity" value="850"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="HvyTruck"/>
+    </thing>
+  <thing id="vehT2KZil131Pol" name="ZIL-131" description="The Polish ZIL-131 is identical to the Soviet ZIL-131.\n\nA general-purpose 6x6 truck. Introduced in the 1960s, it forms the foundation of a variety of cargo vehicles as well as rocket launcher systems." compset="Vehicle">
+    <fieldval field="grCost" value="25000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="HvyTruck"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KZIL131"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vehT2KGAZ66Pol" name="GAZ-66" description="The Polish GAZ-66 is similar to the Soviet GAZ-66.\n\nA widely used medium-sized 4x4 truck in service since the mid-1960s. There are numerous variants, including an ambulance, chemical disinfecting station, and rocket launcher system." compset="Vehicle">
+    <fieldval field="grCost" value="15000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="LgtTruck"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KGAZ66"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vehT2KRDM2Pol" name="BRDM-2" description="The Polish BRDM-2 is identical to the Soviet BRDM-2.\n\nThe Boyevaya Razvedyvatelnaya Dozornaya Mashina is a 4x4 amphibious armored car adopted for reconnaissance duties in the 1960s. It has four extra, smaller, drive wheels that it can engage in particularly difficult terrain, and can be fitted with antitank missile systems." compset="Vehicle">
+    <fieldval field="grCost" value="50000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="ArmorCar"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KBRDM2"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vehT2KMTLB" name="MT-LB" description="The MT-LB is an older Soviet amphibious tracked armored transport that is widely used by the Polish armed forces and has even been upgraded with Polish engines in some cases. 11 soldiers or up to 2 tons of cargo may be carried. It is also often used as a prime mover for artillery." compset="Vehicle">
+    <fieldval field="grCost" value="75000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KMTLB"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KMTLB" name="MT-LB" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="6"/>
+    <fieldval field="vebTravelSpeedOff" value="5"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="450"/>
+    <fieldval field="vebFuelConsumption" value="6"/>
+    <fieldval field="vebCrew" value="2"/>
+    <fieldval field="vebPassengers" value="11"/>
+    <fieldval field="vebCargoCapacity" value="400"/>
+    <fieldval field="vebMainWeapon" value="NSW (P)"/>
+    <fieldval field="vebSecWeapon" value="AGS-17, R"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KNSW">
+      <autotag group="VehicleWpnMain" tag="Pintle"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KBWP1" name="BWP-1" description="The Polish BWP-1 is similar to the Soviet BMP-1.\n\nThe BMP-1, or Boyevaya Mashina Pekhoty, was the first true infantry fighting vehicle and inspired the wave of Western IFVs that followed. It carries eight passengers (who can fire from inside the vehicle) in addition to the three crew, is amphibious, and mounts a 73mm cannon. Although replaced by the BMP-2, it still serves in many second- and third-line units and among the forces of former Warsaw Pact nations.\n\nAll BMP models can be made amphibious by one stretch of preparations." compset="Vehicle">
+    <fieldval field="grCost" value="150000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KBQP1"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KBQP1" name="BWP-1" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="6"/>
+    <fieldval field="vebArmorFront" value="5"/>
+    <fieldval field="vebArmorLeft" value="5"/>
+    <fieldval field="vebArmorRight" value="5"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="425"/>
+    <fieldval field="vebFuelConsumption" value="8"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebPassengers" value="7"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="73mm (T), IR"/>
+    <fieldval field="vebSecWeapon" value="PKM (C) , R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <bootstrap thing="eqT2KInfrared"></bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KC73mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KPKM">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KT72M" name="T-72M" description="Export version of the Soviet T-72 with inferior armor.\n\nThe T-72 was developed as a cheaper replacement for the T-64 in the early 1970s, and is still in front-line service and used by several former Warsaw Pact allies. Although intended only to be cheaper and simpler than the T-64, numerous improvements made it a superior tank in combat as well." compset="Vehicle">
+    <fieldval field="grCost" value="650000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KT72M"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KT72M" name="T-72 M" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="9"/>
+    <fieldval field="vebTravelSpeedOff" value="8"/>
+    <fieldval field="vebArmorFront" value="8"/>
+    <fieldval field="vebArmorLeft" value="7"/>
+    <fieldval field="vebArmorRight" value="7"/>
+    <fieldval field="vebArmorBack" value="5"/>
+    <fieldval field="vebFuelCapacity" value="1200"/>
+    <fieldval field="vebFuelConsumption" value="24"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="125mm (T), FCS, IR"/>
+    <fieldval field="vebSecWeapon" value="PKM (C), NSW (P), SD, R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KInfrared"></bootstrap>
+    <bootstrap thing="wpT2KC125mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KNSW">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KPKM">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    </thing>
+  <thing id="vehT2KPT91TWARDY" name="PT-91 TWARDY" description="The PT-91 is essentially a late model T72M1 that has been manufactured or upgraded in Polish service with improved drive train, armor, fire control systems, and radios." compset="Vehicle">
+    <fieldval field="grCost" value="650000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="SweMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KPT91TWARDY"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KPT91TWARDY" name="PT-91 TWARDY" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="6"/>
+    <fieldval field="vebCombatSpeedOff" value="5"/>
+    <fieldval field="vebTravelSpeedOn" value="10"/>
+    <fieldval field="vebTravelSpeedOff" value="8"/>
+    <fieldval field="vebArmorFront" value="10"/>
+    <fieldval field="vebArmorLeft" value="8"/>
+    <fieldval field="vebArmorRight" value="8"/>
+    <fieldval field="vebArmorBack" value="5"/>
+    <fieldval field="vebFuelCapacity" value="1000"/>
+    <fieldval field="vebFuelConsumption" value="30"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="125mm (T), FCS, Tm"/>
+    <fieldval field="vebSecWeapon" value="PKM (C), NSW (P), SD, R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleCat" tag="PolMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="wpT2KC125mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KNSW">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KPKM">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    </thing>
+  <thing id="vehT2KAMX10RC" name="AMX-10 RC" description="A French 6x6 heavy reconnaissance vehicle. Unusual for wheeled scouts, it carries a full-sized 105mm cannon." compset="Vehicle">
+    <fieldval field="grCost" value="125000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="ArmorCar"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KAMX10RC"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KAMX10RC" name="AMX-10 RC" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="7"/>
+    <fieldval field="vebTravelSpeedOff" value="3"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="700"/>
+    <fieldval field="vebFuelConsumption" value="4"/>
+    <fieldval field="vebCrew" value="4"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebMainWeapon" value="105mm (T)"/>
+    <fieldval field="vebSecWeapon" value="M240B (C), M2HB (P), SD, R"/>
+    <tag group="VehicleType" tag="ArmorCar"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="wpT2KC105mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KM2HB">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KWiesel" name="Wiesel" description="A German airborne combat vehicle adopted in the mid-1980s." compset="Vehicle">
+    <fieldval field="grCost" value="75000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="LgtT"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KWiesel"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KWiesel" name="Wiesel" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="6"/>
+    <fieldval field="vebTravelSpeedOff" value="4"/>
+    <fieldval field="vebArmorFront" value="3"/>
+    <fieldval field="vebArmorLeft" value="3"/>
+    <fieldval field="vebArmorRight" value="3"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebFuelCapacity" value="80"/>
+    <fieldval field="vebFuelConsumption" value="4"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="150"/>
+    <fieldval field="vebMainWeapon" value="20mm (T) or TOW (P)"/>
+    <fieldval field="vebSecWeapon" value="MG3 (P) , R"/>
+    <tag group="VehicleType" tag="LgtT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KC20mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KWieselTOW" name="Wiesel (TOW)" description="A German airborne combat vehicle adopted in the mid-1980s." compset="Vehicle">
+    <fieldval field="grCost" value="75000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="LgtT"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KWieselTOW"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KWieselTOW" name="Wiesel (TOW)" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="6"/>
+    <fieldval field="vebTravelSpeedOff" value="4"/>
+    <fieldval field="vebArmorFront" value="3"/>
+    <fieldval field="vebArmorLeft" value="3"/>
+    <fieldval field="vebArmorRight" value="3"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebFuelCapacity" value="80"/>
+    <fieldval field="vebFuelConsumption" value="4"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="150"/>
+    <fieldval field="vebMainWeapon" value="TOW (P)"/>
+    <fieldval field="vebSecWeapon" value="MG3 (P) , R"/>
+    <tag group="VehicleType" tag="LgtT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KBGM71TOW">
+      <autotag group="VehicleWpnMain" tag="Pintle"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KTPZFUCHS" name="TPZ Fuchs" description="A German wheeled 6x6 armored personnel carrier, adopted in the 1970s." compset="Vehicle">
+    <fieldval field="grCost" value="100000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KTPZFUCHS"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KTPZFUCHS" name="TPZ Fuchs" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="7"/>
+    <fieldval field="vebTravelSpeedOff" value="4"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebFuelCapacity" value="390"/>
+    <fieldval field="vebFuelConsumption" value="4"/>
+    <fieldval field="vebCrew" value="2"/>
+    <fieldval field="vebPassengers" value="10"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebMainWeapon" value="M240B (P)"/>
+    <fieldval field="vebSecWeapon" value="SD, R"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnMain" tag="Pintle"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KAMX10P" name="AMX-10 P" description="A tracked armored personnel carrier adopted by the French army in the 1970s." compset="Vehicle">
+    <fieldval field="grCost" value="125000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KAMX10P"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KAMX10P" name="AMX-10 P" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="7"/>
+    <fieldval field="vebTravelSpeedOff" value="5"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="530"/>
+    <fieldval field="vebFuelConsumption" value="8"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebMainWeapon" value="20mm (T)"/>
+    <fieldval field="vebSecWeapon" value="M240B (C), SD, R"/>
+    <fieldval field="vebPassengers" value="8"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="wpT2KC20mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    </thing>
+  <thing id="vehT2KSaracen" name="Saracen" description="A wheeled 6x6 armored personnel carrier used by the British army since the 1950s." compset="Vehicle">
+    <fieldval field="grCost" value="100000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KSaracen"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KSaracen" name="Saracen" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="7"/>
+    <fieldval field="vebTravelSpeedOff" value="4"/>
+    <fieldval field="vebArmorFront" value="4"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebFuelCapacity" value="200"/>
+    <fieldval field="vebFuelConsumption" value="6"/>
+    <fieldval field="vebCrew" value="2"/>
+    <fieldval field="vebPassengers" value="9"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebMainWeapon" value="M240B (T)"/>
+    <fieldval field="vebSecWeapon" value="R"/>
+    <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleFuelUsed" tag="Gas"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleFuel" tag="Gas"/>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    </thing>
+  <thing id="vehT2KMarder" name="Marder" description="Adopted by West Germany in the early 1970s, it still serves as the German army’s primary troop transport." compset="Vehicle">
+    <fieldval field="grCost" value="225000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KMarder"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KMarder" name="Marder" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="4"/>
+    <fieldval field="vebCombatSpeedOff" value="3"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="7"/>
+    <fieldval field="vebArmorFront" value="5"/>
+    <fieldval field="vebArmorLeft" value="4"/>
+    <fieldval field="vebArmorRight" value="4"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="650"/>
+    <fieldval field="vebFuelConsumption" value="12"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebMainWeapon" value="20mm (T), Tm"/>
+    <fieldval field="vebSecWeapon" value="Milan (C), MG3 (C), SD, R"/>
+    <fieldval field="vebPassengers" value="6"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="IFV"/>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="wpT2KC20mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="wpT2KMG3">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KWarrior" name="Warrior" description="Adopted into British service in the mid-1980s to replace the outdated FV 432, a box-like APC similar to the US M113." compset="Vehicle">
+    <fieldval field="grCost" value="250000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KWarrior"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KWarrior" name="Warrior" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="8"/>
+    <fieldval field="vebTravelSpeedOff" value="7"/>
+    <fieldval field="vebArmorFront" value="5"/>
+    <fieldval field="vebArmorLeft" value="5"/>
+    <fieldval field="vebArmorRight" value="5"/>
+    <fieldval field="vebArmorBack" value="4"/>
+    <fieldval field="vebFuelCapacity" value="770"/>
+    <fieldval field="vebFuelConsumption" value="12"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebPassengers" value="7"/>
+    <fieldval field="vebCargoCapacity" value="250"/>
+    <fieldval field="vebMainWeapon" value="30mm (T), Tm"/>
+    <fieldval field="vebSecWeapon" value="M240B (C), M240B (P), SD, R"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="APC"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KC30mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KChallenger1" name="Challenger 1" description="Entered British service in the early 1980s and serves currently, supplemented by some of the Challenger 2 MBTs produced in the mid-1990s." compset="Vehicle">
+    <fieldval field="grCost" value="90000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KChallenger1"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KChallenger1" name="Challenger 1" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="10"/>
+    <fieldval field="vebTravelSpeedOff" value="8"/>
+    <fieldval field="vebArmorFront" value="11"/>
+    <fieldval field="vebArmorLeft" value="8"/>
+    <fieldval field="vebArmorRight" value="8"/>
+    <fieldval field="vebArmorBack" value="6"/>
+    <fieldval field="vebFuelCapacity" value="1800"/>
+    <fieldval field="vebFuelConsumption" value="40"/>
+    <fieldval field="vebCrew" value="4"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="120mm (T), FCS, Tm"/>
+    <fieldval field="vebSecWeapon" value="M240B (C), SD, R"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="wpT2KC120mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    </thing>
+  <thing id="vehT2KLeclerc" name="Leclerc" description="Entered French service in the early 1990s after a 20-year program to replace the AMX-30." compset="Vehicle">
+    <fieldval field="grCost" value="1000000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KLeclerc"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KLeclerc" name="Leclerc" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="6"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="10"/>
+    <fieldval field="vebTravelSpeedOff" value="9"/>
+    <fieldval field="vebArmorFront" value="11"/>
+    <fieldval field="vebArmorLeft" value="8"/>
+    <fieldval field="vebArmorRight" value="8"/>
+    <fieldval field="vebArmorBack" value="5"/>
+    <fieldval field="vebFuelCapacity" value="1300"/>
+    <fieldval field="vebFuelConsumption" value="25"/>
+    <fieldval field="vebCrew" value="3"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="120mm (T), FCS, Tm"/>
+    <fieldval field="vebSecWeapon" value="M2HB (C), M240B (P), SD, R"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="wpT2KC120mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KM240B">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    <bootstrap thing="wpT2KM2HB">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehT2KLeopard2A4" name="Leopard 2A4" description="The latest generation of the slab-sided Leopard 2 tank developed in West Germany in the 1970s. Large numbers of these tanks were also sold to other European nations in the early 1990s." compset="Vehicle">
+    <fieldval field="grCost" value="1000000"/>
+    <usesource source="srcT2K"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebT2KLeopard2A4"></bootstrap>
+      </minion>
+    </thing>
+  <thing id="vebT2KLeopard2A4" name="Leopard 2A4" compset="VehicleBase">
+    <fieldval field="vebCombatSpeedOn" value="5"/>
+    <fieldval field="vebCombatSpeedOff" value="4"/>
+    <fieldval field="vebTravelSpeedOn" value="10"/>
+    <fieldval field="vebTravelSpeedOff" value="9"/>
+    <fieldval field="vebArmorFront" value="12"/>
+    <fieldval field="vebArmorLeft" value="10"/>
+    <fieldval field="vebArmorRight" value="10"/>
+    <fieldval field="vebArmorBack" value="6"/>
+    <fieldval field="vebFuelCapacity" value="1200"/>
+    <fieldval field="vebFuelConsumption" value="30"/>
+    <fieldval field="vebCrew" value="4"/>
+    <fieldval field="vebCargoCapacity" value="300"/>
+    <fieldval field="vebMainWeapon" value="120mm (T), FCS, Tm"/>
+    <fieldval field="vebSecWeapon" value="MG3 (C), MG3 (P), SD, R"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <tag group="VehicleCat" tag="OtherMil"/>
+    <tag group="VehicleType" tag="MBT"/>
+    <tag group="VehicleMove" tag="Tracked"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <bootstrap thing="eqT2KVehRadio"></bootstrap>
+    <bootstrap thing="eqT2KSmokeDis"></bootstrap>
+    <bootstrap thing="eqT2KThermal"></bootstrap>
+    <bootstrap thing="wpT2KC120mm">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="eqT2KFCS"></bootstrap>
+    <bootstrap thing="wpT2KMG3">
+      <autotag group="VehicleWpnSec" tag="Coaxial"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KMG3">
+      <autotag group="VehicleWpnSec" tag="Pintle"/>
       </bootstrap>
     </thing>
   </document>

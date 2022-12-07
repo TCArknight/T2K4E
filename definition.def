@@ -77,9 +77,9 @@ Text goes here
     <leadsummary><![CDATA[
       ~set the actor types
       @value3name = "CharacterType"
-      if (hero.tagis[HLOCharacterType.?] <> 0) then
-        @value3 = hero.tagnames[HLOCharacterType.?,"/"]
-        @actortype = hero.tagnames[HLOCharacterType.?,"/"]
+      if (hero.tagis[CharacterType.?] <> 0) then
+        @value3 = hero.tagnames[CharacterType.?,"/"]
+        @actortype = hero.tagnames[CharacterType.?,"/"]
         endif
 
       ~start with the race

@@ -1,41 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
   <thing id="arcT2KCivilian" name="Civilian" description="You were an accountant. You worked retail. You were a part-time musician and full-time bartender. That’s all gone now. None of it matters. Now, you are one thing: a survivor. You had no say in this war. Your government charged ahead without consent. Sometimes, you felt the whole world was in the grip of madness. You still feel that way. Your old life is over. What are you going to with this new one? Is there any hope to rebuild?" compset="Archetype" uniqueness="unique">
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself.{br}* You were nothing before the bombs. You won’t be pushed around again. Ever.{br}* Soldiers ruling the world is just plain wrong.{br}* Everything in the world is up for grabs – grab as much as you can."/>
     <usesource source="srcT2KArchetypes"/>
-    <tag group="ArchetypeCat" tag="T2K"/>
-    <tag group="KeyAttribute" tag="attrEmp"/>
-    <tag group="ArchetypeBranches" tag="BlueCollar"/>
     <tag group="ArchetypeBranches" tag="WhiteCollar"/>
     <tag group="KeySkill" tag="skT2KDriving"/>
     <tag group="KeySkill" tag="skT2KPersuasion"/>
     <tag group="KeySkill" tag="skT2KSurvival"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="ArchetypeBranches" tag="BlueCollar"/>
+    <tag group="RecommendedSpec" tag="spcT2KChemist"/>
+    <tag group="RecommendedSpec" tag="spcT2KCook"/>
+    <tag group="RecommendedSpec" tag="spcT2KHunter"/>
+    <tag group="KeyAttribute" tag="attrEmp"/>
     </thing>
   <thing id="abrT2KBlueCollar" name="Blue Collar" compset="Branch">
     <usesource source="srcT2K"/>
     <tag group="ArchetypeBranches" tag="BlueCollar"/>
     </thing>
-  <thing id="abrT2KMilMarines" name="Marines" compset="Branch">
-    <usesource source="srcT2K"/>
-    <tag group="ArchetypeBranches" tag="Military"/>
-    <tag group="ArchetypeBranches" tag="Marines"/>
+  <thing id="abrT2KPolice" name="Police" compset="Branch">
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="ArchetypeBranches" tag="Police"/>
     </thing>
   <thing id="abrT2KWhiteCollar" name="White Collar" compset="Branch">
     <usesource source="srcT2K"/>
     <tag group="ArchetypeBranches" tag="WhiteCollar"/>
     </thing>
-  <thing id="abrT2KMilArmy" name="Army" compset="Branch">
+  <thing id="arcT2KGrunt" name="Grunt" description="They serve by the hundreds of thousands, the men and women who take and hold the ground. They are the ones who bleed and die in foreign fields for policies and ideologies decided upon thousands of miles away. There have always been grunts, though they weren’t always called such. You’re one of them. A ground-pounder, humping 30 kilos of gear up to hell and back hoping to stay alive. Your life was monotony punctuated by moments of sheer terror. Now, in the aftermath, it’s just a muddy, gray hell." compset="Archetype" uniqueness="unique">
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself.{br}{br}* You’ve been with this unit since you arrived in Europe. This is your family now.{br}* Your own unit was massacred. You were the only survivor. Two months on your own, then you spotted these people. Trust doesn’t come easily.{br}*  At first, you thought they’d shoot you because you are, after all, the enemy. But they patched you up where your own people had left you to die. You owe them."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself.{br}* Establish your own community where you are in charge.{br}* Get the hell away from these battlefields. Find a safe haven, where ever it may be.{br}* Get revenge against the military forces who wrought this terror upon mankind."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself.{br}* You were nothing before the bombs. You won’t be pushed around again. Ever.{br}* Soldiers ruling the world is just plain wrong.{br}* Everything in the world is up for grabs – grab as much as you can."/>
+    <fieldval field="arStartGear" value="You start the game with:{br}* Any civilian firearm{br}* D3 reloads for your weapon{br}* Knife or binoculars{br}* Basic toolset or dirt bike with half a tank of fuel{br}* D6 rations of domestic food{br}* D6 rations of clean water{br}* D6 rounds of ammo to use as currency"/>
+    <fieldval field="arCUF" value="4"/>
     <usesource source="srcT2K"/>
-    <tag group="ArchetypeBranches" tag="Military"/>
-    <tag group="ArchetypeBranches" tag="Army"/>
-    </thing>
-  <thing id="arcT2KGrunt" name="Grunt" compset="Archetype" uniqueness="unique">
-    <usesource source="srcT2K"/>
-    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KLoadCarry"/>
+    <tag group="RecommendedSpec" tag="spcT2KRanger"/>
+    <tag group="RecommendedSpec" tag="spcT2KRifleman"/>
     <tag group="KeyAttribute" tag="attrStr"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
     <tag group="KeySkill" tag="skT2KCloseCombat"/>
     <tag group="KeySkill" tag="skT2KRangedCbt"/>
     <tag group="KeySkill" tag="skT2KStamina"/>
-    <tag group="ArchetypeBranches" tag="Army"/>
-    <tag group="ArchetypeBranches" tag="Marines"/>
+    <tag group="BranchTypeAllow" tag="milT2KArmy"/>
+    <tag group="BranchTypeAllow" tag="milT2KMarines"/>
+    <tag group="ArchetypeRank" tag="rnkT2KCorporal"/>
+    <tag group="ArchetypeRank" tag="rnkT2KPrivate"/>
+    <tag group="ArchetypeRank" tag="rnkT2KPFC"/>
+    <tag group="ArchetypeRank" tag="rnkT2KSergeant"/>
+    <tag group="Archetype" tag="BranchSelected"/>
+    <bootstrap thing="abrT2KMilitary"></bootstrap>
+    </thing>
+  <thing id="abrT2KMilitary" name="Military" compset="Branch">
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="Hero" tag="NeedBranchType"/>
+    </thing>
+  <thing id="milT2KArmy" name="Army" compset="BranchType"></thing>
+  <thing id="milT2KNavy" name="Navy" compset="BranchType"></thing>
+  <thing id="milT2KAirForce" name="Air Force" compset="BranchType"></thing>
+  <thing id="milT2KMarines" name="Marines" compset="BranchType"></thing>
+  <thing id="arcT2KGunner" name="Gunner" compset="Archetype" uniqueness="unique">
+    <fieldval field="arCUF" value="4"/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself. {br}* The team relies on you and your rate of fire. You’d give your life for your friends. {br}* You’re in hell, but hell is pretty funny. Nothing is worth taking seriously. {br}* Kill them all, let God sort them out."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself. "/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself. "/>
+    <fieldval field="arStartGear" value="You start the game with:{br}* Light machine gun appropriate for your nationality{br}* D6 ammo belts{br}* D6 hand grenades or ATRL with D3 rounds{br}* Flak jacket and helmet{br}* Knife{br}* Personal medkit{br}* Fatigues{br}* Backpack{br}* D6 field rations{br}* D6 rations of clean water"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="KeyAttribute" tag="attrStr"/>
+    <tag group="KeySkill" tag="skT2KDriving"/>
+    <tag group="KeySkill" tag="skT2KHeavyWpns"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="RecommendedSpec" tag="spcT2KLaunchCrew"/>
+    <tag group="RecommendedSpec" tag="spcT2KMachinegun"/>
+    <tag group="RecommendedSpec" tag="spcT2KRedleg"/>
+    <tag group="BranchTypeAllow" tag="milT2KArmy"/>
+    <tag group="BranchTypeAllow" tag="milT2KMarines"/>
+    <tag group="ArchetypeRank" tag="rnkT2KCorporal"/>
+    <tag group="ArchetypeRank" tag="rnkT2KPrivate"/>
+    <tag group="ArchetypeRank" tag="rnkT2KPFC"/>
+    </thing>
+  <thing id="arcT2KKid" name="Kid" description="You never had a chance to grow up. The world ended before you could. The adults did that. You listened to them when you were little, but they destroyed it all. They stole your future. Now, it’s up to you and people your age to make sure the world goes on. You had security ripped from you like an IV, like the umbilical cord. You cannot depend on grownups anymore. You see now you never could. You won’t make that mistake again. Their world is in ashes. Your world is just beginning… or so you hope." compset="Archetype" uniqueness="unique">
+    <fieldval field="arStartGear" value="You start the game with:{br}* Bow, pipe gun or zip gun{br}* D3 reloads for your weapon{br}* Knife{br}* D6 rations of domestic food{br}* D6 rations of clean water{br}* D6 rounds of ammo to use as currency"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself. {br}* Your older brother hero-worshiped the Americans. He died trying to help them and you happened to be there when it happened. Now, you’re stuck with them. {br}* Your parents were killed years ago, and you survived on your own. Then these people needed your help. You certainly can’t go back to that city after what you did to save them. {br}* You were one of hundreds of kids in a holding camp. The enemy took off one day, leaving you all no food. When these people showed up, they helped. You left with them."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself.{br}* Grow up. Just live long enough to grow up.{br}* Become a leader, a healer, or something else the world needs.{br}* Find your parents. You were separated. You want them back. Or someone to take their place."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself.{br}* Authorities are meant to be disobeyed.{br}* Adults don’t have a clue, might as well play them for fools.{br}* Kids need to fix the world the adults destroyed."/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KArcher"/>
+    <tag group="RecommendedSpec" tag="spcT2KRunner"/>
+    <tag group="RecommendedSpec" tag="spcT2KScrounger"/>
+    <tag group="KeySkill" tag="skT2KMobility"/>
+    <tag group="KeySkill" tag="skT2KStamina"/>
+    <tag group="KeySkill" tag="skT2KSurvival"/>
+    <tag group="KeyAttribute" tag="attrAgi"/>
+    <tag group="Hero" tag="NoBranchNeeded"/>
+    </thing>
+  <thing id="arcT2KMechanic" name="Mechanic" description="Vehicles always made more sense to you than people did. You’ve seen a lot of people break over here. You couldn’t put them back together. An engine though? You can repair an engine, fix an axle, weld armor on a chassis. You mind the machines, a natural grease monkey. Maybe you worked in a garage back home or just restored classic muscle cars. However you got your skills, the unit now relies on them. The war is hard on the hardiest of tanks or Humvees. You keep them running. It’s up to Top and the Doc to keep the people running. You don’t want that responsibility." compset="Archetype" uniqueness="unique">
+    <fieldval field="arStartGear" value="You start the game with:{br}* Assault rifle appropriate for your nationality{br}* D6 reloads for your weapon{br}* Flak jacket and helmet{br}* Knife or D6 hand grenades{br}* Personal medkit{br}* Basic tools{br}* Vehicle tools or weapon tools{br}* Fatigues{br}* Backpack{br}* D6 field rations{br}* D6 rations of clean water"/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself. {br}* Anything or anyone can be fixed. Never lose hope. {br}* Machines can be trusted. People can’t. {br}* Your vehicle is your freedom. Never lose it."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself. {br}* Rebuild the old classic you have in the garage back home. Collect parts along the way. {br}* Find a place where you can set up a proper workshop, actually building things. {br}* Keep the deuce-andhalf running. Keep the unit running ... all the way home. "/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself. {br}* These poor fools were stuck on what was left of a highway when you came upon their broke-down transport. If you weren’t the best grease monkey around, they’d be dead. {br}* The group’s leader grabbed you as soon as things were starting to go pear-shaped. She said the group would need a mechanic and a mechanic would need people who could use guns. {br}* You were just the local mechanic when the enemy came. They made you fix their vehicle, then argued about who would shoot you. These people showed up right about then. They saved you.{br}"/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KCombatEng"/>
+    <tag group="RecommendedSpec" tag="spcT2KGunsmith"/>
+    <tag group="RecommendedSpec" tag="spcT2KMechanic"/>
+    <tag group="KeySkill" tag="skT2KDriving"/>
+    <tag group="KeySkill" tag="skT2KStamina"/>
+    <tag group="KeySkill" tag="skT2KTech"/>
+    <tag group="KeyAttribute" tag="attrInt"/>
+    <tag group="ArchetypeRank" tag="rnkT2KPrivate"/>
+    <tag group="ArchetypeRank" tag="rnkT2KPFC"/>
+    <tag group="BranchTypeAllow" tag="milT2KArmy"/>
+    <tag group="BranchTypeAllow" tag="milT2KMarines"/>
+    <tag group="BranchTypeAllow" tag="milT2KNavy"/>
+    <tag group="ArchetypeBranches" tag="BlueCollar"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    </thing>
+  <thing id="arcT2KMedic" name="Medic" description="Humpty Dumpty. They tried to put him back together again. You try to do that every day, but all the broken limbs and broken minds are just too much to fix. So, you triage. On the field. In life. You do what you can, making hard choices. Deciding who is too far gone. You have nightmares about the blood. Whole lakes of it. If you added up all you’ve seen spilled, a lake might not cover it. People hurt. War is pain. You try to heal. You try to mend. It is all you can do in the face of complete absurdity." compset="Archetype" uniqueness="unique">
+    <fieldval field="arStartGear" value="You start the game with: {br}* Pistol or SMG appropriate for your nationality {br}* D6 reloads for your weapon {br}* Flak jacket and helmet {br}* Knife or D6 hand grenades {br}* D6 personal medkits {br}* Pain relievers or surgical instruments {br}* Fatigues {br}* Backpack {br}* D6 field rations {br}* D6 rations of clean water"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself.{br}* One of the members of this group was brought into your ER. When the hospital came under barrage from Soviet artillery, these people took you with them.{br}* You found this poor soldier bleeding in a field. You patched them up and nursed them back to health. When the enemy got close, the soldier said they could bring you back to friendly lines.{br}* You remember when this was a full platoon. That was a long time ago. You think about all the people you didn’t save. You have their dog tags in your rucksack.{br}"/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself.{br}* Build a hospital to serve an entire community.{br}* Restore the world to some semblance of civilization. {br}* Get home, with some shred of hope and humanity left in your heart."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself.{br}* You can’t save everyone, but you’ll sure as hell try.{br}* Harming another human being is wrong.{br}* You decide who lives and who dies."/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arCUF" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KFldSurgeon"/>
+    <tag group="RecommendedSpec" tag="spcT2KGeneralPrac"/>
+    <tag group="KeySkill" tag="skT2KMedicalAid"/>
+    <tag group="KeySkill" tag="skT2KStamina"/>
+    <tag group="KeySkill" tag="skT2KSurvival"/>
+    <tag group="KeyAttribute" tag="attrEmp"/>
+    <tag group="RecommendedSpec" tag="spcT2KCombatMedic"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    </thing>
+  <thing id="arcT2KOfficer" name="Officer" description="The men and women under your command depend on you. You are resolute, decisive, and pragmatic… at least among the soldiers. Privately, the responsibility wears on you. You shouldn’t have gone to OCS or the Academy. You aren’t one of the “men.” You can’t be. You must remain apart, keep your objectivity… keep them alive. You’re alone among a band of brothers, but that is exactly where the band needs you. That’s why they follow your commands. They look to you for guidance. You look elsewhere for friendship." compset="Archetype" uniqueness="unique">
+    <fieldval field="arStartGear" value="You start the game with:{br}* Pistol or submachine gun appropriate for your nationality{br}* D6 reloads for your weapon{br}* Radio (manpack) or night vision goggles{br}* Flak jacket{br}* Knife or D6 hand grenades{br}* Personal medkit{br}* Fatigues{br}* D6 field rations{br}* D6 rations of clean water"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arCUF" value="4"/>
+    <usesource source="srcT2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KSidearms"/>
+    <tag group="RecommendedSpec" tag="spcT2KTactician"/>
+    <tag group="KeyAttribute" tag="attrEmp"/>
+    <tag group="KeySkill" tag="skT2KCommand"/>
+    <tag group="KeySkill" tag="skT2KPersuasion"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="ArchetypeBranches" tag="Police"/>
+    <tag group="BranchTypeAllow" tag="milT2KArmy"/>
+    <tag group="BranchTypeAllow" tag="milT2KMarines"/>
+    <tag group="BranchTypeAllow" tag="milT2KNavy"/>
+    <tag group="ArchetypeRank" tag="rnkT2KCaptain"/>
+    <tag group="ArchetypeRank" tag="rnkT2KFirstLt"/>
+    <tag group="ArchetypeRank" tag="rnkT2KMajor"/>
+    <tag group="RecommendedSpec" tag="spcT2KIntelligenc"/>
+    </thing>
+  <thing id="arcT2KOperator" name="Operator" description="You are the elite. When you joined up, you wanted to go all the way. You wanted to be the best. Now you are. You are the best in the world and trained in all kinds of elite operations from raids to capturing high value targets. You have done your country proud. You and your unit were the first into this godforsaken country. Looks like you’ll be the last out, too. It’s fine. This is what you signed up for." compset="Archetype" uniqueness="unique">
+    <fieldval field="arStartGear" value="You start the game with:"/>
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself."/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arCUF" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KInfiltrator"/>
+    <tag group="RecommendedSpec" tag="spcT2KSniper"/>
+    <tag group="ArchetypeBranches" tag="Intelligence"/>
+    <tag group="ArchetypeBranches" tag="Military"/>
+    <tag group="ArchetypeBranches" tag="Police"/>
+    <tag group="BranchTypeAllow" tag="milT2KArmy"/>
+    <tag group="BranchTypeAllow" tag="milT2KMarines"/>
+    <tag group="BranchTypeAllow" tag="milT2KNavy"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <tag group="ArchetypeRank" tag="rnkT2KMasterS"/>
+    <tag group="ArchetypeRank" tag="rnkT2KSFC"/>
+    <tag group="ArchetypeRank" tag="rnkT2KStaffS"/>
+    <tag group="KeyAttribute" tag="attrAgi"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    <tag group="KeySkill" tag="skT2KRecon"/>
+    <tag group="KeySkill" tag="skT2KSurvival"/>
+    <tag group="RecommendedSpec" tag="spcT2KCbtAware"/>
+    </thing>
+  <thing id="arcT2KSpook" name="Spook" description="Your Cold War went hot. You spent a good portion of your life either trying to prevent that or making sure your side would have the advantage when the conflict started. But advantage is relative in a world devastated by World War III, and you must fall back on your skills and tradecraft to survive, help your side’s soldiers, and maybe even get home. The spy game isn’t over, but it sure has changed. The war of the shadows came into the bright light of nuclear explosions. You still have some contacts. You still have intel. You hope it’ll be enough." compset="Archetype" uniqueness="unique">
+    <fieldval field="arHowMet" value="Choose from the examples below or decide for yourself.{br}* This group was assigned to you as part of a clandestine mission. By the time they were supposed to rejoin their unit, there wasn’t a military left to join. {br}* You’d been posing as a native for two years when this group found themselves in a spot of trouble. You blew your cover to save them from summary execution. {br}* You were losing blood in a dark alley of the city. Your pursuers were right behind you. You must have fallen unconscious. Next thing you knew, friendlies were waking you up. They don’t know you were a double agent. Are you still?"/>
+    <fieldval field="arStartGear" value="You start the game with:{br}* Any pistol{br}* D6 reloads for your weapon{br}* Radio (manpack) or binoculars{br}* Knife or D6 units of explosives{br}* Personal medkit{br}* D6 rations of domestic food"/>
+    <fieldval field="arBigDream" value="Choose from the examples below or decide for yourself. "/>
+    <fieldval field="arMoralCode" value="Choose from the examples below or decide for yourself. "/>
+    <fieldval field="arArchNumTalents" value="1"/>
+    <fieldval field="arCUF" value="5"/>
+    <usesource source="srcT2K"/>
+    <tag group="RecommendedSpec" tag="spcT2KKiller"/>
+    <tag group="RecommendedSpec" tag="spcT2KPsyOps"/>
+    <tag group="KeySkill" tag="skT2KPersuasion"/>
+    <tag group="KeySkill" tag="skT2KRangedCbt"/>
+    <tag group="KeySkill" tag="skT2KRecon"/>
+    <tag group="KeyAttribute" tag="attrInt"/>
+    <tag group="RecommendedSpec" tag="spcT2KIntelligenc"/>
+    <tag group="ArchetypeBranches" tag="Intelligence"/>
+    <tag group="ArchetypeCat" tag="T2K"/>
+    <bootstrap thing="abrT2KIntel"></bootstrap>
+    </thing>
+  <thing id="abrT2KIntel" name="Intelligence" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="Intelligence"/>
+    </thing>
+  <thing id="abrT2KCrime" name="Crime" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="Crime"/>
+    </thing>
+  <thing id="abrT2KEducation" name="Education" compset="Branch">
+    <usesource source="srcT2K"/>
+    <tag group="ArchetypeBranches" tag="Education"/>
     </thing>
   </document>

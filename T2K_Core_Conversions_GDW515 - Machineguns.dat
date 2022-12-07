@@ -13,7 +13,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="Cal3006"/>
     <holdlimit>AmmoType.Cal3006</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KAAT52" name="AAT-52" description="The standard machiengun of the french armed forces, the AAT-52 is equipped with a bipod and can be fired from a tripod (NLT).  It accepts 100 round belts of 7.62x51mm ammunition.  The blowback extraction tends to rip cartridges in ahlf, leaving a ring of brass in the chamber.  French troops grease their cartridge cases, but troops unfamiliar with the weapon, especially once the weapon&apos;s ready supply of ammunition has been fired will JAM on a" compset="Ranged">
     <fieldval field="wpShort" value="12"/>
@@ -28,7 +28,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KHK21" name="H&amp;K HK21" description="A West German machinegun considered by some to be the best of its kind.  It is equipped with a bipod, but can also be fired from a tripod (NLT).  It can accept a 100 round belt, and 50 round drum, or the same 30 round magazine as the G3." compset="Ranged">
     <fieldval field="wpShort" value="12"/>
@@ -43,7 +43,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KBrenMk2" name="Bren Mk II" description="Developed from a Czech design, the Bren was the standard issue British Army LMG.  The weapon uses either a box (30 rnds) or drum (100 rnd) magazine and has an integral bipod and carrying handle." compset="Ranged">
     <fieldval field="wpShort" value="12"/>
@@ -58,7 +58,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="BritishMilitary"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KM134" name="M134" description="A six-barreled gatling-type minigun chambered for the 7.62x51mm cartridge.  Originally designed  for use on helicopters, the M134 can also be mounted on a tripod (NHT).  It accepts special 1500 round belts." compset="Ranged">
     <fieldval field="wpShort" value="12"/>
@@ -73,7 +73,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KStonerMk23Co" name="Stoner Mk23 Commando" compset="Ranged">
     <fieldval field="wpShort" value="10"/>
@@ -88,7 +88,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="Cal55645"/>
     <holdlimit>AmmoType.Cal55645</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KJPNType62" name="Japanese Type 62" description="The Type 62 is a Japanese general purpose bipod mount machinegun, chambered for the 7.62x51mm cartridge.  IT accepts 100 round belts and can also be fired from a tripod mount (NLT)" compset="Ranged">
     <fieldval field="wpShort" value="12"/>
@@ -103,7 +103,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
-    <child entity="Ammo"></child>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpT2KPKMG" name="PK" description="The standard Warsaw pact medium machinegun, usually found mounted on a vehicle.  It is equipped with a bipod, and can also be fired from a tripod (PLT).  It accepts 100 round belts." compset="Ranged">
     <fieldval field="wpShort" value="12"/>
