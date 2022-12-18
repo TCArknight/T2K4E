@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="lpT2KFireman" name="Fireman" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="FirstResponder" name="First Responder"/>
+    <exprreq message="Strength B+ required."><![CDATA[#trait[attrStr] >= 5]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KCombatMedic"/>
+      <tag group="Specialty" tag="spcT2KCook"/>
+      <tag group="Specialty" tag="spcT2KFirstRespon"/>
+      <tag group="Specialty" tag="spcT2KLoadCarry"/>
+      <tag group="Specialty" tag="spcT2KMountaineer"/>
+      <tag group="Specialty" tag="spcT2KNBC"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      </child>
+    </thing>
+  <thing id="spcT2KFirstRespon" name="First Responder" description="First responders are skilled at stabilizing critically injured people in order to keep them alive until they can receive proper medical attention. Gives a +1 Modifier to stabilizing lethal critical wounds. This can be chosen in lieu of Combat Medic for Firemen and EMT’s or Field Surgeon for EMT’s" compset="Specialty">
+    <usesource source="CivCareerPaths" parent="srcT2KFan" name="Civilian Career Paths"/>
+    </thing>
+  <thing id="lpT2KEMT" name="EMT" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="FirstResponder" name="First Responder"/>
+    <exprreq message="Empathy B+ required"><![CDATA[#trait[attrEmp] >= 5]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Specialty" tag="spcT2KCombatMedic"/>
+      <tag group="Specialty" tag="spcT2KFldSurgeon"/>
+      <tag group="Specialty" tag="spcT2KFirstRespon"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KGeneralPrac"/>
+      <tag group="Specialty" tag="spcT2KNBC"/>
+      <tag group="Specialty" tag="spcT2KRacer"/>
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      </child>
+    </thing>
+  <thing id="lpT2KNurse" name="Nurse" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="FirstResponder" name="First Responder"/>
+    <exprreq message="Empathy B+ required."><![CDATA[#trait[attrEmp] >= 5]]></exprreq>
+    <exprreq message="1 Education Term required."><![CDATA[tagis[CareerType.Education] <> 0]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KMedicalAid"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KCombatMedic"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Specialty" tag="spcT2KFldSurgeon"/>
+      <tag group="Specialty" tag="spcT2KFirstRespon"/>
+      <tag group="Specialty" tag="spcT2KGeneralPrac"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="lpT2KActor" name="Actor" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Entertainment" name="Entertainment"/>
+    <exprreq message="Empathy C+ required."><![CDATA[#trait[attrEmp] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KInfiltrator"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  <thing id="lpT2KMusician" name="Musician" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Entertainment" name="Entertainment"/>
+    <exprreq message="Agility C+ required."><![CDATA[#trait[attrAgi] >= 4]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KMusician"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  <thing id="lpT2KArtist" name="Artist" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Entertainment" name="Entertainment"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBlacksmith"/>
+      <tag group="Specialty" tag="spcT2KChemist"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="lpT2KAthlete" name="Athlete" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Entertainment" name="Entertainment"/>
+    <exprreq message="Strength B+ required."><![CDATA[#trait[attrAgi] >= 5]]></exprreq>
+    <exprreq message="Agility B+ required."><![CDATA[#trait[attrAgi] >= 5]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCloseCombat"/>
+      <tag group="Specialty" tag="spcT2KBrawler"/>
+      <tag group="Specialty" tag="spcT2KCbtAware"/>
+      <tag group="Specialty" tag="spcT2KMartialArt"/>
+      <tag group="Specialty" tag="spcT2KPitcher"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      </child>
+    </thing>
+  <thing id="lpT2KRetail" name="Retail" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="ServiceIndustry" name="Service Industry"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  <thing id="lpT2KRestaurant" name="Restaurant" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="ServiceIndustry" name="Service Industry"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KChemist"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KCook"/>
+      <tag group="Specialty" tag="spcT2KFarmer"/>
+      <tag group="Specialty" tag="spcT2KForager"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  <thing id="lpT2KOfficeSer" name="Office" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="ServiceIndustry" name="Service Industry"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KCommunicat"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KLogistician"/>
+      <tag group="Specialty" tag="spcT2KScientist"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="lpT2KManufactur" name="Manufacturing" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="ServiceIndustry" name="Service Industry"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBlacksmith"/>
+      <tag group="Specialty" tag="spcT2KBuilder"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KLoadCarry"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      </child>
+    </thing>
+  <thing id="lpT2KSocWorker" name="Social Worker" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Professionals" name="Professionals"/>
+    <exprreq message="Empathy C+ required."><![CDATA[#trait[attrEmp] >= 5]]></exprreq>
+    <exprreq message="One Term in Education (Liberal Arts)"><![CDATA[tagis[Lifepath.LiberalArts] <> 0]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Specialty" tag="spcT2KFrontLeader"/>
+      <tag group="Specialty" tag="spcT2KInterrogat"/>
+      <tag group="Specialty" tag="spcT2KInvestigate"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="lpT2KTeacher" name="Teacher" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Professionals" name="Professionals"/>
+    <exprreq message="One Term in Eduation (Liberal Arts) required."><![CDATA[tagis[Lifepath.LiberalArts] <> 0]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KCounselor"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KPsyOps"/>
+      <tag group="Specialty" tag="spcT2KScientist"/>
+      <tag group="Specialty" tag="spcT2KTeacher"/>
+      </child>
+    </thing>
+  <thing id="lpT2KEngScientist" name="Engineer/Scientist" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Professionals" name="Professionals"/>
+    <exprreq message="One term in Education (Sciences) required."><![CDATA[tagis[Lifepath.Sciences] <> 0]]></exprreq>
+    <exprreq message="Intelligence B+ required."><![CDATA[#trait[attrInt] >= 5]]></exprreq>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KIdleRich" name="Idle Rich" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Jobless" name="Jobless"/>
+    <exprreq message="Affluent Childhood required."><![CDATA[tagis[Lifepath.AffluentChildhood] <> 0]]></exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KCommand"/>
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Specialty" tag="spcT2KBiker"/>
+      <tag group="Specialty" tag="spcT2KBoatman"/>
+      <tag group="Specialty" tag="spcT2KDiver"/>
+      <tag group="Specialty" tag="spcT2KLinguist"/>
+      <tag group="Specialty" tag="spcT2KMountaineer"/>
+      <tag group="Specialty" tag="spcT2KParatrooper"/>
+      <tag group="Specialty" tag="spcT2KPilot"/>
+      <tag group="Specialty" tag="spcT2KRider"/>
+      <tag group="Specialty" tag="spcT2KRunner"/>
+      </child>
+    </thing>
+  <thing id="lpT2KHomeless" name="Homeless" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Jobless" name="Jobless"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KRecon"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KForager"/>
+      <tag group="Specialty" tag="spcT2KLocksmith"/>
+      <tag group="Specialty" tag="spcT2KQuartermast"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      <tag group="Specialty" tag="spcT2KScrounger"/>
+      </child>
+    </thing>
+  <thing id="lpT2KSlacker" name="Slacker" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="Jobless" name="Jobless"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KPersuasion"/>
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KCommunicat"/>
+      <tag group="Specialty" tag="spcT2KComputers"/>
+      <tag group="Specialty" tag="spcT2KHistorian"/>
+      <tag group="Specialty" tag="spcT2KMusician"/>
+      <tag group="Specialty" tag="spcT2KScientist"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  <thing id="lpT2KMiner" name="Miner" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBlacksmith"/>
+      <tag group="Specialty" tag="spcT2KBuilder"/>
+      <tag group="Specialty" tag="spcT2KChemist"/>
+      <tag group="Specialty" tag="spcT2KImprovMun"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KTanker"/>
+      </child>
+    </thing>
+  <thing id="lpT2KLogger" name="Logger" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <exprreq message="Strength B+ required.">#trait[attrStr] += 5</exprreq>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Skill" tag="skT2KSurvival"/>
+      <tag group="Specialty" tag="spcT2KForager"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KMountaineer"/>
+      <tag group="Specialty" tag="spcT2KNavigator"/>
+      <tag group="Specialty" tag="spcT2KRanger"/>
+      <tag group="Specialty" tag="spcT2KScout"/>
+      </child>
+    </thing>
+  <thing id="lpT2KMaritime" name="Maritime" compset="Lifepath">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour"/>
+    <tag group="CareerType" tag="BlueCollar"/>
+    <child entity="lpCustom">
+      <tag group="Skill" tag="skT2KTech"/>
+      <tag group="Specialty" tag="spcT2KBoatman"/>
+      <tag group="Specialty" tag="spcT2KElectrician"/>
+      <tag group="Specialty" tag="spcT2KLoadCarry"/>
+      <tag group="Specialty" tag="spcT2KMechanic"/>
+      <tag group="Specialty" tag="spcT2KNavigator"/>
+      <tag group="Specialty" tag="spcT2KTrader"/>
+      </child>
+    </thing>
+  </document>
