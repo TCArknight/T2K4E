@@ -126,6 +126,8 @@
     <value id="SkillRankIncrease" name="Skill Rank Increase" />         <!-- Nationality has been selected -->
     <value id="NationalitySelect" name="Nationality Selected" />        <!-- Nationality has been selected -->
     <value id="ChildhoodSelected" name="Childhood Selected" />          <!-- Childhood has been selected -->
+    <value id="ChildhoodSkillSel" name="Childhood Skill Selected" />    <!-- Childhood has been selected -->
+    <value id="ChildhoodSpecSel" name="Childhood Specialty Selected" />    <!-- Childhood has been selected -->
     <value id="TourSelected" name="Tour Selected" />                    <!-- Childhood has been selected -->
     <value id="ChildSkillSelect" name="Childhood Skill Selected" />     <!-- Skill for Childhood has been selected -->
     <value id="ChildSpecSelect" name="Childhood Specialty Selected" />  <!--Specialty for Childhood has been selected -->
@@ -140,6 +142,7 @@
     <value id="FinalTermTaken" name="Final Term Taken" />               <!-- Final Term before going to war is selected -->
     <value id="AtWarTerm" name="At War Term" />                         <!-- At War Lifepath Term -->
     <value id="SpecSelectReq" name="Specialty Selection Required" />    <!-- At War Lifepath Term -->	
+    <value id="AffluentChildhood" name="Affluent Childhood" />    		<!-- Indicates a Affluent childhood -->	
     </group>
 
   <group
@@ -183,6 +186,7 @@
 
   <group
     id="CareerType"
+	dynamic="yes"
     sequence="explicit">
     <value id="Military" order="10"/>
     <value id="Police" order="20"/>
@@ -191,6 +195,11 @@
     <value id="BlueCollar" name="Blue Collar" order="50"/>
     <value id="Education" order="60"/>
     <value id="WhiteCollar"  name="White Collar" order="70"/>
+    <value id="FirstResponder"  name="First Responder" order="75"/>
+    <value id="Entertainment"  name="Entertainment" order="80"/>
+    <value id="ServiceIndustry"  name="Service Industry" order="85"/>
+    <value id="Professionals"  name="Professionals" order="90"/>
+    <value id="Jobless"  name="Jobless" order="95"/>
     </group>
 
   <group
@@ -349,6 +358,8 @@
     <value id="StackArmor" name="Stack Armor"/>                   <!-- Identifies armor that stacks with other armor -->
     <value id="AmmoCarried" name="Ammo Carried"/>                 <!-- Identifies ammunition carried by the hero -->
     <value id="Magazine" name="Magazine"/>                        <!-- Identifies ammunition holder carried by the hero -->
+    <value id="InMagazine" name="InMagazine"/>                    <!-- Identifies ammunition that is in a clip  -->
+    <value id="InternalMag" name="Internal Magazine"/>            <!-- Identifies weapon that uses an internal magazine rather than an external Box Magazine/Clip -->
     <value id="SelfContained" name="Self-Contained"/>             <!-- Identifies ammunition holder carried by the hero -->
     <value id="IsDamaged" name="Damaged"/>                          <!-- Identifies an item has taken damage and is iat less than full reliability -->
     <value id="IsBroken" name="Broken"/>                          <!-- Identifies an item has taken damage and is iat less than full reliability -->
@@ -384,6 +395,7 @@
     id="WeaponSpec">
     <value id="Blast" name="Blast"/>               <!-- Identifies a weapon with a special range -->
     <value id="SpecRange" name="Range is special"/>               <!-- Identifies a weapon with a special range -->
+    <value id="SlowReload" name="Slow Reload (2 slow actions)"/>               <!-- Identifies a weapon with a special range -->
     </group>
 	
   <group
@@ -407,6 +419,8 @@
     <value id="FrenchMilitary" name="French Military" order="70" />
     <value id="AustralianMili" name="Australian Military" order="75" />
     <value id="SpanishMilitary" name="Spanish Military" order="80" />
+    <value id="FinnishMilitary" name="Finnish Military" order="85" />
+    <value id="SwissMilitary" name="Swiss Military" order="86" />
     <value id="Grenade" name="Hand Grenade" order="90"/>
     <value id="Mine" name="Mine" order="95"/>
     <value id="Mortar" name="Mortar" order="100"/>
@@ -424,6 +438,7 @@
     <value id="Thrown" name="Thrown" order="13"/>
     <value id="Revolver" name="Revolver" abbrev="" order="14"/>
     <value id="Pistol" name="Pistol" order="16"/>
+    <value id="SMG" name="Submachinegun" order="17"/>
     <value id="Hunting" name="Hunting Rifle" abbrev="Rifle" order="18"/>
     <value id="Shotgun" name="Shotgun" order="20"/>
     <value id="AssaultRifle" name="Assault Rifle" abbrev="A. Rifle" order="22"/>
@@ -502,17 +517,21 @@
     <value id="Cal30" name=".30" />
     <value id="Cal50Ball" name=".50 Ball" />
     <value id="Cal50M2" name=".50 (M2)" />
+    <value id="Cal50AE" name=".50 Action Express" />
+    <value id="Cal303" name=".303" />
     <value id="Cal3006" name=".30-06" />
     <value id="Cal3030" name=".30-30" />
     <value id="Cal54518" name="5.45 x 18" />
     <value id="Cal54539" name="5.45 x 39" />
     <value id="Cal55645" name="5.56 x 45" />
+    <value id="Cal5728" name="5.7 x 28" />
     <value id="Cal76225" name="7.62 x 25 Tokarev" />
     <value id="Cal76239" name="7.62 x 39" />
     <value id="Cal76251" name="7.62 x 51" />
     <value id="Cal76254" name="7.62 x 54" />
     <value id="Cal76257M" name="7.62 x 57 Mauser" />
     <value id="Cal76517" name="7.65 x 17" />
+    <value id="Cal79257M" name="7.92 x 57 Mauser" />
     <value id="Cal127108" name="12.7 x 108" />
     <value id="Cal145114" name="14.5 x 114" />
     <value id="Cal918" name="9mm x 18" />
@@ -522,16 +541,21 @@
     <value id="Cal38Spl" name=".38 Special" />
     <value id="Cal380ACP" name=".380 ACP" />
     <value id="Cal32ACP" name=".32 ACP" />
+    <value id="Cal45ACP" name=".45 ACP" />
     <value id="Cal357" name=".357 Magnum" />
     <value id="Cal41" name=".41 Magnum" />
     <value id="Cal44AM" name=".44 Auto-Mag" />
     <value id="Cal44M" name=".44 Magnum" />
     <value id="Cal375" name=".375 H&amp;H Magnum" />
     <value id="Cal45" name=".45" />
+    <value id="Cal45LC" name=".45 Long Colt" />
     <value id="Cal4518" name=".45 x 18" />
     <value id="Cal458WBM" name=".458 WBM" />
     <value id="Cal480W" name=".480 Weatherby" />
+    <value id="Ga410" name=".410 Gauge" />
     <value id="Ga12" name="12 Gauge" />
+    <value id="Ga20" name="20 Gauge" />
+    <value id="Ga2375" name="23 x 75" />
     <value id="ATGM127" name="ATGM (127mm)" />
     <value id="ATGM140" name="ATGM (140mm)" />
     <value id="ATGM135" name="ATGM (135mm)" />
@@ -869,7 +893,7 @@
   <group
     id="CharType"
     dynamic="yes">
-    <value id="Vehicle"/>       <!-- identifies a fixed value adjustment that the user can't modify -->
+    <value id="Vehicle"/>
     </group>
 
   <group

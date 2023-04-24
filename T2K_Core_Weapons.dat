@@ -320,7 +320,7 @@
     <fieldval field="grCost" value="1"/>
     <fieldval field="grWeight" value=".01"/>
     <fieldval field="amDamage" value="3"/>
-    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amCrit" value="3"/>
     <fieldval field="amArmorRating" value="0"/>
     <usesource source="srcT2K"/>
     <tag group="AmmoCatType" tag="Rifle"/>
@@ -491,7 +491,7 @@
     <tag group="Equipment" tag="TwoHand" name="Requires two hands" abbrev="Requires two hands"/>
     <tag group="WeaponCat" tag="USMilitary" name="U.S. Military" abbrev="U.S. Military"/>
     <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="Assault Rifle"/>
-    <tag group="AmmoType" tag="amT2K55645" name="5.56x45" abbrev="5.56x45"/>
+    <tag group="AmmoType" tag="Cal55645"/>
     <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>

@@ -20,21 +20,24 @@
     <holdlimit>AmmoCat.Firearm</holdlimit>
     <gear>field[gearNet].value = field[gearWeight].value</gear>
     <eval phase="Final" priority="10000"><![CDATA[var heldName as string
-	var heldQty as number
+var heldQty as number
 	
   if (gearcount = 0) then
     field[livename].text = field[name].text & " (Empty)"
   else
-	foreach gear in this
-	  heldQty = eachpick.field[stackQty].value
-	  if (heldQty > 1) then
+    foreach gear in this
+      heldQty = eachpick.field[stackQty].value
+      if (heldQty > 1) then
         heldName = splice(heldName, "(" & heldQty & "x) " & eachpick.field[name].text,", ")
-	  else
-	    heldName = splice(heldName, eachpick.field[name].text,", ")
-		endif
+      else
+	heldName = splice(heldName, eachpick.field[name].text,", ")
+        endif
       nexteach
     field[livename].text &= field[name].text & " (" & heldName & ")"
     endif]]></eval>
+    <eval phase="Setup" priority="500" index="2">foreach gear in this
+  perform eachpick.assign[Equipment.InMagazine]
+  nexteach</eval>
     </thing>
   <thing id="eqT2KBackpack" name="Backpack" description="Can be used to carry a number of encumbrance units equal to your STR die size, in addition to your combat gear. Carrying a backpack gives a –2 modifer to all MOBILITY rolls." compset="Equipment">
     <fieldval field="grCost" value="50"/>
@@ -660,6 +663,14 @@ else
     <tag group="GearSubType" tag="NA"/>
     </thing>
   <thing id="hdrT2KToolsandPar" name="--- Tools &amp; Spare Parts ---" compset="Equipment" holdable="no" isshowonly="yes">
+    <tag group="GearType" tag="Tools"/>
+    <tag group="GearSubType" tag="NA"/>
+    </thing>
+  <thing id="eqT2KBasicTools" name="Basic Tools" description="A general tool set that can be used to repair items or service vehicles. Includes wrenches, pliers, screwdrivers, etc." compset="Equipment">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <usesource source="srcT2K"/>
     <tag group="GearType" tag="Tools"/>
     <tag group="GearSubType" tag="NA"/>
     </thing>

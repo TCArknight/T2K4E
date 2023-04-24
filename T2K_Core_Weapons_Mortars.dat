@@ -360,6 +360,7 @@
     <fieldval field="grCost" value="2500"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="10"/>
+    <tag group="WeaponCat" tag="Mortar"/>
     <tag group="WeaponType" tag="Mortar" name="Mortar" abbrev="Mortar"/>
     <tag group="AmmoCatType" tag="Mortar82"/>
     <tag group="AmmoType" tag="Mortar82"/>

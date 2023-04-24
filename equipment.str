@@ -1365,6 +1365,7 @@
 	    field[wpCrit].text = "*"
 		perform assign[Helper.Unloaded]
         endif
+
       ]]></eval>	
 	  
     <!-- Assign any derived special notes to the appropriate field -->
@@ -1454,14 +1455,32 @@
     <field
       id="wpCapacity"
       name="Ammo Capacity"
-      type="derived">
+      type="derived"
+	  maxfinal="5">	
+      <!-- Final value for display is a blending of the various range values -->
+      <finalize><![CDATA[
+        if (tagis[Equipment.InternalMag] <> 0) then
+          @text = field[wpCapacity].value & "i"
+        else
+          @text = field[wpCapacity].value
+          endif
+        ]]></finalize>
       </field>
 	  
     <!-- maximum rate of fire for the weapon -->
     <field
       id="wpRateOfFire"
       name="Rate Of Fire"
-      type="derived">
+      type="derived"
+	  maxfinal="5">	
+      <!-- Final value for display is a blending of the various range values -->
+      <finalize><![CDATA[
+        if (tagis[WeaponSpec.SlowReload?] <> 0) then
+          @text = "*"
+        else
+          @text = field[wpRateOfFire].value
+          endif
+        ]]></finalize>
       </field>	
 	  
     <!-- Short range for the weapon -->
@@ -1509,7 +1528,6 @@
 		    @text = tagnames[MaxRange.?,"/"]
 		  else
             @text = field[wpShort].value
-			~ field[wpShort].value & "/" & field[wpMedium].value & "/" & field[wpLong].value
 			endif
           endif
         ]]></finalize>
@@ -1545,6 +1563,7 @@
           perform assign[Helper.DamageByAmmo]
 		  endif
         endif
+	  		
       ]]></eval>
     <!-- Calculate the net attack roll for the weapon -->
     <eval index="1" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
@@ -1583,13 +1602,17 @@
 	  var myCost as number
 	  var reloadCost as number
 	  
-      myId = tagids[AmmoType.?," & "]
+      myId = tagids[AmmoType.?,"|"]
+	  
 	  if (empty(myId) <> 0) then
         myId = tagids[AmmoCatType.?," & "]
 	    endif
+		
 	  myCost = field[grCost].value
 	  reloadCost = field[wpReloadCost].value
-  
+      
+	  ~notify "myId - " & myId
+	  
       call SetAmmoExpr
       ]]></eval>
 	  

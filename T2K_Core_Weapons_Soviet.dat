@@ -16,6 +16,7 @@
   <thing id="hdrT2KSUMilitary" name="-- Soviet Military Firearms --" compset="Ranged" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
+    <tag group="WeaponType" tag="Revolver"/>
     </thing>
   <thing id="wpT2KPM" name="PM" description="The Pistolet Makarova, commonly known as the Makarov, was adopted\nby the Soviet Armed Forces in the early 1950s to replace older pre-World\nWar II designs. It was built around a new 9x18mm cartridge midway in\npower between the 9x17mm (.380 ACP) and 9x19mm (9mm Parabellum\nor NATO). It was later supplemented, but not replaced, by the PSM pistol" compset="Ranged">
     <fieldval field="wpShort" value="2"/>
@@ -226,7 +227,7 @@
     <usesource source="srcT2K"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="Cal76254"/>
-    <tag group="WeaponType" tag="GPMG" />
+    <tag group="WeaponType" tag="GPMG"/>
     <holdlimit>AmmoType.Cal76254</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
@@ -252,7 +253,7 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
-    <tag group="WeaponType" tag="LMG" />
+    <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="Cal54539"/>
     <holdlimit>AmmoType.Cal54539</holdlimit>
@@ -277,7 +278,7 @@
     <fieldval field="grCost" value="1750"/>
     <fieldval field="grWeight" value="7"/>
     <usesource source="srcT2K"/>
-    <tag group="WeaponType" tag="HMG" />
+    <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="Cal127108"/>
     <holdlimit>AmmoType.Cal127108</holdlimit>
@@ -293,7 +294,7 @@
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="AmmoType" tag="Cal127108"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
-    <tag group="WeaponType" tag="HMG" />
+    <tag group="WeaponType" tag="HMG"/>
     <holdlimit>AmmoType.Cal127108</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>

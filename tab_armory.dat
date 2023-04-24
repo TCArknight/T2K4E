@@ -112,7 +112,7 @@
       buytemplate="BuyCash"
       selltemplate="SellCash">
       <list>component.WeapRange</list>
-      <candidate inheritlist="yes">!Equipment.Natural</candidate>
+      <candidate inheritlist="yes">!(Equipment.Natural|Equipment.Hide)</candidate>
       <titlebar><![CDATA[
         @text = "Select Ranged or Heavy Weapons to Purchase from the List Below"
         ]]></titlebar>
@@ -272,7 +272,6 @@
       perform portal[name].alignedge[left,0]
 	  ~portal[name].left = 0
       ]]></position>
-
 
     </template>
 	

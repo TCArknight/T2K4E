@@ -103,7 +103,7 @@
     style="tblInvis">
     <table_dynamic
       component="Specialty"
-      showtemplate="SimpleItem"
+      showtemplate="lpSpecialtyPick"
       choosetemplate="baSpecThing"
       showsortset="explicit"
       scrollable="no">

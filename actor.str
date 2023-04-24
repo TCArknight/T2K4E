@@ -590,6 +590,34 @@
 		@text = summary
         ]]></finalize>
       </field>
+
+    <field
+      id="acStartFood"
+      name="Starting Food Rations"
+      type="user"
+      defvalue="0">
+      </field>
+
+    <field
+      id="acStartWater"
+      name="Starting Water Rations"
+      type="user"
+      defvalue="0">
+      </field>
+
+    <field
+      id="acStartAmmo"
+      name="Starting Ammo "
+      type="user"
+      defvalue="0">
+      </field>
+
+    <field
+      id="acStartRads"
+      name="Starting Rads"
+      type="user"
+      defvalue="0">
+      </field>
 	  
     <!-- Maximum rank for Talents with a Rank-->
     <field
@@ -842,6 +870,7 @@
       field[acTotalAttrib].value = total 
 	  
       ]]></eval>	  
+	  
     </component>
 
   <!-- Personal component

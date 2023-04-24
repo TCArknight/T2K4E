@@ -300,6 +300,254 @@
     </template>	
 	
   <template
+    id="lpStartingRolls"
+    name="Starting Rolls"
+    compset="Actor"
+    marginhorz="3"
+    marginvert="3">
+	
+    <portal
+      id="rollfood"
+      style="actBig"
+      tiptext="Click to roll your Starting Food Rations.">
+      <action
+        action="trigger"
+        confirm="This will reroll your Starting Food Rations. Proceed?">
+        <trigger><![CDATA[
+	    ~declare variables that are used to communicate with our caller
+		var NumOfDice as number
+		var SizeOfDice as number
+		var Additional as number
+		var total as number
+	
+		NumOfDice = 1
+		SizeOfDice = 6
+		Additional = 0
+		
+		call DieRoll
+		
+		herofield[acStartFood].value = total		
+		
+		]]></trigger>
+        <buttontext><![CDATA[
+          @text = "Roll 1d6"
+          ]]></buttontext>
+        </action>
+      </portal>
+
+    <portal
+      id="rollwater"
+      style="actBig"
+      tiptext="Click to roll your Starting Water Rations.">
+      <action
+        action="trigger"
+        confirm="This will reroll your Starting Water Rations. Proceed?">
+        <trigger><![CDATA[
+	    ~declare variables that are used to communicate with our caller
+		var NumOfDice as number
+		var SizeOfDice as number
+		var Additional as number
+		var total as number
+	
+		NumOfDice = 1
+		SizeOfDice = 6
+		Additional = 0
+		
+		call DieRoll
+		
+		herofield[acStartFood].value = total		
+		
+		]]></trigger>
+        <buttontext><![CDATA[
+          @text = "Roll 1d6"
+          ]]></buttontext>
+        </action>
+      </portal>	
+
+    <portal
+      id="rollammo"
+      style="actBig"
+      tiptext="Click to roll your Starting Ammo Rounds.">
+      <action
+        action="trigger"
+        confirm="This will reroll your Starting Ammo Rounds. Proceed?">
+        <trigger><![CDATA[
+	    ~declare variables that are used to communicate with our caller
+		var NumOfDice as number
+		var SizeOfDice as number
+		var Additional as number
+		var total as number
+	
+		NumOfDice = 1
+		SizeOfDice = 6
+		Additional = 0
+		
+		call DieRoll
+		
+		herofield[acStartFood].value = total		
+		
+		]]></trigger>
+        <buttontext><![CDATA[
+          @text = "Roll 1d6"
+          ]]></buttontext>
+        </action>
+      </portal>	
+	  
+    <portal
+      id="rollrads"
+      style="actBig"
+      tiptext="Click to roll your Starting Rads.">
+      <action
+        action="trigger"
+        confirm="This will reroll your Starting Rads. Proceed?">
+        <trigger><![CDATA[
+	    ~declare variables that are used to communicate with our caller
+		var NumOfDice as number
+		var SizeOfDice as number
+		var Additional as number
+		var total as number
+	
+		NumOfDice = 1
+		SizeOfDice = 6
+		Additional = 0
+		
+		call DieRoll
+		
+		herofield[acStartRads].value = total		
+		
+		]]></trigger>
+        <buttontext><![CDATA[
+          @text = "Roll 1d6"
+          ]]></buttontext>
+        </action>
+      </portal>
+	  
+    <portal
+      id="lblfood"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Starting Food:"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="editfood"
+      style="editCenter">
+      <edit 
+        field="acStartFood">
+        </edit>
+      </portal>
+	  
+    <portal
+      id="lblwater"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Starting Water:"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="editwater"
+      style="editCenter">
+      <edit 
+        field="acStartWater">
+        </edit>
+      </portal>
+	  
+    <portal
+      id="lblammo"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Ammo Rounds:"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="editammo"
+      style="editCenter">
+      <edit 
+        field="acStartAmmo">
+        </edit>
+      </portal>
+	  
+    <portal
+      id="lblrads"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Permanent Rads:"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="editrads"
+      style="editCenter">
+      <edit 
+        field="acStartRads">
+        </edit>
+      </portal>
+
+
+    <position><![CDATA[
+      ~set up our height based on our tallest portal
+      height = portal[rollfood].height
+	  height += portal[rollwater].height + 2
+	  height += portal[rollammo].height + 2
+	  height += portal[rollrads].height + 2
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+	  
+      ~position our tallest portal at the top
+      portal[rollfood].top = 0
+      perform portal[rollwater].alignrel[ttob,rollfood,2]
+      perform portal[rollammo].alignrel[ttob,rollwater,2]
+      perform portal[rollrads].alignrel[ttob,rollammo,2]
+
+	  perform portal[lblfood].centeron[vert,rollfood]
+	  perform portal[editfood].centeron[vert,rollfood]
+	  perform portal[lblwater].centeron[vert,rollwater]
+	  perform portal[editwater].centeron[vert,rollwater]
+	  perform portal[lblammo].centeron[vert,rollammo]
+	  perform portal[editammo].centeron[vert,rollammo]
+	  perform portal[lblrads].centeron[vert,rollrads]
+	  perform portal[editrads].centeron[vert,rollrads]
+	  
+	  portal[editfood].top =  portal[lblfood].top
+	  portal[editfood].height =  portal[lblfood].height
+	  portal[editwater].top =  portal[lblwater].top
+	  portal[editwater].height =  portal[lblwater].height
+	  portal[editammo].top =  portal[lblammo].top
+	  portal[editammo].height =  portal[lblammo].height
+	  portal[editrads].top =  portal[lblrads].top
+	  portal[editfood].height =  portal[lblfood].height
+	  
+      ~position the rollfood portal on the far right
+      perform portal[rollfood].alignedge[right,0]
+      perform portal[rollwater].alignedge[right,0]
+      perform portal[rollammo].alignedge[right,0]
+      perform portal[rollrads].alignedge[right,0]
+      perform portal[editfood].alignrel[ltor,lblfood,10]
+      perform portal[editwater].alignrel[ltor,lblwater,10]
+      perform portal[editammo].alignrel[ltor,lblammo,10]
+      perform portal[editrads].alignrel[ltor,lblrads,10]
+	  
+	  ~position the rollfood portal on the far left
+      perform portal[lblfood].alignedge[left,0]
+      perform portal[lblwater].alignedge[left,0]
+      perform portal[lblammo].alignedge[left,0]
+      perform portal[lblrads].alignedge[left,0]
+      ]]></position>
+
+    </template>	
+  <template
     id="lpTourHdr"
     name="Tour Header"
     compset="Lifepath"
@@ -529,7 +777,7 @@
 	  ~we only need to show the final tour, years in the Tour selection
 	  portal[finaltour].visible = tagis[LifepathCat.Tour]
 	  portal[years].visible = tagis[LifepathCat.Tour]
-	  portal[aging].visible = 1 - tagis[LifepathCat.Childhood]
+	  portal[aging].visible = 1 - tagis[LifepathCat.Childhood] - tagis[LifepathCat.AtWar]
 
       ~position the name on the left and let it use all available space
       portal[name].left = 0
@@ -560,6 +808,7 @@
     <portalref portal="lpTours" />
     <portalref portal="lpAtWar" />
 	<templateref template="lpRollAttrib" thing="actor" />
+	<templateref template="lpStartingRolls" thing="actor" />
 
     <position><![CDATA[
       ~freeze our table in advancement mode to disable adding new choices
@@ -599,22 +848,29 @@
       portal[lpChildhood].top = portal[hdrChildhood].bottom + 5
       portal[lpChildhood].height = 50
       portal[lpChildhood].width = width
+	  autotop = portal[lpChildhood].bottom
+	  
+	  perform portal[lpTours].autoplace
+	  perform portal[hdrAtWar].autoplace[5]
+	  perform portal[lpAtWar].autoplace[5]
+	  perform template[lpStartingRolls].autoplace[5]
 	  
       ~portal[hdrTours].top = portal[lpChildhood].bottom + 5
       ~portal[hdrTours].height = 20
       ~portal[hdrTours].width = width
-      portal[lpTours].top = portal[lpChildhood].bottom + 5
+      ~portal[lpTours].top = portal[lpChildhood].bottom + 5
       ~ portal[lpTours].height = 50
-      portal[lpTours].width = width
+      ~portal[lpTours].width = width
 	  
-      portal[hdrAtWar].top = portal[lpTours].bottom + 5
-      portal[hdrAtWar].height = 20
-      portal[hdrAtWar].width = width
-      portal[lpAtWar].top = portal[hdrAtWar].bottom + 5
+	  ~portal[hdrAtWar].top = portal[lpTours].bottom + 5
+      ~portal[hdrAtWar].height = 20
+      ~portal[hdrAtWar].width = width
+      ~portal[lpAtWar].top = portal[hdrAtWar].bottom + 5
       ~ portal[lpAtWar].height = 50
-      portal[lpAtWar].width = width
+      ~portal[lpAtWar].width = width
 	  
-	  height = portal[lpAtWar].bottom
+	  height = autoextent
+	  
       ]]></position>
 
     </layout>

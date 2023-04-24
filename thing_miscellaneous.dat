@@ -56,9 +56,6 @@
     <eval index="2" phase="Setup" priority="1000" name="Adjust Skill Points"><![CDATA[
 	  field[resMax].value += herofield[acBonusSkillPts].value
 	  
-	  ~if we're using the lifepath creation, we dont need to adjust anything
-	  doneif (hero.tagis[source.srcT2K] <> 0)
-	  
 	  if (hero.child[mscPerson].field[perAge].value <= herofield[acAgeYoung].value ) then
         field[resMax].value += 8
 	  elseif (hero.child[mscPerson].field[perAge].value > herofield[acAgeAdult].value ) then
@@ -142,7 +139,8 @@
 
     <!-- Automatically add the damage transaction to every actor -->
     <tag group="Helper" tag="Bootstrap"/>
-    </thing>	
+    </thing>
+	
   <!-- Relationships -->
   <thing
     id="relRelationship"
@@ -304,8 +302,8 @@
     <tag group="Helper" tag="NoMaxBound"/>
 
     <!-- Rads begin at 0 -->
-    <eval index="1" phase="Initialize" priority="1000"><![CDATA[
-      field[trkMin].value = 0
+    <eval index="1" phase="Setup" priority="1000"><![CDATA[
+      field[trkMin].value = herofield[acStartRads].value
       ]]></eval>
     </thing>
 	

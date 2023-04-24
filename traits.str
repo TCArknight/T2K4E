@@ -402,7 +402,6 @@
 	  
       perform forward[Skill.?]
 	  
-	  
 	  doneif (hero.tagis[source.srcT2KLifepath] = 0)
 	  
 	  if (isgizmo = 0) then
@@ -648,7 +647,6 @@
 	  var tagstr as string
 	  var summ as string
         
-	  
       ~see if a quickfind has been created by another copy of this ability
       perform quickfind.setfocus
 
@@ -703,7 +701,7 @@
       summ &= "{b}Rank 3: {/b}" & field[talSummRank3].text & "{br}"
 	  endif
 	if (tagval >= 4) then
-      summ &= "{b}Rank 2: {/b}" & field[talSummRank4].text & "{br}"
+      summ &= "{b}Rank 4: {/b}" & field[talSummRank4].text & "{br}"
 	  endif
 	if (tagval >= 5) then
       summ &= "{b}Rank 5: {/b}" & field[talSummRank5].text & "{br}"

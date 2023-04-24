@@ -735,6 +735,7 @@
     compset="Ranged"
     name="Ranged Weapon"
     prefix="wp"
+	defchild="EquipmentDetails"
     description="Armor, vehicles, and simple equipment all have their own tabs for creating objects of those types."
     summary="Defines a ranged weapon that can be selected on the Armory tab.">
 	<inputthing
@@ -751,11 +752,6 @@
       name="Ammo Type"
       helptext="Specify type of ammo used by the weapon.">
       <it_taglist group="AmmoType" tag="?" />
-      </inputthing>
-    <inputthing
-      name="Weapon Bonus"
-      helptext="Specify the attack bonus of the weapon.">
-      <it_field field="wpBonus"/>
       </inputthing>
     <inputthing
       name="Reliability"
@@ -798,6 +794,11 @@
       <it_field field="wpCapacity"/>
       </inputthing> 
     <inputthing
+      name="Internal Magazine?"
+      helptext="Specify whether this weapon uses an internal magazine instead of a Clip.">
+      <it_tagcheck group="Equipment" tag="InternalMag"/>
+      </inputthing>
+    <inputthing
       name="Weapon Armor Rating"
       helptext="Specify the armor rating of the weapon.">
       <it_field field="wpArmorRating"/>
@@ -813,17 +814,15 @@
       <it_field field="grCost"/>
       </inputthing>
 
-	   
-    <inputthing
-      name="Minimum Strength"
-      helptext="Specify the minimum Strength required to use the weapon without penalty.">
-      <it_field field="wpStrReq"/>
-      </inputthing>
-
     <inputthing
       name="Special Behaviors"
       helptext="Specify any special behaviors for the weapon of which the user should be reminded.">
       <it_field field="wpSpecial"/>
+      </inputthing>
+    <inputthing
+      name="Special"
+      helptext="Specify what Weapon Special tags for the weapon.">
+	  <it_taglist group="WeaponSpec" tag="?" />
       </inputthing>
     <inputthing
       name="Natural Attack?"

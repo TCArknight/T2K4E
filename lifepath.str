@@ -84,11 +84,11 @@
 	    var tourIdx as number
 		
 		~ reduce the idx by 1 to account for the Childhood tour
-		tourIdx = field[xIndex].value - #lpathchildhood[]
+		tourIdx = field[xIndex].value - 1
 		
 	    if (tagis[LifepathCat.Tour] <> 0) then
 		  herofield[acLPTours].value += 1
-		  @value = tourIdx
+		  @value = herofield[acLPTours].value
 		 endif
         ]]></calculate>
       </field>
@@ -254,6 +254,8 @@
 	  elseif (tagis[LifepathCat.AtWar] <> 0) then
 		field[lpNumSkills].value = 2
 		field[lpDupSkills].value = 0
+		perform assign[Lifepath.SpecSelectReq]
+		field[lpSpecGained].value = 1
 
 		endif
 	  

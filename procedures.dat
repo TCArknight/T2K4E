@@ -23,12 +23,16 @@
 	ismore = 0
 	~ tempStr = "  * "
 	foreach pick in hero from Gear where "!Helper.InBackpack & !Print.NoPrint & !Equipment.Natural"
-	  if (ismore <> 0) then
-        tempStr &= "{br}"
-        endif
-	  tempStr &= "  * " & eachpick.field[grStkName].text
-	  ismore = 1
-	nexteach
+	  if (eachpick.tagis[Equipment.InMagazine] <> 0) then
+	    ~ if in a magazine, don't output it as the magazine will be output
+	  else
+	    if (ismore <> 0) then
+          tempStr &= "{br}"
+          endif
+	    tempStr &= "  * " & eachpick.field[grStkName].text
+	    ismore = 1
+		endif
+	  nexteach
 	
     if (ismore = 0) then
       tempStr &= "  " & "-none- {br}"
@@ -465,6 +469,9 @@
 	    endif
 	  endif
 	  
+    ~append any source tags
+    descript &=	"{br}{br}{b}Source: " & tagnames[usesource.?,", "]
+	
     ]]></procedure>
 	
   <!-- Procedure InfoContainer
@@ -1245,6 +1252,9 @@
 	var reloadCost as number
 
     ~ expr = "component.Ammunition & " & myId
+	if (pos(myId,"|") >= 0) then
+	  myId = "(" & myId & ")"
+	  endif
     expr = "component.Ammunition & Equipment.AmmoCarried & " & myId
     ~ notify expr
 	
@@ -1253,26 +1263,6 @@
 	~gizmo.childfound[GearHelper].field[ghAmmoReloadCost].value = myCost * reloadCost
 	
     ]]></procedure>
-
-  <!-- Script used to set up Ammo selection
-  -->
-  <procedure id="GetAmmoGear" context="pick"><![CDATA[
-    ~make sure there's a gizmo to travel to
-    doneif (isgizmo = 0)
-    
-    ~set up our tag expression for selecting appropriate Traits
-    var expr as string
-    var myId as string
-	var myCost as number
-	var reloadCost as number
-
-    expr = "component.Ammunition & " & myId
-	
-    gizmo.childfound[GearHelper].field[ghAmmoExpr].text = expr
-	~gizmo.childfound[GearHelper].field[ghAmmoBaseCost].value = myCost
-	~gizmo.childfound[GearHelper].field[ghAmmoReloadCost].value = myCost * reloadCost
-	
-    ]]></procedure>	
 	
   <procedure id="DieRoll" scripttype="none"><![CDATA[
     ~declare variables that are used to communicate with our caller

@@ -53,6 +53,15 @@
 	sortorder="2"
     description="Fan options for T2K 4e.">
     </source>
+
+  <source
+    id="srcSAFE"
+    name="Small Arms - A Firearms Expansion"
+    parent="srcT2KFan"
+    reportable="yes"
+    sortorder="10"
+    description="Fan-created firearms supplement.">
+    </source>
 	
   <source
     id="srcT2KOptions"

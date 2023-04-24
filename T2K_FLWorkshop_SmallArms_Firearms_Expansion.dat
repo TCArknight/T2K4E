@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="wpSAFHKMP5" name="H&amp;K MP5" description="As one of the most widely used submachine guns in the world, the MP5 (Maschinenpistole 5) has been issued to military and law enforcement organizations in dozens of countries. The MP5 is a select-fire 9x19mm weapon fitted with iron sights and uses a 30-round magazine." compset="Ranged">
-    <fieldval field="wpDamage" value="1"/>
-    <fieldval field="wpCrit" value="2"/>
-    <fieldval field="wpArmorRating" value="1"/>
-    <fieldval field="wpShort" value="3"/>
-    <fieldval field="wpCapacity" value="30"/>
-    <fieldval field="wpRateOfFire" value="6"/>
-    <fieldval field="grReliability" value="5"/>
-    <fieldval field="grCost" value="350"/>
-    <fieldval field="grWeight" value="1"/>
-    <usesource source="srcSAFE" parent="srcT2KFan" name="Small Arms - Firearms Expansion"/>
-    <tag group="WeaponCat" tag="OtherMilitary"/>
-    <tag group="AmmoType" tag="Cal919"/>
-    <tag group="WeaponType" tag="SMG"/>
-    <tag group="Equipment" tag="TwoHand"/>
-    <holdlimit>AmmoType.Cal919</holdlimit>
-    </thing>
+  <fileinfo>
+    <info_history>To Do:
+* Sniper Rifles
+* Shotguns
+* Machineguns</info_history>
+    </fileinfo>
   <thing id="wpSAFColtPython" name="Colt Python" description="Introduced in 1955, the Colt Python is available in a variety of barrel lengths, from 2.5″ to 8″, with the 6″ being the most common. This premium handgun is heavy, accurate, and reliable. Though chambered in .357 Magnum, it can also fire .38 Special." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpShort" value="2"/>
@@ -33,8 +23,10 @@
     <tag group="WeaponCat" tag="Civilian"/>
     <tag group="AmmoType" tag="Cal38Spl"/>
     <holdlimit>AmmoType.Cal357 | AmmoType.Cal38Spl</holdlimit>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <thing id="wpSAFCZ52" name="CZ 52" description="Developed in the early 1950s, the CZ 52 was the standard sidearm of the Czechoslovak military from 1952 to 1982, when it was replaced by the CZ 82. Originally designed for the 9x19mm cartridge, it was redesigned for the Soviet 7.62x25mm round." compset="Ranged">
+    <fieldval field="wpDamage" value="1"/>
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="2"/>
     <fieldval field="wpShort" value="2"/>
@@ -42,11 +34,1462 @@
     <fieldval field="wpArmorRating" value="1"/>
     <fieldval field="grWeight" value=".5"/>
     <fieldval field="grCost" value="100"/>
+    <fieldval field="wpCrit" value="2"/>
     <usesource source="srcSAFE"/>
     <tag group="WeaponCat" tag="CzechMilitary"/>
     <tag group="WeaponType" tag="Pistol"/>
     <tag group="AmmoType" tag="Cal76225"/>
     <holdlimit>AmmoType.Cal76225</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpSAFDesertEagle" name="Desert Eagle" description="This large frame semi-automatic pistol is available in a variety of chamberings, including .357 Magnum and .50 Action Express. The gas operated chambering and ejection system on the Desert Eagle is normally found in rifles and allows the pistol to fire Magnum rounds." compset="Ranged">
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="9"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value=".75"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="wpCrit" value="3"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal357"/>
+    <holdlimit>AmmoType.Cal357</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpSAFDesertEagle2" name="Desert Eagle (.50)" description="This large frame semi-automatic pistol is available in a variety of chamberings, including .357 Magnum and .50 Action Express. The gas operated chambering and ejection system on the Desert Eagle is normally found in rifles and allows the pistol to fire Magnum rounds." compset="Ranged">
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="wpCrit" value="3"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal50AE"/>
+    <holdlimit>AmmoType.Cal50AE</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2K50AE" name=".50 Action Express" compset="Ammunition" stacking="merge">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <fieldval field="amShort" value="2"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="GearType" tag="Ammunition" name="Ammunition" abbrev="Ammunition"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal50AE"/>
+    </thing>
+  <thing id="wpT2KFlintlockPis" name="Flintlock Pistol" description="The flintlock (or percussion cap) pistol is a firearm that uses black powder instead of modern smokeless powder. This single-action, muzzle-loaded pistol fires a .50 caliber lead ball. Reloading is time consuming, and, in game terms, requires two slow actions." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal50Ball"/>
+    <tag group="WeaponSpec" tag="SlowReload"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHKP7" name="H&amp;K P7" description="This 9mm pistol started production in 1979 and was used by both German military police and federal police. The P7 features a cocking lever built into the grip; squeezing the grip cocks the weapon. The weapon can then be fired semi-automatically. If the lever is released, the weapon de-cocks." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="13"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHP35" name="HP-35" description="The HP35, also known as the Browning Hi-Power, is a 9mm semi-automatic handgun made by FN. In production since 1935, the HP35 has been used by dozens of countries, including both Axis and Allied forces during WWII. The HP35’s staggered magazine has almost twice the capacity of the M1911’s single-stack magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="13"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="AmmoType" tag="Cal918"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM11" name="M11" description="Adopted by the US Armed Forces in 1992, the M11 is the military version of the SIG Sauer P228 semi-automatic pistol. The M11 is a double-action pistol with a decocking lever, but no other safety. The M11 can also use 15-round magazines from the P226, though they extend slightly." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="13"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM1933Tok" name="M1933 Tokarev" description="This semi-automatic pistol fires the 7.62x25mm Tokarev round. Production ended in 1955, but thousands of these pistols are still in service around the globe." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="8"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal76225"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KTaurusJudge" name="Taurus Judge" description="The Taurus Judge is a double-action revolver equipped with a 5-round cylinder simultaneously chambered for both .410 gauge and .45 Long Colt. Though the barrel is rifled, the rifling is shallow to keep shot from rapidly dispersing." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1 or 2"/>
+    <fieldval field="wpCrit" value="2 or 3"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="Ga410"/>
+    <tag group="AmmoType" tag="Cal45LC"/>
+    <holdlimit>AmmoType.Ga410|AmmoType.Cal45LC</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2KGa410" name=".410 Gauge" compset="Ammunition">
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="2"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Shotgun"/>
+    <tag group="AmmoType" tag="Ga410"/>
+    </thing>
+  <thing id="amT2K45LongColt" name=".45 Long Colt" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal45LC"/>
+    </thing>
+  <thing id="wpT2KMk25" name="Mk 25" description="The Mk25 is the Navy Seal version of the SIG Sauer P226 semi-automatic pistol. It fires the 9x19mm Parabellum round and is fed by a 15-round magazine. The Mk25 has added corrosion protection over the standard P226." compset="Ranged">
+    <fieldval field="grReliability" value="6"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KPA15" name="PA-15" description="The French PA-15 (Pistolet Automatique 15) is a 9x19mm semi-automatic pistol with a 15-round magazine. Because French law prohibited sale of the PA-15 to its citizens, and it wasn’t adopted by the French military, it was eventually exported." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="15"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KRugerMKII" name="Ruger MkII" description="The Ruger MK II pistol is a bull-barrelled version of the MK 1. This semi-automatic blowback-operated pistol is chambered in .22 LR and has a 10-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1-1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSWModel49" name="Smith &amp; Wesson Model 49" description="Also known as the Bodyguard, this small revolver is chambered in .38 SPL and holds 5 rounds in its cylinder. The Model 49’s shrouded hammer lets this small pistol be pulled from a pocket more easily." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Revolver"/>
+    <tag group="AmmoType" tag="Cal38Spl"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSteyrGB" name="Steyr GB" description="This semi-automatic blowback pistol is known for both its 18-round magazine and fixed barrel. Though reliable and accurate, the GB never saw widespread military adoption. In Austria, it lost to the Glock-17 and was beaten by the Beretta 92F in the United States. After these setbacks, Steyr focused on law enforcement sales for the GB." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="18"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KWaltherPPKSA" name="Walther PPK" description="Sidearm of WWII German officers and the preferred handgun of a certain “licensed to kill” British agent, the PPK (Polizeipistole Kriminal) is an elegant, semi-automatic, blowback-operated pistol." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KWaltherP38" name="Walther P-38" description="Designed to replace the Luger in the late 1930s, more than 1.2 million of these semi-automatic pistols would eventually be produced during WWII. Chambered for the 9x19mm Parabellum round, the P38 is still in German military service." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="8"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KBeretta93R" name="Beretta 93R" description="This machine pistol outwardly resembles the Beretta 92 from which it was derived. The folding foregrip and ported barrel help to control the weapon when firing. The 93R’s 20-round magazine extends beyond the handgrip. It can also use the 15-round magazine from the semi-automatic 92R pistol." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KCZ26" name="CZ-26" description="This Czechoslovak submachine gun, introduced in 1948, is chambered for the 7.62x25mm Tokarev cartridge. The CZ 26 features a progressive trigger—a full trigger squeeze engages fully automatic firing while a light trigger squeeze fires a single shot. The nearly identical CZ 25 is chambered in 9x19mm." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="32"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal76225"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KJatimatic" name="Jatimatic" description="This Finnish submachine gun features a bolt that recoils at an upward angle, reducing muzzle climb during firing. Chambered in 9x19mm, it was produced for three years in the mid ‘80s." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="40"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KL2A3Sterling" name="L2A3 Sterling" description="The Sterling submachine gun was designed to be light and fire 9x19mm ammunition at no more than 500 rounds/minute while meeting 100 yd (91m) accuracy requirements. It began to replace the Sten in 1953. Variants include the sound-suppressed L34A1." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="34"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM12" name="M-12" description="Beretta started production of the Model 12 in 1959. This 9x19mm submachine gun is used by Italian law enforcement as well as the Italian Navy and Air Force. This select-fire weapon has iron sights, a telescoping buttstock, and uses a 32-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="32"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM3A1SAFE" name="M3A1" description="The M3A1 “Grease Gun,” constructed primarily of steel stampings, was designed to replace the Thompson submachine gun. Chambered in .45 ACP, it has a telescoping stock and uses a 30-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="AmmoType" tag="Cal45ACP"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2K45ACP" name=".45 ACP" compset="Ammunition">
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    <tag group="AmmoType" tag="Cal45ACP"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    </thing>
+  <thing id="wpT2KMat49" name="MAT-49" description="The MAT-49 is a French submachine gun firing the 9x19mm round. For safer parachute jumps, the magazine well (and magazine) can be folded forward, parallel to the barrel. Most MAT-49s fire full-auto only, though some variants had a second trigger for single shots." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="32"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMP5SAFE" name="MP5" description="As one of the most widely used submachine guns in the world, the MP5 (Maschinenpistole 5) has been issued to military and law enforcement organizations in dozens of countries. The MP5 is a select-fire 9x19mm weapon fitted with iron sights and uses a 30-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMP5K" name="MP5K" description="The MP5K (from the German word kurz for “short”) is a shortened version of the standard weapon, designed for close quarters battle and incorporating a vertical foregrip. The MP5K’s shorter (and subsequently lighter) bolt results in a higher rate of fire than other MP5 variants." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMP5SD3" name="MP5SD3" description="The MP5SD3 is a sound-suppressed version of the MP5. It is designed to use standard supersonic 9x19mm ammunition, muffling the exit report, and slowing the bullets down to subsonic speeds. The SD3 variant denotes a retractable stock, select-fire, and integrated suppressor." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2K5728" name="5.7 x 28mm" compset="Ammunition">
+    <fieldval field="amDamage" value="1"/>
+    <fieldval field="amCrit" value="2"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoType" tag="Cal5728"/>
+    <tag group="AmmoCatType" tag="Pistol"/>
+    </thing>
+  <thing id="wpT2KP90" name="P90" description="Developed in the late 1980s, the P90 is a personal defense weapon chambered in 5.7x28mm. This compact SMG was designed for vehicle crew and support personnel. The P90 has a novel top-feeding 50-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="50"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="AmmoType" tag="Cal5728"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KPPSH41" name="PPSH-41" description="Cheap and reliable, more than 6 million PPSh-41s were produced by the USSR between 1941-1947. This select-fire submachine gun is fed via a 35-round box magazine or a 71-round drum magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="71"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="350"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="Cal76225"/>
+    <tag group="WeaponType" tag="SMG"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KAR7090" name="AR-70/90" description="The Beretta AR-70/90 is the standard issue rifle of the Italian military. It has three firing modes (full-auto, three-round burst, and semi-auto) and uses the standard 5.56x45mm NATO round. It is equipped with iron sights, but other optical devices can be fitted." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="WeaponCat" tag="ItalianMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KCETMEModL" name="CETME Model L" description="The 5.56mm NATO Model L replaced the 7.62mm NATO Model C in the late 1980s as the standard issue assault rifle of the Spanish army. The rifle accepts 30-round STANAG magazines and is fitted with iron sights. The Model LC (carbine) variant has a collapsible stock and shorter barrel." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="SpanishMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KFNFNC" name="FN-FNC" description="The Belgian FNC (Fabrique Nationale Carabine) is the standard assault rifle of both Belgium (adopted in 1989) and Sweden (adopted as the AK 5 in 1986). Chambered in 5.56mm NATO, it has iron sights and accepts a 30-round STANAG magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KGalil" name="Galil" description="The Galil is a 5.56mm NATO assault rifle initially manufactured by Israel Military Industries. In service since the early 1970s, it shares some operating features with Kalashnikov rifles. Variants include carbine and sniper models." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="35"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHK33" name="H&amp;K HK33" description="Using basic design concepts from the G3, HK designed the HK33 in the 1960s, but production didn’t start until 1968. This select-fire weapon is chambered in 5.56mm NATO and has 25-, 30-, and 40-round magazine options." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KL85A1" name="L85A1" description="The L85A1 is a select-fire bullpup assault rifle firing the 5.56x45mm NATO round. The rifle is equipped with a 4x optical sight and utilizes 30-round STANAG magazines. The L85A1 entered service with the British Armed Forces in 1985." compset="Ranged">
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMini14" name="Mini-14" description="Outwardly resembling a shrunk version of the M14, the Mini-14 is a semi-automatic rifle firing the 5.56x45mm NATO round. It uses a 20-round magazine specific to the weapon. The Mini-30 is chambered in 7.62x39mm." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMini30" name="Mini-30" description="Outwardly resembling a shrunk version of the M14, the Mini-14 is a semi-automatic rifle firing the 5.56x45mm NATO round. It uses a 20-round magazine specific to the weapon. The Mini-30 is chambered in 7.62x39mm." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal76239"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KRK62" name="RK 62" description="Based on the Kalashnikov AK-47 and firing the same 7.62x39mm round, the RK 62 has been the standard infantry rifle of the Finnish Defense Forces since the mid ‘60s. Versions with collapsible stocks and alternate chamberings are available." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal76239"/>
+    <tag group="WeaponCat" tag="FinnishMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSG540" name="SG 540" description="This 5.56x45mm NATO assault rifle was designed by SIG to be sold to export markets. The SG 540 is a select-fire rifle with a 30-round magazine. Variants include the SG 542, which is chambered in 7.62x51mm NATO." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSG542" name="SG 542" description="This 5.56x45mm NATO assault rifle was designed by SIG to be sold to export markets. The SG 540 is a select-fire rifle with a 30-round magazine. Variants include the SG 542, which is chambered in 7.62x51mm NATO." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSG550" name="SG 550" description="An evolution of the SG 540, the SG 550 was adopted by the Swiss military in 1990 as the Stgw 90 (Sturmgewehr 90). Chambered in 5.56x45mm NATO, the SG 550 fire-selector switch allows single shot, three-round burst, and full-automatic fire. The weapon uses a 20-round magazine as standard but 30-round magazines are available." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="SwissMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSKSAFE" name="SKS" description="The SKS is a simple yet reliable semi-automatic carbine firing the 7.62x39mm round. It has an integrated bayonet and is fed via a 10-round internal magazine. Though largely supplanted by the AK-47 (and its derivatives) in military service, more than 15 million SKSs were produced, and so they still remain in use around the world." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="10i"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal76239"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSteyrAUG" name="Steyr AUG" description="The Steyr AUG (Armee-Universal-Gewehr) is a bullpup select-fire assault rifle chambered in 5.56x45mm NATO. Adopted by the Austrian army in 1977, the AUG has a 1.5x telescopic sight, vertical foregrip, and feeds via a STANAG 30-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    <tag group="WeaponType" tag="AssaultRifle"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KFlintlockRif" name="Flintlock Rifle" description="The flintlock (or percussion cap) rifle is a firearm that uses black powder instead of modern smokeless powder. This single-action, muzzle-loaded rifle fires a .50 caliber lead ball. Reloading is time consuming, and, in game terms, requires two slow actions." compset="Ranged">
+    <fieldval field="grReliability" value="6"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="Cal50Ball"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponSpec" tag="SlowReload"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM6SurRif22LR" name="M6 Survival Rifle (.22 LR)" description="Issued throughout the 1950s and ‘60s, the M6 Aircrew Survival Weapon is a break-action firearm. The two barrels are stacked vertically, .22 LR over .410 gauge. Constructed entirely of steel, the rifle folds in half to 15″ (381mm) and has storage for 9 .22 rounds and 4 .410 rounds." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="1-1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="Cal22LR"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <bootstrap thing="wpT2KM6SurRif410"></bootstrap>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM6SurRif410" name="M6 Survival Rifle (.410 Ga)" description="Issued throughout the 1950s and ‘60s, the M6 Aircrew Survival Weapon is a break-action firearm. The two barrels are stacked vertically, .22 LR over .410 gauge. Constructed entirely of steel, the rifle folds in half to 15″ (381mm) and has storage for 9 .22 rounds and 4 .410 rounds." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="2"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Ga410"/>
+    <tag group="Equipment" tag="Hide"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KRuger1022" name="Ruger 10/22" description="In production since 1964, the semi-automatic Ruger 10/22 is one of the most widely-used rimfire rifles in the world. The basic 10/22 carbine has a wood stock, 18.5″ (470mm) barrel, and is fed via a 10-round rotary magazine. A large third-party aftermarket exists for the 10/22, making many magazine, stock, and barrel options available." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1-1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="100"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="Cal22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KRuger7722" name="Ruger 77/22" description="Based on the Ruger centerfire M77 rifle, the 77/22 is chambered in .22 LR. The rifle does not come with sights and must be fitted with a telescopic sight. It uses the same 10-round magazine as the 10/22." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="1-1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="300"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Hunting"/>
+    <tag group="AmmoType" tag="Cal22LR"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KBM59" name="BM 59" description="Adopted in 1959, the Beretta BM 59 is developed from the M1 Garand rifle. Chambered in 7.62x51mm and equipped with selective fire, this rifle was standard issue for the Italian military until it was phased out in favor of the AR70/90. Early versions were manufactured from rechambered M1s." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="ItalianMilitary"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KFN49" name="FN-49" description="Fabrique Nationale manufactured more than 175,000 of these semi-automatic rifles, from 1948-1961, in a variety of chamberings. Competition from the G3 (from rival HK) and the in-house FAL, both of which had detachable magazines with twice the capacity, led to the FN-49 going out of production." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="10i"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="400"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHKG3" name="H&amp;K G3" description="Rivaling the FN FAL as one of the most prolific battle rifles ever produced, the HK G3 has been in service since 1959 and more than 8 million have been built. The G3 is a select-fire rifle chambered in 7.62mm NATO. Variants include carbines and local models made under license." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="50"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BelgianMilitary"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KGarandM1" name="Garand (M1)" description="The semi-automatic M1 replaced the M1903 Springfield bolt-action rifle in 1936. The Garand, chambered in .30-06, holds 8 rounds in an en bloc clip. When the last round is fired, the clip ejects, and the bolt locks to the rear. The M1 was replaced by the M14 in 1958." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="9"/>
+    <fieldval field="wpCapacity" value="8"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="600"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Cal3006"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KKar98K" name="Kar98k" description="In service since 1935, more than 14 million Kar98k rifles have been built. This bolt-action rifle is chambered in 7.92x57mm Mauser. Variants include a scoped sniper model." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal79257M"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KLEMk3" name="Lee-Enfield Mk3" description="The SMLE (Short Magazine Lee-Enfield) Mk 3 is a bolt-action rifle chambered in .303 British. Its 10-round internal magazine is fed via 5-round stripper clips. The SMLE was used extensively by the British from 1904 to 1957, when it was replaced by the L1A1." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal303"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM14SAFE" name="M14" description="The M14 is a select-fire battle rifle using the 7.62x51mm NATO round and fed via a 20-round detachable magazine. The M14 replaced the M1 Garand (on which it was based) as the standard US military rifle in 1959. The M14 has the distinction of being the last battle rifle being issued as standard to the US troops. It was replaced by the M16 in 1968." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMosinNagant" name="Mosin Nagant" description="The M1891 is a bolt-action rifle firing the 7.62x54mmR cartridge, fed via an internal 5-round magazine. Developed in the late 1800s, it is estimated that more than 37 million Mosin-Nagants were produced between 1891 and 1973. It is still in service today around the world." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="BattleRifle"/>
+    <tag group="AmmoType" tag="Cal76254"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2K303" name=".303" compset="Ammunition">
+    <fieldval field="amDamage" value="3"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="grCost" value="1"/>
+    <fieldval field="grWeight" value=".01"/>
+    <usesource source="srcSAFE"/>
+    <tag group="AmmoType" tag="Cal303"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Rifle"/>
+    </thing>
+  <thing id="wpFRF2" name="FR-F2" description="An upgrade from the earlier FR F1 sniper rifle, the FR F2 has been in service since 1986 with the French military. It is a bolt-action rifle with a 10-round detachable magazine, and it fires the 7.62mm NATO round. It features a telescopic sight, integrated bipod, and a free-floating barrel." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="FrenchMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpL42A1" name="L42A1" description="The L42A1 sniper rifle is a 7.62x51mm NATO conversion of a .303 Lee-Enfield No. 4 Mk I. The new barrel was heavier and free-floating, resulting in increased accuracy. This bolt-action rifle is fitted with a telescopic sight." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="450"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpL96A1" name="L96A1" description="The L96A1 is a bolt-action sniper rifle that replaced the L42A1 in British service. In addition to an optical scope, it has a free-floating barrel, front bipod, rear monopod, detachable 10-round magazine, an adjustable chassis (stock), and uses a 7.62x51mm NATO round." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="600"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpM95" name="M95" description="The Barrett M95 is a bolt-action .50 BMG sniper rifle. Owing to its bullpup design, it is able to fit a 29″ (737mm) barrel in an overall length 12″ (300mm) less than that of the Barrett M82. The M95 has an integrated bipod and uses a telescopic sight." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="20"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2.5"/>
+    <fieldval field="grCost" value="800"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Cal50M2"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpParkerHaleM85" name="Parker-Hale M85" description="The M85 is a bolt-action sniper rifle chambered in 7.62x51mm NATO. The weapon has a telescopic sight, backup iron sights, an integrated bipod, and a detachable 10-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpPSL" name="PSL" description="Outwardly similar to the SVD Dragunov sniper rifle, the PSL (also known as the FPK, PSL-54C, &amp; Romak III) is based on the RPK LMG. Chambered in 7.62x54R, the PSL has a telescopic sight, iron sights, and a detachable 10-round magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Cal76254"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpSR25" name="SR-25" description="An evolution of the AR-10 and AR-15, the Stoner Rifle-25 is a designated marksman rifle developed in the early 1990s. The SR-25 has a telescopic sight, detachable 20-round magazine, and a free-floating barrel." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="10"/>
+    <fieldval field="wpCapacity" value="20"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="750"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpValmetM86" name="Valmet M86" description="An evolution of the AR-10 and AR-15, the Stoner Rifle-25 is a designated marksman rifle developed in the early 1990s. The SR-25 has a telescopic sight, detachable 20-round magazine, and a free-floating barrel." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponCat" tag="FinnishMilitary"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2KGa20" name="20 Gauge" compset="Ammunition">
+    <fieldval field="amDamage" value="2"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="1"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Shotgun"/>
+    <tag group="AmmoType" tag="Ga20"/>
+    </thing>
+  <thing id="wpT2KDBShotgun410" name="Double-Barreled Shotgun (.410)" description="This break-action firearm is available in a variety of gauges and has two parallel barrels (side-by-side or over/under) that can be fired in rapid succession. Some double-barrelled shotguns have one trigger for each barrel, allowing the shooter to select which barrel to fire (handy if the barrels have different chokes)." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="1"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="2"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="AmmoType" tag="Ga410"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KDBShotgun20" name="Double-Barreled Shotgun (20 Ga.)" description="This break-action firearm is available in a variety of gauges and has two parallel barrels (side-by-side or over/under) that can be fired in rapid succession. Some double-barrelled shotguns have one trigger for each barrel, allowing the shooter to select which barrel to fire (handy if the barrels have different chokes)." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="2"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="150"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="AmmoType" tag="Ga410"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHKFP6" name="HK FP6" description="In the late 1990s, HK partnered with FABARM to sell the latter’s shotguns under the HK marque. The FP6 is a pump-action 12-gauge shotgun. Options include different barrel lengths, pistol grips, folding stocks, finishes, and heat shields." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KKS23" name="KS-23" description="Constructed from rejected 23mm anti-aircraft gun barrels, the KS-23 shotgun, despite being rifled, has had numerous round types developed for it, including buckshot, rubber bullets, tear gas, and flash bangs." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="1"/>
+    <fieldval field="wpCapacity" value="4"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="300"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="amT2KGa2375" name="23x75mm" compset="Ammunition">
+    <fieldval field="amDamage" value="4"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="2"/>
+    <usesource source="srcT2K"/>
+    <tag group="AmmoCat" tag="Firearm"/>
+    <tag group="AmmoCatType" tag="Shotgun"/>
+    <tag group="AmmoType" tag="Ga2375"/>
+    </thing>
+  <thing id="wpT2KMoss500" name="Mossberg 500" description="The Mossberg 500 is a pump-action shotgun, most often chambered in 12 gauge, though available in 20 gauge and .410 gauge. The Mossberg 500 is used by a variety of law enforcement agencies and militaries around the world." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="6"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KNorHP91" name="Norinco HP9-1" description="Based on the Remington 870, the Norinco HP9-1 is a pump-action 12-gauge shotgun. Options for this weapon include a fixed stock, a folding stock, and a longer barrel." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="5"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSPAS12" name="SPAS-12" description="The Franchi SPAS-12 is a semi-automatic 12-gauge shotgun used by military and law enforcement organizations around the globe. Primarily used in semi-automatic mode, the pump-action mode is used for low-pressure, less-lethal munitions such as tear-gas rounds." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="700"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="InternalMag"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSPAS15" name="SPAS-15" description="An evolution of the SPAS-12, the SPAS-15 is a dual-mode (semi-automatic and pump-action) 12-gauge shotgun. It is fed via an 8-round detachable magazine. Options include fixed and folding stocks." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="8"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="600"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KStriker" name="Striker" description="Produced in the United States as the Street Sweeper, the Armsel Striker was designed in the 1980s and started production in the early 1990s. This shotgun is chambered in 12 gauge, has a folding stock, and a 12-round drum magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="wpCapacity" value="12"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="grCost" value="1200"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="Shotgun"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="Civilian"/>
+    <tag group="AmmoType" tag="Ga12"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KAA52" name="AA-52" description="Originally chambered in the French 7.5mm MAS round, the NF-1 variant uses the standard 7.62mm NATO cartridge. The AA-52 comes equipped with a bipod, but can be used with a tripod or vehicle pintle mount. This belt-fed GPMG also has a telescoping stock." compset="Ranged">
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="1500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="FrenchMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KBren" name="Bren Gun" description="Introduced in the 1930s, the Bren gun was originally chambered in .303 British. In the 1950s, many were converted to fire the 7.62mm NATO round. This version of the Bren gun used the 20-round magazine from the L1A1 (FN-FAL). The top-feeding magazine offsets the weapon’s sights to the left, requiring it to be fired from the right shoulder." compset="Ranged">
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="wpRateOfFire" value="4"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="2000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="LMG"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHK21E" name="HK-21E" description="The HK21E is a GPMG based on the G3. This 7.62mm NATO weapon is belt fed, though can use G3 magazines via a bolt-on adapter." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="2000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="FrenchMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KHK23E" name="HK-23E" description="The HK21E is a GPMG based on the G3. This 7.62mm NATO weapon is belt fed, though can use G3 magazines via a bolt-on adapter. The HK23E is a 5.56mm NATO version." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="7"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="1500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponType" tag="LMG"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KL86A1" name="L86A1" description="Adopted by the British Armed Forces in 1985 as a light support weapon. This LMG is equipped with a bipod and possesses a longer barrel than that of the L85A1 on which it is based. It is a select-fire weapon using the 5.56x45mm NATO round and a 30-round STANAG magazine." compset="Ranged">
+    <fieldval field="grReliability" value="4"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="7"/>
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="1.5"/>
+    <fieldval field="grCost" value="1000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponType" tag="LMG"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <tag group="WeaponCat" tag="BritishMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM134Mini" name="M134 Minigun" description="This electrically-powered, six-barreled Gatling-style machine gun fires the 7.62x51mm NATO round at 2000-6000 rounds/minute. In service since the early 1960s, this heavy machine gun must be mounted on a tripod or vehicle pintle." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="15"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="500"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="13"/>
+    <fieldval field="grCost" value="5000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="HMG"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMG3SAFE" name="MG3" description="The MG3 is a development of the MG42 from WWII. It features a quick-change barrel and is chambered in 7.62x51mm NATO. Not only is it still in service with the German Bundeswehr but it is also used by dozens of other countries." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="1500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KNG5" name="NG-5" description="Adopted by the Israeli Defence Forces in 1992, the Negev NG-5 is a select-fire light machine gun chambered in 5.56x45mm NATO. It accepts belted ammunition, a 35-round Galil magazine, and a 30-round STANAG magazine." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="7"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="grCost" value="1500"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="LMG"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KNG7" name="NG-5" description="Adopted by the Israeli Defence Forces in 1992, the Negev NG-5 is a select-fire light machine gun chambered in 5.56x45mm NATO. It accepts belted ammunition, a 35-round Galil magazine, and a 30-round STANAG magazine.\n\nThe NG-7 variant is a GPMG chambered in 7.62x51mm NATO." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="2000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="IsraelMilitary"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KVZ59" name="UK VZ-59" description="Designed in the late 1950s, this Czech weapon is still in service. The UK vz. 59 (Univerzální kulomet vzor 59) is a belt-fed general purpose machine gun chambered in 7.62x54mmR. It is equipped with a bipod." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="1000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    <tag group="AmmoType" tag="Cal76254"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KVZ59N" name="UK VZ-59N" description="Designed in the late 1950s, this Czech weapon is still in service. The UK vz. 59 (Univerzální kulomet vzor 59) is a belt-fed general purpose machine gun chambered in 7.62x54mmR. It is equipped with a bipod. \n\nThe Vz. 59N variant is chambered in 7.62x51mm NATO." compset="Ranged">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="8"/>
+    <fieldval field="wpCapacity" value="100"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="1000"/>
+    <usesource source="srcSAFE"/>
+    <tag group="WeaponType" tag="GPMG"/>
+    <tag group="Equipment" tag="TwoHand"/>
+    <tag group="WeaponCat" tag="CzechMilitary"/>
+    <tag group="AmmoType" tag="Cal76251"/>
+    <child entity="EquipmentDetails"></child>
     </thing>
   <preclude id="wpT2KColtPython" source="srcSAFE"/>
   </document>
