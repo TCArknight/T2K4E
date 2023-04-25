@@ -279,7 +279,7 @@
     <usesource source="CivCareerPaths"/>
     <tag group="LifepathCat" tag="Tour"/>
     <tag group="CareerType" tag="BlueCollar"/>
-    <exprreq message="Strength B+ required.">#trait[attrStr] += 5</exprreq>
+    <exprreq message="Strength B+ required."><![CDATA[#trait[attrStr] >= 5]]></exprreq>
     <child entity="lpCustom">
       <tag group="Skill" tag="skT2KTech"/>
       <tag group="Skill" tag="skT2KSurvival"/>
@@ -304,5 +304,35 @@
       <tag group="Specialty" tag="spcT2KNavigator"/>
       <tag group="Specialty" tag="spcT2KTrader"/>
       </child>
+    </thing>
+  <thing id="lpT2KHdrFirstResp" name="-- First Responder --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour" name="Tour of Duty" abbrev="Tour of Duty"/>
+    <tag group="CareerType" tag="FirstResponder"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KHdrEntertain" name="-- Entertainment --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour" name="Tour of Duty" abbrev="Tour of Duty"/>
+    <tag group="CareerType" tag="Entertainment"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KHdrService" name="-- Service Industry --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour" name="Tour of Duty" abbrev="Tour of Duty"/>
+    <tag group="CareerType" tag="ServiceIndustry"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KHdrProfess" name="-- Professionals --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour" name="Tour of Duty" abbrev="Tour of Duty"/>
+    <tag group="CareerType" tag="Professionals"/>
+    <child entity="lpCustom"></child>
+    </thing>
+  <thing id="lpT2KHdrJobless" name="-- Jobless --" compset="Lifepath" uniqueness="unique" isshowonly="yes">
+    <usesource source="CivCareerPaths"/>
+    <tag group="LifepathCat" tag="Tour" name="Tour of Duty" abbrev="Tour of Duty"/>
+    <tag group="CareerType" tag="Jobless"/>
+    <child entity="lpCustom"></child>
     </thing>
   </document>
