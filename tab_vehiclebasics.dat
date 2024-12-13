@@ -191,6 +191,15 @@
         text="Off Road">
         </label>
       </portal>
+
+    <portal
+      id="titleWater"
+      style="lblTitle">
+      <label
+        istitle="yes"
+        text="Water">
+        </label>
+      </portal>
 	  
     <portal
       id="titleCbt"
@@ -250,6 +259,26 @@
 		</label>
       </portal>
 	  
+    <portal
+      id="lblVehCbtSpeedWtr"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeCombatSpeedWtr].text
+			]]></labeltext>
+		</label>
+      </portal>
+
+    <portal
+      id="lblVehTravSpdWtr"
+      style="lblNormal">
+      <label>
+		<labeltext><![CDATA[
+			@text = field[vdeTravelSpeedWtr].text
+			]]></labeltext>
+		</label>
+      </portal>
+	  
     <position><![CDATA[
 	  var myWidth as number
 	  var myLeft as number
@@ -288,13 +317,16 @@
 	  ~position our tallest portal at the top
       portal[title1].top = 0
       portal[title1].left = Col2
-	  portal[title1].width = myWidth / 2 
+	  portal[title1].width = myWidth / 4
       portal[title2].top = 0
       portal[title2].left = portal[title1].right + 2
 	  portal[title2].width = myWidth / 4
       portal[title3].top = 0
       portal[title3].left = portal[title2].right + 2
 	  portal[title3].width = myWidth / 4
+      portal[titleWater].top = 0
+      portal[titleWater].left = portal[title3].right + 2
+	  portal[titleWater].width = myWidth / 4
 
       portal[titleCbt].top = portal[title1].bottom + 9
       portal[titleCbt].left = portal[title1].left
@@ -308,6 +340,10 @@
 	  portal[lblVehCbtSpeedOff].left = portal[title3].left
 	  portal[lblVehCbtSpeedOff].width = portal[title3].width
 	  
+	  portal[lblVehCbtSpeedWtr].top = portal[titleCbt].top
+	  portal[lblVehCbtSpeedWtr].left = portal[titleWater].left
+	  portal[lblVehCbtSpeedWtr].width = portal[titleWater].width
+	  
       portal[titleTravel].top = portal[titleCbt].bottom + 9
       portal[titleTravel].left = portal[titleCbt].left
 	  portal[titleTravel].width = portal[titleCbt].width
@@ -319,6 +355,10 @@
 	  portal[lblVehTravSpdOff].top = portal[titleTravel].top
 	  portal[lblVehTravSpdOff].left = portal[title3].left
 	  portal[lblVehTravSpdOff].width = portal[title3].width
+	  
+	  portal[lblVehTravSpdWtr].top = portal[titleTravel].top
+	  portal[lblVehTravSpdWtr].left = portal[titleWater].left
+	  portal[lblVehTravSpdWtr].width = portal[titleWater].width
 	  
       height = portal[lblVehRel].bottom + 5
 	  
@@ -707,6 +747,8 @@
     <!-- <portalref portal="vbaAttribVeh" taborder="10"/> 
     <templateref template="vbaVehSpeed" thing="mscVehDetails" />
 	-->
+    <portalref portal="bImages" taborder="20"/>
+    <portalref portal="peAdjust" taborder="30"/>
     <templateref template="vbaDetails" thing="mscVehDetails" />
     <templateref template="vbaVehFuel" thing="mscVehDetails" />
     <templateref template="vbaVehCrew" thing="mscVehDetails" />
@@ -714,13 +756,16 @@
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
+
 	  perform template[vbaDetails].autoplace
 	  perform template[vbaVehFuel].autoplace
 	  perform template[vbaVehCrew].autoplace
 	  perform template[vbaVehWeapons].autoplace
+	  perform portal[bImages].autoplace
+	  perform portal[peAdjust].autoplace
 	  
       ~figure out the total height we need for the tab
-	  height = template[vbaVehWeapons].bottom
+	  height = portal[peAdjust].bottom
 	  
       ]]></position>
 
@@ -763,7 +808,7 @@
     marginhorz="5"
     marginvert="5"
     order="110">
-    <live>CharType.Vehicle</live>
+    <live>CharType.typVehicle</live>
     <layoutref layout="vehbasics"/>
     <position><![CDATA[
       ~get the height used by the layout and use it, as that means we scroll

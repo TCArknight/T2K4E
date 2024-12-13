@@ -1,3 +1,12 @@
+10/26/23
+New -
+* Black Madonna (New Mines, Polish Weapons)
+* Core Weapons - Mines as separate data file
+
+Fixed -
+* Skill display shows available resource points in Lifepath mode.
+* Mines missing from weapon selection
+
 12/7/22
 New -
 * Archetypes (complete)
@@ -9,7 +18,7 @@ Fixed -
 * Weapons now utilize the AmmoType.? tag to determine what kind of ammo it can load.
   - "Unloaded" appears in the Notes/Special entry for the weapon if no ammo is selected.
 * Ammo provides Damage, Crit and Blast values for weapon that is using it.
-* Ammo selection for weapon not based on what Ammunition items are in character's gear. 
+* Ammo selection for weapon now based on what Ammunition items are in character's gear. 
 * Gear not in a backpack displays on statblock
 
 New -

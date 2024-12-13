@@ -819,7 +819,7 @@
 		perform hero.assign[Hero.FixedRace]
 		perform hero.assign[Hero.Minion]
 		perform hero.assign[CharacterType.Vehicle]
-		perform hero.assign[CharType.Vehicle]
+		perform hero.assign[CharType.typVehicle]
 	  elseif (hero.tagis[MinionSet.Critter] <> 0) then
 		perform hero.assign[Hero.FixedRace]
 		perform hero.assign[Hero.Minion]

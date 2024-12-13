@@ -419,12 +419,20 @@
 	  </field>
 	
     <field
-      id="vebTravelSpeedOff"
-      name="Travel Speed (Off Road)"
+      id="vebCombatSpeedOff"
+      name="Combat Speed (Off Road)"
       minvalue="0"
       defvalue="0"
       type="derived">
-	  </field>
+	  </field> 
+	
+    <field
+      id="vebCombatSpeedWtr"
+      name="Combat Speed (Water)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field> 
 	
     <field
       id="vebTravelSpeedOn"
@@ -435,12 +443,20 @@
 	  </field>
 	
     <field
-      id="vebCombatSpeedOff"
-      name="Combat Speed (Off Road)"
+      id="vebTravelSpeedOff"
+      name="Travel Speed (Off Road)"
       minvalue="0"
       defvalue="0"
       type="derived">
-	  </field> 
+	  </field>
+	
+    <field
+      id="vebTravelSpeedWtr"
+      name="Travel Speed (Water)"
+      minvalue="0"
+      defvalue="0"
+      type="derived">
+	  </field>
 	
     <field
       id="vebFuelCapacity"
@@ -597,6 +613,8 @@
 	  focus.field[vdeCombatSpeedOff].value = field[vebCombatSpeedOff].value
 	  focus.field[vdeTravelSpeedOn].value = field[vebTravelSpeedOn].value
 	  focus.field[vdeTravelSpeedOff].value = field[vebTravelSpeedOff].value
+	  focus.field[vdeCombatSpeedWtr].value = field[vebCombatSpeedWtr].value
+	  focus.field[vdeTravelSpeedWtr].value = field[vebTravelSpeedWtr].value
 	  focus.field[vdeFuelType].text = tagnames[VehicleFuel.?,"/"]
 	  focus.field[vdeFuelInUse].text = tagnames[VehicleFuelUsed.?,"/"]
 	  focus.field[vdeFuelCapacity].value = field[vebFuelCapacity].value
@@ -767,6 +785,18 @@
       name="Travel Speed (Off Road)"
       type="derived">
 	  </field>	
+	  
+    <field
+      id="vdeCombatSpeedWtr"
+      name="Combat Speed (On Water)"
+      type="derived">
+	  </field>
+	
+    <field
+      id="vdeTravelSpeedWtr"
+      name="Travel Speed (On Water)"
+      type="derived">
+	  </field>
 	  
     <field
       id="vdeCargoCapacity"
@@ -1618,8 +1648,18 @@
 	  
     </component>
 
+    <!-- WeapMelee component
+        Melee weapons derive from this component. Melee weapons auto-calculate their
+        net attack value based on the Melee skill.
+  -->
+  <component
+    id="WeapHeavy"
+    name="Heavy Weapon"
+    autocompset="no">
+    </component>
 
-  <!-- WeapMelee component
+
+    <!-- WeapMelee component
         Melee weapons derive from this component. Melee weapons auto-calculate their
         net attack value based on the Melee skill.
   -->
@@ -2198,6 +2238,7 @@
 	  parent.field[grDamage6].value = field[ghDamage6].value
 	  
       ]]></eval>	  
+	  
     </component>
 
   <!-- Define various component sets associated with the components defined above.
@@ -2216,6 +2257,18 @@
     <compref component="Gear"/>
     </compset>
 
+  <!-- Ranged - ranged weapons -->
+  <compset
+    id="Heavy"
+    stackable="yes">
+    <compref component="WeaponBase"/>
+    <compref component="WeapHeavy"/>
+    <compref component="WeapRange"/>
+    <compref component="Consumable"/>
+    <compref component="Equippable"/>
+    <compref component="Gear"/>
+    </compset>
+	
   <!-- Melee - melee weapons -->
   <compset
     id="Melee"

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="wpT2KM4SLAMATMine" name="M4 SLAM Anti-Tank Mine" description="The M4 Selectable Lightweight Attack Munition (SLAM) is a small, American, multi-purpose landmine with a passive infrared sensor and a magnetic influence sensor, which allows it to be used as a demolition munition, off-route mine, or an offensive mine using side or bottom attack modes. The SLAM is designed for use against armored vehicles, parked aircraft, cargo vehicles, stationary targets (such as electrical transformers), fuel storage tanks, and ammunition storage facilities. The mine can be set to detonate after up to 4 shifts. It can also be command detonated using a standard blasting cap." compset="Heavy">
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="shortname" value="M4 SLAM Mine"/>
+    <fieldval field="wpDamage" value="5"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM26APMine" name="M26 Anti-Personnel Mine" description="The M26 mine is a small, American, integrally-fused, bounding type, anti-personnel mine. The removable trip wire spool assembly consists of four 20-foot trip wires (two colored olive drab and two tan), a trip lever, and an arming handle, all assembled on a plastic spool. The fragmenting assembly consists of a steel ball containing an explosive charge, and a delay and booster recessed within the charge. When tripped by direct pressure or tripwire, the mine fires the explosive charge up about 2 meters, where it detonates, creating a fragmenting airburst explosion for a wider area of effect, particularly against upright personnel. The airburst prevents dropping prone from having a beneficial effect on avoiding wounds." compset="Heavy">
+    <fieldval field="wpDamage" value="5"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="shortname" value="M26 AP Mine"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="WeaponType" tag="Mine" name="Mine" abbrev="Mine"/>
+    <tag group="AmmoCatType" tag="Mortar60" name="60mm Mortar" abbrev="60mm Mortar"/>
+    <tag group="BlastRating" tag="C" name="C" abbrev="C"/>
+    <tag group="Equipment" tag="SelfContained" name="Self-Contained" abbrev="Self-Contained"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KPMN1APMine" name="PMN-1 Anti-Personnel Mine" description="The PMN-1 is a Soviet pressure-sensitive plastic-cased mine designed in the 1950’s. Later versions are more resistant to being detonated by blast mine countermeasure systems but are easier to detect with mine detectors. Copies of this mine are manufactured throughout the nations under the sphere of Soviet influence as well as the PRC and other nations." compset="Heavy">
+    <fieldval field="wpDamage" value="4"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="PMN-1 AP Mine"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="Equipment" tag="SelfContained" name="Self-Contained" abbrev="Self-Contained"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="WeaponType" tag="Mine" name="Mine" abbrev="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KDM12PARMMine" name="DM12 PARM Anti-Tank Rocket Mine" description="The DM12 Panzerabwehrrichtmine (PARM) 1 is a unique type of mine developed by West Germany in the late 1980s. It is mounted on a small tripod that allows it to be traversed through 360 degrees, elevated to 90 degrees, and depressed to −45 degrees automatically. The mine is manually emplaced and incorporates an arming delay of five minutes (one stretch). It can be fired either by a command trigger or by a fiber-optic cable using an acoustic sensor to detect engine sounds, triggering the HEAT rocket when the pressure plate is depressed. The mine’s rocket has an effective range of 4 hexes." compset="Heavy">
+    <fieldval field="wpDamage" value="8"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="shortname" value="DM12 PARM Mine"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="WeaponType" tag="Mine" name="Mine" abbrev="Mine"/>
+    <tag group="Equipment" tag="SelfContained" name="Self-Contained" abbrev="Self-Contained"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponCat" tag="GermanMilitary"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KWIST94" name="WIST-94" description="The WIST-94 is a conventional pistol rapidly tested and selected to become the new standard sidearm of the Polish military in 1994. However, much like the Beryl rifles, it barely had time to enter production before the situation started to worsen rapidly, and few were issued to combat units. A special model, the WIST-84L, has a red laser dot projector built into the pistol frame." compset="Ranged">
+    <fieldval field="wpCapacity" value="16"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="shortname" value="PM"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KWIST84L" name="WIST-84L" description="The WIST-94 is a conventional pistol rapidly tested and selected to become the new standard sidearm of the Polish military in 1994. However, much like the Beryl rifles, it barely had time to enter production before the situation started to worsen rapidly, and few were issued to combat units. A special model, the WIST-84L, has a red laser dot projector built into the pistol frame." compset="Ranged">
+    <fieldval field="wpCapacity" value="16"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="2"/>
+    <fieldval field="grCost" value="100"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="shortname" value="PM"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <fieldval field="wpSpecial" value="Integral Laser Sight"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="Pistol" name="Pistol" abbrev="Pistol"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="Cal919"/>
+    <holdlimit>AmmoType.Cal919</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KPM63RAK" name="PM-63 RAK" description="The PM-63 RAK is a selective-fire, open-bolt, blowback-operated submachinegun that entered Polish military service in 1965. Although superseded by the PM-84 in Polish service 20 years later, there are still a number of PM-63s in the reserve inventory, and thousands have been sold overseas to Soviet client states." compset="Ranged">
+    <fieldval field="wpCapacity" value="25"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="grCost" value="200"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="wpArmorRating" value="+2"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="SMG" name="Submachinegun" abbrev="Submachinegun"/>
+    <tag group="AmmoType" tag="Cal918" name="9mm x 18" abbrev="9mm x 18"/>
+    <tag group="WeaponCat" tag="PolishMilitary" name="Polish Military" abbrev="Polish Military"/>
+    <holdlimit>AmmoType.Cal918</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KKBKWZ88" name="KBK WZ. 88 Tantal" description="The Kbk wz. 88 Tantal is a selective fire, gas piston-driven assault rifle designed in the late 1980’s to act as the Polish military’s version of the AK-74 (and several components are interchangeable between the two rifles). The folding wire stock is a copy of an East German model, while the rate of fire is controlled by a burst limiter. As it only just started being issued in 1991 when the state of the Polish Armed Forces was in flux, the Tantal was hardly available and consequently the rifle is hard to find." compset="Ranged">
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="3"/>
+    <fieldval field="wpShort" value="6"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="AK-74"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="A. Rifle"/>
+    <tag group="AmmoType" tag="Cal54539" name="5.45 x 39" abbrev="5.45 x 39"/>
+    <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet Military"/>
+    <holdlimit>AmmoType.Cal54539</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KKSWBeryl" name="KSW 1996 Beryl" description="The KSW 1996 Beryl is a gas-operated Kalashnikov-style rifle that was approved in 1995, tested in 1996, and issued in 1997, but only in very small quantities due to the lack of availability of 5.56×45 mm NATO ammunition and the large numbers of 7.62×39 mm rifles already in service. Those that did see service went mainly to elite units that were operating directly with NATO forces." compset="Ranged">
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="grCost" value="500"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="AK-74"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="A. Rifle"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KKKWMiniBeryl" name="KKW 1996 Mini-Beryl" description="The KKW 1996 Mini-Beryl was developed and issued alongside the larger Beryl assault rifle as a commando variant. Due to its rarity and NATO ammunition, it is highly prized by Poles, when it can be found." compset="Ranged">
+    <fieldval field="wpCapacity" value="30"/>
+    <fieldval field="wpRateOfFire" value="5"/>
+    <fieldval field="wpShort" value="4"/>
+    <fieldval field="grCost" value="600"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="AK-74"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="AssaultRifle" name="Assault Rifle" abbrev="A. Rifle"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="Cal55645"/>
+    <holdlimit>AmmoType.Cal55645</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KSWDM" name="SWD-M" description="The SWD-M is a modernized and upgraded SWM with a heavy barrel, bipod and LD 6×42 scope. This extends the range and improves the accuracy of the rifle. The rifle was developed in the early 1990s for the new Polish Army but was not issued in substantial numbers due mainly to the possession of large stocks of the older SWD that were gathering rust in warehouses." compset="Ranged">
+    <fieldval field="wpCapacity" value="10"/>
+    <fieldval field="wpRateOfFire" value="2"/>
+    <fieldval field="wpShort" value="12"/>
+    <fieldval field="grCost" value="750"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="2"/>
+    <fieldval field="shortname" value="AK-74"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="Sniper"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="AmmoType" tag="Cal76254"/>
+    <holdlimit>AmmoType.Cal76254</holdlimit>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KRPG76Komar" name="RPG-76 Komar" description="The RPG-76 Komar is a disposable single-shot anti-tank rocket launcher designed in the 1970s to supplement the RPG-7, but not adopted until 1985. By then, its low penetration made it practically obsolete, and like the US LAW, it was relegated to use against armored cars and antipersonnel work against buildings and bunkers. It consists of a simple, short RPG-type tube with a folding stock and a dedicated rocket supplied inserted into the tube." compset="Heavy" summary="Disposable Rocket Launcher">
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpShort" value="3"/>
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="RPG-7V"/>
+    <fieldval field="wpDamage" value="6"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcBlackMadonna"/>
+    <tag group="WeaponType" tag="ATRL" name="Rocket Launcher" abbrev="RL"/>
+    <tag group="WeaponCat" tag="PolishMilitary"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  </document>

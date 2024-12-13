@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="vebSvetlyakPatrol" name="Svetlyak-Class Patrol Boat" description="The Svetlyak-class, also known as Project 10410, are patrol boats designed and built by the Soviet Navy. These boats carry out patrol missions and protect facilities from enemy surface and air attacks. They have steel hulls with an aluminum superstructure. Svetlyak boats have gas protection and can stay afloat with two compartments flooded. \n\nThe boats mount an MR-212/201-1 Vaygach-U navigation radar, MG-7 Braslet anti-saboteur sonar, MG-349M Rosy-K sonar, Khrom IFF, and a Slyabing electronic countermeasures suite. Several have been spotted along the Polish coast and in the Black Sea, possibly inserting clandestine Spetsnaz or KGB teams." compset="VehicleBase">
+    <fieldval field="vebReliability" value="5"/>
+    <fieldval field="vebArmorFront" value="3"/>
+    <fieldval field="vebArmorLeft" value="3"/>
+    <fieldval field="vebArmorRight" value="3"/>
+    <fieldval field="vebArmorBack" value="3"/>
+    <fieldval field="vebFuelCapacity" value="75000"/>
+    <fieldval field="vebFuelConsumption" value="250"/>
+    <fieldval field="vebCrew" value="28"/>
+    <fieldval field="vebPassengers" value="14"/>
+    <fieldval field="vebCargoCapacity" value="2500"/>
+    <fieldval field="vebMainWeapon" value="AK-176M (T, FCS)"/>
+    <fieldval field="vebSecWeapon" value="Igla-1M, KPV (T), MRG-1 (PG)"/>
+    <fieldval field="vebCombatSpeedWtr" value="3"/>
+    <fieldval field="vebTravelSpeedWtr" value="4"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="VehicleCat" tag="SovMil"/>
+    <tag group="VehicleType" tag="PatrolBoat" name="Patrol Boat"/>
+    <tag group="VehicleMove" tag="Water"/>
+    <tag group="VehicleFuel" tag="Diesel"/>
+    <tag group="VehicleFuelUsed" tag="Diesel"/>
+    <bootstrap thing="wpAK176M">
+      <autotag group="VehicleWpnMain" tag="Turret"/>
+      <autotag group="VehicleWpnMain" tag="FCS"/>
+      </bootstrap>
+    <bootstrap thing="wpIgla1M">
+      <autotag group="VehicleWpnSec" tag="Hull"/>
+      </bootstrap>
+    <bootstrap thing="wpT2KKPV">
+      <autotag group="VehicleWpnSec" tag="Turret"/>
+      </bootstrap>
+    <bootstrap thing="wpMRG1">
+      <autotag group="VehicleWpnSec" tag="PintleGun"/>
+      </bootstrap>
+    </thing>
+  <thing id="vehSvetlyakPatrol" name="Svetlyak-Class Patrol Boat" description="The Svetlyak-class, also known as Project 10410, are patrol boats designed and built by the Soviet Navy. These boats carry out patrol missions and protect facilities from enemy surface and air attacks. They have steel hulls with an aluminum superstructure. Svetlyak boats have gas protection and can stay afloat with two compartments flooded. \n\nThe boats mount an MR-212/201-1 Vaygach-U navigation radar, MG-7 Braslet anti-saboteur sonar, MG-349M Rosy-K sonar, Khrom IFF, and a Slyabing electronic countermeasures suite. Several have been spotted along the Polish coast and in the Black Sea, possibly inserting clandestine Spetsnaz or KGB teams." compset="Vehicle">
+    <fieldval field="grCost" value="250000"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="VehicleType" tag="PatrolBoat"/>
+    <tag group="VehicleCat" tag="SovMil"/>
+    <minion id="Vehicle" ownmode="no" livefield="minEnabled">
+      <tag group="MinionSet" tag="Vehicle"/>
+      <bootstrap thing="vebSvetlyakPatrol"></bootstrap>
+      </minion>
+    </thing>
+  </document>

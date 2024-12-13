@@ -216,7 +216,7 @@
     <holdlimit>AmmoType.Cal76254</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KPKM" name="PKM" description="The PKM, or modern version of the Pulemyot Kalashnikova, is a Soviet\nbelt-fed general-purpose machine gun introduced in the 1960s. It comes\nwith a detachable bipod, but it can also be mounted on a tripod or a\nvehicle pintle." compset="Ranged">
+  <thing id="wpT2KPKM" name="PKM" description="The PKM, or modern version of the Pulemyot Kalashnikova, is a Soviet\nbelt-fed general-purpose machine gun introduced in the 1960s. It comes\nwith a detachable bipod, but it can also be mounted on a tripod or a\nvehicle pintle." compset="Heavy">
     <fieldval field="wpShort" value="8"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="5"/>
@@ -225,13 +225,14 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="shortname" value="PKM"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="Cal76254"/>
     <tag group="WeaponType" tag="GPMG"/>
     <holdlimit>AmmoType.Cal76254</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2kRPK" name="RPK" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
+  <thing id="wpT2kRPK" name="RPK" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Heavy">
     <fieldval field="wpShort" value="6"/>
     <fieldval field="wpCapacity" value="75"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -239,13 +240,14 @@
     <fieldval field="grCost" value="600"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="Cal76239"/>
     <holdlimit>AmmoType.Cal76239</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KRPG74" name="RPK-74" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
+  <thing id="wpT2KRPG74" name="RPK-74" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Heavy">
     <fieldval field="wpCapacity" value="75"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpShort" value="6"/>
@@ -253,6 +255,7 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="AmmoType" tag="Cal54539"/>
@@ -270,7 +273,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoType" tag="Cal127108"/>
     </thing>
-  <thing id="wpT2KDHSK2B" name="DSHK-3B" description="The DShK-38, or Degtyaryova-Shpagina Krupnokaliberny model of 1938,\nis a Soviet heavy machine gun adopted in the late 1930s. It can be fired\nfrom a vehicle pintle or broken down and carried by a crew for tripod\nuse. Although mostly replaced by the NSV, tens of thousands of DShK-\n38 machineguns are still in service and stockpiles." compset="Ranged">
+  <thing id="wpT2KDHSK2B" name="DSHK-3B" description="The DShK-38, or Degtyaryova-Shpagina Krupnokaliberny model of 1938,\nis a Soviet heavy machine gun adopted in the late 1930s. It can be fired\nfrom a vehicle pintle or broken down and carried by a crew for tripod\nuse. Although mostly replaced by the NSV, tens of thousands of DShK-\n38 machineguns are still in service and stockpiles." compset="Heavy">
     <fieldval field="wpShort" value="15"/>
     <fieldval field="wpCapacity" value="50"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -278,13 +281,14 @@
     <fieldval field="grCost" value="1750"/>
     <fieldval field="grWeight" value="7"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="Cal127108"/>
     <holdlimit>AmmoType.Cal127108</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KNSV" name="NSV" description="The DShK-38, or Degtyaryova-Shpagina Krupnokaliberny model of 1938,\nis a Soviet heavy machine gun adopted in the late 1930s. It can be fired\nfrom a vehicle pintle or broken down and carried by a crew for tripod\nuse. Although mostly replaced by the NSV, tens of thousands of DShK-\n38 machineguns are still in service and stockpiles." compset="Ranged">
+  <thing id="wpT2KNSV" name="NSV" description="The DShK-38, or Degtyaryova-Shpagina Krupnokaliberny model of 1938,\nis a Soviet heavy machine gun adopted in the late 1930s. It can be fired\nfrom a vehicle pintle or broken down and carried by a crew for tripod\nuse. Although mostly replaced by the NSV, tens of thousands of DShK-\n38 machineguns are still in service and stockpiles." compset="Heavy">
     <fieldval field="wpCapacity" value="50"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpShort" value="15"/>
@@ -292,6 +296,7 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="6"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="AmmoType" tag="Cal127108"/>
     <tag group="WeaponCat" tag="SovietMilitary" name="Soviet Military" abbrev="Soviet"/>
     <tag group="WeaponType" tag="HMG"/>
@@ -319,6 +324,7 @@
     <fieldval field="grWeight" value="2"/>
     <fieldval field="shortname" value="RPG-7V"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="ATRL"/>
     <tag group="AmmoType" tag="Rocket83"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
@@ -363,7 +369,7 @@
     <tag group="AmmoCat" tag="Firearm"/>
     <tag group="AmmoType" tag="Cal145114"/>
     </thing>
-  <thing id="wpT2KKPV" name="KPV" description="The KPV, or Krupnokaliberniy Pulemyot Vladimirova, is a Soviet heavy\nmachine gun introduced shortly after World War II. It can be found\nmounted on many armored fighting vehicles and on independent towed\nanti-aircraft trailers such as the ZPU-1, ZPU-2, and ZPU-4 (the numbers\nindicating how many KPV machineguns are mounted together)." compset="Ranged">
+  <thing id="wpT2KKPV" name="KPV" description="The KPV, or Krupnokaliberniy Pulemyot Vladimirova, is a Soviet heavy\nmachine gun introduced shortly after World War II. It can be found\nmounted on many armored fighting vehicles and on independent towed\nanti-aircraft trailers such as the ZPU-1, ZPU-2, and ZPU-4 (the numbers\nindicating how many KPV machineguns are mounted together)." compset="Heavy">
     <fieldval field="wpShort" value="20"/>
     <fieldval field="wpCapacity" value="40"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -371,6 +377,7 @@
     <fieldval field="grCost" value="2500"/>
     <fieldval field="grWeight" value="9"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="SovietMilitary"/>
     <tag group="AmmoType" tag="Cal145114"/>

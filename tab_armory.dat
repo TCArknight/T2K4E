@@ -111,13 +111,41 @@
 	  choosesortset="WeaponTypeByCat"
       buytemplate="BuyCash"
       selltemplate="SellCash">
-      <list>component.WeapRange</list>
+      <list>component.WeapRange &amp; !component.WeapHeavy</list>
       <candidate inheritlist="yes">!(Equipment.Natural|Equipment.Hide)</candidate>
       <titlebar><![CDATA[
-        @text = "Select Ranged or Heavy Weapons to Purchase from the List Below"
+        @text = "Select Ranged Weapons to Purchase from the List Below"
         ]]></titlebar>
       <additem><![CDATA[
-        @text = "Add New Ranged or Heavy Weapons"
+        @text = "Add New Ranged Weapons"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
+  <!-- arHeavy portal
+        Presents a dynamic table where the user can add ranged weapons for the
+        character. This portal is identical to "arMelee" above, except that it
+        manages ranged weapons instead of melee weapons, resulting in a few minor
+        but important differences from the melee weapons table.
+  -->
+  <portal
+    id="arHeavy"
+    style="tblNormal">
+    <table_dynamic
+      component="Gear"
+	  headertemplate="arHeavyHdr"
+      showtemplate="arWpnPick"
+      choosetemplate="arWpnThing"
+	  choosesortset="WeaponType"
+      buytemplate="BuyCash"
+      selltemplate="SellCash">
+      <list>component.WeapHeavy</list>
+      <candidate inheritlist="yes">!(Equipment.Natural|Equipment.Hide)</candidate>
+      <titlebar><![CDATA[
+        @text = "Select Heavy Weapons to Purchase from the List Below"
+        ]]></titlebar>
+      <additem><![CDATA[
+        @text = "Add New Heavy Weapons"
         ]]></additem>
       </table_dynamic>
     </portal>
@@ -183,22 +211,60 @@
       </portal>
 
     <portal
-      id="damage"
+      id="blast"
       style="lblNormal">
 	  <label>
         <labeltext><![CDATA[
-          @text = field[wpDamage].text
+		@text = "Blast: " 
+		  
+		if (tagis[BlastRating.?] <> 0) then
+          @text &= " " & tagnames[BlastRating.?]
+		  endif
           ]]></labeltext>
         </label>
       </portal>
 
+    <portal
+      id="damage"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+		@text = "Dmg: " 
+  		
+        if (tagis[Helper.DamageByAmmo] + tagis[WeaponSpec.BlastOnly] <> 0) then
+	      @text &= "*"
+		else
+		  @text &= field[wpDamage].text
+          endif
+
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="crit"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+		@text = "Crt: " 
+  		
+        if (tagis[Helper.DamageByAmmo] + tagis[WeaponSpec.BlastOnly] <> 0) then
+	      @text &= "*"
+		else
+		  @text &= field[wpCrit].text
+          endif
+          
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
     <portal
       id="range"
       style="lblDisable">
       <label>
         <labeltext><![CDATA[
           if (tagis[component.WeapRange] <> 0) then
-            @text = field[wpRange].text
+            @text = "Rng: " & field[wpRange].text
           else
             @text = ""
             endif
@@ -211,7 +277,7 @@
       style="lblNormal">
       <label>
         <labeltext><![CDATA[
-          @text = field[grCost].text
+          @text = "Cst: " & field[grCost].text
           ]]></labeltext>
         </label>
       </portal>
@@ -225,15 +291,19 @@
 		  ]]></labeltext>
         </label>
       </portal>
-
 	  
     <position><![CDATA[
       ~set up our dimensions, with a width that we dictate; our width can vary
       ~between weapon types, since ranged weapons require extra space for the range
       height = portal[name].height
       if (tagis[component.WeapRange] <> 0) then
+	    portal[range].visible = 1
+		if (tagis[Helper.NoRange] <> 0) then
+		  portal[range].visible = 0
+		  endif
         width = 500
       else
+	    portal[range].visible = 0
         width = 250
         endif
 
@@ -242,7 +312,9 @@
 
       ~if this is a show-only thing, hide the damage/range/cost, then position the name
       if (tagis[thing.showonly] <> 0) then
+	    portal[blast].visible = 0
         portal[damage].visible = 0
+        portal[crit].visible = 0
         portal[range].visible = 0
         portal[cost].visible = 0
         portal[type].visible = 0
@@ -251,27 +323,31 @@
         done
         endif
 		
+	  portal[type].visible = 0	
       ~position the cost portal on the far right
       perform portal[cost].alignedge[right,0]
 
       ~position the range portal to the left of the cost
-	  perform portal[range].centerpoint[horz,285]
+	  perform portal[range].centerpoint[horz,400]
+	  
+      ~position the damage portal to the left of the range
+	  perform portal[blast].centerpoint[horz,310]
+	  portal[blast].visible = tagis[BlastRating.?]
 
       ~position the damage portal to the left of the range
-	  perform portal[damage].centerpoint[horz,225]
-
+	  perform portal[crit].centerpoint[horz,260]
+	  
       ~position the damage portal to the left of the range
-	  perform portal[type].centerpoint[horz,175]
+	  perform portal[damage].centerpoint[horz,210]
 	  
       ~position the name on the left and let it use all available space
-
-      portal[name].width = minimum(portal[name].width,portal[type].left - 10)
+      portal[name].width = minimum(portal[name].width,portal[damage].left - 10)
 	  perform portal[name].sizetofit[25]
 	  
       ~position the cost portal on the far right
       perform portal[name].alignedge[left,0]
 	  ~portal[name].left = 0
-      ]]></position>
+      ]]></position>	  
 
     </template>
 	
@@ -505,7 +581,180 @@
       isheader="yes">
       <label
         istitle="yes"
-        text="Ranged &amp; Heavy Weapons">
+        text="Ranged Weapons">
+        </label>
+      </portal>
+	  
+    <portal
+      id="hdrName"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Weapon"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrReliability"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Rel"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrDamage"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Dmg"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrCrit"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Crit"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="hdrRange"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+		  @text = "Rng"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrArmor"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+		  @text = "Arm"
+          ]]></labeltext>
+        </label>
+      </portal>
+    <portal
+      id="hdrSpecial"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Notes"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrAmmo"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Ammo Type"
+          ]]></labeltext>
+        </label>
+      </portal>	  
+ 
+      <portal
+      id="hdrMag"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Mag"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+      <portal
+      id="hdrROF"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "ROF"
+		  ]]></labeltext>
+        </label>
+      </portal>	
+	  
+    <header><![CDATA[
+      ~our header height is the title plus a gap plus the header text
+      height = portal[hdrTitle].height + portal[hdrName].height + portal[hdrAmmo].height + 4
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~our title spans the full width of the template
+      portal[hdrTitle].width = width
+
+      ~each of our header labels has the same width as the corresponding data beneath
+	  var hdr1 as number
+	  var hdr2 as number
+	  
+      perform portal[hdrName].centerpoint[horz,60]
+      perform portal[hdrReliability].centerpoint[horz,140]
+      perform portal[hdrROF].centerpoint[horz,180]
+      perform portal[hdrDamage].centerpoint[horz,220]
+      perform portal[hdrCrit].centerpoint[horz,260]
+      perform portal[hdrRange].centerpoint[horz,300]
+      perform portal[hdrArmor].centerpoint[horz,340]
+      perform portal[hdrSpecial].centerpoint[horz,380]
+	  
+      perform portal[hdrMag].centerpoint[horz,140]
+	  perform portal[hdrAmmo].centerpoint[horz,285]	
+	  
+      ~align all header labels at the bottom of the header region
+	  hdr1 = portal[hdrTitle].bottom + 2
+	  
+      portal[hdrName].top = hdr1
+      portal[hdrReliability].top = hdr1
+      portal[hdrROF].top = hdr1
+      portal[hdrDamage].top = hdr1
+      portal[hdrCrit].top = hdr1
+      portal[hdrRange].top = hdr1
+      portal[hdrArmor].top = hdr1
+      portal[hdrSpecial].top = hdr1
+      
+	  hdr2 = portal[hdrName].bottom + 2
+	  portal[hdrAmmo].top = hdr2
+      portal[hdrMag].top = hdr2
+	  
+      height = portal[hdrAmmo].bottom
+      ]]></header>
+	  
+    </template>	
+	
+  <template
+    id="arHeavyHdr"
+    name="Heavy Weapon Header"
+    compset="Weapon"
+    marginhorz="3"
+    marginvert="3">
+	
+    <portal
+      id="hdrTitle"
+      style="lblTitle"
+      isheader="yes">
+      <label
+        istitle="yes"
+        text="Heavy Weapons">
         </label>
       </portal>
 	  
@@ -1455,7 +1704,8 @@
     id="armory">
     <portalref portal="arMelee" taborder="10"/>
     <portalref portal="arRange" taborder="20"/>
-    <portalref portal="arAmmo" taborder="20"/>
+    <portalref portal="arHeavy" taborder="30"/>
+    <portalref portal="arAmmo" taborder="40"/>
     <portalref portal="arDefense" taborder="50"/>
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
@@ -1463,16 +1713,19 @@
       ~set the width of all tables to the full width of the layout
       portal[arMelee].width = width
       portal[arRange].width = width
+      portal[arHeavy].width = width
       portal[arDefense].width = width
 	  portal[arAmmo].width = width
 	  
 	  perform portal[arMelee].autoplace[0]
 	  perform portal[arRange].autoplace[10]
+	  perform portal[arHeavy].autoplace[10]
 	  perform portal[arAmmo].autoplace[10]
 	  perform portal[arDefense].autoplace[10]
 	  
-	  if (hero.tagis[CharType.Vehicle] <> 0) then
+	  if (hero.tagis[CharType.typVehicle] <> 0) then
 	    portal[arMelee].visible = 0
+	    portal[arHeavy].visible = 0
 	    portal[arDefense].visible = 0
 		portal[arRange].top = 0
 	    endif
@@ -1496,7 +1749,7 @@
     marginhorz="5"
     marginvert="5"
     order="210">
-    <live>!HideTab.armory</live>
+    <live>!(HideTab.armory|CharType.typVehicle)</live>
     <layoutref layout="armory"/>
     <position><![CDATA[
       ]]></position>

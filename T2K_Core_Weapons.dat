@@ -206,11 +206,6 @@
     <tag group="WeaponType" tag="Revolver"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     </thing>
-  <thing id="hdrT2KGrenade" name="-- Hand Grenades --" compset="Ranged" isshowonly="yes">
-    <usesource source="srcT2K"/>
-    <tag group="WeaponCat" tag="Grenade"/>
-    <tag group="WeaponType" tag="Thrown"/>
-    </thing>
   <thing id="wpT2KGrenadeFrag" name="Grenade (Fragmentation)" compset="Ranged">
     <fieldval field="wpDamage" value="2"/>
     <fieldval field="wpCrit" value="3"/>
@@ -416,7 +411,7 @@
     <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KM72A3" name="M72A3 LAW" description="The M72A3 Light Antitank Weapon (LAW) fires a 66mm HEAT rocket from a disposable, extendable fiberglass tube. It was introduced in the early 1960s and slated to be replaced by the M136 AT-4 in the 1980s, but production of the M72A3 continued through the beginning of the war in the mid-’90s, since it was found to be particularly useful against light vehicles and buildings, and two M72A3 could be carried instead of one M136 AT-4." compset="Ranged" stacking="merge">
+  <thing id="wpT2KM72A3" name="M72A3 LAW" description="The M72A3 Light Antitank Weapon (LAW) fires a 66mm HEAT rocket from a disposable, extendable fiberglass tube. It was introduced in the early 1960s and slated to be replaced by the M136 AT-4 in the 1980s, but production of the M72A3 continued through the beginning of the war in the mid-’90s, since it was found to be particularly useful against light vehicles and buildings, and two M72A3 could be carried instead of one M136 AT-4." compset="Heavy" stacking="merge">
     <fieldval field="wpShort" value="3"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -554,7 +549,7 @@
     <holdlimit>AmmoType.Cal50M2</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KM60" name="M60" description="The M60 general-purpose machine gun (GPMG) was developed in the\n1950s from the World War II German FG-42 and MG-42. Although\nofficially replaced in service by the M240B in the early 1990s, there\nwere still large numbers in the US inventory and by the outbreak of\nwar in the mid-’90s it was still the primary machine gun of American\ncombat arms units. It includes an attached bipod and can also be\nfired from a tripod." compset="Ranged">
+  <thing id="wpT2KM60" name="M60" description="The M60 general-purpose machine gun (GPMG) was developed in the\n1950s from the World War II German FG-42 and MG-42. Although\nofficially replaced in service by the M240B in the early 1990s, there\nwere still large numbers in the US inventory and by the outbreak of\nwar in the mid-’90s it was still the primary machine gun of American\ncombat arms units. It includes an attached bipod and can also be\nfired from a tripod." compset="Heavy">
     <fieldval field="wpShort" value="8"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -562,13 +557,14 @@
     <fieldval field="grCost" value="1250"/>
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KM240B" name="M240B" description="The M240B was adopted by the US armed forces as a vehicle-mounted\nmachine gun in the late 1970s, and then as an infantry weapon in the\nearly 1990s. It comes standard with a bipod but may also be mounted on\na tripod or pintle. Unlike the M60, which was well known for jamming,\nthe M240B was very reliable." compset="Ranged">
+  <thing id="wpT2KM240B" name="M240B" description="The M240B was adopted by the US armed forces as a vehicle-mounted\nmachine gun in the late 1970s, and then as an infantry weapon in the\nearly 1990s. It comes standard with a bipod but may also be mounted on\na tripod or pintle. Unlike the M60, which was well known for jamming,\nthe M240B was very reliable." compset="Heavy">
     <fieldval field="wpDamage" value="3"/>
     <fieldval field="wpCrit" value="4"/>
     <fieldval field="wpShort" value="8"/>
@@ -578,13 +574,14 @@
     <fieldval field="grCost" value="1500"/>
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KM2HB" name="M2HB" description="The venerable Browning M2HB .50 machine gun was developed during\nWorld War I but not adopted until the 1930s. It has served in every branch\nof the US armed forces since then, mainly on vehicles, but also on tripods\nfrom fixed fighting positions. The weapon is so heavy, however, that a team\nis required to carry the barrel, receiver, tripod, and ammunition separately" compset="Ranged">
+  <thing id="wpT2KM2HB" name="M2HB" description="The venerable Browning M2HB .50 machine gun was developed during\nWorld War I but not adopted until the 1930s. It has served in every branch\nof the US armed forces since then, mainly on vehicles, but also on tripods\nfrom fixed fighting positions. The weapon is so heavy, however, that a team\nis required to carry the barrel, receiver, tripod, and ammunition separately" compset="Heavy">
     <fieldval field="wpShort" value="15"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -592,6 +589,7 @@
     <fieldval field="grCost" value="2000"/>
     <fieldval field="grWeight" value="7"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="Cal50M2"/>
@@ -609,7 +607,7 @@
     <tag group="AmmoCat" tag="HeavyWpn"/>
     <tag group="BlastRating" tag="C"/>
     </thing>
-  <thing id="wpT2KM136AT4" name="M136 AT4" description="The M136 AT4 is a modified version of the earlier Swedish 74 mm\nPansarskott m/68, developed in the late 1960s, adopted by the US\narmed forces in the mid-’80s. Like the M72A3 LAW, it is a disposable\nanti-tank weapon, but it has much better penetration and range\nthan the M72A3. Like the LAW, it is also effective against buildings\nand lighter vehicles." compset="Ranged" stacking="merge">
+  <thing id="wpT2KM136AT4" name="M136 AT4" description="The M136 AT4 is a modified version of the earlier Swedish 74 mm\nPansarskott m/68, developed in the late 1960s, adopted by the US\narmed forces in the mid-’80s. Like the M72A3 LAW, it is a disposable\nanti-tank weapon, but it has much better penetration and range\nthan the M72A3. Like the LAW, it is also effective against buildings\nand lighter vehicles." compset="Heavy" stacking="merge">
     <fieldval field="wpShort" value="5"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -627,7 +625,7 @@
     <holdlimit>AmmoType.Rocket84</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpFGM148" name="FGM-148" description="The FGM-148 Javelin is a top-attack fire-and-forget antitank\nguided missile that only started being issued in the mid-’90s as a replacement for the M47 Dragon, so it is still quite rare. It is also capable of guiding itself against designated helicopters. As the Javelin missile hits from the top, the armor rating for the rear of the target vehicle as always used." compset="Ranged">
+  <thing id="wpFGM148" name="FGM-148" description="The FGM-148 Javelin is a top-attack fire-and-forget antitank\nguided missile that only started being issued in the mid-’90s as a replacement for the M47 Dragon, so it is still quite rare. It is also capable of guiding itself against designated helicopters. As the Javelin missile hits from the top, the armor rating for the rear of the target vehicle as always used." compset="Heavy">
     <fieldval field="wpShort" value="40"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -635,6 +633,7 @@
     <fieldval field="grCost" value="7500"/>
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="ATGM"/>
     <tag group="AmmoType" tag="ATGM127"/>
     <tag group="WeaponCat" tag="USMilitary"/>
@@ -665,7 +664,7 @@
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoType" tag="ATGM140"/>
     </thing>
-  <thing id="wpM47Dragon" name="M47 Dragon" description="The M47 Dragon was developed in the mid-1970s as a wire-guided antitank missile capable of defeating the frontal armor of nearly any main battle tank. The gunner is expected to keep the crosshairs on the target for as long as 5 seconds while the missile flew to the target, despite having given away their position by the firing signature." compset="Ranged">
+  <thing id="wpM47Dragon" name="M47 Dragon" description="The M47 Dragon was developed in the mid-1970s as a wire-guided antitank missile capable of defeating the frontal armor of nearly any main battle tank. The gunner is expected to keep the crosshairs on the target for as long as 5 seconds while the missile flew to the target, despite having given away their position by the firing signature." compset="Heavy">
     <fieldval field="wpShort" value="25"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -673,6 +672,7 @@
     <fieldval field="grCost" value="5000"/>
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="ATGM"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="ATGM140"/>
@@ -691,7 +691,7 @@
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoType" tag="ATGM152"/>
     </thing>
-  <thing id="wpT2KBGM71TOW" name="BGM-71 TOW" description="The Tube-launched, Optically-tracked, Wire-guided (TOW) missile system was developed in the 1960s and is normally mounted on a vehicle (such as the Bradley or M901 ITV or a\nHMMWV) but can be carried by a crew. The gunner is expected to keep the crosshairs on the target for as long as 10 seconds while the missile flew to the target, despite having given away their position by the firing signature. Because the TOW has a much longer range than the Dragon, this was generally not a problem." compset="Ranged">
+  <thing id="wpT2KBGM71TOW" name="BGM-71 TOW" description="The Tube-launched, Optically-tracked, Wire-guided (TOW) missile system was developed in the 1960s and is normally mounted on a vehicle (such as the Bradley or M901 ITV or a\nHMMWV) but can be carried by a crew. The gunner is expected to keep the crosshairs on the target for as long as 10 seconds while the missile flew to the target, despite having given away their position by the firing signature. Because the TOW has a much longer range than the Dragon, this was generally not a problem." compset="Heavy">
     <fieldval field="wpDamage" value="11"/>
     <fieldval field="wpCrit" value="1"/>
     <fieldval field="wpArmorRating" value="-2"/>
@@ -702,6 +702,7 @@
     <fieldval field="grCost" value="10000"/>
     <fieldval field="grWeight" value="15"/>
     <usesource source="srcT2K"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="ATGM"/>
     <tag group="AmmoType" tag="ATGM152"/>
     <tag group="WeaponCat" tag="USMilitary"/>
@@ -947,5 +948,11 @@ AmmoType.Cal76254</holdlimit>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="amCal45"/>
     <holdlimit>AmmoType.Cal45</holdlimit>
+    </thing>
+  <thing id="hdrT2KRL" name="--- Rocket Launcher ---" compset="Heavy" holdable="no" isshowonly="yes">
+    <tag group="WeaponType" tag="ATRL" name="Rocket Launcher" abbrev="Rocket Launcher"/>
+    </thing>
+  <thing id="hdrT2KML" name="--- Missile Launcher ---" compset="Heavy" holdable="no" isshowonly="yes">
+    <tag group="WeaponType" tag="ATGM" />
     </thing>
   </document>

@@ -758,7 +758,7 @@
     marginhorz="5"
     marginvert="5"
     order="5">
-	<live>source.srcT2KArchetypes  &amp; !CharType.Vehicle</live>
+	<live>source.srcT2KArchetypes  &amp; !CharType.typVehicle</live>
     <layoutref layout="archetype"/>
     <position><![CDATA[
       ]]></position>

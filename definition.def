@@ -41,7 +41,7 @@
 
   <release
     major="1"
-    minor="1"
+    minor="2"
     required="8.6"
     summary="Updated for Hero Lab 8.6 to support unique identifiers up to 20 characters."><![CDATA[{b}{text ffff80}Hero Lab data files for Twilight:2000 (4E){text 010101}{/b}
 
@@ -185,7 +185,7 @@ Text goes here
     result="hero.tagis[CharType.typHero]"/>	
   <scriptmacro
     name="isvehicle"
-    result="hero.tagis[CharType.Vehicle]"/>
+    result="hero.tagis[CharType.typVehicle]"/>
 
   <!-- Decoration characters used in summary panel headertitle scripts -->
   <scriptmacro

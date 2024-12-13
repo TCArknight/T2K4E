@@ -231,7 +231,7 @@
 			tagexpr = "component.Attribute & AttrCat."
 			if (hero.tagis[CharType.typHero] <> 0) then
 			  tagexpr &= "Hero"
-			elseif (hero.tagis[CharType.Vehicle] <> 0) then
+			elseif (hero.tagis[CharType.typVehicle] <> 0) then
 			  tagexpr &= "Vehicle"
 			  endif
 			call sbtraits

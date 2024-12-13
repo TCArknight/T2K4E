@@ -61,12 +61,12 @@
     <tag group="BlastRating" tag="B"/>
     <tag group="AmmoType" tag="Shell105"/>
     </thing>
-  <thing id="hdrT2KHowitzer" name="-- Howitzers --" compset="Ranged" isshowonly="yes">
+  <thing id="hdrT2KHowitzer" name="-- Howitzers --" compset="Heavy" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="Howitzer"/>
     <tag group="WeaponCat" tag="Howitzer"/>
     </thing>
-  <thing id="wpT2KH105mm" name="105mm Howitzer" compset="Ranged">
+  <thing id="wpT2KH105mm" name="105mm Howitzer" compset="Heavy">
     <fieldval field="wpShort" value="150"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -141,7 +141,7 @@
     <tag group="AmmoCatType" tag="Howitzer122"/>
     <tag group="AmmoType" tag="Shell122"/>
     </thing>
-  <thing id="wpT2KH122mm" name="122mm Howitzer" compset="Ranged">
+  <thing id="wpT2KH122mm" name="122mm Howitzer" compset="Heavy">
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="grReliability" value="5"/>
@@ -216,7 +216,7 @@
     <tag group="BlastRating" tag="A"/>
     <tag group="AmmoType" tag="Shell152"/>
     </thing>
-  <thing id="wpT2KH152mm" name="152mm Howitzer" compset="Ranged">
+  <thing id="wpT2KH152mm" name="152mm Howitzer" compset="Heavy">
     <fieldval field="wpShort" value="250"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -291,7 +291,7 @@
     <tag group="AmmoCatType" tag="Howitzer155"/>
     <tag group="AmmoType" tag="Shell155"/>
     </thing>
-  <thing id="wpT2KH155mm" name="155mm Howitzer" compset="Ranged">
+  <thing id="wpT2KH155mm" name="155mm Howitzer" compset="Heavy">
     <fieldval field="wpShort" value="250"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -366,7 +366,7 @@
     <tag group="AmmoCatType" tag="Howitzer203"/>
     <tag group="AmmoType" tag="Shell203"/>
     </thing>
-  <thing id="wpT2KH203mm" name="203mm Howitzer" compset="Ranged">
+  <thing id="wpT2KH203mm" name="203mm Howitzer" compset="Heavy">
     <fieldval field="wpShort" value="400"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="am30165HE" name="30x165mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="5"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value=".5"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="AmmoCatType" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoCat" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoType" tag="30x165HE" name="30 x 165mm HE"/>
+    <tag group="BlastRating" tag="D"/>
+    </thing>
+  <thing id="wpAK630" name="AK-630" compset="Heavy">
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="WeaponCat" tag="VehicleWeapons"/>
+    <tag group="WeaponType" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoCatType" tag="NavalGun"/>
+    <tag group="AmmoType" tag="30x165HE"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="am57438HE" name="57x438mm HE" compset="Ammunition">
+    <fieldval field="amDamage" value="6"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="AmmoCatType" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoCat" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoType" tag="57x438mmHE" name="57 x 438mm HE"/>
+    </thing>
+  <thing id="am76762HE" name="76mm / 76.2mm HE" compset="Ammunition">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grWeight" value="4"/>
+    <fieldval field="amDamage" value="6"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="AmmoCatType" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoCat" tag="NavalGun" name="Naval Gun"/>
+    <tag group="AmmoType" tag="76mmHE" name="76mm / 76.2mm HE"/>
+    <tag group="BlastRating" tag="C"/>
+    </thing>
+  <thing id="amGren55mmHE" name="Grenade (55mm HE)" compset="Ammunition">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="amDamage" value="5"/>
+    <fieldval field="amCrit" value="4"/>
+    <fieldval field="amArmorRating" value="2"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="AmmoCat" tag="Grenade"/>
+    <tag group="AmmoType" tag="Gren55mmHE" name="Grenade (55mm HE)"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoCatType" tag="GL"/>
+    </thing>
+  <thing id="am70mmStinger" name="SAM (70mm Stinger)" compset="Ammunition">
+    <fieldval field="amDamage" value="6"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
+    <fieldval field="grCost" value="2500"/>
+    <fieldval field="grWeight" value="3"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="AmmoType" tag="70mmStinger" name="SAM (70mm Stinger)"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="SAM" name="Surface-to-Air Missile"/>
+    <tag group="BlastRating" tag="C"/>
+    </thing>
+  <thing id="am72mmIgla" name="SAM (72mm Igla)" compset="Ammunition">
+    <fieldval field="grWeight" value="3"/>
+    <fieldval field="grCost" value="2000"/>
+    <fieldval field="amDamage" value="6"/>
+    <fieldval field="amCrit" value="3"/>
+    <fieldval field="amArmorRating" value="-1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="AmmoType" tag="72mmIgla" name="SAM (72mm Igla)"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoCatType" tag="SAM" name="Surface-to-Air Missile"/>
+    </thing>
+  <thing id="am72mmStrela" name="SAM (72mm Strela)" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="SAM" name="Surface-to-Air Missile"/>
+    <tag group="AmmoType" tag="72mmStrela" name="SAM (72mm Strela)"/>
+    </thing>
+  <thing id="amHarpoon" name="AShM (Harpoon)" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="AShM" name="Anti-Ship Missile"/>
+    <tag group="AmmoType" tag="Harpoon" name="AShM (Harpoon)"/>
+    </thing>
+  <thing id="amRBS15" name="AShM (RBS-15)" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="AShM" name="Anti-Ship Missile"/>
+    <tag group="AmmoType" tag="RBS15" name="AShM (RBS-15)"/>
+    </thing>
+  <thing id="amP15Termit" name="AShM (P-15 Termit)" compset="Ammunition">
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="AShM" name="Anti-Ship Missile"/>
+    <tag group="AmmoType" tag="P15Termit" name="AShM (P-15 Termit)"/>
+    </thing>
+  <thing id="amTorp21inch" name="Torpedo (21-inch)" compset="Ammunition">
+    <fieldval field="grWeight" value="155"/>
+    <fieldval field="grCost" value="50000"/>
+    <tag group="AmmoType" tag="Torp21in" name="Torpedo (21-inch)"/>
+    <tag group="AmmoCat" tag="HeavyWpn"/>
+    <tag group="AmmoCatType" tag="Torpedo" name="Torpedo"/>
+    </thing>
+  <thing id="wpMineM08Contact" name="M-08 Contact Mine" compset="Heavy">
+    <fieldval field="wpDamage" value="12"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="Helper" tag="NoRange" name="NoRange" abbrev="NoRange"/>
+    <tag group="WeaponCat" tag="Mine"/>
+    <tag group="BlastRating" tag="A"/>
+    <tag group="Equipment" tag="SelfContained" name="Self-Contained" abbrev="Self-Contained"/>
+    <tag group="WeaponType" tag="Mine" name="Mine" abbrev="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpMineF80Bottom" name="F80 Bottom Mine" compset="Heavy">
+    <fieldval field="wpDamage" value="10"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="WeaponCat" tag="Mine"/>
+    <tag group="WeaponType" tag="Mine" name="Mine" abbrev="Mine"/>
+    <tag group="Equipment" tag="SelfContained" name="Self-Contained" abbrev="Self-Contained"/>
+    <tag group="BlastRating" tag="A"/>
+    <tag group="Helper" tag="NoRange" name="NoRange" abbrev="NoRange"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpMineLimpet" name="Limpet Mine" compset="Heavy">
+    <fieldval field="wpDamage" value="7"/>
+    <fieldval field="wpCrit" value="1"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="Helper" tag="NoRange" name="NoRange" abbrev="NoRange"/>
+    <tag group="WeaponCat" tag="Mine"/>
+    <tag group="Equipment" tag="SelfContained" name="Self-Contained" abbrev="Self-Contained"/>
+    <tag group="WeaponType" tag="Mine" name="Mine" abbrev="Mine"/>
+    <tag group="BlastRating" tag="B"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpIgla1M" name="Igla-1M" compset="Heavy">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="6"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="35"/>
+    <fieldval field="wpCapacity" value="1"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="AmmoCatType" tag="SAM"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoType" tag="72mmIgla"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="SAM"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpAK176M" name="AK-176M" compset="Heavy">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="1"/>
+    <fieldval field="wpDamage" value="6"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpShort" value="100"/>
+    <fieldval field="wpCapacity" value="152"/>
+    <fieldval field="wpArmorRating" value="1"/>
+    <usesource source="srcT2KHostileWtrs"/>
+    <tag group="WeaponType" tag="NavalGun"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoCatType" tag="NavalGun"/>
+    <tag group="AmmoType" tag="76mmHE"/>
+    <tag group="WeaponCat" tag="VehicleWeapons"/>
+    <child entity="EquipmentDetails">
+      <bootstrap thing="eqT2KFCS"></bootstrap>
+      </child>
+    </thing>
+  <thing id="wpMRG1" name="MRG-1" compset="Heavy">
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpRateOfFire" value="6"/>
+    <fieldval field="wpDamage" value="5"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpShort" value="5"/>
+    <fieldval field="wpCapacity" value="7"/>
+    <fieldval field="wpArmorRating" value="2"/>
+    <tag group="WeaponType" tag="GL"/>
+    <tag group="AmmoCatType" tag="GL"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="AmmoType" tag="Gren55mmHE"/>
+    <tag group="WeaponCat" tag="VehicleWeapons"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  </document>

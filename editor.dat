@@ -645,6 +645,7 @@
 
   <!-- Melee editthing - for melee weapons -->
   <editthing
+    group="Weapons"
     compset="Melee"
     name="Melee Weapon"
     prefix="wp"
@@ -729,9 +730,9 @@
       </inputthing>
     </editthing>
 
-
   <!-- Ranged editthing - for ranged weapons -->
   <editthing
+    group="Weapons"
     compset="Ranged"
     name="Ranged Weapon"
     prefix="wp"
@@ -747,6 +748,131 @@
       name="Weapon Type"
       helptext="Specify the type for this weapon.">
       <it_tagpick group="WeaponType" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Ammo Category Type"
+      helptext="Specify category of ammo used by the weapon.">
+      <it_taglist group="AmmoCatType" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Ammo Type"
+      helptext="Specify type of ammo used by the weapon.">
+      <it_taglist group="AmmoType" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Reliability"
+      helptext="Specify the reliability of the item.">
+      <it_field field="grReliability"/>
+      </inputthing>
+    <inputthing
+      name="Rate of Fire"
+      helptext="Specify the maximum rate of fire for the weapon.">
+      <it_field field="wpRateOfFire"/>
+      </inputthing>
+    <inputthing
+      name="Self-Contained?"
+      helptext="Check here if the weapon is disposable/not able to be reloaded.">
+      <it_tagcheck group="Equipment" tag="SelfContained"/>
+      </inputthing>
+    <inputthing
+      name="Damage"
+      helptext="Specify the damage rating of the weapon.">
+      <it_field field="wpDamage"/>
+      </inputthing>
+    <inputthing
+      name="Damage by Ammo Type loaded?"
+      helptext="Check here if the weapon danage depends on the type of ammo used in it.">
+      <it_tagcheck group="Helper" tag="DamageByAmmo"/>
+      </inputthing>
+    <inputthing
+      name="Crit Rating"
+      helptext="Specify the crit rating of the weapon.">
+      <it_field field="wpCrit"/>
+      </inputthing>
+    <inputthing
+      name="Blast"
+      helptext="Specify the blast rating of the weapon.">
+      <it_taglist group="BlastRating" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Range"
+      helptext="Specify the short range for the weapon in (10m) hexes.">
+      <it_field field="wpShort"/>
+      </inputthing>
+    <inputthing
+      name="Mag"
+      helptext="Specify the number of shots before reloading.">
+      <it_field field="wpCapacity"/>
+      </inputthing> 
+    <inputthing
+      name="Internal Magazine?"
+      helptext="Specify whether this weapon uses an internal magazine instead of a Clip.">
+      <it_tagcheck group="Equipment" tag="InternalMag"/>
+      </inputthing>
+    <inputthing
+      name="Weapon Armor Rating"
+      helptext="Specify the armor rating of the weapon.">
+      <it_field field="wpArmorRating"/>
+      </inputthing>
+    <inputthing
+      name="Weight"
+      helptext="Specify the weight of the item.">
+      <it_field field="grWeight"/>
+      </inputthing>
+    <inputthing
+      name="Cost"
+      helptext="Specify the standard cost of the item, with a value of 0 meaning it is free.">
+      <it_field field="grCost"/>
+      </inputthing>
+
+    <inputthing
+      name="Special Behaviors"
+      helptext="Specify any special behaviors for the weapon of which the user should be reminded.">
+      <it_field field="wpSpecial"/>
+      </inputthing>
+    <inputthing
+      name="Special"
+      helptext="Specify what Weapon Special tags for the weapon.">
+	  <it_taglist group="WeaponSpec" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Natural Attack?"
+      helptext="Specify whether this weapon should be treated as a natural attack.">
+      <it_tagcheck group="Equipment" tag="Natural"/>
+      </inputthing>
+    <inputthing
+      name="Two-Handed Weapon?"
+      helptext="Specify whether this weapon is two-handed.">
+      <it_tagcheck group="Equipment" tag="TwoHand"/>
+      </inputthing>
+    <inputthing>
+      <it_groupref id="SourceInfo"/>
+      </inputthing>
+    </editthing>
+
+  <!-- Ranged editthing - for ranged weapons -->
+  <editthing
+    group="Weapons"
+    compset="Heavy"
+    name="Heavy Weapon"
+    prefix="wp"
+	defchild="EquipmentDetails"
+    description="Armor, vehicles, and simple equipment all have their own tabs for creating objects of those types."
+    summary="Defines a ranged weapon that can be selected on the Armory tab.">
+	<inputthing
+      name="Weapon Category"
+      helptext="Specify the type for this weapon.">
+      <it_tagpick group="WeaponCat" tag="?" require="yes" deftag="BowsThrown"/>
+      </inputthing>
+	<inputthing
+      name="Weapon Type"
+      helptext="Specify the type for this weapon.">
+      <it_tagpick group="WeaponType" tag="?" />
+      </inputthing>
+    <inputthing
+      name="Ammo Category Type"
+      helptext="Specify category of ammo used by the weapon.">
+      <it_taglist group="AmmoCatType" tag="?" />
       </inputthing>
     <inputthing
       name="Ammo Type"
@@ -838,7 +964,6 @@
       <it_groupref id="SourceInfo"/>
       </inputthing>
     </editthing>
-
 
   <!-- Armor editthing -->
   <editthing
@@ -1091,6 +1216,11 @@
       <it_field field="vebCombatSpeedOff"/>
       </inputthing>
     <inputthing
+      name="Combat - Water"
+      helptext="Speed on water during combat turns.">
+      <it_field field="vebCombatSpeedWtr"/>
+      </inputthing>
+    <inputthing
       name="Travel - On Road"
       helptext="On road speed during travel turns.">
       <it_field field="vebTravelSpeedOn"/>
@@ -1099,6 +1229,11 @@
       name="Travel - Off Road"
       helptext="Off road speed during travel turns.">
       <it_field field="vebTravelSpeedOff"/>
+      </inputthing>
+    <inputthing
+      name="Travel - Water"
+      helptext="Speed on water during travel turns.">
+      <it_field field="vebTravelSpeedWtr"/>
       </inputthing>
 	  
     <inputthing

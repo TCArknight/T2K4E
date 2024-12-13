@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+
+  <thing id="hdrT2KLMG" name="-- Light Machineguns --" compset="Heavy" isshowonly="yes">
+    <tag group="WeaponType" tag="LMG"/>
+    </thing>
+  <thing id="hdrT2KHMG" name="-- Heavy Machineguns --" compset="Heavy" isshowonly="yes">
+    <tag group="WeaponType" tag="HMG"/>
+    </thing>
+  <thing id="hdrT2KGPMG" name="-- GP Machineguns --" compset="Heavy" isshowonly="yes">
+    <tag group="WeaponType" tag="GPMG"/>
+    </thing>
+  </document>

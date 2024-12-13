@@ -132,15 +132,15 @@
 
     <position><![CDATA[
       ~position and size the tables to span the full layout
-	  if (hero.tagis[CharType.Vehicle] <> 0) then
+	  if (hero.tagis[CharType.typVehicle] <> 0) then
 	    perform portal[smAttribVeh].autoplace
 	  else
         perform portal[smAttrib].autoplace
 		endif
       perform portal[smDerived].autoplace[20]
 	  
-	  portal[smAttrib].visible = 1 - hero.tagis[CharType.Vehicle]
-	  portal[smAttribVeh].visible = hero.tagis[CharType.Vehicle]
+	  portal[smAttrib].visible = 1 - hero.tagis[CharType.typVehicle]
+	  portal[smAttribVeh].visible = hero.tagis[CharType.typVehicle]
       ]]></position>
 
     </layout>

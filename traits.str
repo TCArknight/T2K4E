@@ -289,7 +289,7 @@
     <!-- if using the lifepath, attributes begin at 4 but can be reduced to 3-->
     <creation><![CDATA[
 	  ~if (hero.tagis[source.srcT2KLifepath] <> 0) then
-	  if (hero.tagis[CharType.Vehicle] = 0) then
+	  if (hero.tagis[CharType.typVehicle] = 0) then
         field[trtUser].value = 4
 		endif
 		

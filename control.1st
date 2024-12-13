@@ -222,7 +222,7 @@
     <sortkey isfield="no" id="_Name_"/>
     </sortset>
 	
-	<sortset
+  <sortset
     id="AmmoCatType"
     name="Ammo Category">
     <sortkey isfield="no" id="AmmoCatType"/>

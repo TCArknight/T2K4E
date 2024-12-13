@@ -47,7 +47,7 @@
     <holdlimit>AmmoType.Cal76251</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KLMGLSW" name="LSW" description="The heavy-barrel support version of the IW, the Light Support Weapon uses the same 30 round magazine as the IW and is equipped with a bipod." compset="Ranged">
+  <thing id="wpT2KLMGLSW" name="LSW" description="The heavy-barrel support version of the IW, the Light Support Weapon uses the same 30 round magazine as the IW and is equipped with a bipod." compset="Heavy">
     <fieldval field="wpShort" value="5"/>
     <fieldval field="wpCapacity" value="30"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -55,6 +55,7 @@
     <fieldval field="grWeight" value="1.5"/>
     <fieldval field="grCost" value="1500"/>
     <usesource source="srcT2K1stConvCore"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="WeaponCat" tag="BritishMilitary"/>
     <tag group="Equipment" tag="TwoHand"/>
@@ -62,7 +63,7 @@
     <holdlimit>AmmoType.Cal55645</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KMGMAG" name="MAG" description="The Belgian MAG is the stadnard general purpose machinegun of the British Army.  It is equipped with a bipod and can also be fired from a tripod (NMT).  It accepts 100 round belts." compset="Ranged">
+  <thing id="wpT2KMGMAG" name="MAG" description="The Belgian MAG is the stadnard general purpose machinegun of the British Army.  It is equipped with a bipod and can also be fired from a tripod (NMT).  It accepts 100 round belts." compset="Heavy">
     <fieldval field="wpShort" value="9"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -70,6 +71,7 @@
     <fieldval field="grCost" value="1500"/>
     <fieldval field="grWeight" value="4"/>
     <usesource source="srcT2K1stConvCore"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="WeaponCat" tag="BritishMilitary"/>
@@ -143,7 +145,7 @@
     <usesource source="srcT2K1stConvCore"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
     </thing>
-  <thing id="wpT2KMG3" name="MG3" description="The standard German general purpose machinegun is a slightly improved copy of the wartime MG42.  It is equipped with a bipod and can also be fired from a tripod (NMT).  It accepts 100 round belts." compset="Ranged">
+  <thing id="wpT2KMG3" name="MG3" description="The standard German general purpose machinegun is a slightly improved copy of the wartime MG42.  It is equipped with a bipod and can also be fired from a tripod (NMT).  It accepts 100 round belts." compset="Heavy">
     <fieldval field="wpShort" value="9"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="4"/>
@@ -151,6 +153,7 @@
     <fieldval field="grCost" value="1500"/>
     <fieldval field="grWeight" value="2.75"/>
     <usesource source="srcT2K1stConvCore"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
@@ -218,7 +221,7 @@
     <holdlimit>AmmoType.Cal76257M</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2Kvz59" name="vz59" description="The standard General Purpose Machinegun of the Czech army, a local design which is equippped with a bipod and can also be fired from a tripod (PLT).  It accepts 100 round belts." compset="Ranged">
+  <thing id="wpT2Kvz59" name="vz59" description="The standard General Purpose Machinegun of the Czech army, a local design which is equippped with a bipod and can also be fired from a tripod (PLT).  It accepts 100 round belts." compset="Heavy">
     <fieldval field="wpShort" value="9"/>
     <fieldval field="wpCapacity" value="100"/>
     <fieldval field="wpRateOfFire" value="3"/>
@@ -226,6 +229,7 @@
     <fieldval field="grCost" value="1500"/>
     <fieldval field="grWeight" value="3"/>
     <usesource source="srcT2K1stConvCore"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="AmmoType" tag="Cal76254"/>
     <tag group="WeaponCat" tag="CzechMilitary"/>
@@ -233,7 +237,7 @@
     <holdlimit>AmmoType.Cal76254</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KM214" name="M214" description="The M214 is a six-barrel gatling gun, fed by a 1000 round drum.  It may be fired only from a tripod (NHT) or vehicle mount." compset="Ranged">
+  <thing id="wpT2KM214" name="M214" description="The M214 is a six-barrel gatling gun, fed by a 1000 round drum.  It may be fired only from a tripod (NHT) or vehicle mount." compset="Heavy">
     <fieldval field="wpShort" value="10"/>
     <fieldval field="wpCapacity" value="1000"/>
     <fieldval field="wpRateOfFire" value="20"/>
@@ -241,6 +245,7 @@
     <fieldval field="grCost" value="10000"/>
     <fieldval field="grWeight" value="7"/>
     <usesource source="srcT2K1stConvCore"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <tag group="AmmoType" tag="Cal55645"/>

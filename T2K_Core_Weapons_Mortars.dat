@@ -305,12 +305,12 @@
     <tag group="BlastRating" tag="A"/>
     <tag group="AmmoType" tag="Mortar120"/>
     </thing>
-  <thing id="hdrT2KMortar" name="-- Mortars --" compset="Ranged" isshowonly="yes">
+  <thing id="hdrT2KMortar" name="-- Mortars --" compset="Heavy" isshowonly="yes">
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
     <tag group="WeaponType" tag="Mortar"/>
     <tag group="WeaponCat" tag="Mortar"/>
     </thing>
-  <thing id="wpT2K60mmMortar" name="60mm Mortar" description="Can be broken down into tube (2), bipod (2), baseplate (1), and sight (1). Takes one stretch to assemble/disassemble." compset="Ranged">
+  <thing id="wpT2K60mmMortar" name="60mm Mortar" description="Can be broken down into tube (2), bipod (2), baseplate (1), and sight (1). Takes one stretch to assemble/disassemble." compset="Heavy">
     <fieldval field="wpShort" value="35"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -325,7 +325,7 @@
     <holdlimit>AmmoType.Mortar60</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2K81mmMortar" name="81mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
+  <thing id="wpT2K81mmMortar" name="81mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Heavy">
     <fieldval field="wpShort" value="65"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -339,7 +339,7 @@
     <holdlimit>AmmoType.Mortar81</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2K82mmVasilek" name="82mm Mortar - Vasilek" description="The Vasilek semi-automatic 82mm mortar system has a RoF of 2 and Mag of 4. It must be towed and can’t be broken\ndown. It uses ammo dice just like small arms. On a hit, each on an ammo die lands an additional grenade in the target\nhex or a hex adjacent to it. On a miss, deviation is rolled one additional time for each rolled on the ammo dice" compset="Ranged">
+  <thing id="wpT2K82mmVasilek" name="82mm Mortar - Vasilek" description="The Vasilek semi-automatic 82mm mortar system has a RoF of 2 and Mag of 4. It must be towed and can’t be broken\ndown. It uses ammo dice just like small arms. On a hit, each on an ammo die lands an additional grenade in the target\nhex or a hex adjacent to it. On a miss, deviation is rolled one additional time for each rolled on the ammo dice" compset="Heavy">
     <fieldval field="wpShort" value="40"/>
     <fieldval field="wpCapacity" value="4"/>
     <fieldval field="wpRateOfFire" value="2"/>
@@ -353,7 +353,7 @@
     <holdlimit>AmmoType.Mortar82</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2K82mmMortar" name="82mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Ranged">
+  <thing id="wpT2K82mmMortar" name="82mm Mortar" description="Can be broken down into tube (4), baseplate (3), bipod (2), and sight (1)." compset="Heavy">
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
     <fieldval field="wpShort" value="40"/>
@@ -367,7 +367,7 @@
     <holdlimit>AmmoType.Mortar82</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2K42inMortar" name="4.2in Mortar" compset="Ranged">
+  <thing id="wpT2K42inMortar" name="4.2in Mortar" compset="Heavy">
     <fieldval field="wpShort" value="75"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>
@@ -381,7 +381,7 @@
     <holdlimit>AmmoType.Mortar42</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2K120mmMortar" name="120mm Mortar" compset="Ranged">
+  <thing id="wpT2K120mmMortar" name="120mm Mortar" compset="Heavy">
     <fieldval field="wpShort" value="75"/>
     <fieldval field="wpCapacity" value="1"/>
     <fieldval field="wpRateOfFire" value="1"/>

@@ -102,7 +102,7 @@
     <holdlimit>AmmoType.Cal76254</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KRPKPol" name="RPK (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
+  <thing id="wpT2KRPKPol" name="RPK (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Heavy">
     <fieldval field="wpCapacity" value="75"/>
     <fieldval field="wpRateOfFire" value="4"/>
     <fieldval field="wpShort" value="6"/>
@@ -110,13 +110,14 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="AmmoType" tag="Cal76239"/>
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="WeaponType" tag="LMG"/>
     <holdlimit>AmmoType.Cal76239</holdlimit>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KRPG74Pol" name="RPK-74 (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Ranged">
+  <thing id="wpT2KRPG74Pol" name="RPK-74 (Polish)" description="The RPK or Ruchnoy Pulemyot Kalashnikova, is the LMG version of the\nAK-47 series. It has a longer, heavier barrel with an integral bipod and is\nissued with 40-round magazines and 75-round drums, both of which can\nbe used in a regular AKM. A model with a folding stock is also available\nfor use by airborne forces." compset="Heavy">
     <fieldval field="wpCapacity" value="75"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpShort" value="6"/>
@@ -124,6 +125,7 @@
     <fieldval field="grReliability" value="5"/>
     <fieldval field="grWeight" value="2"/>
     <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="AmmoType" tag="Cal54539"/>
     <tag group="WeaponCat" tag="PolishMilitary"/>
     <tag group="WeaponType" tag="LMG"/>

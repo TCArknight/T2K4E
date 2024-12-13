@@ -86,7 +86,7 @@
     marginhorz="5"
     marginvert="5"
     order="220">
-    <live>CharType.Vehicle</live>
+    <live>CharType.typVehicle</live>
     <layoutref layout="vehiclegear"/>
     <position><![CDATA[
       ]]></position>

@@ -518,7 +518,7 @@
     <tag group="WeaponType" tag="SMG"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KPPSH41" name="PPSH-41" description="Cheap and reliable, more than 6 million PPSh-41s were produced by the USSR between 1941-1947. This select-fire submachine gun is fed via a 35-round box magazine or a 71-round drum magazine." compset="Ranged">
+  <thing id="wpT2KSAFEPPSH41" name="PPSH-41" description="Cheap and reliable, more than 6 million PPSh-41s were produced by the USSR between 1941-1947. This select-fire submachine gun is fed via a 35-round box magazine or a 71-round drum magazine." compset="Ranged">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="1"/>
@@ -746,7 +746,7 @@
     <tag group="Equipment" tag="TwoHand"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KSteyrAUG" name="Steyr AUG" description="The Steyr AUG (Armee-Universal-Gewehr) is a bullpup select-fire assault rifle chambered in 5.56x45mm NATO. Adopted by the Austrian army in 1977, the AUG has a 1.5x telescopic sight, vertical foregrip, and feeds via a STANAG 30-round magazine." compset="Ranged">
+  <thing id="wpT2KSAFESteyrAUG" name="Steyr AUG" description="The Steyr AUG (Armee-Universal-Gewehr) is a bullpup select-fire assault rifle chambered in 5.56x45mm NATO. Adopted by the Austrian army in 1977, the AUG has a 1.5x telescopic sight, vertical foregrip, and feeds via a STANAG 30-round magazine." compset="Ranged">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="2"/>
@@ -1304,7 +1304,7 @@
     <tag group="AmmoType" tag="Ga12"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KAA52" name="AA-52" description="Originally chambered in the French 7.5mm MAS round, the NF-1 variant uses the standard 7.62mm NATO cartridge. The AA-52 comes equipped with a bipod, but can be used with a tripod or vehicle pintle mount. This belt-fed GPMG also has a telescoping stock." compset="Ranged">
+  <thing id="wpT2KAA52" name="AA-52" description="Originally chambered in the French 7.5mm MAS round, the NF-1 variant uses the standard 7.62mm NATO cartridge. The AA-52 comes equipped with a bipod, but can be used with a tripod or vehicle pintle mount. This belt-fed GPMG also has a telescoping stock." compset="Heavy">
     <fieldval field="grReliability" value="4"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1315,13 +1315,14 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="grCost" value="1500"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="FrenchMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KBren" name="Bren Gun" description="Introduced in the 1930s, the Bren gun was originally chambered in .303 British. In the 1950s, many were converted to fire the 7.62mm NATO round. This version of the Bren gun used the 20-round magazine from the L1A1 (FN-FAL). The top-feeding magazine offsets the weapon’s sights to the left, requiring it to be fired from the right shoulder." compset="Ranged">
+  <thing id="wpT2KBren" name="Bren Gun" description="Introduced in the 1930s, the Bren gun was originally chambered in .303 British. In the 1950s, many were converted to fire the 7.62mm NATO round. This version of the Bren gun used the 20-round magazine from the L1A1 (FN-FAL). The top-feeding magazine offsets the weapon’s sights to the left, requiring it to be fired from the right shoulder." compset="Heavy">
     <fieldval field="grReliability" value="4"/>
     <fieldval field="wpRateOfFire" value="4"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1332,13 +1333,14 @@
     <fieldval field="grWeight" value="2"/>
     <fieldval field="grCost" value="2000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="BritishMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KHK21E" name="HK-21E" description="The HK21E is a GPMG based on the G3. This 7.62mm NATO weapon is belt fed, though can use G3 magazines via a bolt-on adapter." compset="Ranged">
+  <thing id="wpT2KHK21E" name="HK-21E" description="The HK21E is a GPMG based on the G3. This 7.62mm NATO weapon is belt fed, though can use G3 magazines via a bolt-on adapter." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1349,13 +1351,14 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="grCost" value="2000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="FrenchMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KHK23E" name="HK-23E" description="The HK21E is a GPMG based on the G3. This 7.62mm NATO weapon is belt fed, though can use G3 magazines via a bolt-on adapter. The HK23E is a 5.56mm NATO version." compset="Ranged">
+  <thing id="wpT2KHK23E" name="HK-23E" description="The HK21E is a GPMG based on the G3. This 7.62mm NATO weapon is belt fed, though can use G3 magazines via a bolt-on adapter. The HK23E is a 5.56mm NATO version." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="2"/>
@@ -1366,13 +1369,14 @@
     <fieldval field="grWeight" value="2"/>
     <fieldval field="grCost" value="1500"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KL86A1" name="L86A1" description="Adopted by the British Armed Forces in 1985 as a light support weapon. This LMG is equipped with a bipod and possesses a longer barrel than that of the L85A1 on which it is based. It is a select-fire weapon using the 5.56x45mm NATO round and a 30-round STANAG magazine." compset="Ranged">
+  <thing id="wpT2KL86A1" name="L86A1" description="Adopted by the British Armed Forces in 1985 as a light support weapon. This LMG is equipped with a bipod and possesses a longer barrel than that of the L85A1 on which it is based. It is a select-fire weapon using the 5.56x45mm NATO round and a 30-round STANAG magazine." compset="Heavy">
     <fieldval field="grReliability" value="4"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpDamage" value="2"/>
@@ -1383,13 +1387,14 @@
     <fieldval field="grWeight" value="1.5"/>
     <fieldval field="grCost" value="1000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="AmmoType" tag="Cal55645"/>
     <tag group="WeaponCat" tag="BritishMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KM134Mini" name="M134 Minigun" description="This electrically-powered, six-barreled Gatling-style machine gun fires the 7.62x51mm NATO round at 2000-6000 rounds/minute. In service since the early 1960s, this heavy machine gun must be mounted on a tripod or vehicle pintle." compset="Ranged">
+  <thing id="wpT2KM134Mini" name="M134 Minigun" description="This electrically-powered, six-barreled Gatling-style machine gun fires the 7.62x51mm NATO round at 2000-6000 rounds/minute. In service since the early 1960s, this heavy machine gun must be mounted on a tripod or vehicle pintle." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="15"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1400,13 +1405,14 @@
     <fieldval field="grWeight" value="13"/>
     <fieldval field="grCost" value="5000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="HMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="USMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KMG3SAFE" name="MG3" description="The MG3 is a development of the MG42 from WWII. It features a quick-change barrel and is chambered in 7.62x51mm NATO. Not only is it still in service with the German Bundeswehr but it is also used by dozens of other countries." compset="Ranged">
+  <thing id="wpT2KMG3SAFE" name="MG3" description="The MG3 is a development of the MG42 from WWII. It features a quick-change barrel and is chambered in 7.62x51mm NATO. Not only is it still in service with the German Bundeswehr but it is also used by dozens of other countries." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1417,13 +1423,14 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="grCost" value="1500"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="GermanMilitary"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KNG5" name="NG-5" description="Adopted by the Israeli Defence Forces in 1992, the Negev NG-5 is a select-fire light machine gun chambered in 5.56x45mm NATO. It accepts belted ammunition, a 35-round Galil magazine, and a 30-round STANAG magazine." compset="Ranged">
+  <thing id="wpT2KNG5" name="NG-5" description="Adopted by the Israeli Defence Forces in 1992, the Negev NG-5 is a select-fire light machine gun chambered in 5.56x45mm NATO. It accepts belted ammunition, a 35-round Galil magazine, and a 30-round STANAG magazine." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="6"/>
     <fieldval field="wpDamage" value="2"/>
@@ -1434,13 +1441,14 @@
     <fieldval field="grWeight" value="2"/>
     <fieldval field="grCost" value="1500"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="LMG"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="IsraelMilitary"/>
     <tag group="AmmoType" tag="Cal55645"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KNG7" name="NG-5" description="Adopted by the Israeli Defence Forces in 1992, the Negev NG-5 is a select-fire light machine gun chambered in 5.56x45mm NATO. It accepts belted ammunition, a 35-round Galil magazine, and a 30-round STANAG magazine.\n\nThe NG-7 variant is a GPMG chambered in 7.62x51mm NATO." compset="Ranged">
+  <thing id="wpT2KNG7" name="NG-5" description="Adopted by the Israeli Defence Forces in 1992, the Negev NG-5 is a select-fire light machine gun chambered in 5.56x45mm NATO. It accepts belted ammunition, a 35-round Galil magazine, and a 30-round STANAG magazine.\n\nThe NG-7 variant is a GPMG chambered in 7.62x51mm NATO." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1451,13 +1459,14 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="grCost" value="2000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="IsraelMilitary"/>
     <tag group="AmmoType" tag="Cal76251"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KVZ59" name="UK VZ-59" description="Designed in the late 1950s, this Czech weapon is still in service. The UK vz. 59 (Univerzální kulomet vzor 59) is a belt-fed general purpose machine gun chambered in 7.62x54mmR. It is equipped with a bipod." compset="Ranged">
+  <thing id="wpT2KSAFEVZ59" name="UK VZ-59" description="Designed in the late 1950s, this Czech weapon is still in service. The UK vz. 59 (Univerzální kulomet vzor 59) is a belt-fed general purpose machine gun chambered in 7.62x54mmR. It is equipped with a bipod." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1468,13 +1477,14 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="grCost" value="1000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="CzechMilitary"/>
     <tag group="AmmoType" tag="Cal76254"/>
     <child entity="EquipmentDetails"></child>
     </thing>
-  <thing id="wpT2KVZ59N" name="UK VZ-59N" description="Designed in the late 1950s, this Czech weapon is still in service. The UK vz. 59 (Univerzální kulomet vzor 59) is a belt-fed general purpose machine gun chambered in 7.62x54mmR. It is equipped with a bipod. \n\nThe Vz. 59N variant is chambered in 7.62x51mm NATO." compset="Ranged">
+  <thing id="wpT2KVZ59N" name="UK VZ-59N" description="Designed in the late 1950s, this Czech weapon is still in service. The UK vz. 59 (Univerzální kulomet vzor 59) is a belt-fed general purpose machine gun chambered in 7.62x54mmR. It is equipped with a bipod. \n\nThe Vz. 59N variant is chambered in 7.62x51mm NATO." compset="Heavy">
     <fieldval field="grReliability" value="5"/>
     <fieldval field="wpRateOfFire" value="5"/>
     <fieldval field="wpDamage" value="3"/>
@@ -1485,6 +1495,7 @@
     <fieldval field="grWeight" value="3"/>
     <fieldval field="grCost" value="1000"/>
     <usesource source="srcSAFE"/>
+    <tag group="Helper" tag="DamageByAmmo"/>
     <tag group="WeaponType" tag="GPMG"/>
     <tag group="Equipment" tag="TwoHand"/>
     <tag group="WeaponCat" tag="CzechMilitary"/>

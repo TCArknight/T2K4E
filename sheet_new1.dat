@@ -173,7 +173,7 @@
 	  showgaphorz="2"
 	  columns="4">
       <list><![CDATA[
-        (!hero#CharType.Vehicle & AttrCat.Hero)
+        (!hero#CharType.typVehicle & AttrCat.Hero)
         ]]></list>
       </output_table>
     </portal>	

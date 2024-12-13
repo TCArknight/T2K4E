@@ -62,19 +62,19 @@
   <!-- And one personal info pick -->
   <bootstrap index="20" thing="mscVehDetails">
     <containerreq phase="Initialize" priority="4000">
-      CharType.Vehicle
+      CharType.typVehicle
       </containerreq>
 	</bootstrap>
 
   <bootstrap index="21" thing="eqCargoSpace">
     <containerreq phase="Initialize" priority="4000">
-      CharType.Vehicle
+      CharType.typVehicle
       </containerreq>
 	</bootstrap>
 	
   <bootstrap index="25" thing="wpUnarmed">
     <containerreq phase="Initialize" priority="500">
-      !CharType.Vehicle
+      !CharType.typVehicle
       </containerreq>
 	</bootstrap>
 	

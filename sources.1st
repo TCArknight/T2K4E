@@ -31,7 +31,7 @@
     name="Twilight 2000 Core"
     parent="srcTwilight2000"
     reportable="yes"
-	sortorder="1"
+	sortorder="0"
     description="Data for Twilight 2000 4th Ed. RPG.">
     </source>	
 
@@ -40,9 +40,28 @@
     name="Twilight 2000 Urban Operations"
     parent="srcTwilight2000"
     reportable="yes"
-	sortorder="2"
+	sortorder="1"
     description="Data for Urban Operations Expansion.">
     </source>	
+
+  <source
+    id="srcT2KHostileWtrs"
+    name="Twilight 2000 Hostile Waters"
+    parent="srcTwilight2000"
+    reportable="yes"
+	sortorder="1"
+    description="Data for Hostile Waters Expansion.">
+    </source>	
+	
+  <source
+    id="srcT2KOfficial"
+    name="Official Supplements"
+    parent="srcTwilight2000"
+    reportable="no"
+	selectable="no"
+	sortorder="2"
+    description="Official Supplements/Modules for T2K 4e.">
+    </source>
 	
   <source
     id="srcT2KFan"
@@ -50,10 +69,19 @@
     parent="srcTwilight2000"
     reportable="no"
 	selectable="no"
-	sortorder="2"
+	sortorder="3"
     description="Fan options for T2K 4e.">
     </source>
 
+  <source
+    id="srcBlackMadonna"
+    name="Black Madonna"
+    parent="srcT2KOfficial"
+    reportable="yes"
+    sortorder="1"
+    description="4E Updated version.">
+    </source>
+	
   <source
     id="srcSAFE"
     name="Small Arms - A Firearms Expansion"

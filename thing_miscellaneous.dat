@@ -54,6 +54,8 @@
 	  
     <!-- Adjust points based on Age category -->
     <eval index="2" phase="Setup" priority="1000" name="Adjust Skill Points"><![CDATA[
+	  doneif (hero.tagis[source.srcT2KLifepath] <> 0)
+	  
 	  field[resMax].value += herofield[acBonusSkillPts].value
 	  
 	  if (hero.child[mscPerson].field[perAge].value <= herofield[acAgeYoung].value ) then
@@ -321,7 +323,16 @@
     compset="CharType">
     <tag group="CharacterType" tag="NPC"/>
     </thing>
-
+	
+  <!-- 
+  <thing
+    id="typVehicle"
+    name="Type: Vehicle"
+    compset="CharType">
+    <tag group="CharacterType" tag="Vehicle"/>
+    </thing>
+	-->
+	
   <thing
     id="typCampaign"
     name="Type: Campaign"

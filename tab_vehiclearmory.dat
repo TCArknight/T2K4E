@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the definition of the "Armory" tab panel. This tab is where
+      the user selects weapons and armor for the character.
+
+      All public visual elements used with this tab panel start with the prefix "ar"
+      to associate them with the tab.
+-->
+
+<document signature="Hero Lab Data">
+  <portal
+    id="arVehAmmo"
+    style="tblNormal">
+    <table_dynamic
+      component="Gear"
+      showtemplate="SimpleAmmo"
+      choosetemplate="arVehAmmoThing"
+      choosesortset="AmmoCatType"
+      buytemplate="BuyCash"
+      selltemplate="SellCash"
+	  columns="2">
+      <list>component.Ammunition</list>
+      <candidate inheritlist="yes">!(Equipment.Natural|Equipment.Hide)</candidate>
+      <titlebar><![CDATA[
+        @text = "Select Ammunition to Purchase from the List Below"
+        ]]></titlebar>
+      <headertitle><![CDATA[
+        @text = "Ammunition"
+        ]]></headertitle>
+      <additem><![CDATA[
+        @text = "Add New Ammunition"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+
+  <!-- arVehRange portal
+        Presents a dynamic table where the user can add ranged weapons for the
+        character. This portal is identical to "arMelee" above, except that it
+        manages ranged weapons instead of melee weapons, resulting in a few minor
+        but important differences from the melee weapons table.
+  -->
+  <portal
+    id="arVehRange"
+    style="tblNormal">
+    <table_dynamic
+      component="Gear"
+	  headertemplate="arVehRangedHdr"
+      showtemplate="arWpnPick"
+      choosetemplate="arWpnThing"
+	  choosesortset="WeaponTypeByCat"
+      buytemplate="BuyCash"
+      selltemplate="SellCash">
+      <list>component.WeapRange &amp; !component.WeapHeavy</list>
+      <candidate inheritlist="yes">!(Equipment.Natural|Equipment.Hide)</candidate>
+      <titlebar><![CDATA[
+        @text = "Select Ranged Weapons to Purchase from the List Below"
+        ]]></titlebar>
+      <additem><![CDATA[
+        @text = "Add New Ranged Weapons"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
+  <!-- arVehHeavy portal
+        Presents a dynamic table where the user can add ranged weapons for the
+        character. This portal is identical to "arMelee" above, except that it
+        manages ranged weapons instead of melee weapons, resulting in a few minor
+        but important differences from the melee weapons table.
+  -->
+  <portal
+    id="arVehHeavy"
+    style="tblNormal">
+    <table_dynamic
+      component="Gear"
+	  headertemplate="arHeavyHdr"
+      showtemplate="arWpnPick"
+      choosetemplate="arWpnThing"
+	  choosesortset="WeaponType"
+      buytemplate="BuyCash"
+      selltemplate="SellCash">
+      <list>component.WeapHeavy</list>
+      <candidate inheritlist="yes">!(Equipment.Natural|Equipment.Hide)</candidate>
+      <titlebar><![CDATA[
+        @text = "Select Heavy Weapons to Purchase from the List Below"
+        ]]></titlebar>
+      <additem><![CDATA[
+        @text = "Add New Heavy Weapons"
+        ]]></additem>
+      </table_dynamic>
+    </portal>
+	
+  <template
+    id="arVehRangedHdr"
+    name="Ranged Header"
+    compset="Weapon"
+    marginhorz="3"
+    marginvert="3">
+	
+    <portal
+      id="hdrTitle"
+      style="lblTitle"
+      isheader="yes">
+      <label
+        istitle="yes"
+        text="Vehicle Weapons">
+        </label>
+      </portal>
+	  
+    <portal
+      id="hdrName"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Weapon"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrReliability"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Rel"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrDamage"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Dmg"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrCrit"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Crit"
+          ]]></labeltext>
+        </label>
+      </portal>
+	  
+    <portal
+      id="hdrRange"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+		  @text = "Rng"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrArmor"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+		  @text = "Arm"
+          ]]></labeltext>
+        </label>
+      </portal>
+    <portal
+      id="hdrSpecial"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Notes"
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <portal
+      id="hdrAmmo"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+        <labeltext><![CDATA[
+          @text = "Ammo Type"
+          ]]></labeltext>
+        </label>
+      </portal>	  
+ 
+      <portal
+      id="hdrMag"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "Mag"
+		  ]]></labeltext>
+        </label>
+      </portal>
+
+      <portal
+      id="hdrROF"
+      style="lblHeader"
+      isheader="yes">
+      <label>
+	    <labeltext><![CDATA[
+          @text = "ROF"
+		  ]]></labeltext>
+        </label>
+      </portal>	
+	  
+    <header><![CDATA[
+      ~our header height is the title plus a gap plus the header text
+      height = portal[hdrTitle].height + portal[hdrName].height + portal[hdrAmmo].height + 4
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~our title spans the full width of the template
+      portal[hdrTitle].width = width
+
+      ~each of our header labels has the same width as the corresponding data beneath
+	  var hdr1 as number
+	  var hdr2 as number
+	  
+      perform portal[hdrName].centerpoint[horz,60]
+      perform portal[hdrReliability].centerpoint[horz,140]
+      perform portal[hdrROF].centerpoint[horz,180]
+      perform portal[hdrDamage].centerpoint[horz,220]
+      perform portal[hdrCrit].centerpoint[horz,260]
+      perform portal[hdrRange].centerpoint[horz,300]
+      perform portal[hdrArmor].centerpoint[horz,340]
+      perform portal[hdrSpecial].centerpoint[horz,380]
+	  
+      perform portal[hdrMag].centerpoint[horz,140]
+	  perform portal[hdrAmmo].centerpoint[horz,285]	
+	  
+      ~align all header labels at the bottom of the header region
+	  hdr1 = portal[hdrTitle].bottom + 2
+	  
+      portal[hdrName].top = hdr1
+      portal[hdrReliability].top = hdr1
+      portal[hdrROF].top = hdr1
+      portal[hdrDamage].top = hdr1
+      portal[hdrCrit].top = hdr1
+      portal[hdrRange].top = hdr1
+      portal[hdrArmor].top = hdr1
+      portal[hdrSpecial].top = hdr1
+      
+	  hdr2 = portal[hdrName].bottom + 2
+	  portal[hdrAmmo].top = hdr2
+      portal[hdrMag].top = hdr2
+	  
+      height = portal[hdrAmmo].bottom
+      ]]></header>
+	  
+    </template>	
+	
+	
+  <template
+    id="arVehAmmoThing"
+    name="Ammunition Thing"
+    compset="Ammunition"
+    marginhorz="3"
+    marginvert="2">
+
+    <portal
+      id="name"
+      style="lblNormal">
+      <label
+        field="name">
+        </label>
+      </portal>
+<!--
+    <portal
+      id="damage"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amDamage].text
+          ]]></labeltext>
+        </label>
+      </portal>
+    <portal
+      id="blast"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amBlast].text
+          ]]></labeltext>
+        </label>
+      </portal>
+    <portal
+      id="crit"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amCrit].text
+          ]]></labeltext>
+        </label>
+      </portal>
+      <portal
+        id="armorrating"
+      style="lblNormal">
+	  <label>
+        <labeltext><![CDATA[
+          @text = field[amArmorRating].text
+          ]]></labeltext>
+        </label>
+      </portal>
+      <portal
+        id="armorrange"
+        style="lblNormal">
+        <label>
+          <labeltext><![CDATA[
+          @text=field[amRange].text          
+          ]]></labeltext>
+          </label>
+        </portal>
+-->
+    <portal
+      id="cost"
+      style="lblNormal">
+      <label>
+        <labeltext><![CDATA[
+          @text = field[grCost].text
+          ]]></labeltext>
+        </label>
+      </portal>
+
+    <position><![CDATA[
+      ~set up our dimensions, with a width that we dictate; our width can vary
+      ~between weapon types, since ranged weapons require extra space for the range
+      height = portal[name].height
+      width = 500
+
+      ~if this is a "sizing" calculation, we're done
+      doneif (issizing <> 0)
+
+      ~position the cost portal on the far right
+      perform portal[cost].alignedge[right,0]
+
+      ~position the damage portal to the left of the cost; we want the damage to
+      ~be centered in its own column relative to a centerpoint position
+      ~perform portal[damage].centerpoint[horz,180]
+
+      ~position the name on the left and let it use all available space
+      portal[name].left = 0
+      ~portal[name].width = minimum(portal[name].width,portal[damage].left - 10)
+      ]]></position>
+
+    </template>
+
+  <!-- armory layout
+        This layout orchestrates the display of the visual elements that comprise
+        the Armory tab. This amounts to three pairs of title and table so the user
+        can add melee weapons, ranged weapons, and armor/shields.
+
+        The interesting facet of this layout is that it contains three separate
+        tables that can vary in height, depending on what the user chooses to add
+        to the character. These tables need to adapt their sizes to make efficient
+        use of the available space. The "position" script accomplishes this goal.
+
+        The exact steps being taken are clearly commented within the script, but
+        the basic strategy is pretty simple. First the portals at the top are
+        position, then the armor/shields table is positioned at the bottom with
+        only two items visible. The remaining space is calculated and shared
+        between the two weapon tables. Once the weapons have been given as much
+        space as they need, the armor/shields table is enlarged to take up any
+        additional space that is leftover.
+  -->
+  <layout
+    id="vehiclearmory">
+    <portalref portal="arVehRange" taborder="20"/>
+    <portalref portal="arVehHeavy" taborder="30"/>
+    <portalref portal="arVehAmmo" taborder="40"/>
+
+    <!-- This script sizes and positions the layout and its child visual elements. -->
+    <position><![CDATA[
+      ~set the width of all tables to the full width of the layout
+      portal[arVehRange].width = width
+      portal[arVehHeavy].width = width
+	  portal[arVehAmmo].width = width
+	  
+	  perform portal[arVehRange].autoplace[0]
+	  perform portal[arVehHeavy].autoplace[10]
+	  perform portal[arVehAmmo].autoplace[10]
+	  
+      ]]></position>
+
+    </layout>
+
+
+  <!-- armory panel
+        This is the "Armory" panel shown within Hero Lab. Since we want this panel
+        to appear first within the second grouping (equipment), we assign it an
+        "order" of 210.
+
+        The logic for this panel is similar to the logic for the preceeding panels,
+        so please refer to those panels for more details.
+  -->
+  <panel
+    id="vehiclearmory"
+    name="Armory"
+    marginhorz="5"
+    marginvert="5"
+    order="210">
+    <live>CharType.typVehicle</live>
+    <layoutref layout="vehiclearmory"/>
+    <position><![CDATA[
+      ]]></position>
+    </panel>
+  </document>

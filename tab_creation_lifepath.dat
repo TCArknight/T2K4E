@@ -881,7 +881,7 @@
     marginhorz="5"
     marginvert="5"
     order="5">
-	<live>source.srcT2KLifepath &amp; !CharType.Vehicle</live>
+	<live>source.srcT2KLifepath &amp; !CharType.typVehicle</live>
     <layoutref layout="lifepath"/>
     <position><![CDATA[
       ]]></position>

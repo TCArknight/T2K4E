@@ -349,7 +349,7 @@
     marginhorz="5"
     marginvert="5"
     order="300">
-    <live>!HideTab.advances &amp; !CharType.Vehicle</live>
+    <live>!HideTab.advances &amp; !CharType.typVehicle</live>
     <layoutref layout="advances"/>
     <position><![CDATA[
       ]]></position>

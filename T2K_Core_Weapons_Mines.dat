@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="hdrT2KMine" name="-- Mines --" compset="Heavy" isshowonly="yes">
+    <usesource source="srcT2K"/>
+    <tag group="WeaponCat" tag="Mine"/>
+    <tag group="WeaponType" tag="Mine"/>
+    </thing>
+  <thing id="wpT2KM16APMine" name="M16 Anti-Personnel Mine" description="The M16 is a bounding mine with only three small vertical prongs showing above ground. When these are stepped off (after being stepped on), or their tripwire is pulled, the 2.5 kg mine flies 0.5 to 1.5 meters in the air and explodes. The airburst prevents  dropping prone from having a beneficial effect on avoiding wounds.  Several other countries also make copies of this mine, which makes it harder to identify when used." compset="Heavy">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="shortname" value="M16 AP Mine"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpDamage" value="5"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM18Claymore" name="M18 Claymore Mine" description="The M18 is a directional above-ground mine that explodes when detonated by a firing device (M51) or a tripwire. Like a shotgun, it fires steel balls in a 60-degree arc. For rules, see page 69 of the Player’s Manual. The distinctive curved shape and folding legs have been copied by many other countries who use similar mines. The mine comes in a set with 30 meters of copper wire, tripwire, test set, and the M51 firing device (aka “clacker”)." compset="Heavy">
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="wpSpecial" value="Directional"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="WeaponSpec" tag="BlastOnly"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM21ATMine" name="M21 Anti-Tank Mine" description="The M21 is an American 8-kilogram circular anti-tank mine that can be set off by either a pressure plate or a tilt rod (which engages the mine when it is tipped 20 degrees in any direction). It is a platter-type mine that launches a directed blast straight up and into the vehicle that set it off." compset="Heavy">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="M21 AT Mine"/>
+    <fieldval field="wpDamage" value="7"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KM67ADAM" name="M67 ADAM Scatterable Mine" description="The ADAM (Area Denial Artillery Munition) mine is a family of American scatterable mines that are delivered by 155 mm howitzer. These 0.5 kg mines are designed to self-destruct after 1–8 shifts, so any encountered by PCs will be newly fired from some distant artillery position, indicating possible US units in the area. Each mine (there are 36 in each 155 mm ADAM shell) deploys seven tripwires on landing. If any is disturbed, the mine fires a spherical warhead upward to a height of one to two meters, where it detonates, producing approximately 600 fragments. The airburst prevents dropping prone from having a beneficial effect on avoiding wounds." compset="Heavy">
+    <fieldval field="grCost" value="25"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpDamage" value="3"/>
+    <fieldval field="wpCrit" value="4"/>
+    <fieldval field="wpArmorRating" value="+2"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpSpecial" value="Scatterable by artillery"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="WeaponCat" tag="USMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KOZM4Mine" name="OZM-4 Anti-Personnel Mine" description="The OZM-4 is the Soviet equivalent of the US M16 bounding mine. They are typically initiated with a tripwire but may also be command detonated remotely by a firing switch." compset="Heavy">
+    <fieldval field="grCost" value="50"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="shortname" value="OZM-4  Mine"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpArmorRating" value="+1"/>
+    <fieldval field="wpCrit" value="3"/>
+    <fieldval field="wpDamage" value="5"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="BlastRating" tag="C"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KMON50Mine" name="MON-50" description="This is a Soviet copy of the US M18 Claymore mine. The effects are the same; however, none of the firing systems are interchangeable." compset="Heavy">
+    <fieldval field="grCost" value="75"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpArmorRating" value="0"/>
+    <fieldval field="wpSpecial" value="Directional"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <tag group="WeaponSpec" tag="BlastOnly"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KTM72ATMine" name="TM72 Anti-Tank Mine" description="The TM-72 is a Soviet 6-kilogram cylindrical metal-cased anti-tank mine. It uses a shaped charge to direct a plasma jet up into the weak bottom armor of the vehicle that set it off using a magnetic influence detector to detonate the mine when a large mass of metal passes overhead." compset="Heavy">
+    <fieldval field="grCost" value="150"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="grWeight" value="1"/>
+    <fieldval field="shortname" value="TM72 Mine"/>
+    <fieldval field="wpDamage" value="7"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="-1"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="BlastRating" tag="B"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  <thing id="wpT2KPFMMine" name="PFM Scatterable Mine" description="The PFM is a Soviet scatterable anti-personnel mine that can be deployed from mortars, helicopters, and aircraft in large numbers. They glide to the ground without exploding and explode later on contact. This mine is available in two types – one that dissolves itself within two days and another that is more permanent. The two types may be used separately or in the same munitions package with 36–72 mines per container. Either is detonated with as little as 5 kg of pressure, and the mine is designed to maim rather than kill." compset="Heavy">
+    <fieldval field="grCost" value="10"/>
+    <fieldval field="grReliability" value="5"/>
+    <fieldval field="wpDamage" value="2"/>
+    <fieldval field="wpCrit" value="2"/>
+    <fieldval field="wpArmorRating" value="+2"/>
+    <fieldval field="grWeight" value=".5"/>
+    <fieldval field="wpSpecial" value="Scatterable by artillery"/>
+    <fieldval field="shortname" value="PFM Mine"/>
+    <usesource source="srcT2K" parent="srcTwilight2000" name="Twilight 2000 Core"/>
+    <tag group="Helper" tag="NoRange"/>
+    <tag group="BlastRating" tag="D"/>
+    <tag group="WeaponCat" tag="SovietMilitary"/>
+    <tag group="WeaponType" tag="Mine"/>
+    <tag group="Equipment" tag="SelfContained"/>
+    <child entity="EquipmentDetails"></child>
+    </thing>
+  </document>

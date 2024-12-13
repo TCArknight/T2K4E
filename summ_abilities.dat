@@ -150,7 +150,7 @@
       perform portal[smSpecialty].autoplace
       perform portal[smSkill].autoplace[20]
 	  
-	  if (hero.tagis[CharType.Vehicle] = 0) then
+	  if (hero.tagis[CharType.typVehicle] = 0) then
 	    portal[smSkill].visible = 1
 	  else
 	    portal[smSkill].visible = 0

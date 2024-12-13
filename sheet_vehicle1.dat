@@ -1372,13 +1372,74 @@
       ]]></position>
     </template>		
 
+
+  <!-- oPortrait template
+        This template presents the character portrait, showing the first portrait
+        assigned to the character.
+  -->
+  <template
+    id="oVehPortrait"
+    name="Output Image"
+    compset="Actor">
+
+    <portal
+      id="image"
+      style="outNormal">
+      <output_image
+        field="acTacImage">
+        </output_image>
+      </portal>
+
+    <portal
+      id="imgBorder"
+      style="outCharImg">
+      <output_label
+        text=" ">
+        </output_label>
+      </portal>
+
+    <position><![CDATA[
+      ~if we don't have an image or character images are not included, set our
+      ~height to 0, hide the image, and get out
+      if (!hero.tagis[source.ShowImage] + !portal[image].isimage > 0) then
+        height = 0
+        portal[image].visible = 0
+        portal[imgBorder].visible = 0
+        done
+        endif
+
+      ~leave a margin of one pixel around all edges to draw our border
+      var margin as number
+      margin = 1
+      portal[image].left = margin
+      portal[image].top = margin
+      portal[image].width = width - margin * 2
+      portal[image].height = height - margin * 2
+
+      ~cap our height at a maximum of three inches
+      portal[image].height = minimum(portal[image].height,900)
+
+      ~optimally fit the image to the region available
+      perform portal[image].imagefit
+
+      ~center the image if it's narrower than the available width
+      perform portal[image].centerhorz
+
+      ~our full height is the bottom of the image plus our margin
+      height = portal[image].bottom + margin
+
+      ~set the border to span our full dimensions
+      portal[imgBorder].width = width
+      portal[imgBorder].height = height
+      ]]></position>
+
+    </template>
+	
   <layout
     id="oTopLeftVeh">
-    <portalref portal="oVehicleName"/>
 	<templateref template="oVehDetails" thing="mscVehDetails"/>
     <position><![CDATA[
-	  perform portal[oVehicleName].autoplace[0]
-	  perform template[oVehDetails].autoplace[20]	  
+	  perform template[oVehDetails].autoplace[0]	  
 
       ~our layout height is the extent of the elements within
       height = autoextent
@@ -1497,6 +1558,19 @@
     </layout>
 
   <layout
+    id="oVehPortrait">
+    <portalref portal="oVehicleName"/>
+    <templateref template="oVehPortrait" thing="actor"/>
+    <position><![CDATA[
+	  perform portal[oVehicleName].autoplace[0] 
+	  perform template[oVehPortrait].autoplace[5]  
+
+      ~our layout height is the extent of the elements within
+      height = autoextent
+      ]]></position>
+    </layout>
+	
+  <layout
     id="oVehGearSec">
 	<portalref portal="oVehicleGearSec" />
     <position><![CDATA[
@@ -1521,6 +1595,7 @@
     <layoutref layout="oVehGearMain"/>
     <layoutref layout="oVehGearSec"/>
     <layoutref layout="oVehArmory"/>
+    <layoutref layout="oVehPortrait"/>
     <layoutref layout="oValidate"/>
     <position><![CDATA[
       ~set this global variable to 1 if you want the logos to be stacked; a value
@@ -1550,18 +1625,23 @@
         extent = layout[oValidate].top - autogap
         endif
 
+	  perform layout[oVehPortrait].autoplace
+	  
       ~position the topleft layout in the upper left corner
+      layout[oTopLeftVeh].top = layout[oVehPortrait].bottom + 5
       layout[oTopLeftVeh].width = colwidth
       layout[oTopLeftVeh].height = extent - layout[oTopLeftVeh].top
       perform layout[oTopLeftVeh].render
 
       ~position the midleft layout next to the topleft
+      layout[oTopMid].top = layout[oTopLeftVeh].top
       layout[oTopMid].width = colwidth
 	  layout[oTopMid].left = layout[oTopLeftVeh].right + 15
       layout[oTopMid].height = extent - layout[oTopMid].top
       perform layout[oTopMid].render
 	  
       ~position the topright layout next to the topmid
+      layout[oTopRightVeh].top = layout[oTopLeftVeh].top
       layout[oTopRightVeh].width = colwidth
 	  layout[oTopRightVeh].left = layout[oTopMid].right + 15
       layout[oTopRightVeh].height = extent - layout[oTopRightVeh].top
@@ -1586,6 +1666,7 @@
 	  autotop = maximum(layout[oVehGearMain].bottom,layout[oVehGearSec].bottom) + 5
 	  autowidth = width
 	  perform layout[oVehArmory].autoplace
+	  
 	  
       ~position the activated adjustments at the bottom on the left; this will
       ~establish the remaining space available on the left for armor and weapons

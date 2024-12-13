@@ -70,6 +70,7 @@
     <value id="InCargoSpace"/>      <!-- Identifies an item carried in vehicle cargo space -->
     <value id="SpecChosen"/>        <!-- Identifies a user-added specialty -->
     <value id="NoValue"/>           <!-- Identifies a user-added adjustment -->
+    <value id="NoRange"/>           <!-- Identifies a user-added adjustment -->
     </group>
 
   <!-- User group - general helper tags that can be assigned by users via the Editor
@@ -361,7 +362,7 @@
     <value id="InMagazine" name="InMagazine"/>                    <!-- Identifies ammunition that is in a clip  -->
     <value id="InternalMag" name="Internal Magazine"/>            <!-- Identifies weapon that uses an internal magazine rather than an external Box Magazine/Clip -->
     <value id="SelfContained" name="Self-Contained"/>             <!-- Identifies ammunition holder carried by the hero -->
-    <value id="IsDamaged" name="Damaged"/>                          <!-- Identifies an item has taken damage and is iat less than full reliability -->
+    <value id="IsDamaged" name="Damaged"/>                        <!-- Identifies an item has taken damage and is iat less than full reliability -->
     <value id="IsBroken" name="Broken"/>                          <!-- Identifies an item has taken damage and is iat less than full reliability -->
     </group>
 
@@ -393,9 +394,12 @@
   -->
   <group
     id="WeaponSpec">
-    <value id="Blast" name="Blast"/>               <!-- Identifies a weapon with a special range -->
-    <value id="SpecRange" name="Range is special"/>               <!-- Identifies a weapon with a special range -->
-    <value id="SlowReload" name="Slow Reload (2 slow actions)"/>               <!-- Identifies a weapon with a special range -->
+    <value id="Blast" name="Blast"/>
+    <value id="BlastDir" name="Directional Blast"/>
+    <value id="BlastDec3" name="Blast decreases per 3 hexes"/>
+    <value id="BlastOnly" name="Blast Damage Only"/>               				<!-- Identifies a weapon that only does Blast damage not direct+Blast -->
+    <value id="SpecRange" name="Range is special"/>               	<!-- Identifies a weapon with a special range -->
+    <value id="SlowReload" name="Slow Reload (2 slow actions)"/>    <!-- Identifies a weapon with a special range -->
     </group>
 	
   <group
@@ -422,6 +426,9 @@
     <value id="FinnishMilitary" name="Finnish Military" order="85" />
     <value id="SwissMilitary" name="Swiss Military" order="86" />
     <value id="Grenade" name="Hand Grenade" order="90"/>
+    <value id="LMG" name="Light Machine Gun" abbrev="LMG" order="92"/>				
+    <value id="HMG" name="Heavy Machine Gun" abbrev="HMG" order="92"/>				
+    <value id="GPMG" name="General Purpose Machine Gun" abbrev="GPMG" order="92"/>	
     <value id="Mine" name="Mine" order="95"/>
     <value id="Mortar" name="Mortar" order="100"/>
     <value id="VehicleWeapons" name="Vehicle Weapons" order="110"/>
@@ -445,15 +452,20 @@
     <value id="BattleRifle" name="Battle Rifle" abbrev="B. Rifle" order="22"/>
     <value id="Carbine" name="Carbine" abbrev="B. Rifle" order="24"/>
     <value id="Sniper" name="Sniper Rifle" abbrev="S. Rifle" order="26"/>
-    <value id="GL" name="Grenade Launcher" abbrev="GL" order="28"/>
-    <value id="ATRL" name="Rocket Launcher" abbrev="RL" order="30"/>
-    <value id="ATGM" name="Missile Launcher" abbrev="ML" order="32"/>
-    <value id="LMG" name="Light Machine Gun" abbrev="LMG" order="32"/>
-    <value id="HMG" name="Heavy Machine Gun" abbrev="HMG" order="32"/>
-    <value id="GPMG" name="General Purpose Machine Gun" abbrev="GPMG" order="32"/>
-    <value id="Mortar" name="Mortar" order="33"/>
-    <value id="VehicleCannon" name="Vehicle Cannon" order="34"/>
-    <value id="Howitzer" name="Howitzer" order="35"/>
+    <value id="GL" name="Grenade Launcher" abbrev="GL" order="28"/>					
+    <value id="LMG" name="Light Machine Gun" abbrev="LMG" order="29"/>				
+    <value id="HMG" name="Heavy Machine Gun" abbrev="HMG" order="30"/>				
+    <value id="GPMG" name="General Purpose Machine Gun" abbrev="GPMG" order="31"/>			
+    <value id="ATRL" name="Rocket Launcher" abbrev="RL" order="32"/>                
+    <value id="ATGM" name="Missile Launcher (ATGM)" abbrev="ML" order="33"/>  
+    <value id="SAM" name="Missile Launcher (SAM)" abbrev="SAM" order="33"/>		  
+    <value id="AShM" name="Missile Launcher (AShM)" abbrev="AShM" order="33"/>		 
+    <value id="Torp" name="Torpedo Launcher" abbrev="Torp" order="34"/>	
+    <value id="Mine" name="Mine" order="40"/>										
+    <value id="Mortar" name="Mortar" order="50"/>									
+    <value id="VehicleCannon" name="Vehicle Cannon" order="60"/>			
+    <value id="NavalGun" name="Naval Gun" order="60"/>
+    <value id="Howitzer" name="Howitzer" order="70"/>
     </group>
 	
   <group
@@ -893,7 +905,7 @@
   <group
     id="CharType"
     dynamic="yes">
-    <value id="Vehicle"/>
+    <value id="typVehicle"/>
     </group>
 
   <group
@@ -938,6 +950,7 @@
     <value id="SmSail" name="Small Sailing Boat" order="65"/>
     <value id="SmMotor" name="Small Motorboat"order="70"/>
     <value id="Tug" name="Tugboat"order="75"/>
+    <value id="PatrolBoat" name="Patrol Boat"order="80"/>
     </group>
 	
   <!-- VehicleCategory group - tags identifying the category of vehicle
