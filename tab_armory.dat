@@ -1034,7 +1034,7 @@
       id="magazine"
       style="lblNormal">
       <label>
-      <labeltext><![CDATA[
+        <labeltext><![CDATA[
           if (tagis[component.WeapRange] <> 0) then
 		    if (empty(field[wpCapacity].text) = 0) then
 			  if (compare(field[wpCapacity].text,"0") = 0) then
@@ -1049,8 +1049,8 @@
             @text = ""
             endif
           ]]></labeltext>
-    </label>
-    </portal>
+        </label>
+      </portal>
 
 
     <portal

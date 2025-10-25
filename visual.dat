@@ -394,6 +394,14 @@
       </portal>
 
     <portal
+      id="lblmenu3"
+      style="lblSecond">
+      <label
+        field="usrLabel3">
+        </label>
+      </portal>
+
+    <portal
       id="menu1"
       style="menuNormal">
       <menu_things
@@ -414,6 +422,18 @@
         maxvisible="10"
         usepicksfield="usrSource2"
         candidatefield="usrCandid2">
+        </menu_things>
+      </portal>
+
+    <portal
+      id="menu3"
+      style="menuNormal">
+      <menu_things
+        field="usrChosen3"
+        component="none"
+        maxvisible="10"
+        usepicksfield="usrSource3"
+        candidatefield="usrCandid3">
         </menu_things>
       </portal>
 
@@ -479,6 +499,8 @@
       perform portal[menu1].centervert
       perform portal[lblmenu2].centervert
       perform portal[menu2].centervert
+      perform portal[lblmenu3].centervert
+      perform portal[menu3].centervert
       perform portal[lblmenuar].centervert
       perform portal[menuarray].centervert
       perform portal[checkbox].centervert
@@ -496,6 +518,12 @@
         portal[menu2].visible = 0
       elseif (field[usrLabel2].isempty <> 0) then
         portal[lblmenu2].visible = 0
+        endif
+      if (field[usrCandid3].isempty <> 0) then
+        portal[lblmenu3].visible = 0
+        portal[menu3].visible = 0
+      elseif (field[usrLabel3].isempty <> 0) then
+        portal[lblmenu3].visible = 0
         endif
       if (empty(field[usrArray].arraytext[0]) <> 0) then
         portal[lblmenuar].visible = 0
@@ -533,6 +561,8 @@
         reserve += defwidth + gap
         reserve += portal[lblmenu2].width * portal[menu2].visible
         reserve += (defwidth + gap) * portal[menu2].visible
+        reserve += portal[lblmenu3].width * portal[menu3].visible
+        reserve += (defwidth + gap) * portal[menu3].visible
         endif
 
       ~position the name on the left, reserving our minimum space for any portals
@@ -597,6 +627,11 @@
       if (portal[menu2].visible <> 0) then
         if (field[usrChosen2].ischosen = 0) then
           perform portal[menu2].setstyle[menuError]
+          endif
+        endif
+      if (portal[menu3].visible <> 0) then
+        if (field[usrChosen3].ischosen = 0) then
+          perform portal[menu3].setstyle[menuError]
           endif
         endif
       if (portal[menuarray].visible <> 0) then

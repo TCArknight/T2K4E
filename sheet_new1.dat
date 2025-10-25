@@ -272,6 +272,7 @@
           ]]></labeltext>
         </output_label>
       </portal>	
+	  
     <portal
       id="oExpTotal"
       style="outPlainLtBrd">
@@ -318,15 +319,15 @@
         </output_label>
       </portal>
 
-  <portal
-    id="oStressBoxes"
-    style="outNormal">
-	<output_label>
-	  <labeltext><![CDATA[
-        @text = #traitboxes[trStress]
-        ]]></labeltext>
-      </output_label>
-    </portal>	
+    <portal
+      id="oStressBoxes"
+      style="outNormal">
+	  <output_label>
+	    <labeltext><![CDATA[
+          @text = #traitboxes[trStress]
+          ]]></labeltext>
+        </output_label>
+      </portal>	
 	  
   <portal
     id="oCbtDerived"
@@ -1183,7 +1184,6 @@
 
     </template>	
 	
-	
   <template
     id="oSkillWidePick"
     name="Output Wide Skill Table"
@@ -1426,7 +1426,6 @@
       ]]></header>
 
     </template>	
-
 	
   <layout
     id="oMidAttributes">

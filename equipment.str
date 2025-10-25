@@ -1387,7 +1387,7 @@
 		endif
 		
       if (tagis[Equipment.SelfContained] <> 0) then
-	    perform delete[Helper.DamageByAmmo]
+	    perform delete[Equipment.DamageByAmmo]
 	    endif
 		
       if (tagis[Helper.DamageByAmmo] <> 0) then

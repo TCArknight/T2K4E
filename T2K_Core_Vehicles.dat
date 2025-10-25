@@ -31,6 +31,8 @@
     <tag group="VehicleWpnMain" tag="PintleGun"/>
     <tag group="VehicleWpnSec" tag="Radio"/>
     <tag group="VehicleMove" tag="Wheeled"/>
+    <tag group="VehicleType" tag="4WDCar"/>
+    <tag group="VehicleCat" tag="USMil"/>
     <bootstrap thing="wpT2KM2HB">
       <autotag group="VehicleWpnMain" tag="PintleGun"/>
       </bootstrap>
@@ -110,6 +112,8 @@
     <tag group="VehicleFuelUsed" tag="Gas"/>
     <tag group="VehicleMove" tag="Wheeled"/>
     <tag group="VehicleFuel" tag="Gas"/>
+    <tag group="VehicleCat" tag="USMil"/>
+    <tag group="VehicleType" tag="4WDCar"/>
     <bootstrap thing="wpT2KM240B">
       <autotag group="VehicleWpnMain" tag="Pintle"/>
       </bootstrap>
