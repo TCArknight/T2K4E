@@ -443,6 +443,52 @@
         ]]></calculate>
       </field>
 
+    <!--  Label associated with the second thing-based menu -->
+    <field
+      id="usrLabel3"
+      name="Thing Menu Label #3"
+      type="static"
+      maxlength="50">
+      </field>
+
+    <!-- Tracks the second selection made when a menu choice is required -->
+    <field
+      id="usrChosen3"
+      name="Chosen Thing / Pick #3"
+      type="user"
+      style="menu">
+      </field>
+
+    <!-- Candidate tagexpr used to determine which picks/things are shown in menu #2
+          NOTE! If this field is empty, it means NO second menu is shown for the pick.
+    -->
+    <field
+      id="usrCandid3"
+      name="Candidate TagExpr for Menu #3"
+      type="derived"
+      maxlength="1000"
+      defvalue="">
+      </field>
+
+    <!-- Source to pull choices from within menu #2 -->
+    <field
+      id="usrSource3"
+      name="Source for Menu #3 Choices"
+      type="derived">
+      <!-- Determine the source to choose from based on the tag, defaulting to "Hero" -->
+      <calculate phase="Render" priority="10000"><![CDATA[
+        if (tagis[ChooseSrc3.Thing] <> 0) then
+          @value = 0
+        elseif (tagis[ChooseSrc3.Container] <> 0) then
+          @value = 1
+        elseif (tagis[ChooseSrc3.Hero] <> 0) then
+          @value = 2
+        else
+          @value = 2
+          endif
+        ]]></calculate>
+      </field>
+
     <!--  Label associated with the array-based menu -->
     <field
       id="usrLabelAr"
@@ -525,7 +571,7 @@
       ~determine the number of menus that NEED selection
       ~Note: Remember that a non-empty tagexpr field indicates menu selection is used.
       var needed as number
-      needed = !field[usrCandid1].isempty + !field[usrCandid2].isempty
+      needed = !field[usrCandid1].isempty + !field[usrCandid2].isempty + !field[usrCandid3].isempty
       needed += !empty(field[usrArray].arraytext[0])
 
       ~determine the number of menus that HAVE selections
@@ -535,6 +581,9 @@
         endif
       if (field[usrCandid2].isempty = 0) then
         actual += field[usrChosen2].ischosen
+        endif
+      if (field[usrCandid3].isempty = 0) then
+        actual += field[usrChosen3].ischosen
         endif
       if (field[usrSelect].isempty = 0) then
         actual += 1

@@ -882,6 +882,11 @@
     visible="no"
     inherit="ChooseSrc1">
     </group>
+  <group
+    id="ChooseSrc3"
+    visible="no"
+    inherit="ChooseSrc1">
+    </group>
 
   <!-- SpecialTab group - used for sort order control on Special tab
         Every type of thing that is reported on the Special tab needs to be assigned
